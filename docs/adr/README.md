@@ -1,6 +1,6 @@
 # Architecture Decision Records
 
-ADRs 001–041 were copied from roadmap section 19 in P0-T04. The roadmap is not part of this repository. The next ADR is 046. Name files `NNN-short-title.md`.
+ADRs 001–041 were copied from roadmap section 19 in P0-T04. The roadmap is not part of this repository. The next ADR is 047. Name files `NNN-short-title.md`.
 
 ## Index
 
@@ -51,6 +51,7 @@ ADRs 001–041 were copied from roadmap section 19 in P0-T04. The roadmap is not
 | [043](043-tag-triggered-stage-only-oidc-publishing.md) | Tag-triggered, stage-only OIDC publishing with no tokens | Accepted |
 | [044](044-fs-01-contract-verdicts.md) | FS-01 contract verdicts: no contract is adopted yet | Accepted |
 | [045](045-mysql-family-sharing-boundary.md) | MySQL and MariaDB share one family library; forks are limited to negotiation, naming and MariaDB-only forms | Accepted |
+| [046](046-sqlite-engine-bindings-integers-no-worker.md) | SQLite engine: three bindings behind one embedded contract, a fixed integer rule, no worker, Durable Objects in the service class | Accepted |
 
 ## Template
 
