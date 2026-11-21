@@ -1,0 +1,13 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../../.build/engines/mysql",
+    "tsBuildInfoFile": "../../../.build/engines/mysql/tsconfig.tsbuildinfo"
+  },
+  "include": ["./**/*.ts"],
+  "references": [
+    { "path": "../mysql-family" },
+    { "path": "../../platform" }
+  ]
+}

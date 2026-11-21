@@ -18,7 +18,7 @@
     "NOTICE"
   ],
   "scripts": {
-    "typecheck": "bun check"
+    "typecheck": "tsc -b"
   },
   "devDependencies": {
     "@types/bun": "^1.4.5",
