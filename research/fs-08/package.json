@@ -1,0 +1,9 @@
+{
+  "name": "okdriver-research-fs-08",
+  "private": true,
+  "description": "FS-08 research scratch package. Not part of the published okdriver package.",
+  "type": "module",
+  "devDependencies": {
+    "better-sqlite3": "13.2.0"
+  }
+}

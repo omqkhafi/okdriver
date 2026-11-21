@@ -1,0 +1,98 @@
+{
+  "docs": {
+    "22": {
+      "url": "https://nodejs.org/docs/latest-v22.x/api/sqlite.html",
+      "reachable": true,
+      "title": "SQLite | Node.js v22.23.5 Documentation",
+      "stabilityIndex": "1.1",
+      "stabilityLabel": "Active development",
+      "historyExcerpt": "History Version Changes v22.13.0 SQLite is no longer behind --experimental-sqlite but still experimental. v22.5.0 Added in: v22.5.0 Stability: 1.1 - Active development. Source Code: lib/sqlite.js The node:sqlite module facilitates working with SQLite databases. To access it: import sqlite from 'node:sqlite' ; const sqlite = require ( 'node:sqlite' ); copy This module is only available under the no"
+    },
+    "24": {
+      "url": "https://nodejs.org/docs/latest-v24.x/api/sqlite.html",
+      "reachable": true,
+      "title": "SQLite | Node.js v24.22.3 Documentation",
+      "stabilityIndex": "1.2",
+      "stabilityLabel": "Release candidate",
+      "historyExcerpt": "History Version Changes v24.15.0 SQLite is now a release candidate. v23.4.0, v22.13.0 SQLite is no longer behind --experimental-sqlite but still experimental. v22.5.0 Added in: v22.5.0 Stability: 1.2 - Release candidate. Source Code: lib/sqlite.js The node:sqlite module facilitates working with SQLite databases. To access it: import sqlite from 'node:sqlite' ; const sqlite = require ( 'node:sqlite"
+    },
+    "26": {
+      "url": "https://nodejs.org/docs/latest-v26.x/api/sqlite.html",
+      "reachable": true,
+      "title": "SQLite | Node.js v26.13.1 Documentation",
+      "stabilityIndex": "1.2",
+      "stabilityLabel": "Release candidate",
+      "historyExcerpt": "History Version Changes v25.7.0 SQLite is now a release candidate. v23.4.0, v22.13.0 SQLite is no longer behind --experimental-sqlite but still experimental. Stability: 1.2 - Release candidate. The node:sqlite module facilitates working with SQLite databases. To access it: import sqlite from 'node:sqlite' ; const sq"
+    }
+  },
+  "runs": [
+    {
+      "release": "22.12.0",
+      "version": "v22.12.0",
+      "flags": [],
+      "result": {
+        "loads": false,
+        "code": "ERR_UNKNOWN_BUILTIN_MODULE",
+        "message": "No such built-in module: node:sqlite"
+      },
+      "warningOnStderr": null
+    },
+    {
+      "release": "22.12.0",
+      "version": "v22.12.0",
+      "flags": [
+        "--experimental-sqlite"
+      ],
+      "result": {
+        "loads": true,
+        "exports": 6,
+        "sqlite": "3.47.0"
+      },
+      "warningOnStderr": "ExperimentalWarning: SQLite is an experimental feature and might change at any time"
+    },
+    {
+      "release": "22.13.0",
+      "version": "v22.13.0",
+      "flags": [],
+      "result": {
+        "loads": true,
+        "exports": 4,
+        "sqlite": "3.47.2"
+      },
+      "warningOnStderr": "ExperimentalWarning: SQLite is an experimental feature and might change at any time"
+    },
+    {
+      "release": "22 (newest)",
+      "version": "v22.23.5",
+      "flags": [],
+      "result": {
+        "loads": true,
+        "exports": 5,
+        "sqlite": "3.54.1"
+      },
+      "warningOnStderr": "ExperimentalWarning: SQLite is an experimental feature and might change at any time"
+    },
+    {
+      "release": "24 (newest)",
+      "version": "v24.22.3",
+      "flags": [],
+      "result": {
+        "loads": true,
+        "exports": 6,
+        "sqlite": "3.54.1"
+      },
+      "warningOnStderr": null
+    },
+    {
+      "release": "26 (newest)",
+      "version": "v26.13.1",
+      "flags": [],
+      "result": {
+        "loads": true,
+        "exports": 8,
+        "sqlite": "3.54.1"
+      },
+      "warningOnStderr": null
+    }
+  ]
+}

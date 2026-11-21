@@ -33,3 +33,6 @@ logs/
 # FS-14 research scratch: third-party clone, node_modules, downloaded sources, result parquet (see research/fs-14/README.md)
 research/fs-14/work/
 research/fs-14/results/smoke/*/
+
+# FS-08 research scratch: database files, extension build, downloaded docs, logs (see research/fs-08/README.md)
+research/fs-08/work/

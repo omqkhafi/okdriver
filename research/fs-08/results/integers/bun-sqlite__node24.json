@@ -1,0 +1,14 @@
+{
+  "binding": "bun:sqlite",
+  "runtime": {
+    "id": "node24",
+    "name": "Node.js",
+    "version": "24.22.3"
+  },
+  "loaded": false,
+  "loadError": {
+    "name": "Error",
+    "message": "Only URLs with a scheme in: file, data, and node are supported by the default ESM loader. Received protocol 'bun:'",
+    "code": "ERR_UNSUPPORTED_ESM_URL_SCHEME"
+  }
+}

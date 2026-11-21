@@ -1,0 +1,29 @@
+# FS-08: local-only workerd config for the Durable Objects SQLite probe. No account, no deploy, no secrets.
+# Shape follows tests/runtime/workerd.capnp (services + a worker with ES modules), plus a DO namespace with SQLite storage.
+# scripts/run-do.sh substitutes @STORAGE@ and @PORT@ and writes the result under work/do/.
+using Workerd = import "/workerd/workerd.capnp";
+
+const config :Workerd.Config = (
+  services = [
+    (name = "main", worker = .mainWorker),
+    (name = "do-storage", disk = (path = "@STORAGE@", writable = true)),
+  ],
+  sockets = [
+    (name = "http", address = "127.0.0.1:@PORT@", http = (), service = "main"),
+  ],
+);
+
+const mainWorker :Workerd.Worker = (
+  modules = [
+    (name = "worker", esModule = embed "do-worker.mjs"),
+  ],
+  # Fixed and no later than the pinned workerd release, as in tests/runtime/workerd.capnp.
+  compatibilityDate = "2026-11-01",
+  bindings = [
+    (name = "PROBE", durableObjectNamespace = "Probe"),
+  ],
+  durableObjectNamespaces = [
+    (className = "Probe", uniqueKey = "fs08-probe", enableSql = true),
+  ],
+  durableObjectStorage = (localDisk = "do-storage"),
+);
