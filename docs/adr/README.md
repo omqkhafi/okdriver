@@ -1,6 +1,6 @@
 # Architecture Decision Records
 
-ADRs 001–041 were copied from roadmap section 19 in P0-T04. The roadmap is not part of this repository. The next ADR is 044. Name files `NNN-short-title.md`.
+ADRs 001–041 were copied from roadmap section 19 in P0-T04. The roadmap is not part of this repository. The next ADR is 045. Name files `NNN-short-title.md`.
 
 ## Index
 
@@ -49,6 +49,7 @@ ADRs 001–041 were copied from roadmap section 19 in P0-T04. The roadmap is not
 | [041](041-apache-2-0-license-with-notice.md) | Apache-2.0 license with NOTICE | Accepted |
 | [042](042-repository-layout.md) | Repository layout: plain folders under `src/` with TypeScript project references | Accepted |
 | [043](043-tag-triggered-stage-only-oidc-publishing.md) | Tag-triggered, stage-only OIDC publishing with no tokens | Accepted |
+| [044](044-fs-01-contract-verdicts-no-contract-is-adopted-yet.md) | FS-01 contract verdicts: no contract is adopted yet | Proposed |
 
 ## Template
 
