@@ -1,6 +1,6 @@
 # Architecture Decision Records
 
-ADRs 001–041 were copied from roadmap section 19 in P0-T04. The roadmap is not part of this repository. The next ADR is 045. Name files `NNN-short-title.md`.
+ADRs 001–041 were copied from roadmap section 19 in P0-T04. The roadmap is not part of this repository. The next ADR is 046. Name files `NNN-short-title.md`.
 
 ## Index
 
@@ -50,6 +50,7 @@ ADRs 001–041 were copied from roadmap section 19 in P0-T04. The roadmap is not
 | [042](042-repository-layout.md) | Repository layout: plain folders under `src/` with TypeScript project references | Accepted |
 | [043](043-tag-triggered-stage-only-oidc-publishing.md) | Tag-triggered, stage-only OIDC publishing with no tokens | Accepted |
 | [044](044-fs-01-contract-verdicts.md) | FS-01 contract verdicts: no contract is adopted yet | Accepted |
+| [045](045-mysql-family-sharing-boundary.md) | MySQL and MariaDB share one family library; forks are limited to negotiation, naming and MariaDB-only forms | Accepted |
 
 ## Template
 
