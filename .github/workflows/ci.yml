@@ -3,7 +3,7 @@
 # checks   The repo's own gates on the Bun pinned in .bun-version: install from the frozen
 #          lockfile, typecheck src/, typecheck the tests, run bun test.
 # node     Maintained Node.js lines. Each leg runs the runtime smoke test on that major,
-#          with no install step and no Bun. P0-T10 (ADR 029) decides the minimum and edits this matrix.
+#          with no install step and no Bun. The matrix is the supported lines per ADR 029.
 # bun      Bun "latest" (current stable release) and "canary" (informative only, not a gate).
 #          Smoke test only.
 # workerd  The workerd version pinned in package.json and bun.lock, run through `workerd test`

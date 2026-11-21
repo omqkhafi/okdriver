@@ -4,6 +4,8 @@ A verifiable, high-performance SQL driver platform for TypeScript — PostgreSQL
 
 **Status:** under active development, not usable yet. This package is a name placeholder and exposes no API.
 
+Requires Node.js 22 or newer.
+
 ## License
 
 Apache-2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
