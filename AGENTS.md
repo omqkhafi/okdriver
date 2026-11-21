@@ -5,7 +5,7 @@ PostgreSQL, MySQL, MariaDB and SQLite. It is under active development and not us
 
 ## Rules
 
-- Use `bun` and `bunx` only. No npm, pnpm, yarn or node.
+- Use `bun` and `bunx` as the package manager and script runner. No npm, pnpm or yarn.
 - Zero runtime dependencies.
 - No install scripts: no `preinstall`, `install`, `postinstall` or `prepare`.
 - License is Apache-2.0. Any adapted code keeps its attribution in `NOTICE`.

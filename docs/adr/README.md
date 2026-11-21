@@ -1,6 +1,6 @@
 # Architecture Decision Records
 
-Numbering continues from 042: the next ADR is `043`. Name files `NNN-short-title.md`.
+ADRs 001–041 already exist in the roadmap. The next ADR is 042. Name files `NNN-short-title.md`.
 
 ## Template
 
