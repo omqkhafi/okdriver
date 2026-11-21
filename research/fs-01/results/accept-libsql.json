@@ -1,0 +1,499 @@
+{
+  "engine": "libsql",
+  "class": "service",
+  "facts": {
+    "version": "3.47.0",
+    "params": {
+      "hrana": "v3",
+      "streams": "baton"
+    },
+    "observedTx": "idle"
+  },
+  "capabilities": {
+    "pipelining": false,
+    "protocolPrepared": true,
+    "interactiveTransactions": true,
+    "savepoints": false,
+    "returning": false,
+    "streamingResults": false,
+    "bulkLoad": false,
+    "notifications": false,
+    "changeStream": false,
+    "cancel": "none",
+    "int64": "bigint",
+    "multiResult": false
+  },
+  "claimed": [
+    "protocolPrepared",
+    "interactiveTransactions",
+    "int64"
+  ],
+  "checks": [
+    {
+      "check": "connect.ok",
+      "pass": true,
+      "detail": "facts={\"version\":\"3.47.0\",\"params\":{\"hrana\":\"v3\",\"streams\":\"baton\"},\"observedTx\":\"idle\"}"
+    },
+    {
+      "check": "capabilities.from-facts",
+      "pass": true,
+      "detail": "caps={\"pipelining\":false,\"protocolPrepared\":true,\"interactiveTransactions\":true,\"savepoints\":false,\"returning\":false,\"streamingResults\":false,\"bulkLoad\":false,\"notifications\":false,\"changeStream\":false,\"cancel\":\"none\",\"int64\":\"bigint\",\"multiResult\":false}"
+    },
+    {
+      "check": "capabilities.respond-to-facts",
+      "pass": true,
+      "detail": "with empty facts: protocolPrepared=false interactiveTransactions=false"
+    },
+    {
+      "check": "query.bigint",
+      "pass": true,
+      "detail": "got bigint 9007199254740993"
+    },
+    {
+      "check": "query.text",
+      "pass": true,
+      "detail": "got \"héllo wörld\""
+    },
+    {
+      "check": "query.outcome",
+      "pass": true,
+      "detail": "applied/none"
+    },
+    {
+      "check": "tx.begin-state-open",
+      "pass": true,
+      "detail": "state=open"
+    },
+    {
+      "check": "error.thrown-driver-error",
+      "pass": true,
+      "detail": "DriverError: SQLite error: UNIQUE constraint failed: fs01_kv.id"
+    },
+    {
+      "check": "error.class-constraint",
+      "pass": true,
+      "detail": "constraint"
+    },
+    {
+      "check": "error.vendor-untouched",
+      "pass": true,
+      "detail": "{\"code\":\"SQLITE_CONSTRAINT\"}"
+    },
+    {
+      "check": "error.rolled-back-after-error",
+      "pass": true,
+      "detail": "rows after rollback: []"
+    },
+    {
+      "check": "tx.uncommitted-invisible-external",
+      "pass": true,
+      "detail": "external read before commit: []"
+    },
+    {
+      "check": "tx.commit-state",
+      "pass": true,
+      "detail": "committed"
+    },
+    {
+      "check": "tx.commit-visible-external",
+      "pass": true,
+      "detail": "external read after commit: [\"2|commit-me\"]"
+    },
+    {
+      "check": "tx.rollback-state",
+      "pass": true,
+      "detail": "rolled-back"
+    },
+    {
+      "check": "tx.rollback-invisible-external",
+      "pass": true,
+      "detail": "external read after rollback: [\"2|commit-me\"]"
+    },
+    {
+      "check": "coordinator.no-leak",
+      "pass": true,
+      "detail": "{\"limit\":2,\"active\":0,\"queued\":0,\"maxActive\":1,\"admitted\":4,\"cancelledInQueue\":0,\"timedOutInQueue\":0}"
+    },
+    {
+      "check": "protocol.connections-recorded",
+      "pass": true,
+      "detail": "1 client connection(s) through the recorder"
+    },
+    {
+      "check": "protocol.sql-has-no-values",
+      "pass": true,
+      "detail": "12 Hrana execute requests"
+    },
+    {
+      "check": "protocol.value-in-args",
+      "pass": true,
+      "detail": "the 2^53+1 value was found as a typed integer argument"
+    },
+    {
+      "check": "differential.bunsql",
+      "pass": true,
+      "detail": "skipped: Bun.SQL has no libSQL/Hrana adapter"
+    },
+    {
+      "check": "cap.protocolPrepared",
+      "pass": true,
+      "detail": "requires protocol.sql-has-no-values + protocol.value-in-args"
+    },
+    {
+      "check": "cap.interactiveTransactions",
+      "pass": true,
+      "detail": "requires tx.commit-visible-external + tx.rollback-invisible-external"
+    },
+    {
+      "check": "cap.int64",
+      "pass": true,
+      "detail": "requires query.bigint"
+    }
+  ],
+  "expectations": [
+    {
+      "item": "error.statementOutcome",
+      "expected": "rejected-no-effects",
+      "observed": "rejected-no-effects",
+      "asExpected": true
+    },
+    {
+      "item": "error.transactionState",
+      "expected": "open",
+      "observed": "open",
+      "asExpected": true
+    },
+    {
+      "item": "error.retry",
+      "expected": "never",
+      "observed": "never",
+      "asExpected": true
+    },
+    {
+      "item": "error.phase",
+      "expected": "execute",
+      "observed": "execute",
+      "asExpected": true
+    }
+  ],
+  "differences": [],
+  "notes": [
+    "session state after the error: open"
+  ],
+  "protocol": [
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "select sqlite_version()",
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "N0UnA/852DoZe+PMh5FKrxRVueI71VaqWsE5UftmhOr9MrdRD/VjKe1X2EUAZNBG",
+        "requests": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "select ? as a, ? as b",
+              "args": [
+                {
+                  "type": "integer",
+                  "value": "9007199254740993"
+                },
+                {
+                  "type": "text",
+                  "value": "héllo wörld"
+                }
+              ],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          },
+          {
+            "type": "close"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "BEGIN",
+              "args": [],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "2csien9BNBCzRgBGtc+F3HPdLQPPn/ynQwM5n8gWlX6n6NE80/wNfkD+99J92xKa",
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "insert into fs01_kv (id, v) values (?, ?)",
+              "args": [
+                {
+                  "type": "integer",
+                  "value": "1"
+                },
+                {
+                  "type": "text",
+                  "value": "first"
+                }
+              ],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "2csien9BNBCzRgBGtc+F3bGjH/5PVexaFaZ/FyFH/O/WLQuoRGAtjkRrI95ukfS5",
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "insert into fs01_kv (id, v) values (?, ?)",
+              "args": [
+                {
+                  "type": "integer",
+                  "value": "1"
+                },
+                {
+                  "type": "text",
+                  "value": "second"
+                }
+              ],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "2csien9BNBCzRgBGtc+F3mTiolZYO9NDjVXlD5HZjhB6DRuojRJMidokvMYfPhmY",
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "ROLLBACK",
+              "args": [],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "2csien9BNBCzRgBGtc+F3zD7FIXzyW/KXuDya95h3K51yeZWTI76B32iRtCXPz9K",
+        "requests": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "BEGIN",
+              "args": [],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "bHEOkqQ0l6T8UHC9x52eL3kDkfjU+5/c+vvMmqzutmSITQ7b2hrpZ81RsbqYdFAd",
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "insert into fs01_kv (id, v) values (?, ?)",
+              "args": [
+                {
+                  "type": "integer",
+                  "value": "2"
+                },
+                {
+                  "type": "text",
+                  "value": "commit-me"
+                }
+              ],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "bHEOkqQ0l6T8UHC9x52eMBgxHhS9zAzVekgCTz8Ag3uDD+z/3Nde8RbI+NQjJdJS",
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "COMMIT",
+              "args": [],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "bHEOkqQ0l6T8UHC9x52eMZljiL1twm9zl77QitmytISbwb8Xzba31aZ1Q5PqoYBQ",
+        "requests": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "BEGIN",
+              "args": [],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "PhtcmnLckLETP9fsV50lsNPULtTBZLaYtGMuIty73xCg2NO79fGb5sXjYcvR7YF5",
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "insert into fs01_kv (id, v) values (?, ?)",
+              "args": [
+                {
+                  "type": "integer",
+                  "value": "3"
+                },
+                {
+                  "type": "text",
+                  "value": "rollback-me"
+                }
+              ],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "PhtcmnLckLETP9fsV50lsY3qj05bGiJcO4X9fB+ZsHRpqKsHGRvl3lGgh2awjSeC",
+        "requests": [
+          {
+            "type": "execute",
+            "stmt": {
+              "sql": "ROLLBACK",
+              "args": [],
+              "want_rows": true
+            }
+          },
+          {
+            "type": "get_autocommit"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/v3/pipeline",
+      "body": {
+        "baton": "PhtcmnLckLETP9fsV50lstGVJFTJuhsDLScWSen8s4TQgFT5s5pz8zSms7Mb0HLi",
+        "requests": [
+          {
+            "type": "close"
+          }
+        ]
+      }
+    }
+  ]
+}

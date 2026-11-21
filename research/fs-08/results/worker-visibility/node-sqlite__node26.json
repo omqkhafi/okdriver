@@ -1,0 +1,23 @@
+{
+  "binding": "node:sqlite",
+  "runtime": {
+    "id": "node26",
+    "name": "Node.js",
+    "version": "26.13.1"
+  },
+  "autocommitVisible": {
+    "writes": 100,
+    "workerSawIt": 100
+  },
+  "uncommittedInvisible": {
+    "workerCountDuringTx": 100,
+    "workerCountAfterCommit": 101,
+    "expectedDuring": 100,
+    "expectedAfter": 101
+  },
+  "writerDuringLongRead": {
+    "longReadMs": 343,
+    "fiftyAutocommitWritesMs": 9.9,
+    "writerBlocked": false
+  }
+}

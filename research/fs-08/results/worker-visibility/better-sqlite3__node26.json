@@ -1,0 +1,23 @@
+{
+  "binding": "better-sqlite3",
+  "runtime": {
+    "id": "node26",
+    "name": "Node.js",
+    "version": "26.13.1"
+  },
+  "autocommitVisible": {
+    "writes": 100,
+    "workerSawIt": 100
+  },
+  "uncommittedInvisible": {
+    "workerCountDuringTx": 100,
+    "workerCountAfterCommit": 101,
+    "expectedDuring": 100,
+    "expectedAfter": 101
+  },
+  "writerDuringLongRead": {
+    "longReadMs": 401,
+    "fiftyAutocommitWritesMs": 0.4,
+    "writerBlocked": false
+  }
+}

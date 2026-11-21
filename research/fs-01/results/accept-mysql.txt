@@ -1,0 +1,38 @@
+== accept mysql
+CHECK connect.ok PASS facts={"version":"8.4.13","params":{"authPlugin":"caching_sha2_password","serverCapabilities":"3758096383","connectionId":"12"},"observedTx":"idle"}
+CHECK capabilities.from-facts PASS caps={"pipelining":false,"protocolPrepared":true,"interactiveTransactions":true,"savepoints":false,"returning":false,"streamingResults":false,"bulkLoad":false,"notifications":false,"changeStream":false,"cancel":"none","int64":"bigint","multiResult":false}
+CHECK capabilities.respond-to-facts PASS with empty facts: protocolPrepared=false interactiveTransactions=false
+CHECK query.bigint PASS got bigint 9007199254740993
+CHECK query.text PASS got "héllo wörld"
+CHECK query.outcome PASS applied/none
+CHECK tx.begin-state-open PASS state=open
+CHECK error.thrown-driver-error PASS DriverError: Duplicate entry for key 'fs01_kv.PRIMARY'
+CHECK error.class-constraint PASS constraint
+CHECK error.vendor-untouched PASS {"code":1062,"sqlState":"23000"}
+ERROR {"class":"constraint","phase":"execute","statementOutcome":"rejected-no-effects","transactionState":"open","retry":"never","vendor":{"code":1062,"sqlState":"23000"},"redacted":true,"message":"Duplicate entry for key 'fs01_kv.PRIMARY'"}
+EXPECT error.statementOutcome: expected="rejected-no-effects" observed="rejected-no-effects" as-expected
+EXPECT error.transactionState: expected="open" observed="open" as-expected
+EXPECT error.retry: expected="never" observed="never" as-expected
+EXPECT error.phase: expected="execute" observed="execute" as-expected
+CHECK error.rolled-back-after-error PASS rows after rollback: []
+CHECK tx.uncommitted-invisible-external PASS external read before commit: []
+CHECK tx.commit-state PASS committed
+CHECK tx.commit-visible-external PASS external read after commit: ["2|commit-me"]
+CHECK tx.rollback-state PASS rolled-back
+CHECK tx.rollback-invisible-external PASS external read after rollback: ["2|commit-me"]
+CHECK coordinator.no-leak PASS {"limit":2,"active":0,"queued":0,"maxActive":1,"admitted":4,"cancelledInQueue":0,"timedOutInQueue":0}
+CHECK protocol.connections-recorded PASS 1 client connection(s) through the recorder
+CHECK protocol.prepared-used PASS 6 COM_STMT_PREPARE, 6 COM_STMT_EXECUTE
+CHECK protocol.sql-has-no-values PASS no COM_QUERY or PREPARE text contains a bound value
+CHECK protocol.text-queries-have-no-params PASS COM_QUERY texts: ["BEGIN","ROLLBACK","BEGIN","COMMIT","BEGIN","ROLLBACK"]
+CHECK protocol.no-statement-leak PASS 6 COM_STMT_PREPARE and 6 COM_STMT_CLOSE: every prepared statement is closed, including after the failed EXECUTE
+CHECK protocol.value-in-execute PASS the 2^53+1 value was found as 8 little-endian bytes in a COM_STMT_EXECUTE
+CHECK protocol.server-log PASS server general log shows Prepare of the statement with ? placeholders
+CHECK differential.bunsql-values PASS Bun.SQL returned a=9007199254740993 (string), b="héllo wörld"; skeleton returned a=9007199254740993 (bigint)
+CHECK differential.bunsql-error-code PASS Bun.SQL duplicate-key error code=1062; skeleton vendor expected=1062
+CHECK cap.protocolPrepared PASS requires protocol.prepared-used + protocol.sql-has-no-values
+CHECK cap.interactiveTransactions PASS requires tx.commit-visible-external + tx.rollback-invisible-external
+CHECK cap.int64 PASS requires query.bigint
+CLAIMED protocolPrepared,interactiveTransactions,int64
+NOT-CLAIMED pipelining,savepoints,returning,streamingResults,bulkLoad,notifications,changeStream,cancel,multiResult
+RESULT mysql: 29/29 checks passed, 0 difference(s) from the expected mapping

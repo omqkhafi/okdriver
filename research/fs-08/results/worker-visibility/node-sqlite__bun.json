@@ -1,0 +1,23 @@
+{
+  "binding": "node:sqlite",
+  "runtime": {
+    "id": "bun",
+    "name": "Bun",
+    "version": "1.4.5"
+  },
+  "autocommitVisible": {
+    "writes": 100,
+    "workerSawIt": 100
+  },
+  "uncommittedInvisible": {
+    "workerCountDuringTx": 100,
+    "workerCountAfterCommit": 101,
+    "expectedDuring": 100,
+    "expectedAfter": 101
+  },
+  "writerDuringLongRead": {
+    "longReadMs": 325,
+    "fiftyAutocommitWritesMs": 9.5,
+    "writerBlocked": false
+  }
+}

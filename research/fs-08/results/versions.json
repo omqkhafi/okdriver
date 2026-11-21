@@ -1,0 +1,42 @@
+{
+  "node": {
+    "n22": "v22.23.5",
+    "n24": "v24.22.3",
+    "n26": "v26.13.1",
+    "n22.12.0": "v22.12.0",
+    "n22.13.0": "v22.13.0"
+  },
+  "bun": {
+    "version": "1.4.5",
+    "revision": "a7733435cf40429e3b35c36072769df2052b80f1",
+    "pinnedByRepo": "1.4.5"
+  },
+  "bunInstalledInThisContainerNotUsed": {
+    "version": "1.4.4",
+    "bundledSqlite": "3.53.4"
+  },
+  "bundledSqlite": {
+    "better-sqlite3__bun": "3.54.1",
+    "better-sqlite3__node22": "3.54.1",
+    "better-sqlite3__node24": "3.54.1",
+    "better-sqlite3__node26": "3.54.1",
+    "bun-sqlite__bun": "3.54.1",
+    "node-sqlite__bun": "3.54.1",
+    "node-sqlite__node22": "3.54.1",
+    "node-sqlite__node24": "3.54.1",
+    "node-sqlite__node26": "3.54.1"
+  },
+  "betterSqlite3": "13.2.0",
+  "nodeAddonApi": "8.9.2",
+  "researchLockfileSha256": "1d856f0ad8b377e524801bc51525f296b77168324bf8c37d367a2b749de1acfa",
+  "python": "3.13.18 sqlite 3.53.1",
+  "workerd": "workerd 2026-11-18",
+  "sqlite3Cli": "not installed",
+  "host": {
+    "kernel": "6.18.44-fc-v726",
+    "cpus": 4,
+    "cpuModel": "Intel(R) Xeon(R) Processor @ 2.30GHz",
+    "memGiB": 16
+  },
+  "nodeSqliteRuntimeNotes": "node:sqlite bundles its own SQLite per Node release; see results/node-sqlite-stability.json for 22.12.0 and 22.13.0"
+}

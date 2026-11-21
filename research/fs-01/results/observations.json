@@ -1,0 +1,27 @@
+{
+  "postgres": {
+    "select 1": "number 1",
+    "decimal 1.5": "string 1.5",
+    "x'deadbeef'": "Uint8Array deadbeef"
+  },
+  "mysql": {
+    "select 1": "bigint 1",
+    "decimal 1.5": "string 1.5",
+    "x'deadbeef'": "Uint8Array deadbeef"
+  },
+  "mariadb": {
+    "select 1": "number 1",
+    "decimal 1.5": "string 1.5",
+    "x'deadbeef'": "Uint8Array deadbeef"
+  },
+  "sqlite": {
+    "select 1": "bigint 1",
+    "decimal 1.5": "number 1.5",
+    "x'deadbeef'": "Uint8Array deadbeef"
+  },
+  "libsql": {
+    "select 1": "bigint 1",
+    "decimal 1.5": "number 1.5",
+    "x'deadbeef'": "Uint8Array deadbeef"
+  }
+}
