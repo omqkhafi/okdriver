@@ -1,0 +1,18 @@
+{
+  "server": "ma123",
+  "serverOffersSslCapability": true,
+  "have_ssl": "YES",
+  "require_secure_transport": "OFF",
+  "sslVersionsOffered": "TLSv1.2,TLSv1.3",
+  "upgradeWithoutVerification": {
+    "protocol": "TLSv1.3",
+    "cipher": "TLS_AES_128_GCM_SHA256",
+    "certSubject": "MariaDB Server",
+    "certIssuer": "MariaDB Server",
+    "selfSigned": true,
+    "sanPresent": false,
+    "validTo": "Nov 18 20:06:01 2036 GMT",
+    "queryOverTls": "1"
+  },
+  "upgradeWithVerification": "self signed certificate"
+}

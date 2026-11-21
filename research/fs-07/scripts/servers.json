@@ -1,0 +1,11 @@
+[
+  {"id":"my84",  "family":"mysql",   "image":"mysql:8.4",     "port":34001},
+  {"id":"my97",  "family":"mysql",   "image":"mysql:9.7",     "port":34002},
+  {"id":"my2610","family":"mysql",   "image":"mysql:26.10",   "port":34003},
+  {"id":"ma106", "family":"mariadb", "image":"mariadb:10.6",  "port":34004},
+  {"id":"ma1011","family":"mariadb", "image":"mariadb:10.11", "port":34005},
+  {"id":"ma114", "family":"mariadb", "image":"mariadb:11.4",  "port":34006},
+  {"id":"ma118", "family":"mariadb", "image":"mariadb:11.8",  "port":34007},
+  {"id":"ma123", "family":"mariadb", "image":"mariadb:12.3",  "port":34008},
+  {"id":"ma130", "family":"mariadb", "image":"mariadb:13.0",  "port":34009}
+]

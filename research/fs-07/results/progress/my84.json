@@ -1,0 +1,11 @@
+{
+  "server": "my84",
+  "progressCapabilityOffered": false,
+  "progressCapabilityNegotiated": false,
+  "packetsDuringAlter": [
+    {
+      "header": "0x0"
+    }
+  ],
+  "progressPacketCount": 0
+}

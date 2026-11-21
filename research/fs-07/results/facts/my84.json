@@ -1,0 +1,180 @@
+{
+  "id": "my84",
+  "image": "mysql:8.4",
+  "greeting": {
+    "serverVersion": "8.4.13",
+    "protocolVersion": 10,
+    "authPlugin": "caching_sha2_password",
+    "charset": 255,
+    "status": 2,
+    "capabilities": "0xdfffffff",
+    "capabilityNames": [
+      "LONG_PASSWORD",
+      "FOUND_ROWS",
+      "LONG_FLAG",
+      "CONNECT_WITH_DB",
+      "NO_SCHEMA",
+      "COMPRESS",
+      "ODBC",
+      "LOCAL_FILES",
+      "IGNORE_SPACE",
+      "PROTOCOL_41",
+      "INTERACTIVE",
+      "SSL",
+      "IGNORE_SIGPIPE",
+      "TRANSACTIONS",
+      "SECURE_CONNECTION",
+      "MULTI_STATEMENTS",
+      "MULTI_RESULTS",
+      "PS_MULTI_RESULTS",
+      "PLUGIN_AUTH",
+      "CONNECT_ATTRS",
+      "PLUGIN_AUTH_LENENC_CLIENT_DATA",
+      "CAN_HANDLE_EXPIRED_PASSWORDS",
+      "SESSION_TRACK",
+      "DEPRECATE_EOF"
+    ],
+    "bit0LongPassword": true,
+    "reserved": "00000000000000000000",
+    "mariadbExtWord": 0,
+    "mariadbExtNames": [],
+    "detected": "mysql",
+    "profile": "mysql",
+    "saltLength": 20
+  },
+  "negotiated": {
+    "caps": "0x1fea205",
+    "ext": 0
+  },
+  "variables": {
+    "authentication_policy": "*,,",
+    "autocommit": "ON",
+    "binlog_format": "ROW",
+    "binlog_row_metadata": "MINIMAL",
+    "character_set_client": "utf8mb4",
+    "character_set_connection": "utf8mb4",
+    "character_set_results": "utf8mb4",
+    "character_set_server": "utf8mb4",
+    "collation_connection": "utf8mb4_general_ci",
+    "collation_server": "utf8mb4_0900_ai_ci",
+    "cte_max_recursion_depth": "1000",
+    "default_collation_for_utf8mb4": "utf8mb4_0900_ai_ci",
+    "explicit_defaults_for_timestamp": "ON",
+    "gtid_mode": "OFF",
+    "local_infile": "OFF",
+    "log_bin": "ON",
+    "lower_case_table_names": "0",
+    "max_allowed_packet": "67108864",
+    "max_prepared_stmt_count": "16382",
+    "net_read_timeout": "30",
+    "net_write_timeout": "60",
+    "performance_schema": "ON",
+    "protocol_compression_algorithms": "zlib,zstd,uncompressed",
+    "read_only": "OFF",
+    "require_secure_transport": "OFF",
+    "resultset_metadata": "FULL",
+    "session_track_gtids": "OFF",
+    "session_track_schema": "ON",
+    "session_track_state_change": "OFF",
+    "session_track_system_variables": "time_zone,autocommit,character_set_client,character_set_results,character_set_connection",
+    "session_track_transaction_info": "OFF",
+    "sql_mode": "ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION",
+    "sql_notes": "ON",
+    "ssl_cert": "server-cert.pem",
+    "super_read_only": "OFF",
+    "transaction_isolation": "REPEATABLE-READ",
+    "version": "8.4.13",
+    "version_comment": "MySQL Community Server - GPL",
+    "wait_timeout": "28800"
+  },
+  "connectionCollationWithCharset45": [
+    "utf8mb4",
+    "utf8mb4_general_ci",
+    "utf8mb4"
+  ],
+  "handshakeCharsetIds": {
+    "8": "latin1_swedish_ci",
+    "33": "utf8mb3_general_ci",
+    "45": "utf8mb4_general_ci",
+    "46": "utf8mb4_bin",
+    "63": "binary",
+    "224": "utf8mb4_unicode_ci",
+    "255": "utf8mb4_0900_ai_ci"
+  },
+  "collationIds": [
+    [
+      "8n",
+      "latin1_swedish_ci"
+    ],
+    [
+      "33n",
+      "utf8mb3_general_ci"
+    ],
+    [
+      "45n",
+      "utf8mb4_general_ci"
+    ],
+    [
+      "46n",
+      "utf8mb4_bin"
+    ],
+    [
+      "63n",
+      "binary"
+    ],
+    [
+      "224n",
+      "utf8mb4_unicode_ci"
+    ],
+    [
+      "255n",
+      "utf8mb4_0900_ai_ci"
+    ]
+  ],
+  "collationCount": "286n",
+  "defaultAuthPluginsLoaded": [
+    [
+      "caching_sha2_password",
+      "ACTIVE"
+    ],
+    [
+      "mysql_native_password",
+      "DISABLED"
+    ],
+    [
+      "sha256_password",
+      "ACTIVE"
+    ]
+  ],
+  "rootUsers": [
+    [
+      "root",
+      "%",
+      "caching_sha2_password"
+    ],
+    [
+      "root",
+      "localhost",
+      "caching_sha2_password"
+    ]
+  ],
+  "newUserWithPasswordGetsPlugin": "caching_sha2_password",
+  "connectAttrsSeenByServer": [
+    [
+      "_client_name",
+      "okdriver-fs07"
+    ],
+    [
+      "_client_version",
+      "0"
+    ],
+    [
+      "_os",
+      "linux"
+    ],
+    [
+      "_pid",
+      "5096"
+    ]
+  ]
+}

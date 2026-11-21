@@ -1,0 +1,7 @@
+{
+  "server": "ma114",
+  "variableRedirectUrl": "exists",
+  "setGlobal": "ok",
+  "stateInHandshakeOk": [],
+  "stateInNextOk": "a result set (no OK packet)"
+}

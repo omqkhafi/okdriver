@@ -1,0 +1,9 @@
+{
+  "server": "ma106",
+  "serverOffersSslCapability": false,
+  "have_ssl": "DISABLED",
+  "require_secure_transport": "OFF",
+  "sslVersionsOffered": "TLSv1.2,TLSv1.3",
+  "upgradeWithoutVerification": "server does not offer TLS",
+  "upgradeWithVerification": "server does not offer TLS"
+}

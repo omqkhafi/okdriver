@@ -1,0 +1,18 @@
+{
+  "server": "my97",
+  "serverOffersSslCapability": true,
+  "have_ssl": "n/a",
+  "require_secure_transport": "OFF",
+  "sslVersionsOffered": "TLSv1.2,TLSv1.3",
+  "upgradeWithoutVerification": {
+    "protocol": "TLSv1.3",
+    "cipher": "TLS_AES_128_GCM_SHA256",
+    "certSubject": "MySQL_Server_9.7.4_Auto_Generated_Server_Certificate",
+    "certIssuer": "MySQL_Server_9.7.4_Auto_Generated_CA_Certificate",
+    "selfSigned": false,
+    "sanPresent": false,
+    "validTo": "Nov 18 20:05:52 2036 GMT",
+    "queryOverTls": "1"
+  },
+  "upgradeWithVerification": "self signed certificate in certificate chain"
+}

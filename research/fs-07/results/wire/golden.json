@@ -1,0 +1,4910 @@
+{
+  "refVersions": {
+    "mysql2": "3.24.6",
+    "mariadb": "3.5.5"
+  },
+  "servers": {
+    "my84": [
+      {
+        "client": "mysql2",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(no DEPRECATE_EOF)",
+          "clientCaps": "0x18baf3cf",
+          "protoCaps": "0xfea20d",
+          "clientExt": 0,
+          "protoExt": 0,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17010000000801000000020001088000fd000000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17010000000801000000020001088000fd000000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "170300000000010000000001fd00027070",
+        "clientHex": "17020000000801000000010001fd0000027070"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "170300000000010000000001fd00027070",
+        "clientHex": "17020000000801000000010001fd0000027070"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0x1bea30a",
+          "protoCaps": "0x1fea20d",
+          "clientExt": 0,
+          "protoExt": 0,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1701000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1701000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_RESET_CONNECTION",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0x19bfa28d",
+          "protoCaps": "0x1fea20d",
+          "clientExt": 0,
+          "protoExt": 0,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_PING",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "\u0000\u0001select @@version_comment limit 1",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "\u0000\u0001select $$",
+        "result": "only sent by this client"
+      }
+    ],
+    "my97": [
+      {
+        "client": "mysql2",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(no DEPRECATE_EOF)",
+          "clientCaps": "0x18baf3cf",
+          "protoCaps": "0xfea20d",
+          "clientExt": 0,
+          "protoExt": 0,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17010000000801000000020001088000fd000000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17010000000801000000020001088000fd000000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "170300000000010000000001fd00027070",
+        "clientHex": "17020000000801000000010001fd0000027070"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "170300000000010000000001fd00027070",
+        "clientHex": "17020000000801000000010001fd0000027070"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0x1bea30a",
+          "protoCaps": "0x1fea20d",
+          "clientExt": 0,
+          "protoExt": 0,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1701000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1701000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_RESET_CONNECTION",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0x19bfa28d",
+          "protoCaps": "0x1fea20d",
+          "clientExt": 0,
+          "protoExt": 0,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_PING",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "\u0000\u0001select @@version_comment limit 1",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "\u0000\u0001select $$",
+        "result": "only sent by this client"
+      }
+    ],
+    "my2610": [
+      {
+        "client": "mysql2",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(no DEPRECATE_EOF)",
+          "clientCaps": "0x18baf3cf",
+          "protoCaps": "0xfea20d",
+          "clientExt": 0,
+          "protoExt": 0,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17010000000801000000020001088000fd000000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17010000000801000000020001088000fd000000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "170300000000010000000001fd00027070",
+        "clientHex": "17020000000801000000010001fd0000027070"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "170300000000010000000001fd00027070",
+        "clientHex": "17020000000801000000010001fd0000027070"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0x1bea30a",
+          "protoCaps": "0x1fea20d",
+          "clientExt": 0,
+          "protoExt": 0,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1701000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1701000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1701000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_RESET_CONNECTION",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0x19bfa28d",
+          "protoCaps": "0x1fea20d",
+          "clientExt": 0,
+          "protoExt": 0,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_PING",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "note": "identical apart from the 2-byte CLIENT_QUERY_ATTRIBUTES prefix (00 01) before the SQL",
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "\u0000\u0001select @@version_comment limit 1",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "\u0000\u0001select $$",
+        "result": "only sent by this client"
+      }
+    ],
+    "ma106": [
+      {
+        "client": "mysql2",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(no DEPRECATE_EOF)",
+          "clientCaps": "0x8baf3ce",
+          "protoCaps": "0xfea20c",
+          "clientExt": 8,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(+CACHE_METADATA)",
+          "clientCaps": "0x1bea30a",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 28,
+          "protoExt": 28,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17ffffffff000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "170a000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_RESET_CONNECTION",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0xbfa28c",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 29,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_PING",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "result": "not sent by this client"
+      }
+    ],
+    "ma1011": [
+      {
+        "client": "mysql2",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(no DEPRECATE_EOF)",
+          "clientCaps": "0x8baf3ce",
+          "protoCaps": "0xfea20c",
+          "clientExt": 8,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(+CACHE_METADATA)",
+          "clientCaps": "0x1bea30a",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 28,
+          "protoExt": 28,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17ffffffff000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "170a000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_RESET_CONNECTION",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0xbfa28c",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 29,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_PING",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "result": "not sent by this client"
+      }
+    ],
+    "ma114": [
+      {
+        "client": "mysql2",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(no DEPRECATE_EOF)",
+          "clientCaps": "0x8baf3ce",
+          "protoCaps": "0xfea20c",
+          "clientExt": 8,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(+CACHE_METADATA)",
+          "clientCaps": "0x1bea30a",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 28,
+          "protoExt": 28,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17ffffffff000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "170a000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_RESET_CONNECTION",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0xbfa28c",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 29,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_PING",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "result": "not sent by this client"
+      }
+    ],
+    "ma118": [
+      {
+        "client": "mysql2",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(no DEPRECATE_EOF)",
+          "clientCaps": "0x8baf3ce",
+          "protoCaps": "0xfea20c",
+          "clientExt": 8,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(+CACHE_METADATA)",
+          "clientCaps": "0x1bea30a",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 60,
+          "protoExt": 28,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17ffffffff000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "170a000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_RESET_CONNECTION",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0xbfa28c",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 29,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_PING",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "result": "not sent by this client"
+      }
+    ],
+    "ma123": [
+      {
+        "client": "mysql2",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(no DEPRECATE_EOF)",
+          "clientCaps": "0x8baf3ce",
+          "protoCaps": "0xfea20c",
+          "clientExt": 8,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(+CACHE_METADATA)",
+          "clientCaps": "0x1bea30a",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 60,
+          "protoExt": 28,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17ffffffff000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "170a000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_RESET_CONNECTION",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0xbfa28c",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 29,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_PING",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "result": "not sent by this client"
+      }
+    ],
+    "ma130": [
+      {
+        "client": "mysql2",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(no DEPRECATE_EOF)",
+          "clientCaps": "0x8baf3ce",
+          "protoCaps": "0xfea20c",
+          "clientExt": 8,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1708000000000100000000010800fd0000000000000000000171",
+        "clientHex": "1706000000000100000000010500fd0000000000000000000171"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mysql2",
+        "label": "COM_STMT_CLOSE",
+        "result": "only sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "handshake": {
+          "matchedPrototypeRun": "prototype(+CACHE_METADATA)",
+          "clientCaps": "0x1bea30a",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 60,
+          "protoExt": 28,
+          "tls": false,
+          "deprecateEof": true,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "17ffffffff000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": false,
+        "serverReplyKinds": "same shape",
+        "prototypeHex": "1702000000000100000000010800fd0000000000000000000171",
+        "clientHex": "170a000000000100000000010300fd00000000000171"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape",
+        "note": "reference used the placeholder statement id 0xFFFFFFFF (prepare-and-execute without waiting)"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_EXECUTE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_STMT_CLOSE",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_PING",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_RESET_CONNECTION",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "mariadb",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "handshake": {
+          "matchedPrototypeRun": "prototype",
+          "clientCaps": "0xbfa28c",
+          "protoCaps": "0x1fea20c",
+          "clientExt": 29,
+          "protoExt": 12,
+          "tls": false,
+          "deprecateEof": false,
+          "authOutcome": "ok"
+        }
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "do 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select 1 as a, 'x' as b, null as c",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select cast(7 as signed) i, cast(7 as un",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "drop table if exists fs07.t1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "create table fs07.t1 (id bigint unsigned",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "insert into fs07.t1 (v, d, ts, j) values",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.t1 order by id",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "DIFFERENT SHAPE"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "update fs07.t1 set v = 'z' where id = 1",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "select id, v, d, ts, j from fs07.t1 wher",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_PREPARE",
+        "sql": "insert into fs07.t1 (v) values (?)",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_RESET",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_EXECUTE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_STMT_CLOSE",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_PING",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_RESET_CONNECTION",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "use fs07",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select * from fs07.no_such_table",
+        "requestBytesEqual": true,
+        "serverReplyKinds": "same shape"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "selec 1",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "set autocommit = 0",
+        "result": "not sent by this client"
+      },
+      {
+        "client": "cli",
+        "label": "COM_QUERY",
+        "sql": "select @@autocommit",
+        "result": "not sent by this client"
+      }
+    ]
+  }
+}

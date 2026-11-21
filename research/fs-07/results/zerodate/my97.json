@@ -1,0 +1,15 @@
+{
+  "server": "my97",
+  "sql_mode": "ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION",
+  "zero date": "ERR 1292: Incorrect date value: '0000-00-00' for column 'd' at row 1",
+  "zero day in date": "ERR 1292: Incorrect date value: '2020-01-00' for column 'd' at row 1",
+  "zero datetime": "ERR 1292: Incorrect datetime value: '0000-00-00 00:00:00' for column '",
+  "time 838:59:59": "accepted",
+  "time 838:59:59.5": "ERR 1292: Incorrect time value: '838:59:59.5' for column 't' at row 1",
+  "time 839:00:00": "ERR 1292: Incorrect time value: '839:00:00' for column 't' at row 1",
+  "year 2156": "ERR 1264: Out of range value for column 'y' at row 1",
+  "datetime year 10000": "ERR 1292: Incorrect datetime value: '10000-01-01 00:00:00' for column ",
+  "storedRows": [
+    "NULL | NULL | 838:59:59.000000 | NULL"
+  ]
+}

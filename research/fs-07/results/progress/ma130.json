@@ -1,0 +1,39 @@
+{
+  "server": "ma130",
+  "progressCapabilityOffered": true,
+  "progressCapabilityNegotiated": true,
+  "packetsDuringAlter": [
+    {
+      "progressPacket": true,
+      "stage": 1,
+      "maxStage": 4,
+      "progressPermille": 1953,
+      "info": "copy to tmp table"
+    },
+    {
+      "progressPacket": true,
+      "stage": 2,
+      "maxStage": 4,
+      "progressPermille": 0,
+      "info": "Enabling keys"
+    },
+    {
+      "progressPacket": true,
+      "stage": 3,
+      "maxStage": 4,
+      "progressPermille": 0,
+      "info": "Enabling keys"
+    },
+    {
+      "progressPacket": true,
+      "stage": 4,
+      "maxStage": 4,
+      "progressPermille": 0,
+      "info": "After apply log event"
+    },
+    {
+      "header": "0x0"
+    }
+  ],
+  "progressPacketCount": 4
+}

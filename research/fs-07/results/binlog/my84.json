@@ -1,0 +1,53 @@
+{
+  "server": "my84",
+  "variants": {
+    "default": {
+      "binlog_row_metadata": "MINIMAL",
+      "binlog_format": "ROW",
+      "tableMapEvent": [
+        {
+          "pos": 818,
+          "eventBytes": 69,
+          "info": "table_id: 87 (fs07.bl)"
+        }
+      ],
+      "gtidEventInfo": null,
+      "annotateRowsInfo": null,
+      "eventTypesSeen": [
+        "Format_desc",
+        "Previous_gtids",
+        "Anonymous_Gtid",
+        "Query",
+        "Table_map",
+        "Write_rows",
+        "Xid",
+        "Rotate"
+      ],
+      "imageTool": "mysqlbinlog is not in the mysql:8.4 image"
+    },
+    "FULL": {
+      "binlog_row_metadata": "FULL",
+      "binlog_format": "ROW",
+      "tableMapEvent": [
+        {
+          "pos": 818,
+          "eventBytes": 103,
+          "info": "table_id: 87 (fs07.bl)"
+        }
+      ],
+      "gtidEventInfo": null,
+      "annotateRowsInfo": null,
+      "eventTypesSeen": [
+        "Format_desc",
+        "Previous_gtids",
+        "Anonymous_Gtid",
+        "Query",
+        "Table_map",
+        "Write_rows",
+        "Xid",
+        "Rotate"
+      ],
+      "imageTool": "mysqlbinlog is not in the mysql:8.4 image"
+    }
+  }
+}

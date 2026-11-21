@@ -1,0 +1,15 @@
+{
+  "server": "ma123",
+  "variableRedirectUrl": "exists",
+  "setGlobal": "ok",
+  "stateInHandshakeOk": [
+    "0:·autocommit·ON",
+    "0:·time_zone·SYSTEM",
+    "0:·character_set_client·utf8mb4",
+    "0:·character_set_connection·utf8mb4",
+    "0:·character_set_results·utf8mb4",
+    "0:·redirect_url·mariadb://127.0.0.1:34001",
+    "1:·"
+  ],
+  "stateInNextOk": "a result set (no OK packet)"
+}

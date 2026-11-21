@@ -1,0 +1,31 @@
+{
+  "server": "ma118",
+  "defaultMaxAllowedPacketBeforeTest": "16777216",
+  "client payload exactly 0xFFFFFF": "ok, server counted 16777197 bytes",
+  "client payload 0xFFFFFF + 1": "ok, server counted 16777198 bytes",
+  "client payload 2 x 0xFFFFFF": "ok, server counted 33554412 bytes",
+  "server row value 0xFFFFFF + 5 bytes": "ok, client received 16777220 bytes",
+  "server row packet of exactly 0xFFFFFF payload bytes": "ok, 16777206 bytes",
+  "proxyLogicalPacketsOver16MB": [
+    {
+      "dir": "c2s",
+      "seq": 0,
+      "logicalBytes": 16777215
+    },
+    {
+      "dir": "c2s",
+      "seq": 0,
+      "logicalBytes": 16777216
+    },
+    {
+      "dir": "c2s",
+      "seq": 0,
+      "logicalBytes": 33554430
+    },
+    {
+      "dir": "s2c",
+      "seq": 3,
+      "logicalBytes": 16777229
+    }
+  ]
+}

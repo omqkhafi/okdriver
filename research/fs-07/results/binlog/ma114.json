@@ -1,0 +1,79 @@
+{
+  "server": "ma114",
+  "variants": {
+    "default": {
+      "binlog_row_metadata": "NO_LOG",
+      "binlog_format": "ROW",
+      "tableMapEvent": [
+        {
+          "pos": 870,
+          "eventBytes": 60,
+          "info": "table_id: 18 (fs07.bl)"
+        }
+      ],
+      "gtidEventInfo": "GTID 0-1-1",
+      "annotateRowsInfo": "insert into fs07.bl values (1, 'é', 'y', b'101', 12.34, -5, 0x0102)",
+      "eventTypesSeen": [
+        "Format_desc",
+        "Gtid_list",
+        "Binlog_checkpoint",
+        "Gtid",
+        "Query",
+        "Annotate_rows",
+        "Table_map",
+        "Write_rows_v1",
+        "Xid",
+        "Rotate"
+      ],
+      "imageTool": "mariadb-binlog",
+      "rowImageLines": [
+        "### INSERT INTO `fs07`.`bl`",
+        "### SET",
+        "###   @1=1 /* INT meta=0 nullable=0 is_null=0 */",
+        "###   @2='é' /* VARSTRING(40) meta=40 nullable=1 is_null=0 */",
+        "###   @3=2 /* ENUM(1 byte) meta=63233 nullable=1 is_null=0 */",
+        "###   @4=b'101' /* BIT(3) meta=3 nullable=1 is_null=0 */",
+        "###   @5=12.34 /* DECIMAL(5,2) meta=1282 nullable=1 is_null=0 */",
+        "###   @6=-5 (251) /* TINYINT meta=0 nullable=1 is_null=0 */",
+        "###   @7='\\x01\\x02' /* BLOB/TEXT meta=2 nullable=1 is_null=0 */"
+      ]
+    },
+    "FULL": {
+      "binlog_row_metadata": "FULL",
+      "binlog_format": "ROW",
+      "tableMapEvent": [
+        {
+          "pos": 870,
+          "eventBytes": 100,
+          "info": "table_id: 18 (fs07.bl)"
+        }
+      ],
+      "gtidEventInfo": "GTID 0-1-1",
+      "annotateRowsInfo": "insert into fs07.bl values (1, 'é', 'y', b'101', 12.34, -5, 0x0102)",
+      "eventTypesSeen": [
+        "Format_desc",
+        "Gtid_list",
+        "Binlog_checkpoint",
+        "Gtid",
+        "Query",
+        "Annotate_rows",
+        "Table_map",
+        "Write_rows_v1",
+        "Xid",
+        "Rotate"
+      ],
+      "imageTool": "mariadb-binlog",
+      "rowImageLines": [
+        "### INSERT INTO `fs07`.`bl`",
+        "### SET",
+        "###   @1=1 /* INT meta=0 nullable=0 is_null=0 */",
+        "###   @2='é' /* VARSTRING(40) meta=40 nullable=1 is_null=0 */",
+        "###   @3=2 /* ENUM(1 byte) meta=63233 nullable=1 is_null=0 */",
+        "###   @4=b'101' /* BIT(3) meta=3 nullable=1 is_null=0 */",
+        "###   @5=12.34 /* DECIMAL(5,2) meta=1282 nullable=1 is_null=0 */",
+        "###   @6=-5 (251) /* TINYINT meta=0 nullable=1 is_null=0 */",
+        "###   @7='\\x01\\x02' /* BLOB/TEXT meta=2 nullable=1 is_null=0 */"
+      ]
+    }
+  }
+}

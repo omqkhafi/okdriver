@@ -1,0 +1,60 @@
+{
+  "server": "my97",
+  "mechanism": "CLIENT_OPTIONAL_RESULTSET_METADATA (bit 25) + resultset_metadata",
+  "offeredByServer": true,
+  "negotiated": true,
+  "prepareUnderNone": {
+    "tailHex": "00",
+    "columnDefinitionsInResponse": 0,
+    "parameterDefinitionsInResponse": 0
+  },
+  "prepareOkTailHex": "01",
+  "firstExecute": {
+    "rows": 2,
+    "metadataSkipped": true,
+    "metadataChangedFlag": false,
+    "columns": 2
+  },
+  "secondExecute": {
+    "rows": 2,
+    "metadataSkipped": true,
+    "metadataChangedFlag": false,
+    "columns": 2
+  },
+  "textQuery": "metadata skipped but no cached column definitions",
+  "executeAfterAlterTableAddColumn": {
+    "rows": 2,
+    "metadataSkipped": true,
+    "metadataChangedFlag": false,
+    "columns": 2
+  },
+  "nextExecuteAfterThat": {
+    "rows": 2,
+    "metadataSkipped": true,
+    "metadataChangedFlag": false,
+    "columns": 2
+  },
+  "selectStarBeforeAlter": {
+    "columns": 3,
+    "firstRow": [
+      "1",
+      "x",
+      "7"
+    ]
+  },
+  "selectStarAfterAddColumn": {
+    "metadataSkipped": true,
+    "columnsClientUses": 3,
+    "firstRowAsDecoded": [
+      "1",
+      "x",
+      "7"
+    ]
+  },
+  "truthFromServerAfterAlter": [
+    "1",
+    "x",
+    "7",
+    "9"
+  ]
+}

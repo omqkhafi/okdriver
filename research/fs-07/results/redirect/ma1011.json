@@ -1,0 +1,5 @@
+{
+  "server": "ma1011",
+  "variableRedirectUrl": "absent",
+  "setGlobal": "[1193] (HY000) Unknown system variable 'redirect_url'"
+}

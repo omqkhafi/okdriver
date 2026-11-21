@@ -1,0 +1,26 @@
+{
+  "allowed": "shared -> shared; mysql -> shared|mysql; mariadb -> shared|mariadb; connect.ts -> any",
+  "edges": {
+    "shared": [
+      "shared"
+    ],
+    "mysql": [
+      "mysql",
+      "shared"
+    ],
+    "connect": [
+      "mariadb",
+      "mysql",
+      "shared"
+    ],
+    "mariadb": [
+      "mariadb",
+      "shared"
+    ]
+  },
+  "violations": [],
+  "familyNameMentionsInSharedCode": [
+    "shared/profile.ts:23: readonly family: string;",
+    "shared/connection.ts:180: if (r.eof()) throw new UnsupportedAuthPlugin('mysql_old_password (legacy auth switch)');"
+  ]
+}

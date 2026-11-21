@@ -1,0 +1,130 @@
+{
+  "id": "my84-native-on",
+  "defaultLoadedBeforeAnyInstall": [
+    [
+      "caching_sha2_password",
+      "ACTIVE"
+    ],
+    [
+      "mysql_native_password",
+      "ACTIVE"
+    ],
+    [
+      "sha256_password",
+      "ACTIVE"
+    ]
+  ],
+  "plugins": [
+    {
+      "plugin": "caching_sha2_password",
+      "create": "ok",
+      "storedPlugin": "caching_sha2_password",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,AUTH_MORE,AUTH_MORE,OK",
+          "switchTo": null,
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_MORE,OK",
+          "switchTo": null,
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_MORE,AUTH_MORE,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1045
+        }
+      ],
+      "prototype": {
+        "first": "ok",
+        "second": "ok",
+        "wrongPassword": "[1045] (28000) Access denied for user 'fs07_a1'@'172.17.0.1' (using password: YES)"
+      },
+      "mysql2": "ok fs07_a1@%",
+      "mariadbConnector": "ok fs07_a1@%",
+      "overTls": {
+        "prototype": "ok {\"protocol\":\"TLSv1.3\",\"cipher\":\"TLS_AES_128_GCM_SHA256\"}",
+        "mysql2": "ok fs07_a1@%",
+        "mariadbConnector": "ok fs07_a1@%"
+      }
+    },
+    {
+      "plugin": "sha256_password",
+      "create": "ok",
+      "storedPlugin": "sha256_password",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,AUTH_SWITCH,AUTH_MORE,OK",
+          "switchTo": "sha256_password",
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,AUTH_MORE,OK",
+          "switchTo": "sha256_password",
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,AUTH_MORE,ERR",
+          "switchTo": "sha256_password",
+          "outcome": "err",
+          "errno": 1045
+        }
+      ],
+      "prototype": {
+        "first": "ok",
+        "second": "ok",
+        "wrongPassword": "[1045] (28000) Access denied for user 'fs07_a2'@'172.17.0.1' (using password: YES)"
+      },
+      "mysql2": "ok fs07_a2@%",
+      "mariadbConnector": "ok fs07_a2@%",
+      "overTls": {
+        "prototype": "ok {\"protocol\":\"TLSv1.3\",\"cipher\":\"TLS_AES_128_GCM_SHA256\"}",
+        "mysql2": "ok fs07_a2@%",
+        "mariadbConnector": "ok fs07_a2@%"
+      }
+    },
+    {
+      "plugin": "mysql_native_password",
+      "create": "ok",
+      "storedPlugin": "mysql_native_password",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,AUTH_SWITCH,OK",
+          "switchTo": "mysql_native_password",
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,OK",
+          "switchTo": "mysql_native_password",
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,ERR",
+          "switchTo": "mysql_native_password",
+          "outcome": "err",
+          "errno": 1045
+        }
+      ],
+      "prototype": {
+        "first": "ok",
+        "second": "ok",
+        "wrongPassword": "[1045] (28000) Access denied for user 'fs07_a3'@'172.17.0.1' (using password: YES)"
+      },
+      "mysql2": "ok fs07_a3@%",
+      "mariadbConnector": "ok fs07_a3@%",
+      "overTls": {
+        "prototype": "ok {\"protocol\":\"TLSv1.3\",\"cipher\":\"TLS_AES_128_GCM_SHA256\"}",
+        "mysql2": "ok fs07_a3@%",
+        "mariadbConnector": "ok fs07_a3@%"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+| folder | file | lines |
+| --- | --- | --- |
+| shared | shared/greeting.ts | 42 |
+| shared | shared/bytes.ts | 61 |
+| shared | shared/sha2.ts | 29 |
+| shared | shared/result.ts | 121 |
+| shared | shared/packet.ts | 56 |
+| shared | shared/auth.ts | 14 |
+| shared | shared/constants.ts | 65 |
+| shared | shared/profile.ts | 24 |
+| shared | shared/connection.ts | 368 |
+| shared | shared/errors.ts | 9 |
+| mysql | mysql/sha256.ts | 13 |
+| mysql | mysql/profile.ts | 25 |
+| mariadb | mariadb/parsec.ts | 19 |
+| mariadb | mariadb/ed25519.ts | 51 |
+| mariadb | mariadb/profile.ts | 44 |
+| mariadb | mariadb/bulk.ts | 13 |
+| dispatch | connect.ts | 12 |
+| | **shared total** | **789** |
+| | **mysql total** | **38** |
+| | **mariadb total** | **127** |
+| | **dispatch** | **12** |

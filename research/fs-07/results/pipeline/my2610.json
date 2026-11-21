@@ -1,0 +1,388 @@
+{
+  "server": "my2610",
+  "runsPerProbe": 5,
+  "probes": {
+    "P1 query batch (50 COM_QUERY in one write)": {
+      "runs": [
+        {
+          "safe": true,
+          "summary": "inOrder=true serverLogged=50/50 inSentOrder=true"
+        },
+        {
+          "safe": true,
+          "summary": "inOrder=true serverLogged=50/50 inSentOrder=true"
+        },
+        {
+          "safe": true,
+          "summary": "inOrder=true serverLogged=50/50 inSentOrder=true"
+        },
+        {
+          "safe": true,
+          "summary": "inOrder=true serverLogged=50/50 inSentOrder=true"
+        },
+        {
+          "safe": true,
+          "summary": "inOrder=true serverLogged=50/50 inSentOrder=true"
+        }
+      ],
+      "safeRuns": 5,
+      "distinctSummaries": [
+        "inOrder=true serverLogged=50/50 inSentOrder=true"
+      ]
+    },
+    "P2 execute batch (50 COM_STMT_EXECUTE inserts in one write)": {
+      "runs": [
+        {
+          "safe": true,
+          "summary": "allOk=true rowsInserted=50/50 serverOrderMatches=true"
+        },
+        {
+          "safe": true,
+          "summary": "allOk=true rowsInserted=50/50 serverOrderMatches=true"
+        },
+        {
+          "safe": true,
+          "summary": "allOk=true rowsInserted=50/50 serverOrderMatches=true"
+        },
+        {
+          "safe": true,
+          "summary": "allOk=true rowsInserted=50/50 serverOrderMatches=true"
+        },
+        {
+          "safe": true,
+          "summary": "allOk=true rowsInserted=50/50 serverOrderMatches=true"
+        }
+      ],
+      "safeRuns": 5,
+      "distinctSummaries": [
+        "allOk=true rowsInserted=50/50 serverOrderMatches=true"
+      ]
+    },
+    "P3 error in the middle (COM_QUERY, #10 of 20 fails)": {
+      "runs": [
+        {
+          "safe": true,
+          "summary": "errorOnlyAtIndex10=true serverLogged=20/20 connectionUsableAfter=true"
+        },
+        {
+          "safe": true,
+          "summary": "errorOnlyAtIndex10=true serverLogged=20/20 connectionUsableAfter=true"
+        },
+        {
+          "safe": true,
+          "summary": "errorOnlyAtIndex10=true serverLogged=20/20 connectionUsableAfter=true"
+        },
+        {
+          "safe": true,
+          "summary": "errorOnlyAtIndex10=true serverLogged=20/20 connectionUsableAfter=true"
+        },
+        {
+          "safe": true,
+          "summary": "errorOnlyAtIndex10=true serverLogged=20/20 connectionUsableAfter=true"
+        }
+      ],
+      "safeRuns": 5,
+      "distinctSummaries": [
+        "errorOnlyAtIndex10=true serverLogged=20/20 connectionUsableAfter=true"
+      ]
+    },
+    "P4 error in the middle (COM_STMT_EXECUTE, duplicate key at #5 of 8)": {
+      "runs": [
+        {
+          "safe": true,
+          "summary": "errorOnlyAtIndex5=true rowsInTable=7/7"
+        },
+        {
+          "safe": true,
+          "summary": "errorOnlyAtIndex5=true rowsInTable=7/7"
+        },
+        {
+          "safe": true,
+          "summary": "errorOnlyAtIndex5=true rowsInTable=7/7"
+        },
+        {
+          "safe": true,
+          "summary": "errorOnlyAtIndex5=true rowsInTable=7/7"
+        },
+        {
+          "safe": true,
+          "summary": "errorOnlyAtIndex5=true rowsInTable=7/7"
+        }
+      ],
+      "safeRuns": 5,
+      "distinctSummaries": [
+        "errorOnlyAtIndex5=true rowsInTable=7/7"
+      ]
+    },
+    "P5 prepare + execute(0xFFFFFFFF) without waiting": {
+      "runs": [
+        {
+          "safe": false,
+          "summary": "responses=PREPARE,ERR1243 value=null connectionUsableAfter=true",
+          "detail": [
+            "1243: Unknown prepared statement handler (4294967295) given to mysql_stmt_precheck"
+          ]
+        },
+        {
+          "safe": false,
+          "summary": "responses=PREPARE,ERR1243 value=null connectionUsableAfter=true",
+          "detail": [
+            "1243: Unknown prepared statement handler (4294967295) given to mysql_stmt_precheck"
+          ]
+        },
+        {
+          "safe": false,
+          "summary": "responses=PREPARE,ERR1243 value=null connectionUsableAfter=true",
+          "detail": [
+            "1243: Unknown prepared statement handler (4294967295) given to mysql_stmt_precheck"
+          ]
+        },
+        {
+          "safe": false,
+          "summary": "responses=PREPARE,ERR1243 value=null connectionUsableAfter=true",
+          "detail": [
+            "1243: Unknown prepared statement handler (4294967295) given to mysql_stmt_precheck"
+          ]
+        },
+        {
+          "safe": false,
+          "summary": "responses=PREPARE,ERR1243 value=null connectionUsableAfter=true",
+          "detail": [
+            "1243: Unknown prepared statement handler (4294967295) given to mysql_stmt_precheck"
+          ]
+        }
+      ],
+      "safeRuns": 0,
+      "distinctSummaries": [
+        "responses=PREPARE,ERR1243 value=null connectionUsableAfter=true"
+      ]
+    },
+    "P5b prepare + execute with a guessed next statement id": {
+      "runs": [
+        {
+          "safe": false,
+          "summary": "firstId=1 guess=2 assignedId=2 guessMatches=true responses=PREPARE,ROWS1"
+        },
+        {
+          "safe": false,
+          "summary": "firstId=1 guess=2 assignedId=2 guessMatches=true responses=PREPARE,ROWS1"
+        },
+        {
+          "safe": false,
+          "summary": "firstId=1 guess=2 assignedId=2 guessMatches=true responses=PREPARE,ROWS1"
+        },
+        {
+          "safe": false,
+          "summary": "firstId=1 guess=2 assignedId=2 guessMatches=true responses=PREPARE,ROWS1"
+        },
+        {
+          "safe": false,
+          "summary": "firstId=1 guess=2 assignedId=2 guessMatches=true responses=PREPARE,ROWS1"
+        }
+      ],
+      "safeRuns": 0,
+      "distinctSummaries": [
+        "firstId=1 guess=2 assignedId=2 guessMatches=true responses=PREPARE,ROWS1"
+      ]
+    },
+    "P6 failing prepare then execute(0xFFFFFFFF)": {
+      "runs": [
+        {
+          "safe": true,
+          "summary": "responses=ERR1064,ERR1243 errnos=1064/1243 connectionUsableAfter=true"
+        },
+        {
+          "safe": true,
+          "summary": "responses=ERR1064,ERR1243 errnos=1064/1243 connectionUsableAfter=true"
+        },
+        {
+          "safe": true,
+          "summary": "responses=ERR1064,ERR1243 errnos=1064/1243 connectionUsableAfter=true"
+        },
+        {
+          "safe": true,
+          "summary": "responses=ERR1064,ERR1243 errnos=1064/1243 connectionUsableAfter=true"
+        },
+        {
+          "safe": true,
+          "summary": "responses=ERR1064,ERR1243 errnos=1064/1243 connectionUsableAfter=true"
+        }
+      ],
+      "safeRuns": 5,
+      "distinctSummaries": [
+        "responses=ERR1064,ERR1243 errnos=1064/1243 connectionUsableAfter=true"
+      ]
+    },
+    "P7 large result in the middle, slow reader (3 commands, 20 MB middle result)": {
+      "runs": [
+        {
+          "safe": true,
+          "summary": "inOrder=true bigRows=20000 ms=1638"
+        },
+        {
+          "safe": true,
+          "summary": "inOrder=true bigRows=20000 ms=1640"
+        },
+        {
+          "safe": true,
+          "summary": "inOrder=true bigRows=20000 ms=1645"
+        },
+        {
+          "safe": true,
+          "summary": "inOrder=true bigRows=20000 ms=1633"
+        },
+        {
+          "safe": true,
+          "summary": "inOrder=true bigRows=20000 ms=1650"
+        }
+      ],
+      "safeRuns": 5,
+      "distinctSummaries": [
+        "inOrder=true bigRows=20000"
+      ]
+    },
+    "P8 stall: client stops reading and keeps writing (24 MB of filler behind a 20 MB result)": {
+      "runs": [
+        {
+          "safe": true,
+          "summary": "serverStartedFillersAt8sWhileClientNotReading=0/1500 serverStalled=true serverState=\"Sending to client\" clientWriteCallbackFired=false recoveredAfterResume=true totalMs=8725"
+        },
+        {
+          "safe": true,
+          "summary": "serverStartedFillersAt8sWhileClientNotReading=0/1500 serverStalled=true serverState=\"Sending to client\" clientWriteCallbackFired=true recoveredAfterResume=true totalMs=8776"
+        },
+        {
+          "safe": true,
+          "summary": "serverStartedFillersAt8sWhileClientNotReading=0/1500 serverStalled=true serverState=\"Sending to client\" clientWriteCallbackFired=false recoveredAfterResume=true totalMs=8839"
+        },
+        {
+          "safe": true,
+          "summary": "serverStartedFillersAt8sWhileClientNotReading=0/1500 serverStalled=true serverState=\"Sending to client\" clientWriteCallbackFired=false recoveredAfterResume=true totalMs=8937"
+        },
+        {
+          "safe": true,
+          "summary": "serverStartedFillersAt8sWhileClientNotReading=0/1500 serverStalled=true serverState=\"Sending to client\" clientWriteCallbackFired=true recoveredAfterResume=true totalMs=8983"
+        }
+      ],
+      "safeRuns": 5,
+      "distinctSummaries": [
+        "serverStartedFillersAt8sWhileClientNotReading=0/1500 serverStalled=true serverState=\"Sending to client\" clientWriteCallbackFired=false recoveredAfterResume=true",
+        "serverStartedFillersAt8sWhileClientNotReading=0/1500 serverStalled=true serverState=\"Sending to client\" clientWriteCallbackFired=true recoveredAfterResume=true"
+      ]
+    },
+    "P8b server gives up on a reader that stops (net_write_timeout=2 s, reader paused 6 s)": {
+      "runs": [
+        {
+          "safe": false,
+          "summary": "responsesReceived=ROWS1,LOST:connection closed statementsServerLogged=2/3"
+        },
+        {
+          "safe": false,
+          "summary": "responsesReceived=ROWS1,LOST:connection closed statementsServerLogged=2/3"
+        },
+        {
+          "safe": false,
+          "summary": "responsesReceived=ROWS1,LOST:connection closed statementsServerLogged=2/3"
+        },
+        {
+          "safe": false,
+          "summary": "responsesReceived=ROWS1,LOST:connection closed statementsServerLogged=2/3"
+        },
+        {
+          "safe": false,
+          "summary": "responsesReceived=ROWS1,LOST:connection closed statementsServerLogged=2/3"
+        }
+      ],
+      "safeRuns": 0,
+      "distinctSummaries": [
+        "responsesReceived=ROWS1,LOST:connection closed statementsServerLogged=2/3"
+      ]
+    },
+    "P9a bulk execute: 100 rows in one COM_STMT_BULK_EXECUTE (0xFA)": {
+      "runs": [
+        {
+          "safe": false,
+          "summary": "response=ERR1047 Unknown command rowsInTable=0/100 connectionUsableAfter=true"
+        },
+        {
+          "safe": false,
+          "summary": "response=ERR1047 Unknown command rowsInTable=0/100 connectionUsableAfter=true"
+        },
+        {
+          "safe": false,
+          "summary": "response=ERR1047 Unknown command rowsInTable=0/100 connectionUsableAfter=true"
+        },
+        {
+          "safe": false,
+          "summary": "response=ERR1047 Unknown command rowsInTable=0/100 connectionUsableAfter=true"
+        },
+        {
+          "safe": false,
+          "summary": "response=ERR1047 Unknown command rowsInTable=0/100 connectionUsableAfter=true"
+        }
+      ],
+      "safeRuns": 0,
+      "distinctSummaries": [
+        "response=ERR1047 Unknown command rowsInTable=0/100 connectionUsableAfter=true"
+      ]
+    },
+    "P9b bulk execute with a duplicate key at row 50 of 100": {
+      "runs": [
+        {
+          "safe": false,
+          "summary": "response=ERR1047 rowsInTableAfter=1 (1 pre-existing; 100 sent, row 50 duplicates it)"
+        },
+        {
+          "safe": false,
+          "summary": "response=ERR1047 rowsInTableAfter=1 (1 pre-existing; 100 sent, row 50 duplicates it)"
+        },
+        {
+          "safe": false,
+          "summary": "response=ERR1047 rowsInTableAfter=1 (1 pre-existing; 100 sent, row 50 duplicates it)"
+        },
+        {
+          "safe": false,
+          "summary": "response=ERR1047 rowsInTableAfter=1 (1 pre-existing; 100 sent, row 50 duplicates it)"
+        },
+        {
+          "safe": false,
+          "summary": "response=ERR1047 rowsInTableAfter=1 (1 pre-existing; 100 sent, row 50 duplicates it)"
+        }
+      ],
+      "safeRuns": 0,
+      "distinctSummaries": [
+        "response=ERR1047 rowsInTableAfter=1 (1 pre-existing; 100 sent, row 50 duplicates it)"
+      ]
+    },
+    "P9c prepare + bulk execute(0xFFFFFFFF) without waiting": {
+      "runs": [
+        {
+          "safe": false,
+          "summary": "responses=PREPARE,ERR1047 rowsInTable=0/10"
+        },
+        {
+          "safe": false,
+          "summary": "responses=PREPARE,ERR1047 rowsInTable=0/10"
+        },
+        {
+          "safe": false,
+          "summary": "responses=PREPARE,ERR1047 rowsInTable=0/10"
+        },
+        {
+          "safe": false,
+          "summary": "responses=PREPARE,ERR1047 rowsInTable=0/10"
+        },
+        {
+          "safe": false,
+          "summary": "responses=PREPARE,ERR1047 rowsInTable=0/10"
+        }
+      ],
+      "safeRuns": 0,
+      "distinctSummaries": [
+        "responses=PREPARE,ERR1047 rowsInTable=0/10"
+      ]
+    }
+  },
+  "proxyConnections": 65,
+  "maxCommandsInOneClientWrite": 50
+}
