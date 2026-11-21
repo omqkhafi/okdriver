@@ -1,0 +1,15 @@
+{
+  // Not part of the root solution: `bun run typecheck` (tsc -b) does not build this.
+  // Run it with `bun run typecheck:tests`.
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": false,
+    "emitDeclarationOnly": false,
+    "noEmit": true,
+    "types": ["bun"]
+  },
+  "include": ["./architecture/**/*.ts"],
+  // Fixtures are deliberately invalid inputs for the boundary checkers.
+  "exclude": ["./architecture/fixtures"]
+}
