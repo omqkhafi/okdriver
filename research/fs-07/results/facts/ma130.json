@@ -1,0 +1,227 @@
+{
+  "id": "ma130",
+  "image": "mariadb:13.0",
+  "greeting": {
+    "serverVersion": "13.0.2-MariaDB-ubu2604-log",
+    "protocolVersion": 10,
+    "authPlugin": "mysql_native_password",
+    "charset": 45,
+    "status": 2,
+    "capabilities": "0x81fffffe",
+    "capabilityNames": [
+      "FOUND_ROWS",
+      "LONG_FLAG",
+      "CONNECT_WITH_DB",
+      "NO_SCHEMA",
+      "COMPRESS",
+      "ODBC",
+      "LOCAL_FILES",
+      "IGNORE_SPACE",
+      "PROTOCOL_41",
+      "INTERACTIVE",
+      "SSL",
+      "IGNORE_SIGPIPE",
+      "TRANSACTIONS",
+      "SECURE_CONNECTION",
+      "MULTI_STATEMENTS",
+      "MULTI_RESULTS",
+      "PS_MULTI_RESULTS",
+      "PLUGIN_AUTH",
+      "CONNECT_ATTRS",
+      "PLUGIN_AUTH_LENENC_CLIENT_DATA",
+      "CAN_HANDLE_EXPIRED_PASSWORDS",
+      "SESSION_TRACK",
+      "DEPRECATE_EOF"
+    ],
+    "bit0LongPassword": false,
+    "reserved": "0000000000003d000000",
+    "mariadbExtWord": 61,
+    "mariadbExtNames": [
+      "PROGRESS",
+      "STMT_BULK_OPERATIONS",
+      "EXTENDED_METADATA",
+      "CACHE_METADATA",
+      "BULK_UNIT_RESULTS"
+    ],
+    "detected": "mariadb",
+    "profile": "mariadb",
+    "saltLength": 20
+  },
+  "negotiated": {
+    "caps": "0x1fea204",
+    "ext": 12
+  },
+  "variables": {
+    "autocommit": "ON",
+    "binlog_format": "ROW",
+    "binlog_row_metadata": "NO_LOG",
+    "character_set_client": "utf8mb4",
+    "character_set_connection": "utf8mb4",
+    "character_set_results": "utf8mb4",
+    "character_set_server": "utf8mb4",
+    "collation_connection": "utf8mb4_uca1400_ai_ci",
+    "collation_server": "utf8mb4_uca1400_ai_ci",
+    "explicit_defaults_for_timestamp": "ON",
+    "gtid_strict_mode": "OFF",
+    "have_ssl": "YES",
+    "histogram_type": "JSON_HB",
+    "local_infile": "ON",
+    "log_bin": "OFF",
+    "lower_case_table_names": "0",
+    "max_allowed_packet": "16777216",
+    "max_prepared_stmt_count": "16382",
+    "max_recursive_iterations": "1000",
+    "net_read_timeout": "30",
+    "net_write_timeout": "60",
+    "old_mode": "UTF8_IS_UTF8MB3",
+    "old_passwords": "OFF",
+    "performance_schema": "ON",
+    "read_only": "OFF",
+    "redirect_url": "",
+    "require_secure_transport": "OFF",
+    "session_track_schema": "ON",
+    "session_track_state_change": "OFF",
+    "session_track_system_variables": "autocommit,character_set_client,character_set_connection,character_set_results,redirect_url,time_zone",
+    "session_track_transaction_info": "OFF",
+    "sql_mode": "STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION",
+    "sql_notes": "ON",
+    "ssl_cert": "",
+    "transaction_isolation": "REPEATABLE-READ",
+    "tx_isolation": "REPEATABLE-READ",
+    "version": "13.0.2-MariaDB-ubu2604-log",
+    "version_comment": "mariadb.org binary distribution",
+    "wait_timeout": "28800"
+  },
+  "connectionCollationWithCharset45": [
+    "utf8mb4",
+    "utf8mb4_uca1400_ai_ci",
+    "utf8mb4"
+  ],
+  "handshakeCharsetIds": {
+    "8": "latin1_swedish_ci",
+    "33": "utf8mb3_uca1400_ai_ci",
+    "45": "utf8mb4_uca1400_ai_ci",
+    "46": "utf8mb4_bin",
+    "63": "binary",
+    "224": "utf8mb4_unicode_ci",
+    "255": "utf8mb4_0900_ai_ci"
+  },
+  "collationIds": [
+    [
+      "8n",
+      "latin1_swedish_ci"
+    ],
+    [
+      "33n",
+      "utf8mb3_general_ci"
+    ],
+    [
+      "45n",
+      "utf8mb4_general_ci"
+    ],
+    [
+      "46n",
+      "utf8mb4_bin"
+    ],
+    [
+      "63n",
+      "binary"
+    ],
+    [
+      "224n",
+      "utf8mb4_unicode_ci"
+    ],
+    [
+      "255n",
+      "utf8mb4_0900_ai_ci"
+    ]
+  ],
+  "collationCount": "552n",
+  "defaultAuthPluginsLoaded": [
+    [
+      "mysql_native_password",
+      "ACTIVE"
+    ],
+    [
+      "mysql_old_password",
+      "ACTIVE"
+    ],
+    [
+      "unix_socket",
+      "ACTIVE"
+    ]
+  ],
+  "rootUsers": [
+    [
+      "root",
+      "%",
+      "mysql_native_password"
+    ],
+    [
+      "root",
+      "localhost",
+      "mysql_native_password"
+    ]
+  ],
+  "newUserWithPasswordGetsPlugin": "mysql_native_password",
+  "authPluginsAvailable": [
+    [
+      "caching_sha2_password",
+      "NOT INSTALLED",
+      "auth_mysql_sha2.so"
+    ],
+    [
+      "ed25519",
+      "NOT INSTALLED",
+      "auth_ed25519.so"
+    ],
+    [
+      "mysql_native_password",
+      "ACTIVE",
+      null
+    ],
+    [
+      "mysql_old_password",
+      "ACTIVE",
+      null
+    ],
+    [
+      "pam",
+      "NOT INSTALLED",
+      "auth_pam.so"
+    ],
+    [
+      "pam",
+      "NOT INSTALLED",
+      "auth_pam_v1.so"
+    ],
+    [
+      "parsec",
+      "NOT INSTALLED",
+      "auth_parsec.so"
+    ],
+    [
+      "unix_socket",
+      "ACTIVE",
+      null
+    ]
+  ],
+  "connectAttrsSeenByServer": [
+    [
+      "_client_name",
+      "okdriver-fs07"
+    ],
+    [
+      "_client_version",
+      "0"
+    ],
+    [
+      "_os",
+      "linux"
+    ],
+    [
+      "_pid",
+      "5096"
+    ]
+  ]
+}

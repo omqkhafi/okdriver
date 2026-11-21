@@ -1,0 +1,61 @@
+{
+  "server": "ma118",
+  "mechanism": "MARIADB_CLIENT_CACHE_METADATA (extended bit 16)",
+  "offeredByServer": true,
+  "negotiated": true,
+  "prepareOkTailHex": "",
+  "firstExecute": {
+    "rows": 2,
+    "metadataSkipped": true,
+    "metadataChangedFlag": false,
+    "columns": 2
+  },
+  "secondExecute": {
+    "rows": 2,
+    "metadataSkipped": true,
+    "metadataChangedFlag": false,
+    "columns": 2
+  },
+  "textQuery": {
+    "rows": 2,
+    "metadataSkipped": false,
+    "metadataChangedFlag": false,
+    "columns": 2
+  },
+  "executeAfterAlterTableAddColumn": {
+    "rows": 2,
+    "metadataSkipped": false,
+    "metadataChangedFlag": false,
+    "columns": 2
+  },
+  "nextExecuteAfterThat": {
+    "rows": 2,
+    "metadataSkipped": true,
+    "metadataChangedFlag": false,
+    "columns": 2
+  },
+  "selectStarBeforeAlter": {
+    "columns": 3,
+    "firstRow": [
+      "1",
+      "x",
+      "7"
+    ]
+  },
+  "selectStarAfterAddColumn": {
+    "metadataSkipped": false,
+    "columnsClientUses": 4,
+    "firstRowAsDecoded": [
+      "1",
+      "x",
+      "7",
+      "9"
+    ]
+  },
+  "truthFromServerAfterAlter": [
+    "1",
+    "x",
+    "7",
+    "9"
+  ]
+}

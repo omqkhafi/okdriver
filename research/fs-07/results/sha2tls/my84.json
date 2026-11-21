@@ -1,0 +1,6 @@
+{
+  "server": "my84",
+  "first login over TLS (cold cache: full authentication)": "ok {\"protocol\":\"TLSv1.3\",\"cipher\":\"TLS_AES_128_GCM_SHA256\"}",
+  "second login over TLS (fast path)": "ok {\"protocol\":\"TLSv1.3\",\"cipher\":\"TLS_AES_128_GCM_SHA256\"}",
+  "after FLUSH PRIVILEGES, plain TCP: packets from server": "GREETING,AUTH_MORE,AUTH_MORE,OK"
+}

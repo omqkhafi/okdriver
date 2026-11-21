@@ -1,0 +1,235 @@
+[
+  {
+    "idx": 0,
+    "label": "greeting+auth",
+    "outcome": "ok",
+    "kinds": "GREETING,AUTH_MORE,OK",
+    "c2sBytes": 164,
+    "s2cBytes": 92
+  },
+  {
+    "idx": 1,
+    "label": "COM_QUERY",
+    "sql": "do 1",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 5,
+    "s2cBytes": 7
+  },
+  {
+    "idx": 2,
+    "label": "COM_QUERY",
+    "sql": "select 1 as a, 'x' as b, null as c",
+    "outcome": "resultset",
+    "kinds": "COLCOUNT=3,COL_DEF,COL_DEF,COL_DEF,ROW,OK_EOF",
+    "c2sBytes": 35,
+    "s2cBytes": 82
+  },
+  {
+    "idx": 3,
+    "label": "COM_QUERY",
+    "sql": "select cast(7 as signed) i, cast(7 as unsigned) u, 1.5 d, 1e0 f, _utf8mb4'é' s, _binary'ab' bin, cast('2020-01-02' as date) dt, cast('2020-01-02 03:04:05.5' as datetime(6)) dtm, cast('838:59:59' as time) tm, b'101' bt, json_object('a', 1) js",
+    "outcome": "resultset",
+    "kinds": "COLCOUNT=11,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,ROW,OK_EOF",
+    "c2sBytes": 243,
+    "s2cBytes": 344
+  },
+  {
+    "idx": 4,
+    "label": "COM_QUERY",
+    "sql": "drop table if exists fs07.t1",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 29,
+    "s2cBytes": 7
+  },
+  {
+    "idx": 5,
+    "label": "COM_QUERY",
+    "sql": "create table fs07.t1 (id bigint unsigned primary key auto_increment, v varchar(20), d decimal(10,2), ts datetime(6), j json)",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 125,
+    "s2cBytes": 7
+  },
+  {
+    "idx": 6,
+    "label": "COM_QUERY",
+    "sql": "insert into fs07.t1 (v, d, ts, j) values ('a', 1.25, '2020-01-02 03:04:05.123456', '{\"k\": [1, 2]}'), ('b', null, null, null)",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 125,
+    "s2cBytes": 46
+  },
+  {
+    "idx": 7,
+    "label": "COM_QUERY",
+    "sql": "select * from fs07.t1 order by id",
+    "outcome": "resultset",
+    "kinds": "COLCOUNT=5,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,ROW,ROW,OK_EOF",
+    "c2sBytes": 34,
+    "s2cBytes": 229
+  },
+  {
+    "idx": 8,
+    "label": "COM_QUERY",
+    "sql": "update fs07.t1 set v = 'z' where id = 1",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 40,
+    "s2cBytes": 48
+  },
+  {
+    "idx": 9,
+    "label": "COM_STMT_PREPARE",
+    "sql": "select id, v, d, ts, j from fs07.t1 where id > ? and v <> ? order by id",
+    "outcome": "prepare-ok",
+    "kinds": "PREPARE_OK,PARAM_DEF,PARAM_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF",
+    "c2sBytes": 72,
+    "s2cBytes": 222
+  },
+  {
+    "idx": 10,
+    "label": "COM_STMT_EXECUTE",
+    "outcome": "resultset",
+    "kinds": "COLCOUNT=5,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,ROW,ROW,OK_EOF",
+    "c2sBytes": 26,
+    "s2cBytes": 227
+  },
+  {
+    "idx": 11,
+    "label": "COM_STMT_RESET",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 5,
+    "s2cBytes": 7
+  },
+  {
+    "idx": 12,
+    "label": "COM_STMT_EXECUTE",
+    "outcome": "resultset",
+    "kinds": "COLCOUNT=5,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,ROW,ROW,OK_EOF",
+    "c2sBytes": 26,
+    "s2cBytes": 227
+  },
+  {
+    "idx": 13,
+    "label": "COM_STMT_CLOSE",
+    "outcome": "none",
+    "kinds": "",
+    "c2sBytes": 5,
+    "s2cBytes": 0
+  },
+  {
+    "idx": 14,
+    "label": "COM_STMT_PREPARE",
+    "sql": "insert into fs07.t1 (v) values (?)",
+    "outcome": "prepare-ok",
+    "kinds": "PREPARE_OK,PARAM_DEF",
+    "c2sBytes": 35,
+    "s2cBytes": 35
+  },
+  {
+    "idx": 15,
+    "label": "COM_STMT_EXECUTE",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 17,
+    "s2cBytes": 7
+  },
+  {
+    "idx": 16,
+    "label": "COM_STMT_RESET",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 5,
+    "s2cBytes": 7
+  },
+  {
+    "idx": 17,
+    "label": "COM_STMT_EXECUTE",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 17,
+    "s2cBytes": 7
+  },
+  {
+    "idx": 18,
+    "label": "COM_STMT_CLOSE",
+    "outcome": "none",
+    "kinds": "",
+    "c2sBytes": 5,
+    "s2cBytes": 0
+  },
+  {
+    "idx": 19,
+    "label": "COM_PING",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 1,
+    "s2cBytes": 7
+  },
+  {
+    "idx": 20,
+    "label": "COM_RESET_CONNECTION",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 1,
+    "s2cBytes": 7
+  },
+  {
+    "idx": 21,
+    "label": "COM_QUERY",
+    "sql": "use fs07",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 9,
+    "s2cBytes": 16
+  },
+  {
+    "idx": 22,
+    "label": "COM_QUERY",
+    "sql": "select * from fs07.no_such_table",
+    "outcome": "err",
+    "errno": 1146,
+    "kinds": "ERR",
+    "c2sBytes": 33,
+    "s2cBytes": 49
+  },
+  {
+    "idx": 23,
+    "label": "COM_QUERY",
+    "sql": "selec 1",
+    "outcome": "err",
+    "errno": 1064,
+    "kinds": "ERR",
+    "c2sBytes": 8,
+    "s2cBytes": 162
+  },
+  {
+    "idx": 24,
+    "label": "COM_QUERY",
+    "sql": "set autocommit = 0",
+    "outcome": "ok",
+    "kinds": "OK",
+    "c2sBytes": 19,
+    "s2cBytes": 26
+  },
+  {
+    "idx": 25,
+    "label": "COM_QUERY",
+    "sql": "select @@autocommit",
+    "outcome": "resultset",
+    "kinds": "COLCOUNT=1,COL_DEF,ROW,OK_EOF",
+    "c2sBytes": 20,
+    "s2cBytes": 44
+  },
+  {
+    "idx": 26,
+    "label": "COM_QUIT",
+    "outcome": "none",
+    "kinds": "",
+    "c2sBytes": 1,
+    "s2cBytes": 0
+  }
+]

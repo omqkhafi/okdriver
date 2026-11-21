@@ -1,0 +1,1396 @@
+{
+  "total": 80,
+  "differing": [
+    {
+      "key": "collationCount",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "286n"
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "322n"
+        },
+        {
+          "servers": [
+            "ma1011"
+          ],
+          "value": "506n"
+        },
+        {
+          "servers": [
+            "ma114"
+          ],
+          "value": "550n"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "552n"
+        }
+      ]
+    },
+    {
+      "key": "connectionCollationWithCharset45.1",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "utf8mb4_general_ci"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "utf8mb4_uca1400_ai_ci"
+        }
+      ]
+    },
+    {
+      "key": "defaultAuthPluginsLoaded.0.0",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "caching_sha2_password"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "mysql_native_password"
+        }
+      ]
+    },
+    {
+      "key": "defaultAuthPluginsLoaded.1.0",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "mysql_native_password"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "sha256_password"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "mysql_old_password"
+        }
+      ]
+    },
+    {
+      "key": "defaultAuthPluginsLoaded.1.1",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "DISABLED"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "key": "defaultAuthPluginsLoaded.2.0",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "sha256_password"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "unix_socket"
+        }
+      ]
+    },
+    {
+      "key": "defaultAuthPluginsLoaded.2.1",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "ACTIVE"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "greeting.authPlugin",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "caching_sha2_password"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "mysql_native_password"
+        }
+      ]
+    },
+    {
+      "key": "greeting.bit0LongPassword",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "true"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "key": "greeting.capabilities",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "0xdfffffff"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "0x81fff7fe"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "0x81fffffe"
+        }
+      ]
+    },
+    {
+      "key": "greeting.charset",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "255"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "45"
+        }
+      ]
+    },
+    {
+      "key": "greeting.detected",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "mysql"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "mariadb"
+        }
+      ]
+    },
+    {
+      "key": "greeting.mariadbExtNames.0",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "PROGRESS"
+        }
+      ]
+    },
+    {
+      "key": "greeting.mariadbExtNames.1",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "STMT_BULK_OPERATIONS"
+        }
+      ]
+    },
+    {
+      "key": "greeting.mariadbExtNames.2",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "EXTENDED_METADATA"
+        }
+      ]
+    },
+    {
+      "key": "greeting.mariadbExtNames.3",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "CACHE_METADATA"
+        }
+      ]
+    },
+    {
+      "key": "greeting.mariadbExtNames.4",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "BULK_UNIT_RESULTS"
+        }
+      ]
+    },
+    {
+      "key": "greeting.mariadbExtWord",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "0"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "29"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "61"
+        }
+      ]
+    },
+    {
+      "key": "greeting.profile",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "mysql"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "mariadb"
+        }
+      ]
+    },
+    {
+      "key": "handshakeCharsetIds.255",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "utf8mb4_0900_ai_ci"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "utf8mb4_general_ci"
+        }
+      ]
+    },
+    {
+      "key": "handshakeCharsetIds.33",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "utf8mb3_general_ci"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "utf8mb3_uca1400_ai_ci"
+        }
+      ]
+    },
+    {
+      "key": "handshakeCharsetIds.45",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "utf8mb4_general_ci"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "utf8mb4_uca1400_ai_ci"
+        }
+      ]
+    },
+    {
+      "key": "newUserWithPasswordGetsPlugin",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "caching_sha2_password"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "mysql_native_password"
+        }
+      ]
+    },
+    {
+      "key": "variables.authentication_policy",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "*,,"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "variables.binlog_format",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma123",
+            "ma130"
+          ],
+          "value": "ROW"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118"
+          ],
+          "value": "MIXED"
+        }
+      ]
+    },
+    {
+      "key": "variables.binlog_row_metadata",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "MINIMAL"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "NO_LOG"
+        }
+      ]
+    },
+    {
+      "key": "variables.collation_connection",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "utf8mb4_general_ci"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "utf8mb4_uca1400_ai_ci"
+        }
+      ]
+    },
+    {
+      "key": "variables.collation_server",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "utf8mb4_0900_ai_ci"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "utf8mb4_general_ci"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "utf8mb4_uca1400_ai_ci"
+        }
+      ]
+    },
+    {
+      "key": "variables.cte_max_recursion_depth",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "1000"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "variables.default_collation_for_utf8mb4",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "utf8mb4_0900_ai_ci"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "variables.explicit_defaults_for_timestamp",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "ON"
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "OFF"
+        }
+      ]
+    },
+    {
+      "key": "variables.gtid_mode",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "OFF"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "ON"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "variables.gtid_strict_mode",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "OFF"
+        }
+      ]
+    },
+    {
+      "key": "variables.have_ssl",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "DISABLED"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "YES"
+        }
+      ]
+    },
+    {
+      "key": "variables.histogram_type",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "DOUBLE_PREC_HB"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "JSON_HB"
+        }
+      ]
+    },
+    {
+      "key": "variables.local_infile",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "OFF"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "ON"
+        }
+      ]
+    },
+    {
+      "key": "variables.log_bin",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "ON"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "OFF"
+        }
+      ]
+    },
+    {
+      "key": "variables.max_allowed_packet",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "67108864"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "16777216"
+        }
+      ]
+    },
+    {
+      "key": "variables.max_recursive_iterations",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "1000"
+        }
+      ]
+    },
+    {
+      "key": "variables.old_mode",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "UTF8_IS_UTF8MB3"
+        }
+      ]
+    },
+    {
+      "key": "variables.old_passwords",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "OFF"
+        }
+      ]
+    },
+    {
+      "key": "variables.protocol_compression_algorithms",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "zlib,zstd,uncompressed"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "variables.redirect_url",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "key": "variables.resultset_metadata",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "FULL"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "variables.secure_auth",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma130"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123"
+          ],
+          "value": "ON"
+        }
+      ]
+    },
+    {
+      "key": "variables.session_track_gtids",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "OFF"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "variables.session_track_system_variables",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "time_zone,autocommit,character_set_client,character_set_results,character_set_connection"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "autocommit,character_set_client,character_set_connection,character_set_results,time_zone"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "autocommit,character_set_client,character_set_connection,character_set_results,redirect_url,time_zone"
+        }
+      ]
+    },
+    {
+      "key": "variables.sql_mode",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+        }
+      ]
+    },
+    {
+      "key": "variables.ssl_cert",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "server-cert.pem"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "key": "variables.super_read_only",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "OFF"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "variables.transaction_isolation",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "REPEATABLE-READ"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "variables.tx_isolation",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "REPEATABLE-READ"
+        }
+      ]
+    },
+    {
+      "key": "variables.version",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "8.4.13"
+        },
+        {
+          "servers": [
+            "my97"
+          ],
+          "value": "9.7.4"
+        },
+        {
+          "servers": [
+            "my2610"
+          ],
+          "value": "26.10.0"
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "10.6.28-MariaDB-ubu2204-log"
+        },
+        {
+          "servers": [
+            "ma1011"
+          ],
+          "value": "10.11.19-MariaDB-ubu2204-log"
+        },
+        {
+          "servers": [
+            "ma114"
+          ],
+          "value": "11.4.13-MariaDB-ubu2404-log"
+        },
+        {
+          "servers": [
+            "ma118"
+          ],
+          "value": "11.8.9-MariaDB-ubu2404-log"
+        },
+        {
+          "servers": [
+            "ma123"
+          ],
+          "value": "12.3.3-MariaDB-ubu2404-log"
+        },
+        {
+          "servers": [
+            "ma130"
+          ],
+          "value": "13.0.2-MariaDB-ubu2604-log"
+        }
+      ]
+    },
+    {
+      "key": "variables.version_comment",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "MySQL Community Server - GPL"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "mariadb.org binary distribution"
+        }
+      ]
+    }
+  ]
+}

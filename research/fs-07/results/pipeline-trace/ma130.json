@@ -1,0 +1,106 @@
+{
+  "server": "ma130",
+  "runs": [
+    {
+      "run": 1,
+      "queriesSeenByProxy": 20,
+      "orderMatchesSent": true,
+      "errorIndexesBatchA": [
+        10
+      ],
+      "errnoA": [
+        1146
+      ],
+      "executesSeenByProxy": 8,
+      "errorIndexesBatchB": [
+        5
+      ],
+      "errnoB": [
+        1062
+      ],
+      "maxCommandsInOneClientChunk": 20,
+      "responsesWithoutMatchingCommand": 0
+    },
+    {
+      "run": 2,
+      "queriesSeenByProxy": 20,
+      "orderMatchesSent": true,
+      "errorIndexesBatchA": [
+        10
+      ],
+      "errnoA": [
+        1146
+      ],
+      "executesSeenByProxy": 8,
+      "errorIndexesBatchB": [
+        5
+      ],
+      "errnoB": [
+        1062
+      ],
+      "maxCommandsInOneClientChunk": 20,
+      "responsesWithoutMatchingCommand": 0
+    },
+    {
+      "run": 3,
+      "queriesSeenByProxy": 20,
+      "orderMatchesSent": true,
+      "errorIndexesBatchA": [
+        10
+      ],
+      "errnoA": [
+        1146
+      ],
+      "executesSeenByProxy": 8,
+      "errorIndexesBatchB": [
+        5
+      ],
+      "errnoB": [
+        1062
+      ],
+      "maxCommandsInOneClientChunk": 20,
+      "responsesWithoutMatchingCommand": 0
+    },
+    {
+      "run": 4,
+      "queriesSeenByProxy": 20,
+      "orderMatchesSent": true,
+      "errorIndexesBatchA": [
+        10
+      ],
+      "errnoA": [
+        1146
+      ],
+      "executesSeenByProxy": 8,
+      "errorIndexesBatchB": [
+        5
+      ],
+      "errnoB": [
+        1062
+      ],
+      "maxCommandsInOneClientChunk": 20,
+      "responsesWithoutMatchingCommand": 0
+    },
+    {
+      "run": 5,
+      "queriesSeenByProxy": 20,
+      "orderMatchesSent": true,
+      "errorIndexesBatchA": [
+        10
+      ],
+      "errnoA": [
+        1146
+      ],
+      "executesSeenByProxy": 8,
+      "errorIndexesBatchB": [
+        5
+      ],
+      "errnoB": [
+        1062
+      ],
+      "maxCommandsInOneClientChunk": 20,
+      "responsesWithoutMatchingCommand": 0
+    }
+  ],
+  "traceAgreesWithSentOrderAndErrorPositionsInAllRuns": true
+}

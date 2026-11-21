@@ -1,0 +1,53 @@
+{
+  "server": "my97",
+  "variants": {
+    "default": {
+      "binlog_row_metadata": "MINIMAL",
+      "binlog_format": "ROW",
+      "tableMapEvent": [
+        {
+          "pos": 858,
+          "eventBytes": 69,
+          "info": "table_id: 87 (fs07.bl)"
+        }
+      ],
+      "gtidEventInfo": "SET @@SESSION.GTID_NEXT= 'e75e83e8-e5e7-11f1-94da-42d778a0f09f:6'",
+      "annotateRowsInfo": null,
+      "eventTypesSeen": [
+        "Format_desc",
+        "Previous_gtids",
+        "Gtid",
+        "Query",
+        "Table_map",
+        "Write_rows",
+        "Xid",
+        "Rotate"
+      ],
+      "imageTool": "mysqlbinlog is not in the mysql:9.7 image"
+    },
+    "FULL": {
+      "binlog_row_metadata": "FULL",
+      "binlog_format": "ROW",
+      "tableMapEvent": [
+        {
+          "pos": 858,
+          "eventBytes": 103,
+          "info": "table_id: 87 (fs07.bl)"
+        }
+      ],
+      "gtidEventInfo": "SET @@SESSION.GTID_NEXT= 'ec94ec52-e5e7-11f1-a742-a6f6a15ba9a7:6'",
+      "annotateRowsInfo": null,
+      "eventTypesSeen": [
+        "Format_desc",
+        "Previous_gtids",
+        "Gtid",
+        "Query",
+        "Table_map",
+        "Write_rows",
+        "Xid",
+        "Rotate"
+      ],
+      "imageTool": "mysqlbinlog is not in the mysql:9.7 image"
+    }
+  }
+}

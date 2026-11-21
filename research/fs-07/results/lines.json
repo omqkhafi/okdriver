@@ -1,0 +1,48 @@
+{
+  "perFile": {
+    "shared": {
+      "shared/greeting.ts": 42,
+      "shared/bytes.ts": 61,
+      "shared/sha2.ts": 29,
+      "shared/result.ts": 121,
+      "shared/packet.ts": 56,
+      "shared/auth.ts": 14,
+      "shared/constants.ts": 65,
+      "shared/profile.ts": 24,
+      "shared/connection.ts": 368,
+      "shared/errors.ts": 9
+    },
+    "mysql": {
+      "mysql/sha256.ts": 13,
+      "mysql/profile.ts": 25
+    },
+    "mariadb": {
+      "mariadb/parsec.ts": 19,
+      "mariadb/ed25519.ts": 51,
+      "mariadb/profile.ts": 44,
+      "mariadb/bulk.ts": 13
+    },
+    "dispatch": {
+      "connect.ts": 12
+    }
+  },
+  "totals": {
+    "shared": 789,
+    "mysql": 38,
+    "mariadb": 127,
+    "dispatch": 12
+  },
+  "sharedPercentOfSharedPlusFamily": 82.7,
+  "forkedLines": 165,
+  "eachDriverAlone": {
+    "mysql": {
+      "lines": 827,
+      "sharedPercent": 95.4
+    },
+    "mariadb": {
+      "lines": 916,
+      "sharedPercent": 86.1
+    }
+  },
+  "note": "non-blank, non-comment lines; dispatch (connect.ts) is the family switch and counts as neither shared nor forked"
+}

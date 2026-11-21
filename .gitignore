@@ -34,6 +34,9 @@ logs/
 research/fs-14/work/
 research/fs-14/results/smoke/*/
 
+# FS-07 research scratch: reference clients (node_modules), pull logs, raw traces (see research/fs-07/README.md)
+research/fs-07/work/
+
 # FS-08 research scratch: database files, extension build, downloaded docs, logs (see research/fs-08/README.md)
 research/fs-08/work/
 

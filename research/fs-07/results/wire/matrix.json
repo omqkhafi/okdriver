@@ -1,0 +1,766 @@
+{
+  "servers": [
+    "my84",
+    "my97",
+    "my2610",
+    "ma106",
+    "ma1011",
+    "ma114",
+    "ma118",
+    "ma123",
+    "ma130"
+  ],
+  "rows": [
+    {
+      "step": 0,
+      "label": "greeting+auth",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011"
+        ],
+        [
+          "ma114"
+        ],
+        [
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 0,
+        "kindA": "C",
+        "kindB": "C",
+        "firstDifferingByte": 0,
+        "a": "0da2fe01000000402d0000000",
+        "b": "0ca2fe01000000402d0000000",
+        "classCount": 4
+      },
+      "packetKinds": "GREETING,AUTH_MORE,OK"
+    },
+    {
+      "step": 1,
+      "label": "COM_QUERY",
+      "sql": "do 1",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": "OK"
+    },
+    {
+      "step": 2,
+      "label": "COM_QUERY",
+      "sql": "select 1 as a, 'x' as b, null as c",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011"
+        ],
+        [
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 2,
+        "kindA": "COL_DEF",
+        "kindB": "COL_DEF",
+        "firstDifferingByte": 10,
+        "a": "00161000c3f000200000008810000000",
+        "b": "0016100000c3f0001000000038100000",
+        "classCount": 3
+      },
+      "packetKinds": "COLCOUNT=3,COL_DEF,COL_DEF,COL_DEF,ROW,OK_EOF"
+    },
+    {
+      "step": 3,
+      "label": "COM_QUERY",
+      "sql": "select cast(7 as signed) i, cast(7 as unsigned) u, 1.5 d, 1e0 f, _utf8mb4'é' s, _binary'ab' bin, cast('2020-01-02' as date) dt, cast('2020-01-02 03:04:05.5' as datetime(6)) dtm, cast('838:59:59' as time) tm, b'101' bt, json_object('a', 1) js",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011"
+        ],
+        [
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 2,
+        "kindA": "COL_DEF",
+        "kindB": "COL_DEF",
+        "firstDifferingByte": 10,
+        "a": "00169000c3f001500000008810000000",
+        "b": "0016900000c3f0002000000038100000",
+        "classCount": 3
+      },
+      "packetKinds": "COLCOUNT=11,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,ROW,OK_EOF"
+    },
+    {
+      "step": 4,
+      "label": "COM_QUERY",
+      "sql": "drop table if exists fs07.t1",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": "OK"
+    },
+    {
+      "step": 5,
+      "label": "COM_QUERY",
+      "sql": "create table fs07.t1 (id bigint unsigned primary key auto_increment, v varchar(20), d decimal(10,2), ts datetime(6), j json)",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": "OK"
+    },
+    {
+      "step": 6,
+      "label": "COM_QUERY",
+      "sql": "insert into fs07.t1 (v, d, ts, j) values ('a', 1.25, '2020-01-02 03:04:05.123456', '{\"k\": [1, 2]}'), ('b', null, null, null)",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": "OK"
+    },
+    {
+      "step": 7,
+      "label": "COM_QUERY",
+      "sql": "select * from fs07.t1 order by id",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011"
+        ],
+        [
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 2,
+        "kindA": "COL_DEF",
+        "kindB": "COL_DEF",
+        "firstDifferingByte": 21,
+        "a": "40269640c3f001400000008234200000",
+        "b": "4026964000c3f0014000000082342000",
+        "classCount": 3
+      },
+      "packetKinds": "COLCOUNT=5,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,ROW,ROW,OK_EOF"
+    },
+    {
+      "step": 8,
+      "label": "COM_QUERY",
+      "sql": "update fs07.t1 set v = 'z' where id = 1",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": "OK"
+    },
+    {
+      "step": 9,
+      "label": "COM_STMT_PREPARE",
+      "sql": "select id, v, d, ts, j from fs07.t1 where id > ? and v <> ? order by id",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011"
+        ],
+        [
+          "ma114",
+          "ma130"
+        ],
+        [
+          "ma118",
+          "ma123"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 1,
+        "kindA": "PREPARE_OK",
+        "kindB": "PREPARE_OK",
+        "firstDifferingByte": 1,
+        "a": "000100000005000200000000",
+        "b": "000700000005000200000000",
+        "classCount": 4
+      },
+      "packetKinds": "PREPARE_OK,PARAM_DEF,PARAM_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF"
+    },
+    {
+      "step": 10,
+      "label": "COM_STMT_EXECUTE",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011"
+        ],
+        [
+          "ma114",
+          "ma130"
+        ],
+        [
+          "ma118",
+          "ma123"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 0,
+        "kindA": "C",
+        "kindB": "C",
+        "firstDifferingByte": 1,
+        "a": "170100000000010000000001080",
+        "b": "170700000000010000000001080",
+        "classCount": 4
+      },
+      "packetKinds": "COLCOUNT=5,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,ROW,ROW,OK_EOF"
+    },
+    {
+      "step": 11,
+      "label": "COM_STMT_RESET",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma130"
+        ],
+        [
+          "ma118",
+          "ma123"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 0,
+        "kindA": "C",
+        "kindB": "C",
+        "firstDifferingByte": 1,
+        "a": "1a01000000",
+        "b": "1a07000000",
+        "classCount": 3
+      },
+      "packetKinds": "OK"
+    },
+    {
+      "step": 12,
+      "label": "COM_STMT_EXECUTE",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011"
+        ],
+        [
+          "ma114",
+          "ma130"
+        ],
+        [
+          "ma118",
+          "ma123"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 0,
+        "kindA": "C",
+        "kindB": "C",
+        "firstDifferingByte": 1,
+        "a": "170100000000010000000001080",
+        "b": "170700000000010000000001080",
+        "classCount": 4
+      },
+      "packetKinds": "COLCOUNT=5,COL_DEF,COL_DEF,COL_DEF,COL_DEF,COL_DEF,ROW,ROW,OK_EOF"
+    },
+    {
+      "step": 13,
+      "label": "COM_STMT_CLOSE",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma130"
+        ],
+        [
+          "ma118",
+          "ma123"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 0,
+        "kindA": "C",
+        "kindB": "C",
+        "firstDifferingByte": 1,
+        "a": "1901000000",
+        "b": "1907000000",
+        "classCount": 3
+      },
+      "packetKinds": ""
+    },
+    {
+      "step": 14,
+      "label": "COM_STMT_PREPARE",
+      "sql": "insert into fs07.t1 (v) values (?)",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma130"
+        ],
+        [
+          "ma118",
+          "ma123"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 1,
+        "kindA": "PREPARE_OK",
+        "kindB": "PREPARE_OK",
+        "firstDifferingByte": 1,
+        "a": "000300000000000100000000",
+        "b": "000800000000000100000000",
+        "classCount": 3
+      },
+      "packetKinds": "PREPARE_OK,PARAM_DEF"
+    },
+    {
+      "step": 15,
+      "label": "COM_STMT_EXECUTE",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma130"
+        ],
+        [
+          "ma118",
+          "ma123"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 0,
+        "kindA": "C",
+        "kindB": "C",
+        "firstDifferingByte": 1,
+        "a": "170300000000010000000001fd0",
+        "b": "170800000000010000000001fd0",
+        "classCount": 3
+      },
+      "packetKinds": "OK"
+    },
+    {
+      "step": 16,
+      "label": "COM_STMT_RESET",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma130"
+        ],
+        [
+          "ma118",
+          "ma123"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 0,
+        "kindA": "C",
+        "kindB": "C",
+        "firstDifferingByte": 1,
+        "a": "1a03000000",
+        "b": "1a08000000",
+        "classCount": 3
+      },
+      "packetKinds": "OK"
+    },
+    {
+      "step": 17,
+      "label": "COM_STMT_EXECUTE",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma130"
+        ],
+        [
+          "ma118",
+          "ma123"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 0,
+        "kindA": "C",
+        "kindB": "C",
+        "firstDifferingByte": 1,
+        "a": "170300000000010000000001fd0",
+        "b": "170800000000010000000001fd0",
+        "classCount": 3
+      },
+      "packetKinds": "OK"
+    },
+    {
+      "step": 18,
+      "label": "COM_STMT_CLOSE",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma130"
+        ],
+        [
+          "ma118",
+          "ma123"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 0,
+        "kindA": "C",
+        "kindB": "C",
+        "firstDifferingByte": 1,
+        "a": "1903000000",
+        "b": "1908000000",
+        "classCount": 3
+      },
+      "packetKinds": ""
+    },
+    {
+      "step": 19,
+      "label": "COM_PING",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": "OK"
+    },
+    {
+      "step": 20,
+      "label": "COM_RESET_CONNECTION",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": "OK"
+    },
+    {
+      "step": 21,
+      "label": "COM_QUERY",
+      "sql": "use fs07",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": "OK"
+    },
+    {
+      "step": 22,
+      "label": "COM_QUERY",
+      "sql": "select * from fs07.no_such_table",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": "ERR"
+    },
+    {
+      "step": 23,
+      "label": "COM_QUERY",
+      "sql": "selec 1",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 1,
+        "kindA": "ERR",
+        "kindB": "ERR",
+        "firstDifferingByte": 90,
+        "a": "7572204d7953514c2073657276657220",
+        "b": "7572204d617269614442207365727665",
+        "classCount": 2
+      },
+      "packetKinds": "ERR"
+    },
+    {
+      "step": 24,
+      "label": "COM_QUERY",
+      "sql": "set autocommit = 0",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": "OK"
+    },
+    {
+      "step": 25,
+      "label": "COM_QUERY",
+      "sql": "select @@autocommit",
+      "identicalAcrossAll": false,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610"
+        ],
+        [
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": {
+        "packetIndex": 2,
+        "kindA": "COL_DEF",
+        "kindB": "COL_DEF",
+        "firstDifferingByte": 21,
+        "a": "d6974000c3f000100000008800000000",
+        "b": "d697400000c3f0001000000088000000",
+        "classCount": 2
+      },
+      "packetKinds": "COLCOUNT=1,COL_DEF,ROW,OK_EOF"
+    },
+    {
+      "step": 26,
+      "label": "COM_QUIT",
+      "identicalAcrossAll": true,
+      "groups": [
+        [
+          "my84",
+          "my97",
+          "my2610",
+          "ma106",
+          "ma1011",
+          "ma114",
+          "ma118",
+          "ma123",
+          "ma130"
+        ]
+      ],
+      "diff": null,
+      "packetKinds": ""
+    }
+  ]
+}

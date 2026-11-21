@@ -1,0 +1,972 @@
+{
+  "server": "ma114",
+  "version": "11.4.13-MariaDB-ubu2404-log",
+  "types": {
+    "optionalTypes": {
+      "c_uuid": "supported",
+      "c_inet4": "supported",
+      "c_inet6": "supported",
+      "c_vec": "[4161] (HY000) Unknown data type: 'vector'"
+    },
+    "insertAllOk": true,
+    "zeroDate": {
+      "insert": "ok (sql_mode empty)",
+      "decoded": {
+        "text": [
+          "0000-00-00",
+          "0000-00-00 00:00:00.000000"
+        ],
+        "binary": [
+          "0000-00-00",
+          "0000-00-00 00:00:00.000000"
+        ]
+      }
+    },
+    "columns": [
+      {
+        "column": "c_tiny",
+        "wireType": "1 TINY",
+        "charset": 63,
+        "flags": 0,
+        "decimals": 0,
+        "length": 4,
+        "extra": null,
+        "jsType": "number",
+        "text": "-128",
+        "binary": "-128",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "-128"
+      },
+      {
+        "column": "c_tinyu",
+        "wireType": "1 TINY",
+        "charset": 63,
+        "flags": 32,
+        "decimals": 0,
+        "length": 3,
+        "extra": null,
+        "jsType": "number",
+        "text": "255",
+        "binary": "255",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "255"
+      },
+      {
+        "column": "c_t1",
+        "wireType": "1 TINY",
+        "charset": 63,
+        "flags": 0,
+        "decimals": 0,
+        "length": 1,
+        "extra": null,
+        "jsType": "number",
+        "text": "1",
+        "binary": "1",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "1"
+      },
+      {
+        "column": "c_small",
+        "wireType": "2 SHORT",
+        "charset": 63,
+        "flags": 0,
+        "decimals": 0,
+        "length": 6,
+        "extra": null,
+        "jsType": "number",
+        "text": "-32768",
+        "binary": "-32768",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "-32768"
+      },
+      {
+        "column": "c_med",
+        "wireType": "9 INT24",
+        "charset": 63,
+        "flags": 0,
+        "decimals": 0,
+        "length": 9,
+        "extra": null,
+        "jsType": "number",
+        "text": "-8388608",
+        "binary": "-8388608",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "-8388608"
+      },
+      {
+        "column": "c_int",
+        "wireType": "3 LONG",
+        "charset": 63,
+        "flags": 0,
+        "decimals": 0,
+        "length": 11,
+        "extra": null,
+        "jsType": "number",
+        "text": "-2147483648",
+        "binary": "-2147483648",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "-2147483648"
+      },
+      {
+        "column": "c_big",
+        "wireType": "8 LONGLONG",
+        "charset": 63,
+        "flags": 0,
+        "decimals": 0,
+        "length": 20,
+        "extra": null,
+        "jsType": "bigint",
+        "text": "-9223372036854775808",
+        "binary": "-9223372036854775808",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "-9223372036854775808"
+      },
+      {
+        "column": "c_bigu",
+        "wireType": "8 LONGLONG",
+        "charset": 63,
+        "flags": 32,
+        "decimals": 0,
+        "length": 20,
+        "extra": null,
+        "jsType": "bigint",
+        "text": "18446744073709551615",
+        "binary": "18446744073709551615",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "18446744073709551615"
+      },
+      {
+        "column": "c_dec",
+        "wireType": "246 NEWDECIMAL",
+        "charset": 63,
+        "flags": 0,
+        "decimals": 6,
+        "length": 22,
+        "extra": null,
+        "jsType": "string",
+        "text": "12345678901234.123456",
+        "binary": "12345678901234.123456",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "12345678901234.123456"
+      },
+      {
+        "column": "c_f",
+        "wireType": "4 FLOAT",
+        "charset": 63,
+        "flags": 0,
+        "decimals": 31,
+        "length": 12,
+        "extra": null,
+        "jsType": "number",
+        "text": "1.5",
+        "binary": "1.5",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "1.5"
+      },
+      {
+        "column": "c_d",
+        "wireType": "5 DOUBLE",
+        "charset": 63,
+        "flags": 0,
+        "decimals": 31,
+        "length": 22,
+        "extra": null,
+        "jsType": "number",
+        "text": "3.141592653589793",
+        "binary": "3.141592653589793",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "3.141592653589793"
+      },
+      {
+        "column": "c_vc",
+        "wireType": "253 VAR_STRING",
+        "charset": 224,
+        "flags": 0,
+        "decimals": 0,
+        "length": 160,
+        "extra": null,
+        "jsType": "string",
+        "text": "héllo wörld €",
+        "binary": "héllo wörld €",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "héllo wörld €"
+      },
+      {
+        "column": "c_vb",
+        "wireType": "253 VAR_STRING",
+        "charset": 63,
+        "flags": 128,
+        "decimals": 0,
+        "length": 20,
+        "extra": null,
+        "jsType": "Buffer",
+        "text": "hex:00ff10",
+        "binary": "hex:00ff10",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "00FF10"
+      },
+      {
+        "column": "c_txt",
+        "wireType": "252 BLOB",
+        "charset": 224,
+        "flags": 16,
+        "decimals": 0,
+        "length": 262140,
+        "extra": null,
+        "jsType": "string",
+        "text": "text",
+        "binary": "text",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "text"
+      },
+      {
+        "column": "c_blob",
+        "wireType": "252 BLOB",
+        "charset": 63,
+        "flags": 144,
+        "decimals": 0,
+        "length": 65535,
+        "extra": null,
+        "jsType": "Buffer",
+        "text": "hex:010203",
+        "binary": "hex:010203",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "010203"
+      },
+      {
+        "column": "c_bit",
+        "wireType": "16 BIT",
+        "charset": 63,
+        "flags": 32,
+        "decimals": 0,
+        "length": 10,
+        "extra": null,
+        "jsType": "Buffer",
+        "text": "hex:02aa",
+        "binary": "hex:02aa",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "2AA"
+      },
+      {
+        "column": "c_year",
+        "wireType": "13 YEAR",
+        "charset": 63,
+        "flags": 96,
+        "decimals": 0,
+        "length": 4,
+        "extra": null,
+        "jsType": "number",
+        "text": "2155",
+        "binary": "2155",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "2155"
+      },
+      {
+        "column": "c_date",
+        "wireType": "10 DATE",
+        "charset": 63,
+        "flags": 128,
+        "decimals": 0,
+        "length": 10,
+        "extra": null,
+        "jsType": "string",
+        "text": "9999-12-31",
+        "binary": "9999-12-31",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "9999-12-31"
+      },
+      {
+        "column": "c_dt6",
+        "wireType": "12 DATETIME",
+        "charset": 63,
+        "flags": 128,
+        "decimals": 6,
+        "length": 26,
+        "extra": null,
+        "jsType": "string",
+        "text": "9999-12-31 23:59:59.999999",
+        "binary": "9999-12-31 23:59:59.999999",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "9999-12-31 23:59:59.999999"
+      },
+      {
+        "column": "c_ts6",
+        "wireType": "7 TIMESTAMP",
+        "charset": 63,
+        "flags": 160,
+        "decimals": 6,
+        "length": 26,
+        "extra": null,
+        "jsType": "string",
+        "text": "2038-01-19 03:14:07.999999",
+        "binary": "2038-01-19 03:14:07.999999",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "2038-01-19 03:14:07.999999"
+      },
+      {
+        "column": "c_time6",
+        "wireType": "11 TIME",
+        "charset": 63,
+        "flags": 128,
+        "decimals": 6,
+        "length": 17,
+        "extra": null,
+        "jsType": "string",
+        "text": "838:59:58.123456",
+        "binary": "838:59:58.123456",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "838:59:58.123456"
+      },
+      {
+        "column": "c_json",
+        "wireType": "252 BLOB",
+        "charset": 224,
+        "flags": 144,
+        "decimals": 0,
+        "length": 4294967295,
+        "extra": {
+          "format": "json"
+        },
+        "jsType": "string",
+        "text": "{\"b\": 1, \"a\": [1, 2, {\"c\": null}]}",
+        "binary": "{\"b\": 1, \"a\": [1, 2, {\"c\": null}]}",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "{\"b\": 1, \"a\": [1, 2, {\"c\": null}]}"
+      },
+      {
+        "column": "c_enum",
+        "wireType": "254 STRING",
+        "charset": 224,
+        "flags": 256,
+        "decimals": 0,
+        "length": 4,
+        "extra": null,
+        "jsType": "string",
+        "text": "b",
+        "binary": "b",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "b"
+      },
+      {
+        "column": "c_set",
+        "wireType": "254 STRING",
+        "charset": 224,
+        "flags": 2048,
+        "decimals": 0,
+        "length": 12,
+        "extra": null,
+        "jsType": "string",
+        "text": "x,y",
+        "binary": "x,y",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "x,y"
+      },
+      {
+        "column": "c_geom",
+        "wireType": "255 GEOMETRY",
+        "charset": 63,
+        "flags": 144,
+        "decimals": 0,
+        "length": 4294967295,
+        "extra": null,
+        "jsType": "Buffer",
+        "text": "hex:000000000101000000000000000000f03f0000000000000040",
+        "binary": "hex:000000000101000000000000000000f03f0000000000000040",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "000000000101000000000000000000F03F0000000000000040"
+      },
+      {
+        "column": "c_uuid",
+        "wireType": "254 STRING",
+        "charset": 224,
+        "flags": 160,
+        "decimals": 0,
+        "length": 144,
+        "extra": {
+          "typeName": "uuid"
+        },
+        "jsType": "string",
+        "text": "123e4567-e89b-12d3-a456-426614174000",
+        "binary": "123e4567-e89b-12d3-a456-426614174000",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "123e4567-e89b-12d3-a456-426614174000"
+      },
+      {
+        "column": "c_inet4",
+        "wireType": "254 STRING",
+        "charset": 224,
+        "flags": 160,
+        "decimals": 0,
+        "length": 60,
+        "extra": {
+          "typeName": "inet4"
+        },
+        "jsType": "string",
+        "text": "192.168.0.1",
+        "binary": "192.168.0.1",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "192.168.0.1"
+      },
+      {
+        "column": "c_inet6",
+        "wireType": "254 STRING",
+        "charset": 224,
+        "flags": 160,
+        "decimals": 0,
+        "length": 156,
+        "extra": {
+          "typeName": "inet6"
+        },
+        "jsType": "string",
+        "text": "::ffff:192.168.0.1",
+        "binary": "::ffff:192.168.0.1",
+        "textEqualsBinary": true,
+        "agreesWithServerFormatting": true,
+        "serverSays": "::ffff:192.168.0.1"
+      }
+    ],
+    "literalAndExpressionTypes": [
+      "a:LONG/cs63/flags129",
+      "b:NEWDECIMAL/cs63/flags129",
+      "c:LONG/cs63/flags129",
+      "d:LONGLONG/cs63/flags129",
+      "e:NEWDECIMAL/cs63/flags128",
+      "f:NEWDECIMAL/cs63/flags128",
+      "g:LONG/cs63/flags128",
+      "h:NEWDECIMAL/cs63/flags128",
+      "i:LONG/cs63/flags129",
+      "j:LONG/cs63/flags129",
+      "k:VAR_STRING/cs224/flags1",
+      "l:VAR_STRING/cs224/flags0",
+      "m:VAR_STRING/cs224/flags0"
+    ],
+    "literalValues": [
+      "LONG",
+      "NEWDECIMAL",
+      "VAR_STRING",
+      "DOUBLE",
+      "NULL",
+      "LONG",
+      "DATETIME",
+      "DATE",
+      "STRING",
+      "VAR_STRING",
+      "LONG",
+      "LONG",
+      "LONGLONG",
+      "LONGLONG"
+    ]
+  },
+  "failures": {
+    "E01 syntax error": {
+      "errno": 1064,
+      "sqlState": "42000",
+      "message": "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the"
+    },
+    "E02 unknown table": {
+      "errno": 1146,
+      "sqlState": "42S02",
+      "message": "Table 'fs07.nope' doesn't exist"
+    },
+    "E03 unknown column": {
+      "errno": 1054,
+      "sqlState": "42S22",
+      "message": "Unknown column 'nope' in 'SELECT'"
+    },
+    "E04 duplicate key": {
+      "errno": 1062,
+      "sqlState": "23000",
+      "message": "Duplicate entry '1' for key 'PRIMARY'"
+    },
+    "E05 NOT NULL violation": {
+      "errno": 1048,
+      "sqlState": "23000",
+      "message": "Column 'a' cannot be null"
+    },
+    "E06 value too long": {
+      "errno": 1406,
+      "sqlState": "22001",
+      "message": "Data too long for column 'b' at row 1"
+    },
+    "E07 division by zero (strict insert)": {
+      "errno": 1365,
+      "sqlState": "22012",
+      "message": "Division by 0"
+    },
+    "E08 out of range": {
+      "errno": 1264,
+      "sqlState": "22003",
+      "message": "Out of range value for column 'c' at row 1"
+    },
+    "E09 invalid JSON value": {
+      "errno": 4025,
+      "sqlState": "23000",
+      "message": "CONSTRAINT `js.j` failed for `fs07`.`js`"
+    },
+    "E10 foreign key violation": {
+      "errno": 1452,
+      "sqlState": "23000",
+      "message": "Cannot add or update a child row: a foreign key constraint fails (`fs07`.`child`, CONSTRAINT `child_ibfk_1` FO"
+    },
+    "E11 CHECK constraint violation": {
+      "errno": 4025,
+      "sqlState": "23000",
+      "message": "CONSTRAINT `CONSTRAINT_1` failed for `fs07`.`nn`"
+    },
+    "E12 unknown database": {
+      "errno": 1049,
+      "sqlState": "42000",
+      "message": "Unknown database 'fs07_nope'"
+    },
+    "E13 unknown variable": {
+      "errno": 1193,
+      "sqlState": "HY000",
+      "message": "Unknown system variable 'no_such_variable'"
+    },
+    "E14 bad sql_mode value": {
+      "errno": 1231,
+      "sqlState": "42000",
+      "message": "Variable 'sql_mode' can't be set to the value of 'nonsense'"
+    },
+    "E15 table exists": {
+      "errno": 1050,
+      "sqlState": "42S01",
+      "message": "Table 'pk' already exists"
+    },
+    "E16 cannot drop (unknown)": {
+      "errno": 1051,
+      "sqlState": "42S02",
+      "message": "Unknown table 'fs07.nope'"
+    },
+    "E17 subquery returns more than 1 row": {
+      "errno": 1242,
+      "sqlState": "21000",
+      "message": "Subquery returns more than 1 row"
+    },
+    "E18 invalid cast / bad argument": "NO ERROR (statement succeeded)",
+    "E19 RETURNING on INSERT": "NO ERROR (statement succeeded)",
+    "E20 create sequence": "NO ERROR (statement succeeded)",
+    "E21 unknown command byte 0x99": {
+      "errno": 1047,
+      "sqlState": "08S01",
+      "message": "Unknown command"
+    },
+    "E22 execute unknown statement id": {
+      "errno": 1243,
+      "sqlState": "HY000",
+      "message": "Unknown prepared statement handler (4660) given to mysqld_stmt_execute"
+    },
+    "E23 access denied": {
+      "errno": 1045,
+      "sqlState": "28000",
+      "message": "[1045] (28000) Access denied for user 'root'@'<ADDR>' (using password: YES)"
+    },
+    "E24 lock wait timeout": {
+      "errno": 1205,
+      "sqlState": "HY000",
+      "message": "Lock wait timeout exceeded; try restarting transaction"
+    },
+    "E25 deadlock": {
+      "errno": 1213,
+      "sqlState": "40001",
+      "message": "Deadlock found when trying to get lock; try restarting transaction"
+    }
+  },
+  "misc": {
+    "B1_multiStatementDefaultOff": [
+      "ERR 1064"
+    ],
+    "B1_multiStatementOn": [
+      "rows(1)",
+      "rows(2)",
+      "ok"
+    ],
+    "B2_callWithMultiResults": [
+      "rows(1)",
+      "rows(2)",
+      "ok"
+    ],
+    "B2_callWithoutMultiResults": [
+      "ERR 1312: PROCEDURE fs07.p2 can't return a result set in the given con"
+    ],
+    "B3_sessionTrackingOnOk": [
+      [
+        "default session_track vars",
+        [
+          "session_track_schema=ON",
+          "session_track_state_change=OFF",
+          "session_track_system_variables=autocommit,character_set_client,character_set_connection,character_set_results,redirect_url,time_zone",
+          "session_track_transaction_info=OFF"
+        ]
+      ],
+      [
+        "set @@session.sql_mode = \"\"",
+        {
+          "status": "0x4002",
+          "flags": [
+            "AUTOCOMMIT",
+            "SESSION_STATE_CHANGED"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": [
+            "0:·sql_mode·"
+          ]
+        }
+      ],
+      [
+        "set autocommit = 0",
+        {
+          "status": "0x4000",
+          "flags": [
+            "SESSION_STATE_CHANGED"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": [
+            "0:·autocommit·OFF"
+          ]
+        }
+      ],
+      [
+        "set names utf8mb4 collate utf8mb4_bin",
+        {
+          "status": "0x4000",
+          "flags": [
+            "SESSION_STATE_CHANGED"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": [
+            "0:·character_set_connection·utf8mb4",
+            "0:·character_set_client·utf8mb4",
+            "0:·character_set_results·utf8mb4"
+          ]
+        }
+      ],
+      [
+        "use fs07",
+        {
+          "status": "0x4000",
+          "flags": [
+            "SESSION_STATE_CHANGED"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": [
+            "1:·fs07"
+          ]
+        }
+      ],
+      [
+        "set time_zone = \"+02:00\"",
+        {
+          "status": "0x4000",
+          "flags": [
+            "SESSION_STATE_CHANGED"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": [
+            "0:·time_zone·+02:00"
+          ]
+        }
+      ]
+    ],
+    "B4_transactionStatusFlags": [
+      [
+        "set autocommit = 1",
+        {
+          "status": "0x4002",
+          "flags": [
+            "AUTOCOMMIT",
+            "SESSION_STATE_CHANGED"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": [
+            "0:·autocommit·ON"
+          ]
+        }
+      ],
+      [
+        "begin",
+        {
+          "status": "0x3",
+          "flags": [
+            "IN_TRANS",
+            "AUTOCOMMIT"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": []
+        }
+      ],
+      [
+        "insert into fs07.pk values (801, \"t\")",
+        {
+          "status": "0x3",
+          "flags": [
+            "IN_TRANS",
+            "AUTOCOMMIT"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": []
+        }
+      ],
+      [
+        "create table fs07.implicit_ddl (a int)",
+        {
+          "status": "0x2",
+          "flags": [
+            "AUTOCOMMIT"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": []
+        }
+      ],
+      [
+        "insert into fs07.pk values (802, \"t\")",
+        {
+          "status": "0x2",
+          "flags": [
+            "AUTOCOMMIT"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": []
+        }
+      ],
+      [
+        "savepoint sp1",
+        {
+          "status": "0x2",
+          "flags": [
+            "AUTOCOMMIT"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": []
+        }
+      ],
+      [
+        "rollback to savepoint sp1",
+        "[1305] (42000) SAVEPOINT sp1 does not exist"
+      ],
+      [
+        "commit",
+        {
+          "status": "0x2",
+          "flags": [
+            "AUTOCOMMIT"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": []
+        }
+      ],
+      [
+        "start transaction read only",
+        {
+          "status": "0x2003",
+          "flags": [
+            "IN_TRANS",
+            "AUTOCOMMIT",
+            "IN_TRANS_READONLY"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": []
+        }
+      ],
+      [
+        "rollback",
+        {
+          "status": "0x2",
+          "flags": [
+            "AUTOCOMMIT"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": []
+        }
+      ],
+      [
+        "drop table fs07.implicit_ddl",
+        {
+          "status": "0x2",
+          "flags": [
+            "AUTOCOMMIT"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": []
+        }
+      ],
+      [
+        "delete from fs07.pk where id in (801, 802)",
+        {
+          "status": "0x2",
+          "flags": [
+            "AUTOCOMMIT"
+          ],
+          "info": "",
+          "warnings": 0,
+          "session": []
+        }
+      ]
+    ],
+    "B5_isolationVariable": {
+      "transaction_isolation": "REPEATABLE-READ",
+      "tx_isolation": "REPEATABLE-READ"
+    },
+    "B6_returning": {
+      "insert": "rows [[\"1\",\"1\"]]",
+      "replace": "rows [[\"1\",\"2\"]]",
+      "update": "ERR 1064: You have an error in your SQL syntax; check the ma",
+      "delete": "rows [[\"1\",\"2\"]]"
+    },
+    "B7_json": {
+      "storedBack": "{\"b\":   1, \"a\": 2}",
+      "showCreateTable": "CREATE TABLE `jt` ( `j` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`j`)) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci",
+      "informationSchemaDataType": [
+        "longtext",
+        "longtext"
+      ],
+      "castAsJson": "[1064] (42000) You have an error in your SQL syntax; check the manual that corre",
+      "jsonFunctionResultColumns": [
+        "j: VAR_STRING/cs224/flags0/{\"format\":\"json\"}",
+        "k: VAR_STRING/cs224/flags0/{\"format\":\"json\"}"
+      ]
+    }
+  },
+  "lifecycle": {
+    "B9_resetConnection": {
+      "before": [
+        "fs07",
+        "1",
+        "",
+        "0",
+        "latin1",
+        "latin1_swedish_ci"
+      ],
+      "after": [
+        "fs07",
+        "NULL",
+        "STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION",
+        "1",
+        "utf8mb4",
+        "utf8mb4_uca1400_ai_ci"
+      ],
+      "columns": "database, @x, sql_mode, autocommit, character_set_client, collation_connection",
+      "temporaryTableAfter": "[1146] (42S02) Table 'fs07.tmp_r' doesn't exist",
+      "preparedStatementAfter": [
+        "ERR 1243"
+      ],
+      "okStatusFlags": {
+        "status": "0x2",
+        "flags": [
+          "AUTOCOMMIT"
+        ],
+        "info": "",
+        "warnings": 0,
+        "session": []
+      }
+    },
+    "B10_maxPreparedStmtCount_3_prepareResultsAcrossTwoConnections": [
+      "ok",
+      "ok",
+      "ERR 1461",
+      "ERR 1461"
+    ],
+    "B10_countAfterClosingConnections": [
+      "Prepared_stmt_count",
+      "1"
+    ],
+    "B11_sendLongData": {
+      "response": "ok affected 1",
+      "storedBytes": "200000"
+    },
+    "B12b_commandBetweenFetches": {
+      "firstFetch": [
+        1,
+        2,
+        3
+      ],
+      "selectInBetween": "99",
+      "secondFetch": [
+        4,
+        5,
+        6
+      ]
+    },
+    "B12_cursor": {
+      "openedRowsReturnedByExecute": 0,
+      "openedStatusFlags": [
+        "AUTOCOMMIT",
+        "NO_INDEX_USED",
+        "CURSOR_EXISTS"
+      ],
+      "fetches": [
+        "4 rows [1,2,3,4] status=AUTOCOMMIT|CURSOR_EXISTS",
+        "4 rows [5,6,7,8] status=AUTOCOMMIT|CURSOR_EXISTS",
+        "2 rows [9,10] status=AUTOCOMMIT|LAST_ROW_SENT"
+      ]
+    },
+    "B13_loadDataLocalInfile": {
+      "serverVariable_local_infile": "ON",
+      "clientWithoutLocalFilesCapability": [
+        "ERR 4166: The used command is not allowed because the MariaDB server or client has disable"
+      ],
+      "clientWithLocalFilesCapability": [
+        "ERR -1: server requested a local file (LOCAL INFILE is not enabled by this client)"
+      ]
+    },
+    "B14_failoverAndReplicationSignals": {
+      "read_only": "0",
+      "super_read_only": "unknown variable",
+      "innodb_read_only": "0",
+      "gtid_mode": "unknown variable",
+      "gtid_current_pos": "",
+      "gtid_executed": "unknown variable",
+      "gtid_domain_id": "0",
+      "server_id": "1",
+      "redirect_url": "",
+      "wsrep_on": "0",
+      "groupReplicationMembersTable": "absent",
+      "targetSessionAttrsLikeVariables": 0,
+      "relevantPlugins": [
+        "wsrep:ACTIVE"
+      ]
+    }
+  }
+}

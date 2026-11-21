@@ -1,0 +1,3261 @@
+{
+  "total": 546,
+  "differing": [
+    {
+      "key": "failures.E01 syntax error.message",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the r"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the"
+        }
+      ]
+    },
+    {
+      "key": "failures.E03 unknown column.message",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "Unknown column 'nope' in 'field list'"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "Unknown column 'nope' in 'SELECT'"
+        }
+      ]
+    },
+    {
+      "key": "failures.E04 duplicate key.message",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "Duplicate entry '1' for key 'pk.PRIMARY'"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "Duplicate entry '1' for key 'PRIMARY'"
+        }
+      ]
+    },
+    {
+      "key": "failures.E09 invalid JSON value.errno",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "3140"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "4025"
+        }
+      ]
+    },
+    {
+      "key": "failures.E09 invalid JSON value.message",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "Invalid JSON text: \"Missing a name for object member.\" at position 1 in value for column 'js.j'."
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "CONSTRAINT `js.j` failed for `fs07`.`js`"
+        }
+      ]
+    },
+    {
+      "key": "failures.E09 invalid JSON value.sqlState",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "22032"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "23000"
+        }
+      ]
+    },
+    {
+      "key": "failures.E10 foreign key violation.message",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118"
+          ],
+          "value": "Cannot add or update a child row: a foreign key constraint fails (`fs07`.`child`, CONSTRAINT `child_ibfk_1` FO"
+        },
+        {
+          "servers": [
+            "ma123",
+            "ma130"
+          ],
+          "value": "Cannot add or update a child row: a foreign key constraint fails (`fs07`.`child`, CONSTRAINT `1` FOREIGN KEY ("
+        }
+      ]
+    },
+    {
+      "key": "failures.E11 CHECK constraint violation.errno",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "3819"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "4025"
+        }
+      ]
+    },
+    {
+      "key": "failures.E11 CHECK constraint violation.message",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "Check constraint 'nn_chk_1' is violated."
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "CONSTRAINT `CONSTRAINT_1` failed for `fs07`.`nn`"
+        }
+      ]
+    },
+    {
+      "key": "failures.E11 CHECK constraint violation.sqlState",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "HY000"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "23000"
+        }
+      ]
+    },
+    {
+      "key": "failures.E18 invalid cast / bad argument",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "NO ERROR (statement succeeded)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E18 invalid cast / bad argument.errno",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "3141"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E18 invalid cast / bad argument.message",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "Invalid JSON text in argument 1 to function json_extract: \"Missing a name for object member.\" at position 1."
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E18 invalid cast / bad argument.sqlState",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "22032"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E19 RETURNING on INSERT",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "NO ERROR (statement succeeded)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E19 RETURNING on INSERT.errno",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "1064"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E19 RETURNING on INSERT.message",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the r"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E19 RETURNING on INSERT.sqlState",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "42000"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E20 create sequence",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "NO ERROR (statement succeeded)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E20 create sequence.errno",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "1064"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E20 create sequence.message",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the r"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E20 create sequence.sqlState",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "42000"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "failures.E22 execute unknown statement id.message",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "Unknown prepared statement handler (4660) given to mysql_stmt_precheck"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "Unknown prepared statement handler (4660) given to mysqld_stmt_execute"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B12_cursor.openedStatusFlags.1",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "CURSOR_EXISTS"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "NO_INDEX_USED"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B12_cursor.openedStatusFlags.2",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "CURSOR_EXISTS"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B13_loadDataLocalInfile.clientWithLocalFilesCapability.0",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "ERR 3948: Loading local data is disabled; this must be enabled on both the client and server sides"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "ERR -1: server requested a local file (LOCAL INFILE is not enabled by this client)"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B13_loadDataLocalInfile.clientWithoutLocalFilesCapability.0",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "ERR 3948: Loading local data is disabled; this must be enabled on both the client and serv"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "ERR 4166: The used command is not allowed because the MariaDB server or client has disable"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B13_loadDataLocalInfile.serverVariable_local_infile",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "OFF"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "ON"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B14_failoverAndReplicationSignals.groupReplicationMembersTable",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "exists"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "absent"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B14_failoverAndReplicationSignals.gtid_current_pos",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "unknown variable"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B14_failoverAndReplicationSignals.gtid_domain_id",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "unknown variable"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B14_failoverAndReplicationSignals.gtid_executed",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": ""
+        },
+        {
+          "servers": [
+            "my97"
+          ],
+          "value": "f2be7bfa-e5e6-11f1-a398-4ab8681fc9dd:1-53"
+        },
+        {
+          "servers": [
+            "my2610"
+          ],
+          "value": "f2fc00d3-e5e6-11f1-9300-3255b682f61c:1-53"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "unknown variable"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B14_failoverAndReplicationSignals.gtid_mode",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "OFF"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "ON"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "unknown variable"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B14_failoverAndReplicationSignals.read_only",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118"
+          ],
+          "value": "0"
+        },
+        {
+          "servers": [
+            "ma123",
+            "ma130"
+          ],
+          "value": "OFF"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B14_failoverAndReplicationSignals.redirect_url",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "unknown variable"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B14_failoverAndReplicationSignals.relevantPlugins.0",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "wsrep:ACTIVE"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B14_failoverAndReplicationSignals.super_read_only",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "0"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "unknown variable"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B14_failoverAndReplicationSignals.wsrep_on",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "unknown variable"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B9_resetConnection.after.2",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+        }
+      ]
+    },
+    {
+      "key": "lifecycle.B9_resetConnection.after.5",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "utf8mb4_0900_ai_ci"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "utf8mb4_general_ci"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "utf8mb4_uca1400_ai_ci"
+        }
+      ]
+    },
+    {
+      "key": "misc.B5_isolationVariable.transaction_isolation",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "REPEATABLE-READ"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "unknown variable"
+        }
+      ]
+    },
+    {
+      "key": "misc.B5_isolationVariable.tx_isolation",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "unknown variable"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "REPEATABLE-READ"
+        }
+      ]
+    },
+    {
+      "key": "misc.B6_returning.delete",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "ERR 1064: You have an error in your SQL syntax; check the ma"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123"
+          ],
+          "value": "rows [[\"1\",\"2\"]]"
+        },
+        {
+          "servers": [
+            "ma130"
+          ],
+          "value": "rows [[\"1\",\"3\"]]"
+        }
+      ]
+    },
+    {
+      "key": "misc.B6_returning.insert",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "ERR 1064: You have an error in your SQL syntax; check the ma"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "rows [[\"1\",\"1\"]]"
+        }
+      ]
+    },
+    {
+      "key": "misc.B6_returning.replace",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "ERR 1064: You have an error in your SQL syntax; check the ma"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "rows [[\"1\",\"2\"]]"
+        }
+      ]
+    },
+    {
+      "key": "misc.B6_returning.update",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123"
+          ],
+          "value": "ERR 1064: You have an error in your SQL syntax; check the ma"
+        },
+        {
+          "servers": [
+            "ma130"
+          ],
+          "value": "rows [[\"1\",\"3\"]]"
+        }
+      ]
+    },
+    {
+      "key": "misc.B7_json.castAsJson",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "supported"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "[1064] (42000) You have an error in your SQL syntax; check the manual that corre"
+        }
+      ]
+    },
+    {
+      "key": "misc.B7_json.informationSchemaDataType.0",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "json"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "longtext"
+        }
+      ]
+    },
+    {
+      "key": "misc.B7_json.informationSchemaDataType.1",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "json"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "longtext"
+        }
+      ]
+    },
+    {
+      "key": "misc.B7_json.jsonFunctionResultColumns.0",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "j: JSON/cs45/flags128/null"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "j: VAR_STRING/cs45/flags0/{\"format\":\"json\"}"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "j: VAR_STRING/cs224/flags0/{\"format\":\"json\"}"
+        }
+      ]
+    },
+    {
+      "key": "misc.B7_json.jsonFunctionResultColumns.1",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "k: JSON/cs45/flags128/null"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "k: VAR_STRING/cs45/flags0/{\"format\":\"json\"}"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "k: VAR_STRING/cs224/flags0/{\"format\":\"json\"}"
+        }
+      ]
+    },
+    {
+      "key": "misc.B7_json.showCreateTable",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "CREATE TABLE `jt` ( `j` json DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "CREATE TABLE `jt` ( `j` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`j`)) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=…"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "CREATE TABLE `jt` ( `j` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`j`)) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=…"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.11.charset",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "45"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "224"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.13.charset",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "45"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "224"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.19.flags",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "128"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "160"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.21.binary",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "{\"a\": [1, 2, {\"c\": null}], \"b\": 1}"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "{\"b\": 1, \"a\": [1, 2, {\"c\": null}]}"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.21.charset",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "63"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "45"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "224"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.21.extra",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "null"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.21.extra.format",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "json"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.21.serverSays",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "{\"a\": [1, 2, {\"c\": null}], \"b\": 1}"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "{\"b\": 1, \"a\": [1, 2, {\"c\": null}]}"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.21.text",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "{\"a\": [1, 2, {\"c\": null}], \"b\": 1}"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "{\"b\": 1, \"a\": [1, 2, {\"c\": null}]}"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.21.wireType",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "245 JSON"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "252 BLOB"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.22.charset",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "45"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "224"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.23.charset",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "45"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "224"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.agreesWithServerFormatting",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.binary",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "hex:0000803f0000004000004040"
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "::ffff:192.168.0.1"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "123e4567-e89b-12d3-a456-426614174000"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.charset",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "63"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "45"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "224"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.column",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "c_vec"
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "c_inet6"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "c_uuid"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.decimals",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "31"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.extra",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "null"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.extra.typeName",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "inet6"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "uuid"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.flags",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "144"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "160"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.jsType",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "Buffer"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "string"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.length",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "12"
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "156"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "144"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.serverSays",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "0000803F0000004000004040"
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "::ffff:192.168.0.1"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "123e4567-e89b-12d3-a456-426614174000"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.text",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "hex:0000803f0000004000004040"
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "::ffff:192.168.0.1"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "123e4567-e89b-12d3-a456-426614174000"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.textEqualsBinary",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.25.wireType",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610"
+          ],
+          "value": "242 VECTOR"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "254 STRING"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.agreesWithServerFormatting",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.binary",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "192.168.0.1"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.charset",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011"
+          ],
+          "value": "45"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "224"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.column",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "c_inet4"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.decimals",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.extra.typeName",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "inet4"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.flags",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "160"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.jsType",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "string"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.length",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "60"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.serverSays",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "192.168.0.1"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.text",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "192.168.0.1"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.textEqualsBinary",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.26.wireType",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "254 STRING"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.agreesWithServerFormatting",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.binary",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "::ffff:192.168.0.1"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.charset",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011"
+          ],
+          "value": "45"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "224"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.column",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "c_inet6"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.decimals",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.extra.typeName",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "inet6"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.flags",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "160"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.jsType",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "string"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.length",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "156"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.serverSays",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "::ffff:192.168.0.1"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.text",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "::ffff:192.168.0.1"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.textEqualsBinary",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.27.wireType",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "254 STRING"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.agreesWithServerFormatting",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.binary",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "hex:0000803f0000004000004040"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.charset",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "63"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.column",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "c_vec"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.decimals",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.extra",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "null"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.flags",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "128"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.jsType",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "Buffer"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.length",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "12"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.serverSays",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "0000803F0000004000004040"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.text",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "hex:0000803f0000004000004040"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.textEqualsBinary",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "key": "types.columns.28.wireType",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "(absent)"
+        },
+        {
+          "servers": [
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "253 VAR_STRING"
+        }
+      ]
+    },
+    {
+      "key": "types.literalAndExpressionTypes.0",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "a:LONGLONG/cs63/flags129"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "a:LONG/cs63/flags129"
+        }
+      ]
+    },
+    {
+      "key": "types.literalAndExpressionTypes.10",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "k:VAR_STRING/cs45/flags1"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "k:VAR_STRING/cs224/flags1"
+        }
+      ]
+    },
+    {
+      "key": "types.literalAndExpressionTypes.11",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610",
+            "ma106",
+            "ma1011"
+          ],
+          "value": "l:VAR_STRING/cs45/flags0"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "l:VAR_STRING/cs224/flags0"
+        }
+      ]
+    },
+    {
+      "key": "types.literalAndExpressionTypes.12",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "m:JSON/cs45/flags128"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011"
+          ],
+          "value": "m:VAR_STRING/cs45/flags0"
+        },
+        {
+          "servers": [
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "m:VAR_STRING/cs224/flags0"
+        }
+      ]
+    },
+    {
+      "key": "types.literalAndExpressionTypes.2",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "c:LONGLONG/cs63/flags129"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "c:LONG/cs63/flags129"
+        }
+      ]
+    },
+    {
+      "key": "types.literalAndExpressionTypes.6",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "g:LONGLONG/cs63/flags128"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "g:LONG/cs63/flags128"
+        }
+      ]
+    },
+    {
+      "key": "types.literalAndExpressionTypes.8",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "i:LONGLONG/cs63/flags129"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "i:LONG/cs63/flags129"
+        }
+      ]
+    },
+    {
+      "key": "types.literalAndExpressionTypes.9",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "j:LONGLONG/cs63/flags129"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "j:LONG/cs63/flags129"
+        }
+      ]
+    },
+    {
+      "key": "types.optionalTypes.c_inet4",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "[1064] (42000) You have an error in your SQL syntax; check the manual that corresponds to "
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "[4161] (HY000) Unknown data type: 'inet4'"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "supported"
+        }
+      ]
+    },
+    {
+      "key": "types.optionalTypes.c_inet6",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "[1064] (42000) You have an error in your SQL syntax; check the manual that corresponds to "
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "supported"
+        }
+      ]
+    },
+    {
+      "key": "types.optionalTypes.c_uuid",
+      "groups": [
+        {
+          "servers": [
+            "my84",
+            "my97",
+            "my2610"
+          ],
+          "value": "[1064] (42000) You have an error in your SQL syntax; check the manual that corresponds to "
+        },
+        {
+          "servers": [
+            "ma106"
+          ],
+          "value": "[4161] (HY000) Unknown data type: 'uuid'"
+        },
+        {
+          "servers": [
+            "ma1011",
+            "ma114",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "supported"
+        }
+      ]
+    },
+    {
+      "key": "types.optionalTypes.c_vec",
+      "groups": [
+        {
+          "servers": [
+            "my84"
+          ],
+          "value": "[1064] (42000) You have an error in your SQL syntax; check the manual that corresponds to "
+        },
+        {
+          "servers": [
+            "my97",
+            "my2610",
+            "ma118",
+            "ma123",
+            "ma130"
+          ],
+          "value": "supported"
+        },
+        {
+          "servers": [
+            "ma106",
+            "ma1011",
+            "ma114"
+          ],
+          "value": "[4161] (HY000) Unknown data type: 'vector'"
+        }
+      ]
+    }
+  ]
+}

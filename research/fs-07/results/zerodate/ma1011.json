@@ -1,0 +1,19 @@
+{
+  "server": "ma1011",
+  "sql_mode": "STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION",
+  "zero date": "accepted",
+  "zero day in date": "accepted",
+  "zero datetime": "accepted",
+  "time 838:59:59": "accepted",
+  "time 838:59:59.5": "accepted",
+  "time 839:00:00": "ERR 1292: Incorrect time value: '839:00:00' for column `fs07`.`zd`.`t`",
+  "year 2156": "ERR 1264: Out of range value for column 'y' at row 1",
+  "datetime year 10000": "ERR 1292: Incorrect datetime value: '10000-01-01 00:00:00' for column ",
+  "storedRows": [
+    "0000-00-00 | NULL | NULL | NULL",
+    "2020-01-00 | NULL | NULL | NULL",
+    "NULL | 0000-00-00 00:00:00.000000 | NULL | NULL",
+    "NULL | NULL | 838:59:59.000000 | NULL",
+    "NULL | NULL | 838:59:59.500000 | NULL"
+  ]
+}

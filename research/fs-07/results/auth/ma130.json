@@ -1,0 +1,260 @@
+{
+  "id": "ma130",
+  "defaultLoadedBeforeAnyInstall": [
+    [
+      "mysql_native_password",
+      "ACTIVE"
+    ],
+    [
+      "mysql_old_password",
+      "ACTIVE"
+    ],
+    [
+      "unix_socket",
+      "ACTIVE"
+    ]
+  ],
+  "plugins": [
+    {
+      "plugin": "mysql_native_password",
+      "create": "ok",
+      "storedPlugin": "mysql_native_password",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,OK",
+          "switchTo": null,
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,OK",
+          "switchTo": null,
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1045
+        }
+      ],
+      "prototype": {
+        "first": "ok",
+        "second": "ok",
+        "wrongPassword": "[1045] (28000) Access denied for user 'fs07_a1'@'172.17.0.1' (using password: YES)"
+      },
+      "mysql2": "ok fs07_a1@%",
+      "mariadbConnector": "ok fs07_a1@%",
+      "overTls": {
+        "prototype": "ok {\"protocol\":\"TLSv1.3\",\"cipher\":\"TLS_AES_128_GCM_SHA256\"}",
+        "mysql2": "ok fs07_a1@%",
+        "mariadbConnector": "ok fs07_a1@%"
+      }
+    },
+    {
+      "plugin": "mysql_old_password",
+      "note": "hash of 'x' written literally: OLD_PASSWORD('x') = 606706156665cd86; the login uses password 'x'",
+      "create": "ok",
+      "storedPlugin": "mysql_old_password",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1275
+        },
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1275
+        },
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1275
+        }
+      ],
+      "prototype": {
+        "first": "refused: [1275] (HY000) User 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new format",
+        "second": "refused: [1275] (HY000) User 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new format",
+        "wrongPassword": "[1275] (HY000) User 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new format"
+      },
+      "mysql2": "refused: User 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new format",
+      "mariadbConnector": "refused: (conn:24, no: 1275, SQLState: HY000) User 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new format",
+      "overTls": {
+        "prototype": "refused: [1275] (HY000) User 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new format",
+        "mysql2": "refused: User 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new format",
+        "mariadbConnector": "refused: (conn:27, no: 1275, SQLState: HY000) User 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new format"
+      }
+    },
+    {
+      "plugin": "ed25519",
+      "setup": [
+        {
+          "sql": "install soname 'auth_ed25519'",
+          "result": "ok"
+        }
+      ],
+      "create": "ok",
+      "storedPlugin": "ed25519",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,AUTH_SWITCH,OK",
+          "switchTo": "client_ed25519",
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,OK",
+          "switchTo": "client_ed25519",
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,ERR",
+          "switchTo": "client_ed25519",
+          "outcome": "err",
+          "errno": 1045
+        }
+      ],
+      "prototype": {
+        "first": "ok",
+        "second": "ok",
+        "wrongPassword": "[1045] (28000) Access denied for user 'fs07_a3'@'172.17.0.1' (using password: YES)"
+      },
+      "mysql2": "refused: Server requests authentication using unknown plugin client_ed25519. See TODO: add plugins doco here on how to configure or author authentication plugins.",
+      "mariadbConnector": "ok fs07_a3@%",
+      "overTls": {
+        "prototype": "ok {\"protocol\":\"TLSv1.3\",\"cipher\":\"TLS_AES_128_GCM_SHA256\"}",
+        "mysql2": "refused: Server requests authentication using unknown plugin client_ed25519. See TODO: add plugins doco here on how to configure or author authentication plugins.",
+        "mariadbConnector": "ok fs07_a3@%"
+      }
+    },
+    {
+      "plugin": "parsec",
+      "setup": [
+        {
+          "sql": "install soname 'auth_parsec'",
+          "result": "ok"
+        }
+      ],
+      "create": "ok",
+      "storedPlugin": "parsec",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,AUTH_SWITCH,AUTH_MORE,OK",
+          "switchTo": "parsec",
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,AUTH_MORE,OK",
+          "switchTo": "parsec",
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,AUTH_MORE,ERR",
+          "switchTo": "parsec",
+          "outcome": "err",
+          "errno": 1045
+        }
+      ],
+      "prototype": {
+        "first": "ok",
+        "second": "ok",
+        "wrongPassword": "[1045] (28000) Access denied for user 'fs07_a4'@'172.17.0.1' (using password: NO)"
+      },
+      "mysql2": "refused: Server requests authentication using unknown plugin parsec. See TODO: add plugins doco here on how to configure or author authentication plugins.",
+      "mariadbConnector": "ok fs07_a4@%",
+      "overTls": {
+        "prototype": "ok {\"protocol\":\"TLSv1.3\",\"cipher\":\"TLS_AES_128_GCM_SHA256\"}",
+        "mysql2": "refused: Server requests authentication using unknown plugin parsec. See TODO: add plugins doco here on how to configure or author authentication plugins.",
+        "mariadbConnector": "ok fs07_a4@%"
+      }
+    },
+    {
+      "plugin": "caching_sha2_password",
+      "setup": [
+        {
+          "sql": "install soname 'auth_mysql_sha2'",
+          "result": "ok"
+        }
+      ],
+      "create": "ok",
+      "storedPlugin": "caching_sha2_password",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,AUTH_SWITCH,AUTH_MORE,ERR",
+          "switchTo": "caching_sha2_password",
+          "outcome": "err",
+          "errno": 1045
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,AUTH_MORE,ERR",
+          "switchTo": "caching_sha2_password",
+          "outcome": "err",
+          "errno": 1045
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,AUTH_MORE,ERR",
+          "switchTo": "caching_sha2_password",
+          "outcome": "err",
+          "errno": 1045
+        }
+      ],
+      "prototype": {
+        "first": "refused: [1045] (28000) Access denied for user 'fs07_a5'@'172.17.0.1' (using password: YES)",
+        "second": "refused: [1045] (28000) Access denied for user 'fs07_a5'@'172.17.0.1' (using password: YES)",
+        "wrongPassword": "[1045] (28000) Access denied for user 'fs07_a5'@'172.17.0.1' (using password: YES)"
+      },
+      "mysql2": "refused: Access denied for user 'fs07_a5'@'172.17.0.1' (using password: YES)",
+      "mariadbConnector": "refused: (conn:48, no: 1045, SQLState: 28000) Access denied for user 'fs07_a5'@'172.17.0.1' (using password: YES)",
+      "overTls": {
+        "prototype": "ok {\"protocol\":\"TLSv1.3\",\"cipher\":\"TLS_AES_128_GCM_SHA256\"}",
+        "mysql2": "ok fs07_a5@%",
+        "mariadbConnector": "ok fs07_a5@%"
+      }
+    },
+    {
+      "plugin": "unix_socket",
+      "create": "ok",
+      "storedPlugin": "unix_socket",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1698
+        },
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1698
+        },
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1698
+        }
+      ],
+      "prototype": {
+        "first": "refused: [1698] (28000) Access denied for user 'fs07_a6'@'172.17.0.1'",
+        "second": "refused: [1698] (28000) Access denied for user 'fs07_a6'@'172.17.0.1'",
+        "wrongPassword": "[1698] (28000) Access denied for user 'fs07_a6'@'172.17.0.1'"
+      },
+      "mysql2": "refused: Access denied for user 'fs07_a6'@'172.17.0.1'",
+      "mariadbConnector": "refused: (conn:56, no: 1698, SQLState: 28000) Access denied for user 'fs07_a6'@'172.17.0.1'",
+      "overTls": {
+        "prototype": "refused: [1698] (28000) Access denied for user 'fs07_a6'@'172.17.0.1'",
+        "mysql2": "refused: Access denied for user 'fs07_a6'@'172.17.0.1'",
+        "mariadbConnector": "refused: (conn:59, no: 1698, SQLState: 28000) Access denied for user 'fs07_a6'@'172.17.0.1'"
+      }
+    }
+  ]
+}

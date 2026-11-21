@@ -1,0 +1,194 @@
+{
+  "id": "ma106",
+  "defaultLoadedBeforeAnyInstall": [
+    [
+      "mysql_native_password",
+      "ACTIVE"
+    ],
+    [
+      "mysql_old_password",
+      "ACTIVE"
+    ],
+    [
+      "unix_socket",
+      "ACTIVE"
+    ]
+  ],
+  "plugins": [
+    {
+      "plugin": "mysql_native_password",
+      "create": "ok",
+      "storedPlugin": "mysql_native_password",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,OK",
+          "switchTo": null,
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,OK",
+          "switchTo": null,
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1045
+        }
+      ],
+      "prototype": {
+        "first": "ok",
+        "second": "ok",
+        "wrongPassword": "[1045] (28000) Access denied for user 'fs07_a1'@'172.17.0.1' (using password: YES)"
+      },
+      "mysql2": "ok fs07_a1@%",
+      "mariadbConnector": "ok fs07_a1@%",
+      "overTls": {
+        "prototype": "refused: server does not offer TLS",
+        "mysql2": "refused: Server does not support secure connection",
+        "mariadbConnector": "refused: Trying to connect with ssl, but ssl not enabled in the server"
+      }
+    },
+    {
+      "plugin": "mysql_old_password",
+      "note": "hash of 'x' written literally: OLD_PASSWORD('x') = 606706156665cd86; the login uses password 'x'",
+      "create": "ok",
+      "storedPlugin": "mysql_old_password",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1275
+        },
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1275
+        },
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1275
+        }
+      ],
+      "prototype": {
+        "first": "refused: [1275] (HY000) Server is running in --secure-auth mode, but 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new forma",
+        "second": "refused: [1275] (HY000) Server is running in --secure-auth mode, but 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new forma",
+        "wrongPassword": "[1275] (HY000) Server is running in --secure-auth mode, but 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new forma"
+      },
+      "mysql2": "refused: Server is running in --secure-auth mode, but 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the password to the new format",
+      "mariadbConnector": "refused: (conn:24, no: 1275, SQLState: HY000) Server is running in --secure-auth mode, but 'fs07_a2'@'172.17.0.1' has a password in the old format; please change the pas",
+      "overTls": {
+        "prototype": "refused: server does not offer TLS",
+        "mysql2": "refused: Server does not support secure connection",
+        "mariadbConnector": "refused: Trying to connect with ssl, but ssl not enabled in the server"
+      }
+    },
+    {
+      "plugin": "ed25519",
+      "setup": [
+        {
+          "sql": "install soname 'auth_ed25519'",
+          "result": "ok"
+        }
+      ],
+      "create": "ok",
+      "storedPlugin": "ed25519",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,AUTH_SWITCH,OK",
+          "switchTo": "client_ed25519",
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,OK",
+          "switchTo": "client_ed25519",
+          "outcome": "ok",
+          "errno": null
+        },
+        {
+          "kinds": "GREETING,AUTH_SWITCH,ERR",
+          "switchTo": "client_ed25519",
+          "outcome": "err",
+          "errno": 1045
+        }
+      ],
+      "prototype": {
+        "first": "ok",
+        "second": "ok",
+        "wrongPassword": "[1045] (28000) Access denied for user 'fs07_a3'@'172.17.0.1' (using password: YES)"
+      },
+      "mysql2": "refused: Server requests authentication using unknown plugin client_ed25519. See TODO: add plugins doco here on how to configure or author authentication plugins.",
+      "mariadbConnector": "ok fs07_a3@%",
+      "overTls": {
+        "prototype": "refused: server does not offer TLS",
+        "mysql2": "refused: Server does not support secure connection",
+        "mariadbConnector": "refused: Trying to connect with ssl, but ssl not enabled in the server"
+      }
+    },
+    {
+      "plugin": "parsec",
+      "setup": [
+        {
+          "sql": "install soname 'auth_parsec'",
+          "result": "[1126] (HY000) Can't open shared library '/usr/lib/mysql/plugin/auth_parsec.so' (errno: 2, cannot open shared object file: No such file or directory)"
+        }
+      ],
+      "create": "[1524] (HY000) Plugin 'parsec' is not loaded"
+    },
+    {
+      "plugin": "caching_sha2_password",
+      "setup": [
+        {
+          "sql": "install soname 'auth_mysql_sha2'",
+          "result": "[1126] (HY000) Can't open shared library '/usr/lib/mysql/plugin/auth_mysql_sha2.so' (errno: 2, cannot open shared object file: No such file or directory)"
+        }
+      ],
+      "create": "[1524] (HY000) Plugin 'caching_sha2_password' is not loaded"
+    },
+    {
+      "plugin": "unix_socket",
+      "create": "ok",
+      "storedPlugin": "unix_socket",
+      "authPacketKinds": [
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1698
+        },
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1698
+        },
+        {
+          "kinds": "GREETING,ERR",
+          "switchTo": null,
+          "outcome": "err",
+          "errno": 1698
+        }
+      ],
+      "prototype": {
+        "first": "refused: [1698] (28000) Access denied for user 'fs07_a6'@'172.17.0.1'",
+        "second": "refused: [1698] (28000) Access denied for user 'fs07_a6'@'172.17.0.1'",
+        "wrongPassword": "[1698] (28000) Access denied for user 'fs07_a6'@'172.17.0.1'"
+      },
+      "mysql2": "refused: Access denied for user 'fs07_a6'@'172.17.0.1'",
+      "mariadbConnector": "refused: (conn:40, no: 1698, SQLState: 28000) Access denied for user 'fs07_a6'@'172.17.0.1'",
+      "overTls": {
+        "prototype": "refused: server does not offer TLS",
+        "mysql2": "refused: Server does not support secure connection",
+        "mariadbConnector": "refused: Trying to connect with ssl, but ssl not enabled in the server"
+      }
+    }
+  ]
+}

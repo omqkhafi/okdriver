@@ -1,0 +1,142 @@
+{
+  "image": "proxysql/proxysql:3.0.12",
+  "imageDigest": "proxysql/proxysql@sha256:3a96426ea17bb883820433908b49087b6027852bb92c981209e72ebe7897c4f2",
+  "version": "5.5.30",
+  "mysqlBackend": {
+    "backend": "my84",
+    "greeting": {
+      "version": "5.5.30",
+      "plugin": "mysql_native_password",
+      "caps": "0x85bffa2f",
+      "mariadbExtWord": 0,
+      "profileChosen": "mysql",
+      "negotiatedExt": 0,
+      "backendVersionSeenBySql": "8.4.13"
+    },
+    "prepareExecuteResetClosePing": {
+      "value": "42",
+      "rs": "reset ok",
+      "ping": "ok"
+    },
+    "executeBatch50": {
+      "responses": "OK",
+      "allOk": true,
+      "rowsOnBackendOutOf50": 50,
+      "backendOrderMatches": true
+    },
+    "executeBatch50_sequenceIdMismatches": 49,
+    "queryBatch20_errorAt10": {
+      "onlyIndex10IsError": true,
+      "responses": "ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ERR1146,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1"
+    },
+    "queryBatch20_errorAt10_sequenceIdMismatches": 19,
+    "prepareThenPlaceholderExecute": [
+      "PREPARE",
+      "ERR1243"
+    ],
+    "bulkExecute": "EXCEPTION: connection closed",
+    "resetConnection": "ok"
+  },
+  "mariadbBackend": {
+    "backend": "ma130",
+    "greeting": {
+      "version": "5.5.30",
+      "plugin": "mysql_native_password",
+      "caps": "0x85bffa2f",
+      "mariadbExtWord": 0,
+      "profileChosen": "mysql",
+      "negotiatedExt": 0,
+      "backendVersionSeenBySql": "13.0.2-MariaDB-ubu2604-log"
+    },
+    "prepareExecuteResetClosePing": {
+      "value": "42",
+      "rs": "reset ok",
+      "ping": "ok"
+    },
+    "executeBatch50": {
+      "responses": "OK",
+      "allOk": true,
+      "rowsOnBackendOutOf50": 50,
+      "backendOrderMatches": true
+    },
+    "executeBatch50_sequenceIdMismatches": 49,
+    "queryBatch20_errorAt10": {
+      "onlyIndex10IsError": true,
+      "responses": "ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ERR1146,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1,ROWS1"
+    },
+    "queryBatch20_errorAt10_sequenceIdMismatches": 19,
+    "prepareThenPlaceholderExecute": [
+      "PREPARE",
+      "ERR1243"
+    ],
+    "bulkExecute": "EXCEPTION: connection closed",
+    "resetConnection": "ok"
+  },
+  "statsGlobal": [
+    [
+      "Client_Connections_connected",
+      "0"
+    ],
+    [
+      "Com_backend_stmt_close",
+      "0"
+    ],
+    [
+      "Com_backend_stmt_execute",
+      "102"
+    ],
+    [
+      "Com_backend_stmt_prepare",
+      "5"
+    ],
+    [
+      "Com_frontend_stmt_close",
+      "2"
+    ],
+    [
+      "Com_frontend_stmt_execute",
+      "104"
+    ],
+    [
+      "Com_frontend_stmt_prepare",
+      "8"
+    ],
+    [
+      "ConnPool_get_conn_failure",
+      "0"
+    ],
+    [
+      "ConnPool_get_conn_success",
+      "47"
+    ],
+    [
+      "MySQL_Thread_Workers",
+      "4"
+    ],
+    [
+      "Server_Connections_created",
+      "2"
+    ]
+  ],
+  "statsPreparedStatements": "unavailable",
+  "statsConnectionPool": [
+    [
+      "10",
+      "127.0.0.1",
+      "34001",
+      "ONLINE",
+      "0",
+      "1",
+      "75"
+    ],
+    [
+      "20",
+      "127.0.0.1",
+      "34009",
+      "ONLINE",
+      "0",
+      "1",
+      "74"
+    ]
+  ]
+}

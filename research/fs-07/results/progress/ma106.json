@@ -1,0 +1,25 @@
+{
+  "server": "ma106",
+  "progressCapabilityOffered": true,
+  "progressCapabilityNegotiated": true,
+  "packetsDuringAlter": [
+    {
+      "progressPacket": true,
+      "stage": 1,
+      "maxStage": 2,
+      "progressPermille": 195,
+      "info": "copy to tmp table"
+    },
+    {
+      "progressPacket": true,
+      "stage": 2,
+      "maxStage": 2,
+      "progressPermille": 0,
+      "info": "Enabling keys"
+    },
+    {
+      "header": "0x0"
+    }
+  ],
+  "progressPacketCount": 2
+}

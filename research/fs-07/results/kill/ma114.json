@@ -1,0 +1,61 @@
+{
+  "server": "ma114",
+  "killedAfterMs": "12..28 (varies by run)",
+  "runs": [
+    {
+      "run": 1,
+      "statementsSent": 300,
+      "responsesOkBeforeLoss": 59,
+      "responsesErrBeforeLoss": 0,
+      "connectionLost": true,
+      "rowsCommittedOnServer": 60,
+      "committedIsPrefixOfSentOrder": true,
+      "committedBeyondWhatClientSaw": 1,
+      "clientSawMoreThanServerCommitted": false
+    },
+    {
+      "run": 2,
+      "statementsSent": 300,
+      "responsesOkBeforeLoss": 53,
+      "responsesErrBeforeLoss": 0,
+      "connectionLost": true,
+      "rowsCommittedOnServer": 54,
+      "committedIsPrefixOfSentOrder": true,
+      "committedBeyondWhatClientSaw": 1,
+      "clientSawMoreThanServerCommitted": false
+    },
+    {
+      "run": 3,
+      "statementsSent": 300,
+      "responsesOkBeforeLoss": 72,
+      "responsesErrBeforeLoss": 0,
+      "connectionLost": true,
+      "rowsCommittedOnServer": 73,
+      "committedIsPrefixOfSentOrder": true,
+      "committedBeyondWhatClientSaw": 1,
+      "clientSawMoreThanServerCommitted": false
+    },
+    {
+      "run": 4,
+      "statementsSent": 300,
+      "responsesOkBeforeLoss": 100,
+      "responsesErrBeforeLoss": 0,
+      "connectionLost": true,
+      "rowsCommittedOnServer": 100,
+      "committedIsPrefixOfSentOrder": true,
+      "committedBeyondWhatClientSaw": 0,
+      "clientSawMoreThanServerCommitted": false
+    },
+    {
+      "run": 5,
+      "statementsSent": 300,
+      "responsesOkBeforeLoss": 120,
+      "responsesErrBeforeLoss": 0,
+      "connectionLost": true,
+      "rowsCommittedOnServer": 121,
+      "committedIsPrefixOfSentOrder": true,
+      "committedBeyondWhatClientSaw": 1,
+      "clientSawMoreThanServerCommitted": false
+    }
+  ]
+}

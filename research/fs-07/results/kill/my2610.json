@@ -1,0 +1,61 @@
+{
+  "server": "my2610",
+  "killedAfterMs": "12..28 (varies by run)",
+  "runs": [
+    {
+      "run": 1,
+      "statementsSent": 300,
+      "responsesOkBeforeLoss": 12,
+      "responsesErrBeforeLoss": 0,
+      "connectionLost": true,
+      "rowsCommittedOnServer": 13,
+      "committedIsPrefixOfSentOrder": true,
+      "committedBeyondWhatClientSaw": 1,
+      "clientSawMoreThanServerCommitted": false
+    },
+    {
+      "run": 2,
+      "statementsSent": 300,
+      "responsesOkBeforeLoss": 20,
+      "responsesErrBeforeLoss": 0,
+      "connectionLost": true,
+      "rowsCommittedOnServer": 21,
+      "committedIsPrefixOfSentOrder": true,
+      "committedBeyondWhatClientSaw": 1,
+      "clientSawMoreThanServerCommitted": false
+    },
+    {
+      "run": 3,
+      "statementsSent": 300,
+      "responsesOkBeforeLoss": 20,
+      "responsesErrBeforeLoss": 0,
+      "connectionLost": true,
+      "rowsCommittedOnServer": 21,
+      "committedIsPrefixOfSentOrder": true,
+      "committedBeyondWhatClientSaw": 1,
+      "clientSawMoreThanServerCommitted": false
+    },
+    {
+      "run": 4,
+      "statementsSent": 300,
+      "responsesOkBeforeLoss": 26,
+      "responsesErrBeforeLoss": 0,
+      "connectionLost": true,
+      "rowsCommittedOnServer": 27,
+      "committedIsPrefixOfSentOrder": true,
+      "committedBeyondWhatClientSaw": 1,
+      "clientSawMoreThanServerCommitted": false
+    },
+    {
+      "run": 5,
+      "statementsSent": 300,
+      "responsesOkBeforeLoss": 33,
+      "responsesErrBeforeLoss": 0,
+      "connectionLost": true,
+      "rowsCommittedOnServer": 34,
+      "committedIsPrefixOfSentOrder": true,
+      "committedBeyondWhatClientSaw": 1,
+      "clientSawMoreThanServerCommitted": false
+    }
+  ]
+}
