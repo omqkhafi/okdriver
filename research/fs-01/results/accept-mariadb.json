@@ -1,0 +1,305 @@
+{
+  "engine": "mariadb",
+  "class": "wire",
+  "facts": {
+    "version": "11.8.9-MariaDB-ubu2404-log",
+    "params": {
+      "authPlugin": "mysql_native_password",
+      "serverCapabilities": "2181038078",
+      "connectionId": "7"
+    },
+    "observedTx": "idle"
+  },
+  "capabilities": {
+    "pipelining": false,
+    "protocolPrepared": true,
+    "interactiveTransactions": true,
+    "savepoints": false,
+    "returning": false,
+    "streamingResults": false,
+    "bulkLoad": false,
+    "notifications": false,
+    "changeStream": false,
+    "cancel": "none",
+    "int64": "bigint",
+    "multiResult": false
+  },
+  "claimed": [
+    "protocolPrepared",
+    "interactiveTransactions",
+    "int64"
+  ],
+  "checks": [
+    {
+      "check": "connect.ok",
+      "pass": true,
+      "detail": "facts={\"version\":\"11.8.9-MariaDB-ubu2404-log\",\"params\":{\"authPlugin\":\"mysql_native_password\",\"serverCapabilities\":\"2181038078\",\"connectionId\":\"7\"},\"observedTx\":\"idle\"}"
+    },
+    {
+      "check": "capabilities.from-facts",
+      "pass": true,
+      "detail": "caps={\"pipelining\":false,\"protocolPrepared\":true,\"interactiveTransactions\":true,\"savepoints\":false,\"returning\":false,\"streamingResults\":false,\"bulkLoad\":false,\"notifications\":false,\"changeStream\":false,\"cancel\":\"none\",\"int64\":\"bigint\",\"multiResult\":false}"
+    },
+    {
+      "check": "capabilities.respond-to-facts",
+      "pass": true,
+      "detail": "with empty facts: protocolPrepared=false interactiveTransactions=false"
+    },
+    {
+      "check": "query.bigint",
+      "pass": true,
+      "detail": "got bigint 9007199254740993"
+    },
+    {
+      "check": "query.text",
+      "pass": true,
+      "detail": "got \"héllo wörld\""
+    },
+    {
+      "check": "query.outcome",
+      "pass": true,
+      "detail": "applied/none"
+    },
+    {
+      "check": "tx.begin-state-open",
+      "pass": true,
+      "detail": "state=open"
+    },
+    {
+      "check": "error.thrown-driver-error",
+      "pass": true,
+      "detail": "DriverError: Duplicate entry for key 'PRIMARY'"
+    },
+    {
+      "check": "error.class-constraint",
+      "pass": true,
+      "detail": "constraint"
+    },
+    {
+      "check": "error.vendor-untouched",
+      "pass": true,
+      "detail": "{\"code\":1062,\"sqlState\":\"23000\"}"
+    },
+    {
+      "check": "error.rolled-back-after-error",
+      "pass": true,
+      "detail": "rows after rollback: []"
+    },
+    {
+      "check": "tx.uncommitted-invisible-external",
+      "pass": true,
+      "detail": "external read before commit: []"
+    },
+    {
+      "check": "tx.commit-state",
+      "pass": true,
+      "detail": "committed"
+    },
+    {
+      "check": "tx.commit-visible-external",
+      "pass": true,
+      "detail": "external read after commit: [\"2|commit-me\"]"
+    },
+    {
+      "check": "tx.rollback-state",
+      "pass": true,
+      "detail": "rolled-back"
+    },
+    {
+      "check": "tx.rollback-invisible-external",
+      "pass": true,
+      "detail": "external read after rollback: [\"2|commit-me\"]"
+    },
+    {
+      "check": "coordinator.no-leak",
+      "pass": true,
+      "detail": "{\"limit\":2,\"active\":0,\"queued\":0,\"maxActive\":1,\"admitted\":4,\"cancelledInQueue\":0,\"timedOutInQueue\":0}"
+    },
+    {
+      "check": "protocol.connections-recorded",
+      "pass": true,
+      "detail": "1 client connection(s) through the recorder"
+    },
+    {
+      "check": "protocol.prepared-used",
+      "pass": true,
+      "detail": "6 COM_STMT_PREPARE, 6 COM_STMT_EXECUTE"
+    },
+    {
+      "check": "protocol.sql-has-no-values",
+      "pass": true,
+      "detail": "no COM_QUERY or PREPARE text contains a bound value"
+    },
+    {
+      "check": "protocol.text-queries-have-no-params",
+      "pass": true,
+      "detail": "COM_QUERY texts: [\"BEGIN\",\"ROLLBACK\",\"BEGIN\",\"COMMIT\",\"BEGIN\",\"ROLLBACK\"]"
+    },
+    {
+      "check": "protocol.no-statement-leak",
+      "pass": true,
+      "detail": "6 COM_STMT_PREPARE and 6 COM_STMT_CLOSE: every prepared statement is closed, including after the failed EXECUTE"
+    },
+    {
+      "check": "protocol.value-in-execute",
+      "pass": true,
+      "detail": "the 2^53+1 value was found as 8 little-endian bytes in a COM_STMT_EXECUTE"
+    },
+    {
+      "check": "protocol.server-log",
+      "pass": true,
+      "detail": "server general log shows Prepare of the statement with ? placeholders"
+    },
+    {
+      "check": "differential.bunsql-values",
+      "pass": true,
+      "detail": "Bun.SQL returned a=9007199254740993 (string), b=\"héllo wörld\"; skeleton returned a=9007199254740993 (bigint)"
+    },
+    {
+      "check": "differential.bunsql-error-code",
+      "pass": true,
+      "detail": "Bun.SQL duplicate-key error code=1062; skeleton vendor expected=1062"
+    },
+    {
+      "check": "cap.protocolPrepared",
+      "pass": true,
+      "detail": "requires protocol.prepared-used + protocol.sql-has-no-values"
+    },
+    {
+      "check": "cap.interactiveTransactions",
+      "pass": true,
+      "detail": "requires tx.commit-visible-external + tx.rollback-invisible-external"
+    },
+    {
+      "check": "cap.int64",
+      "pass": true,
+      "detail": "requires query.bigint"
+    }
+  ],
+  "expectations": [
+    {
+      "item": "error.statementOutcome",
+      "expected": "rejected-no-effects",
+      "observed": "rejected-no-effects",
+      "asExpected": true
+    },
+    {
+      "item": "error.transactionState",
+      "expected": "open",
+      "observed": "open",
+      "asExpected": true
+    },
+    {
+      "item": "error.retry",
+      "expected": "never",
+      "observed": "never",
+      "asExpected": true
+    },
+    {
+      "item": "error.phase",
+      "expected": "execute",
+      "observed": "execute",
+      "asExpected": true
+    }
+  ],
+  "differences": [],
+  "notes": [
+    "session state after the error: open",
+    "server general log tail:\n\t\t     3 Close stmt\t\n\t\t     3 Quit\t\n\t\t     4 Quit\t\nmariadbd, Version: 11.8.9-MariaDB-ubu2404-log (mariadb.org binary distribution). started with:\nTcp port: 0  Unix socket: /run/mysqld/mysqld.sock\nTime\t\t    Id Command\tArgument\n261121 19:59:13\t     3 Connect\troot@172.17.0.1 on fs01 using TCP/IP\n\t\t     3 Prepare\tselect ? as recovered\n\t\t     3 Execute\tselect 1 as recovered\n261121 19:59:27\t     4 Connect\troot@localhost on fs01 using SSL/TLS\n\t\t     4 Query\tdrop table if exists fs01_kv\n\t\t     4 Query\tcreate table fs01_kv (id bigint primary key, v text) engine=InnoDB\n\t\t     4 Quit\t\n\t\t     5 Connect\troot@172.17.0.1 on fs01 using TCP/IP\n\t\t     5 Query\tselect 1 as one\n\t\t     5 Query\tselect cast(1.5 as decimal(4,1)) as d\n\t\t     5 Query\tselect x'deadbeef' as b\n\t\t     5 Quit\t\n261121 19:59:57\t     6 Connect\troot@localhost on fs01 using SSL/TLS\n\t\t     6 Query\tdrop table if exists fs01_kv\n\t\t     6 Query\tcreate table fs01_kv (id bigint primary key, v text) engine=InnoDB\n\t\t     6 Quit\t\n\t\t     7 Connect\troot@172.17.0.1 on fs01 using TCP/IP\n\t\t     7 Prepare\tselect ? as a, ? as b\n\t\t     7 Execute\tselect 9007199254740993 as a, 'héllo wörld' as b\n\t\t     7 Close stmt\t\n\t\t     7 Query\tBEGIN\n\t\t     7 Prepare\tinsert into fs01_kv (id, v) values (?, ?)\n\t\t     7 Execute\tinsert into fs01_kv (id, v) values (1, 'first')\n\t\t     7 Close stmt\t\n\t\t     7 Prepare\tinsert into fs01_kv (id, v) values (?, ?)\n\t\t     7 Execute\tinsert into fs01_kv (id, v) values (1, 'second')\n\t\t     7 Close stmt\t\n\t\t     7 Prepare\tSELECT ENGINE FROM information_schema.TABLES WHERE TABLE_SCHEMA = COALESCE(?, DATABASE()) AND TABLE_NAME = ?\n\t\t     7 Execute\tSELECT ENGINE FROM information_schema.TABLES WHERE TABLE_SCHEMA = COALESCE(NULL, DATABASE()) AND TABLE_NAME = 'fs01_kv'\n\t\t     7 Close stmt\t\n\t\t     7 Query\tROLLBACK\n261121 19:59:58\t     8 Connect\troot@localhost on fs01 using SSL/TLS\n\t\t     8 Query\tselect concat(id,'|',v) from fs01_kv order by id\n\t\t     8 Quit\t\n\t\t     7 Query\tBEGIN\n\t\t     7 Prepare\tinsert into fs01_kv (id, v) values (?, ?)\n\t\t     7 Execute\tinsert into fs01_kv (id, v) values (2, 'commit-me')\n\t\t     7 Close stmt\t\n\t\t     9 Connect\troot@localhost on fs01 using SSL/TLS\n\t\t     9 Query\tselect concat(id,'|',v) from fs01_kv order by id\n\t\t     9 Quit\t\n\t\t     7 Query\tCOMMIT\n\t\t    10 Connect\troot@localhost on fs01 using SSL/TLS\n\t\t    10 Query\tselect concat(id,'|',v) from fs01_kv order by id\n\t\t    10 Quit\t\n\t\t     7 Query\tBEGIN\n\t\t     7 Prepare\tinsert into fs01_kv (id, v) values (?, ?)\n\t\t     7 Execute\tinsert into fs01_kv (id, v) values (3, 'rollback-me')\n\t\t     7 Close stmt\t\n\t\t     7 Query\tROLLBACK\n\t\t    11 Connect\troot@localhost on fs01 using SSL/TLS\n\t\t    11 Query\tselect concat(id,'|',v) from fs01_kv order by id\n\t\t    11 Quit\t\n\t\t     7 Quit\t\n"
+  ],
+  "protocol": [
+    {
+      "cmd": "COM_STMT_PREPARE",
+      "sql": "select ? as a, ? as b"
+    },
+    {
+      "cmd": "COM_STMT_EXECUTE",
+      "bytes": 38
+    },
+    {
+      "cmd": "COM_STMT_CLOSE"
+    },
+    {
+      "cmd": "COM_QUERY",
+      "sql": "BEGIN"
+    },
+    {
+      "cmd": "COM_STMT_PREPARE",
+      "sql": "insert into fs01_kv (id, v) values (?, ?)"
+    },
+    {
+      "cmd": "COM_STMT_EXECUTE",
+      "bytes": 30
+    },
+    {
+      "cmd": "COM_STMT_CLOSE"
+    },
+    {
+      "cmd": "COM_STMT_PREPARE",
+      "sql": "insert into fs01_kv (id, v) values (?, ?)"
+    },
+    {
+      "cmd": "COM_STMT_EXECUTE",
+      "bytes": 31
+    },
+    {
+      "cmd": "COM_STMT_CLOSE"
+    },
+    {
+      "cmd": "COM_PING"
+    },
+    {
+      "cmd": "COM_STMT_PREPARE",
+      "sql": "SELECT ENGINE FROM information_schema.TABLES WHERE TABLE_SCHEMA = COALESCE(?, DATABASE()) AND TABLE_NAME = ?"
+    },
+    {
+      "cmd": "COM_STMT_EXECUTE",
+      "bytes": 24
+    },
+    {
+      "cmd": "COM_STMT_CLOSE"
+    },
+    {
+      "cmd": "COM_QUERY",
+      "sql": "ROLLBACK"
+    },
+    {
+      "cmd": "COM_QUERY",
+      "sql": "BEGIN"
+    },
+    {
+      "cmd": "COM_STMT_PREPARE",
+      "sql": "insert into fs01_kv (id, v) values (?, ?)"
+    },
+    {
+      "cmd": "COM_STMT_EXECUTE",
+      "bytes": 34
+    },
+    {
+      "cmd": "COM_STMT_CLOSE"
+    },
+    {
+      "cmd": "COM_QUERY",
+      "sql": "COMMIT"
+    },
+    {
+      "cmd": "COM_QUERY",
+      "sql": "BEGIN"
+    },
+    {
+      "cmd": "COM_STMT_PREPARE",
+      "sql": "insert into fs01_kv (id, v) values (?, ?)"
+    },
+    {
+      "cmd": "COM_STMT_EXECUTE",
+      "bytes": 36
+    },
+    {
+      "cmd": "COM_STMT_CLOSE"
+    },
+    {
+      "cmd": "COM_QUERY",
+      "sql": "ROLLBACK"
+    }
+  ]
+}
