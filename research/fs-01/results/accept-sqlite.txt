@@ -1,0 +1,34 @@
+== accept sqlite
+CHECK connect.ok PASS facts={"version":"3.53.4","params":{"binding":"bun:sqlite"},"observedTx":"idle"}
+CHECK capabilities.from-facts PASS caps={"pipelining":false,"protocolPrepared":true,"interactiveTransactions":true,"savepoints":false,"returning":false,"streamingResults":false,"bulkLoad":false,"notifications":false,"changeStream":false,"cancel":"none","int64":"bigint","multiResult":false}
+CHECK capabilities.respond-to-facts PASS with empty facts: protocolPrepared=false interactiveTransactions=false
+CHECK query.bigint PASS got bigint 9007199254740993
+CHECK query.text PASS got "héllo wörld"
+CHECK query.outcome PASS applied/none
+CHECK tx.begin-state-open PASS state=open
+CHECK error.thrown-driver-error PASS DriverError: UNIQUE constraint failed: fs01_kv.id
+CHECK error.class-constraint PASS constraint
+CHECK error.vendor-untouched PASS {"code":1555,"name":"SQLITE_CONSTRAINT_PRIMARYKEY"}
+ERROR {"class":"constraint","phase":"execute","statementOutcome":"rejected-no-effects","transactionState":"open","retry":"never","vendor":{"code":1555,"name":"SQLITE_CONSTRAINT_PRIMARYKEY"},"redacted":false,"message":"UNIQUE constraint failed: fs01_kv.id"}
+EXPECT error.statementOutcome: expected="rejected-no-effects" observed="rejected-no-effects" as-expected
+EXPECT error.transactionState: expected="open" observed="open" as-expected
+EXPECT error.retry: expected="never" observed="never" as-expected
+EXPECT error.phase: expected="execute" observed="execute" as-expected
+CHECK error.rolled-back-after-error PASS rows after rollback: []
+CHECK tx.uncommitted-invisible-external PASS external read before commit: []
+CHECK tx.commit-state PASS committed
+CHECK tx.commit-visible-external PASS external read after commit: ["2|commit-me"]
+CHECK tx.rollback-state PASS rolled-back
+CHECK tx.rollback-invisible-external PASS external read after rollback: ["2|commit-me"]
+CHECK coordinator.no-leak PASS {"limit":2,"active":0,"queued":0,"maxActive":1,"admitted":4,"cancelledInQueue":0,"timedOutInQueue":0}
+CHECK protocol.sql-has-no-values PASS 11 SQL strings passed to prepare/exec
+CHECK protocol.prepared-used PASS statements with ? placeholders were prepared by bun:sqlite
+NOTE Bun.SQL sqlite default options: number 9007199254740992 for 2^53+1
+CHECK differential.bunsql-values PASS Bun.SQL returned a=9007199254740993 (bigint), b="héllo wörld"; skeleton returned a=9007199254740993 (bigint)
+CHECK differential.bunsql-error-code PASS Bun.SQL duplicate-key error code=1555; skeleton vendor expected=1555
+CHECK cap.protocolPrepared PASS requires protocol.prepared-used + protocol.sql-has-no-values
+CHECK cap.interactiveTransactions PASS requires tx.commit-visible-external + tx.rollback-invisible-external
+CHECK cap.int64 PASS requires query.bigint
+CLAIMED protocolPrepared,interactiveTransactions,int64
+NOT-CLAIMED pipelining,savepoints,returning,streamingResults,bulkLoad,notifications,changeStream,cancel,multiResult
+RESULT sqlite: 24/24 checks passed, 0 difference(s) from the expected mapping

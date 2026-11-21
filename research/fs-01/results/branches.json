@@ -1,0 +1,256 @@
+{
+  "rule": "README.md, Branch counting rule",
+  "platformFiles": 21,
+  "totalHits": 9,
+  "byRule": {
+    "member-used-by-one-engine": 9
+  },
+  "perContract": {
+    "Engine descriptor + capability model": {
+      "count": 0,
+      "hits": []
+    },
+    "WireCore": {
+      "count": 3,
+      "hits": [
+        {
+          "rule": "member-used-by-one-engine",
+          "file": "platform/contracts/bytes.ts",
+          "line": 6,
+          "text": "Writer.u16be (only postgres)",
+          "contract": "WireCore"
+        },
+        {
+          "rule": "member-used-by-one-engine",
+          "file": "platform/contracts/bytes.ts",
+          "line": 7,
+          "text": "Writer.u32be (only postgres)",
+          "contract": "WireCore"
+        },
+        {
+          "rule": "member-used-by-one-engine",
+          "file": "platform/contracts/bytes.ts",
+          "line": 18,
+          "text": "Writer.patchU32be (only postgres)",
+          "contract": "WireCore"
+        }
+      ]
+    },
+    "EmbeddedCore": {
+      "count": 3,
+      "hits": [
+        {
+          "rule": "member-used-by-one-engine",
+          "file": "platform/contracts/core.ts",
+          "line": 31,
+          "text": "EmbeddedStatement.finalize (only sqlite)",
+          "contract": "EmbeddedCore"
+        },
+        {
+          "rule": "member-used-by-one-engine",
+          "file": "platform/contracts/core.ts",
+          "line": 36,
+          "text": "EmbeddedCore.prepare (only sqlite)",
+          "contract": "EmbeddedCore"
+        },
+        {
+          "rule": "member-used-by-one-engine",
+          "file": "platform/contracts/core.ts",
+          "line": 38,
+          "text": "EmbeddedCore.inTransaction (only sqlite)",
+          "contract": "EmbeddedCore"
+        }
+      ]
+    },
+    "ServiceCore": {
+      "count": 2,
+      "hits": [
+        {
+          "rule": "member-used-by-one-engine",
+          "file": "platform/contracts/core.ts",
+          "line": 54,
+          "text": "ServiceCore.handshake (only libsql)",
+          "contract": "ServiceCore"
+        },
+        {
+          "rule": "member-used-by-one-engine",
+          "file": "platform/contracts/core.ts",
+          "line": 57,
+          "text": "ServiceCore.openStream (only libsql)",
+          "contract": "ServiceCore"
+        }
+      ]
+    },
+    "ExecutionCoordinator": {
+      "count": 0,
+      "hits": []
+    },
+    "ConnectionPool": {
+      "count": 0,
+      "hits": []
+    },
+    "Transport": {
+      "count": 1,
+      "hits": [
+        {
+          "rule": "member-used-by-one-engine",
+          "file": "platform/contracts/transport.ts",
+          "line": 15,
+          "text": "Endpoint.headers (only libsql)",
+          "contract": "Transport"
+        }
+      ]
+    },
+    "Error taxonomy + ErrorMapper": {
+      "count": 0,
+      "hits": []
+    },
+    "CodecRegistry": {
+      "count": 0,
+      "hits": []
+    },
+    "Session (added in this study)": {
+      "count": 0,
+      "hits": []
+    }
+  },
+  "generalPlatformHits": [],
+  "consideredNotCounted": [
+    {
+      "file": "platform/contracts/errors.ts",
+      "line": 7,
+      "text": "export type Phase = \"connect\" | \"auth\" | \"prepare\" | \"bind\" | \"execute\" | \"fetch\" | \"commit\" | \"close\";",
+      "reason": "one lower-case taxonomy word, not SQL"
+    },
+    {
+      "file": "platform/session-common.ts",
+      "line": 46,
+      "text": "phase: \"execute\" | \"commit\" | \"connect\" | \"auth\" = \"execute\",",
+      "reason": "one lower-case taxonomy word, not SQL"
+    }
+  ],
+  "membersNoEngineUses": [
+    "WorkItem.queueTimeoutMs (platform/contracts/coordinator.ts:4)",
+    "Lease.release (platform/contracts/coordinator.ts:7)",
+    "CoordinatorStats.limit (platform/contracts/coordinator.ts:10)",
+    "CoordinatorStats.active (platform/contracts/coordinator.ts:11)",
+    "CoordinatorStats.maxActive (platform/contracts/coordinator.ts:13)",
+    "CoordinatorStats.admitted (platform/contracts/coordinator.ts:14)",
+    "CoordinatorStats.cancelledInQueue (platform/contracts/coordinator.ts:15)",
+    "CoordinatorStats.timedOutInQueue (platform/contracts/coordinator.ts:16)",
+    "ExecutionCoordinator.admit (platform/contracts/coordinator.ts:19)",
+    "ExecutionCoordinator.stats (platform/contracts/coordinator.ts:20)",
+    "ServiceCore.batch (platform/contracts/core.ts:56)",
+    "ErrorContext.txOpenBefore (platform/contracts/errors.ts:40)",
+    "PooledConnection.conn (platform/contracts/pool.ts:2)",
+    "PooledConnection.release (platform/contracts/pool.ts:3)",
+    "PooledConnection.destroy (platform/contracts/pool.ts:5)",
+    "ConnectionPool.acquire (platform/contracts/pool.ts:8)",
+    "ConnectionPool.drain (platform/contracts/pool.ts:9)",
+    "SessionLease.session (platform/contracts/session.ts:21)",
+    "SessionLease.release (platform/contracts/session.ts:22)",
+    "SessionLease.discard (platform/contracts/session.ts:24)",
+    "SessionSource.checkout (platform/contracts/session.ts:27)",
+    "TransportCaps.streaming (platform/contracts/transport.ts:2)",
+    "TransportCaps.startTls (platform/contracts/transport.ts:3)",
+    "TransportCaps.channelBinding (platform/contracts/transport.ts:4)",
+    "TransportCaps.keepalive (platform/contracts/transport.ts:5)",
+    "TransportCaps.halfOpenDetection (platform/contracts/transport.ts:6)",
+    "TransportCaps.secondConnectionForCancel (platform/contracts/transport.ts:7)",
+    "Endpoint.host (platform/contracts/transport.ts:12)",
+    "Endpoint.port (platform/contracts/transport.ts:13)",
+    "TlsOptions.serverName (platform/contracts/transport.ts:19)",
+    "TlsInfo.endpointHash (platform/contracts/transport.ts:22)",
+    "Transport.upgradeTls (platform/contracts/transport.ts:33)"
+  ],
+  "singleEngineMembers": [
+    "Writer.u16be (platform/contracts/bytes.ts:6) only postgres",
+    "Writer.u32be (platform/contracts/bytes.ts:7) only postgres",
+    "Writer.patchU32be (platform/contracts/bytes.ts:18) only postgres",
+    "EmbeddedStatement.finalize (platform/contracts/core.ts:31) only sqlite",
+    "EmbeddedCore.prepare (platform/contracts/core.ts:36) only sqlite",
+    "EmbeddedCore.inTransaction (platform/contracts/core.ts:38) only sqlite",
+    "ServiceCore.handshake (platform/contracts/core.ts:54) only libsql",
+    "ServiceCore.openStream (platform/contracts/core.ts:57) only libsql",
+    "Endpoint.headers (platform/contracts/transport.ts:15) only libsql"
+  ],
+  "optionalMemberFeatureTests": [
+    {
+      "rule": "optional-member-feature-test",
+      "file": "platform/service-session.ts",
+      "line": 59,
+      "text": "if (this.core.openStream === undefined) throw capabilityFailure(\"interactive transactions\");",
+      "contract": "ServiceCore"
+    }
+  ],
+  "entryClassBranches": [
+    {
+      "rule": "branch-on-descriptor-id-or-class(entry)",
+      "file": "entry/compose.ts",
+      "line": 55,
+      "text": "switch (pkg.class) {",
+      "contract": "general"
+    }
+  ],
+  "capabilities": [
+    {
+      "capability": "pipelining",
+      "derivedFromServerFacts": []
+    },
+    {
+      "capability": "protocolPrepared",
+      "derivedFromServerFacts": [
+        "postgres",
+        "mysql-family",
+        "sqlite",
+        "libsql"
+      ]
+    },
+    {
+      "capability": "interactiveTransactions",
+      "derivedFromServerFacts": [
+        "postgres",
+        "mysql-family",
+        "sqlite",
+        "libsql"
+      ]
+    },
+    {
+      "capability": "savepoints",
+      "derivedFromServerFacts": []
+    },
+    {
+      "capability": "returning",
+      "derivedFromServerFacts": []
+    },
+    {
+      "capability": "streamingResults",
+      "derivedFromServerFacts": []
+    },
+    {
+      "capability": "bulkLoad",
+      "derivedFromServerFacts": []
+    },
+    {
+      "capability": "notifications",
+      "derivedFromServerFacts": []
+    },
+    {
+      "capability": "changeStream",
+      "derivedFromServerFacts": []
+    },
+    {
+      "capability": "cancel",
+      "derivedFromServerFacts": []
+    },
+    {
+      "capability": "int64",
+      "derivedFromServerFacts": []
+    },
+    {
+      "capability": "multiResult",
+      "derivedFromServerFacts": []
+    }
+  ],
+  "scannerImports": 0
+}

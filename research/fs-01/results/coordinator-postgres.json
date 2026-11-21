@@ -1,0 +1,105 @@
+{
+  "engine": "postgres",
+  "checks": [
+    {
+      "check": "limit2.all-completed",
+      "pass": true,
+      "detail": "8/8 fulfilled in 1213 ms"
+    },
+    {
+      "check": "limit2.coordinator-maxActive<=2",
+      "pass": true,
+      "detail": "coordinator maxActive=2"
+    },
+    {
+      "check": "limit2.server-observed<=2",
+      "pass": true,
+      "detail": "server-side sessions running the statement: max 2 over 230 samples (pool allowed 8 connections)"
+    },
+    {
+      "check": "limit2.server-observed-reached-2",
+      "pass": true,
+      "detail": "max observed 2: the check is not vacuous"
+    },
+    {
+      "check": "limit2.waves",
+      "pass": true,
+      "detail": "8 statements of 0.3 s at limit 2 took 1213 ms (4 waves of 300 ms expected; the check allows >= 1000 ms)"
+    },
+    {
+      "check": "abort-queued.queued-before-abort",
+      "pass": true,
+      "detail": "queue length at abort: 1"
+    },
+    {
+      "check": "abort-queued.class-cancelled",
+      "pass": true,
+      "detail": "cancelled"
+    },
+    {
+      "check": "abort-queued.outcome-not-sent",
+      "pass": true,
+      "detail": "not-sent/none/retry=safe"
+    },
+    {
+      "check": "abort-queued.nothing-on-the-wire",
+      "pass": true,
+      "detail": "statements with the marker seen by the recorder: 0"
+    },
+    {
+      "check": "abort-queued.stats",
+      "pass": true,
+      "detail": "{\"limit\":2,\"active\":0,\"queued\":0,\"maxActive\":2,\"admitted\":11,\"cancelledInQueue\":1,\"timedOutInQueue\":0}"
+    },
+    {
+      "check": "race.no-hang-no-bad-outcome",
+      "pass": true,
+      "detail": "320 races: 120 completed, 200 cancelled/not-sent, 0 cancelled/unknown (abort after the request was sent), 0 other outcomes"
+    },
+    {
+      "check": "race.no-leaked-lease",
+      "pass": true,
+      "detail": "{\"limit\":1,\"active\":0,\"queued\":0,\"maxActive\":1,\"admitted\":480,\"cancelledInQueue\":160,\"timedOutInQueue\":0}"
+    },
+    {
+      "check": "race.not-sent-means-not-sent",
+      "pass": true,
+      "detail": "statements with the marker that reached the recorder: 120; completed: 120; aborted after send: 0; cancelled/not-sent: 200"
+    },
+    {
+      "check": "queue-timeout.class-timeout-not-sent",
+      "pass": true,
+      "detail": "timeout/not-sent"
+    },
+    {
+      "check": "slow-connect.queue-held-while-down",
+      "pass": true,
+      "detail": "2 s after submission with the server down: active=2 queued=6"
+    },
+    {
+      "check": "slow-connect.all-complete-after-server-up",
+      "pass": true,
+      "detail": "8/8 fulfilled after 2338 ms"
+    },
+    {
+      "check": "slow-connect.no-leak",
+      "pass": true,
+      "detail": "{\"limit\":2,\"active\":0,\"queued\":0,\"maxActive\":2,\"admitted\":8,\"cancelledInQueue\":0,\"timedOutInQueue\":0}"
+    },
+    {
+      "check": "slow-connect.never-up-bounded-connection-errors",
+      "pass": true,
+      "detail": "6 callers, server down, connect timeout 400 ms: classes=connection after 928 ms"
+    },
+    {
+      "check": "slow-connect.never-up-no-leak",
+      "pass": true,
+      "detail": "{\"limit\":2,\"active\":0,\"queued\":0,\"maxActive\":2,\"admitted\":6,\"cancelledInQueue\":0,\"timedOutInQueue\":0}"
+    },
+    {
+      "check": "slow-connect.same-client-recovers",
+      "pass": true,
+      "detail": "recovered after 0 retries"
+    }
+  ]
+}

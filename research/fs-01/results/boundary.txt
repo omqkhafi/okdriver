@@ -1,0 +1,17 @@
+external allowlist needed (the repo table is empty everywhere): {"engines/sqlite":["bun:sqlite"],"transports":["node:net"]}
+real tree: 0 violation(s)
+edges entry needed: engines/libsql, engines/mariadb, engines/mysql, engines/postgres, engines/sqlite, platform, transports
+files under research/fs-01 that bun test would collect: 0
+NEGATIVE engine imports another engine: FAILS as required, rule illegal-edge
+    src/engines/sqlite/index.ts:1: illegal-edge: engines/sqlite may not import engines/postgres ("../postgres/index.ts"); allowed: platform
+NEGATIVE engine-name literal in platform: FAILS as required, rule engine-literal
+    src/platform/failures.ts:76: engine-literal: string literal contains the engine name "postgres"
+NEGATIVE platform imports an engine: FAILS as required, rule illegal-edge
+    src/platform/client.ts:1: illegal-edge: platform may not import engines/postgres ("../engines/postgres/index.ts"); allowed: none
+NEGATIVE engine imports platform outside contracts: FAILS as required, rule engine-platform-deep-import
+    src/engines/postgres/errors.ts:1: engine-platform-deep-import: engine imports "../../platform/coordinator.ts" (platform/coordinator.ts); engines may import platform only through platform/contracts
+NEGATIVE the roadmap's engine-id union in platform/contracts (the roadmap sketch `id: 'postgres' | 'mysql' | 'mariadb' | 'sqlite'`): FAILS as required, rule engine-literal
+    src/platform/contracts/engine.ts:25: engine-literal: string literal contains the engine name "postgres"
+    src/platform/contracts/engine.ts:25: engine-literal: string literal contains the engine name "mysql"
+    src/platform/contracts/engine.ts:25: engine-literal: string literal contains the engine name "mariadb"
+    src/platform/contracts/engine.ts:25: engine-literal: string literal contains the engine name "sqlite"

@@ -1,0 +1,9 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+file:///home/user/okdriver/research/fs-01/src/platform/client.ts:23
+  constructor(
+    readonly descriptor: EngineDescriptor,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+exit: Node 22.23.5 (type stripping, no transform) did not run the ladder unmodified; no code was ported.

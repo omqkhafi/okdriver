@@ -1,0 +1,32 @@
+{
+  "note": "Every place engine or adapter code fakes something to fit a contract. A shim means the contract does not count as used by that engine class (decision rule). Written by hand from the code; the verdict script reads it.",
+  "shims": [
+    {
+      "contract": "Transport",
+      "engine": "libsql",
+      "class": "service",
+      "where": ["src/transports/http.ts:24-30", "src/engines/libsql/core.ts (exchange)"],
+      "what": "HTTP is dressed as a byte stream: one Transport instance per request/response exchange; open() connects nothing (connection failures surface at write()); write() is a whole POST body; onClose() means end of response; the HTTP status is invisible through the contract; Endpoint gained path and headers only for this."
+    },
+    {
+      "contract": "CodecRegistry",
+      "engine": "sqlite",
+      "class": "embedded",
+      "where": ["src/engines/sqlite/codecs.ts:3", "src/engines/sqlite/codecs.ts:15"],
+      "what": "decoder() returns the identity function: bun:sqlite binds and returns JS values (bigint with safeIntegers) itself, so the registry only wraps values."
+    },
+    {
+      "contract": "Engine descriptor + capability model",
+      "engine": "libsql",
+      "class": "service",
+      "where": ["src/platform/service-session.ts:37"],
+      "what": "ConnectContext.transport is undefined for the service engine although a transport exists: the ServiceCore owns it, so the capability model cannot read TransportCaps for a service."
+    }
+  ],
+  "consideredNotShims": [
+    { "item": "MySQL family: encode(startup) writes no bytes", "why": "The server speaks first. Contract revision R3 added the `send` event and allows encode() to produce no bytes; the contract was changed to admit it, not faked." },
+    { "item": "MySQL family: ErrorMapper uses ctx.probe", "why": "Contract revision R5 added the probe; real use, on the error path only." },
+    { "item": "MySQL family core sends COM_PING after an ERR packet to learn the transaction state", "why": "Engine-internal protocol work that fills observedTx; no platform contract is bypassed. Cold path only." },
+    { "item": "sqlite and libsql ErrorMapper: retry is the constant 'never'", "why": "A real answer for the one error classified; no retryable class was exercised, so this is untested rather than faked." }
+  ]
+}

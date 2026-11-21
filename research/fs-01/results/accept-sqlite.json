@@ -1,0 +1,196 @@
+{
+  "engine": "sqlite",
+  "class": "embedded",
+  "facts": {
+    "version": "3.53.4",
+    "params": {
+      "binding": "bun:sqlite"
+    },
+    "observedTx": "idle"
+  },
+  "capabilities": {
+    "pipelining": false,
+    "protocolPrepared": true,
+    "interactiveTransactions": true,
+    "savepoints": false,
+    "returning": false,
+    "streamingResults": false,
+    "bulkLoad": false,
+    "notifications": false,
+    "changeStream": false,
+    "cancel": "none",
+    "int64": "bigint",
+    "multiResult": false
+  },
+  "claimed": [
+    "protocolPrepared",
+    "interactiveTransactions",
+    "int64"
+  ],
+  "checks": [
+    {
+      "check": "connect.ok",
+      "pass": true,
+      "detail": "facts={\"version\":\"3.53.4\",\"params\":{\"binding\":\"bun:sqlite\"},\"observedTx\":\"idle\"}"
+    },
+    {
+      "check": "capabilities.from-facts",
+      "pass": true,
+      "detail": "caps={\"pipelining\":false,\"protocolPrepared\":true,\"interactiveTransactions\":true,\"savepoints\":false,\"returning\":false,\"streamingResults\":false,\"bulkLoad\":false,\"notifications\":false,\"changeStream\":false,\"cancel\":\"none\",\"int64\":\"bigint\",\"multiResult\":false}"
+    },
+    {
+      "check": "capabilities.respond-to-facts",
+      "pass": true,
+      "detail": "with empty facts: protocolPrepared=false interactiveTransactions=false"
+    },
+    {
+      "check": "query.bigint",
+      "pass": true,
+      "detail": "got bigint 9007199254740993"
+    },
+    {
+      "check": "query.text",
+      "pass": true,
+      "detail": "got \"héllo wörld\""
+    },
+    {
+      "check": "query.outcome",
+      "pass": true,
+      "detail": "applied/none"
+    },
+    {
+      "check": "tx.begin-state-open",
+      "pass": true,
+      "detail": "state=open"
+    },
+    {
+      "check": "error.thrown-driver-error",
+      "pass": true,
+      "detail": "DriverError: UNIQUE constraint failed: fs01_kv.id"
+    },
+    {
+      "check": "error.class-constraint",
+      "pass": true,
+      "detail": "constraint"
+    },
+    {
+      "check": "error.vendor-untouched",
+      "pass": true,
+      "detail": "{\"code\":1555,\"name\":\"SQLITE_CONSTRAINT_PRIMARYKEY\"}"
+    },
+    {
+      "check": "error.rolled-back-after-error",
+      "pass": true,
+      "detail": "rows after rollback: []"
+    },
+    {
+      "check": "tx.uncommitted-invisible-external",
+      "pass": true,
+      "detail": "external read before commit: []"
+    },
+    {
+      "check": "tx.commit-state",
+      "pass": true,
+      "detail": "committed"
+    },
+    {
+      "check": "tx.commit-visible-external",
+      "pass": true,
+      "detail": "external read after commit: [\"2|commit-me\"]"
+    },
+    {
+      "check": "tx.rollback-state",
+      "pass": true,
+      "detail": "rolled-back"
+    },
+    {
+      "check": "tx.rollback-invisible-external",
+      "pass": true,
+      "detail": "external read after rollback: [\"2|commit-me\"]"
+    },
+    {
+      "check": "coordinator.no-leak",
+      "pass": true,
+      "detail": "{\"limit\":2,\"active\":0,\"queued\":0,\"maxActive\":1,\"admitted\":4,\"cancelledInQueue\":0,\"timedOutInQueue\":0}"
+    },
+    {
+      "check": "protocol.sql-has-no-values",
+      "pass": true,
+      "detail": "11 SQL strings passed to prepare/exec"
+    },
+    {
+      "check": "protocol.prepared-used",
+      "pass": true,
+      "detail": "statements with ? placeholders were prepared by bun:sqlite"
+    },
+    {
+      "check": "differential.bunsql-values",
+      "pass": true,
+      "detail": "Bun.SQL returned a=9007199254740993 (bigint), b=\"héllo wörld\"; skeleton returned a=9007199254740993 (bigint)"
+    },
+    {
+      "check": "differential.bunsql-error-code",
+      "pass": true,
+      "detail": "Bun.SQL duplicate-key error code=1555; skeleton vendor expected=1555"
+    },
+    {
+      "check": "cap.protocolPrepared",
+      "pass": true,
+      "detail": "requires protocol.prepared-used + protocol.sql-has-no-values"
+    },
+    {
+      "check": "cap.interactiveTransactions",
+      "pass": true,
+      "detail": "requires tx.commit-visible-external + tx.rollback-invisible-external"
+    },
+    {
+      "check": "cap.int64",
+      "pass": true,
+      "detail": "requires query.bigint"
+    }
+  ],
+  "expectations": [
+    {
+      "item": "error.statementOutcome",
+      "expected": "rejected-no-effects",
+      "observed": "rejected-no-effects",
+      "asExpected": true
+    },
+    {
+      "item": "error.transactionState",
+      "expected": "open",
+      "observed": "open",
+      "asExpected": true
+    },
+    {
+      "item": "error.retry",
+      "expected": "never",
+      "observed": "never",
+      "asExpected": true
+    },
+    {
+      "item": "error.phase",
+      "expected": "execute",
+      "observed": "execute",
+      "asExpected": true
+    }
+  ],
+  "differences": [],
+  "notes": [
+    "session state after the error: open",
+    "Bun.SQL sqlite with default options returned number 9007199254740992 for the bound 2^53+1 (lossy by default)"
+  ],
+  "protocol": [
+    "select ? as a, ? as b",
+    "BEGIN",
+    "insert into fs01_kv (id, v) values (?, ?)",
+    "insert into fs01_kv (id, v) values (?, ?)",
+    "ROLLBACK",
+    "BEGIN",
+    "insert into fs01_kv (id, v) values (?, ?)",
+    "COMMIT",
+    "BEGIN",
+    "insert into fs01_kv (id, v) values (?, ?)",
+    "ROLLBACK"
+  ]
+}
