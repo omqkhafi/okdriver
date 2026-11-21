@@ -18,10 +18,12 @@
     "NOTICE"
   ],
   "scripts": {
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "typecheck:tests": "tsc -p tests/tsconfig.json"
   },
   "devDependencies": {
     "@types/bun": "^1.4.5",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "workerd": "1.20261118.1"
   }
 }

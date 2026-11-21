@@ -1,0 +1,106 @@
+# CI for OKDriver.
+#
+# checks   The repo's own gates on the Bun pinned in .bun-version: install from the frozen
+#          lockfile, typecheck src/, typecheck the tests, run bun test.
+# node     Maintained Node.js lines. Each leg runs the runtime smoke test on that major,
+#          with no install step and no Bun. P0-T10 (ADR 029) decides the minimum and edits this matrix.
+# bun      Bun "latest" (current stable release) and "canary" (informative only, not a gate).
+#          Smoke test only.
+# workerd  The workerd version pinned in package.json and bun.lock, run through `workerd test`
+#          with the fixed compatibilityDate in tests/runtime/workerd.capnp.
+#
+# Every job passes the runtime it asked for in EXPECT_RUNTIME, so a job that landed on the
+# wrong runtime fails instead of passing.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  checks:
+    name: checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version-file: .bun-version
+      - run: bun --version
+      - run: bun install --frozen-lockfile
+      - run: bun run typecheck
+      - run: bun run typecheck:tests
+      - run: bun test
+
+  node:
+    name: node ${{ matrix.node }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ["22", "24", "26"]
+    env:
+      EXPECT_RUNTIME: node:${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+          package-manager-cache: false
+      - run: node --version
+      - run: node tests/runtime/run.mjs
+
+  bun:
+    name: bun ${{ matrix.bun }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    continue-on-error: ${{ matrix.bun == 'canary' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        bun: ["latest", "canary"]
+    env:
+      EXPECT_RUNTIME: bun
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: ${{ matrix.bun }}
+      - run: bun --version
+      - run: bun tests/runtime/run.mjs
+
+  workerd:
+    name: workerd
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      EXPECT_RUNTIME: workerd
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version-file: .bun-version
+      - run: bun install --frozen-lockfile
+      - run: node_modules/.bin/workerd --version
+      - run: node_modules/.bin/workerd test tests/runtime/workerd.capnp
