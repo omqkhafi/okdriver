@@ -1,0 +1,27 @@
+{
+  "name": "okdriver",
+  "version": "0.0.0",
+  "description": "A verifiable, high-performance SQL driver platform for TypeScript — PostgreSQL, MySQL, MariaDB and SQLite.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omqkhafi/okdriver.git"
+  },
+  "homepage": "https://github.com/omqkhafi/okdriver#readme",
+  "bugs": {
+    "url": "https://github.com/omqkhafi/okdriver/issues"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "typecheck": "bun check"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.5",
+    "typescript": "^7.0.2"
+  }
+}
