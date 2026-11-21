@@ -1,0 +1,24 @@
+bunload ev-drizzle-node24-pg → http://localhost:3000 | workers=4 | 7501s or 20,000 requests, whichever first | parquet parts every 1000000 rows / 30s
+[ev-drizzle-node24-pg    0s/7501s] vus=    0 rps=      0 fail=    0 avg=-ms total=0 flushed=0 | no samples
+[ev-drizzle-node24-pg    1s/7501s] vus=  288 rps=    966 fail=    0 avg=2.57ms total=966 flushed=0 | cpu=37.8
+[ev-drizzle-node24-pg    2s/7501s] vus=  300 rps=   1601 fail=    0 avg=0.88ms total=2567 flushed=0 | cpu=32.0
+[ev-drizzle-node24-pg    3s/7501s] vus=  300 rps=   1597 fail=    0 avg=0.81ms total=4164 flushed=0 | cpu=31.0
+[ev-drizzle-node24-pg    4s/7501s] vus=  300 rps=   1578 fail=    0 avg=0.82ms total=5742 flushed=0 | cpu=24.3
+[ev-drizzle-node24-pg    5s/7501s] vus=  300 rps=   1584 fail=    0 avg=0.91ms total=7326 flushed=0 | cpu=30.5
+[ev-drizzle-node24-pg    6s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.92ms total=8928 flushed=0 | cpu=23.3
+[ev-drizzle-node24-pg    7s/7501s] vus=  300 rps=   1596 fail=    0 avg=1.03ms total=10524 flushed=0 | cpu=33.0
+[ev-drizzle-node24-pg    8s/7501s] vus=  300 rps=   1593 fail=    0 avg=1.20ms total=12117 flushed=0 | cpu=27.0
+[ev-drizzle-node24-pg    9s/7501s] vus=  300 rps=   1569 fail=    0 avg=1.22ms total=13686 flushed=0 | cpu=32.5
+[ev-drizzle-node24-pg   10s/7501s] vus=  300 rps=   1604 fail=    0 avg=1.14ms total=15290 flushed=0 | cpu=28.0
+[ev-drizzle-node24-pg   11s/7501s] vus=  300 rps=   1594 fail=    0 avg=1.10ms total=16884 flushed=0 | cpu=31.5
+[ev-drizzle-node24-pg   12s/7501s] vus=  300 rps=   1589 fail=    0 avg=1.04ms total=18473 flushed=0 | cpu=26.5
+[ev-drizzle-node24-pg   13s/7501s] vus=  300 rps=   1527 fail=    0 avg=0.99ms total=20000 flushed=0 | cpu=34.3
+
+ev-drizzle-node24-pg
+  requests  20000  (1546 rps avg over 12.94s)
+  failed    0  (timeouts 0, connect 0, closed/parse 0)
+  retried   0  (stale keep-alive closed before any response → retried once, like k6)
+  latency   avg 1.08  p50 0.84  p90 1.80  p95 2.39  p99 4.15  max 29.68 ms
+  memory    peak rss 110 MiB
+  saved     /home/user/okdriver/research/fs-14/work/drizzle-benchmarks/results/ev-drizzle-node24-pg.parquet
+ev-drizzle-node24-pg: 1546 rps, p99 4.15ms

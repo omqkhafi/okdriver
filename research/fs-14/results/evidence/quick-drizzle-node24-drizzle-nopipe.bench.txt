@@ -1,0 +1,71 @@
+bunload ev-quick-drizzle-node24-drizzle-nopipe → http://localhost:3000 | workers=2 | 60s | parquet parts every 1000000 rows / 30s
+[ev-quick-drizzle-node24-drizzle-nopipe    0s/60s] vus=   21 rps=     30 fail=    0 avg=7.06ms total=30 flushed=0 | cpu=3.8
+[ev-quick-drizzle-node24-drizzle-nopipe    1s/60s] vus=  121 rps=    460 fail=    0 avg=1.59ms total=490 flushed=0 | cpu=17.8
+[ev-quick-drizzle-node24-drizzle-nopipe    2s/60s] vus=  221 rps=    989 fail=    0 avg=1.23ms total=1479 flushed=0 | cpu=26.8
+[ev-quick-drizzle-node24-drizzle-nopipe    3s/60s] vus=  322 rps=   1531 fail=    0 avg=0.86ms total=3010 flushed=0 | cpu=26.3
+[ev-quick-drizzle-node24-drizzle-nopipe    4s/60s] vus=  423 rps=   2045 fail=    0 avg=1.14ms total=5055 flushed=0 | cpu=38.8
+[ev-quick-drizzle-node24-drizzle-nopipe    5s/60s] vus=  500 rps=   2541 fail=    0 avg=1.01ms total=7596 flushed=0 | cpu=32.0
+[ev-quick-drizzle-node24-drizzle-nopipe    6s/60s] vus=  500 rps=   2653 fail=    0 avg=0.73ms total=10249 flushed=0 | cpu=32.3
+[ev-quick-drizzle-node24-drizzle-nopipe    7s/60s] vus=  500 rps=   2663 fail=    0 avg=0.88ms total=12912 flushed=0 | cpu=38.0
+[ev-quick-drizzle-node24-drizzle-nopipe    8s/60s] vus=  500 rps=   2652 fail=    0 avg=0.86ms total=15564 flushed=0 | cpu=37.3
+[ev-quick-drizzle-node24-drizzle-nopipe    9s/60s] vus=  500 rps=   2654 fail=    0 avg=0.94ms total=18218 flushed=0 | cpu=39.3
+[ev-quick-drizzle-node24-drizzle-nopipe   10s/60s] vus=  522 rps=   2681 fail=    0 avg=1.03ms total=20899 flushed=0 | cpu=43.3
+[ev-quick-drizzle-node24-drizzle-nopipe   11s/60s] vus=  623 rps=   3113 fail=    0 avg=1.26ms total=24012 flushed=0 | cpu=46.3
+[ev-quick-drizzle-node24-drizzle-nopipe   12s/60s] vus=  724 rps=   3663 fail=    0 avg=1.15ms total=27675 flushed=0 | cpu=51.5
+[ev-quick-drizzle-node24-drizzle-nopipe   13s/60s] vus=  824 rps=   4157 fail=    0 avg=1.50ms total=31832 flushed=0 | cpu=57.0
+[ev-quick-drizzle-node24-drizzle-nopipe   14s/60s] vus=  925 rps=   4682 fail=    0 avg=2.29ms total=36514 flushed=0 | cpu=71.8
+[ev-quick-drizzle-node24-drizzle-nopipe   15s/60s] vus= 1000 rps=   5091 fail=    0 avg=4.79ms total=41605 flushed=0 | cpu=70.3
+[ev-quick-drizzle-node24-drizzle-nopipe   16s/60s] vus= 1000 rps=   5148 fail=    0 avg=2.17ms total=46753 flushed=0 | cpu=61.5
+[ev-quick-drizzle-node24-drizzle-nopipe   17s/60s] vus= 1000 rps=   5387 fail=    0 avg=2.68ms total=52140 flushed=0 | cpu=50.0
+[ev-quick-drizzle-node24-drizzle-nopipe   18s/60s] vus= 1000 rps=   5301 fail=    0 avg=0.84ms total=57441 flushed=0 | cpu=51.5
+[ev-quick-drizzle-node24-drizzle-nopipe   19s/60s] vus= 1000 rps=   5291 fail=    0 avg=1.35ms total=62732 flushed=0 | cpu=58.3
+[ev-quick-drizzle-node24-drizzle-nopipe   20s/60s] vus= 1026 rps=   5342 fail=    0 avg=1.46ms total=68074 flushed=0 | cpu=61.5
+[ev-quick-drizzle-node24-drizzle-nopipe   21s/60s] vus= 1127 rps=   5738 fail=    0 avg=1.44ms total=73812 flushed=0 | cpu=56.8
+[ev-quick-drizzle-node24-drizzle-nopipe   22s/60s] vus= 1223 rps=   6258 fail=    0 avg=2.61ms total=80070 flushed=0 | cpu=69.3
+[ev-quick-drizzle-node24-drizzle-nopipe   23s/60s] vus= 1325 rps=   6694 fail=    0 avg=2.41ms total=86764 flushed=0 | cpu=61.5
+[ev-quick-drizzle-node24-drizzle-nopipe   24s/60s] vus= 1425 rps=   7382 fail=    0 avg=3.84ms total=94146 flushed=0 | cpu=58.8
+[ev-quick-drizzle-node24-drizzle-nopipe   25s/60s] vus= 1500 rps=   7901 fail=    0 avg=1.25ms total=102047 flushed=0 | cpu=57.5
+[ev-quick-drizzle-node24-drizzle-nopipe   26s/60s] vus= 1500 rps=   7914 fail=    0 avg=2.21ms total=109961 flushed=0 | cpu=71.3
+[ev-quick-drizzle-node24-drizzle-nopipe   27s/60s] vus= 1500 rps=   7912 fail=    0 avg=2.03ms total=117873 flushed=0 | cpu=57.3
+[ev-quick-drizzle-node24-drizzle-nopipe   28s/60s] vus= 1500 rps=   7948 fail=    0 avg=1.11ms total=125821 flushed=0 | cpu=60.8
+[ev-quick-drizzle-node24-drizzle-nopipe   29s/60s] vus= 1500 rps=   7980 fail=    0 avg=0.82ms total=133801 flushed=124799 | cpu=59.8
+[ev-quick-drizzle-node24-drizzle-nopipe   30s/60s] vus= 1526 rps=   7969 fail=    0 avg=1.38ms total=141770 flushed=124799 | cpu=64.0
+[ev-quick-drizzle-node24-drizzle-nopipe   31s/60s] vus= 1627 rps=   8413 fail=    0 avg=1.92ms total=150183 flushed=124799 | cpu=70.0
+[ev-quick-drizzle-node24-drizzle-nopipe   32s/60s] vus= 1728 rps=   8825 fail=    0 avg=3.51ms total=159008 flushed=124799 | cpu=67.3
+[ev-quick-drizzle-node24-drizzle-nopipe   33s/60s] vus= 1829 rps=   9439 fail=    0 avg=3.05ms total=168447 flushed=124799 | cpu=71.5
+[ev-quick-drizzle-node24-drizzle-nopipe   34s/60s] vus= 1930 rps=   9961 fail=    0 avg=1.67ms total=178408 flushed=124799 | cpu=68.5
+[ev-quick-drizzle-node24-drizzle-nopipe   35s/60s] vus= 2000 rps=  10346 fail=    0 avg=4.52ms total=188754 flushed=124799 | cpu=63.3
+[ev-quick-drizzle-node24-drizzle-nopipe   36s/60s] vus= 2000 rps=  10577 fail=    0 avg=1.59ms total=199331 flushed=124799 | cpu=72.8
+[ev-quick-drizzle-node24-drizzle-nopipe   37s/60s] vus= 2000 rps=  10576 fail=    0 avg=1.52ms total=209907 flushed=124799 | cpu=65.3
+[ev-quick-drizzle-node24-drizzle-nopipe   38s/60s] vus= 2000 rps=   9531 fail=    0 avg=17.62ms total=219438 flushed=124799 | cpu=83.0
+[ev-quick-drizzle-node24-drizzle-nopipe   39s/60s] vus= 2000 rps=   9524 fail=    0 avg=24.15ms total=228962 flushed=124799 | cpu=83.0
+[ev-quick-drizzle-node24-drizzle-nopipe   40s/60s] vus= 2027 rps=  10436 fail=    0 avg=6.29ms total=239398 flushed=124799 | cpu=77.0
+[ev-quick-drizzle-node24-drizzle-nopipe   41s/60s] vus= 2128 rps=  10459 fail=    0 avg=11.27ms total=249857 flushed=124799 | cpu=75.0
+[ev-quick-drizzle-node24-drizzle-nopipe   42s/60s] vus= 2229 rps=   9929 fail=    0 avg=29.00ms total=259786 flushed=124799 | cpu=81.5
+[ev-quick-drizzle-node24-drizzle-nopipe   43s/60s] vus= 2331 rps=  10207 fail=    0 avg=39.06ms total=269993 flushed=124799 | cpu=79.0
+[ev-quick-drizzle-node24-drizzle-nopipe   44s/60s] vus= 2432 rps=  10731 fail=    0 avg=30.39ms total=280724 flushed=124799 | cpu=79.3
+[ev-quick-drizzle-node24-drizzle-nopipe   45s/60s] vus= 2500 rps=  10573 fail=    0 avg=43.48ms total=291297 flushed=124799 | cpu=85.5
+[ev-quick-drizzle-node24-drizzle-nopipe   46s/60s] vus= 2500 rps=   9019 fail=    0 avg=90.73ms total=300316 flushed=124799 | cpu=80.8
+[ev-quick-drizzle-node24-drizzle-nopipe   47s/60s] vus= 2500 rps=   9736 fail=    0 avg=72.22ms total=310052 flushed=124799 | cpu=80.5
+[ev-quick-drizzle-node24-drizzle-nopipe   48s/60s] vus= 2500 rps=   9728 fail=    0 avg=72.04ms total=319780 flushed=124799 | cpu=84.3
+[ev-quick-drizzle-node24-drizzle-nopipe   49s/60s] vus= 2500 rps=  11772 fail=    0 avg=28.04ms total=331552 flushed=124799 | cpu=76.8
+[ev-quick-drizzle-node24-drizzle-nopipe   50s/60s] vus= 2529 rps=  10707 fail=    0 avg=42.18ms total=342259 flushed=124799 | cpu=80.5
+[ev-quick-drizzle-node24-drizzle-nopipe   51s/60s] vus= 2631 rps=   9164 fail=    0 avg=87.60ms total=351423 flushed=124799 | cpu=81.8
+[ev-quick-drizzle-node24-drizzle-nopipe   52s/60s] vus= 2732 rps=   8471 fail=    0 avg=126.61ms total=359894 flushed=124799 | cpu=81.5
+[ev-quick-drizzle-node24-drizzle-nopipe   53s/60s] vus= 2833 rps=   9769 fail=    0 avg=103.17ms total=369663 flushed=124799 | cpu=79.3
+[ev-quick-drizzle-node24-drizzle-nopipe   54s/60s] vus= 2935 rps=  11043 fail=    0 avg=81.19ms total=380706 flushed=124799 | cpu=88.5
+[ev-quick-drizzle-node24-drizzle-nopipe   55s/60s] vus= 3000 rps=  11201 fail=    0 avg=67.15ms total=391907 flushed=124799 | cpu=81.5
+[ev-quick-drizzle-node24-drizzle-nopipe   56s/60s] vus= 3000 rps=  11304 fail=    0 avg=83.42ms total=403211 flushed=124799 | cpu=79.0
+[ev-quick-drizzle-node24-drizzle-nopipe   57s/60s] vus= 3000 rps=  10678 fail=    0 avg=96.28ms total=413889 flushed=124799 | cpu=78.5
+[ev-quick-drizzle-node24-drizzle-nopipe   58s/60s] vus= 3000 rps=  10177 fail=    0 avg=90.69ms total=424066 flushed=124799 | cpu=77.5
+[ev-quick-drizzle-node24-drizzle-nopipe   59s/60s] vus= 3000 rps=   9279 fail=    0 avg=139.93ms total=433345 flushed=422110 | cpu=83.5
+[ev-quick-drizzle-node24-drizzle-nopipe   60s/60s] vus=    0 rps=   7779 fail=    0 avg=129.64ms total=441124 flushed=422110 | cpu=69.5
+
+ev-quick-drizzle-node24-drizzle-nopipe
+  requests  441124  (7334 rps avg over 60.15s)
+  failed    0  (timeouts 0, connect 0, closed/parse 0)
+  retried   0  (stale keep-alive closed before any response → retried once, like k6)
+  latency   avg 34.50  p50 4.32  p90 108.28  p95 146.16  p99 218.37  max 306.09 ms
+  memory    peak rss 150 MiB
+  saved     /home/user/okdriver/research/fs-14/work/drizzle-benchmarks/results/ev-quick-drizzle-node24-drizzle-nopipe.parquet
+ev-quick-drizzle-node24-drizzle-nopipe: 7334 rps, p99 218.37ms

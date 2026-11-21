@@ -1,0 +1,53 @@
+warming up for 10s (not recorded)…
+bunload kysely-node24-drizzle-r2 → http://localhost:3004 | workers=4 | 7501s or 100,000 requests, whichever first | parquet parts every 1000000 rows / 30s
+[kysely-node24-drizzle-r2    0s/7501s] vus=    0 rps=      0 fail=    0 avg=-ms total=0 flushed=0 | no samples
+[kysely-node24-drizzle-r2    1s/7501s] vus=  288 rps=    966 fail=    0 avg=2.05ms total=966 flushed=0 | cpu=31.0
+[kysely-node24-drizzle-r2    2s/7501s] vus=  300 rps=   1601 fail=    0 avg=0.69ms total=2567 flushed=0 | cpu=17.5 proc.server=48.5 proc.postgres=13.1 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2    3s/7501s] vus=  300 rps=   1597 fail=    0 avg=0.66ms total=4164 flushed=0 | cpu=15.8 proc.server=44.0 proc.postgres=24.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2    4s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.71ms total=5760 flushed=0 | cpu=18.8 proc.server=39.0 proc.postgres=29.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2    5s/7501s] vus=  300 rps=   1581 fail=    0 avg=0.77ms total=7341 flushed=0 | cpu=17.3 proc.server=38.0 proc.postgres=25.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2    6s/7501s] vus=  300 rps=   1587 fail=    0 avg=0.96ms total=8928 flushed=0 | cpu=17.8 proc.server=37.0 proc.postgres=22.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2    7s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.84ms total=10524 flushed=0 | cpu=22.0 proc.server=43.0 proc.postgres=30.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2    8s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.88ms total=12126 flushed=0 | cpu=22.8 proc.server=43.0 proc.postgres=24.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2    9s/7501s] vus=  300 rps=   1584 fail=    0 avg=1.00ms total=13710 flushed=0 | cpu=23.8 proc.server=54.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   10s/7501s] vus=  300 rps=   1586 fail=    0 avg=0.94ms total=15296 flushed=0 | cpu=21.8 proc.server=54.0 proc.postgres=29.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   11s/7501s] vus=  300 rps=   1601 fail=    0 avg=0.85ms total=16897 flushed=0 | cpu=19.3 proc.server=49.0 proc.postgres=30.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   12s/7501s] vus=  300 rps=   1589 fail=    0 avg=0.96ms total=18486 flushed=0 | cpu=18.8 proc.server=42.0 proc.postgres=31.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   13s/7501s] vus=  300 rps=   1600 fail=    0 avg=0.94ms total=20086 flushed=0 | cpu=20.5 proc.server=43.0 proc.postgres=30.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   14s/7501s] vus=  300 rps=   1589 fail=    0 avg=0.87ms total=21675 flushed=0 | cpu=20.0 proc.server=44.0 proc.postgres=30.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   15s/7501s] vus=  300 rps=   1599 fail=    0 avg=0.85ms total=23274 flushed=0 | cpu=20.3 proc.server=43.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   16s/7501s] vus=  300 rps=   1572 fail=    0 avg=0.82ms total=24846 flushed=0 | cpu=25.3 proc.server=43.0 proc.postgres=25.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   17s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.90ms total=26448 flushed=0 | cpu=21.8 proc.server=41.0 proc.postgres=32.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   18s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.83ms total=28044 flushed=0 | cpu=20.5 proc.server=42.0 proc.postgres=30.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   19s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.71ms total=29646 flushed=0 | cpu=13.5 proc.server=41.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   20s/7501s] vus=  300 rps=   1562 fail=    0 avg=0.76ms total=31208 flushed=0 | cpu=15.8 proc.server=36.0 proc.postgres=27.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   21s/7501s] vus=  597 rps=   2592 fail=    0 avg=1.11ms total=33800 flushed=0 | cpu=34.0 proc.server=36.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   22s/7501s] vus=  600 rps=   3213 fail=    0 avg=0.73ms total=37013 flushed=0 | cpu=46.5 proc.server=70.0 proc.postgres=42.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   23s/7501s] vus=  600 rps=   3174 fail=    0 avg=0.64ms total=40187 flushed=0 | cpu=28.0 proc.server=74.0 proc.postgres=48.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   24s/7501s] vus=  600 rps=   3177 fail=    0 avg=0.53ms total=43364 flushed=0 | cpu=28.8 proc.server=66.0 proc.postgres=45.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   25s/7501s] vus=  600 rps=   3210 fail=    0 avg=0.55ms total=46574 flushed=0 | cpu=31.3 proc.server=63.0 proc.postgres=43.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   26s/7501s] vus=  600 rps=   3211 fail=    0 avg=0.51ms total=49785 flushed=0 | cpu=26.0 proc.server=58.0 proc.postgres=44.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   27s/7501s] vus=  600 rps=   3144 fail=    0 avg=0.56ms total=52929 flushed=0 | cpu=35.0 proc.server=54.0 proc.postgres=42.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   28s/7501s] vus=  600 rps=   3202 fail=    0 avg=0.59ms total=56131 flushed=0 | cpu=26.5 proc.server=59.0 proc.postgres=45.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   29s/7501s] vus=  600 rps=   3187 fail=    0 avg=1.17ms total=59318 flushed=56131 | cpu=38.3 proc.server=59.4 proc.postgres=42.6 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   30s/7501s] vus=  600 rps=   3190 fail=    0 avg=0.83ms total=62508 flushed=56131 | cpu=36.3 proc.server=69.0 proc.postgres=48.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   31s/7501s] vus=  600 rps=   3175 fail=    0 avg=0.58ms total=65683 flushed=56131 | cpu=31.0 proc.server=69.0 proc.postgres=55.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   32s/7501s] vus=  600 rps=   3194 fail=    0 avg=0.93ms total=68877 flushed=56131 | cpu=36.8 proc.server=60.0 proc.postgres=45.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   33s/7501s] vus=  600 rps=   3208 fail=    0 avg=0.75ms total=72085 flushed=56131 | cpu=29.3 proc.server=70.0 proc.postgres=51.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   34s/7501s] vus=  600 rps=   3143 fail=    0 avg=0.65ms total=75228 flushed=56131 | cpu=27.8 proc.server=64.0 proc.postgres=48.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   35s/7501s] vus=  600 rps=   3212 fail=    0 avg=0.75ms total=78440 flushed=56131 | cpu=32.5 proc.server=62.0 proc.postgres=46.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   36s/7501s] vus=  600 rps=   3199 fail=    0 avg=0.89ms total=81639 flushed=56131 | cpu=28.0 proc.server=67.0 proc.postgres=51.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   37s/7501s] vus=  600 rps=   3183 fail=    0 avg=0.64ms total=84822 flushed=56131 | cpu=27.5 proc.server=70.0 proc.postgres=51.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   38s/7501s] vus=  600 rps=   3139 fail=    0 avg=0.71ms total=87961 flushed=56131 | cpu=34.8 proc.server=60.0 proc.postgres=48.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   39s/7501s] vus=  600 rps=   3244 fail=    0 avg=0.57ms total=91205 flushed=56131 | cpu=30.5 proc.server=62.0 proc.postgres=48.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   40s/7501s] vus=  600 rps=   3208 fail=    0 avg=0.73ms total=94413 flushed=56131 | cpu=25.3 proc.server=58.0 proc.postgres=44.0 proc.docker-proxy=0.0
+[kysely-node24-drizzle-r2   41s/7501s] vus=  899 rps=   4158 fail=    0 avg=0.79ms total=98571 flushed=56131 | cpu=35.8 proc.server=57.0 proc.postgres=48.0 proc.docker-proxy=0.0
+
+kysely-node24-drizzle-r2
+  requests  100000  (2420 rps avg over 41.32s)
+  failed    0  (timeouts 0, connect 0, closed/parse 0)
+  retried   0  (stale keep-alive closed before any response → retried once, like k6)
+  latency   avg 0.77  p50 0.52  p90 1.41  p95 2.04  p99 4.07  max 32.18 ms
+  memory    peak rss 138 MiB
+  saved     /home/user/okdriver/research/fs-14/work/drizzle-benchmarks/results/kysely-node24-drizzle-r2.parquet
+kysely-node24-drizzle-r2: 2420 rps, p99 4.07ms

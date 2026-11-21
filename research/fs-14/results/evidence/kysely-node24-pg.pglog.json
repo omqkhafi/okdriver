@@ -1,0 +1,21 @@
+{
+  "backends": 16,
+  "parse": {
+    "total": 20000,
+    "named": 0,
+    "unnamed": 20000
+  },
+  "bind": {
+    "total": 20000,
+    "named": 0,
+    "unnamed": 20000
+  },
+  "execute": {
+    "total": 20000,
+    "named": 0,
+    "unnamed": 20000
+  },
+  "distinctNamedStatements": 0,
+  "maxParsesOfOneNamedStatementOnOneBackend": 0,
+  "executesPerNamedParse": null
+}

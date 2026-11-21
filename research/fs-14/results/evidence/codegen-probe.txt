@@ -1,0 +1,19 @@
+ORM mapper generators: makeJitQueryMapper / makeJitRqbMapper
+
+[Drizzle Postgres decode2] object builder postgres-mapper-1.object.id_companyName_contactName_contactTitle_.js for (id, companyName, contactName, contactTitle, address, city, postalCode, region, country, phone, fax):
+function row(b, s) {
+  // "id" oid=23 binary (int4 bin)
+  // "companyName" oid=25 (string)
+  // "contactName" oid=1043 (string)
+  // "contactTitle" oid=1043 (string)
+  // "address" oid=1043 (string)
+  // "city" oid=1043 (string)
+  // "postalCode" oid=1043 (string)
+  // "region" oid=1043 (string)
+  // "country" oid=1043 (string)
+  // "phone" oid=1043 (string)
+  // "fax" oid=1043 (string)
+  return { "id": v0, "companyName": v1, "contactName": v2, "contactTitle": v3, "address": v4, "city": v5, "postalCode": v6, "region": v7, "country": v8, "phone": v9, "fax": v10 };
+}
+
+--- second execution of the same named statement
