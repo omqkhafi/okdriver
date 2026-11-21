@@ -1,0 +1,487 @@
+# supavisor-on S3ui run 1: error (ERROR 08P01 bind message supplies 1 parameters, but prepared statement "" requires 0); 85.5 ms; client-side round trips 2
+    0.2 ms  client-side  > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's3ui'::text AS tag,nOids:0,oids:[]}
+    0.2 ms  client-side  > D {kind:S,name:}
+    0.2 ms  client-side  > S
+   21.3 ms  server-side#6 > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's3ui'::text AS tag,nOids:0,oids:[]}
+   21.3 ms  server-side#6 > D {kind:S,name:}
+   21.3 ms  server-side#6 > S
+   21.9 ms  server-side#6 < 1
+   21.9 ms  server-side#6 < t
+   21.9 ms  server-side#6 < T {columns:3}
+   21.9 ms  server-side#6 < Z {status:I}
+   22.3 ms  client-side  < 1
+   22.3 ms  client-side  < t
+   22.3 ms  client-side  < T {columns:3}
+   22.3 ms  client-side  < Z {status:I}
+   64.5 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   64.5 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   64.5 ms  server-side#8 > D {kind:P,name:}
+   64.5 ms  server-side#8 > E {portal:,maxRows:0}
+   64.5 ms  server-side#8 > S
+   64.6 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   64.6 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   64.6 ms  server-side#7 > D {kind:P,name:}
+   64.6 ms  server-side#7 > E {portal:,maxRows:0}
+   64.6 ms  server-side#7 > S
+   64.7 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   64.7 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   64.7 ms  server-side#6 > D {kind:P,name:}
+   64.7 ms  server-side#6 > E {portal:,maxRows:0}
+   64.7 ms  server-side#6 > S
+   75.3 ms  server-side#7 < 1
+   75.3 ms  server-side#7 < 2
+   75.3 ms  server-side#7 < T {columns:2}
+   75.3 ms  server-side#7 < D
+   75.3 ms  server-side#7 < C {tag:SELECT 1}
+   75.3 ms  server-side#7 < Z {status:I}
+   75.5 ms  server-side#8 < 1
+   75.5 ms  server-side#8 < 2
+   75.5 ms  server-side#8 < T {columns:2}
+   75.5 ms  server-side#8 < D
+   75.5 ms  server-side#8 < C {tag:SELECT 1}
+   75.5 ms  server-side#8 < Z {status:I}
+   75.5 ms  server-side#6 < 1
+   75.5 ms  server-side#6 < 2
+   75.5 ms  server-side#6 < T {columns:2}
+   75.5 ms  server-side#6 < D
+   75.5 ms  server-side#6 < C {tag:SELECT 1}
+   75.5 ms  server-side#6 < Z {status:I}
+   75.9 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   75.9 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   75.9 ms  server-side#7 > D {kind:P,name:}
+   75.9 ms  server-side#7 > E {portal:,maxRows:0}
+   75.9 ms  server-side#7 > S
+   75.9 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   75.9 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   75.9 ms  server-side#6 > D {kind:P,name:}
+   75.9 ms  server-side#6 > E {portal:,maxRows:0}
+   75.9 ms  server-side#6 > S
+   76.0 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   76.0 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   76.0 ms  server-side#8 > D {kind:P,name:}
+   76.0 ms  server-side#8 > E {portal:,maxRows:0}
+   76.0 ms  server-side#8 > S
+   86.7 ms  server-side#7 < 1
+   86.7 ms  server-side#7 < 2
+   86.7 ms  server-side#7 < T {columns:2}
+   86.7 ms  server-side#7 < D
+   86.7 ms  server-side#7 < C {tag:SELECT 1}
+   86.7 ms  server-side#7 < Z {status:I}
+   86.9 ms  server-side#8 < 1
+   86.9 ms  server-side#8 < 2
+   86.9 ms  server-side#8 < T {columns:2}
+   86.9 ms  server-side#8 < D
+   86.9 ms  server-side#8 < C {tag:SELECT 1}
+   86.9 ms  server-side#8 < Z {status:I}
+   86.9 ms  server-side#6 < 1
+   86.9 ms  server-side#6 < 2
+   86.9 ms  server-side#6 < T {columns:2}
+   86.9 ms  server-side#6 < D
+   86.9 ms  server-side#6 < C {tag:SELECT 1}
+   86.9 ms  server-side#6 < Z {status:I}
+   87.3 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   87.3 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   87.3 ms  server-side#6 > D {kind:P,name:}
+   87.3 ms  server-side#6 > E {portal:,maxRows:0}
+   87.3 ms  server-side#6 > S
+   97.7 ms  server-side#6 < 1
+   97.7 ms  server-side#6 < 2
+   97.7 ms  server-side#6 < T {columns:2}
+   97.7 ms  server-side#6 < D
+   97.7 ms  server-side#6 < C {tag:SELECT 1}
+   97.7 ms  server-side#6 < Z {status:I}
+  117.2 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  117.2 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  117.2 ms  server-side#7 > D {kind:P,name:}
+  117.2 ms  server-side#7 > E {portal:,maxRows:0}
+  117.2 ms  server-side#7 > S
+  117.4 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  117.4 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  117.4 ms  server-side#6 > D {kind:P,name:}
+  117.4 ms  server-side#6 > E {portal:,maxRows:0}
+  117.4 ms  server-side#6 > S
+  117.5 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  117.5 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  117.5 ms  server-side#8 > D {kind:P,name:}
+  117.5 ms  server-side#8 > E {portal:,maxRows:0}
+  117.5 ms  server-side#8 > S
+  129.3 ms  server-side#7 < 1
+  129.3 ms  server-side#7 < 2
+  129.3 ms  server-side#7 < T {columns:2}
+  129.3 ms  server-side#7 < D
+  129.3 ms  server-side#7 < C {tag:SELECT 1}
+  129.3 ms  server-side#7 < Z {status:I}
+  129.4 ms  server-side#6 < 1
+  129.4 ms  server-side#6 < 2
+  129.4 ms  server-side#6 < T {columns:2}
+  129.4 ms  server-side#6 < D
+  129.4 ms  server-side#6 < C {tag:SELECT 1}
+  129.4 ms  server-side#6 < Z {status:I}
+  129.4 ms  server-side#8 < 1
+  129.4 ms  server-side#8 < 2
+  129.4 ms  server-side#8 < T {columns:2}
+  129.4 ms  server-side#8 < D
+  129.4 ms  server-side#8 < C {tag:SELECT 1}
+  129.4 ms  server-side#8 < Z {status:I}
+  129.9 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  129.9 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  129.9 ms  server-side#7 > D {kind:P,name:}
+  129.9 ms  server-side#7 > E {portal:,maxRows:0}
+  129.9 ms  server-side#7 > S
+  130.0 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  130.0 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  130.0 ms  server-side#8 > D {kind:P,name:}
+  130.0 ms  server-side#8 > E {portal:,maxRows:0}
+  130.0 ms  server-side#8 > S
+  130.3 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  130.3 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  130.3 ms  server-side#6 > D {kind:P,name:}
+  130.3 ms  server-side#6 > E {portal:,maxRows:0}
+  130.3 ms  server-side#6 > S
+  140.4 ms  server-side#8 < 1
+  140.4 ms  server-side#8 < 2
+  140.4 ms  server-side#8 < T {columns:2}
+  140.4 ms  server-side#8 < D
+  140.4 ms  server-side#8 < C {tag:SELECT 1}
+  140.4 ms  server-side#8 < Z {status:I}
+  140.5 ms  server-side#7 < 1
+  140.5 ms  server-side#7 < 2
+  140.5 ms  server-side#7 < T {columns:2}
+  140.5 ms  server-side#7 < D
+  140.5 ms  server-side#7 < C {tag:SELECT 1}
+  140.5 ms  server-side#7 < Z {status:I}
+  140.7 ms  server-side#6 < 1
+  140.7 ms  server-side#6 < 2
+  140.7 ms  server-side#6 < T {columns:2}
+  140.7 ms  server-side#6 < D
+  140.7 ms  server-side#6 < C {tag:SELECT 1}
+  140.7 ms  server-side#6 < Z {status:I}
+  140.9 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  140.9 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  140.9 ms  server-side#8 > D {kind:P,name:}
+  140.9 ms  server-side#8 > E {portal:,maxRows:0}
+  140.9 ms  server-side#8 > S
+  151.6 ms  server-side#8 < 1
+  151.6 ms  server-side#8 < 2
+  151.6 ms  server-side#8 < T {columns:2}
+  151.6 ms  server-side#8 < D
+  151.6 ms  server-side#8 < C {tag:SELECT 1}
+  151.6 ms  server-side#8 < Z {status:I}
+  171.0 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  171.0 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  171.0 ms  server-side#8 > D {kind:P,name:}
+  171.0 ms  server-side#8 > E {portal:,maxRows:0}
+  171.0 ms  server-side#8 > S
+  171.1 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  171.1 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  171.1 ms  server-side#6 > D {kind:P,name:}
+  171.1 ms  server-side#6 > E {portal:,maxRows:0}
+  171.1 ms  server-side#6 > S
+  171.2 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  171.2 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  171.2 ms  server-side#7 > D {kind:P,name:}
+  171.2 ms  server-side#7 > E {portal:,maxRows:0}
+  171.2 ms  server-side#7 > S
+  181.7 ms  server-side#6 < 1
+  181.7 ms  server-side#6 < 2
+  181.7 ms  server-side#6 < T {columns:2}
+  181.7 ms  server-side#6 < D
+  181.7 ms  server-side#6 < C {tag:SELECT 1}
+  181.7 ms  server-side#6 < Z {status:I}
+  181.8 ms  server-side#7 < 1
+  181.8 ms  server-side#7 < 2
+  181.8 ms  server-side#7 < T {columns:2}
+  181.8 ms  server-side#7 < D
+  181.8 ms  server-side#7 < C {tag:SELECT 1}
+  181.8 ms  server-side#7 < Z {status:I}
+  181.8 ms  server-side#8 < 1
+  181.8 ms  server-side#8 < 2
+  181.8 ms  server-side#8 < T {columns:2}
+  181.8 ms  server-side#8 < D
+  181.8 ms  server-side#8 < C {tag:SELECT 1}
+  181.8 ms  server-side#8 < Z {status:I}
+  182.1 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  182.1 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  182.1 ms  server-side#6 > D {kind:P,name:}
+  182.1 ms  server-side#6 > E {portal:,maxRows:0}
+  182.1 ms  server-side#6 > S
+  182.3 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  182.3 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  182.3 ms  server-side#7 > D {kind:P,name:}
+  182.3 ms  server-side#7 > E {portal:,maxRows:0}
+  182.3 ms  server-side#7 > S
+  182.5 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  182.5 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  182.5 ms  server-side#8 > D {kind:P,name:}
+  182.5 ms  server-side#8 > E {portal:,maxRows:0}
+  182.5 ms  server-side#8 > S
+  192.8 ms  server-side#6 < 1
+  192.8 ms  server-side#6 < 2
+  192.8 ms  server-side#6 < T {columns:2}
+  192.8 ms  server-side#6 < D
+  192.8 ms  server-side#6 < C {tag:SELECT 1}
+  192.8 ms  server-side#6 < Z {status:I}
+  192.9 ms  server-side#7 < 1
+  192.9 ms  server-side#7 < 2
+  192.9 ms  server-side#7 < T {columns:2}
+  192.9 ms  server-side#7 < D
+  192.9 ms  server-side#7 < C {tag:SELECT 1}
+  192.9 ms  server-side#7 < Z {status:I}
+  192.9 ms  server-side#8 < 1
+  192.9 ms  server-side#8 < 2
+  192.9 ms  server-side#8 < T {columns:2}
+  192.9 ms  server-side#8 < D
+  192.9 ms  server-side#8 < C {tag:SELECT 1}
+  192.9 ms  server-side#8 < Z {status:I}
+  193.4 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  193.4 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  193.4 ms  server-side#8 > D {kind:P,name:}
+  193.4 ms  server-side#8 > E {portal:,maxRows:0}
+  193.4 ms  server-side#8 > S
+  204.0 ms  server-side#8 < 1
+  204.0 ms  server-side#8 < 2
+  204.0 ms  server-side#8 < T {columns:2}
+  204.0 ms  server-side#8 < D
+  204.0 ms  server-side#8 < C {tag:SELECT 1}
+  204.0 ms  server-side#8 < Z {status:I}
+  224.1 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  224.1 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  224.1 ms  server-side#8 > D {kind:P,name:}
+  224.1 ms  server-side#8 > E {portal:,maxRows:0}
+  224.1 ms  server-side#8 > S
+  224.2 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  224.2 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  224.2 ms  server-side#7 > D {kind:P,name:}
+  224.2 ms  server-side#7 > E {portal:,maxRows:0}
+  224.2 ms  server-side#7 > S
+  224.3 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  224.3 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  224.3 ms  server-side#6 > D {kind:P,name:}
+  224.3 ms  server-side#6 > E {portal:,maxRows:0}
+  224.3 ms  server-side#6 > S
+  234.8 ms  server-side#7 < 1
+  234.8 ms  server-side#7 < 2
+  234.8 ms  server-side#7 < T {columns:2}
+  234.8 ms  server-side#7 < D
+  234.8 ms  server-side#7 < C {tag:SELECT 1}
+  234.8 ms  server-side#7 < Z {status:I}
+  234.9 ms  server-side#8 < 1
+  234.9 ms  server-side#8 < 2
+  234.9 ms  server-side#8 < T {columns:2}
+  234.9 ms  server-side#8 < D
+  234.9 ms  server-side#8 < C {tag:SELECT 1}
+  234.9 ms  server-side#8 < Z {status:I}
+  234.9 ms  server-side#6 < 1
+  234.9 ms  server-side#6 < 2
+  234.9 ms  server-side#6 < T {columns:2}
+  234.9 ms  server-side#6 < D
+  234.9 ms  server-side#6 < C {tag:SELECT 1}
+  234.9 ms  server-side#6 < Z {status:I}
+  235.2 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  235.2 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  235.2 ms  server-side#6 > D {kind:P,name:}
+  235.2 ms  server-side#6 > E {portal:,maxRows:0}
+  235.2 ms  server-side#6 > S
+  235.3 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  235.3 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  235.3 ms  server-side#7 > D {kind:P,name:}
+  235.3 ms  server-side#7 > E {portal:,maxRows:0}
+  235.3 ms  server-side#7 > S
+  235.4 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  235.4 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  235.4 ms  server-side#8 > D {kind:P,name:}
+  235.4 ms  server-side#8 > E {portal:,maxRows:0}
+  235.4 ms  server-side#8 > S
+  245.6 ms  server-side#6 < 1
+  245.6 ms  server-side#6 < 2
+  245.6 ms  server-side#6 < T {columns:2}
+  245.6 ms  server-side#6 < D
+  245.6 ms  server-side#6 < C {tag:SELECT 1}
+  245.6 ms  server-side#6 < Z {status:I}
+  245.7 ms  server-side#7 < 1
+  245.7 ms  server-side#7 < 2
+  245.7 ms  server-side#7 < T {columns:2}
+  245.7 ms  server-side#7 < D
+  245.7 ms  server-side#7 < C {tag:SELECT 1}
+  245.7 ms  server-side#7 < Z {status:I}
+  246.0 ms  server-side#8 < 1
+  246.0 ms  server-side#8 < 2
+  246.0 ms  server-side#8 < T {columns:2}
+  246.0 ms  server-side#8 < D
+  246.0 ms  server-side#8 < C {tag:SELECT 1}
+  246.0 ms  server-side#8 < Z {status:I}
+  246.1 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  246.1 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  246.1 ms  server-side#6 > D {kind:P,name:}
+  246.1 ms  server-side#6 > E {portal:,maxRows:0}
+  246.1 ms  server-side#6 > S
+  256.6 ms  server-side#6 < 1
+  256.6 ms  server-side#6 < 2
+  256.6 ms  server-side#6 < T {columns:2}
+  256.6 ms  server-side#6 < D
+  256.6 ms  server-side#6 < C {tag:SELECT 1}
+  256.6 ms  server-side#6 < Z {status:I}
+  276.5 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  276.5 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  276.5 ms  server-side#6 > D {kind:P,name:}
+  276.5 ms  server-side#6 > E {portal:,maxRows:0}
+  276.5 ms  server-side#6 > S
+  276.7 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  276.7 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  276.7 ms  server-side#8 > D {kind:P,name:}
+  276.7 ms  server-side#8 > E {portal:,maxRows:0}
+  276.7 ms  server-side#8 > S
+  276.7 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  276.7 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  276.7 ms  server-side#7 > D {kind:P,name:}
+  276.7 ms  server-side#7 > E {portal:,maxRows:0}
+  276.7 ms  server-side#7 > S
+  287.2 ms  server-side#7 < 1
+  287.2 ms  server-side#7 < 2
+  287.2 ms  server-side#7 < T {columns:2}
+  287.2 ms  server-side#7 < D
+  287.2 ms  server-side#7 < C {tag:SELECT 1}
+  287.2 ms  server-side#7 < Z {status:I}
+  287.3 ms  server-side#8 < 1
+  287.3 ms  server-side#8 < 2
+  287.3 ms  server-side#8 < T {columns:2}
+  287.3 ms  server-side#8 < D
+  287.3 ms  server-side#8 < C {tag:SELECT 1}
+  287.3 ms  server-side#8 < Z {status:I}
+  287.3 ms  server-side#6 < 1
+  287.3 ms  server-side#6 < 2
+  287.3 ms  server-side#6 < T {columns:2}
+  287.3 ms  server-side#6 < D
+  287.3 ms  server-side#6 < C {tag:SELECT 1}
+  287.3 ms  server-side#6 < Z {status:I}
+  287.6 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  287.6 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  287.6 ms  server-side#7 > D {kind:P,name:}
+  287.6 ms  server-side#7 > E {portal:,maxRows:0}
+  287.6 ms  server-side#7 > S
+  287.6 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  287.6 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  287.6 ms  server-side#8 > D {kind:P,name:}
+  287.6 ms  server-side#8 > E {portal:,maxRows:0}
+  287.6 ms  server-side#8 > S
+  287.7 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  287.7 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  287.7 ms  server-side#6 > D {kind:P,name:}
+  287.7 ms  server-side#6 > E {portal:,maxRows:0}
+  287.7 ms  server-side#6 > S
+  298.1 ms  server-side#6 < 1
+  298.1 ms  server-side#6 < 2
+  298.1 ms  server-side#6 < T {columns:2}
+  298.1 ms  server-side#6 < D
+  298.1 ms  server-side#6 < C {tag:SELECT 1}
+  298.1 ms  server-side#6 < Z {status:I}
+  298.2 ms  server-side#8 < 1
+  298.2 ms  server-side#8 < 2
+  298.2 ms  server-side#8 < T {columns:2}
+  298.2 ms  server-side#8 < D
+  298.2 ms  server-side#8 < C {tag:SELECT 1}
+  298.2 ms  server-side#8 < Z {status:I}
+  298.3 ms  server-side#7 < 1
+  298.3 ms  server-side#7 < 2
+  298.3 ms  server-side#7 < T {columns:2}
+  298.3 ms  server-side#7 < D
+  298.3 ms  server-side#7 < C {tag:SELECT 1}
+  298.3 ms  server-side#7 < Z {status:I}
+  298.6 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  298.6 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  298.6 ms  server-side#7 > D {kind:P,name:}
+  298.6 ms  server-side#7 > E {portal:,maxRows:0}
+  298.6 ms  server-side#7 > S
+  309.2 ms  server-side#7 < 1
+  309.2 ms  server-side#7 < 2
+  309.2 ms  server-side#7 < T {columns:2}
+  309.2 ms  server-side#7 < D
+  309.2 ms  server-side#7 < C {tag:SELECT 1}
+  309.2 ms  server-side#7 < Z {status:I}
+  329.2 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  329.2 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  329.2 ms  server-side#7 > D {kind:P,name:}
+  329.2 ms  server-side#7 > E {portal:,maxRows:0}
+  329.2 ms  server-side#7 > S
+  329.4 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  329.4 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  329.4 ms  server-side#6 > D {kind:P,name:}
+  329.4 ms  server-side#6 > E {portal:,maxRows:0}
+  329.4 ms  server-side#6 > S
+  329.5 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  329.5 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  329.5 ms  server-side#8 > D {kind:P,name:}
+  329.5 ms  server-side#8 > E {portal:,maxRows:0}
+  329.5 ms  server-side#8 > S
+  339.8 ms  server-side#7 < 1
+  339.8 ms  server-side#7 < 2
+  339.8 ms  server-side#7 < T {columns:2}
+  339.8 ms  server-side#7 < D
+  339.8 ms  server-side#7 < C {tag:SELECT 1}
+  339.8 ms  server-side#7 < Z {status:I}
+  339.9 ms  server-side#6 < 1
+  339.9 ms  server-side#6 < 2
+  339.9 ms  server-side#6 < T {columns:2}
+  339.9 ms  server-side#6 < D
+  339.9 ms  server-side#6 < C {tag:SELECT 1}
+  339.9 ms  server-side#6 < Z {status:I}
+  340.0 ms  server-side#8 < 1
+  340.0 ms  server-side#8 < 2
+  340.0 ms  server-side#8 < T {columns:2}
+  340.0 ms  server-side#8 < D
+  340.0 ms  server-side#8 < C {tag:SELECT 1}
+  340.0 ms  server-side#8 < Z {status:I}
+  340.4 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  340.4 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  340.4 ms  server-side#7 > D {kind:P,name:}
+  340.4 ms  server-side#7 > E {portal:,maxRows:0}
+  340.4 ms  server-side#7 > S
+  340.6 ms  server-side#6 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  340.6 ms  server-side#6 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  340.6 ms  server-side#6 > D {kind:P,name:}
+  340.6 ms  server-side#6 > E {portal:,maxRows:0}
+  340.6 ms  server-side#6 > S
+  340.6 ms  server-side#8 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  340.6 ms  server-side#8 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  340.6 ms  server-side#8 > D {kind:P,name:}
+  340.6 ms  server-side#8 > E {portal:,maxRows:0}
+  340.6 ms  server-side#8 > S
+  351.0 ms  server-side#7 < 1
+  351.0 ms  server-side#7 < 2
+  351.0 ms  server-side#7 < T {columns:2}
+  351.0 ms  server-side#7 < D
+  351.0 ms  server-side#7 < C {tag:SELECT 1}
+  351.0 ms  server-side#7 < Z {status:I}
+  351.1 ms  server-side#8 < 1
+  351.1 ms  server-side#8 < 2
+  351.1 ms  server-side#8 < T {columns:2}
+  351.1 ms  server-side#8 < D
+  351.1 ms  server-side#8 < C {tag:SELECT 1}
+  351.1 ms  server-side#8 < Z {status:I}
+  351.1 ms  server-side#6 < 1
+  351.1 ms  server-side#6 < 2
+  351.1 ms  server-side#6 < T {columns:2}
+  351.1 ms  server-side#6 < D
+  351.1 ms  server-side#6 < C {tag:SELECT 1}
+  351.1 ms  server-side#6 < Z {status:I}
+  351.5 ms  server-side#7 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  351.5 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  351.5 ms  server-side#7 > D {kind:P,name:}
+  351.5 ms  server-side#7 > E {portal:,maxRows:0}
+  351.5 ms  server-side#7 > S
+  362.1 ms  server-side#7 < 1
+  362.1 ms  server-side#7 < 2
+  362.1 ms  server-side#7 < T {columns:2}
+  362.1 ms  server-side#7 < D
+  362.1 ms  server-side#7 < C {tag:SELECT 1}
+  362.1 ms  server-side#7 < Z {status:I}
+  382.8 ms  client-side  > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+  382.8 ms  client-side  > E {portal:,maxRows:0}
+  382.8 ms  client-side  > S
+  403.8 ms  server-side#7 > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+  403.8 ms  server-side#7 > E {portal:,maxRows:0}
+  403.8 ms  server-side#7 > S
+  404.5 ms  server-side#7 < E {severity:ERROR,code:08P01,message:bind message supplies 1 parameters, but prepared statement \\ requires 0}
+  404.5 ms  server-side#7 < Z {status:I}
+  405.0 ms  client-side  < E {severity:ERROR,code:08P01,message:bind message supplies 1 parameters, but prepared statement \\ requires 0}
+  405.0 ms  client-side  < Z {status:I}

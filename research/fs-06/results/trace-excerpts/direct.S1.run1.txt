@@ -1,0 +1,11 @@
+# direct S1 run 1: ok; 41.3 ms; client-side round trips 1
+    0.2 ms  client-side  > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's1'::text AS tag,nOids:0,oids:[]}
+    0.2 ms  client-side  > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.2 ms  client-side  > D {kind:P,name:}
+    0.2 ms  client-side  > E {portal:,maxRows:0}
+    0.2 ms  client-side  > S
+   20.8 ms  client-side  < 1
+   20.8 ms  client-side  < 2
+   20.8 ms  client-side  < T {columns:3}
+   20.8 ms  client-side  < C {tag:SELECT 1}
+   20.8 ms  client-side  < Z {status:I}

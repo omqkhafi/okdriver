@@ -1,0 +1,24 @@
+# pgdog-disabled S4a-B run 2: wrong-result (row 0 is ["12","1330","A"], expected n=12 tag=B); 42.9 ms; client-side round trips 1
+    0.1 ms  client-side  > P {name:fs06_pgdog-disabled-r2_shared,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag,nOids:0,oids:[]}
+    0.1 ms  client-side  > B {portal:,stmt:fs06_pgdog-disabled-r2_shared,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.1 ms  client-side  > D {kind:P,name:}
+    0.1 ms  client-side  > E {portal:,maxRows:0}
+    0.1 ms  client-side  > S
+   21.2 ms  server-side#2 > Q {sql:SET \application_name\ TO \fs06-pgdog-disabled-r2-c1\}
+   21.7 ms  server-side#2 < C {tag:SET}
+   21.7 ms  server-side#2 < S {name:application_name,value:fs06-pgdog-disabled-r2-c1}
+   21.7 ms  server-side#2 < Z {status:I}
+   21.9 ms  server-side#2 > B {portal:,stmt:fs06_pgdog-disabled-r2_shared,nParamFormats:0,nParams:1,nResultFormats:0}
+   21.9 ms  server-side#2 > D {kind:P,name:}
+   21.9 ms  server-side#2 > E {portal:,maxRows:0}
+   21.9 ms  server-side#2 > S
+   22.3 ms  server-side#2 < 2
+   22.3 ms  server-side#2 < T {columns:3}
+   22.3 ms  server-side#2 < D
+   22.3 ms  server-side#2 < C {tag:SELECT 1}
+   22.3 ms  server-side#2 < Z {status:I}
+   22.5 ms  client-side  < 1
+   22.5 ms  client-side  < 2
+   22.5 ms  client-side  < T {columns:3}
+   22.5 ms  client-side  < C {tag:SELECT 1}
+   22.5 ms  client-side  < Z {status:I}

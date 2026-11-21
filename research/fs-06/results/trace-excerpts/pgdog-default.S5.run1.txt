@@ -1,0 +1,45 @@
+# pgdog-default S5 run 1: ok; 43.6 ms; client-side round trips 1
+    0.2 ms  client-side  > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's5a'::text AS tag,nOids:0,oids:[]}
+    0.2 ms  client-side  > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.2 ms  client-side  > D {kind:P,name:}
+    0.2 ms  client-side  > E {portal:,maxRows:0}
+    0.2 ms  client-side  > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's5b'::text AS tag,nOids:0,oids:[]}
+    0.2 ms  client-side  > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.2 ms  client-side  > D {kind:P,name:}
+    0.2 ms  client-side  > E {portal:,maxRows:0}
+    0.2 ms  client-side  > S
+   21.2 ms  server-side#1 > Q {sql:SET \application_name\ TO \fs06-pgdog-default-r1-c0\}
+   21.8 ms  server-side#1 < C {tag:SET}
+   21.8 ms  server-side#1 < S {name:application_name,value:fs06-pgdog-default-r1-c0}
+   21.8 ms  server-side#1 < Z {status:I}
+   22.1 ms  server-side#1 > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's5a'::text AS tag,nOids:0,oids:[]}
+   22.1 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+   22.1 ms  server-side#1 > D {kind:P,name:}
+   22.1 ms  server-side#1 > E {portal:,maxRows:0}
+   22.1 ms  server-side#1 > H
+   22.7 ms  server-side#1 < 1
+   22.7 ms  server-side#1 < 2
+   22.7 ms  server-side#1 < T {columns:3}
+   22.7 ms  server-side#1 < D
+   22.7 ms  server-side#1 < C {tag:SELECT 1}
+   23.0 ms  server-side#1 > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's5b'::text AS tag,nOids:0,oids:[]}
+   23.0 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+   23.0 ms  server-side#1 > D {kind:P,name:}
+   23.0 ms  server-side#1 > E {portal:,maxRows:0}
+   23.0 ms  server-side#1 > H
+   23.1 ms  client-side  < 1
+   23.1 ms  client-side  < 2
+   23.1 ms  client-side  < T {columns:3}
+   23.1 ms  client-side  < C {tag:SELECT 1}
+   23.2 ms  server-side#1 < 1
+   23.2 ms  server-side#1 < 2
+   23.2 ms  server-side#1 < T {columns:3}
+   23.2 ms  server-side#1 < D
+   23.2 ms  server-side#1 < C {tag:SELECT 1}
+   23.4 ms  server-side#1 > S
+   23.4 ms  client-side  < 1
+   23.4 ms  client-side  < 2
+   23.4 ms  client-side  < T {columns:3}
+   23.4 ms  client-side  < C {tag:SELECT 1}
+   23.5 ms  server-side#1 < Z {status:I}
+   23.7 ms  client-side  < Z {status:I}

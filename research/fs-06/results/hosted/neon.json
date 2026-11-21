@@ -1,0 +1,7 @@
+{
+ "target": {
+  "id": "neon"
+ },
+ "notVerified": true,
+ "blocker": "FS06_NEON_URL is not set"
+}

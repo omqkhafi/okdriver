@@ -1,0 +1,22 @@
+# supavisor-on S2 run 1: ok; 43.1 ms; client-side round trips 1
+    0.3 ms  client-side  > P {name:fs06_supavisor-on-r1_c0_s2,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's2'::text AS tag,nOids:0,oids:[]}
+    0.3 ms  client-side  > B {portal:,stmt:fs06_supavisor-on-r1_c0_s2,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.3 ms  client-side  > D {kind:P,name:}
+    0.3 ms  client-side  > E {portal:,maxRows:0}
+    0.3 ms  client-side  > S
+   21.6 ms  server-side#6 > P {name:sv_93wYvfJPyuk6Xgeg6BjVADwbe2WgbDWI4eN4yUlH4Jk,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's2'::text AS tag,nOids:0,oids:[]}
+   21.6 ms  server-side#6 > B {portal:,stmt:sv_93wYvfJPyuk6Xgeg6BjVADwbe2WgbDWI4eN4yUlH4Jk,nParamFormats:0,nParams:1,nResultFormats:0}
+   21.6 ms  server-side#6 > D {kind:P,name:}
+   21.6 ms  server-side#6 > E {portal:,maxRows:0}
+   21.6 ms  server-side#6 > S
+   22.4 ms  server-side#6 < 1
+   22.4 ms  server-side#6 < 2
+   22.4 ms  server-side#6 < T {columns:3}
+   22.4 ms  server-side#6 < D
+   22.4 ms  server-side#6 < C {tag:SELECT 1}
+   22.4 ms  server-side#6 < Z {status:I}
+   22.7 ms  client-side  < 1
+   22.7 ms  client-side  < 2
+   22.7 ms  client-side  < T {columns:3}
+   22.7 ms  client-side  < C {tag:SELECT 1}
+   22.7 ms  client-side  < Z {status:I}

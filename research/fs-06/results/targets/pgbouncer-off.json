@@ -1,0 +1,1154 @@
+{
+ "target": {
+  "id": "pgbouncer-off",
+  "pooler": "pgbouncer",
+  "config": "off",
+  "mode": "transaction",
+  "serverPool": 2,
+  "clients": 8,
+  "notes": [
+   "PgBouncer refuses to run as root, so the container runs as uid 65534",
+   "auth_type scram-sha-256 needs an auth_file; the SCRAM secret was read from pg_authid",
+   "unix_socket_dir emptied so the container needs no socket directory",
+   "server_tls_sslmode disable (the server-side proxy answers no TLS)"
+  ]
+ },
+ "login": {
+  "authMethod": "scram-sha-256",
+  "tls": false,
+  "parameterStatus": [
+   [
+    "pgbouncer.version",
+    "1.26.1"
+   ],
+   [
+    "is_superuser",
+    "on"
+   ],
+   [
+    "server_version",
+    "19.0 (Debian 19.0-1.pgdg13+1)"
+   ],
+   [
+    "server_encoding",
+    "UTF8"
+   ],
+   [
+    "in_hot_standby",
+    "off"
+   ],
+   [
+    "integer_datetimes",
+    "on"
+   ],
+   [
+    "pgbouncer.max_prepared_statements",
+    "0"
+   ],
+   [
+    "pgbouncer.pool_mode",
+    "transaction"
+   ],
+   [
+    "DateStyle",
+    "ISO, MDY"
+   ],
+   [
+    "client_encoding",
+    "UTF8"
+   ],
+   [
+    "TimeZone",
+    "Etc/UTC"
+   ],
+   [
+    "standard_conforming_strings",
+    "on"
+   ],
+   [
+    "application_name",
+    "fs06-pgbouncer-off-r1-c0"
+   ],
+   [
+    "default_transaction_read_only",
+    "off"
+   ],
+   [
+    "IntervalStyle",
+    "postgres"
+   ],
+   [
+    "search_path",
+    "\"$user\", public"
+   ],
+   [
+    "scram_iterations",
+    "4096"
+   ],
+   [
+    "session_authorization",
+    "fs06"
+   ]
+  ]
+ },
+ "seqs": {
+  "S1": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 42.4,
+    "max": 43.5
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's1'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r1-c0';",
+    "SET application_name='fs06-pgbouncer-off-r2-c0';",
+    "SET application_name='fs06-pgbouncer-off-r3-c0';",
+    "SET application_name='fs06-pgbouncer-off-r4-c0';"
+   ],
+   "wrongRow": false
+  },
+  "S2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.3,
+    "min": 41.7,
+    "max": 44
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgbouncer-off-r1_c0_s2|SELECT $1::int AS n, pg_backend_pid() AS pid, 's2'::text AS tag",
+   "serverBindExample": "fs06_pgbouncer-off-r1_c0_s2",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S2b": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 42,
+    "max": 43.3
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgbouncer-off-r1_c0_s2",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r1-c0';",
+    "SET application_name='fs06-pgbouncer-off-r2-c0';",
+    "SET application_name='fs06-pgbouncer-off-r3-c0';",
+    "SET application_name='fs06-pgbouncer-off-r4-c0';"
+   ],
+   "wrongRow": false
+  },
+  "S3": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.2,
+    "min": 83.7,
+    "max": 84.4
+   },
+   "impliedRoundTrips": 2.11,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S B E S"
+   ],
+   "serverParseExample": "fs06_pgbouncer-off-r1_c0_s3|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3'::text AS tag",
+   "serverBindExample": "fs06_pgbouncer-off-r1_c0_s3",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3i": {
+   "runs": 5,
+   "ok": 3,
+   "outcomes": {
+    "ok": 3,
+    "error": 2
+   },
+   "errors": {
+    "26000 prepared statement \"fs06_pgbouncer-off-r2_c0_s3i\" does not exist": 1,
+    "26000 prepared statement \"fs06_pgbouncer-off-r3_c0_s3i\" does not exist": 1
+   },
+   "failures": {
+    "ERROR 26000 prepared statement \"fs06_pgbouncer-off-r2_c0_s3i\" does not exist": 1,
+    "ERROR 26000 prepared statement \"fs06_pgbouncer-off-r3_c0_s3i\" does not exist": 1
+   },
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.7,
+    "min": 84.5,
+    "max": 84.9
+   },
+   "impliedRoundTrips": 2.12,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 8 forwarded": 5,
+    "message types differ from what the client sent": 5,
+    "pooler sent its own simple queries": 5,
+    "more than one server connection used": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S B E S"
+   ],
+   "serverParseExample": "fs06_pgbouncer-off-r1_c0_s3i|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3i'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 16,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r1-c5';",
+    "SET application_name='fs06-pgbouncer-off-r1-c4';",
+    "SET application_name='fs06-pgbouncer-off-r1-c3';",
+    "SET application_name='fs06-pgbouncer-off-r1-c2';"
+   ],
+   "wrongRow": false
+  },
+  "S3u": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 85.4,
+    "min": 84,
+    "max": 87.6
+   },
+   "impliedRoundTrips": 2.13,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3u'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3ui": {
+   "runs": 5,
+   "ok": 0,
+   "outcomes": {
+    "error": 5
+   },
+   "errors": {
+    "26000 unnamed prepared statement does not exist": 5
+   },
+   "failures": {
+    "ERROR 26000 unnamed prepared statement does not exist": 5
+   },
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.6,
+    "min": 84.1,
+    "max": 85.5
+   },
+   "impliedRoundTrips": 2.11,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 8 forwarded": 5,
+    "message types differ from what the client sent": 5,
+    "pooler sent its own simple queries": 5,
+    "more than one server connection used": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3ui'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 16,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r1-c7';",
+    "SET application_name='fs06-pgbouncer-off-r1-c6';",
+    "SET application_name='fs06-pgbouncer-off-r1-c3';",
+    "SET application_name='fs06-pgbouncer-off-r1-c2';"
+   ],
+   "wrongRow": false
+  },
+  "S3f": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.3,
+    "min": 83.4,
+    "max": 84.9
+   },
+   "impliedRoundTrips": 2.11,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P D H B E S",
+   "serverTypes": [
+    "P D H B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3f'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 42.1,
+    "max": 42.8
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgbouncer-off-r1_shared|SELECT $1::int AS n, pg_backend_pid() AS pid, 'A'::text AS tag",
+   "serverBindExample": "fs06_pgbouncer-off-r1_shared",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-B": {
+   "runs": 5,
+   "ok": 0,
+   "outcomes": {
+    "error": 5
+   },
+   "errors": {
+    "42P05 prepared statement \"fs06_pgbouncer-off-r1_shared\" already exists": 1,
+    "42P05 prepared statement \"fs06_pgbouncer-off-r2_shared\" already exists": 1,
+    "42P05 prepared statement \"fs06_pgbouncer-off-r3_shared\" already exists": 1,
+    "42P05 prepared statement \"fs06_pgbouncer-off-r4_shared\" already exists": 1,
+    "42P05 prepared statement \"fs06_pgbouncer-off-r5_shared\" already exists": 1
+   },
+   "failures": {
+    "ERROR 42P05 prepared statement \"fs06_pgbouncer-off-r1_shared\" already exists": 1,
+    "ERROR 42P05 prepared statement \"fs06_pgbouncer-off-r2_shared\" already exists": 1,
+    "ERROR 42P05 prepared statement \"fs06_pgbouncer-off-r3_shared\" already exists": 1,
+    "ERROR 42P05 prepared statement \"fs06_pgbouncer-off-r4_shared\" already exists": 1,
+    "ERROR 42P05 prepared statement \"fs06_pgbouncer-off-r5_shared\" already exists": 1
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 42.5,
+    "max": 43.2
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgbouncer-off-r1_shared|SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag",
+   "serverBindExample": "fs06_pgbouncer-off-r1_shared",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r1-c1';",
+    "SET application_name='fs06-pgbouncer-off-r2-c1';",
+    "SET application_name='fs06-pgbouncer-off-r3-c1';",
+    "SET application_name='fs06-pgbouncer-off-r4-c1';"
+   ],
+   "wrongRow": false
+  },
+  "S4b-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 41.9,
+    "max": 42.8
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgbouncer-off-r1_shared",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r1-c0';",
+    "SET application_name='fs06-pgbouncer-off-r2-c0';",
+    "SET application_name='fs06-pgbouncer-off-r3-c0';",
+    "SET application_name='fs06-pgbouncer-off-r4-c0';"
+   ],
+   "wrongRow": false
+  },
+  "S4b-B": {
+   "runs": 5,
+   "ok": 0,
+   "outcomes": {
+    "wrong-result": 5
+   },
+   "errors": {},
+   "failures": {
+    "row 0 is [\"12\",\"1203\",\"A\"], expected n=12 tag=B": 4,
+    "row 0 is [\"12\",\"1202\",\"A\"], expected n=12 tag=B": 1
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 42,
+    "max": 44.7
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgbouncer-off-r1_shared",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r1-c1';",
+    "SET application_name='fs06-pgbouncer-off-r2-c1';",
+    "SET application_name='fs06-pgbouncer-off-r3-c1';",
+    "SET application_name='fs06-pgbouncer-off-r4-c1';"
+   ],
+   "wrongRow": true
+  },
+  "S4c-setup-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 42.5,
+    "max": 43
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "Q P B D E S",
+   "serverTypes": [
+    "Q P B D E S"
+   ],
+   "serverParseExample": "fs06_pgbouncer-off-r1_mix|SELECT $1::int AS n, pg_backend_pid() AS pid, 'A'::text AS tag",
+   "serverBindExample": "fs06_pgbouncer-off-r1_mix",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r1-c0';",
+    "SET application_name='fs06-pgbouncer-off-r2-c0';",
+    "SET application_name='fs06-pgbouncer-off-r3-c0';",
+    "SET application_name='fs06-pgbouncer-off-r4-c0';"
+   ],
+   "wrongRow": false
+  },
+  "S4c-setup-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.9,
+    "min": 42.4,
+    "max": 43.8
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 4
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgbouncer-off-r1_mix|SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag",
+   "serverBindExample": "fs06_pgbouncer-off-r1_mix",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r2-c1';",
+    "SET application_name='fs06-pgbouncer-off-r3-c1';",
+    "SET application_name='fs06-pgbouncer-off-r4-c1';",
+    "SET application_name='fs06-pgbouncer-off-r5-c1';"
+   ],
+   "wrongRow": false
+  },
+  "S4c": {
+   "runs": 30,
+   "ok": 0,
+   "outcomes": {
+    "wrong-result": 30
+   },
+   "errors": {},
+   "failures": {
+    "row 0 is [\"22\",\"1203\",\"A\"], expected n=22 tag=B": 24,
+    "row 0 is [\"22\",\"1202\",\"A\"], expected n=22 tag=B": 6
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.3,
+    "min": 41.9,
+    "max": 43.3
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 30,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgbouncer-off-r1_mix",
+   "serverTrips": 1,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r1-c1';",
+    "SET application_name='fs06-pgbouncer-off-r2-c1';",
+    "SET application_name='fs06-pgbouncer-off-r3-c1';",
+    "SET application_name='fs06-pgbouncer-off-r4-c1';"
+   ],
+   "wrongRow": true
+  },
+  "S5": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 43.1,
+    "min": 42.7,
+    "max": 43.3
+   },
+   "impliedRoundTrips": 1.08,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "P B D E P B D E S",
+   "serverTypes": [
+    "P B D E P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's5a'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET application_name='fs06-pgbouncer-off-r1-c0';",
+    "SET application_name='fs06-pgbouncer-off-r2-c0';",
+    "SET application_name='fs06-pgbouncer-off-r3-c0';",
+    "SET application_name='fs06-pgbouncer-off-r4-c0';"
+   ],
+   "wrongRow": false
+  },
+  "S6-2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.3,
+    "min": 42.2,
+    "max": 42.7
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-10": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.9,
+    "min": 41.9,
+    "max": 43.1
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S  … (50 messages)"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-100": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 48.6,
+    "min": 47.9,
+    "max": 49.6
+   },
+   "impliedRoundTrips": 1.21,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S  … (500 messages)"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.3,
+    "min": 42,
+    "max": 42.6
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "Q P B D E S Q",
+   "serverTypes": [
+    "Q P B D E S Q"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's7'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7b": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.3,
+    "min": 42.1,
+    "max": 42.6
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B E S P B D E S P B E S",
+   "serverTypes": [
+    "P B E S P B D E S P B E S"
+   ],
+   "serverParseExample": "|BEGIN",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  }
+ },
+ "pin": {
+  "unnamed": {
+   "txnsOk": 800,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {},
+   "clientRunsWithOnePid": 0,
+   "clientRunsWithManyPids": 40,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "named": {
+   "txnsOk": 427,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {
+    "26000 prepared statement \"fs06_pgbouncer-off-r1_pin_c0\" does not exist": 9,
+    "26000 prepared statement \"fs06_pgbouncer-off-r1_pin_c1\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgbouncer-off-r1_pin_c2\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgbouncer-off-r1_pin_c3\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgbouncer-off-r1_pin_c4\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgbouncer-off-r1_pin_c5\" does not exist": 9,
+    "26000 prepared statement \"fs06_pgbouncer-off-r1_pin_c6\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgbouncer-off-r1_pin_c7\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgbouncer-off-r2_pin_c0\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgbouncer-off-r2_pin_c1\" does not exist": 11,
+    "26000 prepared statement \"fs06_pgbouncer-off-r2_pin_c2\" does not exist": 13,
+    "26000 prepared statement \"fs06_pgbouncer-off-r2_pin_c3\" does not exist": 14,
+    "26000 prepared statement \"fs06_pgbouncer-off-r2_pin_c4\" does not exist": 13,
+    "26000 prepared statement \"fs06_pgbouncer-off-r2_pin_c5\" does not exist": 14,
+    "26000 prepared statement \"fs06_pgbouncer-off-r2_pin_c6\" does not exist": 9,
+    "26000 prepared statement \"fs06_pgbouncer-off-r2_pin_c7\" does not exist": 9,
+    "26000 prepared statement \"fs06_pgbouncer-off-r3_pin_c0\" does not exist": 11,
+    "26000 prepared statement \"fs06_pgbouncer-off-r3_pin_c1\" does not exist": 11,
+    "26000 prepared statement \"fs06_pgbouncer-off-r3_pin_c2\" does not exist": 11,
+    "26000 prepared statement \"fs06_pgbouncer-off-r3_pin_c3\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgbouncer-off-r3_pin_c4\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgbouncer-off-r3_pin_c5\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgbouncer-off-r3_pin_c6\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgbouncer-off-r3_pin_c7\" does not exist": 11,
+    "26000 prepared statement \"fs06_pgbouncer-off-r4_pin_c0\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgbouncer-off-r4_pin_c1\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgbouncer-off-r4_pin_c2\" does not exist": 6,
+    "26000 prepared statement \"fs06_pgbouncer-off-r4_pin_c3\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgbouncer-off-r4_pin_c4\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgbouncer-off-r4_pin_c5\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgbouncer-off-r4_pin_c6\" does not exist": 6,
+    "26000 prepared statement \"fs06_pgbouncer-off-r4_pin_c7\" does not exist": 6,
+    "26000 prepared statement \"fs06_pgbouncer-off-r5_pin_c0\" does not exist": 11,
+    "26000 prepared statement \"fs06_pgbouncer-off-r5_pin_c1\" does not exist": 9,
+    "26000 prepared statement \"fs06_pgbouncer-off-r5_pin_c2\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgbouncer-off-r5_pin_c3\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgbouncer-off-r5_pin_c4\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgbouncer-off-r5_pin_c5\" does not exist": 12,
+    "26000 prepared statement \"fs06_pgbouncer-off-r5_pin_c6\" does not exist": 6,
+    "26000 prepared statement \"fs06_pgbouncer-off-r5_pin_c7\" does not exist": 6
+   },
+   "clientRunsWithOnePid": 0,
+   "clientRunsWithManyPids": 0,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  }
+ },
+ "preparedReadbackLastRun": [
+  {
+   "pid": 1202,
+   "count": 32,
+   "names": [
+    "fs06_pgbouncer-off-r1_c0_s2",
+    "fs06_pgbouncer-off-r1_c0_s3",
+    "fs06_pgbouncer-off-r1_c0_s3i",
+    "fs06_pgbouncer-off-r1_mix",
+    "fs06_pgbouncer-off-r1_pin_c1",
+    "fs06_pgbouncer-off-r1_pin_c4",
+    "fs06_pgbouncer-off-r1_pin_c5",
+    "fs06_pgbouncer-off-r1_pin_c6",
+    "fs06_pgbouncer-off-r2_mix",
+    "fs06_pgbouncer-off-r2_pin_c1",
+    "fs06_pgbouncer-off-r2_pin_c2",
+    "fs06_pgbouncer-off-r2_pin_c5"
+   ]
+  },
+  {
+   "pid": 1203,
+   "count": 38,
+   "names": [
+    "fs06_pgbouncer-off-r1_mix",
+    "fs06_pgbouncer-off-r1_pin_c0",
+    "fs06_pgbouncer-off-r1_pin_c2",
+    "fs06_pgbouncer-off-r1_pin_c3",
+    "fs06_pgbouncer-off-r1_pin_c7",
+    "fs06_pgbouncer-off-r1_shared",
+    "fs06_pgbouncer-off-r2_c0_s2",
+    "fs06_pgbouncer-off-r2_c0_s3",
+    "fs06_pgbouncer-off-r2_c0_s3i",
+    "fs06_pgbouncer-off-r2_mix",
+    "fs06_pgbouncer-off-r2_pin_c0",
+    "fs06_pgbouncer-off-r2_pin_c3"
+   ]
+  }
+ ],
+ "statsIdleLastRun": {
+  "pools": [
+   {
+    "database": "fs06",
+    "user": "fs06",
+    "cl_active": "8",
+    "cl_waiting": "0",
+    "cl_active_cancel_req": "0",
+    "cl_waiting_cancel_req": "0",
+    "sv_active": "0",
+    "sv_active_cancel": "0",
+    "sv_being_canceled": "0",
+    "sv_idle": "2",
+    "sv_used": "0",
+    "sv_tested": "0",
+    "sv_login": "0",
+    "maxwait": "0",
+    "maxwait_us": "0",
+    "pool_mode": "transaction",
+    "load_balance_hosts": null
+   }
+  ],
+  "servers": [
+   {
+    "state": "idle",
+    "link": "",
+    "pid": "1203"
+   },
+   {
+    "state": "idle",
+    "link": "",
+    "pid": "1202"
+   }
+  ],
+  "config": [
+   "default_pool_size=2",
+   "max_prepared_statements=0",
+   "pool_mode=transaction"
+  ]
+ },
+ "statsBusyLastRun": {
+  "pools": [
+   {
+    "database": "fs06",
+    "user": "fs06",
+    "cl_active": "8",
+    "cl_waiting": "0",
+    "cl_active_cancel_req": "0",
+    "cl_waiting_cancel_req": "0",
+    "sv_active": "2",
+    "sv_active_cancel": "0",
+    "sv_being_canceled": "0",
+    "sv_idle": "0",
+    "sv_used": "0",
+    "sv_tested": "0",
+    "sv_login": "0",
+    "maxwait": "0",
+    "maxwait_us": "0",
+    "pool_mode": "transaction",
+    "load_balance_hosts": null
+   }
+  ],
+  "servers": [
+   {
+    "state": "active",
+    "link": "client",
+    "pid": "1202"
+   },
+   {
+    "state": "active",
+    "link": "client",
+    "pid": "1203"
+   }
+  ],
+  "config": [
+   "default_pool_size=2",
+   "max_prepared_statements=0",
+   "pool_mode=transaction"
+  ]
+ },
+ "server": {
+  "connections": 2,
+  "pids": [
+   1202,
+   1203
+  ],
+  "simpleQueries": {
+   "SET application_name='fs06-pgbouncer-off-r1-c0';": 50,
+   "SET application_name='fs06-pgbouncer-off-r1-c2';": 61,
+   "SET application_name='fs06-pgbouncer-off-r1-c1';": 64,
+   "SET application_name='fs06-pgbouncer-off-r1-c4';": 61,
+   "SET application_name='fs06-pgbouncer-off-r1-c5';": 61,
+   "SET application_name='fs06-pgbouncer-off-r1-c3';": 61,
+   "SET application_name='fs06-pgbouncer-off-r1-c6';": 60,
+   "SET application_name='fs06-pgbouncer-off-r1-c7';": 61,
+   "BEGIN": 10,
+   "COMMIT": 10,
+   "SET application_name='fs06-pgbouncer-off-r2-c0';": 50,
+   "SET application_name='fs06-pgbouncer-off-r2-c5';": 60,
+   "SET application_name='fs06-pgbouncer-off-r2-c4';": 61,
+   "SET application_name='fs06-pgbouncer-off-r2-c3';": 61,
+   "SET application_name='fs06-pgbouncer-off-r2-c2';": 61,
+   "SET application_name='fs06-pgbouncer-off-r2-c1';": 65,
+   "SET application_name='fs06-pgbouncer-off-r2-c6';": 61,
+   "SET application_name='fs06-pgbouncer-off-r2-c7';": 61,
+   "SET application_name='fs06-pgbouncer-off-r3-c0';": 50,
+   "SET application_name='fs06-pgbouncer-off-r3-c1';": 65,
+   "SET application_name='fs06-pgbouncer-off-r3-c7';": 61,
+   "SET application_name='fs06-pgbouncer-off-r3-c3';": 61,
+   "SET application_name='fs06-pgbouncer-off-r3-c2';": 60,
+   "SET application_name='fs06-pgbouncer-off-r3-c5';": 61,
+   "SET application_name='fs06-pgbouncer-off-r3-c4';": 61,
+   "SET application_name='fs06-pgbouncer-off-r3-c6';": 61,
+   "SET application_name='fs06-pgbouncer-off-r4-c0';": 50,
+   "SET application_name='fs06-pgbouncer-off-r4-c7';": 61,
+   "SET application_name='fs06-pgbouncer-off-r4-c3';": 61,
+   "SET application_name='fs06-pgbouncer-off-r4-c2';": 61,
+   "SET application_name='fs06-pgbouncer-off-r4-c1';": 65,
+   "SET application_name='fs06-pgbouncer-off-r4-c5';": 61,
+   "SET application_name='fs06-pgbouncer-off-r4-c6';": 61,
+   "SET application_name='fs06-pgbouncer-off-r4-c4';": 60,
+   "SET application_name='fs06-pgbouncer-off-r5-c0';": 50,
+   "SET application_name='fs06-pgbouncer-off-r5-c6';": 61,
+   "SET application_name='fs06-pgbouncer-off-r5-c2';": 61,
+   "SET application_name='fs06-pgbouncer-off-r5-c5';": 61,
+   "SET application_name='fs06-pgbouncer-off-r5-c4';": 61,
+   "SET application_name='fs06-pgbouncer-off-r5-c1';": 65,
+   "SET application_name='fs06-pgbouncer-off-r5-c3';": 61,
+   "SET application_name='fs06-pgbouncer-off-r5-c7';": 61
+  },
+  "parseNamesSample": [
+   "",
+   "fs06_<run>_c0_s2",
+   "fs06_<run>_c0_s3",
+   "fs06_<run>_c0_s3i",
+   "fs06_<run>_shared",
+   "fs06_<run>_mix",
+   "fs06_<run>_pin_c3",
+   "fs06_<run>_pin_c4",
+   "fs06_<run>_pin_c1",
+   "fs06_<run>_pin_c2",
+   "fs06_<run>_pin_c0",
+   "fs06_<run>_pin_c5",
+   "fs06_<run>_pin_c7",
+   "fs06_<run>_pin_c6"
+  ],
+  "closeMessages": {}
+ },
+ "connectErrors": [],
+ "refs": [
+  {
+   "kind": "pg",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 40,
+   "total": 160,
+   "errors": {
+    "42P05 prepared statement \"fs06_ref_stmt\" already exists": 120
+   },
+   "distinctPids": 2,
+   "ms": 193
+  },
+  {
+   "kind": "pg-unnamed",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 2,
+   "ms": 182
+  },
+  {
+   "kind": "postgres",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 152,
+   "total": 160,
+   "errors": {
+    "26000 prepared statement \"8bqatyaa1\" does not exist": 1,
+    "26000 prepared statement \"bylzz2o31\" does not exist": 1,
+    "26000 prepared statement \"t5ol3xg11\" does not exist": 1,
+    "26000 prepared statement \"5qo93lcc1\" does not exist": 1,
+    "26000 prepared statement \"ims1lhrg1\" does not exist": 1,
+    "26000 prepared statement \"in4nhdh81\" does not exist": 1,
+    "26000 prepared statement \"2twnol001\" does not exist": 1,
+    "26000 prepared statement \"u57246hn1\" does not exist": 1
+   },
+   "distinctPids": 2,
+   "ms": 196
+  },
+  {
+   "kind": "postgres-unnamed",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 2,
+   "ms": 206
+  }
+ ]
+}

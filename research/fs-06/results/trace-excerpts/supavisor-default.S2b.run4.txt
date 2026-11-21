@@ -1,0 +1,13 @@
+# supavisor-default S2b run 4: error (ERROR 26000 prepared statement "fs06_supavisor-default-r4_c0_s2" does not exist); 42.5 ms; client-side round trips 1
+    0.0 ms  client-side  > B {portal:,stmt:fs06_supavisor-default-r4_c0_s2,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.0 ms  client-side  > D {kind:P,name:}
+    0.0 ms  client-side  > E {portal:,maxRows:0}
+    0.0 ms  client-side  > S
+   21.1 ms  server-side#7 > B {portal:,stmt:fs06_supavisor-default-r4_c0_s2,nParamFormats:0,nParams:1,nResultFormats:0}
+   21.1 ms  server-side#7 > D {kind:P,name:}
+   21.1 ms  server-side#7 > E {portal:,maxRows:0}
+   21.1 ms  server-side#7 > S
+   21.5 ms  server-side#7 < E {severity:ERROR,code:26000,message:prepared statement \fs06_supavisor-default-r4_c0_s2\ does not exist}
+   21.5 ms  server-side#7 < Z {status:I}
+   22.0 ms  client-side  < E {severity:ERROR,code:26000,message:prepared statement \fs06_supavisor-default-r4_c0_s2\ does not exist}
+   22.0 ms  client-side  < Z {status:I}

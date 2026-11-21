@@ -1,0 +1,22 @@
+# pgbouncer-off S4c run 1: wrong-result (row 0 is ["22","1203","A"], expected n=22 tag=B); 42.2 ms; client-side round trips 1
+    0.1 ms  client-side  > B {portal:,stmt:fs06_pgbouncer-off-r1_mix,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.1 ms  client-side  > D {kind:P,name:}
+    0.1 ms  client-side  > E {portal:,maxRows:0}
+    0.1 ms  client-side  > S
+   20.9 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-off-r1-c1';}
+   21.3 ms  server-side#2 < C {tag:SET}
+   21.3 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-off-r1-c1}
+   21.3 ms  server-side#2 < Z {status:I}
+   21.4 ms  server-side#2 > B {portal:,stmt:fs06_pgbouncer-off-r1_mix,nParamFormats:0,nParams:1,nResultFormats:0}
+   21.4 ms  server-side#2 > D {kind:P,name:}
+   21.4 ms  server-side#2 > E {portal:,maxRows:0}
+   21.4 ms  server-side#2 > S
+   21.7 ms  server-side#2 < 2
+   21.7 ms  server-side#2 < T {columns:3}
+   21.7 ms  server-side#2 < D
+   21.7 ms  server-side#2 < C {tag:SELECT 1}
+   21.7 ms  server-side#2 < Z {status:I}
+   21.9 ms  client-side  < 2
+   21.9 ms  client-side  < T {columns:3}
+   21.9 ms  client-side  < C {tag:SELECT 1}
+   21.9 ms  client-side  < Z {status:I}

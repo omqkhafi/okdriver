@@ -1,0 +1,22 @@
+# pgbouncer-default S2 run 1: ok; 43 ms; client-side round trips 1
+    0.4 ms  client-side  > P {name:fs06_pgbouncer-default-r1_c0_s2,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's2'::text AS tag,nOids:0,oids:[]}
+    0.4 ms  client-side  > B {portal:,stmt:fs06_pgbouncer-default-r1_c0_s2,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.4 ms  client-side  > D {kind:P,name:}
+    0.4 ms  client-side  > E {portal:,maxRows:0}
+    0.4 ms  client-side  > S
+   21.6 ms  server-side#1 > P {name:PGBOUNCER_1,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's2'::text AS tag,nOids:0,oids:[]}
+   21.8 ms  server-side#1 > B {portal:,stmt:PGBOUNCER_1,nParamFormats:0,nParams:1,nResultFormats:0}
+   21.8 ms  server-side#1 > D {kind:P,name:}
+   21.8 ms  server-side#1 > E {portal:,maxRows:0}
+   21.8 ms  server-side#1 > S
+   22.3 ms  server-side#1 < 1
+   22.3 ms  server-side#1 < 2
+   22.3 ms  server-side#1 < T {columns:3}
+   22.3 ms  server-side#1 < D
+   22.3 ms  server-side#1 < C {tag:SELECT 1}
+   22.3 ms  server-side#1 < Z {status:I}
+   22.6 ms  client-side  < 1
+   22.6 ms  client-side  < 2
+   22.6 ms  client-side  < T {columns:3}
+   22.6 ms  client-side  < C {tag:SELECT 1}
+   22.6 ms  client-side  < Z {status:I}

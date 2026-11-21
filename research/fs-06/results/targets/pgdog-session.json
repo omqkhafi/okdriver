@@ -1,0 +1,1096 @@
+{
+ "target": {
+  "id": "pgdog-session",
+  "pooler": "pgdog",
+  "config": "session",
+  "mode": "session",
+  "serverPool": 8,
+  "clients": 8,
+  "notes": [
+   "pgdog.toml and users.toml are read from /pgdog; the user password is stored in plain text in users.toml",
+   "PgDog disables prepared-statement handling automatically in session mode (core.rs prepared_statements())"
+  ]
+ },
+ "login": {
+  "authMethod": "scram-sha-256",
+  "tls": false,
+  "parameterStatus": [
+   [
+    "application_name",
+    "fs06-pgdog-session-r1-c0"
+   ],
+   [
+    "client_encoding",
+    "UTF8"
+   ],
+   [
+    "DateStyle",
+    "ISO, MDY"
+   ],
+   [
+    "default_transaction_read_only",
+    "off"
+   ],
+   [
+    "in_hot_standby",
+    "off"
+   ],
+   [
+    "integer_datetimes",
+    "on"
+   ],
+   [
+    "IntervalStyle",
+    "postgres"
+   ],
+   [
+    "is_superuser",
+    "on"
+   ],
+   [
+    "scram_iterations",
+    "4096"
+   ],
+   [
+    "search_path",
+    "\"$user\", public"
+   ],
+   [
+    "server_encoding",
+    "UTF8"
+   ],
+   [
+    "server_version",
+    "19.0 (Debian 19.0-1.pgdg13+1)"
+   ],
+   [
+    "session_authorization",
+    "fs06"
+   ],
+   [
+    "standard_conforming_strings",
+    "on"
+   ],
+   [
+    "TimeZone",
+    "Etc/UTC"
+   ]
+  ]
+ },
+ "seqs": {
+  "S1": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.7,
+    "min": 42.5,
+    "max": 43.4
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's1'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-session-r1-c0\"",
+    "SET \"DateStyle\" TO \"ISO, MDY\"",
+    "SET \"application_name\" TO \"fs06-pgdog-session-r2-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-session-r3-c0\""
+   ],
+   "wrongRow": false
+  },
+  "S2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.7,
+    "min": 42.3,
+    "max": 43.3
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgdog-session-r1_c0_s2|SELECT $1::int AS n, pg_backend_pid() AS pid, 's2'::text AS tag",
+   "serverBindExample": "fs06_pgdog-session-r1_c0_s2",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S2b": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.8,
+    "min": 41.5,
+    "max": 42.3
+   },
+   "impliedRoundTrips": 1.05,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgdog-session-r1_c0_s2",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.8,
+    "min": 83.9,
+    "max": 85.8
+   },
+   "impliedRoundTrips": 2.12,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S B E S"
+   ],
+   "serverParseExample": "fs06_pgdog-session-r1_c0_s3|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3'::text AS tag",
+   "serverBindExample": "fs06_pgdog-session-r1_c0_s3",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3i": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.5,
+    "min": 84.1,
+    "max": 85.5
+   },
+   "impliedRoundTrips": 2.11,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 8 forwarded": 5,
+    "message types differ from what the client sent": 5,
+    "more than one server connection used": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S B E S"
+   ],
+   "serverParseExample": "fs06_pgdog-session-r1_c0_s3i|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3i'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 9,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3u": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.6,
+    "min": 84,
+    "max": 86.4
+   },
+   "impliedRoundTrips": 2.12,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 2 forwarded": 5,
+    "message types differ from what the client sent": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3u'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3ui": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.4,
+    "min": 83.9,
+    "max": 84.7
+   },
+   "impliedRoundTrips": 2.11,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 9 forwarded": 5,
+    "message types differ from what the client sent": 5,
+    "more than one server connection used": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3ui'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 9,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3f": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.3,
+    "min": 84.1,
+    "max": 85.3
+   },
+   "impliedRoundTrips": 2.11,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 2 forwarded": 5,
+    "message types differ from what the client sent": 5
+   },
+   "clientTypes": "P D H B E S",
+   "serverTypes": [
+    "P D H P B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3f'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.4,
+    "min": 42.1,
+    "max": 42.6
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgdog-session-r1_shared|SELECT $1::int AS n, pg_backend_pid() AS pid, 'A'::text AS tag",
+   "serverBindExample": "fs06_pgdog-session-r1_shared",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.1,
+    "min": 41.9,
+    "max": 42.6
+   },
+   "impliedRoundTrips": 1.05,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgdog-session-r1_shared|SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag",
+   "serverBindExample": "fs06_pgdog-session-r1_shared",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4b-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.2,
+    "min": 41.7,
+    "max": 42.5
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgdog-session-r1_shared",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4b-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.1,
+    "min": 42,
+    "max": 42.5
+   },
+   "impliedRoundTrips": 1.05,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgdog-session-r1_shared",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c-setup-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 43.4,
+    "min": 42.3,
+    "max": 86.7
+   },
+   "impliedRoundTrips": 1.08,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "Q P B D E S",
+   "serverTypes": [
+    "Q P B D E S"
+   ],
+   "serverParseExample": "fs06_pgdog-session-r1_mix|SELECT $1::int AS n, pg_backend_pid() AS pid, 'A'::text AS tag",
+   "serverBindExample": "fs06_pgdog-session-r1_mix",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c-setup-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.5,
+    "min": 42.1,
+    "max": 42.6
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgdog-session-r1_mix|SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag",
+   "serverBindExample": "fs06_pgdog-session-r1_mix",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c": {
+   "runs": 30,
+   "ok": 30,
+   "outcomes": {
+    "ok": 30
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.2,
+    "min": 41.4,
+    "max": 43.1
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 30,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgdog-session-r1_mix",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S5": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.2,
+    "min": 42,
+    "max": 44.4
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "message types differ from what the client sent": 5
+   },
+   "clientTypes": "P B D E P B D E S",
+   "serverTypes": [
+    "P B D E H P B D E H S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's5a'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 3,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.3,
+    "min": 42.2,
+    "max": 42.8
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-10": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 44.8,
+    "min": 44.5,
+    "max": 46.3
+   },
+   "impliedRoundTrips": 1.12,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S  … (50 messages)"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 10,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-100": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 71.5,
+    "min": 68.6,
+    "max": 81
+   },
+   "impliedRoundTrips": 1.79,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S  … (500 messages)"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 100,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 43,
+    "min": 42.1,
+    "max": 44.9
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "Q P B D E S Q",
+   "serverTypes": [
+    "Q P B D E S Q"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's7'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 3,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7b": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.7,
+    "min": 41.7,
+    "max": 43.6
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B E S P B D E S P B E S",
+   "serverTypes": [
+    "P B E S P B D E S P B E S"
+   ],
+   "serverParseExample": "|BEGIN",
+   "serverBindExample": "",
+   "serverTrips": 3,
+   "poolerQueries": [],
+   "wrongRow": false
+  }
+ },
+ "pin": {
+  "unnamed": {
+   "txnsOk": 800,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {},
+   "clientRunsWithOnePid": 40,
+   "clientRunsWithManyPids": 0,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    8,
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  "named": {
+   "txnsOk": 800,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {},
+   "clientRunsWithOnePid": 40,
+   "clientRunsWithManyPids": 0,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    8,
+    8,
+    8,
+    8,
+    8
+   ]
+  }
+ },
+ "preparedReadbackLastRun": [
+  {
+   "pid": 1344,
+   "count": 1,
+   "names": [
+    "fs06_pgdog-session-r5_pin_c5"
+   ]
+  },
+  {
+   "pid": 1347,
+   "count": 1,
+   "names": [
+    "fs06_pgdog-session-r5_pin_c3"
+   ]
+  },
+  {
+   "pid": 1345,
+   "count": 1,
+   "names": [
+    "fs06_pgdog-session-r5_pin_c7"
+   ]
+  },
+  {
+   "pid": 1341,
+   "count": 1,
+   "names": [
+    "fs06_pgdog-session-r5_pin_c4"
+   ]
+  },
+  {
+   "pid": 1342,
+   "count": 6,
+   "names": [
+    "fs06_pgdog-session-r5_c0_s2",
+    "fs06_pgdog-session-r5_c0_s3",
+    "fs06_pgdog-session-r5_c0_s3i",
+    "fs06_pgdog-session-r5_mix",
+    "fs06_pgdog-session-r5_pin_c0",
+    "fs06_pgdog-session-r5_shared"
+   ]
+  },
+  {
+   "pid": 1343,
+   "count": 1,
+   "names": [
+    "fs06_pgdog-session-r5_pin_c2"
+   ]
+  },
+  {
+   "pid": 1348,
+   "count": 3,
+   "names": [
+    "fs06_pgdog-session-r5_mix",
+    "fs06_pgdog-session-r5_pin_c1",
+    "fs06_pgdog-session-r5_shared"
+   ]
+  },
+  {
+   "pid": 1346,
+   "count": 1,
+   "names": [
+    "fs06_pgdog-session-r5_pin_c6"
+   ]
+  }
+ ],
+ "statsIdleLastRun": {
+  "pools": [
+   {
+    "id": "0",
+    "database": "fs06",
+    "user": "fs06",
+    "addr": "host.docker.internal",
+    "port": "55401",
+    "shard": "0",
+    "role": "primary",
+    "cl_waiting": "0",
+    "sv_idle": "0",
+    "sv_active": "8",
+    "sv_idle_xact": "0",
+    "sv_total": "8",
+    "maxwait": "0",
+    "maxwait_us": "0",
+    "pool_mode": "session",
+    "paused": "f",
+    "banned": "f",
+    "healthy": "t",
+    "errors": "0",
+    "re_synced": "0",
+    "out_of_sync": "0",
+    "force_closed": "0",
+    "online": "t",
+    "schema_admin": "f"
+   }
+  ],
+  "servers": [
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c2"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c6"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c7"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c3"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c0"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c5"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c1"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c4"
+   }
+  ]
+ },
+ "statsBusyLastRun": {
+  "pools": [
+   {
+    "id": "0",
+    "database": "fs06",
+    "user": "fs06",
+    "addr": "host.docker.internal",
+    "port": "55401",
+    "shard": "0",
+    "role": "primary",
+    "cl_waiting": "0",
+    "sv_idle": "0",
+    "sv_active": "8",
+    "sv_idle_xact": "0",
+    "sv_total": "8",
+    "maxwait": "0",
+    "maxwait_us": "0",
+    "pool_mode": "session",
+    "paused": "f",
+    "banned": "f",
+    "healthy": "t",
+    "errors": "0",
+    "re_synced": "0",
+    "out_of_sync": "0",
+    "force_closed": "0",
+    "online": "t",
+    "schema_admin": "f"
+   }
+  ],
+  "servers": [
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c2"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c6"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c7"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c3"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c0"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c5"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c1"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-session-r5-c4"
+   }
+  ]
+ },
+ "server": {
+  "connections": 10,
+  "pids": [
+   1341,
+   1342,
+   1343,
+   1344,
+   1345,
+   1346,
+   1347,
+   1348,
+   1349,
+   1352
+  ],
+  "simpleQueries": {
+   "SET \"application_name\" TO \"fs06-pgdog-session-r1-c0\"": 1,
+   "SET \"DateStyle\" TO \"ISO, MDY\"": 40,
+   ";": 15,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r1-c1\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r1-c4\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r1-c3\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r1-c2\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r1-c7\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r1-c6\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r1-c5\"": 1,
+   "BEGIN": 10,
+   "COMMIT": 10,
+   "DISCARD ALL": 40,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r2-c0\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r2-c5\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r2-c2\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r2-c1\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r2-c4\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r2-c6\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r2-c7\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r2-c3\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r3-c0\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r3-c1\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r3-c5\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r3-c4\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r3-c6\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r3-c3\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r3-c7\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r3-c2\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r4-c0\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r4-c1\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r4-c5\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r4-c4\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r4-c6\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r4-c3\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r4-c7\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r4-c2\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r5-c0\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r5-c3\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r5-c1\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r5-c5\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r5-c2\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r5-c6\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r5-c4\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-session-r5-c7\"": 1
+  },
+  "parseNamesSample": [
+   "",
+   "fs06_<run>_c0_s2",
+   "fs06_<run>_c0_s3",
+   "fs06_<run>_c0_s3i",
+   "fs06_<run>_shared",
+   "fs06_<run>_mix",
+   "fs06_<run>_pin_c4",
+   "fs06_<run>_pin_c1",
+   "fs06_<run>_pin_c3",
+   "fs06_<run>_pin_c6",
+   "fs06_<run>_pin_c5",
+   "fs06_<run>_pin_c7",
+   "fs06_<run>_pin_c2",
+   "fs06_<run>_pin_c0"
+  ],
+  "closeMessages": {}
+ },
+ "connectErrors": [],
+ "refs": [
+  {
+   "kind": "pg",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 8,
+   "ms": 157
+  },
+  {
+   "kind": "pg-unnamed",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 8,
+   "ms": 137
+  },
+  {
+   "kind": "postgres",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 8,
+   "ms": 143
+  },
+  {
+   "kind": "postgres-unnamed",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 8,
+   "ms": 193
+  }
+ ]
+}

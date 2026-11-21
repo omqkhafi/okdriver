@@ -1,0 +1,767 @@
+{
+ "target": {
+  "id": "direct",
+  "pooler": "none",
+  "config": "direct",
+  "mode": "direct",
+  "serverPool": 0,
+  "clients": 8
+ },
+ "login": {
+  "authMethod": "scram-sha-256",
+  "tls": false,
+  "parameterStatus": [
+   [
+    "IntervalStyle",
+    "postgres"
+   ],
+   [
+    "search_path",
+    "\"$user\", public"
+   ],
+   [
+    "is_superuser",
+    "on"
+   ],
+   [
+    "standard_conforming_strings",
+    "on"
+   ],
+   [
+    "session_authorization",
+    "fs06"
+   ],
+   [
+    "client_encoding",
+    "UTF8"
+   ],
+   [
+    "server_version",
+    "19.0 (Debian 19.0-1.pgdg13+1)"
+   ],
+   [
+    "server_encoding",
+    "UTF8"
+   ],
+   [
+    "in_hot_standby",
+    "off"
+   ],
+   [
+    "integer_datetimes",
+    "on"
+   ],
+   [
+    "TimeZone",
+    "Etc/UTC"
+   ],
+   [
+    "application_name",
+    "fs06-direct-r1-c0"
+   ],
+   [
+    "default_transaction_read_only",
+    "off"
+   ],
+   [
+    "scram_iterations",
+    "4096"
+   ],
+   [
+    "DateStyle",
+    "ISO, MDY"
+   ]
+  ]
+ },
+ "seqs": {
+  "S1": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.9,
+    "min": 41.3,
+    "max": 42.1
+   },
+   "impliedRoundTrips": 1.05,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.6,
+    "min": 41.3,
+    "max": 41.9
+   },
+   "impliedRoundTrips": 1.04,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S2b": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.3,
+    "min": 41.3,
+    "max": 42.5
+   },
+   "impliedRoundTrips": 1.03,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 82.9,
+    "min": 82.6,
+    "max": 83.1
+   },
+   "impliedRoundTrips": 2.07,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3i": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 83,
+    "min": 82.5,
+    "max": 83.7
+   },
+   "impliedRoundTrips": 2.08,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3u": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 83.1,
+    "min": 82.6,
+    "max": 83.4
+   },
+   "impliedRoundTrips": 2.08,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3ui": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 82.7,
+    "min": 81.8,
+    "max": 82.9
+   },
+   "impliedRoundTrips": 2.07,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3f": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 82.9,
+    "min": 82.7,
+    "max": 83.7
+   },
+   "impliedRoundTrips": 2.07,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P D H B E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.8,
+    "min": 41.4,
+    "max": 42
+   },
+   "impliedRoundTrips": 1.05,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.8,
+    "min": 41.7,
+    "max": 41.9
+   },
+   "impliedRoundTrips": 1.05,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4b-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.5,
+    "min": 41.2,
+    "max": 42.2
+   },
+   "impliedRoundTrips": 1.04,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4b-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.6,
+    "min": 41.5,
+    "max": 41.7
+   },
+   "impliedRoundTrips": 1.04,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c-setup-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.5,
+    "min": 41.2,
+    "max": 41.8
+   },
+   "impliedRoundTrips": 1.04,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "Q P B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c-setup-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.5,
+    "min": 41.5,
+    "max": 43.8
+   },
+   "impliedRoundTrips": 1.04,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c": {
+   "runs": 30,
+   "ok": 30,
+   "outcomes": {
+    "ok": 30
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.5,
+    "min": 41.2,
+    "max": 42.4
+   },
+   "impliedRoundTrips": 1.04,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S5": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.6,
+    "min": 41.4,
+    "max": 42.1
+   },
+   "impliedRoundTrips": 1.04,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P B D E P B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.5,
+    "min": 41.4,
+    "max": 41.9
+   },
+   "impliedRoundTrips": 1.04,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-10": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.9,
+    "min": 40.8,
+    "max": 42
+   },
+   "impliedRoundTrips": 1.05,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-100": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 44.9,
+    "min": 42.8,
+    "max": 45.7
+   },
+   "impliedRoundTrips": 1.12,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.6,
+    "min": 41.4,
+    "max": 42.4
+   },
+   "impliedRoundTrips": 1.04,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "Q P B D E S Q",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7b": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 41.5,
+    "min": 41.4,
+    "max": 42.8
+   },
+   "impliedRoundTrips": 1.04,
+   "forwardedAsSent": 0,
+   "serverNotes": {},
+   "clientTypes": "P B E S P B D E S P B E S",
+   "serverTypes": [
+    ""
+   ],
+   "serverTrips": 0,
+   "poolerQueries": [],
+   "wrongRow": false
+  }
+ },
+ "pin": {
+  "unnamed": {
+   "txnsOk": 800,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {},
+   "clientRunsWithOnePid": 40,
+   "clientRunsWithManyPids": 0,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    8,
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  "named": {
+   "txnsOk": 800,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {},
+   "clientRunsWithOnePid": 40,
+   "clientRunsWithManyPids": 0,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    8,
+    8,
+    8,
+    8,
+    8
+   ]
+  }
+ },
+ "preparedReadbackLastRun": [
+  {
+   "pid": 1387,
+   "count": 6,
+   "names": [
+    "fs06_direct-r5_c0_s2",
+    "fs06_direct-r5_c0_s3",
+    "fs06_direct-r5_c0_s3i",
+    "fs06_direct-r5_mix",
+    "fs06_direct-r5_pin_c0",
+    "fs06_direct-r5_shared"
+   ]
+  },
+  {
+   "pid": 1389,
+   "count": 1,
+   "names": [
+    "fs06_direct-r5_pin_c2"
+   ]
+  },
+  {
+   "pid": 1390,
+   "count": 1,
+   "names": [
+    "fs06_direct-r5_pin_c3"
+   ]
+  },
+  {
+   "pid": 1394,
+   "count": 1,
+   "names": [
+    "fs06_direct-r5_pin_c7"
+   ]
+  },
+  {
+   "pid": 1392,
+   "count": 1,
+   "names": [
+    "fs06_direct-r5_pin_c5"
+   ]
+  },
+  {
+   "pid": 1393,
+   "count": 1,
+   "names": [
+    "fs06_direct-r5_pin_c6"
+   ]
+  },
+  {
+   "pid": 1391,
+   "count": 1,
+   "names": [
+    "fs06_direct-r5_pin_c4"
+   ]
+  },
+  {
+   "pid": 1388,
+   "count": 3,
+   "names": [
+    "fs06_direct-r5_mix",
+    "fs06_direct-r5_pin_c1",
+    "fs06_direct-r5_shared"
+   ]
+  }
+ ],
+ "server": null,
+ "connectErrors": []
+}

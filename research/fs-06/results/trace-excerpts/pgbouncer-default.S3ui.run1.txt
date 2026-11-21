@@ -1,0 +1,659 @@
+# pgbouncer-default S3ui run 1: error (ERROR 26000 unnamed prepared statement does not exist); 85.2 ms; client-side round trips 2
+    0.2 ms  client-side  > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's3ui'::text AS tag,nOids:0,oids:[]}
+    0.2 ms  client-side  > D {kind:S,name:}
+    0.2 ms  client-side  > S
+   21.0 ms  server-side#2 > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's3ui'::text AS tag,nOids:0,oids:[]}
+   21.0 ms  server-side#2 > D {kind:S,name:}
+   21.0 ms  server-side#2 > S
+   21.6 ms  server-side#2 < 1
+   21.6 ms  server-side#2 < t
+   21.6 ms  server-side#2 < T {columns:3}
+   21.6 ms  server-side#2 < Z {status:I}
+   21.9 ms  client-side  < 1
+   21.9 ms  client-side  < t
+   21.9 ms  client-side  < T {columns:3}
+   21.9 ms  client-side  < Z {status:I}
+   63.6 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c7';}
+   63.7 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c3';}
+   64.1 ms  server-side#1 < C {tag:SET}
+   64.1 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c3}
+   64.1 ms  server-side#1 < Z {status:I}
+   64.1 ms  server-side#2 < C {tag:SET}
+   64.1 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c7}
+   64.1 ms  server-side#2 < Z {status:I}
+   64.2 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   64.2 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   64.2 ms  server-side#1 > D {kind:P,name:}
+   64.2 ms  server-side#1 > E {portal:,maxRows:0}
+   64.2 ms  server-side#1 > S
+   64.3 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   64.3 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   64.3 ms  server-side#2 > D {kind:P,name:}
+   64.3 ms  server-side#2 > E {portal:,maxRows:0}
+   64.3 ms  server-side#2 > S
+   74.9 ms  server-side#1 < 1
+   74.9 ms  server-side#1 < 2
+   74.9 ms  server-side#1 < T {columns:2}
+   74.9 ms  server-side#1 < D
+   74.9 ms  server-side#1 < C {tag:SELECT 1}
+   74.9 ms  server-side#1 < Z {status:I}
+   75.0 ms  server-side#2 < 1
+   75.0 ms  server-side#2 < 2
+   75.0 ms  server-side#2 < T {columns:2}
+   75.0 ms  server-side#2 < D
+   75.0 ms  server-side#2 < C {tag:SELECT 1}
+   75.0 ms  server-side#2 < Z {status:I}
+   75.1 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c2';}
+   75.2 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c5';}
+   75.3 ms  server-side#1 < C {tag:SET}
+   75.3 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c2}
+   75.3 ms  server-side#1 < Z {status:I}
+   75.4 ms  server-side#2 < C {tag:SET}
+   75.4 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c5}
+   75.4 ms  server-side#2 < Z {status:I}
+   75.4 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   75.4 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   75.4 ms  server-side#1 > D {kind:P,name:}
+   75.4 ms  server-side#1 > E {portal:,maxRows:0}
+   75.4 ms  server-side#1 > S
+   75.5 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   75.5 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   75.5 ms  server-side#2 > D {kind:P,name:}
+   75.5 ms  server-side#2 > E {portal:,maxRows:0}
+   75.5 ms  server-side#2 > S
+   86.0 ms  server-side#1 < 1
+   86.0 ms  server-side#1 < 2
+   86.0 ms  server-side#1 < T {columns:2}
+   86.0 ms  server-side#1 < D
+   86.0 ms  server-side#1 < C {tag:SELECT 1}
+   86.0 ms  server-side#1 < Z {status:I}
+   86.2 ms  server-side#2 < 1
+   86.2 ms  server-side#2 < 2
+   86.2 ms  server-side#2 < T {columns:2}
+   86.2 ms  server-side#2 < D
+   86.2 ms  server-side#2 < C {tag:SELECT 1}
+   86.2 ms  server-side#2 < Z {status:I}
+   86.2 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c1';}
+   86.3 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c6';}
+   86.4 ms  server-side#1 < C {tag:SET}
+   86.4 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c1}
+   86.4 ms  server-side#1 < Z {status:I}
+   86.6 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   86.6 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   86.6 ms  server-side#1 > D {kind:P,name:}
+   86.6 ms  server-side#1 > E {portal:,maxRows:0}
+   86.6 ms  server-side#1 > S
+   86.7 ms  server-side#2 < C {tag:SET}
+   86.7 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c6}
+   86.7 ms  server-side#2 < Z {status:I}
+   86.8 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   86.8 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   86.8 ms  server-side#2 > D {kind:P,name:}
+   86.8 ms  server-side#2 > E {portal:,maxRows:0}
+   86.8 ms  server-side#2 > S
+   97.4 ms  server-side#2 < 1
+   97.4 ms  server-side#2 < 2
+   97.4 ms  server-side#2 < T {columns:2}
+   97.4 ms  server-side#2 < D
+   97.4 ms  server-side#2 < C {tag:SELECT 1}
+   97.4 ms  server-side#2 < Z {status:I}
+   97.5 ms  server-side#1 < 1
+   97.5 ms  server-side#1 < 2
+   97.5 ms  server-side#1 < T {columns:2}
+   97.5 ms  server-side#1 < D
+   97.5 ms  server-side#1 < C {tag:SELECT 1}
+   97.5 ms  server-side#1 < Z {status:I}
+   97.6 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c4';}
+   97.9 ms  server-side#2 < C {tag:SET}
+   97.9 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c4}
+   97.9 ms  server-side#2 < Z {status:I}
+   98.1 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+   98.1 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+   98.1 ms  server-side#2 > D {kind:P,name:}
+   98.1 ms  server-side#2 > E {portal:,maxRows:0}
+   98.1 ms  server-side#2 > S
+  109.0 ms  server-side#2 < 1
+  109.0 ms  server-side#2 < 2
+  109.0 ms  server-side#2 < T {columns:2}
+  109.0 ms  server-side#2 < D
+  109.0 ms  server-side#2 < C {tag:SELECT 1}
+  109.0 ms  server-side#2 < Z {status:I}
+  117.1 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c7';}
+  117.3 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c3';}
+  117.5 ms  server-side#2 < C {tag:SET}
+  117.5 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c7}
+  117.5 ms  server-side#2 < Z {status:I}
+  117.6 ms  server-side#1 < C {tag:SET}
+  117.6 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c3}
+  117.6 ms  server-side#1 < Z {status:I}
+  117.6 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  117.6 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  117.6 ms  server-side#2 > D {kind:P,name:}
+  117.6 ms  server-side#2 > E {portal:,maxRows:0}
+  117.6 ms  server-side#2 > S
+  117.7 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  117.7 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  117.7 ms  server-side#1 > D {kind:P,name:}
+  117.7 ms  server-side#1 > E {portal:,maxRows:0}
+  117.7 ms  server-side#1 > S
+  128.1 ms  server-side#2 < 1
+  128.1 ms  server-side#2 < 2
+  128.1 ms  server-side#2 < T {columns:2}
+  128.1 ms  server-side#2 < D
+  128.1 ms  server-side#2 < C {tag:SELECT 1}
+  128.1 ms  server-side#2 < Z {status:I}
+  128.2 ms  server-side#1 < 1
+  128.2 ms  server-side#1 < 2
+  128.2 ms  server-side#1 < T {columns:2}
+  128.2 ms  server-side#1 < D
+  128.2 ms  server-side#1 < C {tag:SELECT 1}
+  128.2 ms  server-side#1 < Z {status:I}
+  128.4 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c5';}
+  128.6 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c2';}
+  128.9 ms  server-side#2 < C {tag:SET}
+  128.9 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c5}
+  128.9 ms  server-side#2 < Z {status:I}
+  128.9 ms  server-side#1 < C {tag:SET}
+  128.9 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c2}
+  128.9 ms  server-side#1 < Z {status:I}
+  129.0 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  129.0 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  129.0 ms  server-side#2 > D {kind:P,name:}
+  129.0 ms  server-side#2 > E {portal:,maxRows:0}
+  129.0 ms  server-side#2 > S
+  129.1 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  129.1 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  129.1 ms  server-side#1 > D {kind:P,name:}
+  129.1 ms  server-side#1 > E {portal:,maxRows:0}
+  129.1 ms  server-side#1 > S
+  139.6 ms  server-side#2 < 1
+  139.6 ms  server-side#2 < 2
+  139.6 ms  server-side#2 < T {columns:2}
+  139.6 ms  server-side#2 < D
+  139.6 ms  server-side#2 < C {tag:SELECT 1}
+  139.6 ms  server-side#2 < Z {status:I}
+  139.6 ms  server-side#1 < 1
+  139.6 ms  server-side#1 < 2
+  139.6 ms  server-side#1 < T {columns:2}
+  139.6 ms  server-side#1 < D
+  139.6 ms  server-side#1 < C {tag:SELECT 1}
+  139.6 ms  server-side#1 < Z {status:I}
+  139.8 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c6';}
+  140.0 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c1';}
+  140.2 ms  server-side#2 < C {tag:SET}
+  140.2 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c6}
+  140.2 ms  server-side#2 < Z {status:I}
+  140.3 ms  server-side#1 < C {tag:SET}
+  140.3 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c1}
+  140.3 ms  server-side#1 < Z {status:I}
+  140.4 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  140.4 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  140.4 ms  server-side#2 > D {kind:P,name:}
+  140.4 ms  server-side#2 > E {portal:,maxRows:0}
+  140.4 ms  server-side#2 > S
+  140.4 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  140.4 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  140.4 ms  server-side#1 > D {kind:P,name:}
+  140.4 ms  server-side#1 > E {portal:,maxRows:0}
+  140.4 ms  server-side#1 > S
+  151.0 ms  server-side#1 < 1
+  151.0 ms  server-side#1 < 2
+  151.0 ms  server-side#1 < T {columns:2}
+  151.0 ms  server-side#1 < D
+  151.0 ms  server-side#1 < C {tag:SELECT 1}
+  151.0 ms  server-side#1 < Z {status:I}
+  151.1 ms  server-side#2 < 1
+  151.1 ms  server-side#2 < 2
+  151.1 ms  server-side#2 < T {columns:2}
+  151.1 ms  server-side#2 < D
+  151.1 ms  server-side#2 < C {tag:SELECT 1}
+  151.1 ms  server-side#2 < Z {status:I}
+  151.3 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c4';}
+  151.6 ms  server-side#1 < C {tag:SET}
+  151.6 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c4}
+  151.6 ms  server-side#1 < Z {status:I}
+  151.7 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  151.7 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  151.7 ms  server-side#1 > D {kind:P,name:}
+  151.7 ms  server-side#1 > E {portal:,maxRows:0}
+  151.7 ms  server-side#1 > S
+  162.2 ms  server-side#1 < 1
+  162.2 ms  server-side#1 < 2
+  162.2 ms  server-side#1 < T {columns:2}
+  162.2 ms  server-side#1 < D
+  162.2 ms  server-side#1 < C {tag:SELECT 1}
+  162.2 ms  server-side#1 < Z {status:I}
+  169.9 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c3';}
+  170.0 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c7';}
+  170.2 ms  server-side#2 < C {tag:SET}
+  170.2 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c7}
+  170.2 ms  server-side#2 < Z {status:I}
+  170.3 ms  server-side#1 < C {tag:SET}
+  170.3 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c3}
+  170.3 ms  server-side#1 < Z {status:I}
+  170.3 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  170.3 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  170.3 ms  server-side#2 > D {kind:P,name:}
+  170.3 ms  server-side#2 > E {portal:,maxRows:0}
+  170.3 ms  server-side#2 > S
+  170.4 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  170.4 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  170.4 ms  server-side#1 > D {kind:P,name:}
+  170.4 ms  server-side#1 > E {portal:,maxRows:0}
+  170.4 ms  server-side#1 > S
+  180.9 ms  server-side#2 < 1
+  180.9 ms  server-side#2 < 2
+  180.9 ms  server-side#2 < T {columns:2}
+  180.9 ms  server-side#2 < D
+  180.9 ms  server-side#2 < C {tag:SELECT 1}
+  180.9 ms  server-side#2 < Z {status:I}
+  181.0 ms  server-side#1 < 1
+  181.0 ms  server-side#1 < 2
+  181.0 ms  server-side#1 < T {columns:2}
+  181.0 ms  server-side#1 < D
+  181.0 ms  server-side#1 < C {tag:SELECT 1}
+  181.0 ms  server-side#1 < Z {status:I}
+  181.1 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c2';}
+  181.1 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c5';}
+  181.4 ms  server-side#2 < C {tag:SET}
+  181.4 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c2}
+  181.4 ms  server-side#2 < Z {status:I}
+  181.5 ms  server-side#1 < C {tag:SET}
+  181.5 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c5}
+  181.5 ms  server-side#1 < Z {status:I}
+  181.6 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  181.6 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  181.6 ms  server-side#2 > D {kind:P,name:}
+  181.6 ms  server-side#2 > E {portal:,maxRows:0}
+  181.6 ms  server-side#2 > S
+  181.7 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  181.7 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  181.7 ms  server-side#1 > D {kind:P,name:}
+  181.7 ms  server-side#1 > E {portal:,maxRows:0}
+  181.7 ms  server-side#1 > S
+  192.3 ms  server-side#2 < 1
+  192.3 ms  server-side#2 < 2
+  192.3 ms  server-side#2 < T {columns:2}
+  192.3 ms  server-side#2 < D
+  192.3 ms  server-side#2 < C {tag:SELECT 1}
+  192.3 ms  server-side#2 < Z {status:I}
+  192.4 ms  server-side#1 < 1
+  192.4 ms  server-side#1 < 2
+  192.4 ms  server-side#1 < T {columns:2}
+  192.4 ms  server-side#1 < D
+  192.4 ms  server-side#1 < C {tag:SELECT 1}
+  192.4 ms  server-side#1 < Z {status:I}
+  192.5 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c6';}
+  192.6 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c1';}
+  192.8 ms  server-side#2 < C {tag:SET}
+  192.8 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c6}
+  192.8 ms  server-side#2 < Z {status:I}
+  192.9 ms  server-side#1 < C {tag:SET}
+  192.9 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c1}
+  192.9 ms  server-side#1 < Z {status:I}
+  192.9 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  192.9 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  192.9 ms  server-side#2 > D {kind:P,name:}
+  192.9 ms  server-side#2 > E {portal:,maxRows:0}
+  192.9 ms  server-side#2 > S
+  193.0 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  193.0 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  193.0 ms  server-side#1 > D {kind:P,name:}
+  193.0 ms  server-side#1 > E {portal:,maxRows:0}
+  193.0 ms  server-side#1 > S
+  203.6 ms  server-side#2 < 1
+  203.6 ms  server-side#2 < 2
+  203.6 ms  server-side#2 < T {columns:2}
+  203.6 ms  server-side#2 < D
+  203.6 ms  server-side#2 < C {tag:SELECT 1}
+  203.6 ms  server-side#2 < Z {status:I}
+  203.7 ms  server-side#1 < 1
+  203.7 ms  server-side#1 < 2
+  203.7 ms  server-side#1 < T {columns:2}
+  203.7 ms  server-side#1 < D
+  203.7 ms  server-side#1 < C {tag:SELECT 1}
+  203.7 ms  server-side#1 < Z {status:I}
+  203.8 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c4';}
+  204.2 ms  server-side#2 < C {tag:SET}
+  204.2 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c4}
+  204.2 ms  server-side#2 < Z {status:I}
+  204.3 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  204.3 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  204.3 ms  server-side#2 > D {kind:P,name:}
+  204.3 ms  server-side#2 > E {portal:,maxRows:0}
+  204.3 ms  server-side#2 > S
+  214.9 ms  server-side#2 < 1
+  214.9 ms  server-side#2 < 2
+  214.9 ms  server-side#2 < T {columns:2}
+  214.9 ms  server-side#2 < D
+  214.9 ms  server-side#2 < C {tag:SELECT 1}
+  214.9 ms  server-side#2 < Z {status:I}
+  222.0 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c7';}
+  222.1 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c3';}
+  222.4 ms  server-side#2 < C {tag:SET}
+  222.4 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c7}
+  222.4 ms  server-side#2 < Z {status:I}
+  222.4 ms  server-side#1 < C {tag:SET}
+  222.4 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c3}
+  222.4 ms  server-side#1 < Z {status:I}
+  222.5 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  222.5 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  222.5 ms  server-side#2 > D {kind:P,name:}
+  222.5 ms  server-side#2 > E {portal:,maxRows:0}
+  222.5 ms  server-side#2 > S
+  222.5 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  222.5 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  222.5 ms  server-side#1 > D {kind:P,name:}
+  222.5 ms  server-side#1 > E {portal:,maxRows:0}
+  222.5 ms  server-side#1 > S
+  233.0 ms  server-side#2 < 1
+  233.0 ms  server-side#2 < 2
+  233.0 ms  server-side#2 < T {columns:2}
+  233.0 ms  server-side#2 < D
+  233.0 ms  server-side#2 < C {tag:SELECT 1}
+  233.0 ms  server-side#2 < Z {status:I}
+  233.1 ms  server-side#1 < 1
+  233.1 ms  server-side#1 < 2
+  233.1 ms  server-side#1 < T {columns:2}
+  233.1 ms  server-side#1 < D
+  233.1 ms  server-side#1 < C {tag:SELECT 1}
+  233.1 ms  server-side#1 < Z {status:I}
+  233.6 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c5';}
+  233.7 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c2';}
+  234.0 ms  server-side#1 < C {tag:SET}
+  234.0 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c5}
+  234.0 ms  server-side#1 < Z {status:I}
+  234.1 ms  server-side#2 < C {tag:SET}
+  234.1 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c2}
+  234.1 ms  server-side#2 < Z {status:I}
+  234.1 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  234.1 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  234.1 ms  server-side#1 > D {kind:P,name:}
+  234.1 ms  server-side#1 > E {portal:,maxRows:0}
+  234.1 ms  server-side#1 > S
+  234.2 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  234.2 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  234.2 ms  server-side#2 > D {kind:P,name:}
+  234.2 ms  server-side#2 > E {portal:,maxRows:0}
+  234.2 ms  server-side#2 > S
+  244.8 ms  server-side#1 < 1
+  244.8 ms  server-side#1 < 2
+  244.8 ms  server-side#1 < T {columns:2}
+  244.8 ms  server-side#1 < D
+  244.8 ms  server-side#1 < C {tag:SELECT 1}
+  244.8 ms  server-side#1 < Z {status:I}
+  245.0 ms  server-side#2 < 1
+  245.0 ms  server-side#2 < 2
+  245.0 ms  server-side#2 < T {columns:2}
+  245.0 ms  server-side#2 < D
+  245.0 ms  server-side#2 < C {tag:SELECT 1}
+  245.0 ms  server-side#2 < Z {status:I}
+  245.2 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c1';}
+  245.2 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c6';}
+  245.4 ms  server-side#1 < C {tag:SET}
+  245.4 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c1}
+  245.4 ms  server-side#1 < Z {status:I}
+  245.5 ms  server-side#2 < C {tag:SET}
+  245.5 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c6}
+  245.5 ms  server-side#2 < Z {status:I}
+  245.5 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  245.5 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  245.5 ms  server-side#1 > D {kind:P,name:}
+  245.5 ms  server-side#1 > E {portal:,maxRows:0}
+  245.5 ms  server-side#1 > S
+  245.6 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  245.6 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  245.6 ms  server-side#2 > D {kind:P,name:}
+  245.6 ms  server-side#2 > E {portal:,maxRows:0}
+  245.6 ms  server-side#2 > S
+  256.0 ms  server-side#2 < 1
+  256.0 ms  server-side#2 < 2
+  256.0 ms  server-side#2 < T {columns:2}
+  256.0 ms  server-side#2 < D
+  256.0 ms  server-side#2 < C {tag:SELECT 1}
+  256.0 ms  server-side#2 < Z {status:I}
+  256.1 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c4';}
+  256.2 ms  server-side#1 < 1
+  256.2 ms  server-side#1 < 2
+  256.2 ms  server-side#1 < T {columns:2}
+  256.2 ms  server-side#1 < D
+  256.2 ms  server-side#1 < C {tag:SELECT 1}
+  256.2 ms  server-side#1 < Z {status:I}
+  256.3 ms  server-side#2 < C {tag:SET}
+  256.3 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c4}
+  256.3 ms  server-side#2 < Z {status:I}
+  256.4 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  256.4 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  256.4 ms  server-side#2 > D {kind:P,name:}
+  256.4 ms  server-side#2 > E {portal:,maxRows:0}
+  256.4 ms  server-side#2 > S
+  267.0 ms  server-side#2 < 1
+  267.0 ms  server-side#2 < 2
+  267.0 ms  server-side#2 < T {columns:2}
+  267.0 ms  server-side#2 < D
+  267.0 ms  server-side#2 < C {tag:SELECT 1}
+  267.0 ms  server-side#2 < Z {status:I}
+  274.4 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c3';}
+  274.5 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c7';}
+  274.9 ms  server-side#1 < C {tag:SET}
+  274.9 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c7}
+  274.9 ms  server-side#1 < Z {status:I}
+  275.0 ms  server-side#2 < C {tag:SET}
+  275.0 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c3}
+  275.0 ms  server-side#2 < Z {status:I}
+  275.0 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  275.0 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  275.0 ms  server-side#1 > D {kind:P,name:}
+  275.0 ms  server-side#1 > E {portal:,maxRows:0}
+  275.0 ms  server-side#1 > S
+  275.1 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  275.1 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  275.1 ms  server-side#2 > D {kind:P,name:}
+  275.1 ms  server-side#2 > E {portal:,maxRows:0}
+  275.1 ms  server-side#2 > S
+  285.6 ms  server-side#1 < 1
+  285.6 ms  server-side#1 < 2
+  285.6 ms  server-side#1 < T {columns:2}
+  285.6 ms  server-side#1 < D
+  285.6 ms  server-side#1 < C {tag:SELECT 1}
+  285.6 ms  server-side#1 < Z {status:I}
+  285.7 ms  server-side#2 < 1
+  285.7 ms  server-side#2 < 2
+  285.7 ms  server-side#2 < T {columns:2}
+  285.7 ms  server-side#2 < D
+  285.7 ms  server-side#2 < C {tag:SELECT 1}
+  285.7 ms  server-side#2 < Z {status:I}
+  286.5 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c2';}
+  286.6 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c5';}
+  286.8 ms  server-side#2 < C {tag:SET}
+  286.8 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c2}
+  286.8 ms  server-side#2 < Z {status:I}
+  286.9 ms  server-side#1 < C {tag:SET}
+  286.9 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c5}
+  286.9 ms  server-side#1 < Z {status:I}
+  286.9 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  286.9 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  286.9 ms  server-side#2 > D {kind:P,name:}
+  286.9 ms  server-side#2 > E {portal:,maxRows:0}
+  286.9 ms  server-side#2 > S
+  287.0 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  287.0 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  287.0 ms  server-side#1 > D {kind:P,name:}
+  287.0 ms  server-side#1 > E {portal:,maxRows:0}
+  287.0 ms  server-side#1 > S
+  297.4 ms  server-side#2 < 1
+  297.4 ms  server-side#2 < 2
+  297.4 ms  server-side#2 < T {columns:2}
+  297.4 ms  server-side#2 < D
+  297.4 ms  server-side#2 < C {tag:SELECT 1}
+  297.4 ms  server-side#2 < Z {status:I}
+  297.5 ms  server-side#1 < 1
+  297.5 ms  server-side#1 < 2
+  297.5 ms  server-side#1 < T {columns:2}
+  297.5 ms  server-side#1 < D
+  297.5 ms  server-side#1 < C {tag:SELECT 1}
+  297.5 ms  server-side#1 < Z {status:I}
+  297.5 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c1';}
+  297.6 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c6';}
+  297.8 ms  server-side#2 < C {tag:SET}
+  297.8 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c1}
+  297.8 ms  server-side#2 < Z {status:I}
+  297.8 ms  server-side#1 < C {tag:SET}
+  297.8 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c6}
+  297.8 ms  server-side#1 < Z {status:I}
+  297.8 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  297.8 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  297.8 ms  server-side#2 > D {kind:P,name:}
+  297.8 ms  server-side#2 > E {portal:,maxRows:0}
+  297.8 ms  server-side#2 > S
+  297.8 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  297.8 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  297.8 ms  server-side#1 > D {kind:P,name:}
+  297.8 ms  server-side#1 > E {portal:,maxRows:0}
+  297.8 ms  server-side#1 > S
+  308.3 ms  server-side#2 < 1
+  308.3 ms  server-side#2 < 2
+  308.3 ms  server-side#2 < T {columns:2}
+  308.3 ms  server-side#2 < D
+  308.3 ms  server-side#2 < C {tag:SELECT 1}
+  308.3 ms  server-side#2 < Z {status:I}
+  308.4 ms  server-side#1 < 1
+  308.4 ms  server-side#1 < 2
+  308.4 ms  server-side#1 < T {columns:2}
+  308.4 ms  server-side#1 < D
+  308.4 ms  server-side#1 < C {tag:SELECT 1}
+  308.4 ms  server-side#1 < Z {status:I}
+  308.4 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c4';}
+  308.8 ms  server-side#2 < C {tag:SET}
+  308.8 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c4}
+  308.8 ms  server-side#2 < Z {status:I}
+  308.9 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  308.9 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  308.9 ms  server-side#2 > D {kind:P,name:}
+  308.9 ms  server-side#2 > E {portal:,maxRows:0}
+  308.9 ms  server-side#2 > S
+  319.6 ms  server-side#2 < 1
+  319.6 ms  server-side#2 < 2
+  319.6 ms  server-side#2 < T {columns:2}
+  319.6 ms  server-side#2 < D
+  319.6 ms  server-side#2 < C {tag:SELECT 1}
+  319.6 ms  server-side#2 < Z {status:I}
+  328.0 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c3';}
+  328.2 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c7';}
+  328.5 ms  server-side#1 < C {tag:SET}
+  328.5 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c7}
+  328.5 ms  server-side#1 < Z {status:I}
+  328.6 ms  server-side#2 < C {tag:SET}
+  328.6 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c3}
+  328.6 ms  server-side#2 < Z {status:I}
+  328.6 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  328.6 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  328.6 ms  server-side#1 > D {kind:P,name:}
+  328.6 ms  server-side#1 > E {portal:,maxRows:0}
+  328.6 ms  server-side#1 > S
+  328.7 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  328.7 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  328.7 ms  server-side#2 > D {kind:P,name:}
+  328.7 ms  server-side#2 > E {portal:,maxRows:0}
+  328.7 ms  server-side#2 > S
+  339.3 ms  server-side#2 < 1
+  339.3 ms  server-side#2 < 2
+  339.3 ms  server-side#2 < T {columns:2}
+  339.3 ms  server-side#2 < D
+  339.3 ms  server-side#2 < C {tag:SELECT 1}
+  339.3 ms  server-side#2 < Z {status:I}
+  339.4 ms  server-side#1 < 1
+  339.4 ms  server-side#1 < 2
+  339.4 ms  server-side#1 < T {columns:2}
+  339.4 ms  server-side#1 < D
+  339.4 ms  server-side#1 < C {tag:SELECT 1}
+  339.4 ms  server-side#1 < Z {status:I}
+  339.5 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c5';}
+  339.5 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c2';}
+  339.9 ms  server-side#1 < C {tag:SET}
+  339.9 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c2}
+  339.9 ms  server-side#1 < Z {status:I}
+  339.9 ms  server-side#2 < C {tag:SET}
+  339.9 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c5}
+  339.9 ms  server-side#2 < Z {status:I}
+  340.0 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  340.0 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  340.0 ms  server-side#1 > D {kind:P,name:}
+  340.0 ms  server-side#1 > E {portal:,maxRows:0}
+  340.0 ms  server-side#1 > S
+  340.2 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  340.2 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  340.2 ms  server-side#2 > D {kind:P,name:}
+  340.2 ms  server-side#2 > E {portal:,maxRows:0}
+  340.2 ms  server-side#2 > S
+  350.6 ms  server-side#1 < 1
+  350.6 ms  server-side#1 < 2
+  350.6 ms  server-side#1 < T {columns:2}
+  350.6 ms  server-side#1 < D
+  350.6 ms  server-side#1 < C {tag:SELECT 1}
+  350.6 ms  server-side#1 < Z {status:I}
+  350.9 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c6';}
+  351.4 ms  server-side#2 < 1
+  351.4 ms  server-side#2 < 2
+  351.4 ms  server-side#2 < T {columns:2}
+  351.4 ms  server-side#2 < D
+  351.4 ms  server-side#2 < C {tag:SELECT 1}
+  351.4 ms  server-side#2 < Z {status:I}
+  351.5 ms  server-side#1 < C {tag:SET}
+  351.5 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c6}
+  351.5 ms  server-side#1 < Z {status:I}
+  351.6 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c1';}
+  351.7 ms  server-side#1 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  351.7 ms  server-side#1 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  351.7 ms  server-side#1 > D {kind:P,name:}
+  351.7 ms  server-side#1 > E {portal:,maxRows:0}
+  351.7 ms  server-side#1 > S
+  351.8 ms  server-side#2 < C {tag:SET}
+  351.8 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c1}
+  351.8 ms  server-side#2 < Z {status:I}
+  351.9 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  351.9 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  351.9 ms  server-side#2 > D {kind:P,name:}
+  351.9 ms  server-side#2 > E {portal:,maxRows:0}
+  351.9 ms  server-side#2 > S
+  362.3 ms  server-side#1 < 1
+  362.3 ms  server-side#1 < 2
+  362.3 ms  server-side#1 < T {columns:2}
+  362.3 ms  server-side#1 < D
+  362.3 ms  server-side#1 < C {tag:SELECT 1}
+  362.3 ms  server-side#1 < Z {status:I}
+  362.4 ms  server-side#2 < 1
+  362.4 ms  server-side#2 < 2
+  362.4 ms  server-side#2 < T {columns:2}
+  362.4 ms  server-side#2 < D
+  362.4 ms  server-side#2 < C {tag:SELECT 1}
+  362.4 ms  server-side#2 < Z {status:I}
+  363.0 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c4';}
+  363.4 ms  server-side#2 < C {tag:SET}
+  363.4 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c4}
+  363.4 ms  server-side#2 < Z {status:I}
+  363.5 ms  server-side#2 > P {name:,sql:SELECT pg_sleep(0.01), pg_backend_pid(),nOids:0,oids:[]}
+  363.5 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:0,nResultFormats:0}
+  363.5 ms  server-side#2 > D {kind:P,name:}
+  363.5 ms  server-side#2 > E {portal:,maxRows:0}
+  363.5 ms  server-side#2 > S
+  374.1 ms  server-side#2 < 1
+  374.1 ms  server-side#2 < 2
+  374.1 ms  server-side#2 < T {columns:2}
+  374.1 ms  server-side#2 < D
+  374.1 ms  server-side#2 < C {tag:SELECT 1}
+  374.1 ms  server-side#2 < Z {status:I}
+  394.9 ms  client-side  > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+  394.9 ms  client-side  > E {portal:,maxRows:0}
+  394.9 ms  client-side  > S
+  415.7 ms  server-side#2 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c0';}
+  416.2 ms  server-side#2 < C {tag:SET}
+  416.2 ms  server-side#2 < S {name:application_name,value:fs06-pgbouncer-default-r1-c0}
+  416.2 ms  server-side#2 < Z {status:I}
+  416.4 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+  416.4 ms  server-side#2 > E {portal:,maxRows:0}
+  416.4 ms  server-side#2 > S
+  416.7 ms  server-side#2 < E {severity:ERROR,code:26000,message:unnamed prepared statement does not exist}
+  416.7 ms  server-side#2 < Z {status:I}
+  417.1 ms  client-side  < E {severity:ERROR,code:26000,message:unnamed prepared statement does not exist}
+  417.1 ms  client-side  < Z {status:I}

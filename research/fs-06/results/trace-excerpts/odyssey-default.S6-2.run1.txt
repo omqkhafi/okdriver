@@ -1,0 +1,75 @@
+# odyssey-default S6-2 run 1: ok; 44 ms; client-side round trips 1
+    0.1 ms  client-side  > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag,nOids:0,oids:[]}
+    0.1 ms  client-side  > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.1 ms  client-side  > D {kind:P,name:}
+    0.1 ms  client-side  > E {portal:,maxRows:0}
+    0.1 ms  client-side  > S
+    0.1 ms  client-side  > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag,nOids:0,oids:[]}
+    0.1 ms  client-side  > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.1 ms  client-side  > D {kind:P,name:}
+    0.1 ms  client-side  > E {portal:,maxRows:0}
+    0.1 ms  client-side  > S
+   20.9 ms  server-side#2 > Q {sql:SET application_name=E'fs06-odyssey-default-r1-c0';}
+   21.6 ms  server-side#2 < C {tag:SET}
+   21.6 ms  server-side#2 < S {name:application_name,value:fs06-odyssey-default-r1-c0}
+   21.6 ms  server-side#2 < Z {status:I}
+   21.7 ms  server-side#2 > P {name:odyssey_pstmt_12,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag,nOids:0,oids:[]}
+   21.7 ms  server-side#2 > B {portal:,stmt:odyssey_pstmt_12,nParamFormats:0,nParams:1,nResultFormats:0}
+   21.7 ms  server-side#2 > D {kind:P,name:}
+   21.7 ms  server-side#2 > E {portal:,maxRows:0}
+   21.7 ms  server-side#2 > S
+   22.2 ms  server-side#2 < 1
+   22.2 ms  server-side#2 < 2
+   22.2 ms  server-side#2 < T {columns:3}
+   22.2 ms  server-side#2 < D
+   22.2 ms  server-side#2 < C {tag:SELECT 1}
+   22.2 ms  server-side#2 < Z {status:I}
+   22.3 ms  server-side#2 > Q {sql:SET SESSION AUTHORIZATION DEFAULT;RESET ALL;CLOSE ALL;UNLISTEN *;SELECT pg_advisory_unlock_all();DISCARD PLANS;DISCARD SEQUENCES;DISCARD TEMP;}
+   22.4 ms  client-side  < 1
+   22.4 ms  client-side  < 2
+   22.4 ms  client-side  < T {columns:3}
+   22.4 ms  client-side  < C {tag:SELECT 1}
+   22.4 ms  client-side  < Z {status:I}
+   22.7 ms  server-side#2 < C {tag:SET}
+   22.7 ms  server-side#2 < C {tag:RESET}
+   22.7 ms  server-side#2 < C {tag:CLOSE CURSOR ALL}
+   22.7 ms  server-side#2 < C {tag:UNLISTEN}
+   22.7 ms  server-side#2 < T {columns:1}
+   22.7 ms  server-side#2 < D
+   22.7 ms  server-side#2 < C {tag:SELECT 1}
+   22.7 ms  server-side#2 < C {tag:DISCARD PLANS}
+   22.7 ms  server-side#2 < C {tag:DISCARD SEQUENCES}
+   22.7 ms  server-side#2 < C {tag:DISCARD TEMP}
+   22.7 ms  server-side#2 < S {name:application_name,value:}
+   22.7 ms  server-side#2 < Z {status:I}
+   22.9 ms  server-side#2 > Q {sql:SET application_name=E'fs06-odyssey-default-r1-c0';}
+   23.0 ms  server-side#2 < C {tag:SET}
+   23.0 ms  server-side#2 < S {name:application_name,value:fs06-odyssey-default-r1-c0}
+   23.0 ms  server-side#2 < Z {status:I}
+   23.1 ms  server-side#2 > B {portal:,stmt:odyssey_pstmt_12,nParamFormats:0,nParams:1,nResultFormats:0}
+   23.1 ms  server-side#2 > D {kind:P,name:}
+   23.1 ms  server-side#2 > E {portal:,maxRows:0}
+   23.1 ms  server-side#2 > S
+   23.3 ms  client-side  < 1
+   23.4 ms  server-side#2 < 2
+   23.4 ms  server-side#2 < T {columns:3}
+   23.4 ms  server-side#2 < D
+   23.4 ms  server-side#2 < C {tag:SELECT 1}
+   23.4 ms  server-side#2 < Z {status:I}
+   23.5 ms  server-side#2 > Q {sql:SET SESSION AUTHORIZATION DEFAULT;RESET ALL;CLOSE ALL;UNLISTEN *;SELECT pg_advisory_unlock_all();DISCARD PLANS;DISCARD SEQUENCES;DISCARD TEMP;}
+   23.6 ms  client-side  < 2
+   23.6 ms  client-side  < T {columns:3}
+   23.6 ms  client-side  < C {tag:SELECT 1}
+   23.6 ms  client-side  < Z {status:I}
+   23.8 ms  server-side#2 < C {tag:SET}
+   23.8 ms  server-side#2 < C {tag:RESET}
+   23.8 ms  server-side#2 < C {tag:CLOSE CURSOR ALL}
+   23.8 ms  server-side#2 < C {tag:UNLISTEN}
+   23.8 ms  server-side#2 < T {columns:1}
+   23.8 ms  server-side#2 < D
+   23.8 ms  server-side#2 < C {tag:SELECT 1}
+   23.8 ms  server-side#2 < C {tag:DISCARD PLANS}
+   23.8 ms  server-side#2 < C {tag:DISCARD SEQUENCES}
+   23.8 ms  server-side#2 < C {tag:DISCARD TEMP}
+   23.8 ms  server-side#2 < S {name:application_name,value:}
+   23.8 ms  server-side#2 < Z {status:I}

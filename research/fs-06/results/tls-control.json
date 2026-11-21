@@ -1,0 +1,97 @@
+{
+ "checks": {
+  "right servername, CA pinned": "ok (TLSv1.3, scram-sha-256)",
+  "wrong servername": "rejected: Hostname/IP does not match certificate's altnames: Host: wrong.example. is not in the cert's altnames: DNS:pg.fs06.test",
+  "no CA (system trust)": "rejected: self signed certificate",
+  "TLS asked of a server without TLS": "rejected: server answered N to SSLRequest"
+ },
+ "login": {
+  "authMethod": "scram-sha-256",
+  "tls": "TLSv1.3",
+  "parameterStatus": [
+   [
+    "IntervalStyle",
+    "postgres"
+   ],
+   [
+    "search_path",
+    "\"$user\", public"
+   ],
+   [
+    "is_superuser",
+    "on"
+   ],
+   [
+    "standard_conforming_strings",
+    "on"
+   ],
+   [
+    "session_authorization",
+    "fs06"
+   ],
+   [
+    "client_encoding",
+    "UTF8"
+   ],
+   [
+    "server_version",
+    "19.0 (Debian 19.0-1.pgdg13+1)"
+   ],
+   [
+    "server_encoding",
+    "UTF8"
+   ],
+   [
+    "in_hot_standby",
+    "off"
+   ],
+   [
+    "integer_datetimes",
+    "on"
+   ],
+   [
+    "TimeZone",
+    "Etc/UTC"
+   ],
+   [
+    "application_name",
+    "fs06-direct-tls-r1-c0"
+   ],
+   [
+    "default_transaction_read_only",
+    "off"
+   ],
+   [
+    "scram_iterations",
+    "4096"
+   ],
+   [
+    "DateStyle",
+    "ISO, MDY"
+   ]
+  ]
+ },
+ "sequences": {
+  "S1": "5/5 trips 1 implied 1.05",
+  "S2": "5/5 trips 1 implied 1.04",
+  "S2b": "5/5 trips 1 implied 1.04",
+  "S3": "5/5 trips 2 implied 2.07",
+  "S3i": "5/5 trips 2 implied 2.08",
+  "S3u": "5/5 trips 2 implied 2.07",
+  "S3ui": "5/5 trips 2 implied 2.07",
+  "S3f": "5/5 trips 2 implied 2.07",
+  "S4a-A": "5/5 trips 1 implied 1.04",
+  "S4a-B": "5/5 trips 1 implied 1.05",
+  "S4b-A": "5/5 trips 1 implied 1.04",
+  "S4b-B": "5/5 trips 1 implied 1.04",
+  "S4c-setup-A": "5/5 trips 1 implied 1.05",
+  "S4c-setup-B": "5/5 trips 1 implied 1.04",
+  "S4c": "30/30 trips 1 implied 1.04",
+  "S5": "5/5 trips 1 implied 1.04",
+  "S6-2": "5/5 trips 1 implied 1.05",
+  "S6-10": "5/5 trips 1 implied 1.04",
+  "S6-100": "5/5 trips 1 implied 1.11",
+  "S7": "5/5 trips 1 implied 1.04",
+  "S7b": "5/5 trips 1 implied 1.04"
+ }
+}
