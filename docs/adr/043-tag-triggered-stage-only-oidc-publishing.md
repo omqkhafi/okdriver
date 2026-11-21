@@ -12,7 +12,7 @@ consumer must be able to check that the published bytes come from this repositor
 bun is the package manager and script runner (AGENTS.md). Bun's current documentation for
 `bun publish` describes token and one-time-password authentication, and states that it cannot
 generate provenance statements yet. It describes neither OIDC trusted publishing nor staged
-publishing. `bun publish --help` (1.4.4) lists neither.
+publishing. `bun publish --help` (1.4.5, the pinned version) lists neither.
 
 ## Decision
 - Releases run only from `.github/workflows/release.yml`, triggered by a push of a tag `v*`.
