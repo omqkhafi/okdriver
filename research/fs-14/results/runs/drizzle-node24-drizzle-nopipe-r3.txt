@@ -1,0 +1,53 @@
+warming up for 10s (not recorded)…
+bunload drizzle-node24-drizzle-nopipe-r3 → http://localhost:3000 | workers=4 | 7501s or 100,000 requests, whichever first | parquet parts every 1000000 rows / 30s
+[drizzle-node24-drizzle-nopipe-r3    0s/7501s] vus=    0 rps=      0 fail=    0 avg=-ms total=0 flushed=0 | no samples
+[drizzle-node24-drizzle-nopipe-r3    1s/7501s] vus=  288 rps=    964 fail=    0 avg=1.70ms total=964 flushed=0 | cpu=26.0
+[drizzle-node24-drizzle-nopipe-r3    2s/7501s] vus=  300 rps=   1603 fail=    0 avg=0.65ms total=2567 flushed=0 | cpu=22.3 proc.server=43.0 proc.postgres=13.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3    3s/7501s] vus=  300 rps=   1597 fail=    0 avg=0.67ms total=4164 flushed=0 | cpu=19.0 proc.server=42.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3    4s/7501s] vus=  300 rps=   1601 fail=    0 avg=0.58ms total=5765 flushed=0 | cpu=18.0 proc.server=40.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3    5s/7501s] vus=  300 rps=   1593 fail=    0 avg=0.62ms total=7358 flushed=0 | cpu=17.8 proc.server=34.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3    6s/7501s] vus=  300 rps=   1582 fail=    0 avg=0.67ms total=8940 flushed=0 | cpu=22.3 proc.server=35.0 proc.postgres=23.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3    7s/7501s] vus=  300 rps=   1594 fail=    0 avg=0.61ms total=10534 flushed=0 | cpu=18.5 proc.server=35.0 proc.postgres=22.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3    8s/7501s] vus=  300 rps=   1592 fail=    0 avg=0.75ms total=12126 flushed=0 | cpu=24.0 proc.server=45.0 proc.postgres=25.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3    9s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.57ms total=13728 flushed=0 | cpu=13.3 proc.server=34.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   10s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.68ms total=15324 flushed=0 | cpu=15.3 proc.server=33.0 proc.postgres=24.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   11s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.66ms total=16926 flushed=0 | cpu=17.0 proc.server=30.0 proc.postgres=24.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   12s/7501s] vus=  300 rps=   1566 fail=    0 avg=0.79ms total=18492 flushed=0 | cpu=16.8 proc.server=34.0 proc.postgres=27.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   13s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.74ms total=20088 flushed=0 | cpu=23.5 proc.server=41.0 proc.postgres=28.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   14s/7501s] vus=  300 rps=   1607 fail=    0 avg=0.68ms total=21695 flushed=0 | cpu=21.3 proc.server=35.0 proc.postgres=25.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   15s/7501s] vus=  300 rps=   1591 fail=    0 avg=0.60ms total=23286 flushed=0 | cpu=14.8 proc.server=31.0 proc.postgres=24.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   16s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.65ms total=24888 flushed=0 | cpu=16.3 proc.server=31.0 proc.postgres=24.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   17s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.65ms total=26484 flushed=0 | cpu=16.8 proc.server=30.0 proc.postgres=23.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   18s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.60ms total=28086 flushed=0 | cpu=16.5 proc.server=25.0 proc.postgres=27.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   19s/7501s] vus=  300 rps=   1560 fail=    0 avg=0.65ms total=29646 flushed=0 | cpu=9.8 proc.server=26.0 proc.postgres=25.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   20s/7501s] vus=  300 rps=   1601 fail=    0 avg=0.58ms total=31247 flushed=0 | cpu=16.0 proc.server=30.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   21s/7501s] vus=  600 rps=   2628 fail=    0 avg=1.05ms total=33875 flushed=0 | cpu=34.0 proc.server=52.0 proc.postgres=38.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   22s/7501s] vus=  600 rps=   3163 fail=    0 avg=0.95ms total=37038 flushed=0 | cpu=43.5 proc.server=52.0 proc.postgres=38.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   23s/7501s] vus=  600 rps=   3166 fail=    0 avg=0.69ms total=40204 flushed=0 | cpu=33.5 proc.server=68.0 proc.postgres=53.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   24s/7501s] vus=  600 rps=   3191 fail=    0 avg=0.71ms total=43395 flushed=0 | cpu=37.5 proc.server=63.0 proc.postgres=49.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   25s/7501s] vus=  600 rps=   3219 fail=    0 avg=0.97ms total=46614 flushed=0 | cpu=51.3 proc.server=63.0 proc.postgres=49.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   26s/7501s] vus=  600 rps=   3150 fail=    0 avg=1.09ms total=49764 flushed=0 | cpu=48.5 proc.server=84.0 proc.postgres=66.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   27s/7501s] vus=  600 rps=   3170 fail=    0 avg=1.18ms total=52934 flushed=0 | cpu=54.5 proc.server=86.1 proc.postgres=63.4 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   28s/7501s] vus=  600 rps=   3197 fail=    0 avg=1.03ms total=56131 flushed=0 | cpu=45.5 proc.server=89.9 proc.postgres=74.7 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   29s/7501s] vus=  600 rps=   3200 fail=    0 avg=0.90ms total=59331 flushed=56131 | cpu=34.5 proc.server=88.2 proc.postgres=68.6 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   30s/7501s] vus=  600 rps=   3153 fail=    0 avg=0.69ms total=62484 flushed=56131 | cpu=27.0 proc.server=76.8 proc.postgres=58.6 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   31s/7501s] vus=  600 rps=   3201 fail=    0 avg=0.50ms total=65685 flushed=56131 | cpu=26.8 proc.server=64.4 proc.postgres=48.5 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   32s/7501s] vus=  600 rps=   3205 fail=    0 avg=0.74ms total=68890 flushed=56131 | cpu=37.0 proc.server=52.0 proc.postgres=46.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   33s/7501s] vus=  600 rps=   3194 fail=    0 avg=0.75ms total=72084 flushed=56131 | cpu=32.3 proc.server=64.6 proc.postgres=43.4 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   34s/7501s] vus=  600 rps=   3142 fail=    0 avg=0.52ms total=75226 flushed=56131 | cpu=29.5 proc.server=65.3 proc.postgres=48.5 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   35s/7501s] vus=  600 rps=   3230 fail=    0 avg=0.53ms total=78456 flushed=56131 | cpu=35.5 proc.server=52.0 proc.postgres=43.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   36s/7501s] vus=  600 rps=   3211 fail=    0 avg=0.64ms total=81667 flushed=56131 | cpu=29.3 proc.server=51.0 proc.postgres=42.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   37s/7501s] vus=  600 rps=   3137 fail=    0 avg=0.78ms total=84804 flushed=56131 | cpu=29.3 proc.server=55.0 proc.postgres=49.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   38s/7501s] vus=  600 rps=   3164 fail=    0 avg=1.35ms total=87968 flushed=56131 | cpu=40.5 proc.server=59.0 proc.postgres=47.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   39s/7501s] vus=  600 rps=   3236 fail=    0 avg=1.07ms total=91204 flushed=56131 | cpu=42.8 proc.server=74.0 proc.postgres=62.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   40s/7501s] vus=  600 rps=   3195 fail=    0 avg=1.43ms total=94399 flushed=56131 | cpu=42.5 proc.server=71.0 proc.postgres=61.0 proc.docker-proxy=0.0
+[drizzle-node24-drizzle-nopipe-r3   41s/7501s] vus=  900 rps=   4157 fail=    0 avg=2.20ms total=98556 flushed=56131 | cpu=58.8 proc.server=76.0 proc.postgres=60.0 proc.docker-proxy=0.0
+
+drizzle-node24-drizzle-nopipe-r3
+  requests  100000  (2420 rps avg over 41.33s)
+  failed    0  (timeouts 0, connect 0, closed/parse 0)
+  retried   0  (stale keep-alive closed before any response → retried once, like k6)
+  latency   avg 0.87  p50 0.57  p90 1.62  p95 2.33  p99 5.09  max 46.68 ms
+  memory    peak rss 135 MiB
+  saved     /home/user/okdriver/research/fs-14/work/drizzle-benchmarks/results/drizzle-node24-drizzle-nopipe-r3.parquet
+drizzle-node24-drizzle-nopipe-r3: 2420 rps, p99 5.09ms

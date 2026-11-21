@@ -1,0 +1,24 @@
+bunload ev-kysely-node24-pg → http://localhost:3004 | workers=4 | 7501s or 20,000 requests, whichever first | parquet parts every 1000000 rows / 30s
+[ev-kysely-node24-pg    0s/7501s] vus=    0 rps=      0 fail=    0 avg=-ms total=0 flushed=0 | no samples
+[ev-kysely-node24-pg    1s/7501s] vus=  288 rps=    958 fail=    0 avg=4.06ms total=958 flushed=0 | cpu=58.3
+[ev-kysely-node24-pg    2s/7501s] vus=  300 rps=   1598 fail=    0 avg=1.44ms total=2556 flushed=0 | cpu=44.0
+[ev-kysely-node24-pg    3s/7501s] vus=  300 rps=   1585 fail=    0 avg=1.12ms total=4141 flushed=0 | cpu=41.3
+[ev-kysely-node24-pg    4s/7501s] vus=  300 rps=   1578 fail=    0 avg=1.15ms total=5719 flushed=0 | cpu=34.8
+[ev-kysely-node24-pg    5s/7501s] vus=  300 rps=   1602 fail=    0 avg=1.15ms total=7321 flushed=0 | cpu=32.3
+[ev-kysely-node24-pg    6s/7501s] vus=  300 rps=   1600 fail=    0 avg=1.14ms total=8921 flushed=0 | cpu=44.0
+[ev-kysely-node24-pg    7s/7501s] vus=  300 rps=   1590 fail=    0 avg=1.00ms total=10511 flushed=0 | cpu=38.8
+[ev-kysely-node24-pg    8s/7501s] vus=  300 rps=   1571 fail=    0 avg=1.10ms total=12082 flushed=0 | cpu=42.5
+[ev-kysely-node24-pg    9s/7501s] vus=  300 rps=   1604 fail=    0 avg=1.03ms total=13686 flushed=0 | cpu=35.0
+[ev-kysely-node24-pg   10s/7501s] vus=  300 rps=   1602 fail=    0 avg=1.09ms total=15288 flushed=0 | cpu=37.5
+[ev-kysely-node24-pg   11s/7501s] vus=  300 rps=   1571 fail=    0 avg=1.17ms total=16859 flushed=0 | cpu=41.3
+[ev-kysely-node24-pg   12s/7501s] vus=  300 rps=   1584 fail=    0 avg=2.31ms total=18443 flushed=0 | cpu=64.8
+[ev-kysely-node24-pg   13s/7501s] vus=  300 rps=   1557 fail=    0 avg=2.68ms total=20000 flushed=0 | cpu=63.8
+
+ev-kysely-node24-pg
+  requests  20000  (1541 rps avg over 12.98s)
+  failed    0  (timeouts 0, connect 0, closed/parse 0)
+  retried   0  (stale keep-alive closed before any response → retried once, like k6)
+  latency   avg 1.49  p50 1.06  p90 2.51  p95 3.68  p99 8.45  max 35.40 ms
+  memory    peak rss 110 MiB
+  saved     /home/user/okdriver/research/fs-14/work/drizzle-benchmarks/results/ev-kysely-node24-pg.parquet
+ev-kysely-node24-pg: 1541 rps, p99 8.45ms

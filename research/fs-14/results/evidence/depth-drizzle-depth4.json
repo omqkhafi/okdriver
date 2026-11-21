@@ -1,0 +1,48 @@
+{
+  "connections": 2,
+  "statements": 401,
+  "frontendMessages": {
+    "P": 2,
+    "D": 5,
+    "B": 401,
+    "E": 401,
+    "S": 401,
+    "X": 2
+  },
+  "parseTotal": 2,
+  "bindTotal": 401,
+  "parseUnnamed": 0,
+  "distinctParseNamesPerConnection": [
+    1,
+    1
+  ],
+  "maxParsesOfOneNameOnOneConnection": 1,
+  "describes": {
+    "S": 5
+  },
+  "resultFormats": {
+    "text": 5,
+    "mixed": 396
+  },
+  "paramFormats": {
+    "text": 5,
+    "binary": 396
+  },
+  "maxInflightPerConnection": [
+    4,
+    4
+  ],
+  "inflightAtSync": {
+    "1": 133,
+    "2": 104,
+    "3": 92,
+    "4": 72
+  },
+  "syncsPerClientWrite": {
+    "1": 33,
+    "2": 14,
+    "3": 20,
+    "4": 70
+  },
+  "simpleQueries": 0
+}

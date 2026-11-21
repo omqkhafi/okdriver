@@ -1,0 +1,24 @@
+bunload ev-drizzle-bun14-bunsql → http://localhost:3000 | workers=4 | 7501s or 20,000 requests, whichever first | parquet parts every 1000000 rows / 30s
+[ev-drizzle-bun14-bunsql    0s/7501s] vus=    0 rps=      0 fail=    0 avg=-ms total=0 flushed=0 | no samples
+[ev-drizzle-bun14-bunsql    1s/7501s] vus=  288 rps=    963 fail=    0 avg=1.97ms total=963 flushed=0 | cpu=36.0
+[ev-drizzle-bun14-bunsql    2s/7501s] vus=  300 rps=   1604 fail=    0 avg=0.80ms total=2567 flushed=0 | cpu=26.0
+[ev-drizzle-bun14-bunsql    3s/7501s] vus=  300 rps=   1597 fail=    0 avg=0.80ms total=4164 flushed=0 | cpu=32.0
+[ev-drizzle-bun14-bunsql    4s/7501s] vus=  300 rps=   1589 fail=    0 avg=0.93ms total=5753 flushed=0 | cpu=26.0
+[ev-drizzle-bun14-bunsql    5s/7501s] vus=  300 rps=   1576 fail=    0 avg=0.88ms total=7329 flushed=0 | cpu=31.3
+[ev-drizzle-bun14-bunsql    6s/7501s] vus=  300 rps=   1601 fail=    0 avg=0.78ms total=8930 flushed=0 | cpu=24.5
+[ev-drizzle-bun14-bunsql    7s/7501s] vus=  300 rps=   1594 fail=    0 avg=0.76ms total=10524 flushed=0 | cpu=19.8
+[ev-drizzle-bun14-bunsql    8s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.85ms total=12126 flushed=0 | cpu=22.5
+[ev-drizzle-bun14-bunsql    9s/7501s] vus=  300 rps=   1599 fail=    0 avg=0.84ms total=13725 flushed=0 | cpu=28.0
+[ev-drizzle-bun14-bunsql   10s/7501s] vus=  300 rps=   1582 fail=    0 avg=0.95ms total=15307 flushed=0 | cpu=26.5
+[ev-drizzle-bun14-bunsql   11s/7501s] vus=  300 rps=   1577 fail=    0 avg=0.88ms total=16884 flushed=0 | cpu=28.5
+[ev-drizzle-bun14-bunsql   12s/7501s] vus=  300 rps=   1602 fail=    0 avg=1.04ms total=18486 flushed=0 | cpu=27.5
+[ev-drizzle-bun14-bunsql   13s/7501s] vus=  300 rps=   1514 fail=    0 avg=0.92ms total=20000 flushed=0 | cpu=27.8
+
+ev-drizzle-bun14-bunsql
+  requests  20000  (1547 rps avg over 12.93s)
+  failed    0  (timeouts 0, connect 0, closed/parse 0)
+  retried   0  (stale keep-alive closed before any response → retried once, like k6)
+  latency   avg 0.92  p50 0.73  p90 1.59  p95 2.13  p99 3.58  max 21.99 ms
+  memory    peak rss 110 MiB
+  saved     /home/user/okdriver/research/fs-14/work/drizzle-benchmarks/results/ev-drizzle-bun14-bunsql.parquet
+ev-drizzle-bun14-bunsql: 1547 rps, p99 3.58ms

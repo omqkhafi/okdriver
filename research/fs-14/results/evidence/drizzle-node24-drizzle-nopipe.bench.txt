@@ -1,0 +1,24 @@
+bunload ev-drizzle-node24-drizzle-nopipe → http://localhost:3000 | workers=4 | 7501s or 20,000 requests, whichever first | parquet parts every 1000000 rows / 30s
+[ev-drizzle-node24-drizzle-nopipe    0s/7501s] vus=    0 rps=      0 fail=    0 avg=-ms total=0 flushed=0 | no samples
+[ev-drizzle-node24-drizzle-nopipe    1s/7501s] vus=  287 rps=    965 fail=    0 avg=3.37ms total=965 flushed=0 | cpu=55.5
+[ev-drizzle-node24-drizzle-nopipe    2s/7501s] vus=  300 rps=   1597 fail=    0 avg=1.00ms total=2562 flushed=0 | cpu=31.0
+[ev-drizzle-node24-drizzle-nopipe    3s/7501s] vus=  300 rps=   1591 fail=    0 avg=0.92ms total=4153 flushed=0 | cpu=36.8
+[ev-drizzle-node24-drizzle-nopipe    4s/7501s] vus=  300 rps=   1580 fail=    0 avg=0.89ms total=5733 flushed=0 | cpu=27.0
+[ev-drizzle-node24-drizzle-nopipe    5s/7501s] vus=  300 rps=   1599 fail=    0 avg=0.83ms total=7332 flushed=0 | cpu=31.3
+[ev-drizzle-node24-drizzle-nopipe    6s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.88ms total=8928 flushed=0 | cpu=32.5
+[ev-drizzle-node24-drizzle-nopipe    7s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.97ms total=10524 flushed=0 | cpu=34.3
+[ev-drizzle-node24-drizzle-nopipe    8s/7501s] vus=  300 rps=   1576 fail=    0 avg=1.00ms total=12100 flushed=0 | cpu=33.8
+[ev-drizzle-node24-drizzle-nopipe    9s/7501s] vus=  300 rps=   1606 fail=    0 avg=0.97ms total=13706 flushed=0 | cpu=22.8
+[ev-drizzle-node24-drizzle-nopipe   10s/7501s] vus=  300 rps=   1582 fail=    0 avg=1.08ms total=15288 flushed=0 | cpu=32.3
+[ev-drizzle-node24-drizzle-nopipe   11s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.98ms total=16884 flushed=0 | cpu=30.5
+[ev-drizzle-node24-drizzle-nopipe   12s/7501s] vus=  300 rps=   1566 fail=    0 avg=1.09ms total=18450 flushed=0 | cpu=28.5
+[ev-drizzle-node24-drizzle-nopipe   13s/7501s] vus=  300 rps=   1550 fail=    0 avg=1.28ms total=20000 flushed=0 | cpu=27.0
+
+ev-drizzle-node24-drizzle-nopipe
+  requests  20000  (1547 rps avg over 12.93s)
+  failed    0  (timeouts 0, connect 0, closed/parse 0)
+  retried   0  (stale keep-alive closed before any response → retried once, like k6)
+  latency   avg 1.10  p50 0.85  p90 1.75  p95 2.42  p99 4.99  max 30.92 ms
+  memory    peak rss 110 MiB
+  saved     /home/user/okdriver/research/fs-14/work/drizzle-benchmarks/results/ev-drizzle-node24-drizzle-nopipe.parquet
+ev-drizzle-node24-drizzle-nopipe: 1547 rps, p99 4.99ms

@@ -29,3 +29,7 @@ logs/
 .idea/
 .vscode/
 .DS_Store
+
+# FS-14 research scratch: third-party clone, node_modules, downloaded sources, result parquet (see research/fs-14/README.md)
+research/fs-14/work/
+research/fs-14/results/smoke/*/

@@ -1,0 +1,53 @@
+warming up for 10s (not recorded)…
+bunload drizzle-bun14-bunsql-r1 → http://localhost:3000 | workers=4 | 7501s or 100,000 requests, whichever first | parquet parts every 1000000 rows / 30s
+[drizzle-bun14-bunsql-r1    0s/7501s] vus=    0 rps=      0 fail=    0 avg=-ms total=0 flushed=0 | no samples
+[drizzle-bun14-bunsql-r1    1s/7501s] vus=  289 rps=    968 fail=    0 avg=0.92ms total=968 flushed=0 | cpu=14.5
+[drizzle-bun14-bunsql-r1    2s/7501s] vus=  300 rps=   1600 fail=    0 avg=0.80ms total=2568 flushed=0 | cpu=22.8 proc.server=19.0 proc.postgres=22.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1    3s/7501s] vus=  300 rps=   1601 fail=    0 avg=0.57ms total=4169 flushed=0 | cpu=18.0 proc.server=29.0 proc.postgres=28.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1    4s/7501s] vus=  300 rps=   1597 fail=    0 avg=0.63ms total=5766 flushed=0 | cpu=21.3 proc.server=30.0 proc.postgres=25.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1    5s/7501s] vus=  300 rps=   1587 fail=    0 avg=0.59ms total=7353 flushed=0 | cpu=19.8 proc.server=28.0 proc.postgres=29.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1    6s/7501s] vus=  300 rps=   1597 fail=    0 avg=0.70ms total=8950 flushed=0 | cpu=18.3 proc.server=31.0 proc.postgres=27.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1    7s/7501s] vus=  300 rps=   1587 fail=    0 avg=0.67ms total=10537 flushed=0 | cpu=17.3 proc.server=33.0 proc.postgres=27.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1    8s/7501s] vus=  300 rps=   1589 fail=    0 avg=0.67ms total=12126 flushed=0 | cpu=17.3 proc.server=28.3 proc.postgres=26.3 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1    9s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.57ms total=13728 flushed=0 | cpu=13.8 proc.server=26.0 proc.postgres=23.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   10s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.59ms total=15330 flushed=0 | cpu=15.0 proc.server=29.0 proc.postgres=25.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   11s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.70ms total=16926 flushed=0 | cpu=20.5 proc.server=25.0 proc.postgres=27.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   12s/7501s] vus=  300 rps=   1586 fail=    0 avg=0.62ms total=18512 flushed=0 | cpu=20.5 proc.server=25.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   13s/7501s] vus=  300 rps=   1600 fail=    0 avg=0.58ms total=20112 flushed=0 | cpu=16.0 proc.server=23.0 proc.postgres=24.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   14s/7501s] vus=  300 rps=   1580 fail=    0 avg=0.49ms total=21692 flushed=0 | cpu=13.0 proc.server=24.0 proc.postgres=21.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   15s/7501s] vus=  300 rps=   1594 fail=    0 avg=0.60ms total=23286 flushed=0 | cpu=14.3 proc.server=24.0 proc.postgres=26.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   16s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.79ms total=24888 flushed=0 | cpu=20.0 proc.server=28.0 proc.postgres=28.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   17s/7501s] vus=  300 rps=   1602 fail=    0 avg=0.54ms total=26490 flushed=0 | cpu=13.0 proc.server=24.0 proc.postgres=25.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   18s/7501s] vus=  300 rps=   1596 fail=    0 avg=0.48ms total=28086 flushed=0 | cpu=13.0 proc.server=22.0 proc.postgres=22.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   19s/7501s] vus=  300 rps=   1589 fail=    0 avg=0.62ms total=29675 flushed=0 | cpu=16.0 proc.server=23.0 proc.postgres=25.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   20s/7501s] vus=  300 rps=   1604 fail=    0 avg=0.55ms total=31279 flushed=0 | cpu=17.0 proc.server=23.0 proc.postgres=28.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   21s/7501s] vus=  599 rps=   2575 fail=    0 avg=0.91ms total=33854 flushed=0 | cpu=36.0 proc.server=38.0 proc.postgres=40.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   22s/7501s] vus=  600 rps=   3188 fail=    0 avg=0.55ms total=37042 flushed=0 | cpu=34.0 proc.server=46.0 proc.postgres=47.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   23s/7501s] vus=  600 rps=   3194 fail=    0 avg=0.43ms total=40236 flushed=0 | cpu=20.0 proc.server=37.0 proc.postgres=39.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   24s/7501s] vus=  600 rps=   3201 fail=    0 avg=0.40ms total=43437 flushed=0 | cpu=22.5 proc.server=40.0 proc.postgres=42.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   25s/7501s] vus=  600 rps=   3204 fail=    0 avg=0.46ms total=46641 flushed=0 | cpu=21.8 proc.server=41.6 proc.postgres=50.5 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   26s/7501s] vus=  600 rps=   3168 fail=    0 avg=0.52ms total=49809 flushed=0 | cpu=28.8 proc.server=42.4 proc.postgres=46.5 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   27s/7501s] vus=  600 rps=   3195 fail=    0 avg=0.45ms total=53004 flushed=0 | cpu=26.8 proc.server=43.0 proc.postgres=47.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   28s/7501s] vus=  600 rps=   3198 fail=    0 avg=0.46ms total=56202 flushed=0 | cpu=24.0 proc.server=43.0 proc.postgres=44.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   29s/7501s] vus=  600 rps=   3166 fail=    0 avg=0.44ms total=59368 flushed=56202 | cpu=25.3 proc.server=42.6 proc.postgres=44.6 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   30s/7501s] vus=  600 rps=   3204 fail=    0 avg=0.49ms total=62572 flushed=56202 | cpu=23.5 proc.server=43.4 proc.postgres=47.5 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   31s/7501s] vus=  600 rps=   3197 fail=    0 avg=0.47ms total=65769 flushed=56202 | cpu=27.5 proc.server=45.5 proc.postgres=44.6 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   32s/7501s] vus=  600 rps=   3195 fail=    0 avg=0.47ms total=68964 flushed=56202 | cpu=24.8 proc.server=44.0 proc.postgres=49.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   33s/7501s] vus=  600 rps=   3190 fail=    0 avg=0.48ms total=72154 flushed=56202 | cpu=23.3 proc.server=44.0 proc.postgres=44.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   34s/7501s] vus=  600 rps=   3206 fail=    0 avg=0.48ms total=75360 flushed=56202 | cpu=22.3 proc.server=46.0 proc.postgres=45.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   35s/7501s] vus=  600 rps=   3192 fail=    0 avg=0.52ms total=78552 flushed=56202 | cpu=22.8 proc.server=45.0 proc.postgres=50.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   36s/7501s] vus=  600 rps=   3134 fail=    0 avg=0.62ms total=81686 flushed=56202 | cpu=31.0 proc.server=49.0 proc.postgres=50.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   37s/7501s] vus=  600 rps=   3230 fail=    0 avg=0.62ms total=84916 flushed=56202 | cpu=28.0 proc.server=48.0 proc.postgres=47.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   38s/7501s] vus=  600 rps=   3200 fail=    0 avg=0.49ms total=88116 flushed=56202 | cpu=23.8 proc.server=46.0 proc.postgres=48.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   39s/7501s] vus=  600 rps=   3168 fail=    0 avg=0.51ms total=91284 flushed=56202 | cpu=21.5 proc.server=42.0 proc.postgres=48.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   40s/7501s] vus=  606 rps=   3191 fail=    0 avg=0.56ms total=94475 flushed=56202 | cpu=24.0 proc.server=45.0 proc.postgres=50.0 proc.docker-proxy=0.0
+[drizzle-bun14-bunsql-r1   41s/7501s] vus=  900 rps=   4234 fail=    0 avg=0.60ms total=98709 flushed=56202 | cpu=37.3 proc.server=55.0 proc.postgres=55.0 proc.docker-proxy=0.0
+
+drizzle-bun14-bunsql-r1
+  requests  100000  (2421 rps avg over 41.30s)
+  failed    0  (timeouts 0, connect 0, closed/parse 0)
+  retried   0  (stale keep-alive closed before any response → retried once, like k6)
+  latency   avg 0.56  p50 0.39  p90 1.02  p95 1.57  p99 2.87  max 119.44 ms
+  memory    peak rss 132 MiB
+  saved     /home/user/okdriver/research/fs-14/work/drizzle-benchmarks/results/drizzle-bun14-bunsql-r1.parquet
+drizzle-bun14-bunsql-r1: 2421 rps, p99 2.87ms
