@@ -1,0 +1,169 @@
+{
+  "binding": "better-sqlite3",
+  "runtime": {
+    "id": "node22",
+    "name": "Node.js",
+    "version": "22.23.5"
+  },
+  "runs": 21,
+  "warmup": 4,
+  "allocations": "not measured: no cheap, reliable allocation counter on all three runtimes",
+  "benches": [
+    {
+      "name": "point select by primary key",
+      "unit": "ms per operation (query, or row for the insert bench)",
+      "runs": 21,
+      "results": {
+        "raw": {
+          "n": 21,
+          "median": 0.001593,
+          "min": 0.001514,
+          "max": 0.002644,
+          "p99": 0.002644
+        },
+        "adapter": {
+          "n": 21,
+          "median": 0.001576,
+          "min": 0.001511,
+          "max": 0.005704,
+          "p99": 0.005704
+        },
+        "rule": {
+          "n": 21,
+          "median": 0.00177,
+          "min": 0.001678,
+          "max": 0.002855,
+          "p99": 0.002855
+        }
+      },
+      "comparison": {
+        "adapter": {
+          "diff": -0.000017,
+          "ratio": 0.989555,
+          "spread": 0.004193,
+          "verdict": "no measurable overhead"
+        },
+        "rule": {
+          "diff": 0.000177,
+          "ratio": 1.111062,
+          "spread": 0.001177,
+          "verdict": "no measurable overhead"
+        }
+      }
+    },
+    {
+      "name": "select 100 rows",
+      "unit": "ms per operation (query, or row for the insert bench)",
+      "runs": 21,
+      "results": {
+        "raw": {
+          "n": 21,
+          "median": 0.031587,
+          "min": 0.029961,
+          "max": 0.052104,
+          "p99": 0.052104
+        },
+        "adapter": {
+          "n": 21,
+          "median": 0.03184,
+          "min": 0.029636,
+          "max": 0.041725,
+          "p99": 0.041725
+        },
+        "rule": {
+          "n": 21,
+          "median": 0.046422,
+          "min": 0.042913,
+          "max": 0.059934,
+          "p99": 0.059934
+        }
+      },
+      "comparison": {
+        "adapter": {
+          "diff": 0.000254,
+          "ratio": 1.008031,
+          "spread": 0.022143,
+          "verdict": "no measurable overhead"
+        },
+        "rule": {
+          "diff": 0.014835,
+          "ratio": 1.469674,
+          "spread": 0.022143,
+          "verdict": "no measurable overhead"
+        }
+      }
+    },
+    {
+      "name": "select 10,000 rows",
+      "unit": "ms per operation (query, or row for the insert bench)",
+      "runs": 21,
+      "results": {
+        "raw": {
+          "n": 21,
+          "median": 3.059593,
+          "min": 2.859061,
+          "max": 4.246784,
+          "p99": 4.246784
+        },
+        "adapter": {
+          "n": 21,
+          "median": 3.175191,
+          "min": 2.970599,
+          "max": 3.828664,
+          "p99": 3.828664
+        },
+        "rule": {
+          "n": 21,
+          "median": 4.435243,
+          "min": 4.137742,
+          "max": 5.127694,
+          "p99": 5.127694
+        }
+      },
+      "comparison": {
+        "adapter": {
+          "diff": 0.115598,
+          "ratio": 1.037782,
+          "spread": 1.387723,
+          "verdict": "no measurable overhead"
+        },
+        "rule": {
+          "diff": 1.375651,
+          "ratio": 1.449619,
+          "spread": 1.387723,
+          "verdict": "no measurable overhead"
+        }
+      }
+    },
+    {
+      "name": "insert 5,000 rows in one transaction",
+      "unit": "ms per operation (query, or row for the insert bench)",
+      "runs": 21,
+      "results": {
+        "raw": {
+          "n": 21,
+          "median": 0.000896,
+          "min": 0.000865,
+          "max": 0.003387,
+          "p99": 0.003387
+        },
+        "adapter": {
+          "n": 21,
+          "median": 0.000896,
+          "min": 0.000861,
+          "max": 0.00208,
+          "p99": 0.00208
+        }
+      },
+      "comparison": {
+        "adapter": {
+          "diff": 0,
+          "ratio": 1.000456,
+          "spread": 0.002522,
+          "verdict": "no measurable overhead"
+        }
+      }
+    }
+  ],
+  "sink": 14617099425
+}

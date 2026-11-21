@@ -34,5 +34,8 @@ logs/
 research/fs-14/work/
 research/fs-14/results/smoke/*/
 
+# FS-08 research scratch: database files, extension build, downloaded docs, logs (see research/fs-08/README.md)
+research/fs-08/work/
+
 # FS-01 research scratch: extra tools, throwaway copies, server data (see research/fs-01/README.md)
 research/fs-01/work/

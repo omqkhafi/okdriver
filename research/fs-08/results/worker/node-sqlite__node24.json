@@ -1,0 +1,2346 @@
+{
+  "binding": "node:sqlite",
+  "runtime": {
+    "id": "node24",
+    "name": "Node.js",
+    "version": "24.22.3"
+  },
+  "quick": false,
+  "cpus": 4,
+  "cpuModel": "Intel(R) Xeon(R) Processor @ 2.30GHz",
+  "workers": 4,
+  "verify": {
+    "narrow": {
+      "clone": true,
+      "packed-decode": true,
+      "rows": 1000
+    },
+    "wide": {
+      "clone": true,
+      "packed-decode": true,
+      "rows": 1000
+    }
+  },
+  "idleTimerLag": {
+    "p99": 0.236,
+    "max": 0.413,
+    "samples": 361
+  },
+  "size": [
+    {
+      "shape": "narrow",
+      "rows": 1,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.045,
+            "min": 0.015,
+            "max": 0.155,
+            "p99": 0.155
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.172,
+            "min": 0.112,
+            "max": 0.3,
+            "p99": 0.3
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.3,
+            "max": 0.3,
+            "samples": 98
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.252,
+            "min": 0.187,
+            "max": 0.742,
+            "p99": 0.742
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.3,
+            "min": 0.237,
+            "max": 0.773,
+            "p99": 0.773
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.773,
+            "max": 0.773,
+            "samples": 99
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.309,
+            "min": 0.212,
+            "max": 0.392,
+            "p99": 0.392
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.36,
+            "min": 0.165,
+            "max": 0.459,
+            "p99": 0.459
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.459,
+            "max": 0.459,
+            "samples": 95
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.358,
+            "min": 0.248,
+            "max": 1.849,
+            "p99": 1.849
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.354,
+            "min": 0.186,
+            "max": 0.793,
+            "p99": 0.793
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.523,
+            "max": 0.793,
+            "samples": 101
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        }
+      }
+    },
+    {
+      "shape": "narrow",
+      "rows": 10,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.055,
+            "min": 0.027,
+            "max": 0.103,
+            "p99": 0.103
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.181,
+            "min": 0.124,
+            "max": 0.295,
+            "p99": 0.295
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.295,
+            "max": 0.295,
+            "samples": 98
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.271,
+            "min": 0.188,
+            "max": 0.474,
+            "p99": 0.474
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.358,
+            "min": 0.151,
+            "max": 0.686,
+            "p99": 0.686
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.662,
+            "max": 0.686,
+            "samples": 100
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.359,
+            "min": 0.25,
+            "max": 1.75,
+            "p99": 1.75
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.416,
+            "min": 0.12,
+            "max": 0.732,
+            "p99": 0.732
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.65,
+            "max": 0.732,
+            "samples": 100
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.388,
+            "min": 0.253,
+            "max": 1.364,
+            "p99": 1.364
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.421,
+            "min": 0.136,
+            "max": 0.924,
+            "p99": 0.924
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.568,
+            "max": 0.924,
+            "samples": 102
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        }
+      }
+    },
+    {
+      "shape": "narrow",
+      "rows": 100,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.075,
+            "min": 0.059,
+            "max": 0.114,
+            "p99": 0.114
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.221,
+            "min": 0.162,
+            "max": 1.115,
+            "p99": 1.115
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 1.115,
+            "max": 1.115,
+            "samples": 95
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.352,
+            "min": 0.235,
+            "max": 0.557,
+            "p99": 0.557
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.358,
+            "min": 0.206,
+            "max": 0.655,
+            "p99": 0.655
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.511,
+            "max": 0.655,
+            "samples": 100
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.427,
+            "min": 0.318,
+            "max": 0.598,
+            "p99": 0.598
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.416,
+            "min": 0.117,
+            "max": 0.674,
+            "p99": 0.674
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.571,
+            "max": 0.674,
+            "samples": 103
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.346,
+            "min": 0.269,
+            "max": 0.533,
+            "p99": 0.533
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.41,
+            "min": 0.122,
+            "max": 0.512,
+            "p99": 0.512
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.512,
+            "max": 0.512,
+            "samples": 98
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        }
+      }
+    },
+    {
+      "shape": "narrow",
+      "rows": 1000,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.312,
+            "min": 0.283,
+            "max": 0.517,
+            "p99": 0.517
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.451,
+            "min": 0.364,
+            "max": 0.781,
+            "p99": 0.781
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.781,
+            "max": 0.781,
+            "samples": 97
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 15,
+            "median": 1.063,
+            "min": 0.939,
+            "max": 2.206,
+            "p99": 2.206
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.176,
+            "min": 0.12,
+            "max": 0.809,
+            "p99": 0.809
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.287,
+            "max": 0.809,
+            "samples": 117
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.818,
+            "min": 0.479,
+            "max": 2.705,
+            "p99": 2.705
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.204,
+            "min": 0.149,
+            "max": 1.02,
+            "p99": 1.02
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.867,
+            "max": 1.02,
+            "samples": 106
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.875,
+            "min": 0.771,
+            "max": 1.093,
+            "p99": 1.093
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.167,
+            "min": 0.113,
+            "max": 1.753,
+            "p99": 1.753
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.947,
+            "max": 1.753,
+            "samples": 104
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        }
+      }
+    },
+    {
+      "shape": "narrow",
+      "rows": 10000,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 15,
+            "median": 3.731,
+            "min": 2.726,
+            "max": 5.163,
+            "p99": 5.163
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 3.865,
+            "min": 2.759,
+            "max": 5.307,
+            "p99": 5.307
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 3.865,
+            "min": 2.759,
+            "max": 5.307,
+            "p99": 5.307
+          },
+          "timerLagMs": {
+            "p99": 4.709,
+            "max": 5.307,
+            "samples": 101
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 15,
+            "median": 8.061,
+            "min": 6.784,
+            "max": 9.751,
+            "p99": 9.751
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 2.249,
+            "min": 1.399,
+            "max": 3.186,
+            "p99": 3.186
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 2.249,
+            "min": 0,
+            "max": 3.186,
+            "p99": 3.186
+          },
+          "timerLagMs": {
+            "p99": 2.901,
+            "max": 3.186,
+            "samples": 175
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 15,
+            "median": 3.423,
+            "min": 2.963,
+            "max": 3.923,
+            "p99": 3.923
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.23,
+            "min": 0.175,
+            "max": 1.615,
+            "p99": 1.615
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.545,
+            "max": 1.615,
+            "samples": 142
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 15,
+            "median": 4.436,
+            "min": 3.29,
+            "max": 6.405,
+            "p99": 6.405
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.194,
+            "min": 0.129,
+            "max": 0.853,
+            "p99": 0.853
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.836,
+            "max": 0.853,
+            "samples": 159
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        }
+      }
+    },
+    {
+      "shape": "narrow",
+      "rows": 100000,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 10,
+            "median": 32.929,
+            "min": 25.677,
+            "max": 46.197,
+            "p99": 46.197
+          },
+          "longestBlockMs": {
+            "n": 10,
+            "median": 32.139,
+            "min": 25.787,
+            "max": 46.325,
+            "p99": 46.325
+          },
+          "blockedMsPerRequest": {
+            "n": 10,
+            "median": 32.139,
+            "min": 25.787,
+            "max": 46.325,
+            "p99": 46.325
+          },
+          "timerLagMs": {
+            "p99": 46.325,
+            "max": 46.325,
+            "samples": 66
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 10,
+            "median": 87.688,
+            "min": 74.776,
+            "max": 133.866,
+            "p99": 133.866
+          },
+          "longestBlockMs": {
+            "n": 10,
+            "median": 22.89,
+            "min": 21.787,
+            "max": 36.029,
+            "p99": 36.029
+          },
+          "blockedMsPerRequest": {
+            "n": 10,
+            "median": 25.121,
+            "min": 21.787,
+            "max": 36.029,
+            "p99": 36.029
+          },
+          "timerLagMs": {
+            "p99": 22.582,
+            "max": 36.029,
+            "samples": 657
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 10,
+            "median": 34.718,
+            "min": 33.074,
+            "max": 53.624,
+            "p99": 53.624
+          },
+          "longestBlockMs": {
+            "n": 10,
+            "median": 0.448,
+            "min": 0.206,
+            "max": 2.15,
+            "p99": 2.15
+          },
+          "blockedMsPerRequest": {
+            "n": 10,
+            "median": 0,
+            "min": 0,
+            "max": 2.15,
+            "p99": 2.15
+          },
+          "timerLagMs": {
+            "p99": 0.747,
+            "max": 2.15,
+            "samples": 389
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 10,
+            "median": 35.526,
+            "min": 33.484,
+            "max": 53.982,
+            "p99": 53.982
+          },
+          "longestBlockMs": {
+            "n": 10,
+            "median": 2.382,
+            "min": 1.899,
+            "max": 2.992,
+            "p99": 2.992
+          },
+          "blockedMsPerRequest": {
+            "n": 10,
+            "median": 2.382,
+            "min": 0,
+            "max": 2.992,
+            "p99": 2.992
+          },
+          "timerLagMs": {
+            "p99": 2.501,
+            "max": 2.992,
+            "samples": 428
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        }
+      }
+    },
+    {
+      "shape": "wide",
+      "rows": 1,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.051,
+            "min": 0.021,
+            "max": 0.084,
+            "p99": 0.084
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.166,
+            "min": 0.111,
+            "max": 0.214,
+            "p99": 0.214
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.214,
+            "max": 0.214,
+            "samples": 98
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.276,
+            "min": 0.199,
+            "max": 0.313,
+            "p99": 0.313
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.348,
+            "min": 0.292,
+            "max": 0.417,
+            "p99": 0.417
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.417,
+            "max": 0.417,
+            "samples": 95
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.327,
+            "min": 0.234,
+            "max": 0.387,
+            "p99": 0.387
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.381,
+            "min": 0.167,
+            "max": 0.502,
+            "p99": 0.502
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.502,
+            "max": 0.502,
+            "samples": 97
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.372,
+            "min": 0.247,
+            "max": 0.465,
+            "p99": 0.465
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.422,
+            "min": 0.165,
+            "max": 0.544,
+            "p99": 0.544
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.544,
+            "max": 0.544,
+            "samples": 97
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        }
+      }
+    },
+    {
+      "shape": "wide",
+      "rows": 10,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.077,
+            "min": 0.055,
+            "max": 0.091,
+            "p99": 0.091
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.17,
+            "min": 0.14,
+            "max": 0.199,
+            "p99": 0.199
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.199,
+            "max": 0.199,
+            "samples": 97
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.337,
+            "min": 0.187,
+            "max": 0.413,
+            "p99": 0.413
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.34,
+            "min": 0.133,
+            "max": 0.474,
+            "p99": 0.474
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.445,
+            "max": 0.474,
+            "samples": 100
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.377,
+            "min": 0.296,
+            "max": 0.76,
+            "p99": 0.76
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.422,
+            "min": 0.127,
+            "max": 0.573,
+            "p99": 0.573
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.532,
+            "max": 0.573,
+            "samples": 100
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.426,
+            "min": 0.299,
+            "max": 0.546,
+            "p99": 0.546
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.411,
+            "min": 0.133,
+            "max": 0.645,
+            "p99": 0.645
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.579,
+            "max": 0.645,
+            "samples": 101
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        }
+      }
+    },
+    {
+      "shape": "wide",
+      "rows": 100,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.245,
+            "min": 0.193,
+            "max": 0.462,
+            "p99": 0.462
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.339,
+            "min": 0.285,
+            "max": 0.597,
+            "p99": 0.597
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.473,
+            "max": 0.597,
+            "samples": 100
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.788,
+            "min": 0.638,
+            "max": 3.252,
+            "p99": 3.252
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.174,
+            "min": 0.12,
+            "max": 1.938,
+            "p99": 1.938
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 1.046,
+            "max": 1.938,
+            "samples": 110
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.481,
+            "min": 0.379,
+            "max": 0.643,
+            "p99": 0.643
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.531,
+            "min": 0.151,
+            "max": 0.694,
+            "p99": 0.694
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.694,
+            "max": 0.694,
+            "samples": 99
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 15,
+            "median": 0.594,
+            "min": 0.494,
+            "max": 0.877,
+            "p99": 0.877
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.207,
+            "min": 0.133,
+            "max": 0.964,
+            "p99": 0.964
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.63,
+            "max": 0.964,
+            "samples": 107
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        }
+      }
+    },
+    {
+      "shape": "wide",
+      "rows": 1000,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 15,
+            "median": 1.875,
+            "min": 1.675,
+            "max": 3.078,
+            "p99": 3.078
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 1.991,
+            "min": 1.78,
+            "max": 3.178,
+            "p99": 3.178
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 3.178,
+            "p99": 3.178
+          },
+          "timerLagMs": {
+            "p99": 3.178,
+            "max": 3.178,
+            "samples": 97
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 15,
+            "median": 5.641,
+            "min": 4.517,
+            "max": 8.122,
+            "p99": 8.122
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 1.304,
+            "min": 0.208,
+            "max": 3.805,
+            "p99": 3.805
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 3.805,
+            "p99": 3.805
+          },
+          "timerLagMs": {
+            "p99": 2.016,
+            "max": 3.805,
+            "samples": 161
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 15,
+            "median": 3.757,
+            "min": 2.635,
+            "max": 5.119,
+            "p99": 5.119
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.208,
+            "min": 0.107,
+            "max": 0.515,
+            "p99": 0.515
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.509,
+            "max": 0.515,
+            "samples": 150
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 15,
+            "median": 3.285,
+            "min": 2.767,
+            "max": 8.796,
+            "p99": 8.796
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.176,
+            "min": 0.122,
+            "max": 0.707,
+            "p99": 0.707
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.679,
+            "max": 0.707,
+            "samples": 149
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        }
+      }
+    },
+    {
+      "shape": "wide",
+      "rows": 10000,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 15,
+            "median": 20.494,
+            "min": 17.755,
+            "max": 35.968,
+            "p99": 35.968
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 20.607,
+            "min": 17.876,
+            "max": 36.093,
+            "p99": 36.093
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 20.607,
+            "min": 17.876,
+            "max": 36.093,
+            "p99": 36.093
+          },
+          "timerLagMs": {
+            "p99": 36.093,
+            "max": 36.093,
+            "samples": 99
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 15,
+            "median": 49.989,
+            "min": 45.013,
+            "max": 58.123,
+            "p99": 58.123
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 12.672,
+            "min": 10.993,
+            "max": 18.963,
+            "p99": 18.963
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 12.895,
+            "min": 11.996,
+            "max": 20.694,
+            "p99": 20.694
+          },
+          "timerLagMs": {
+            "p99": 12.895,
+            "max": 18.963,
+            "samples": 569
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 15,
+            "median": 33.907,
+            "min": 32.714,
+            "max": 39.121,
+            "p99": 39.121
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 0.237,
+            "min": 0.13,
+            "max": 1.763,
+            "p99": 1.763
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.57,
+            "max": 1.763,
+            "samples": 560
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 15,
+            "median": 33.828,
+            "min": 31.137,
+            "max": 39.379,
+            "p99": 39.379
+          },
+          "longestBlockMs": {
+            "n": 15,
+            "median": 2.232,
+            "min": 1.668,
+            "max": 4.039,
+            "p99": 4.039
+          },
+          "blockedMsPerRequest": {
+            "n": 15,
+            "median": 2.232,
+            "min": 0,
+            "max": 4.587,
+            "p99": 4.587
+          },
+          "timerLagMs": {
+            "p99": 2.489,
+            "max": 4.039,
+            "samples": 537
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        }
+      }
+    },
+    {
+      "shape": "wide",
+      "rows": 100000,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 10,
+            "median": 297.45,
+            "min": 220.33,
+            "max": 477.81,
+            "p99": 477.81
+          },
+          "longestBlockMs": {
+            "n": 10,
+            "median": 297.501,
+            "min": 231.252,
+            "max": 477.944,
+            "p99": 477.944
+          },
+          "blockedMsPerRequest": {
+            "n": 10,
+            "median": 308.293,
+            "min": 242.187,
+            "max": 477.944,
+            "p99": 477.944
+          },
+          "timerLagMs": {
+            "p99": 477.944,
+            "max": 477.944,
+            "samples": 38
+          }
+        },
+        "clone": {
+          "latencyMs": {
+            "n": 10,
+            "median": 651.664,
+            "min": 599.932,
+            "max": 785.847,
+            "p99": 785.847
+          },
+          "longestBlockMs": {
+            "n": 10,
+            "median": 173.251,
+            "min": 160.626,
+            "max": 194.408,
+            "p99": 194.408
+          },
+          "blockedMsPerRequest": {
+            "n": 10,
+            "median": 204.632,
+            "min": 187.397,
+            "max": 302.109,
+            "p99": 302.109
+          },
+          "timerLagMs": {
+            "p99": 3.209,
+            "max": 194.408,
+            "samples": 4361
+          }
+        },
+        "packed-lazy": {
+          "latencyMs": {
+            "n": 10,
+            "median": 619.23,
+            "min": 530.803,
+            "max": 788.762,
+            "p99": 788.762
+          },
+          "longestBlockMs": {
+            "n": 10,
+            "median": 5.851,
+            "min": 5.096,
+            "max": 8.294,
+            "p99": 8.294
+          },
+          "blockedMsPerRequest": {
+            "n": 10,
+            "median": 18.183,
+            "min": 12.819,
+            "max": 26.916,
+            "p99": 26.916
+          },
+          "timerLagMs": {
+            "p99": 1.48,
+            "max": 8.294,
+            "samples": 5767
+          }
+        },
+        "packed-decode": {
+          "latencyMs": {
+            "n": 10,
+            "median": 622.313,
+            "min": 586.987,
+            "max": 680.857,
+            "p99": 680.857
+          },
+          "longestBlockMs": {
+            "n": 10,
+            "median": 22.557,
+            "min": 21.066,
+            "max": 33.615,
+            "p99": 33.615
+          },
+          "blockedMsPerRequest": {
+            "n": 10,
+            "median": 94.304,
+            "min": 79.934,
+            "max": 108.609,
+            "p99": 108.609
+          },
+          "timerLagMs": {
+            "p99": 4.729,
+            "max": 33.615,
+            "samples": 5255
+          }
+        }
+      },
+      "judge": {
+        "clone": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        },
+        "packed-lazy": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        },
+        "packed-decode": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        }
+      }
+    }
+  ],
+  "time": [
+    {
+      "targetMs": 0.1,
+      "iterations": 931,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 20,
+            "median": 0.133,
+            "min": 0.11,
+            "max": 0.188,
+            "p99": 0.188
+          },
+          "longestBlockMs": {
+            "n": 20,
+            "median": 0.226,
+            "min": 0.175,
+            "max": 16.637,
+            "p99": 16.637
+          },
+          "blockedMsPerRequest": {
+            "n": 20,
+            "median": 0,
+            "min": 0,
+            "max": 16.637,
+            "p99": 16.637
+          },
+          "timerLagMs": {
+            "p99": 0.785,
+            "max": 16.637,
+            "samples": 130
+          }
+        },
+        "worker": {
+          "latencyMs": {
+            "n": 20,
+            "median": 0.366,
+            "min": 0.213,
+            "max": 0.481,
+            "p99": 0.481
+          },
+          "longestBlockMs": {
+            "n": 20,
+            "median": 0.425,
+            "min": 0.245,
+            "max": 0.466,
+            "p99": 0.466
+          },
+          "blockedMsPerRequest": {
+            "n": 20,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.461,
+            "max": 0.466,
+            "samples": 129
+          }
+        }
+      },
+      "judge": {
+        "worker": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        }
+      }
+    },
+    {
+      "targetMs": 1,
+      "iterations": 5267,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 20,
+            "median": 0.591,
+            "min": 0.554,
+            "max": 0.707,
+            "p99": 0.707
+          },
+          "longestBlockMs": {
+            "n": 20,
+            "median": 0.692,
+            "min": 0.623,
+            "max": 0.8,
+            "p99": 0.8
+          },
+          "blockedMsPerRequest": {
+            "n": 20,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.756,
+            "max": 0.8,
+            "samples": 133
+          }
+        },
+        "worker": {
+          "latencyMs": {
+            "n": 20,
+            "median": 0.819,
+            "min": 0.727,
+            "max": 1.302,
+            "p99": 1.302
+          },
+          "longestBlockMs": {
+            "n": 20,
+            "median": 0.169,
+            "min": 0.117,
+            "max": 0.937,
+            "p99": 0.937
+          },
+          "blockedMsPerRequest": {
+            "n": 20,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.908,
+            "max": 0.937,
+            "samples": 142
+          }
+        }
+      },
+      "judge": {
+        "worker": {
+          "latencyWin": false,
+          "blockingWin": false,
+          "verdict": "none"
+        }
+      }
+    },
+    {
+      "targetMs": 10,
+      "iterations": 91728,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 20,
+            "median": 9.907,
+            "min": 9.673,
+            "max": 10.117,
+            "p99": 10.117
+          },
+          "longestBlockMs": {
+            "n": 20,
+            "median": 9.99,
+            "min": 9.768,
+            "max": 10.23,
+            "p99": 10.23
+          },
+          "blockedMsPerRequest": {
+            "n": 20,
+            "median": 9.99,
+            "min": 9.768,
+            "max": 10.23,
+            "p99": 10.23
+          },
+          "timerLagMs": {
+            "p99": 10.2,
+            "max": 10.23,
+            "samples": 134
+          }
+        },
+        "worker": {
+          "latencyMs": {
+            "n": 20,
+            "median": 10.24,
+            "min": 9.942,
+            "max": 16.379,
+            "p99": 16.379
+          },
+          "longestBlockMs": {
+            "n": 20,
+            "median": 0.232,
+            "min": 0.117,
+            "max": 1.08,
+            "p99": 1.08
+          },
+          "blockedMsPerRequest": {
+            "n": 20,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.404,
+            "max": 1.08,
+            "samples": 319
+          }
+        }
+      },
+      "judge": {
+        "worker": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        }
+      }
+    },
+    {
+      "targetMs": 100,
+      "iterations": 917044,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 10,
+            "median": 99.87,
+            "min": 99.659,
+            "max": 105.693,
+            "p99": 105.693
+          },
+          "longestBlockMs": {
+            "n": 10,
+            "median": 99.884,
+            "min": 98.75,
+            "max": 105.806,
+            "p99": 105.806
+          },
+          "blockedMsPerRequest": {
+            "n": 10,
+            "median": 99.884,
+            "min": 98.75,
+            "max": 105.806,
+            "p99": 105.806
+          },
+          "timerLagMs": {
+            "p99": 105.806,
+            "max": 105.806,
+            "samples": 64
+          }
+        },
+        "worker": {
+          "latencyMs": {
+            "n": 10,
+            "median": 100.919,
+            "min": 99.878,
+            "max": 158.225,
+            "p99": 158.225
+          },
+          "longestBlockMs": {
+            "n": 10,
+            "median": 0.231,
+            "min": 0.194,
+            "max": 0.646,
+            "p99": 0.646
+          },
+          "blockedMsPerRequest": {
+            "n": 10,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "p99": 0
+          },
+          "timerLagMs": {
+            "p99": 0.219,
+            "max": 0.646,
+            "samples": 1038
+          }
+        }
+      },
+      "judge": {
+        "worker": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        }
+      }
+    },
+    {
+      "targetMs": 1000,
+      "iterations": 9245938,
+      "paths": {
+        "inthread": {
+          "latencyMs": {
+            "n": 8,
+            "median": 1039.652,
+            "min": 1014.393,
+            "max": 1146.881,
+            "p99": 1146.881
+          },
+          "longestBlockMs": {
+            "n": 8,
+            "median": 1038.717,
+            "min": 1014.515,
+            "max": 1147.067,
+            "p99": 1147.067
+          },
+          "blockedMsPerRequest": {
+            "n": 8,
+            "median": 1038.717,
+            "min": 1014.515,
+            "max": 1147.067,
+            "p99": 1147.067
+          },
+          "timerLagMs": {
+            "p99": 1147.067,
+            "max": 1147.067,
+            "samples": 54
+          }
+        },
+        "worker": {
+          "latencyMs": {
+            "n": 8,
+            "median": 1044.979,
+            "min": 1008.997,
+            "max": 1094.709,
+            "p99": 1094.709
+          },
+          "longestBlockMs": {
+            "n": 8,
+            "median": 1.267,
+            "min": 0.531,
+            "max": 2.84,
+            "p99": 2.84
+          },
+          "blockedMsPerRequest": {
+            "n": 8,
+            "median": 0,
+            "min": 0,
+            "max": 5.265,
+            "p99": 5.265
+          },
+          "timerLagMs": {
+            "p99": 0.202,
+            "max": 2.84,
+            "samples": 7721
+          }
+        }
+      },
+      "judge": {
+        "worker": {
+          "latencyWin": false,
+          "blockingWin": true,
+          "verdict": "blocking-only"
+        }
+      }
+    }
+  ],
+  "throughput": [
+    {
+      "workload": "cpu-1ms-tiny",
+      "totalRequests": 600,
+      "inthread": {
+        "reqPerSec": {
+          "n": 5,
+          "median": 1646.89,
+          "min": 1574.835,
+          "max": 1728.027,
+          "p99": 1728.027
+        },
+        "timerLagMs": {
+          "p99": 0.59,
+          "max": 1.928
+        }
+      },
+      "worker": {
+        "clone": {
+          "1": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 1661.775,
+              "min": 1211.345,
+              "max": 1696.609,
+              "p99": 1696.609
+            },
+            "timerLagMs": {
+              "p99": 0.758,
+              "max": 2.265
+            }
+          },
+          "2": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 3337.074,
+              "min": 3331.067,
+              "max": 3351.099,
+              "p99": 3351.099
+            },
+            "timerLagMs": {
+              "p99": 0.364,
+              "max": 1.051
+            }
+          },
+          "4": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 5236.991,
+              "min": 4247.314,
+              "max": 5798.814,
+              "p99": 5798.814
+            },
+            "timerLagMs": {
+              "p99": 1.28,
+              "max": 2.633
+            }
+          }
+        }
+      }
+    },
+    {
+      "workload": "cpu-10ms-tiny",
+      "totalRequests": 150,
+      "inthread": {
+        "reqPerSec": {
+          "n": 5,
+          "median": 92.095,
+          "min": 90.979,
+          "max": 95.835,
+          "p99": 95.835
+        },
+        "timerLagMs": {
+          "p99": 15.101,
+          "max": 19.183
+        }
+      },
+      "worker": {
+        "clone": {
+          "1": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 95.234,
+              "min": 89.456,
+              "max": 99.09,
+              "p99": 99.09
+            },
+            "timerLagMs": {
+              "p99": 0.556,
+              "max": 4.438
+            }
+          },
+          "2": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 194.49,
+              "min": 174.123,
+              "max": 196.06,
+              "p99": 196.06
+            },
+            "timerLagMs": {
+              "p99": 0.744,
+              "max": 2.745
+            }
+          },
+          "4": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 344.294,
+              "min": 285.712,
+              "max": 346.379,
+              "p99": 346.379
+            },
+            "timerLagMs": {
+              "p99": 0.9,
+              "max": 4.874
+            }
+          }
+        }
+      }
+    },
+    {
+      "workload": "narrow-1000-rows",
+      "totalRequests": 400,
+      "inthread": {
+        "reqPerSec": {
+          "n": 5,
+          "median": 3594.759,
+          "min": 2850.185,
+          "max": 3849.973,
+          "p99": 3849.973
+        },
+        "timerLagMs": {
+          "p99": 1.097,
+          "max": 1.878
+        }
+      },
+      "worker": {
+        "clone": {
+          "1": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 1983.422,
+              "min": 1523.786,
+              "max": 2107.767,
+              "p99": 2107.767
+            },
+            "timerLagMs": {
+              "p99": 2.576,
+              "max": 9.641
+            }
+          },
+          "2": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 3036.77,
+              "min": 2352.848,
+              "max": 3625.734,
+              "p99": 3625.734
+            },
+            "timerLagMs": {
+              "p99": 4.952,
+              "max": 11.689
+            }
+          },
+          "4": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 2633.075,
+              "min": 2438.871,
+              "max": 2932.377,
+              "p99": 2932.377
+            },
+            "timerLagMs": {
+              "p99": 7.218,
+              "max": 11.177
+            }
+          }
+        },
+        "packed-decode": {
+          "1": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 3442.865,
+              "min": 2886.008,
+              "max": 3487.689,
+              "p99": 3487.689
+            },
+            "timerLagMs": {
+              "p99": 0.811,
+              "max": 3.516
+            }
+          },
+          "2": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 3787.894,
+              "min": 2716.782,
+              "max": 4609.289,
+              "p99": 4609.289
+            },
+            "timerLagMs": {
+              "p99": 0.824,
+              "max": 3.052
+            }
+          },
+          "4": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 6000.737,
+              "min": 4956.181,
+              "max": 6554.555,
+              "p99": 6554.555
+            },
+            "timerLagMs": {
+              "p99": 1.15,
+              "max": 2.201
+            }
+          }
+        }
+      }
+    },
+    {
+      "workload": "wide-1000-rows",
+      "totalRequests": 300,
+      "inthread": {
+        "reqPerSec": {
+          "n": 5,
+          "median": 547.945,
+          "min": 545.171,
+          "max": 557.889,
+          "p99": 557.889
+        },
+        "timerLagMs": {
+          "p99": 6.81,
+          "max": 8.436
+        }
+      },
+      "worker": {
+        "clone": {
+          "1": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 280.738,
+              "min": 240.182,
+              "max": 284.884,
+              "p99": 284.884
+            },
+            "timerLagMs": {
+              "p99": 16.312,
+              "max": 25.41
+            }
+          },
+          "2": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 404.679,
+              "min": 369.73,
+              "max": 461.861,
+              "p99": 461.861
+            },
+            "timerLagMs": {
+              "p99": 26.409,
+              "max": 41.714
+            }
+          },
+          "4": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 517.794,
+              "min": 482.172,
+              "max": 562.65,
+              "p99": 562.65
+            },
+            "timerLagMs": {
+              "p99": 42.294,
+              "max": 53.355
+            }
+          }
+        },
+        "packed-decode": {
+          "1": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 363.629,
+              "min": 292.037,
+              "max": 369.625,
+              "p99": 369.625
+            },
+            "timerLagMs": {
+              "p99": 0.823,
+              "max": 3.871
+            }
+          },
+          "2": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 650.459,
+              "min": 570.398,
+              "max": 689.492,
+              "p99": 689.492
+            },
+            "timerLagMs": {
+              "p99": 1.596,
+              "max": 6.767
+            }
+          },
+          "4": {
+            "reqPerSec": {
+              "n": 5,
+              "median": 954.129,
+              "min": 827.579,
+              "max": 995.355,
+              "p99": 995.355
+            },
+            "timerLagMs": {
+              "p99": 5.985,
+              "max": 30.449
+            }
+          }
+        }
+      }
+    }
+  ],
+  "criteria": "see header of scripts/bench-worker.mjs",
+  "calibration": {
+    "1": {
+      "iterations": 5267,
+      "actualInThreadMedianMs": 1.013
+    },
+    "10": {
+      "iterations": 91728,
+      "actualInThreadMedianMs": 9.92
+    },
+    "100": {
+      "iterations": 917044,
+      "actualInThreadMedianMs": 100.419
+    },
+    "1000": {
+      "iterations": 9245938,
+      "actualInThreadMedianMs": 1009.486
+    },
+    "0.1": {
+      "iterations": 931,
+      "actualInThreadMedianMs": 0.104
+    }
+  },
+  "sink": 40723420
+}

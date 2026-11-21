@@ -1,0 +1,825 @@
+{
+  "binding": "node:sqlite",
+  "runtime": {
+    "id": "bun",
+    "name": "Bun",
+    "version": "1.4.5"
+  },
+  "loaded": true,
+  "meta": {
+    "sqlite_version": "3.54.1",
+    "sqlite_source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+    "compile_options": [
+      "ATOMIC_INTRINSICS=1",
+      "COMPILER=clang-23.1.1",
+      "DEFAULT_AUTOVACUUM",
+      "DEFAULT_CACHE_SIZE=-2000",
+      "DEFAULT_FILE_FORMAT=4",
+      "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+      "DEFAULT_MMAP_SIZE=0",
+      "DEFAULT_PAGE_SIZE=4096",
+      "DEFAULT_PCACHE_INITSZ=20",
+      "DEFAULT_RECURSIVE_TRIGGERS",
+      "DEFAULT_SECTOR_SIZE=4096",
+      "DEFAULT_SYNCHRONOUS=2",
+      "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+      "DEFAULT_WAL_SYNCHRONOUS=2",
+      "DEFAULT_WORKER_THREADS=0",
+      "DIRECT_OVERFLOW_READ",
+      "ENABLE_COLUMN_METADATA",
+      "ENABLE_DBSTAT_VTAB",
+      "ENABLE_FTS3",
+      "ENABLE_FTS3_PARENTHESIS",
+      "ENABLE_FTS5",
+      "ENABLE_GEOPOLY",
+      "ENABLE_MATH_FUNCTIONS",
+      "ENABLE_PERCENTILE",
+      "ENABLE_PREUPDATE_HOOK",
+      "ENABLE_RBU",
+      "ENABLE_RTREE",
+      "ENABLE_SESSION",
+      "ENABLE_UPDATE_DELETE_LIMIT",
+      "MALLOC_SOFT_LIMIT=1024",
+      "MAX_ATTACHED=10",
+      "MAX_COLUMN=2000",
+      "MAX_COMPOUND_SELECT=500",
+      "MAX_DEFAULT_PAGE_SIZE=8192",
+      "MAX_EXPR_DEPTH=1000",
+      "MAX_FUNCTION_ARG=1000",
+      "MAX_LENGTH=1000000000",
+      "MAX_LIKE_PATTERN_LENGTH=50000",
+      "MAX_MMAP_SIZE=0x7fff0000",
+      "MAX_PAGE_COUNT=0xfffffffe",
+      "MAX_PAGE_SIZE=65536",
+      "MAX_SCHEMA=10000000",
+      "MAX_SQL_LENGTH=1000000000",
+      "MAX_TRIGGER_DEPTH=1000",
+      "MAX_VARIABLE_NUMBER=250000",
+      "MAX_VDBE_OP=250000000",
+      "MAX_WORKER_THREADS=8",
+      "MUTEX_PTHREADS",
+      "SYSTEM_MALLOC",
+      "TEMP_STORE=1",
+      "THREADSAFE=1"
+    ],
+    "moduleExports": [
+      "DatabaseSync",
+      "Session",
+      "StatementSync",
+      "backup",
+      "constants",
+      "default"
+    ],
+    "dbMethods": [
+      "aggregate",
+      "applyChangeset",
+      "close",
+      "createSession",
+      "createTagStore",
+      "deserialize",
+      "enableDefensive",
+      "enableLoadExtension",
+      "exec",
+      "function",
+      "isOpen",
+      "isTransaction",
+      "limits",
+      "loadExtension",
+      "location",
+      "open",
+      "prepare",
+      "serialize",
+      "setAuthorizer"
+    ],
+    "stmtMethods": [
+      "all",
+      "columns",
+      "expandedSQL",
+      "get",
+      "iterate",
+      "run",
+      "setAllowBareNamedParameters",
+      "setAllowUnknownNamedParameters",
+      "setReadBigInts",
+      "setReturnArrays",
+      "sourceSQL"
+    ],
+    "staticMembers": [
+      "length",
+      "name",
+      "prototype"
+    ],
+    "rowPrototype": "null",
+    "warnings": [],
+    "node_options": [
+      "--smol"
+    ]
+  },
+  "caps": {
+    "open.memory": {
+      "status": "works",
+      "detail": {
+        "value": 1
+      }
+    },
+    "open.readonly_rejects_write": {
+      "status": "works",
+      "detail": {
+        "error": {
+          "name": "Error",
+          "message": "attempt to write a readonly database",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 8,
+          "errstr": "attempt to write a readonly database"
+        }
+      }
+    },
+    "open.must_exist_option": {
+      "status": "absent",
+      "detail": "no create=false option observed on the constructor; opening a missing path created the file",
+      "fileCreated": true
+    },
+    "open.uri_filename": {
+      "status": "works",
+      "detail": {
+        "uriHonoured": true,
+        "writeError": {
+          "name": "Error",
+          "message": "attempt to write a readonly database",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 8,
+          "errstr": "attempt to write a readonly database"
+        },
+        "literalFileCreated": false
+      }
+    },
+    "open.constructor_options": {
+      "status": "works",
+      "detail": {
+        "accepted": [
+          "readOnly:ok",
+          "timeout:ok",
+          "enableForeignKeyConstraints:ok",
+          "allowExtension:ok",
+          "readBigInts:ok",
+          "returnArrays:ok",
+          "allowBareNamedParameters:ok",
+          "allowUnknownNamedParameters:ok",
+          "defensive:ok"
+        ]
+      }
+    },
+    "pragma.defaults_on_fresh_file_handle": {
+      "status": "works",
+      "detail": {
+        "foreign_keys": 1,
+        "busy_timeout": 0,
+        "journal_mode": "delete",
+        "synchronous": 2,
+        "cache_size": -2000,
+        "temp_store": 0,
+        "mmap_size": 0,
+        "trusted_schema": 1,
+        "secure_delete": 0,
+        "wal_autocheckpoint": 1000,
+        "locking_mode": "normal",
+        "recursive_triggers": 0,
+        "defer_foreign_keys": 0
+      }
+    },
+    "pragma.set_via_sql_and_read_back": {
+      "status": "works",
+      "detail": {
+        "journal_mode_set_result": "wal",
+        "journal_mode": "wal",
+        "synchronous": 1,
+        "foreign_keys": 1,
+        "busy_timeout": 250,
+        "optimize": "ok"
+      }
+    },
+    "pragma.busy_timeout_constructor_option": {
+      "status": "works",
+      "detail": {
+        "requested": 123,
+        "observed": 123
+      }
+    },
+    "wal.reader_sees_commit_and_snapshot": {
+      "status": "works",
+      "detail": {
+        "before": 10,
+        "after_commit_seen": 11,
+        "snapshot_start": 11,
+        "snapshot_after_writer_commit": 11,
+        "after_reader_commit": 12,
+        "walFileWhileOpen": true,
+        "shmWhileOpen": true,
+        "filesAfterLastClose": {
+          "wal": false,
+          "shm": false
+        }
+      }
+    },
+    "wal.checkpoint_control": {
+      "status": "works",
+      "detail": {
+        "passive": {
+          "busy": 0,
+          "log": 6,
+          "checkpointed": 6
+        },
+        "truncate": {
+          "busy": 0,
+          "log": 0,
+          "checkpointed": 0
+        },
+        "walSizeAfterTruncate": 0,
+        "wal_autocheckpoint": 1000,
+        "rowShape": "busy, log, checkpointed"
+      }
+    },
+    "busy.immediate_blocks_second_writer": {
+      "status": "works",
+      "detail": {
+        "timeout_0": {
+          "elapsedMs": 0,
+          "error": {
+            "name": "Error",
+            "message": "database is locked",
+            "code": "ERR_SQLITE_ERROR",
+            "errcode": 5,
+            "errstr": "database is locked"
+          }
+        },
+        "timeout_300": {
+          "elapsedMs": 301,
+          "error": {
+            "name": "Error",
+            "message": "database is locked",
+            "code": "ERR_SQLITE_ERROR",
+            "errcode": 5,
+            "errstr": "database is locked"
+          }
+        },
+        "note": "the wait happens inside the synchronous call: the calling thread is blocked for up to the timeout"
+      }
+    },
+    "busy.timeout_bounds_wait": {
+      "status": "works",
+      "detail": {
+        "rows": [
+          {
+            "timeout": 50,
+            "elapsedMs": 50.8,
+            "returnedBeforeTimeout": false,
+            "errored": true
+          },
+          {
+            "timeout": 200,
+            "elapsedMs": 201.4,
+            "returnedBeforeTimeout": false,
+            "errored": true
+          },
+          {
+            "timeout": 600,
+            "elapsedMs": 601.9,
+            "returnedBeforeTimeout": false,
+            "errored": true
+          }
+        ]
+      }
+    },
+    "busy.deferred_read_to_write_upgrade": {
+      "status": "works",
+      "detail": {
+        "elapsedMs": 0,
+        "busy_timeout": 500,
+        "error": {
+          "name": "Error",
+          "message": "database is locked",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 517,
+          "errstr": "database is locked"
+        },
+        "note": "deferred read-then-write after another commit fails without waiting out the timeout"
+      }
+    },
+    "busy.immediate_avoids_upgrade_failure": {
+      "status": "works",
+      "detail": {
+        "otherWriterBlocked": true,
+        "otherWriterError": {
+          "name": "Error",
+          "message": "database is locked",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 5,
+          "errstr": "database is locked"
+        },
+        "ownInsertOk": true,
+        "ownCommitOk": true
+      }
+    },
+    "errors.classification": {
+      "status": "works",
+      "errors": {
+        "BUSY": {
+          "name": "Error",
+          "message": "database is locked",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 5,
+          "errstr": "database is locked"
+        },
+        "LOCKED": {
+          "name": "Error",
+          "message": "database table is locked",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 6,
+          "errstr": "database table is locked"
+        },
+        "CONSTRAINT_UNIQUE": {
+          "name": "Error",
+          "message": "UNIQUE constraint failed: u.x",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 2067,
+          "errstr": "constraint failed"
+        },
+        "READONLY": {
+          "name": "Error",
+          "message": "attempt to write a readonly database",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 8,
+          "errstr": "attempt to write a readonly database"
+        },
+        "SYNTAX": {
+          "name": "Error",
+          "message": "near \"SELEC\": syntax error",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 1,
+          "errstr": "SQL logic error"
+        }
+      },
+      "busyReached": true,
+      "lockedReached": true,
+      "lockedRoute": "DROP TABLE on the connection while a SELECT iterator over that table is mid-step",
+      "propertiesCarryingACode": [
+        "code",
+        "errcode",
+        "errstr"
+      ],
+      "primaryBusy": 5,
+      "primaryLocked": 6,
+      "busyAndLockedDistinguishable": true
+    },
+    "tx.modes_and_flag": {
+      "status": "works",
+      "detail": {
+        "flagName": "isTransaction",
+        "DEFERRED": {
+          "inTransactionAfterBegin": true
+        },
+        "IMMEDIATE": {
+          "inTransactionAfterBegin": true
+        },
+        "EXCLUSIVE": {
+          "inTransactionAfterBegin": true
+        },
+        "afterRollback": false,
+        "nestedBegin": {
+          "name": "Error",
+          "message": "cannot start a transaction within a transaction",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 1,
+          "errstr": "SQL logic error"
+        }
+      }
+    },
+    "tx.nested_savepoints": {
+      "status": "works",
+      "detail": {
+        "rows": [
+          1,
+          2
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      }
+    },
+    "tx.transaction_helper": {
+      "status": "absent",
+      "detail": "no transaction() helper on DatabaseSync; BEGIN/COMMIT via exec",
+      "names": []
+    },
+    "stmt.finalize_api": {
+      "status": "absent",
+      "detail": "no finalize/close method on a statement; statements are released at db close or by GC",
+      "names": []
+    },
+    "stmt.close_semantics": {
+      "status": "works",
+      "detail": {
+        "prepared_never_run": {
+          "close": "returned",
+          "newStatementAfterClose": {
+            "name": "Error",
+            "message": "database is not open",
+            "code": "ERR_INVALID_STATE"
+          },
+          "oldStatementAfterClose": {
+            "name": "Error",
+            "message": "statement has been finalized",
+            "code": "ERR_INVALID_STATE"
+          },
+          "walFilesRemoved": true,
+          "closeAfterIteratorReturned": null,
+          "fileReadableAfter": true
+        },
+        "ran_to_completion": {
+          "close": "returned",
+          "newStatementAfterClose": {
+            "name": "Error",
+            "message": "database is not open",
+            "code": "ERR_INVALID_STATE"
+          },
+          "oldStatementAfterClose": {
+            "name": "Error",
+            "message": "statement has been finalized",
+            "code": "ERR_INVALID_STATE"
+          },
+          "walFilesRemoved": true,
+          "closeAfterIteratorReturned": null,
+          "fileReadableAfter": true
+        },
+        "open_iterator": {
+          "close": "returned",
+          "newStatementAfterClose": {
+            "name": "Error",
+            "message": "database is not open",
+            "code": "ERR_INVALID_STATE"
+          },
+          "oldStatementAfterClose": {
+            "name": "Error",
+            "message": "statement has been finalized",
+            "code": "ERR_INVALID_STATE"
+          },
+          "walFilesRemoved": true,
+          "closeAfterIteratorReturned": null,
+          "fileReadableAfter": true
+        }
+      }
+    },
+    "stmt.reuse_after_early_break": {
+      "status": "works",
+      "detail": {
+        "first": {
+          "x": 1
+        },
+        "allAfterBreak": 3
+      }
+    },
+    "stmt.use_while_iterator_open": {
+      "status": "works",
+      "detail": {
+        "sameStatementWhileIterating": {
+          "rows": 3
+        }
+      }
+    },
+    "stmt.cache": {
+      "status": "works",
+      "detail": {
+        "api": "createTagStore (LRU)",
+        "size": 1,
+        "capacity": 8,
+        "rows": [
+          {
+            "x": 1
+          },
+          {
+            "x": 1
+          }
+        ]
+      }
+    },
+    "iter.early_termination_and_return": {
+      "status": "works",
+      "detail": {
+        "iteratorHasReturn": true,
+        "iteratorIsIterable": true,
+        "iteratorHasAsyncIterator": false
+      }
+    },
+    "iter.open_iterator_holds_read_snapshot_and_blocks_checkpoint": {
+      "status": "works",
+      "detail": {
+        "inTransactionFlagWhileOpen": false,
+        "committedRowsAtStart": 1000,
+        "readerCountWhileIteratorOpen_afterWriterCommit": 1000,
+        "checkpointWhileOpen": {
+          "busy": 1,
+          "log": 8,
+          "checkpointed": 7
+        },
+        "walBytesWhileOpen": 32992,
+        "readerCountAfterReturn": 1001,
+        "checkpointAfterReturn": {
+          "busy": 0,
+          "log": 0,
+          "checkpointed": 0
+        },
+        "walBytesAfterReturn": 0
+      }
+    },
+    "iter.abandoned_iterator_holds_until_db_close": {
+      "status": "works",
+      "detail": {
+        "checkpointWhileIteratorReferenced": {
+          "busy": 1,
+          "log": 4,
+          "checkpointed": 3
+        },
+        "closeResult": "ok",
+        "checkpointAfterDbClose": {
+          "busy": 0,
+          "log": 0,
+          "checkpointed": 0
+        }
+      }
+    },
+    "iter.rollback_journal_iterator_blocks_writer": {
+      "status": "works",
+      "detail": {
+        "journal_mode": "delete (default)",
+        "writeWhileIteratorOpen": {
+          "name": "Error",
+          "message": "database is locked",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 5,
+          "errstr": "database is locked"
+        },
+        "writeAfterReturn": "ok"
+      }
+    },
+    "iter.streams_row_by_row": {
+      "status": "works",
+      "detail": {
+        "rows": 300000,
+        "medianMs_firstRowThenBreak": 0.001,
+        "medianMs_all": 25.6,
+        "steppingEvidence": true
+      }
+    },
+    "fn.scalar": {
+      "status": "works",
+      "detail": {
+        "result": 42,
+        "deterministicOption": "accepted",
+        "varargsOption": "accepted",
+        "jsExceptionPropagates": {
+          "name": "Error",
+          "message": "from-js"
+        },
+        "jsTypeOfInt2p53plus1AsArgument": {
+          "callFailed": {
+            "name": "RangeError",
+            "message": "Value is too large to be represented as a JavaScript number: 9007199254740993",
+            "code": "ERR_OUT_OF_RANGE"
+          }
+        },
+        "jsTypeOfBlobArgument": "Uint8Array",
+        "safeIntegersFunctionOption": {
+          "name": "RangeError",
+          "message": "Value is too large to be represented as a JavaScript number: 9007199254740993",
+          "code": "ERR_OUT_OF_RANGE"
+        }
+      }
+    },
+    "fn.aggregate": {
+      "status": "works",
+      "detail": {
+        "result": 6
+      }
+    },
+    "fn.collation": {
+      "status": "absent",
+      "detail": "no collation API by name on the handle",
+      "usingAnUnknownCollationFromSql": {
+        "name": "Error",
+        "message": "no such collation sequence: okfs_nocase",
+        "code": "ERR_SQLITE_ERROR",
+        "errcode": 257,
+        "errstr": "SQL logic error"
+      }
+    },
+    "fn.virtual_tables_and_other_hooks": {
+      "status": "works",
+      "detail": {
+        "namesMatchingTableOrModule": [],
+        "authorizer": "function",
+        "limits": "object",
+        "defensive": "function"
+      }
+    },
+    "ext.loading": {
+      "status": "works",
+      "detail": {
+        "fixtureBuilt": true,
+        "api": {
+          "loadExtension": "function",
+          "enableLoadExtension": "function"
+        },
+        "sqlLoadExtensionFunctionByDefault": {
+          "name": "Error",
+          "message": "not authorized",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 1,
+          "errstr": "SQL logic error"
+        },
+        "loadExtensionWithoutEnabling": {
+          "name": "Error",
+          "message": "extension loading is not allowed",
+          "code": "ERR_INVALID_STATE"
+        },
+        "withAllowExtensionOption": {
+          "loaded": true,
+          "error": null,
+          "answer": 42
+        },
+        "enableLoadExtensionFalseThenLoad": {
+          "name": "Error",
+          "message": "extension loading is not allowed",
+          "code": "ERR_INVALID_STATE"
+        }
+      }
+    },
+    "backup.vacuum_into": {
+      "status": "works",
+      "detail": {
+        "rowsInCopy": 50,
+        "expected": 50
+      }
+    },
+    "backup.online_backup_api": {
+      "status": "works",
+      "detail": {
+        "api": "backup(db, path)",
+        "result": 2,
+        "rowsInCopy": 50
+      }
+    },
+    "backup.serialize_deserialize": {
+      "status": "works",
+      "detail": {
+        "memoryDatabase": {
+          "serializedType": "Uint8Array",
+          "bytes": 8192,
+          "deserialize": "ok",
+          "rowsAfterDeserialize": 3
+        },
+        "fileDatabase": {
+          "serializedType": "Uint8Array",
+          "bytes": 8192,
+          "deserialize": "ok",
+          "rowsAfterDeserialize": 3
+        },
+        "fileDatabaseWal": {
+          "serializedType": "Uint8Array",
+          "bytes": 8192,
+          "deserialize": {
+            "note": "deserialize call returned; the first query on the handle failed",
+            "name": "Error",
+            "message": "unable to open database file",
+            "code": "ERR_SQLITE_ERROR",
+            "errcode": 14,
+            "errstr": "unable to open database file"
+          }
+        }
+      }
+    },
+    "change.update_hooks": {
+      "status": "absent",
+      "detail": "no update-hook API by name",
+      "names": []
+    },
+    "change.session_extension": {
+      "status": "works",
+      "detail": {
+        "changesetBytes": 26,
+        "applyChangesetResult": true,
+        "rowsOnTarget": 1
+      }
+    },
+    "change.authorizer": {
+      "status": "present-not-exercised",
+      "detail": "setAuthorizer is access control, not change capture"
+    },
+    "meta.declared_types": {
+      "status": "works",
+      "detail": {
+        "sql": "SELECT a, b, c, d, e, f, g, h, a+1 AS expr, count(*) AS cnt FROM m",
+        "columns": [
+          {
+            "column": "a",
+            "database": "main",
+            "name": "a",
+            "table": "m",
+            "type": "BIGINT"
+          },
+          {
+            "column": "b",
+            "database": "main",
+            "name": "b",
+            "table": "m",
+            "type": "INTEGER"
+          },
+          {
+            "column": "c",
+            "database": "main",
+            "name": "c",
+            "table": "m",
+            "type": "NUMERIC(10,2)"
+          },
+          {
+            "column": "d",
+            "database": "main",
+            "name": "d",
+            "table": "m",
+            "type": "UNSIGNED BIG INT"
+          },
+          {
+            "column": "e",
+            "database": "main",
+            "name": "e",
+            "table": "m",
+            "type": "VARCHAR(255)"
+          },
+          {
+            "column": "f",
+            "database": "main",
+            "name": "f",
+            "table": "m",
+            "type": null
+          },
+          {
+            "column": "g",
+            "database": "main",
+            "name": "g",
+            "table": "m",
+            "type": "custom_type"
+          },
+          {
+            "column": "h",
+            "database": "main",
+            "name": "h",
+            "table": "m",
+            "type": "REAL"
+          },
+          {
+            "column": null,
+            "database": null,
+            "name": "expr",
+            "table": null,
+            "type": null
+          },
+          {
+            "column": null,
+            "database": null,
+            "name": "cnt",
+            "table": null,
+            "type": null
+          }
+        ],
+        "metaAvailableWithoutStepping": true,
+        "viewColumns": [
+          "BIGINT",
+          null
+        ],
+        "subqueryColumn": [
+          "BIGINT"
+        ]
+      }
+    },
+    "meta.strict_tables": {
+      "status": "works",
+      "detail": {
+        "createStrict": "ok",
+        "bigintDeclaredInStrict": {
+          "name": "Error",
+          "message": "unknown datatype for s2.a: \"BIGINT\"",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 1,
+          "errstr": "SQL logic error"
+        },
+        "textIntoIntegerColumn": {
+          "name": "Error",
+          "message": "cannot store TEXT value in INTEGER column s.a",
+          "code": "ERR_SQLITE_ERROR",
+          "errcode": 3091,
+          "errstr": "constraint failed"
+        }
+      }
+    }
+  }
+}
