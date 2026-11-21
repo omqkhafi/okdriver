@@ -34,7 +34,7 @@ ADRs 001–041 were copied from roadmap section 19 in P0-T04. The roadmap is not
 | [026](026-compiler-does-not-depend-on-the-typescript-compiler-api.md) | Compiler does not depend on the TypeScript compiler API | Accepted |
 | [027](027-dynamic-credential-providers-are-core.md) | Dynamic credential providers are core | Accepted |
 | [028](028-conformance-suite-under-neutral-governance.md) | Conformance Suite under neutral governance | Open |
-| [029](029-minimum-node-js-version.md) | Minimum Node.js version | Open |
+| [029](029-minimum-node-js-version.md) | Minimum Node.js version | Accepted |
 | [030](030-one-unscoped-package-okdriver.md) | One unscoped package, okdriver | Accepted |
 | [031](031-fs-01-runs-on-provisional-contracts.md) | FS-01 runs on provisional contracts | Accepted |
 | [032](032-service-integration-contract-and-separate-execution-coordinator.md) | Service integration contract and separate execution coordinator | Accepted |
