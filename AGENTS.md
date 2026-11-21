@@ -54,6 +54,8 @@ separately.
 ## Working rules
 
 - Never commit on `main`, never create tags, never publish.
+- Packing and every other step stay on bun. `.github/workflows/release.yml` is the only publisher
+  (ADR 043); agents never tag and never run it.
 - One reviewable change per PR.
 - Push a branch, open the PR, then squash-merge it yourself through the GitHub API or the
   session's GitHub merge tool.

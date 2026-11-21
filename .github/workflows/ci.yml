@@ -8,6 +8,8 @@
 #          Smoke test only.
 # workerd  The workerd version pinned in package.json and bun.lock, run through `workerd test`
 #          with the fixed compatibilityDate in tests/runtime/workerd.capnp.
+# pack     Packs twice from two copies of the checkout with different file mtimes, requires
+#          byte-identical tarballs, and runs the shared pack check. No install step.
 #
 # Every job passes the runtime it asked for in EXPECT_RUNTIME, so a job that landed on the
 # wrong runtime fails instead of passing.
@@ -104,3 +106,33 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: node_modules/.bin/workerd --version
       - run: node_modules/.bin/workerd test tests/runtime/workerd.capnp
+
+  pack:
+    name: pack
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version-file: .bun-version
+      - run: bun --version
+      - name: Pack twice from two copies with different mtimes
+        run: |
+          cp -a . "$RUNNER_TEMP/copy-a"
+          cp -a . "$RUNNER_TEMP/copy-b"
+          find "$RUNNER_TEMP/copy-a" -exec touch -h -d '2001-01-01 00:00:00 UTC' {} +
+          find "$RUNNER_TEMP/copy-b" -exec touch -h -d '2020-06-15 12:34:56 UTC' {} +
+          if [ "$(stat -c %Y "$RUNNER_TEMP/copy-a/package.json")" = "$(stat -c %Y "$RUNNER_TEMP/copy-b/package.json")" ]; then
+            echo "the two copies must have different mtimes" >&2
+            exit 1
+          fi
+          mkdir -p "$RUNNER_TEMP/pack-a" "$RUNNER_TEMP/pack-b"
+          (cd "$RUNNER_TEMP/copy-a" && bun pm pack --quiet --filename "$RUNNER_TEMP/pack-a/okdriver.tgz")
+          (cd "$RUNNER_TEMP/copy-b" && bun pm pack --quiet --filename "$RUNNER_TEMP/pack-b/okdriver.tgz")
+          sha256sum "$RUNNER_TEMP/pack-a/okdriver.tgz" "$RUNNER_TEMP/pack-b/okdriver.tgz"
+          cmp "$RUNNER_TEMP/pack-a/okdriver.tgz" "$RUNNER_TEMP/pack-b/okdriver.tgz"
+      - name: Check the pack
+        run: bun .github/scripts/check-pack.mjs "$RUNNER_TEMP/pack-a/okdriver.tgz"
