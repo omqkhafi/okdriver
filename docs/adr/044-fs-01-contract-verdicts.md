@@ -1,14 +1,9 @@
 # 044. FS-01 contract verdicts: no contract is adopted yet
 
 ## Status
-Proposed
+Accepted
 
-## Open question
-The admission rule (roadmap section 4, FS-01 row) asks for use by two engine classes without a shim.
-WireCore, EmbeddedCore, ServiceCore and ConnectionPool are each defined for one class (ADR 005), so the rule
-cannot admit them whatever the evidence. Proposed reading, for the owner to confirm or reject: the two-class
-test applies to contracts that cross classes; a class-defining contract is judged on "every engine of that
-class implements it, with no shim and no platform branch". Until the owner decides, decision 4 below holds.
+Owner decision, 2026-11-22: the owner accepted the reading of the admission rule in decision 4 (the two-class test applies only to contracts that cross classes). Which contracts become candidates under that reading follows from the study's counts.
 
 ## Context
 FS-01 built a walking skeleton (connect, one parameterised query, one error, one transaction) on PostgreSQL,
@@ -28,13 +23,21 @@ and FS-08 have reported, so this is the study's ADR.
 2. **The overhead leg is inconclusive, not failed.** On PostgreSQL the direct rung's own spread was above 15%
    in both scenarios, which the rule treats as inconclusive. The medians were higher at every rung. A contract
    is Adopted only after the ladder is re-run with a direct-rung spread at or below 15%. The re-run is an
-   acceptance condition of P2-T04 for the five contracts in decision 1; how to get a quieter direct rung is
+   acceptance condition of P2-T04 for every candidate in decision 3; how to get a quieter direct rung is
    left to that task's brief.
-3. **Carried into P2-T04.** Those five contracts start from the final shapes in
-   `research/fs-01/src/platform/contracts/` (revisions R1 to R16 in the study README). Per ADR 031 the final
-   contracts are written in P2 from the findings, not copied. Nothing under `research/fs-01/` is imported.
-4. **Class-defining contracts** (WireCore, EmbeddedCore, ServiceCore, ConnectionPool, Transport) stay owned by
-   their engine class. P2-T04 does not present them as shared across classes.
+3. **Carried into P2-T04.** The five contracts of decision 1 that fit structurally, plus ConnectionPool and
+   WireCore under decision 4, start from the final shapes in `research/fs-01/src/platform/contracts/`
+   (revisions R1 to R16 in the study README). WireCore is a candidate only if the final shape removes its
+   three one-engine members (byte helpers that only PostgreSQL uses). Per ADR 031 the final contracts are
+   written in P2 from the findings, not copied. Nothing under `research/fs-01/` is imported.
+4. **Reading of the admission rule.** The "two engine classes" test applies to contracts that cross classes.
+   A class-defining contract (WireCore, EmbeddedCore, ServiceCore, ConnectionPool) is judged instead on:
+   every engine of its class implements it with no shim and no platform branch, plus the overhead leg.
+   Under this reading ConnectionPool (three wire engines, 0 hits) and WireCore (three wire engines, 3 hits,
+   see decision 3) are candidates. EmbeddedCore and ServiceCore stay owned by their class: the skeleton had
+   one engine in each, so every member counts as used by one engine and the evidence cannot separate a
+   general contract from one engine's. They are revisited when a second engine or binding of the class runs
+   against the contract. Transport stays owned by the wire class: its one service integration needed a shim.
 5. **Engine id is a plain `string`** in the platform contracts. The roadmap's union of engine names is dropped:
    it trips the engine-name literal lint four times on one line. No exemption is added to the lint.
 6. **ADR 032's open question is answered structurally.** The coordinator is separate from the pool and admits
@@ -54,9 +57,9 @@ and FS-08 have reported, so this is the study's ADR.
     aborts apply only while the caller is queued. FS-08 found no worker threshold that wins on latency.
 
 ## Consequences
-- P2-T04's gate "zero engine branches in platform code" stays; the three class cores and the pool will carry
-  one-engine members (byte helpers used only by PostgreSQL, one-engine embedded and service members) until the
-  open question is settled or the shapes change.
+- P2-T04's gate "zero engine branches in platform code" stays. EmbeddedCore and ServiceCore will carry
+  one-engine members (3 and 2 in the skeleton) until a second engine or binding of their class exists;
+  WireCore carries 3 unless the final shape removes them (decision 3).
 - The libSQL transport shim (HTTP dressed as a byte stream) says the Transport contract does not fit a
   stateless service. ServiceCore owns its transport. FS-08 puts Durable Objects SQLite in the service class, a
   second service-shaped integration that FS-01 did not run.
