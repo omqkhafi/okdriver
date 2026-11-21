@@ -1,0 +1,36 @@
+endpoint,tier,request,requested,class,first_message,neg_count,neg_detail,auth,key_bytes,version_in_force,key_valid,select1,cancel,server_version,error,class_reason,duration_ms
+fault:close-on-minor,A,R0,3.0,OK-exact,R,0,,ok-trust,4,3.0,true,ok,not-applicable,fault-server,,"3.0 accepted, no negotiation",10
+fault:close-on-minor,A,R1,3.2,Drop,-,0,,none,,,,not-run,not-run,,,connection closed before any backend message,1
+fault:close-on-minor,A,R2,3.9999,Drop,-,0,,none,,,,not-run,not-run,,,connection closed before any backend message,1
+fault:close-on-minor,A,R3,3.9999,Drop,-,0,,none,,,,not-run,not-run,,,connection closed before any backend message,2
+fault:close-on-minor,A,R4,3.0,Silent-accept,R,0,,ok-trust,4,3.0,true,ok,not-applicable,fault-server,,"reached ReadyForQuery, unknown _pq_ option ignored with no NegotiateProtocolVersion",2
+fault:close-on-minor,A,R5,3.2,Drop,-,0,,none,,,,not-run,not-run,,,connection closed before any backend message,0
+fault:close-on-minor,A,R6,4.0,Silent-accept,R,0,,ok-trust,4,unknown (requested 4.0),,ok,not-applicable,fault-server,,reached ReadyForQuery at requested 4.0 with no NegotiateProtocolVersion,2
+fault:error-response,A,R0,3.0,OK-exact,R,0,,ok-trust,4,3.0,true,ok,not-applicable,fault-server,,"3.0 accepted, no negotiation",1
+fault:error-response,A,R1,3.2,Reject-clean,E,0,,error-before-auth:08P01,,,,not-run,not-run,,08P01 unsupported frontend protocol 3.2: this fault server only speaks 3.0,ErrorResponse 08P01 before authentication,1
+fault:error-response,A,R2,3.9999,Reject-clean,E,0,,error-before-auth:08P01,,,,not-run,not-run,,08P01 unsupported frontend protocol 3.9999: this fault server only speaks 3.0,ErrorResponse 08P01 before authentication,1
+fault:error-response,A,R3,3.9999,Reject-clean,E,0,,error-before-auth:08P01,,,,not-run,not-run,,08P01 unsupported frontend protocol 3.9999: this fault server only speaks 3.0,ErrorResponse 08P01 before authentication,0
+fault:error-response,A,R4,3.0,Silent-accept,R,0,,ok-trust,4,3.0,true,ok,not-applicable,fault-server,,"reached ReadyForQuery, unknown _pq_ option ignored with no NegotiateProtocolVersion",1
+fault:error-response,A,R5,3.2,Reject-clean,E,0,,error-before-auth:08P01,,,,not-run,not-run,,08P01 unsupported frontend protocol 3.2: this fault server only speaks 3.0,ErrorResponse 08P01 before authentication,1
+fault:error-response,A,R6,4.0,Reject-clean,E,0,,error-before-auth:08P01,,,,not-run,not-run,,08P01 unsupported frontend protocol 4.0: this fault server only speaks 3.0,ErrorResponse 08P01 before authentication,0
+fault:silent-accept,A,R0,3.0,OK-exact,R,0,,ok-trust,4,3.0,true,ok,not-applicable,fault-server,,"3.0 accepted, no negotiation",1
+fault:silent-accept,A,R1,3.2,OK-exact,R,0,,ok-trust,4,3.2,true,ok,ignored,fault-server,,3.2 accepted without negotiation,10003
+fault:silent-accept,A,R2,3.9999,Silent-accept,R,0,,ok-trust,4,unknown (requested 3.9999),,ok,not-applicable,fault-server,,reached ReadyForQuery at requested 3.9999 with no NegotiateProtocolVersion,2
+fault:silent-accept,A,R3,3.9999,Silent-accept,R,0,,ok-trust,4,unknown (requested 3.9999),,ok,not-applicable,fault-server,,reached ReadyForQuery at requested 3.9999 with no NegotiateProtocolVersion,1
+fault:silent-accept,A,R4,3.0,Silent-accept,R,0,,ok-trust,4,3.0,true,ok,not-applicable,fault-server,,"reached ReadyForQuery, unknown _pq_ option ignored with no NegotiateProtocolVersion",1
+fault:silent-accept,A,R5,3.2,Silent-accept,R,0,,ok-trust,4,3.2,true,ok,ignored,fault-server,,"reached ReadyForQuery, unknown _pq_ option ignored with no NegotiateProtocolVersion",10002
+fault:silent-accept,A,R6,4.0,Silent-accept,R,0,,ok-trust,4,unknown (requested 4.0),,ok,not-applicable,fault-server,,reached ReadyForQuery at requested 4.0 with no NegotiateProtocolVersion,1
+fault:bad-negotiate,A,R0,3.0,OK-exact,R,0,,ok-trust,4,3.0,true,ok,not-applicable,fault-server,,"3.0 accepted, no negotiation",1
+fault:bad-negotiate,A,R1,3.2,Bad-negotiate,v,1,3.3[],ok-trust,4,3.3,,ok,not-applicable,fault-server,,version 3.3 is above the requested 3.2; version 3.3 is not a defined protocol version (3.0 and 3.2 only; 3.1 never existed),1
+fault:bad-negotiate,A,R2,3.9999,Bad-negotiate,v,1,3.10000[],ok-trust,4,3.10000,,ok,not-applicable,fault-server,,version 3.10000 is above the requested 3.9999; version 3.10000 is not a defined protocol version (3.0 and 3.2 only; 3.1 never existed),1
+fault:bad-negotiate,A,R3,3.9999,Bad-negotiate,v,1,3.10000[],ok-trust,4,3.10000,,ok,not-applicable,fault-server,,version 3.10000 is above the requested 3.9999; version 3.10000 is not a defined protocol version (3.0 and 3.2 only; 3.1 never existed); option list [] differs from the unknown options sent [_pq_.test_protocol_negotiation],1
+fault:bad-negotiate,A,R4,3.0,Silent-accept,R,0,,ok-trust,4,3.0,true,ok,not-applicable,fault-server,,"reached ReadyForQuery, unknown _pq_ option ignored with no NegotiateProtocolVersion",2
+fault:bad-negotiate,A,R5,3.2,Bad-negotiate,v,1,3.3[],ok-trust,4,3.3,,ok,not-applicable,fault-server,,version 3.3 is above the requested 3.2; version 3.3 is not a defined protocol version (3.0 and 3.2 only; 3.1 never existed); option list [] differs from the unknown options sent [_pq_.fs02_probe_unknown],1
+fault:bad-negotiate,A,R6,4.0,Bad-negotiate,v,1,4.1[],ok-trust,4,4.1,,ok,not-applicable,fault-server,,version 4.1 is above the requested 4.0; version 4.1 is not a defined protocol version (3.0 and 3.2 only; 3.1 never existed),0
+fault:hang,A,R0,3.0,Hang,-,0,,none,,,,not-run,not-run,,,nothing for 10000 ms,10001
+fault:hang,A,R1,3.2,Hang,-,0,,none,,,,not-run,not-run,,,nothing for 10000 ms,10002
+fault:hang,A,R2,3.9999,Hang,-,0,,none,,,,not-run,not-run,,,nothing for 10000 ms,10002
+fault:hang,A,R3,3.9999,Hang,-,0,,none,,,,not-run,not-run,,,nothing for 10000 ms,10002
+fault:hang,A,R4,3.0,Hang,-,0,,none,,,,not-run,not-run,,,nothing for 10000 ms,10002
+fault:hang,A,R5,3.2,Hang,-,0,,none,,,,not-run,not-run,,,nothing for 10000 ms,10002
+fault:hang,A,R6,4.0,Hang,-,0,,none,,,,not-run,not-run,,,nothing for 10000 ms,10002

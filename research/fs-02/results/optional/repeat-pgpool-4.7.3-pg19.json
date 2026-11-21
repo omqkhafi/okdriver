@@ -1,0 +1,45 @@
+{
+ "endpoint": "pgpool-4.7.3-pg19",
+ "repetitions": 20,
+ "counts": {
+  "R0": {
+   "OK-exact": 20
+  },
+  "R1": {
+   "OK-exact": 20
+  },
+  "R2": {
+   "OK-negotiated": 18,
+   "Bad-negotiate": 2
+  },
+  "R3": {
+   "OK-negotiated": 18,
+   "Bad-negotiate": 2
+  },
+  "R4": {
+   "OK-negotiated": 19,
+   "Bad-negotiate": 1
+  },
+  "R5": {
+   "OK-negotiated": 20
+  },
+  "R6": {
+   "Drop": 20
+  }
+ },
+ "sampleReasons": {
+  "R6 Drop": "connection closed before any backend message",
+  "R4 Bad-negotiate": "malformed message malformed(00030000ffffffff); option list [] differs from the unknown options sent [_pq_.fs02_probe_unknown]",
+  "R3 Bad-negotiate": "malformed message malformed(000300020000000b); option list [,\u0001,,,\u00011C,,,\rSELECT 1,Z,,] differs from the unknown options sent [_pq_.test_protocol_negotiation]",
+  "R2 Bad-negotiate": "malformed message malformed(0003000210444953)"
+ },
+ "beta3Psql": {
+  "connections": 40,
+  "outcomes": {
+   "connected": 22,
+   "psql: error: connection to server at \"127.0.0.1\", port N failed: received invalid protocol negotiation message: server reported unsupported parameter name without a \"_pq_.\" prefix (\"SERROR\")": 4,
+   "psql: error: connection to server at \"127.0.0.1\", port N failed: received invalid protocol negotiation message: server reported unsupported parameter name without a \"_pq_.\" prefix (\"\")": 13,
+   "psql: error: connection to server at \"127.0.0.1\", port N failed: received invalid protocol negotiation message: server reported unsupported parameter name without a \"_pq_.\" prefix (\"tement due to user request\")": 1
+  }
+ }
+}

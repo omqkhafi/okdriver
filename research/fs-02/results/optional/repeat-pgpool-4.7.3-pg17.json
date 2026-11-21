@@ -1,0 +1,34 @@
+{
+ "endpoint": "pgpool-4.7.3-pg17",
+ "repetitions": 20,
+ "counts": {
+  "R0": {
+   "OK-exact": 20
+  },
+  "R1": {
+   "OK-negotiated": 19,
+   "Bad-negotiate": 1
+  },
+  "R2": {
+   "OK-negotiated": 17,
+   "Bad-negotiate": 3
+  },
+  "R3": {
+   "OK-negotiated": 20
+  },
+  "R4": {
+   "OK-negotiated": 18,
+   "Bad-negotiate": 2
+  },
+  "R5": {
+   "OK-negotiated": 17,
+   "Bad-negotiate": 3
+  }
+ },
+ "sampleReasons": {
+  "R5 Bad-negotiate": "malformed message malformed(00030000ffffffff); option list [] differs from the unknown options sent [_pq_.fs02_probe_unknown]",
+  "R4 Bad-negotiate": "malformed message malformed(00030000ffffffff); option list [] differs from the unknown options sent [_pq_.fs02_probe_unknown]",
+  "R2 Bad-negotiate": "malformed message malformed(0003000010444953)",
+  "R1 Bad-negotiate": "malformed message malformed(0003000010444953)"
+ }
+}
