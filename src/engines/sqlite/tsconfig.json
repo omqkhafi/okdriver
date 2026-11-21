@@ -1,0 +1,12 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../../.build/engines/sqlite",
+    "tsBuildInfoFile": "../../../.build/engines/sqlite/tsconfig.tsbuildinfo"
+  },
+  "include": ["./**/*.ts"],
+  "references": [
+    { "path": "../../platform" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../../.build/engines/mariadb",
+    "tsBuildInfoFile": "../../../.build/engines/mariadb/tsconfig.tsbuildinfo"
+  },
+  "include": ["./**/*.ts"],
+  "references": [
+    { "path": "../mysql-family" },
+    { "path": "../../platform" }
+  ]
+}

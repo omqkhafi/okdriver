@@ -1,0 +1,12 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../../.build/engines/postgres",
+    "tsBuildInfoFile": "../../../.build/engines/postgres/tsconfig.tsbuildinfo"
+  },
+  "include": ["./**/*.ts"],
+  "references": [
+    { "path": "../../platform" }
+  ]
+}
