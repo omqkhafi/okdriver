@@ -1,0 +1,305 @@
+{
+  "rows": [
+    {
+      "contract": "Engine descriptor + capability model",
+      "structural": "fits",
+      "overheadStatus": "inconclusive",
+      "verdict": "Engine-owned",
+      "branches": 0,
+      "classesWithoutShim": [
+        "wire",
+        "embedded"
+      ],
+      "classesUsing": [
+        "wire",
+        "embedded",
+        "service"
+      ],
+      "enginesUsing": [
+        "postgres",
+        "mysql",
+        "mariadb",
+        "sqlite",
+        "libsql"
+      ],
+      "shimmedClasses": [
+        "service"
+      ],
+      "rung": "5-full",
+      "overhead": "5-full: inconclusive (direct spread above 15%)",
+      "reasons": [
+        "shim in class service",
+        "overhead: 5-full: inconclusive (direct spread above 15%)"
+      ]
+    },
+    {
+      "contract": "WireCore",
+      "structural": "does not fit",
+      "overheadStatus": "inconclusive",
+      "verdict": "Engine-owned",
+      "branches": 3,
+      "classesWithoutShim": [
+        "wire"
+      ],
+      "classesUsing": [
+        "wire"
+      ],
+      "enginesUsing": [
+        "postgres",
+        "mysql",
+        "mariadb"
+      ],
+      "shimmedClasses": [],
+      "rung": "2-wirecore",
+      "overhead": "2-wirecore: inconclusive (direct spread above 15%)",
+      "reasons": [
+        "3 branch hit(s) by the counting rule",
+        "used by 1 engine class(es) without a shim (wire); two needed",
+        "overhead: 2-wirecore: inconclusive (direct spread above 15%)"
+      ]
+    },
+    {
+      "contract": "EmbeddedCore",
+      "structural": "does not fit",
+      "overheadStatus": "no rung",
+      "verdict": "Engine-owned",
+      "branches": 3,
+      "classesWithoutShim": [
+        "embedded"
+      ],
+      "classesUsing": [
+        "embedded"
+      ],
+      "enginesUsing": [
+        "sqlite"
+      ],
+      "shimmedClasses": [],
+      "overhead": "no PostgreSQL rung (not on that hot path)",
+      "reasons": [
+        "3 branch hit(s) by the counting rule",
+        "used by 1 engine class(es) without a shim (embedded); two needed"
+      ]
+    },
+    {
+      "contract": "ServiceCore",
+      "structural": "does not fit",
+      "overheadStatus": "no rung",
+      "verdict": "Engine-owned",
+      "branches": 2,
+      "classesWithoutShim": [
+        "service"
+      ],
+      "classesUsing": [
+        "service"
+      ],
+      "enginesUsing": [
+        "libsql"
+      ],
+      "shimmedClasses": [],
+      "overhead": "no PostgreSQL rung (not on that hot path)",
+      "reasons": [
+        "2 branch hit(s) by the counting rule",
+        "used by 1 engine class(es) without a shim (service); two needed"
+      ]
+    },
+    {
+      "contract": "ExecutionCoordinator",
+      "structural": "fits",
+      "overheadStatus": "inconclusive",
+      "verdict": "Engine-owned",
+      "branches": 0,
+      "classesWithoutShim": [
+        "wire",
+        "embedded",
+        "service"
+      ],
+      "classesUsing": [
+        "wire",
+        "embedded",
+        "service"
+      ],
+      "enginesUsing": [
+        "postgres",
+        "mysql",
+        "mariadb",
+        "sqlite",
+        "libsql"
+      ],
+      "shimmedClasses": [],
+      "rung": "4-coord-pool",
+      "overhead": "4-coord-pool: inconclusive (direct spread above 15%)",
+      "reasons": [
+        "overhead: 4-coord-pool: inconclusive (direct spread above 15%)"
+      ]
+    },
+    {
+      "contract": "ConnectionPool",
+      "structural": "does not fit",
+      "overheadStatus": "inconclusive",
+      "verdict": "Engine-owned",
+      "branches": 0,
+      "classesWithoutShim": [
+        "wire"
+      ],
+      "classesUsing": [
+        "wire"
+      ],
+      "enginesUsing": [
+        "postgres",
+        "mysql",
+        "mariadb"
+      ],
+      "shimmedClasses": [],
+      "rung": "4-coord-pool",
+      "overhead": "4-coord-pool: inconclusive (direct spread above 15%)",
+      "reasons": [
+        "used by 1 engine class(es) without a shim (wire); two needed",
+        "overhead: 4-coord-pool: inconclusive (direct spread above 15%)"
+      ]
+    },
+    {
+      "contract": "Transport",
+      "structural": "does not fit",
+      "overheadStatus": "inconclusive",
+      "verdict": "Engine-owned",
+      "branches": 1,
+      "classesWithoutShim": [
+        "wire"
+      ],
+      "classesUsing": [
+        "wire",
+        "service"
+      ],
+      "enginesUsing": [
+        "postgres",
+        "mysql",
+        "mariadb",
+        "libsql"
+      ],
+      "shimmedClasses": [
+        "service"
+      ],
+      "rung": "3-transport",
+      "overhead": "3-transport: inconclusive (direct spread above 15%)",
+      "reasons": [
+        "1 branch hit(s) by the counting rule",
+        "used by 1 engine class(es) without a shim (wire); two needed",
+        "shim in class service",
+        "overhead: 3-transport: inconclusive (direct spread above 15%)"
+      ]
+    },
+    {
+      "contract": "Error taxonomy + ErrorMapper",
+      "structural": "fits",
+      "overheadStatus": "inconclusive",
+      "verdict": "Engine-owned",
+      "branches": 0,
+      "classesWithoutShim": [
+        "wire",
+        "embedded",
+        "service"
+      ],
+      "classesUsing": [
+        "wire",
+        "embedded",
+        "service"
+      ],
+      "enginesUsing": [
+        "postgres",
+        "mysql",
+        "mariadb",
+        "sqlite",
+        "libsql"
+      ],
+      "shimmedClasses": [],
+      "rung": "5-full",
+      "overhead": "5-full: inconclusive (direct spread above 15%)",
+      "reasons": [
+        "overhead: 5-full: inconclusive (direct spread above 15%)"
+      ]
+    },
+    {
+      "contract": "CodecRegistry",
+      "structural": "fits",
+      "overheadStatus": "inconclusive",
+      "verdict": "Engine-owned",
+      "branches": 0,
+      "classesWithoutShim": [
+        "wire",
+        "service"
+      ],
+      "classesUsing": [
+        "wire",
+        "embedded",
+        "service"
+      ],
+      "enginesUsing": [
+        "postgres",
+        "mysql",
+        "mariadb",
+        "sqlite",
+        "libsql"
+      ],
+      "shimmedClasses": [
+        "embedded"
+      ],
+      "rung": "5-full",
+      "overhead": "5-full: inconclusive (direct spread above 15%)",
+      "reasons": [
+        "shim in class embedded",
+        "overhead: 5-full: inconclusive (direct spread above 15%)"
+      ]
+    },
+    {
+      "contract": "Session (added in this study)",
+      "structural": "fits",
+      "overheadStatus": "inconclusive",
+      "verdict": "Engine-owned",
+      "branches": 0,
+      "classesWithoutShim": [
+        "wire",
+        "embedded",
+        "service"
+      ],
+      "classesUsing": [
+        "wire",
+        "embedded",
+        "service"
+      ],
+      "enginesUsing": [
+        "postgres",
+        "mysql",
+        "mariadb",
+        "sqlite",
+        "libsql"
+      ],
+      "shimmedClasses": [],
+      "rung": "5-full",
+      "overhead": "5-full: inconclusive (direct spread above 15%)",
+      "reasons": [
+        "overhead: 5-full: inconclusive (direct spread above 15%)"
+      ]
+    }
+  ],
+  "entryBranches": [
+    {
+      "rule": "branch-on-descriptor-id-or-class(entry)",
+      "file": "entry/compose.ts",
+      "line": 55,
+      "text": "switch (pkg.class) {",
+      "contract": "general"
+    }
+  ],
+  "evidence": {
+    "Engine descriptor + capability model": "accept: connect.ok + capabilities.from-facts",
+    "WireCore": "implements WireCore (postgres/core.ts, mysql-family/core.ts) + accept query.bigint",
+    "EmbeddedCore": "implements EmbeddedCore (sqlite/core.ts) + accept query.bigint",
+    "ServiceCore": "implements ServiceCore (libsql/core.ts) + accept query.bigint",
+    "ExecutionCoordinator": "coordinator-<engine>.json limit2 checks",
+    "ConnectionPool": "src/entry/compose.ts: which class block creates a SimplePool",
+    "Transport": "src/entry/compose.ts: which class block creates a Transport",
+    "Error taxonomy + ErrorMapper": "accept: error.class-constraint + error.vendor-untouched",
+    "CodecRegistry": "accept: query.bigint + query.text",
+    "Session (added in this study)": "accept: tx.commit-visible-external + tx.rollback-invisible-external"
+  }
+}

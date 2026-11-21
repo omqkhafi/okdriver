@@ -1,0 +1,822 @@
+{
+ "runtime": "bun 1.4.4",
+ "vcpu": 4,
+ "repeats": 10,
+ "warmup": 2000,
+ "scenarios": [
+  {
+   "id": 1,
+   "conns": 1,
+   "callers": 1,
+   "n": 20000
+  },
+  {
+   "id": 2,
+   "conns": 8,
+   "callers": 64,
+   "n": 50000
+  }
+ ],
+ "runs": [
+  {
+   "repeat": 1,
+   "scenario": 1,
+   "rung": "5-full",
+   "queries": 20000,
+   "wallUsPerQuery": 194.8795225,
+   "cpuUsPerQuery": 69.20165
+  },
+  {
+   "repeat": 1,
+   "scenario": 1,
+   "rung": "1-direct",
+   "queries": 20000,
+   "wallUsPerQuery": 181.0463583,
+   "cpuUsPerQuery": 44.1413
+  },
+  {
+   "repeat": 1,
+   "scenario": 1,
+   "rung": "4-coord-pool",
+   "queries": 20000,
+   "wallUsPerQuery": 174.88640294999996,
+   "cpuUsPerQuery": 51.48445
+  },
+  {
+   "repeat": 1,
+   "scenario": 1,
+   "rung": "3-transport",
+   "queries": 20000,
+   "wallUsPerQuery": 174.31551235000006,
+   "cpuUsPerQuery": 49.71165
+  },
+  {
+   "repeat": 1,
+   "scenario": 1,
+   "rung": "2-wirecore",
+   "queries": 20000,
+   "wallUsPerQuery": 187.22461729999995,
+   "cpuUsPerQuery": 52.37715
+  },
+  {
+   "repeat": 1,
+   "scenario": 2,
+   "rung": "2-wirecore",
+   "queries": 50000,
+   "wallUsPerQuery": 46.792759860000004,
+   "cpuUsPerQuery": 23.3562
+  },
+  {
+   "repeat": 1,
+   "scenario": 2,
+   "rung": "5-full",
+   "queries": 50000,
+   "wallUsPerQuery": 51.15938466,
+   "cpuUsPerQuery": 29.5807
+  },
+  {
+   "repeat": 1,
+   "scenario": 2,
+   "rung": "4-coord-pool",
+   "queries": 50000,
+   "wallUsPerQuery": 50.370596119999966,
+   "cpuUsPerQuery": 25.75302
+  },
+  {
+   "repeat": 1,
+   "scenario": 2,
+   "rung": "3-transport",
+   "queries": 50000,
+   "wallUsPerQuery": 53.72935982000003,
+   "cpuUsPerQuery": 26.11678
+  },
+  {
+   "repeat": 1,
+   "scenario": 2,
+   "rung": "1-direct",
+   "queries": 50000,
+   "wallUsPerQuery": 42.59723954000001,
+   "cpuUsPerQuery": 16.55158
+  },
+  {
+   "repeat": 2,
+   "scenario": 1,
+   "rung": "2-wirecore",
+   "queries": 20000,
+   "wallUsPerQuery": 186.74533465000025,
+   "cpuUsPerQuery": 50.3402
+  },
+  {
+   "repeat": 2,
+   "scenario": 1,
+   "rung": "5-full",
+   "queries": 20000,
+   "wallUsPerQuery": 202.75093500000003,
+   "cpuUsPerQuery": 60.46285
+  },
+  {
+   "repeat": 2,
+   "scenario": 1,
+   "rung": "3-transport",
+   "queries": 20000,
+   "wallUsPerQuery": 190.31684945000015,
+   "cpuUsPerQuery": 50.0876
+  },
+  {
+   "repeat": 2,
+   "scenario": 1,
+   "rung": "4-coord-pool",
+   "queries": 20000,
+   "wallUsPerQuery": 193.27079100000012,
+   "cpuUsPerQuery": 56.17765
+  },
+  {
+   "repeat": 2,
+   "scenario": 1,
+   "rung": "1-direct",
+   "queries": 20000,
+   "wallUsPerQuery": 169.10487450000002,
+   "cpuUsPerQuery": 40.081
+  },
+  {
+   "repeat": 2,
+   "scenario": 2,
+   "rung": "3-transport",
+   "queries": 50000,
+   "wallUsPerQuery": 49.286895280000024,
+   "cpuUsPerQuery": 24.68462
+  },
+  {
+   "repeat": 2,
+   "scenario": 2,
+   "rung": "2-wirecore",
+   "queries": 50000,
+   "wallUsPerQuery": 49.714785139999876,
+   "cpuUsPerQuery": 26.09126
+  },
+  {
+   "repeat": 2,
+   "scenario": 2,
+   "rung": "4-coord-pool",
+   "queries": 50000,
+   "wallUsPerQuery": 51.67084797999997,
+   "cpuUsPerQuery": 26.36852
+  },
+  {
+   "repeat": 2,
+   "scenario": 2,
+   "rung": "1-direct",
+   "queries": 50000,
+   "wallUsPerQuery": 46.35184437999996,
+   "cpuUsPerQuery": 17.24214
+  },
+  {
+   "repeat": 2,
+   "scenario": 2,
+   "rung": "5-full",
+   "queries": 50000,
+   "wallUsPerQuery": 54.3832300199999,
+   "cpuUsPerQuery": 30.08518
+  },
+  {
+   "repeat": 3,
+   "scenario": 1,
+   "rung": "2-wirecore",
+   "queries": 20000,
+   "wallUsPerQuery": 188.13069269999977,
+   "cpuUsPerQuery": 50.8996
+  },
+  {
+   "repeat": 3,
+   "scenario": 1,
+   "rung": "5-full",
+   "queries": 20000,
+   "wallUsPerQuery": 203.49928230000006,
+   "cpuUsPerQuery": 57.73025
+  },
+  {
+   "repeat": 3,
+   "scenario": 1,
+   "rung": "4-coord-pool",
+   "queries": 20000,
+   "wallUsPerQuery": 196.11021875000006,
+   "cpuUsPerQuery": 56.13585
+  },
+  {
+   "repeat": 3,
+   "scenario": 1,
+   "rung": "1-direct",
+   "queries": 20000,
+   "wallUsPerQuery": 166.35309930000003,
+   "cpuUsPerQuery": 37.48485
+  },
+  {
+   "repeat": 3,
+   "scenario": 1,
+   "rung": "3-transport",
+   "queries": 20000,
+   "wallUsPerQuery": 167.45130809999975,
+   "cpuUsPerQuery": 46.5872
+  },
+  {
+   "repeat": 3,
+   "scenario": 2,
+   "rung": "3-transport",
+   "queries": 50000,
+   "wallUsPerQuery": 45.78978325999983,
+   "cpuUsPerQuery": 23.11422
+  },
+  {
+   "repeat": 3,
+   "scenario": 2,
+   "rung": "2-wirecore",
+   "queries": 50000,
+   "wallUsPerQuery": 49.13809886000003,
+   "cpuUsPerQuery": 22.06104
+  },
+  {
+   "repeat": 3,
+   "scenario": 2,
+   "rung": "1-direct",
+   "queries": 50000,
+   "wallUsPerQuery": 42.456714619999985,
+   "cpuUsPerQuery": 15.01496
+  },
+  {
+   "repeat": 3,
+   "scenario": 2,
+   "rung": "5-full",
+   "queries": 50000,
+   "wallUsPerQuery": 52.0769281800001,
+   "cpuUsPerQuery": 28.05948
+  },
+  {
+   "repeat": 3,
+   "scenario": 2,
+   "rung": "4-coord-pool",
+   "queries": 50000,
+   "wallUsPerQuery": 52.65617703999975,
+   "cpuUsPerQuery": 25.96388
+  },
+  {
+   "repeat": 4,
+   "scenario": 1,
+   "rung": "4-coord-pool",
+   "queries": 20000,
+   "wallUsPerQuery": 193.85226005000004,
+   "cpuUsPerQuery": 54.02365
+  },
+  {
+   "repeat": 4,
+   "scenario": 1,
+   "rung": "5-full",
+   "queries": 20000,
+   "wallUsPerQuery": 208.27056080000037,
+   "cpuUsPerQuery": 60.45715
+  },
+  {
+   "repeat": 4,
+   "scenario": 1,
+   "rung": "1-direct",
+   "queries": 20000,
+   "wallUsPerQuery": 162.99254690000018,
+   "cpuUsPerQuery": 36.03255
+  },
+  {
+   "repeat": 4,
+   "scenario": 1,
+   "rung": "3-transport",
+   "queries": 20000,
+   "wallUsPerQuery": 178.32767685,
+   "cpuUsPerQuery": 46.0526
+  },
+  {
+   "repeat": 4,
+   "scenario": 1,
+   "rung": "2-wirecore",
+   "queries": 20000,
+   "wallUsPerQuery": 195.11032134999988,
+   "cpuUsPerQuery": 51.27185
+  },
+  {
+   "repeat": 4,
+   "scenario": 2,
+   "rung": "1-direct",
+   "queries": 50000,
+   "wallUsPerQuery": 40.632861240000054,
+   "cpuUsPerQuery": 14.62364
+  },
+  {
+   "repeat": 4,
+   "scenario": 2,
+   "rung": "2-wirecore",
+   "queries": 50000,
+   "wallUsPerQuery": 42.79760424000007,
+   "cpuUsPerQuery": 19.99062
+  },
+  {
+   "repeat": 4,
+   "scenario": 2,
+   "rung": "4-coord-pool",
+   "queries": 50000,
+   "wallUsPerQuery": 52.722809839999535,
+   "cpuUsPerQuery": 27.4526
+  },
+  {
+   "repeat": 4,
+   "scenario": 2,
+   "rung": "3-transport",
+   "queries": 50000,
+   "wallUsPerQuery": 50.80970732000016,
+   "cpuUsPerQuery": 24.57868
+  },
+  {
+   "repeat": 4,
+   "scenario": 2,
+   "rung": "5-full",
+   "queries": 50000,
+   "wallUsPerQuery": 55.85857618000009,
+   "cpuUsPerQuery": 29.8268
+  },
+  {
+   "repeat": 5,
+   "scenario": 1,
+   "rung": "5-full",
+   "queries": 20000,
+   "wallUsPerQuery": 188.22342790000113,
+   "cpuUsPerQuery": 55.10985
+  },
+  {
+   "repeat": 5,
+   "scenario": 1,
+   "rung": "3-transport",
+   "queries": 20000,
+   "wallUsPerQuery": 214.76954174999992,
+   "cpuUsPerQuery": 57.77205
+  },
+  {
+   "repeat": 5,
+   "scenario": 1,
+   "rung": "2-wirecore",
+   "queries": 20000,
+   "wallUsPerQuery": 190.32909755000003,
+   "cpuUsPerQuery": 51.8802
+  },
+  {
+   "repeat": 5,
+   "scenario": 1,
+   "rung": "4-coord-pool",
+   "queries": 20000,
+   "wallUsPerQuery": 195.09038299999958,
+   "cpuUsPerQuery": 58.04435
+  },
+  {
+   "repeat": 5,
+   "scenario": 1,
+   "rung": "1-direct",
+   "queries": 20000,
+   "wallUsPerQuery": 171.5009930500004,
+   "cpuUsPerQuery": 38.5824
+  },
+  {
+   "repeat": 5,
+   "scenario": 2,
+   "rung": "4-coord-pool",
+   "queries": 50000,
+   "wallUsPerQuery": 55.480229059999694,
+   "cpuUsPerQuery": 30.03014
+  },
+  {
+   "repeat": 5,
+   "scenario": 2,
+   "rung": "2-wirecore",
+   "queries": 50000,
+   "wallUsPerQuery": 47.01886170000013,
+   "cpuUsPerQuery": 22.29496
+  },
+  {
+   "repeat": 5,
+   "scenario": 2,
+   "rung": "1-direct",
+   "queries": 50000,
+   "wallUsPerQuery": 40.627235119999966,
+   "cpuUsPerQuery": 15.7401
+  },
+  {
+   "repeat": 5,
+   "scenario": 2,
+   "rung": "5-full",
+   "queries": 50000,
+   "wallUsPerQuery": 54.21383483999991,
+   "cpuUsPerQuery": 29.66416
+  },
+  {
+   "repeat": 5,
+   "scenario": 2,
+   "rung": "3-transport",
+   "queries": 50000,
+   "wallUsPerQuery": 56.13503182000015,
+   "cpuUsPerQuery": 27.67474
+  },
+  {
+   "repeat": 6,
+   "scenario": 1,
+   "rung": "1-direct",
+   "queries": 20000,
+   "wallUsPerQuery": 183.75862760000018,
+   "cpuUsPerQuery": 42.7138
+  },
+  {
+   "repeat": 6,
+   "scenario": 1,
+   "rung": "5-full",
+   "queries": 20000,
+   "wallUsPerQuery": 205.4629996999996,
+   "cpuUsPerQuery": 59.5761
+  },
+  {
+   "repeat": 6,
+   "scenario": 1,
+   "rung": "2-wirecore",
+   "queries": 20000,
+   "wallUsPerQuery": 201.56133980000016,
+   "cpuUsPerQuery": 53.2902
+  },
+  {
+   "repeat": 6,
+   "scenario": 1,
+   "rung": "4-coord-pool",
+   "queries": 20000,
+   "wallUsPerQuery": 189.2773417500008,
+   "cpuUsPerQuery": 53.84365
+  },
+  {
+   "repeat": 6,
+   "scenario": 1,
+   "rung": "3-transport",
+   "queries": 20000,
+   "wallUsPerQuery": 189.9747873,
+   "cpuUsPerQuery": 54.88825
+  },
+  {
+   "repeat": 6,
+   "scenario": 2,
+   "rung": "1-direct",
+   "queries": 50000,
+   "wallUsPerQuery": 41.756290080000184,
+   "cpuUsPerQuery": 17.2607
+  },
+  {
+   "repeat": 6,
+   "scenario": 2,
+   "rung": "3-transport",
+   "queries": 50000,
+   "wallUsPerQuery": 47.70342589999957,
+   "cpuUsPerQuery": 21.18704
+  },
+  {
+   "repeat": 6,
+   "scenario": 2,
+   "rung": "2-wirecore",
+   "queries": 50000,
+   "wallUsPerQuery": 54.38476203999948,
+   "cpuUsPerQuery": 25.9034
+  },
+  {
+   "repeat": 6,
+   "scenario": 2,
+   "rung": "4-coord-pool",
+   "queries": 50000,
+   "wallUsPerQuery": 50.28382335999981,
+   "cpuUsPerQuery": 25.86844
+  },
+  {
+   "repeat": 6,
+   "scenario": 2,
+   "rung": "5-full",
+   "queries": 50000,
+   "wallUsPerQuery": 52.02208969999978,
+   "cpuUsPerQuery": 28.52054
+  },
+  {
+   "repeat": 7,
+   "scenario": 1,
+   "rung": "2-wirecore",
+   "queries": 20000,
+   "wallUsPerQuery": 187.14233404999976,
+   "cpuUsPerQuery": 49.35425
+  },
+  {
+   "repeat": 7,
+   "scenario": 1,
+   "rung": "4-coord-pool",
+   "queries": 20000,
+   "wallUsPerQuery": 187.28241885000025,
+   "cpuUsPerQuery": 51.7118
+  },
+  {
+   "repeat": 7,
+   "scenario": 1,
+   "rung": "3-transport",
+   "queries": 20000,
+   "wallUsPerQuery": 185.29375529999962,
+   "cpuUsPerQuery": 50.89745
+  },
+  {
+   "repeat": 7,
+   "scenario": 1,
+   "rung": "5-full",
+   "queries": 20000,
+   "wallUsPerQuery": 183.0701126999993,
+   "cpuUsPerQuery": 55.0869
+  },
+  {
+   "repeat": 7,
+   "scenario": 1,
+   "rung": "1-direct",
+   "queries": 20000,
+   "wallUsPerQuery": 181.88741524999932,
+   "cpuUsPerQuery": 40.8502
+  },
+  {
+   "repeat": 7,
+   "scenario": 2,
+   "rung": "5-full",
+   "queries": 50000,
+   "wallUsPerQuery": 61.4184225799999,
+   "cpuUsPerQuery": 34.66364
+  },
+  {
+   "repeat": 7,
+   "scenario": 2,
+   "rung": "1-direct",
+   "queries": 50000,
+   "wallUsPerQuery": 42.581061459999766,
+   "cpuUsPerQuery": 16.21518
+  },
+  {
+   "repeat": 7,
+   "scenario": 2,
+   "rung": "4-coord-pool",
+   "queries": 50000,
+   "wallUsPerQuery": 50.18509637999989,
+   "cpuUsPerQuery": 25.008
+  },
+  {
+   "repeat": 7,
+   "scenario": 2,
+   "rung": "3-transport",
+   "queries": 50000,
+   "wallUsPerQuery": 50.24618368000025,
+   "cpuUsPerQuery": 24.0687
+  },
+  {
+   "repeat": 7,
+   "scenario": 2,
+   "rung": "2-wirecore",
+   "queries": 50000,
+   "wallUsPerQuery": 50.303247620000036,
+   "cpuUsPerQuery": 23.75212
+  },
+  {
+   "repeat": 8,
+   "scenario": 1,
+   "rung": "5-full",
+   "queries": 20000,
+   "wallUsPerQuery": 223.10047254999955,
+   "cpuUsPerQuery": 65.1953
+  },
+  {
+   "repeat": 8,
+   "scenario": 1,
+   "rung": "4-coord-pool",
+   "queries": 20000,
+   "wallUsPerQuery": 208.87367719999892,
+   "cpuUsPerQuery": 58.0061
+  },
+  {
+   "repeat": 8,
+   "scenario": 1,
+   "rung": "2-wirecore",
+   "queries": 20000,
+   "wallUsPerQuery": 210.03632490000018,
+   "cpuUsPerQuery": 54.6454
+  },
+  {
+   "repeat": 8,
+   "scenario": 1,
+   "rung": "1-direct",
+   "queries": 20000,
+   "wallUsPerQuery": 167.72998304999928,
+   "cpuUsPerQuery": 39.48555
+  },
+  {
+   "repeat": 8,
+   "scenario": 1,
+   "rung": "3-transport",
+   "queries": 20000,
+   "wallUsPerQuery": 187.46167500000155,
+   "cpuUsPerQuery": 52.4504
+  },
+  {
+   "repeat": 8,
+   "scenario": 2,
+   "rung": "3-transport",
+   "queries": 50000,
+   "wallUsPerQuery": 47.97384783999994,
+   "cpuUsPerQuery": 24.01698
+  },
+  {
+   "repeat": 8,
+   "scenario": 2,
+   "rung": "5-full",
+   "queries": 50000,
+   "wallUsPerQuery": 60.93440457999939,
+   "cpuUsPerQuery": 34.41258
+  },
+  {
+   "repeat": 8,
+   "scenario": 2,
+   "rung": "1-direct",
+   "queries": 50000,
+   "wallUsPerQuery": 47.58701338000014,
+   "cpuUsPerQuery": 18.34172
+  },
+  {
+   "repeat": 8,
+   "scenario": 2,
+   "rung": "4-coord-pool",
+   "queries": 50000,
+   "wallUsPerQuery": 53.66363945999998,
+   "cpuUsPerQuery": 26.90536
+  },
+  {
+   "repeat": 8,
+   "scenario": 2,
+   "rung": "2-wirecore",
+   "queries": 50000,
+   "wallUsPerQuery": 51.52031783999992,
+   "cpuUsPerQuery": 23.73804
+  },
+  {
+   "repeat": 9,
+   "scenario": 1,
+   "rung": "4-coord-pool",
+   "queries": 20000,
+   "wallUsPerQuery": 186.61170604999933,
+   "cpuUsPerQuery": 48.69935
+  },
+  {
+   "repeat": 9,
+   "scenario": 1,
+   "rung": "3-transport",
+   "queries": 20000,
+   "wallUsPerQuery": 180.68441300000123,
+   "cpuUsPerQuery": 50.43875
+  },
+  {
+   "repeat": 9,
+   "scenario": 1,
+   "rung": "1-direct",
+   "queries": 20000,
+   "wallUsPerQuery": 189.4413763999997,
+   "cpuUsPerQuery": 41.0761
+  },
+  {
+   "repeat": 9,
+   "scenario": 1,
+   "rung": "2-wirecore",
+   "queries": 20000,
+   "wallUsPerQuery": 193.06633609999844,
+   "cpuUsPerQuery": 56.4158
+  },
+  {
+   "repeat": 9,
+   "scenario": 1,
+   "rung": "5-full",
+   "queries": 20000,
+   "wallUsPerQuery": 203.38559280000044,
+   "cpuUsPerQuery": 56.40665
+  },
+  {
+   "repeat": 9,
+   "scenario": 2,
+   "rung": "3-transport",
+   "queries": 50000,
+   "wallUsPerQuery": 50.23610545999953,
+   "cpuUsPerQuery": 24.56082
+  },
+  {
+   "repeat": 9,
+   "scenario": 2,
+   "rung": "2-wirecore",
+   "queries": 50000,
+   "wallUsPerQuery": 49.288873680001124,
+   "cpuUsPerQuery": 23.96528
+  },
+  {
+   "repeat": 9,
+   "scenario": 2,
+   "rung": "5-full",
+   "queries": 50000,
+   "wallUsPerQuery": 55.73365844000014,
+   "cpuUsPerQuery": 30.88962
+  },
+  {
+   "repeat": 9,
+   "scenario": 2,
+   "rung": "1-direct",
+   "queries": 50000,
+   "wallUsPerQuery": 39.011403960000024,
+   "cpuUsPerQuery": 15.25238
+  },
+  {
+   "repeat": 9,
+   "scenario": 2,
+   "rung": "4-coord-pool",
+   "queries": 50000,
+   "wallUsPerQuery": 48.66511996000074,
+   "cpuUsPerQuery": 24.64016
+  },
+  {
+   "repeat": 10,
+   "scenario": 1,
+   "rung": "4-coord-pool",
+   "queries": 20000,
+   "wallUsPerQuery": 177.9354666500003,
+   "cpuUsPerQuery": 51.93315
+  },
+  {
+   "repeat": 10,
+   "scenario": 1,
+   "rung": "2-wirecore",
+   "queries": 20000,
+   "wallUsPerQuery": 171.55187715000065,
+   "cpuUsPerQuery": 46.41075
+  },
+  {
+   "repeat": 10,
+   "scenario": 1,
+   "rung": "3-transport",
+   "queries": 20000,
+   "wallUsPerQuery": 176.01638605000045,
+   "cpuUsPerQuery": 47.48145
+  },
+  {
+   "repeat": 10,
+   "scenario": 1,
+   "rung": "5-full",
+   "queries": 20000,
+   "wallUsPerQuery": 189.44739400000253,
+   "cpuUsPerQuery": 57.0962
+  },
+  {
+   "repeat": 10,
+   "scenario": 1,
+   "rung": "1-direct",
+   "queries": 20000,
+   "wallUsPerQuery": 171.7589156000002,
+   "cpuUsPerQuery": 37.73145
+  },
+  {
+   "repeat": 10,
+   "scenario": 2,
+   "rung": "2-wirecore",
+   "queries": 50000,
+   "wallUsPerQuery": 43.39216333999997,
+   "cpuUsPerQuery": 21.42502
+  },
+  {
+   "repeat": 10,
+   "scenario": 2,
+   "rung": "3-transport",
+   "queries": 50000,
+   "wallUsPerQuery": 48.238176580000435,
+   "cpuUsPerQuery": 22.07514
+  },
+  {
+   "repeat": 10,
+   "scenario": 2,
+   "rung": "5-full",
+   "queries": 50000,
+   "wallUsPerQuery": 56.0945417599997,
+   "cpuUsPerQuery": 29.84218
+  },
+  {
+   "repeat": 10,
+   "scenario": 2,
+   "rung": "1-direct",
+   "queries": 50000,
+   "wallUsPerQuery": 45.03884549999959,
+   "cpuUsPerQuery": 16.28142
+  },
+  {
+   "repeat": 10,
+   "scenario": 2,
+   "rung": "4-coord-pool",
+   "queries": 50000,
+   "wallUsPerQuery": 48.20069559999975,
+   "cpuUsPerQuery": 23.78768
+  }
+ ]
+}

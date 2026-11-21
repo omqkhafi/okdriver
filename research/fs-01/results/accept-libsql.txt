@@ -1,0 +1,33 @@
+== accept libsql
+CHECK connect.ok PASS facts={"version":"3.47.0","params":{"hrana":"v3","streams":"baton"},"observedTx":"idle"}
+CHECK capabilities.from-facts PASS caps={"pipelining":false,"protocolPrepared":true,"interactiveTransactions":true,"savepoints":false,"returning":false,"streamingResults":false,"bulkLoad":false,"notifications":false,"changeStream":false,"cancel":"none","int64":"bigint","multiResult":false}
+CHECK capabilities.respond-to-facts PASS with empty facts: protocolPrepared=false interactiveTransactions=false
+CHECK query.bigint PASS got bigint 9007199254740993
+CHECK query.text PASS got "héllo wörld"
+CHECK query.outcome PASS applied/none
+CHECK tx.begin-state-open PASS state=open
+CHECK error.thrown-driver-error PASS DriverError: SQLite error: UNIQUE constraint failed: fs01_kv.id
+CHECK error.class-constraint PASS constraint
+CHECK error.vendor-untouched PASS {"code":"SQLITE_CONSTRAINT"}
+ERROR {"class":"constraint","phase":"execute","statementOutcome":"rejected-no-effects","transactionState":"open","retry":"never","vendor":{"code":"SQLITE_CONSTRAINT"},"redacted":false,"message":"SQLite error: UNIQUE constraint failed: fs01_kv.id"}
+EXPECT error.statementOutcome: expected="rejected-no-effects" observed="rejected-no-effects" as-expected
+EXPECT error.transactionState: expected="open" observed="open" as-expected
+EXPECT error.retry: expected="never" observed="never" as-expected
+EXPECT error.phase: expected="execute" observed="execute" as-expected
+CHECK error.rolled-back-after-error PASS rows after rollback: []
+CHECK tx.uncommitted-invisible-external PASS external read before commit: []
+CHECK tx.commit-state PASS committed
+CHECK tx.commit-visible-external PASS external read after commit: ["2|commit-me"]
+CHECK tx.rollback-state PASS rolled-back
+CHECK tx.rollback-invisible-external PASS external read after rollback: ["2|commit-me"]
+CHECK coordinator.no-leak PASS {"limit":2,"active":0,"queued":0,"maxActive":1,"admitted":4,"cancelledInQueue":0,"timedOutInQueue":0}
+CHECK protocol.connections-recorded PASS 1 client connection(s) through the recorder
+CHECK protocol.sql-has-no-values PASS 12 Hrana execute requests
+CHECK protocol.value-in-args PASS the 2^53+1 value was found as a typed integer argument
+CHECK differential.bunsql PASS skipped: Bun.SQL has no libSQL/Hrana adapter
+CHECK cap.protocolPrepared PASS requires protocol.sql-has-no-values + protocol.value-in-args
+CHECK cap.interactiveTransactions PASS requires tx.commit-visible-external + tx.rollback-invisible-external
+CHECK cap.int64 PASS requires query.bigint
+CLAIMED protocolPrepared,interactiveTransactions,int64
+NOT-CLAIMED pipelining,savepoints,returning,streamingResults,bulkLoad,notifications,changeStream,cancel,multiResult
+RESULT libsql: 24/24 checks passed, 0 difference(s) from the expected mapping

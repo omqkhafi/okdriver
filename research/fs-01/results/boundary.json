@@ -1,0 +1,111 @@
+{
+  "edges": {
+    "platform": [],
+    "transports": [
+      "platform"
+    ],
+    "engines/postgres": [
+      "platform"
+    ],
+    "engines/mysql-family": [
+      "platform"
+    ],
+    "engines/mysql": [
+      "engines/mysql-family",
+      "platform"
+    ],
+    "engines/mariadb": [
+      "engines/mysql-family",
+      "platform"
+    ],
+    "engines/sqlite": [
+      "platform"
+    ],
+    "verify": [
+      "platform"
+    ],
+    "compile": [
+      "platform"
+    ],
+    "adapters": [
+      "platform"
+    ],
+    "engines/libsql": [
+      "platform"
+    ],
+    "entry": [
+      "platform",
+      "transports",
+      "engines/postgres",
+      "engines/mysql-family",
+      "engines/mysql",
+      "engines/mariadb",
+      "engines/sqlite",
+      "engines/libsql"
+    ]
+  },
+  "externalsNeeded": {
+    "engines/sqlite": [
+      "bun:sqlite"
+    ],
+    "transports": [
+      "node:net"
+    ]
+  },
+  "realTreeViolations": [],
+  "entryEdges": [
+    "engines/libsql",
+    "engines/mariadb",
+    "engines/mysql",
+    "engines/postgres",
+    "engines/sqlite",
+    "platform",
+    "transports"
+  ],
+  "testFilesCollectable": [],
+  "negatives": [
+    {
+      "name": "engine imports another engine",
+      "expectedRule": "illegal-edge",
+      "caught": true,
+      "violations": [
+        "src/engines/sqlite/index.ts:1: illegal-edge: engines/sqlite may not import engines/postgres (\"../postgres/index.ts\"); allowed: platform"
+      ]
+    },
+    {
+      "name": "engine-name literal in platform",
+      "expectedRule": "engine-literal",
+      "caught": true,
+      "violations": [
+        "src/platform/failures.ts:76: engine-literal: string literal contains the engine name \"postgres\""
+      ]
+    },
+    {
+      "name": "platform imports an engine",
+      "expectedRule": "illegal-edge",
+      "caught": true,
+      "violations": [
+        "src/platform/client.ts:1: illegal-edge: platform may not import engines/postgres (\"../engines/postgres/index.ts\"); allowed: none"
+      ]
+    },
+    {
+      "name": "engine imports platform outside contracts",
+      "expectedRule": "engine-platform-deep-import",
+      "caught": true,
+      "violations": [
+        "src/engines/postgres/errors.ts:1: engine-platform-deep-import: engine imports \"../../platform/coordinator.ts\" (platform/coordinator.ts); engines may import platform only through platform/contracts"
+      ]
+    },
+    {
+      "name": "the roadmap's engine-id union in platform/contracts",
+      "expectedRule": "engine-literal",
+      "caught": true,
+      "violations": [
+        "src/platform/contracts/engine.ts:25: engine-literal: string literal contains the engine name \"postgres\"",
+        "src/platform/contracts/engine.ts:25: engine-literal: string literal contains the engine name \"mysql\"",
+        "src/platform/contracts/engine.ts:25: engine-literal: string literal contains the engine name \"mariadb\"",
+        "src/platform/contracts/engine.ts:25: engine-literal: string literal contains the engine name \"sqlite\""
+      ]
+    }
+  ]
+}

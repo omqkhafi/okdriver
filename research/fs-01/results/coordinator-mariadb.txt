@@ -1,0 +1,22 @@
+== coordinator mariadb
+CHECK limit2.all-completed PASS 8/8 fulfilled in 1209 ms
+CHECK limit2.coordinator-maxActive<=2 PASS coordinator maxActive=2
+CHECK limit2.server-observed<=2 PASS server-side sessions running the statement: max 2 over 237 samples (pool allowed 8 connections)
+CHECK limit2.server-observed-reached-2 PASS max observed 2: the check is not vacuous
+CHECK limit2.waves PASS 8 statements of 0.3 s at limit 2 took 1209 ms (4 waves of 300 ms expected; the check allows >= 1000 ms)
+CHECK abort-queued.queued-before-abort PASS queue length at abort: 1
+CHECK abort-queued.class-cancelled PASS cancelled
+CHECK abort-queued.outcome-not-sent PASS not-sent/none/retry=safe
+CHECK abort-queued.nothing-on-the-wire PASS statements with the marker seen by the recorder: 0
+CHECK abort-queued.stats PASS {"limit":2,"active":0,"queued":0,"maxActive":2,"admitted":11,"cancelledInQueue":1,"timedOutInQueue":0}
+CHECK race.no-hang-no-bad-outcome PASS 320 races: 118 completed, 202 cancelled/not-sent, 0 cancelled/unknown (abort after the request was sent), 0 other outcomes
+CHECK race.no-leaked-lease PASS {"limit":1,"active":0,"queued":0,"maxActive":1,"admitted":478,"cancelledInQueue":162,"timedOutInQueue":0}
+CHECK race.not-sent-means-not-sent PASS statements with the marker that reached the recorder: 118; completed: 118; aborted after send: 0; cancelled/not-sent: 202
+CHECK queue-timeout.class-timeout-not-sent PASS timeout/not-sent
+CHECK slow-connect.queue-held-while-down PASS 2 s after submission with the server down: active=2 queued=6
+CHECK slow-connect.all-complete-after-server-up PASS 8/8 fulfilled after 4612 ms
+CHECK slow-connect.no-leak PASS {"limit":2,"active":0,"queued":0,"maxActive":2,"admitted":8,"cancelledInQueue":0,"timedOutInQueue":0}
+CHECK slow-connect.never-up-bounded-connection-errors PASS 6 callers, server down, connect timeout 400 ms: classes=connection after 922 ms
+CHECK slow-connect.never-up-no-leak PASS {"limit":2,"active":0,"queued":0,"maxActive":2,"admitted":6,"cancelledInQueue":0,"timedOutInQueue":0}
+CHECK slow-connect.same-client-recovers PASS recovered after 3 retries
+RESULT mariadb: 20/20 coordinator checks passed

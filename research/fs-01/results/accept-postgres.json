@@ -1,0 +1,414 @@
+{
+  "engine": "postgres",
+  "class": "wire",
+  "facts": {
+    "version": "17.12 (Debian 17.12-1.pgdg13+1)",
+    "params": {
+      "in_hot_standby": "off",
+      "integer_datetimes": "on",
+      "TimeZone": "Etc/UTC",
+      "IntervalStyle": "postgres",
+      "is_superuser": "on",
+      "application_name": "",
+      "default_transaction_read_only": "off",
+      "scram_iterations": "4096",
+      "DateStyle": "ISO, MDY",
+      "standard_conforming_strings": "on",
+      "session_authorization": "postgres",
+      "client_encoding": "UTF8",
+      "server_version": "17.12 (Debian 17.12-1.pgdg13+1)",
+      "server_encoding": "UTF8"
+    },
+    "observedTx": "idle"
+  },
+  "capabilities": {
+    "pipelining": false,
+    "protocolPrepared": true,
+    "interactiveTransactions": true,
+    "savepoints": false,
+    "returning": false,
+    "streamingResults": false,
+    "bulkLoad": false,
+    "notifications": false,
+    "changeStream": false,
+    "cancel": "none",
+    "int64": "bigint",
+    "multiResult": false
+  },
+  "claimed": [
+    "protocolPrepared",
+    "interactiveTransactions",
+    "int64"
+  ],
+  "checks": [
+    {
+      "check": "connect.ok",
+      "pass": true,
+      "detail": "facts={\"version\":\"17.12 (Debian 17.12-1.pgdg13+1)\",\"params\":{\"in_hot_standby\":\"off\",\"integer_datetimes\":\"on\",\"TimeZone\":\"Etc/UTC\",\"IntervalStyle\":\"postgres\",\"is_superuser\":\"on\",\"application_name\":\"\",\"default_transaction_read_only\":\"off\",\"scram_iterations\":\"4096\",\"DateStyle\":\"ISO, MDY\",\"standard_conforming_strings\":\"on\",\"session_authorization\":\"postgres\",\"client_encoding\":\"UTF8\",\"server_version\":\"17.12 (Debian 17.12-1.pgdg13+1)\",\"server_encoding\":\"UTF8\"},\"observedTx\":\"idle\"}"
+    },
+    {
+      "check": "capabilities.from-facts",
+      "pass": true,
+      "detail": "caps={\"pipelining\":false,\"protocolPrepared\":true,\"interactiveTransactions\":true,\"savepoints\":false,\"returning\":false,\"streamingResults\":false,\"bulkLoad\":false,\"notifications\":false,\"changeStream\":false,\"cancel\":\"none\",\"int64\":\"bigint\",\"multiResult\":false}"
+    },
+    {
+      "check": "capabilities.respond-to-facts",
+      "pass": true,
+      "detail": "with empty facts: protocolPrepared=false interactiveTransactions=false"
+    },
+    {
+      "check": "query.bigint",
+      "pass": true,
+      "detail": "got bigint 9007199254740993"
+    },
+    {
+      "check": "query.text",
+      "pass": true,
+      "detail": "got \"héllo wörld\""
+    },
+    {
+      "check": "query.outcome",
+      "pass": true,
+      "detail": "applied/none"
+    },
+    {
+      "check": "tx.begin-state-open",
+      "pass": true,
+      "detail": "state=open"
+    },
+    {
+      "check": "error.thrown-driver-error",
+      "pass": true,
+      "detail": "DriverError: duplicate key value violates unique constraint \"fs01_kv_pkey\""
+    },
+    {
+      "check": "error.class-constraint",
+      "pass": true,
+      "detail": "constraint"
+    },
+    {
+      "check": "error.vendor-untouched",
+      "pass": true,
+      "detail": "{\"code\":\"23505\",\"sqlState\":\"23505\"}"
+    },
+    {
+      "check": "error.rolled-back-after-error",
+      "pass": true,
+      "detail": "rows after rollback: []"
+    },
+    {
+      "check": "tx.uncommitted-invisible-external",
+      "pass": true,
+      "detail": "external read before commit: []"
+    },
+    {
+      "check": "tx.commit-state",
+      "pass": true,
+      "detail": "committed"
+    },
+    {
+      "check": "tx.commit-visible-external",
+      "pass": true,
+      "detail": "external read after commit: [\"2|commit-me\"]"
+    },
+    {
+      "check": "tx.rollback-state",
+      "pass": true,
+      "detail": "rolled-back"
+    },
+    {
+      "check": "tx.rollback-invisible-external",
+      "pass": true,
+      "detail": "external read after rollback: [\"2|commit-me\"]"
+    },
+    {
+      "check": "coordinator.no-leak",
+      "pass": true,
+      "detail": "{\"limit\":2,\"active\":0,\"queued\":0,\"maxActive\":1,\"admitted\":4,\"cancelledInQueue\":0,\"timedOutInQueue\":0}"
+    },
+    {
+      "check": "protocol.connections-recorded",
+      "pass": true,
+      "detail": "1 client connection(s) through the recorder"
+    },
+    {
+      "check": "protocol.no-simple-query",
+      "pass": true,
+      "detail": "message types: PBDES"
+    },
+    {
+      "check": "protocol.sql-has-no-values",
+      "pass": true,
+      "detail": "11 Parse messages"
+    },
+    {
+      "check": "protocol.value-in-bind",
+      "pass": true,
+      "detail": "the 2^53+1 value was found in a Bind message"
+    },
+    {
+      "check": "protocol.server-log",
+      "pass": true,
+      "detail": "PostgreSQL log shows the statement with $1 and the parameter detail"
+    },
+    {
+      "check": "differential.bunsql-values",
+      "pass": true,
+      "detail": "Bun.SQL returned a=9007199254740993 (bigint), b=\"héllo wörld\"; skeleton returned a=9007199254740993 (bigint)"
+    },
+    {
+      "check": "differential.bunsql-error-code",
+      "pass": true,
+      "detail": "Bun.SQL duplicate-key error code=23505; skeleton vendor expected=23505"
+    },
+    {
+      "check": "cap.protocolPrepared",
+      "pass": true,
+      "detail": "requires protocol.sql-has-no-values + protocol.value-in-bind"
+    },
+    {
+      "check": "cap.interactiveTransactions",
+      "pass": true,
+      "detail": "requires tx.commit-visible-external + tx.rollback-invisible-external"
+    },
+    {
+      "check": "cap.int64",
+      "pass": true,
+      "detail": "requires query.bigint"
+    }
+  ],
+  "expectations": [
+    {
+      "item": "error.statementOutcome",
+      "expected": "rejected-no-effects",
+      "observed": "rejected-no-effects",
+      "asExpected": true
+    },
+    {
+      "item": "error.transactionState",
+      "expected": "failed-open",
+      "observed": "failed-open",
+      "asExpected": true
+    },
+    {
+      "item": "error.retry",
+      "expected": "never",
+      "observed": "never",
+      "asExpected": true
+    },
+    {
+      "item": "error.phase",
+      "expected": "execute",
+      "observed": "execute",
+      "asExpected": true
+    }
+  ],
+  "differences": [],
+  "notes": [
+    "session state after the error: failed-open"
+  ],
+  "protocol": [
+    {
+      "t": "P",
+      "sql": "select $1::int8 as a, $2::text as b"
+    },
+    {
+      "t": "B",
+      "params": [
+        "9007199254740993",
+        "héllo wörld"
+      ]
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    },
+    {
+      "t": "P",
+      "sql": "BEGIN"
+    },
+    {
+      "t": "B",
+      "params": []
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    },
+    {
+      "t": "P",
+      "sql": "insert into fs01_kv (id, v) values ($1, $2)"
+    },
+    {
+      "t": "B",
+      "params": [
+        "1",
+        "first"
+      ]
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    },
+    {
+      "t": "P",
+      "sql": "insert into fs01_kv (id, v) values ($1, $2)"
+    },
+    {
+      "t": "B",
+      "params": [
+        "1",
+        "second"
+      ]
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    },
+    {
+      "t": "P",
+      "sql": "ROLLBACK"
+    },
+    {
+      "t": "B",
+      "params": []
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    },
+    {
+      "t": "P",
+      "sql": "BEGIN"
+    },
+    {
+      "t": "B",
+      "params": []
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    },
+    {
+      "t": "P",
+      "sql": "insert into fs01_kv (id, v) values ($1, $2)"
+    },
+    {
+      "t": "B",
+      "params": [
+        "2",
+        "commit-me"
+      ]
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    },
+    {
+      "t": "P",
+      "sql": "COMMIT"
+    },
+    {
+      "t": "B",
+      "params": []
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    },
+    {
+      "t": "P",
+      "sql": "BEGIN"
+    },
+    {
+      "t": "B",
+      "params": []
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    },
+    {
+      "t": "P",
+      "sql": "insert into fs01_kv (id, v) values ($1, $2)"
+    },
+    {
+      "t": "B",
+      "params": [
+        "3",
+        "rollback-me"
+      ]
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    },
+    {
+      "t": "P",
+      "sql": "ROLLBACK"
+    },
+    {
+      "t": "B",
+      "params": []
+    },
+    {
+      "t": "D"
+    },
+    {
+      "t": "E"
+    },
+    {
+      "t": "S"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+direct         startup 58 bytes sha256 4a1864fc9d2eb1f4  statement 83 bytes sha256 aa5d1e7f72148d6a
+full           startup 58 bytes sha256 4a1864fc9d2eb1f4  statement 83 bytes sha256 aa5d1e7f72148d6a
+2-wirecore     startup 58 bytes sha256 4a1864fc9d2eb1f4  statement 83 bytes sha256 aa5d1e7f72148d6a
+3-transport    startup 58 bytes sha256 4a1864fc9d2eb1f4  statement 83 bytes sha256 aa5d1e7f72148d6a
+4-coord-pool   startup 58 bytes sha256 4a1864fc9d2eb1f4  statement 83 bytes sha256 aa5d1e7f72148d6a
+direct vs direct: IDENTICAL
+full vs direct: IDENTICAL
+2-wirecore vs direct: IDENTICAL
+3-transport vs direct: IDENTICAL
+4-coord-pool vs direct: IDENTICAL
+statement bytes (hex): 50000000170053454c4543542024313a3a696e74380000004200000024000000010000000100000010393030373139393235343734303939330001000044000000065000450000000900000000005300000004
+BYTES IDENTICAL

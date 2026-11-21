@@ -1,0 +1,75 @@
+platform branch hits: 9 {
+  "member-used-by-one-engine": 9,
+}
+  Engine descriptor + capability model: 0
+  WireCore: 3
+  EmbeddedCore: 3
+  ServiceCore: 2
+  ExecutionCoordinator: 0
+  ConnectionPool: 0
+  Transport: 1
+  Error taxonomy + ErrorMapper: 0
+  CodecRegistry: 0
+  Session (added in this study): 0
+  HIT member-used-by-one-engine platform/contracts/bytes.ts:6 [WireCore] Writer.u16be (only postgres)
+  HIT member-used-by-one-engine platform/contracts/bytes.ts:7 [WireCore] Writer.u32be (only postgres)
+  HIT member-used-by-one-engine platform/contracts/bytes.ts:18 [WireCore] Writer.patchU32be (only postgres)
+  HIT member-used-by-one-engine platform/contracts/core.ts:31 [EmbeddedCore] EmbeddedStatement.finalize (only sqlite)
+  HIT member-used-by-one-engine platform/contracts/core.ts:36 [EmbeddedCore] EmbeddedCore.prepare (only sqlite)
+  HIT member-used-by-one-engine platform/contracts/core.ts:38 [EmbeddedCore] EmbeddedCore.inTransaction (only sqlite)
+  HIT member-used-by-one-engine platform/contracts/core.ts:54 [ServiceCore] ServiceCore.handshake (only libsql)
+  HIT member-used-by-one-engine platform/contracts/core.ts:57 [ServiceCore] ServiceCore.openStream (only libsql)
+  HIT member-used-by-one-engine platform/contracts/transport.ts:15 [Transport] Endpoint.headers (only libsql)
+considered, not counted: 2
+  platform/contracts/errors.ts:7 one lower-case taxonomy word, not SQL: export type Phase = "connect" | "auth" | "prepare" | "bind" | "execute" | "fetch" | "commit" | "close";
+  platform/session-common.ts:46 one lower-case taxonomy word, not SQL: phase: "execute" | "commit" | "connect" | "auth" = "execute",
+members no engine uses (32):
+  WorkItem.queueTimeoutMs platform/contracts/coordinator.ts:4
+  Lease.release platform/contracts/coordinator.ts:7
+  CoordinatorStats.limit platform/contracts/coordinator.ts:10
+  CoordinatorStats.active platform/contracts/coordinator.ts:11
+  CoordinatorStats.maxActive platform/contracts/coordinator.ts:13
+  CoordinatorStats.admitted platform/contracts/coordinator.ts:14
+  CoordinatorStats.cancelledInQueue platform/contracts/coordinator.ts:15
+  CoordinatorStats.timedOutInQueue platform/contracts/coordinator.ts:16
+  ExecutionCoordinator.admit platform/contracts/coordinator.ts:19
+  ExecutionCoordinator.stats platform/contracts/coordinator.ts:20
+  ServiceCore.batch platform/contracts/core.ts:56
+  ErrorContext.txOpenBefore platform/contracts/errors.ts:40
+  PooledConnection.conn platform/contracts/pool.ts:2
+  PooledConnection.release platform/contracts/pool.ts:3
+  PooledConnection.destroy platform/contracts/pool.ts:5
+  ConnectionPool.acquire platform/contracts/pool.ts:8
+  ConnectionPool.drain platform/contracts/pool.ts:9
+  SessionLease.session platform/contracts/session.ts:21
+  SessionLease.release platform/contracts/session.ts:22
+  SessionLease.discard platform/contracts/session.ts:24
+  SessionSource.checkout platform/contracts/session.ts:27
+  TransportCaps.streaming platform/contracts/transport.ts:2
+  TransportCaps.startTls platform/contracts/transport.ts:3
+  TransportCaps.channelBinding platform/contracts/transport.ts:4
+  TransportCaps.keepalive platform/contracts/transport.ts:5
+  TransportCaps.halfOpenDetection platform/contracts/transport.ts:6
+  TransportCaps.secondConnectionForCancel platform/contracts/transport.ts:7
+  Endpoint.host platform/contracts/transport.ts:12
+  Endpoint.port platform/contracts/transport.ts:13
+  TlsOptions.serverName platform/contracts/transport.ts:19
+  TlsInfo.endpointHash platform/contracts/transport.ts:22
+  Transport.upgradeTls platform/contracts/transport.ts:33
+optional-member feature tests: 1
+  platform/service-session.ts:59 if (this.core.openStream === undefined) throw capabilityFailure("interactive transactions");
+entry class branches: 1
+  entry/compose.ts:55 switch (pkg.class) {
+capabilities derived from server facts:
+  pipelining: (constant everywhere)
+  protocolPrepared: postgres,mysql-family,sqlite,libsql
+  interactiveTransactions: postgres,mysql-family,sqlite,libsql
+  savepoints: (constant everywhere)
+  returning: (constant everywhere)
+  streamingResults: (constant everywhere)
+  bulkLoad: (constant everywhere)
+  notifications: (constant everywhere)
+  changeStream: (constant everywhere)
+  cancel: (constant everywhere)
+  int64: (constant everywhere)
+  multiResult: (constant everywhere)
