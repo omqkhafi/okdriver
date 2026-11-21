@@ -1,0 +1,15 @@
+PgBouncer 1.22.1, cold pool, first request R1: Reject-clean | negotiations: [] | ErrorResponse 08P01 before authentication
+PgBouncer 1.22.1, cold pool, first request R3: Reject-clean | negotiations: [] | ErrorResponse 08P01 before authentication
+PgBouncer 1.22.1, cold pool, first request R5: Reject-clean | negotiations: [] | ErrorResponse 08P01 before authentication
+PgBouncer 1.23.1, cold pool, first request R1: OK-negotiated | negotiations: [('3.0', [], 'early')] | negotiated to 3.0, options []
+PgBouncer 1.23.1, cold pool, first request R3: OK-negotiated | negotiations: [('3.0', ['_pq_.test_protocol_negotiation'], 'early')] | negotiated to 3.0, options [_pq_.test_protocol_negotiation]
+PgBouncer 1.23.1, cold pool, first request R5: OK-negotiated | negotiations: [('3.0', ['_pq_.fs02_probe_unknown'], 'early')] | negotiated to 3.0, options [_pq_.fs02_probe_unknown]
+PgBouncer 1.26.1, cold pool, first request R1: OK-negotiated | negotiations: [('3.0', [], 'early')] | negotiated to 3.0, options []
+PgBouncer 1.26.1, cold pool, first request R3: OK-negotiated | negotiations: [('3.0', ['_pq_.test_protocol_negotiation'], 'early')] | negotiated to 3.0, options [_pq_.test_protocol_negotiation]
+PgBouncer 1.26.1, cold pool, first request R5: OK-negotiated | negotiations: [('3.0', ['_pq_.fs02_probe_unknown'], 'early')] | negotiated to 3.0, options [_pq_.fs02_probe_unknown]
+PgBouncer 1.22.1, backend stopped, request R1: Reject-clean | negotiations: [] | ErrorResponse 08P01 before authentication | bad packet header: '0000003c00030002'
+PgBouncer 1.22.1, backend stopped, request R3: Reject-clean | negotiations: [] | ErrorResponse 08P01 before authentication | bad packet header: '0000005c0003270f'
+PgBouncer 1.23.1, backend stopped, request R1: OK-negotiated | negotiations: [('3.0', [], 'early')] | negotiated to 3.0, options [] | 
+PgBouncer 1.23.1, backend stopped, request R3: OK-negotiated | negotiations: [('3.0', ['_pq_.test_protocol_negotiation'], 'early')] | negotiated to 3.0, options [_pq_.test_protocol_negotiation] | 
+PgBouncer 1.26.1, backend stopped, request R1: OK-negotiated | negotiations: [('3.0', [], 'early')] | negotiated to 3.0, options [] | 
+PgBouncer 1.26.1, backend stopped, request R3: OK-negotiated | negotiations: [('3.0', ['_pq_.test_protocol_negotiation'], 'early')] | negotiated to 3.0, options [_pq_.test_protocol_negotiation] | 
