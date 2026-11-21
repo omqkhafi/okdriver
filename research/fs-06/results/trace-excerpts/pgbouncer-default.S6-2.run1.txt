@@ -1,0 +1,43 @@
+# pgbouncer-default S6-2 run 1: ok; 43.2 ms; client-side round trips 1
+    0.1 ms  client-side  > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag,nOids:0,oids:[]}
+    0.1 ms  client-side  > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.1 ms  client-side  > D {kind:P,name:}
+    0.1 ms  client-side  > E {portal:,maxRows:0}
+    0.1 ms  client-side  > S
+    0.1 ms  client-side  > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag,nOids:0,oids:[]}
+    0.1 ms  client-side  > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.1 ms  client-side  > D {kind:P,name:}
+    0.1 ms  client-side  > E {portal:,maxRows:0}
+    0.1 ms  client-side  > S
+   21.7 ms  server-side#2 > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag,nOids:0,oids:[]}
+   21.7 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+   21.7 ms  server-side#2 > D {kind:P,name:}
+   21.7 ms  server-side#2 > E {portal:,maxRows:0}
+   21.7 ms  server-side#2 > S
+   21.7 ms  server-side#2 > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag,nOids:0,oids:[]}
+   21.7 ms  server-side#2 > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+   21.7 ms  server-side#2 > D {kind:P,name:}
+   21.7 ms  server-side#2 > E {portal:,maxRows:0}
+   21.7 ms  server-side#2 > S
+   22.3 ms  server-side#2 < 1
+   22.3 ms  server-side#2 < 2
+   22.3 ms  server-side#2 < T {columns:3}
+   22.3 ms  server-side#2 < D
+   22.3 ms  server-side#2 < C {tag:SELECT 1}
+   22.3 ms  server-side#2 < Z {status:I}
+   22.4 ms  server-side#2 < 1
+   22.4 ms  server-side#2 < 2
+   22.4 ms  server-side#2 < T {columns:3}
+   22.4 ms  server-side#2 < D
+   22.4 ms  server-side#2 < C {tag:SELECT 1}
+   22.4 ms  server-side#2 < Z {status:I}
+   22.7 ms  client-side  < 1
+   22.7 ms  client-side  < 2
+   22.7 ms  client-side  < T {columns:3}
+   22.7 ms  client-side  < C {tag:SELECT 1}
+   22.7 ms  client-side  < Z {status:I}
+   22.7 ms  client-side  < 1
+   22.7 ms  client-side  < 2
+   22.7 ms  client-side  < T {columns:3}
+   22.7 ms  client-side  < C {tag:SELECT 1}
+   22.7 ms  client-side  < Z {status:I}

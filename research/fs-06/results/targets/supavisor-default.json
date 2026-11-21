@@ -1,0 +1,1035 @@
+{
+ "target": {
+  "id": "supavisor-default",
+  "pooler": "supavisor",
+  "config": "default",
+  "mode": "transaction",
+  "serverPool": 2,
+  "clients": 8,
+  "notes": [
+   "Supavisor needs its own metadata Postgres (second container, same postgres:19.0 image), created fresh for every configuration",
+   "the image entrypoint raises RLIMIT_NOFILE and fails in this sandbox, so RLIMIT_NOFILE is set empty",
+   "tenants are created through the management API with an HS256 JWT signed with API_JWT_SECRET; the client user is `<user>.<tenant>`",
+   "a tenant with a non-manager user and no auth_query is rejected (400), so the user is a manager user and the tenant has an auth_query reading pg_authid",
+   "pool mode follows the listening port (transaction or session); NAMED_PREPARED_STATEMENTS_ENABLED=true is the documented switch for named statements in transaction mode"
+  ]
+ },
+ "login": {
+  "authMethod": "scram-sha-256",
+  "tls": false,
+  "parameterStatus": [
+   [
+    "DateStyle",
+    "ISO, MDY"
+   ],
+   [
+    "IntervalStyle",
+    "postgres"
+   ],
+   [
+    "TimeZone",
+    "Etc/UTC"
+   ],
+   [
+    "application_name",
+    "Supavisor"
+   ],
+   [
+    "client_encoding",
+    "UTF8"
+   ],
+   [
+    "default_transaction_read_only",
+    "off"
+   ],
+   [
+    "in_hot_standby",
+    "off"
+   ],
+   [
+    "integer_datetimes",
+    "on"
+   ],
+   [
+    "is_superuser",
+    "on"
+   ],
+   [
+    "scram_iterations",
+    "4096"
+   ],
+   [
+    "search_path",
+    "\"$user\", public"
+   ],
+   [
+    "server_encoding",
+    "UTF8"
+   ],
+   [
+    "server_version",
+    "19.0 (Debian 19.0-1.pgdg13+1)"
+   ],
+   [
+    "session_authorization",
+    "fs06"
+   ],
+   [
+    "standard_conforming_strings",
+    "on"
+   ]
+  ]
+ },
+ "seqs": {
+  "S1": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.7,
+    "min": 42.4,
+    "max": 43
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's1'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 43,
+    "min": 42.3,
+    "max": 60.6
+   },
+   "impliedRoundTrips": 1.08,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_supavisor-default-r1_c0_s2|SELECT $1::int AS n, pg_backend_pid() AS pid, 's2'::text AS tag",
+   "serverBindExample": "fs06_supavisor-default-r1_c0_s2",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S2b": {
+   "runs": 5,
+   "ok": 4,
+   "outcomes": {
+    "ok": 4,
+    "error": 1
+   },
+   "errors": {
+    "26000 prepared statement \"fs06_supavisor-default-r4_c0_s2\" does not exist": 1
+   },
+   "failures": {
+    "ERROR 26000 prepared statement \"fs06_supavisor-default-r4_c0_s2\" does not exist": 1
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.5,
+    "min": 42.2,
+    "max": 43.1
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_supavisor-default-r1_c0_s2",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.4,
+    "min": 84.3,
+    "max": 87.2
+   },
+   "impliedRoundTrips": 2.11,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S B E S"
+   ],
+   "serverParseExample": "fs06_supavisor-default-r1_c0_s3|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3'::text AS tag",
+   "serverBindExample": "fs06_supavisor-default-r1_c0_s3",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3i": {
+   "runs": 5,
+   "ok": 2,
+   "outcomes": {
+    "error": 3,
+    "ok": 2
+   },
+   "errors": {
+    "26000 prepared statement \"fs06_supavisor-default-r1_c0_s3i\" does not exist": 1,
+    "26000 prepared statement \"fs06_supavisor-default-r2_c0_s3i\" does not exist": 1,
+    "26000 prepared statement \"fs06_supavisor-default-r5_c0_s3i\" does not exist": 1
+   },
+   "failures": {
+    "ERROR 26000 prepared statement \"fs06_supavisor-default-r1_c0_s3i\" does not exist": 1,
+    "ERROR 26000 prepared statement \"fs06_supavisor-default-r2_c0_s3i\" does not exist": 1,
+    "ERROR 26000 prepared statement \"fs06_supavisor-default-r5_c0_s3i\" does not exist": 1
+   },
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.9,
+    "min": 84.5,
+    "max": 85.5
+   },
+   "impliedRoundTrips": 2.12,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 8 forwarded": 5,
+    "message types differ from what the client sent": 5,
+    "more than one server connection used": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S B E S"
+   ],
+   "serverParseExample": "fs06_supavisor-default-r1_c0_s3i|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3i'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 9,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3u": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.8,
+    "min": 84.3,
+    "max": 85.9
+   },
+   "impliedRoundTrips": 2.12,
+   "forwardedAsSent": 4,
+   "serverNotes": {
+    "message types differ from what the client sent": 1,
+    "more than one server connection used": 1
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S B E S",
+    "P D S S B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3u'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3ui": {
+   "runs": 5,
+   "ok": 0,
+   "outcomes": {
+    "error": 5
+   },
+   "errors": {
+    "08P01 bind message supplies 1 parameters, but prepared statement \"\" requires 0": 5
+   },
+   "failures": {
+    "ERROR 08P01 bind message supplies 1 parameters, but prepared statement \"\" requires 0": 5
+   },
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.7,
+    "min": 84.2,
+    "max": 85
+   },
+   "impliedRoundTrips": 2.12,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 8 forwarded": 5,
+    "message types differ from what the client sent": 5,
+    "more than one server connection used": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3ui'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 9,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3f": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 85.2,
+    "min": 84.6,
+    "max": 86
+   },
+   "impliedRoundTrips": 2.13,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P D H B E S",
+   "serverTypes": [
+    "P D H B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3f'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.9,
+    "min": 42.5,
+    "max": 44.9
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_supavisor-default-r1_shared|SELECT $1::int AS n, pg_backend_pid() AS pid, 'A'::text AS tag",
+   "serverBindExample": "fs06_supavisor-default-r1_shared",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-B": {
+   "runs": 5,
+   "ok": 0,
+   "outcomes": {
+    "error": 5
+   },
+   "errors": {
+    "42P05 prepared statement \"fs06_supavisor-default-r1_shared\" already exists": 1,
+    "42P05 prepared statement \"fs06_supavisor-default-r2_shared\" already exists": 1,
+    "42P05 prepared statement \"fs06_supavisor-default-r3_shared\" already exists": 1,
+    "42P05 prepared statement \"fs06_supavisor-default-r4_shared\" already exists": 1,
+    "42P05 prepared statement \"fs06_supavisor-default-r5_shared\" already exists": 1
+   },
+   "failures": {
+    "ERROR 42P05 prepared statement \"fs06_supavisor-default-r1_shared\" already exists": 1,
+    "ERROR 42P05 prepared statement \"fs06_supavisor-default-r2_shared\" already exists": 1,
+    "ERROR 42P05 prepared statement \"fs06_supavisor-default-r3_shared\" already exists": 1,
+    "ERROR 42P05 prepared statement \"fs06_supavisor-default-r4_shared\" already exists": 1,
+    "ERROR 42P05 prepared statement \"fs06_supavisor-default-r5_shared\" already exists": 1
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 42.5,
+    "max": 42.7
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_supavisor-default-r1_shared|SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag",
+   "serverBindExample": "fs06_supavisor-default-r1_shared",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4b-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 42.4,
+    "max": 43.3
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_supavisor-default-r1_shared",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4b-B": {
+   "runs": 5,
+   "ok": 0,
+   "outcomes": {
+    "wrong-result": 5
+   },
+   "errors": {},
+   "failures": {
+    "row 0 is [\"12\",\"1103\",\"A\"], expected n=12 tag=B": 2,
+    "row 0 is [\"12\",\"1100\",\"A\"], expected n=12 tag=B": 3
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.5,
+    "min": 42.4,
+    "max": 42.7
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_supavisor-default-r1_shared",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": true
+  },
+  "S4c-setup-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 42.6,
+    "max": 42.9
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "Q P B D E S",
+   "serverTypes": [
+    "Q P B D E S"
+   ],
+   "serverParseExample": "fs06_supavisor-default-r1_mix|SELECT $1::int AS n, pg_backend_pid() AS pid, 'A'::text AS tag",
+   "serverBindExample": "fs06_supavisor-default-r1_mix",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c-setup-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 42.7,
+    "max": 43.2
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_supavisor-default-r1_mix|SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag",
+   "serverBindExample": "fs06_supavisor-default-r1_mix",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c": {
+   "runs": 30,
+   "ok": 0,
+   "outcomes": {
+    "wrong-result": 30
+   },
+   "errors": {},
+   "failures": {
+    "row 0 is [\"22\",\"1103\",\"A\"], expected n=22 tag=B": 12,
+    "row 0 is [\"22\",\"1100\",\"A\"], expected n=22 tag=B": 18
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.7,
+    "min": 42.2,
+    "max": 43.4
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 29,
+   "serverNotes": {
+    "message types differ from what the client sent": 1,
+    "more than one server connection used": 1
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S",
+    "B D E S S"
+   ],
+   "serverBindExample": "fs06_supavisor-default-r1_mix",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": true
+  },
+  "S5": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 43,
+    "min": 42.4,
+    "max": 43.1
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E P B D E S",
+   "serverTypes": [
+    "P B D E P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's5a'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 42.6,
+    "max": 43.7
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-10": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.9,
+    "min": 42.7,
+    "max": 43.3
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S  … (50 messages)"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-100": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 50.9,
+    "min": 48.5,
+    "max": 52.9
+   },
+   "impliedRoundTrips": 1.27,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S  … (500 messages)"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 42.2,
+    "max": 42.9
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "Q P B D E S Q",
+   "serverTypes": [
+    "Q P B D E S Q"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's7'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7b": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.4,
+    "min": 42.3,
+    "max": 43.1
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B E S P B D E S P B E S",
+   "serverTypes": [
+    "P B E S P B D E S P B E S"
+   ],
+   "serverParseExample": "|BEGIN",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  }
+ },
+ "pin": {
+  "unnamed": {
+   "txnsOk": 800,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {},
+   "clientRunsWithOnePid": 0,
+   "clientRunsWithManyPids": 40,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  "named": {
+   "txnsOk": 284,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {
+    "26000 prepared statement \"fs06_supavisor-default-r1_pin_c0\" does not exist": 13,
+    "26000 prepared statement \"fs06_supavisor-default-r1_pin_c1\" does not exist": 14,
+    "26000 prepared statement \"fs06_supavisor-default-r1_pin_c2\" does not exist": 15,
+    "26000 prepared statement \"fs06_supavisor-default-r1_pin_c3\" does not exist": 15,
+    "26000 prepared statement \"fs06_supavisor-default-r1_pin_c4\" does not exist": 16,
+    "26000 prepared statement \"fs06_supavisor-default-r1_pin_c5\" does not exist": 16,
+    "26000 prepared statement \"fs06_supavisor-default-r1_pin_c6\" does not exist": 11,
+    "26000 prepared statement \"fs06_supavisor-default-r1_pin_c7\" does not exist": 15,
+    "26000 prepared statement \"fs06_supavisor-default-r2_pin_c0\" does not exist": 11,
+    "26000 prepared statement \"fs06_supavisor-default-r2_pin_c1\" does not exist": 12,
+    "26000 prepared statement \"fs06_supavisor-default-r2_pin_c2\" does not exist": 11,
+    "26000 prepared statement \"fs06_supavisor-default-r2_pin_c3\" does not exist": 11,
+    "26000 prepared statement \"fs06_supavisor-default-r2_pin_c4\" does not exist": 15,
+    "26000 prepared statement \"fs06_supavisor-default-r2_pin_c5\" does not exist": 11,
+    "26000 prepared statement \"fs06_supavisor-default-r2_pin_c6\" does not exist": 13,
+    "26000 prepared statement \"fs06_supavisor-default-r2_pin_c7\" does not exist": 11,
+    "26000 prepared statement \"fs06_supavisor-default-r3_pin_c0\" does not exist": 11,
+    "26000 prepared statement \"fs06_supavisor-default-r3_pin_c1\" does not exist": 14,
+    "26000 prepared statement \"fs06_supavisor-default-r3_pin_c2\" does not exist": 16,
+    "26000 prepared statement \"fs06_supavisor-default-r3_pin_c3\" does not exist": 14,
+    "26000 prepared statement \"fs06_supavisor-default-r3_pin_c4\" does not exist": 12,
+    "26000 prepared statement \"fs06_supavisor-default-r3_pin_c5\" does not exist": 12,
+    "26000 prepared statement \"fs06_supavisor-default-r3_pin_c6\" does not exist": 15,
+    "26000 prepared statement \"fs06_supavisor-default-r3_pin_c7\" does not exist": 15,
+    "26000 prepared statement \"fs06_supavisor-default-r4_pin_c0\" does not exist": 12,
+    "26000 prepared statement \"fs06_supavisor-default-r4_pin_c1\" does not exist": 13,
+    "26000 prepared statement \"fs06_supavisor-default-r4_pin_c2\" does not exist": 8,
+    "26000 prepared statement \"fs06_supavisor-default-r4_pin_c3\" does not exist": 16,
+    "26000 prepared statement \"fs06_supavisor-default-r4_pin_c4\" does not exist": 11,
+    "26000 prepared statement \"fs06_supavisor-default-r4_pin_c5\" does not exist": 11,
+    "26000 prepared statement \"fs06_supavisor-default-r4_pin_c6\" does not exist": 11,
+    "26000 prepared statement \"fs06_supavisor-default-r4_pin_c7\" does not exist": 14,
+    "26000 prepared statement \"fs06_supavisor-default-r5_pin_c0\" does not exist": 9,
+    "26000 prepared statement \"fs06_supavisor-default-r5_pin_c1\" does not exist": 13,
+    "26000 prepared statement \"fs06_supavisor-default-r5_pin_c2\" does not exist": 16,
+    "26000 prepared statement \"fs06_supavisor-default-r5_pin_c3\" does not exist": 8,
+    "26000 prepared statement \"fs06_supavisor-default-r5_pin_c4\" does not exist": 16,
+    "26000 prepared statement \"fs06_supavisor-default-r5_pin_c5\" does not exist": 13,
+    "26000 prepared statement \"fs06_supavisor-default-r5_pin_c6\" does not exist": 15,
+    "26000 prepared statement \"fs06_supavisor-default-r5_pin_c7\" does not exist": 11
+   },
+   "clientRunsWithOnePid": 0,
+   "clientRunsWithManyPids": 0,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  }
+ },
+ "preparedReadbackLastRun": [
+  {
+   "pid": 1100,
+   "count": 27,
+   "names": [
+    "fs06_supavisor-default-r1_c0_s2",
+    "fs06_supavisor-default-r1_c0_s3",
+    "fs06_supavisor-default-r1_c0_s3i",
+    "fs06_supavisor-default-r1_mix",
+    "fs06_supavisor-default-r1_pin_c2",
+    "fs06_supavisor-default-r1_pin_c6",
+    "fs06_supavisor-default-r1_pin_c7",
+    "fs06_supavisor-default-r2_mix",
+    "fs06_supavisor-default-r2_pin_c2",
+    "fs06_supavisor-default-r2_pin_c3",
+    "fs06_supavisor-default-r2_pin_c4",
+    "fs06_supavisor-default-r2_shared"
+   ]
+  },
+  {
+   "pid": 1103,
+   "count": 24,
+   "names": [
+    "fs06_supavisor-default-r1_mix",
+    "fs06_supavisor-default-r1_pin_c1",
+    "fs06_supavisor-default-r1_pin_c3",
+    "fs06_supavisor-default-r1_pin_c4",
+    "fs06_supavisor-default-r1_shared",
+    "fs06_supavisor-default-r2_pin_c5",
+    "fs06_supavisor-default-r2_pin_c7",
+    "fs06_supavisor-default-r3_c0_s2",
+    "fs06_supavisor-default-r3_c0_s3",
+    "fs06_supavisor-default-r3_c0_s3i",
+    "fs06_supavisor-default-r3_mix",
+    "fs06_supavisor-default-r3_pin_c0"
+   ]
+  },
+  {
+   "pid": 1102,
+   "count": 19,
+   "names": [
+    "fs06_supavisor-default-r1_pin_c0",
+    "fs06_supavisor-default-r1_pin_c5",
+    "fs06_supavisor-default-r2_c0_s2",
+    "fs06_supavisor-default-r2_c0_s3",
+    "fs06_supavisor-default-r2_c0_s3i",
+    "fs06_supavisor-default-r2_mix",
+    "fs06_supavisor-default-r2_pin_c0",
+    "fs06_supavisor-default-r2_pin_c1",
+    "fs06_supavisor-default-r2_pin_c6",
+    "fs06_supavisor-default-r3_mix",
+    "fs06_supavisor-default-r3_pin_c2",
+    "fs06_supavisor-default-r3_pin_c5"
+   ]
+  }
+ ],
+ "statsIdleLastRun": {
+  "supavisor_db_handler_started_count": "3",
+  "supavisor_db_handler_db_connection_count": "3",
+  "supavisor_client_connection_duration_count": "41",
+  "supavisor_client_queries_count": "2477",
+  "supavisor_client_joins_ok": "41"
+ },
+ "statsBusyLastRun": {
+  "supavisor_db_handler_started_count": "3",
+  "supavisor_db_handler_db_connection_count": "3",
+  "supavisor_client_connection_duration_count": "41",
+  "supavisor_client_queries_count": "2179",
+  "supavisor_client_joins_ok": "41"
+ },
+ "server": {
+  "connections": 8,
+  "pids": [
+   1096,
+   1098,
+   1100,
+   1101,
+   1103,
+   1102
+  ],
+  "simpleQueries": {
+   "BEGIN": 10,
+   "COMMIT": 10
+  },
+  "parseNamesSample": [
+   "",
+   "fs06_<run>_c0_s2",
+   "fs06_<run>_c0_s3",
+   "fs06_<run>_c0_s3i",
+   "fs06_<run>_shared",
+   "fs06_<run>_mix",
+   "fs06_<run>_pin_c0",
+   "fs06_<run>_pin_c2",
+   "fs06_<run>_pin_c4",
+   "fs06_<run>_pin_c5",
+   "fs06_<run>_pin_c6",
+   "fs06_<run>_pin_c1",
+   "fs06_<run>_pin_c7",
+   "fs06_<run>_pin_c3"
+  ],
+  "closeMessages": {
+   "S": 2
+  }
+ },
+ "connectErrors": [],
+ "refs": [
+  {
+   "kind": "pg",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 60,
+   "total": 160,
+   "errors": {
+    "42P05 prepared statement \"fs06_ref_stmt\" already exists": 100
+   },
+   "distinctPids": 3,
+   "ms": 176
+  },
+  {
+   "kind": "pg-unnamed",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 3,
+   "ms": 193
+  },
+  {
+   "kind": "postgres",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 103,
+   "total": 160,
+   "errors": {
+    "26000 prepared statement \"ct23k3x71\" does not exist": 2,
+    "42P05 prepared statement \"ct23k3x71\" already exists": 1,
+    "26000 prepared statement \"ct23k3x71_\" does not exist": 2,
+    "26000 prepared statement \"as15bq2y1\" does not exist": 2,
+    "42P05 prepared statement \"as15bq2y1\" already exists": 1,
+    "26000 prepared statement \"as15bq2y1_\" does not exist": 1,
+    "42P05 prepared statement \"as15bq2y1_\" already exists": 1,
+    "26000 prepared statement \"as15bq2y1__\" does not exist": 2,
+    "42P05 prepared statement \"as15bq2y1__\" already exists": 1,
+    "26000 prepared statement \"as15bq2y1___\" does not exist": 2,
+    "26000 prepared statement \"xpk3rd5q1\" does not exist": 1,
+    "42P05 prepared statement \"xpk3rd5q1\" already exists": 1,
+    "26000 prepared statement \"xpk3rd5q1_\" does not exist": 1,
+    "42P05 prepared statement \"xpk3rd5q1_\" already exists": 1,
+    "26000 prepared statement \"xpk3rd5q1__\" does not exist": 2,
+    "42P05 prepared statement \"xpk3rd5q1__\" already exists": 1,
+    "26000 prepared statement \"xpk3rd5q1___\" does not exist": 2,
+    "26000 prepared statement \"8x8ynxqf1\" does not exist": 2,
+    "26000 prepared statement \"eovh0pfw1\" does not exist": 2,
+    "42P05 prepared statement \"eovh0pfw1\" already exists": 1,
+    "26000 prepared statement \"eovh0pfw1_\" does not exist": 1,
+    "42P05 prepared statement \"eovh0pfw1_\" already exists": 1,
+    "26000 prepared statement \"eovh0pfw1__\" does not exist": 1,
+    "42P05 prepared statement \"eovh0pfw1__\" already exists": 1,
+    "26000 prepared statement \"eovh0pfw1___\" does not exist": 1,
+    "42P05 prepared statement \"eovh0pfw1___\" already exists": 1,
+    "26000 prepared statement \"eovh0pfw1____\" does not exist": 1,
+    "26000 prepared statement \"nfpfvqud1\" does not exist": 2,
+    "26000 prepared statement \"7mod6i4y1\" does not exist": 2,
+    "42P05 prepared statement \"7mod6i4y1\" already exists": 1,
+    "26000 prepared statement \"7mod6i4y1_\" does not exist": 2,
+    "42P05 prepared statement \"7mod6i4y1_\" already exists": 1,
+    "26000 prepared statement \"7mod6i4y1__\" does not exist": 2,
+    "26000 prepared statement \"w2cevitr1\" does not exist": 1,
+    "42P05 prepared statement \"w2cevitr1\" already exists": 1,
+    "26000 prepared statement \"w2cevitr1_\" does not exist": 2,
+    "42P05 prepared statement \"w2cevitr1_\" already exists": 1,
+    "26000 prepared statement \"w2cevitr1__\" does not exist": 2,
+    "42P05 prepared statement \"w2cevitr1__\" already exists": 1,
+    "26000 prepared statement \"w2cevitr1___\" does not exist": 2,
+    "42P05 prepared statement \"w2cevitr1___\" already exists": 1
+   },
+   "distinctPids": 3,
+   "ms": 222
+  },
+  {
+   "kind": "postgres-unnamed",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 3,
+   "ms": 211
+  }
+ ]
+}

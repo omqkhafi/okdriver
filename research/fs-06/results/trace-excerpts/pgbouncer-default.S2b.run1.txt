@@ -1,0 +1,22 @@
+# pgbouncer-default S2b run 1: ok; 42.6 ms; client-side round trips 1
+    0.1 ms  client-side  > B {portal:,stmt:fs06_pgbouncer-default-r1_c0_s2,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.1 ms  client-side  > D {kind:P,name:}
+    0.1 ms  client-side  > E {portal:,maxRows:0}
+    0.1 ms  client-side  > S
+   20.8 ms  server-side#1 > Q {sql:SET application_name='fs06-pgbouncer-default-r1-c0';}
+   21.3 ms  server-side#1 < C {tag:SET}
+   21.3 ms  server-side#1 < S {name:application_name,value:fs06-pgbouncer-default-r1-c0}
+   21.3 ms  server-side#1 < Z {status:I}
+   21.6 ms  server-side#1 > B {portal:,stmt:PGBOUNCER_1,nParamFormats:0,nParams:1,nResultFormats:0}
+   21.6 ms  server-side#1 > D {kind:P,name:}
+   21.6 ms  server-side#1 > E {portal:,maxRows:0}
+   21.6 ms  server-side#1 > S
+   22.0 ms  server-side#1 < 2
+   22.0 ms  server-side#1 < T {columns:3}
+   22.0 ms  server-side#1 < D
+   22.0 ms  server-side#1 < C {tag:SELECT 1}
+   22.0 ms  server-side#1 < Z {status:I}
+   22.2 ms  client-side  < 2
+   22.2 ms  client-side  < T {columns:3}
+   22.2 ms  client-side  < C {tag:SELECT 1}
+   22.2 ms  client-side  < Z {status:I}

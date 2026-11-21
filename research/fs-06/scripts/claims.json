@@ -1,0 +1,8 @@
+[
+  { "id": "P-01", "area": "one round trip", "text": "[E] \"One round trip: Parse + Bind + Describe(portal) + Execute + Sync in one flush, including behind poolers. FS-06 confirms on every pooler\"." },
+  { "id": "P-02", "area": "Supavisor named statements", "text": "[V] \"Supabase documentation and the Supavisor FAQ disagree on named prepared statements in transaction mode. The `supavisor` profile is conservative until FS-06 measures it.\"" },
+  { "id": "P-03", "area": "PgBouncer ParameterStatus", "text": "[V] \"PgBouncer 1.26 reports `pgbouncer.*` values through ParameterStatus at login, which allows pooler detection without an extra query.\"" },
+  { "id": "P-04", "area": "RDS Proxy pinning", "text": "[V] \"RDS Proxy pins a session on any `SET` and on query text above 16 KB, and has no session pinning filters for PostgreSQL.\" (hosted: Not verifiable here unless a URL is supplied)" },
+  { "id": "P-05", "area": "Hyperdrive named statements", "text": "[V] \"Cloudflare documents Hyperdrive as supporting named prepared statements as implemented by postgres.js and node-postgres. OKDriver must reproduce a compatible message sequence and test it live.\" (Not verifiable here)" },
+  { "id": "P-06", "area": "P10-T02 acceptance", "text": "P10-T02 acceptance: \"No 26000 or 42P05 errors across the conformance run through each pooler; passive detection where the pooler reports itself\". Record which pooler and configuration produce them." }
+]

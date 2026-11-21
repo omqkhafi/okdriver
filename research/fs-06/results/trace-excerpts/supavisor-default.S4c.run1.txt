@@ -1,0 +1,18 @@
+# supavisor-default S4c run 1: wrong-result (row 0 is ["22","1103","A"], expected n=22 tag=B); 42.8 ms; client-side round trips 1
+    0.1 ms  client-side  > B {portal:,stmt:fs06_supavisor-default-r1_mix,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.1 ms  client-side  > D {kind:P,name:}
+    0.1 ms  client-side  > E {portal:,maxRows:0}
+    0.1 ms  client-side  > S
+   21.1 ms  server-side#7 > B {portal:,stmt:fs06_supavisor-default-r1_mix,nParamFormats:0,nParams:1,nResultFormats:0}
+   21.1 ms  server-side#7 > D {kind:P,name:}
+   21.1 ms  server-side#7 > E {portal:,maxRows:0}
+   21.1 ms  server-side#7 > S
+   21.8 ms  server-side#7 < 2
+   21.8 ms  server-side#7 < T {columns:3}
+   21.8 ms  server-side#7 < D
+   21.8 ms  server-side#7 < C {tag:SELECT 1}
+   21.8 ms  server-side#7 < Z {status:I}
+   22.3 ms  client-side  < 2
+   22.3 ms  client-side  < T {columns:3}
+   22.3 ms  client-side  < C {tag:SELECT 1}
+   22.3 ms  client-side  < Z {status:I}

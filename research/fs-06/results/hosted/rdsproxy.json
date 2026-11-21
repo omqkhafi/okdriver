@@ -1,0 +1,7 @@
+{
+ "target": {
+  "id": "rdsproxy"
+ },
+ "notVerified": true,
+ "blocker": "FS06_RDSPROXY_URL is not set"
+}

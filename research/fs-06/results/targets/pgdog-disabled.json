@@ -1,0 +1,1163 @@
+{
+ "target": {
+  "id": "pgdog-disabled",
+  "pooler": "pgdog",
+  "config": "disabled",
+  "mode": "transaction",
+  "serverPool": 2,
+  "clients": 8,
+  "notes": [
+   "pgdog.toml and users.toml are read from /pgdog; the user password is stored in plain text in users.toml",
+   "PgDog disables prepared-statement handling automatically in session mode (core.rs prepared_statements())"
+  ]
+ },
+ "login": {
+  "authMethod": "scram-sha-256",
+  "tls": false,
+  "parameterStatus": [
+   [
+    "application_name",
+    "fs06-pgdog-disabled-r1-c0"
+   ],
+   [
+    "client_encoding",
+    "UTF8"
+   ],
+   [
+    "DateStyle",
+    "ISO, MDY"
+   ],
+   [
+    "default_transaction_read_only",
+    "off"
+   ],
+   [
+    "in_hot_standby",
+    "off"
+   ],
+   [
+    "integer_datetimes",
+    "on"
+   ],
+   [
+    "IntervalStyle",
+    "postgres"
+   ],
+   [
+    "is_superuser",
+    "on"
+   ],
+   [
+    "scram_iterations",
+    "4096"
+   ],
+   [
+    "search_path",
+    "\"$user\", public"
+   ],
+   [
+    "server_encoding",
+    "UTF8"
+   ],
+   [
+    "server_version",
+    "19.0 (Debian 19.0-1.pgdg13+1)"
+   ],
+   [
+    "session_authorization",
+    "fs06"
+   ],
+   [
+    "standard_conforming_strings",
+    "on"
+   ],
+   [
+    "TimeZone",
+    "Etc/UTC"
+   ]
+  ]
+ },
+ "seqs": {
+  "S1": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.9,
+    "min": 42.6,
+    "max": 45.3
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's1'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c0\""
+   ],
+   "wrongRow": false
+  },
+  "S2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.2,
+    "min": 42,
+    "max": 42.6
+   },
+   "impliedRoundTrips": 1.05,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgdog-disabled-r1_c0_s2|SELECT $1::int AS n, pg_backend_pid() AS pid, 's2'::text AS tag",
+   "serverBindExample": "fs06_pgdog-disabled-r1_c0_s2",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S2b": {
+   "runs": 5,
+   "ok": 1,
+   "outcomes": {
+    "ok": 1,
+    "error": 4
+   },
+   "errors": {
+    "26000 prepared statement \"fs06_pgdog-disabled-r2_c0_s2\" does not exist": 1,
+    "26000 prepared statement \"fs06_pgdog-disabled-r3_c0_s2\" does not exist": 1,
+    "26000 prepared statement \"fs06_pgdog-disabled-r4_c0_s2\" does not exist": 1,
+    "26000 prepared statement \"fs06_pgdog-disabled-r5_c0_s2\" does not exist": 1
+   },
+   "failures": {
+    "ERROR 26000 prepared statement \"fs06_pgdog-disabled-r2_c0_s2\" does not exist": 1,
+    "ERROR 26000 prepared statement \"fs06_pgdog-disabled-r3_c0_s2\" does not exist": 1,
+    "ERROR 26000 prepared statement \"fs06_pgdog-disabled-r4_c0_s2\" does not exist": 1,
+    "ERROR 26000 prepared statement \"fs06_pgdog-disabled-r5_c0_s2\" does not exist": 1
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.4,
+    "min": 42.3,
+    "max": 43
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgdog-disabled-r1_c0_s2",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c0\""
+   ],
+   "wrongRow": false
+  },
+  "S3": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.1,
+    "min": 83.5,
+    "max": 85.4
+   },
+   "impliedRoundTrips": 2.1,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S B E S"
+   ],
+   "serverParseExample": "fs06_pgdog-disabled-r1_c0_s3|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3'::text AS tag",
+   "serverBindExample": "fs06_pgdog-disabled-r1_c0_s3",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3i": {
+   "runs": 5,
+   "ok": 4,
+   "outcomes": {
+    "ok": 4,
+    "error": 1
+   },
+   "errors": {
+    "26000 prepared statement \"fs06_pgdog-disabled-r5_c0_s3i\" does not exist": 1
+   },
+   "failures": {
+    "ERROR 26000 prepared statement \"fs06_pgdog-disabled-r5_c0_s3i\" does not exist": 1
+   },
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 85.2,
+    "min": 84.3,
+    "max": 86.2
+   },
+   "impliedRoundTrips": 2.13,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 8 forwarded": 4,
+    "message types differ from what the client sent": 5,
+    "pooler sent its own simple queries": 5,
+    "more than one server connection used": 5,
+    "1 Parse sent, 7 forwarded": 1
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S B E S",
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S B E S"
+   ],
+   "serverParseExample": "fs06_pgdog-disabled-r1_c0_s3i|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3i'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 16,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c4\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c3\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c2\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c1\""
+   ],
+   "wrongRow": false
+  },
+  "S3u": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.7,
+    "min": 83.8,
+    "max": 85.3
+   },
+   "impliedRoundTrips": 2.12,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 2 forwarded": 5,
+    "message types differ from what the client sent": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3u'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3ui": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 85,
+    "min": 84.1,
+    "max": 85.6
+   },
+   "impliedRoundTrips": 2.12,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 9 forwarded": 5,
+    "message types differ from what the client sent": 5,
+    "pooler sent its own simple queries": 5,
+    "more than one server connection used": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3ui'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 16,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c4\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c7\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c3\""
+   ],
+   "wrongRow": false
+  },
+  "S3f": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 84.5,
+    "min": 84.3,
+    "max": 85
+   },
+   "impliedRoundTrips": 2.11,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 2 forwarded": 5,
+    "message types differ from what the client sent": 5
+   },
+   "clientTypes": "P D H B E S",
+   "serverTypes": [
+    "P D H S P B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3f'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 3,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.7,
+    "min": 42.3,
+    "max": 43
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgdog-disabled-r1_shared|SELECT $1::int AS n, pg_backend_pid() AS pid, 'A'::text AS tag",
+   "serverBindExample": "fs06_pgdog-disabled-r1_shared",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-B": {
+   "runs": 5,
+   "ok": 0,
+   "outcomes": {
+    "wrong-result": 5
+   },
+   "errors": {},
+   "failures": {
+    "row 0 is [\"12\",\"1330\",\"A\"], expected n=12 tag=B": 3,
+    "row 0 is [\"12\",\"1329\",\"A\"], expected n=12 tag=B": 2
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 41.9,
+    "max": 43.4
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "Parse not forwarded": 5,
+    "message types differ from what the client sent": 5,
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgdog-disabled-r1_shared",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c1\""
+   ],
+   "wrongRow": true
+  },
+  "S4b-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 41.6,
+    "max": 43.2
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgdog-disabled-r1_shared",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c0\""
+   ],
+   "wrongRow": false
+  },
+  "S4b-B": {
+   "runs": 5,
+   "ok": 0,
+   "outcomes": {
+    "wrong-result": 5
+   },
+   "errors": {},
+   "failures": {
+    "row 0 is [\"12\",\"1330\",\"A\"], expected n=12 tag=B": 3,
+    "row 0 is [\"12\",\"1329\",\"A\"], expected n=12 tag=B": 2
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.7,
+    "min": 42.1,
+    "max": 44.4
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgdog-disabled-r1_shared",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c1\""
+   ],
+   "wrongRow": true
+  },
+  "S4c-setup-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 42.4,
+    "max": 82.4
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "Q P B D E S",
+   "serverTypes": [
+    "Q P B D E S"
+   ],
+   "serverParseExample": "fs06_pgdog-disabled-r1_mix|SELECT $1::int AS n, pg_backend_pid() AS pid, 'A'::text AS tag",
+   "serverBindExample": "fs06_pgdog-disabled-r1_mix",
+   "serverTrips": 3,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c0\""
+   ],
+   "wrongRow": false
+  },
+  "S4c-setup-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 42.5,
+    "max": 42.9
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "fs06_pgdog-disabled-r1_mix|SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag",
+   "serverBindExample": "fs06_pgdog-disabled-r1_mix",
+   "serverTrips": 2,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c1\""
+   ],
+   "wrongRow": false
+  },
+  "S4c": {
+   "runs": 30,
+   "ok": 0,
+   "outcomes": {
+    "wrong-result": 30
+   },
+   "errors": {},
+   "failures": {
+    "row 0 is [\"22\",\"1330\",\"A\"], expected n=22 tag=B": 18,
+    "row 0 is [\"22\",\"1329\",\"A\"], expected n=22 tag=B": 12
+   },
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.4,
+    "min": 41.3,
+    "max": 43.4
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 30,
+   "serverNotes": {
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "fs06_pgdog-disabled-r1_mix",
+   "serverTrips": 1,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c1\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c1\""
+   ],
+   "wrongRow": true
+  },
+  "S5": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 43.2,
+    "min": 42.7,
+    "max": 43.8
+   },
+   "impliedRoundTrips": 1.08,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "message types differ from what the client sent": 5,
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "P B D E P B D E S",
+   "serverTypes": [
+    "P B D E H P B D E H S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's5a'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 4,
+   "poolerQueries": [
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c0\"",
+    "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c0\""
+   ],
+   "wrongRow": false
+  },
+  "S6-2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.3,
+    "min": 42.1,
+    "max": 42.6
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-10": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 46.3,
+    "min": 45.4,
+    "max": 47.1
+   },
+   "impliedRoundTrips": 1.16,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S  … (50 messages)"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 10,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-100": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 74.8,
+    "min": 69.2,
+    "max": 80.2
+   },
+   "impliedRoundTrips": 1.87,
+   "forwardedAsSent": 4,
+   "serverNotes": {
+    "pooler sent its own simple queries": 1,
+    "more than one server connection used": 1
+   },
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S  … (500 messages)"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 100,
+   "poolerQueries": [
+    ";"
+   ],
+   "wrongRow": false
+  },
+  "S7": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.9,
+    "min": 42.7,
+    "max": 43
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "Q P B D E S Q",
+   "serverTypes": [
+    "Q P B D E S Q"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's7'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 3,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7b": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 43,
+    "min": 42.6,
+    "max": 44
+   },
+   "impliedRoundTrips": 1.08,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "3 Parse sent, 2 forwarded": 5,
+    "statement name rewritten": 5,
+    "SQL text changed": 5,
+    "message types differ from what the client sent": 5,
+    "pooler sent its own simple queries": 5
+   },
+   "clientTypes": "P B E S P B D E S P B E S",
+   "serverTypes": [
+    "P B D E S P B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's7b'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 3,
+   "poolerQueries": [
+    "BEGIN"
+   ],
+   "wrongRow": false
+  }
+ },
+ "pin": {
+  "unnamed": {
+   "txnsOk": 800,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {},
+   "clientRunsWithOnePid": 0,
+   "clientRunsWithManyPids": 40,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "named": {
+   "txnsOk": 443,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {
+    "26000 prepared statement \"fs06_pgdog-disabled-r1_pin_c0\" does not exist": 13,
+    "26000 prepared statement \"fs06_pgdog-disabled-r1_pin_c1\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgdog-disabled-r1_pin_c2\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgdog-disabled-r1_pin_c3\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgdog-disabled-r1_pin_c4\" does not exist": 9,
+    "26000 prepared statement \"fs06_pgdog-disabled-r1_pin_c5\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgdog-disabled-r1_pin_c6\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgdog-disabled-r1_pin_c7\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgdog-disabled-r2_pin_c0\" does not exist": 12,
+    "26000 prepared statement \"fs06_pgdog-disabled-r2_pin_c1\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgdog-disabled-r2_pin_c2\" does not exist": 12,
+    "26000 prepared statement \"fs06_pgdog-disabled-r2_pin_c3\" does not exist": 12,
+    "26000 prepared statement \"fs06_pgdog-disabled-r2_pin_c4\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgdog-disabled-r2_pin_c5\" does not exist": 12,
+    "26000 prepared statement \"fs06_pgdog-disabled-r2_pin_c6\" does not exist": 9,
+    "26000 prepared statement \"fs06_pgdog-disabled-r2_pin_c7\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgdog-disabled-r3_pin_c0\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgdog-disabled-r3_pin_c1\" does not exist": 9,
+    "26000 prepared statement \"fs06_pgdog-disabled-r3_pin_c2\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgdog-disabled-r3_pin_c3\" does not exist": 11,
+    "26000 prepared statement \"fs06_pgdog-disabled-r3_pin_c4\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgdog-disabled-r3_pin_c5\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgdog-disabled-r3_pin_c6\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgdog-disabled-r3_pin_c7\" does not exist": 11,
+    "26000 prepared statement \"fs06_pgdog-disabled-r4_pin_c0\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgdog-disabled-r4_pin_c1\" does not exist": 6,
+    "26000 prepared statement \"fs06_pgdog-disabled-r4_pin_c2\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgdog-disabled-r4_pin_c3\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgdog-disabled-r4_pin_c4\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgdog-disabled-r4_pin_c5\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgdog-disabled-r4_pin_c6\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgdog-disabled-r4_pin_c7\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgdog-disabled-r5_pin_c0\" does not exist": 10,
+    "26000 prepared statement \"fs06_pgdog-disabled-r5_pin_c1\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgdog-disabled-r5_pin_c2\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgdog-disabled-r5_pin_c3\" does not exist": 7,
+    "26000 prepared statement \"fs06_pgdog-disabled-r5_pin_c4\" does not exist": 8,
+    "26000 prepared statement \"fs06_pgdog-disabled-r5_pin_c5\" does not exist": 9,
+    "26000 prepared statement \"fs06_pgdog-disabled-r5_pin_c6\" does not exist": 11,
+    "26000 prepared statement \"fs06_pgdog-disabled-r5_pin_c7\" does not exist": 8
+   },
+   "clientRunsWithOnePid": 0,
+   "clientRunsWithManyPids": 0,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  }
+ },
+ "preparedReadbackLastRun": [
+  {
+   "pid": 1330,
+   "count": 33,
+   "names": [
+    "fs06_pgdog-disabled-r1_mix",
+    "fs06_pgdog-disabled-r1_pin_c0",
+    "fs06_pgdog-disabled-r1_pin_c2",
+    "fs06_pgdog-disabled-r1_pin_c5",
+    "fs06_pgdog-disabled-r1_pin_c6",
+    "fs06_pgdog-disabled-r1_shared",
+    "fs06_pgdog-disabled-r2_c0_s2",
+    "fs06_pgdog-disabled-r2_mix",
+    "fs06_pgdog-disabled-r2_pin_c2",
+    "fs06_pgdog-disabled-r2_pin_c4",
+    "fs06_pgdog-disabled-r2_pin_c5",
+    "fs06_pgdog-disabled-r2_pin_c7"
+   ]
+  },
+  {
+   "pid": 1329,
+   "count": 37,
+   "names": [
+    "fs06_pgdog-disabled-r1_c0_s2",
+    "fs06_pgdog-disabled-r1_c0_s3",
+    "fs06_pgdog-disabled-r1_c0_s3i",
+    "fs06_pgdog-disabled-r1_mix",
+    "fs06_pgdog-disabled-r1_pin_c1",
+    "fs06_pgdog-disabled-r1_pin_c3",
+    "fs06_pgdog-disabled-r1_pin_c4",
+    "fs06_pgdog-disabled-r1_pin_c7",
+    "fs06_pgdog-disabled-r2_c0_s3",
+    "fs06_pgdog-disabled-r2_c0_s3i",
+    "fs06_pgdog-disabled-r2_mix",
+    "fs06_pgdog-disabled-r2_pin_c0"
+   ]
+  }
+ ],
+ "statsIdleLastRun": {
+  "pools": [
+   {
+    "id": "0",
+    "database": "fs06",
+    "user": "fs06",
+    "addr": "host.docker.internal",
+    "port": "55401",
+    "shard": "0",
+    "role": "primary",
+    "cl_waiting": "0",
+    "sv_idle": "2",
+    "sv_active": "0",
+    "sv_idle_xact": "0",
+    "sv_total": "2",
+    "maxwait": "0",
+    "maxwait_us": "0",
+    "pool_mode": "transaction",
+    "paused": "f",
+    "banned": "f",
+    "healthy": "t",
+    "errors": "0",
+    "re_synced": "5",
+    "out_of_sync": "0",
+    "force_closed": "0",
+    "online": "t",
+    "schema_admin": "f"
+   }
+  ],
+  "servers": [
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-disabled-r5-c5"
+   },
+   {
+    "state": "idle",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-disabled-r5-c4"
+   }
+  ]
+ },
+ "statsBusyLastRun": {
+  "pools": [
+   {
+    "id": "0",
+    "database": "fs06",
+    "user": "fs06",
+    "addr": "host.docker.internal",
+    "port": "55401",
+    "shard": "0",
+    "role": "primary",
+    "cl_waiting": "0",
+    "sv_idle": "0",
+    "sv_active": "2",
+    "sv_idle_xact": "0",
+    "sv_total": "2",
+    "maxwait": "0",
+    "maxwait_us": "0",
+    "pool_mode": "transaction",
+    "paused": "f",
+    "banned": "f",
+    "healthy": "t",
+    "errors": "0",
+    "re_synced": "5",
+    "out_of_sync": "0",
+    "force_closed": "0",
+    "online": "t",
+    "schema_admin": "f"
+   }
+  ],
+  "servers": [
+   {
+    "state": "receiving data",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-disabled-r5-c6"
+   },
+   {
+    "state": "receiving data",
+    "database": "fs06",
+    "application_name": "fs06-pgdog-disabled-r5-c4"
+   }
+  ]
+ },
+ "server": {
+  "connections": 2,
+  "pids": [
+   1329,
+   1330
+  ],
+  "simpleQueries": {
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c0\"": 49,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c2\"": 61,
+   ";": 5,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c3\"": 61,
+   "SET \"DateStyle\" TO \"ISO, MDY\"": 1,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c1\"": 65,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c7\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c4\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c6\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r1-c5\"": 61,
+   "BEGIN": 15,
+   "COMMIT": 10,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c0\"": 49,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c3\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c7\"": 60,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c4\"": 60,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c6\"": 60,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c2\"": 60,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c5\"": 60,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r2-c1\"": 65,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c0\"": 50,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c3\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c5\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c4\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c2\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c1\"": 65,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c6\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r3-c7\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c0\"": 50,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c2\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c5\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c3\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c1\"": 64,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c6\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c7\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r4-c4\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r5-c0\"": 49,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r5-c6\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r5-c1\"": 65,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r5-c2\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r5-c3\"": 60,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r5-c7\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r5-c4\"": 61,
+   "SET \"application_name\" TO \"fs06-pgdog-disabled-r5-c5\"": 61
+  },
+  "parseNamesSample": [
+   "",
+   "fs06_<run>_c0_s2",
+   "fs06_<run>_c0_s3",
+   "fs06_<run>_c0_s3i",
+   "fs06_<run>_shared",
+   "fs06_<run>_mix",
+   "fs06_<run>_pin_c4",
+   "fs06_<run>_pin_c0",
+   "fs06_<run>_pin_c2",
+   "fs06_<run>_pin_c3",
+   "fs06_<run>_pin_c1",
+   "fs06_<run>_pin_c6",
+   "fs06_<run>_pin_c7",
+   "fs06_<run>_pin_c5"
+  ],
+  "closeMessages": {}
+ },
+ "connectErrors": [],
+ "refs": [
+  {
+   "kind": "pg",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 2,
+   "ms": 164
+  },
+  {
+   "kind": "pg-unnamed",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 2,
+   "ms": 179
+  },
+  {
+   "kind": "postgres",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 148,
+   "total": 160,
+   "errors": {
+    "26000 prepared statement \"4o8opoy91\" does not exist": 1,
+    "26000 prepared statement \"8f1dn35v1\" does not exist": 1,
+    "26000 prepared statement \"qoot9yqm1\" does not exist": 3,
+    "26000 prepared statement \"ldu9s7wj1\" does not exist": 2,
+    "26000 prepared statement \"x0ixoyc71\" does not exist": 1,
+    "26000 prepared statement \"vfqhwbjx1\" does not exist": 2,
+    "26000 prepared statement \"u4ppcgmo1\" does not exist": 1,
+    "26000 prepared statement \"gyeura7k1\" does not exist": 1
+   },
+   "distinctPids": 2,
+   "ms": 190
+  },
+  {
+   "kind": "postgres-unnamed",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 2,
+   "ms": 196
+  }
+ ]
+}

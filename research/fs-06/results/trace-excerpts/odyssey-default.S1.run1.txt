@@ -1,0 +1,39 @@
+# odyssey-default S1 run 1: ok; 43.5 ms; client-side round trips 1
+    0.2 ms  client-side  > P {name:,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's1'::text AS tag,nOids:0,oids:[]}
+    0.2 ms  client-side  > B {portal:,stmt:,nParamFormats:0,nParams:1,nResultFormats:0}
+    0.2 ms  client-side  > D {kind:P,name:}
+    0.2 ms  client-side  > E {portal:,maxRows:0}
+    0.2 ms  client-side  > S
+   21.0 ms  server-side#1 > Q {sql:SET application_name=E'fs06-odyssey-default-r1-c0';}
+   21.7 ms  server-side#1 < C {tag:SET}
+   21.7 ms  server-side#1 < S {name:application_name,value:fs06-odyssey-default-r1-c0}
+   21.7 ms  server-side#1 < Z {status:I}
+   22.0 ms  server-side#1 > P {name:odyssey_pstmt_0,sql:SELECT $1::int AS n, pg_backend_pid() AS pid, 's1'::text AS tag,nOids:0,oids:[]}
+   22.0 ms  server-side#1 > B {portal:,stmt:odyssey_pstmt_0,nParamFormats:0,nParams:1,nResultFormats:0}
+   22.0 ms  server-side#1 > D {kind:P,name:}
+   22.0 ms  server-side#1 > E {portal:,maxRows:0}
+   22.0 ms  server-side#1 > S
+   22.7 ms  server-side#1 < 1
+   22.7 ms  server-side#1 < 2
+   22.7 ms  server-side#1 < T {columns:3}
+   22.7 ms  server-side#1 < D
+   22.7 ms  server-side#1 < C {tag:SELECT 1}
+   22.7 ms  server-side#1 < Z {status:I}
+   22.9 ms  server-side#1 > Q {sql:SET SESSION AUTHORIZATION DEFAULT;RESET ALL;CLOSE ALL;UNLISTEN *;SELECT pg_advisory_unlock_all();DISCARD PLANS;DISCARD SEQUENCES;DISCARD TEMP;}
+   23.1 ms  client-side  < 1
+   23.1 ms  client-side  < 2
+   23.1 ms  client-side  < T {columns:3}
+   23.1 ms  client-side  < C {tag:SELECT 1}
+   23.1 ms  client-side  < Z {status:I}
+   23.3 ms  server-side#1 < C {tag:SET}
+   23.3 ms  server-side#1 < C {tag:RESET}
+   23.3 ms  server-side#1 < C {tag:CLOSE CURSOR ALL}
+   23.3 ms  server-side#1 < C {tag:UNLISTEN}
+   23.3 ms  server-side#1 < T {columns:1}
+   23.3 ms  server-side#1 < D
+   23.3 ms  server-side#1 < C {tag:SELECT 1}
+   23.3 ms  server-side#1 < C {tag:DISCARD PLANS}
+   23.3 ms  server-side#1 < C {tag:DISCARD SEQUENCES}
+   23.3 ms  server-side#1 < C {tag:DISCARD TEMP}
+   23.3 ms  server-side#1 < S {name:application_name,value:}
+   23.3 ms  server-side#1 < Z {status:I}

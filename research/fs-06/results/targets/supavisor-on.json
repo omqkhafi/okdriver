@@ -1,0 +1,939 @@
+{
+ "target": {
+  "id": "supavisor-on",
+  "pooler": "supavisor",
+  "config": "on",
+  "mode": "transaction",
+  "serverPool": 2,
+  "clients": 8,
+  "notes": [
+   "Supavisor needs its own metadata Postgres (second container, same postgres:19.0 image), created fresh for every configuration",
+   "the image entrypoint raises RLIMIT_NOFILE and fails in this sandbox, so RLIMIT_NOFILE is set empty",
+   "tenants are created through the management API with an HS256 JWT signed with API_JWT_SECRET; the client user is `<user>.<tenant>`",
+   "a tenant with a non-manager user and no auth_query is rejected (400), so the user is a manager user and the tenant has an auth_query reading pg_authid",
+   "pool mode follows the listening port (transaction or session); NAMED_PREPARED_STATEMENTS_ENABLED=true is the documented switch for named statements in transaction mode"
+  ]
+ },
+ "login": {
+  "authMethod": "scram-sha-256",
+  "tls": false,
+  "parameterStatus": [
+   [
+    "DateStyle",
+    "ISO, MDY"
+   ],
+   [
+    "IntervalStyle",
+    "postgres"
+   ],
+   [
+    "TimeZone",
+    "Etc/UTC"
+   ],
+   [
+    "application_name",
+    "Supavisor"
+   ],
+   [
+    "client_encoding",
+    "UTF8"
+   ],
+   [
+    "default_transaction_read_only",
+    "off"
+   ],
+   [
+    "in_hot_standby",
+    "off"
+   ],
+   [
+    "integer_datetimes",
+    "on"
+   ],
+   [
+    "is_superuser",
+    "on"
+   ],
+   [
+    "scram_iterations",
+    "4096"
+   ],
+   [
+    "search_path",
+    "\"$user\", public"
+   ],
+   [
+    "server_encoding",
+    "UTF8"
+   ],
+   [
+    "server_version",
+    "19.0 (Debian 19.0-1.pgdg13+1)"
+   ],
+   [
+    "session_authorization",
+    "fs06"
+   ],
+   [
+    "standard_conforming_strings",
+    "on"
+   ]
+  ]
+ },
+ "seqs": {
+  "S1": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 42.7,
+    "max": 43.8
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 4,
+   "serverNotes": {
+    "message types differ from what the client sent": 1,
+    "more than one server connection used": 1
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S",
+    "P B D E S S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's1'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 43,
+    "min": 42.5,
+    "max": 43.1
+   },
+   "impliedRoundTrips": 1.08,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "statement name rewritten": 5
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "sv_93wYvfJPyuk6Xgeg6BjVADwbe2WgbDWI4eN4yUlH4Jk|SELECT $1::int AS n, pg_backend_pid() AS pid, 's2'::text AS tag",
+   "serverBindExample": "sv_93wYvfJPyuk6Xgeg6BjVADwbe2WgbDWI4eN4yUlH4Jk",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S2b": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.3,
+    "min": 42,
+    "max": 42.7
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 3,
+   "serverNotes": {
+    "Parse added by pooler": 2,
+    "message types differ from what the client sent": 2
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S",
+    "P B D E S"
+   ],
+   "serverBindExample": "sv_93wYvfJPyuk6Xgeg6BjVADwbe2WgbDWI4eN4yUlH4Jk",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 85.4,
+    "min": 84.7,
+    "max": 88.7
+   },
+   "impliedRoundTrips": 2.13,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "statement name rewritten": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S B E S"
+   ],
+   "serverParseExample": "sv_De7Zg0B2ribj3b3mRzE2eOFTJas36K3hnYPTuI9//1w|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3'::text AS tag",
+   "serverBindExample": "sv_De7Zg0B2ribj3b3mRzE2eOFTJas36K3hnYPTuI9//1w",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3i": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 85.3,
+    "min": 84.7,
+    "max": 85.7
+   },
+   "impliedRoundTrips": 2.13,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 8 forwarded": 1,
+    "statement name rewritten": 5,
+    "message types differ from what the client sent": 5,
+    "more than one server connection used": 5,
+    "1 Parse sent, 9 forwarded": 4
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S B E S",
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B E S"
+   ],
+   "serverParseExample": "sv_jAV2LnNHQ+QGmCF10gh2kO3HfZk5VlV1dgI9gxR+AzU|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3i'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 9,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3u": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 85.2,
+    "min": 83.4,
+    "max": 86.1
+   },
+   "impliedRoundTrips": 2.13,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3u'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3ui": {
+   "runs": 5,
+   "ok": 0,
+   "outcomes": {
+    "error": 5
+   },
+   "errors": {
+    "08P01 bind message supplies 1 parameters, but prepared statement \"\" requires 0": 5
+   },
+   "failures": {
+    "ERROR 08P01 bind message supplies 1 parameters, but prepared statement \"\" requires 0": 5
+   },
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 85,
+    "min": 84.1,
+    "max": 85.5
+   },
+   "impliedRoundTrips": 2.12,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "1 Parse sent, 8 forwarded": 5,
+    "message types differ from what the client sent": 5,
+    "more than one server connection used": 5
+   },
+   "clientTypes": "P D S B E S",
+   "serverTypes": [
+    "P D S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S B E S",
+    "P D S S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3ui'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 9,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S3f": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 2,
+    "median": 2,
+    "max": 2
+   },
+   "elapsedMs": {
+    "median": 85.4,
+    "min": 84.6,
+    "max": 87.3
+   },
+   "impliedRoundTrips": 2.14,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P D H B E S",
+   "serverTypes": [
+    "P D H B E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's3f'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 2,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 42.6,
+    "max": 43.5
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "statement name rewritten": 5
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "sv_ePykmDVIB4piCfs5kF1EC/7ioZMwZ/GOXT3/FlIfCp0|SELECT $1::int AS n, pg_backend_pid() AS pid, 'A'::text AS tag",
+   "serverBindExample": "sv_ePykmDVIB4piCfs5kF1EC/7ioZMwZ/GOXT3/FlIfCp0",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4a-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 43.1,
+    "min": 42.9,
+    "max": 43.2
+   },
+   "impliedRoundTrips": 1.08,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "statement name rewritten": 5
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "sv_rfOr/EEeyti40MtcKAsdUqol09fqoFGIup446XnKwwA|SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag",
+   "serverBindExample": "sv_rfOr/EEeyti40MtcKAsdUqol09fqoFGIup446XnKwwA",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4b-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 42.3,
+    "max": 45.4
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "sv_ePykmDVIB4piCfs5kF1EC/7ioZMwZ/GOXT3/FlIfCp0",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4b-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 42.2,
+    "max": 43.5
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "B D E S"
+   ],
+   "serverBindExample": "sv_rfOr/EEeyti40MtcKAsdUqol09fqoFGIup446XnKwwA",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c-setup-A": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.9,
+    "min": 42.9,
+    "max": 44
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "statement name rewritten": 5
+   },
+   "clientTypes": "Q P B D E S",
+   "serverTypes": [
+    "Q P B D E S"
+   ],
+   "serverParseExample": "sv_8TsJTM8Z3PB+b8CS2UaOUzXTfLjwZ7adI9BJm7lsaow|SELECT $1::int AS n, pg_backend_pid() AS pid, 'A'::text AS tag",
+   "serverBindExample": "sv_8TsJTM8Z3PB+b8CS2UaOUzXTfLjwZ7adI9BJm7lsaow",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c-setup-B": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.9,
+    "min": 42.6,
+    "max": 43.5
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 0,
+   "serverNotes": {
+    "statement name rewritten": 5
+   },
+   "clientTypes": "P B D E S",
+   "serverTypes": [
+    "P B D E S"
+   ],
+   "serverParseExample": "sv_R+np2SNvVifM4JIHanRC1I3k1DJiw+Sr8+kdS1hq9qg|SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag",
+   "serverBindExample": "sv_R+np2SNvVifM4JIHanRC1I3k1DJiw+Sr8+kdS1hq9qg",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S4c": {
+   "runs": 30,
+   "ok": 30,
+   "outcomes": {
+    "ok": 30
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.7,
+    "min": 42,
+    "max": 43.2
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 25,
+   "serverNotes": {
+    "Parse added by pooler": 5,
+    "message types differ from what the client sent": 5
+   },
+   "clientTypes": "B D E S",
+   "serverTypes": [
+    "P B D E S",
+    "B D E S"
+   ],
+   "serverParseExample": "sv_R+np2SNvVifM4JIHanRC1I3k1DJiw+Sr8+kdS1hq9qg|SELECT $1::int AS n, pg_backend_pid() AS pid, 'B'::text AS tag",
+   "serverBindExample": "sv_R+np2SNvVifM4JIHanRC1I3k1DJiw+Sr8+kdS1hq9qg",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S5": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.8,
+    "min": 42.1,
+    "max": 43.2
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E P B D E S",
+   "serverTypes": [
+    "P B D E P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's5a'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-2": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 43.1,
+    "min": 42.8,
+    "max": 43.6
+   },
+   "impliedRoundTrips": 1.08,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-10": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.6,
+    "min": 42.3,
+    "max": 43.4
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 4,
+   "serverNotes": {
+    "message types differ from what the client sent": 1,
+    "more than one server connection used": 1
+   },
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S  … (50 messages)",
+    "S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E  … (51 messages)"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S6-100": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 51.9,
+    "min": 51.4,
+    "max": 54.9
+   },
+   "impliedRoundTrips": 1.3,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S",
+   "serverTypes": [
+    "P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S P B D E S  … (500 messages)"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's6'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.5,
+    "min": 42.4,
+    "max": 43.1
+   },
+   "impliedRoundTrips": 1.06,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "Q P B D E S Q",
+   "serverTypes": [
+    "Q P B D E S Q"
+   ],
+   "serverParseExample": "|SELECT $1::int AS n, pg_backend_pid() AS pid, 's7'::text AS tag",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  },
+  "S7b": {
+   "runs": 5,
+   "ok": 5,
+   "outcomes": {
+    "ok": 5
+   },
+   "errors": {},
+   "traceRoundTrips": {
+    "min": 1,
+    "median": 1,
+    "max": 1
+   },
+   "elapsedMs": {
+    "median": 42.7,
+    "min": 42.6,
+    "max": 43.4
+   },
+   "impliedRoundTrips": 1.07,
+   "forwardedAsSent": 5,
+   "serverNotes": {},
+   "clientTypes": "P B E S P B D E S P B E S",
+   "serverTypes": [
+    "P B E S P B D E S P B E S"
+   ],
+   "serverParseExample": "|BEGIN",
+   "serverBindExample": "",
+   "serverTrips": 1,
+   "poolerQueries": [],
+   "wrongRow": false
+  }
+ },
+ "pin": {
+  "unnamed": {
+   "txnsOk": 800,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {},
+   "clientRunsWithOnePid": 0,
+   "clientRunsWithManyPids": 40,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  "named": {
+   "txnsOk": 800,
+   "txnsTotal": 800,
+   "timeouts": 0,
+   "errors": {},
+   "clientRunsWithOnePid": 0,
+   "clientRunsWithManyPids": 40,
+   "clientRuns": 40,
+   "distinctBackendPidsPerRun": [
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  }
+ },
+ "preparedReadbackLastRun": [
+  {
+   "pid": 1122,
+   "count": 53,
+   "names": [
+    "sv_17n9o2HTC2aSHrtN94RTVw1o/TJBT8drpN8/3hlt0nk",
+    "sv_1w2A3aXtbZHaypcFpNndqW2s+7NMlPeiTbi7NAT/I5k",
+    "sv_3KT+9gW/8Z2pqREP4dP0GbT9a8pWfkaEUEAqs6PhXPc",
+    "sv_3V2sgqEYXkvsF5TIUk0ZoTHhLFHQ5XgCitvqqb2itIA",
+    "sv_4xO3amkdte13FSSiespk6FT5j/xyvfd0jF/xG6kHoG0",
+    "sv_5Lb+OKrnNUn+FBTQhmHJ/6/kASDAjws49D5dVW6Bo/s",
+    "sv_75U/iXOSrNGg8MrsmAka4gO7mtV4u/mVJHBMvK+Z7YY",
+    "sv_7iMsZEZHxh61L8RpE/XV5tHJ26jvXqR86Gx+zuWuJ7k",
+    "sv_7ku7eB6+k4cs/aSvqHJsgjoxTaNBf2p/+Fwk5JmF4CY",
+    "sv_9mktZwDb9Kyvma+Aaqo6l7GJq03uSaoEF/LIO3dGRqM",
+    "sv_A1KU7JXw4lzuq7tJ4B0KVu/YKqViryI/9zp7eaZYSnU",
+    "sv_AHESDmGhkjG3T6pe2aHf3BSnBNs7pKPBAlqKeOQFwsE"
+   ]
+  },
+  {
+   "pid": 1120,
+   "count": 55,
+   "names": [
+    "sv_1w2A3aXtbZHaypcFpNndqW2s+7NMlPeiTbi7NAT/I5k",
+    "sv_+2vj6i1eOv/pM9/+HWxgRPcsa643k24dujaIyKgQZEE",
+    "sv_3KT+9gW/8Z2pqREP4dP0GbT9a8pWfkaEUEAqs6PhXPc",
+    "sv_3V2sgqEYXkvsF5TIUk0ZoTHhLFHQ5XgCitvqqb2itIA",
+    "sv_4imBKdU9NOD8DUiV6qqbDNe0bVwKVzRkPq4gTtEYGqk",
+    "sv_4xO3amkdte13FSSiespk6FT5j/xyvfd0jF/xG6kHoG0",
+    "sv_5Lb+OKrnNUn+FBTQhmHJ/6/kASDAjws49D5dVW6Bo/s",
+    "sv_75U/iXOSrNGg8MrsmAka4gO7mtV4u/mVJHBMvK+Z7YY",
+    "sv_7iMsZEZHxh61L8RpE/XV5tHJ26jvXqR86Gx+zuWuJ7k",
+    "sv_7ku7eB6+k4cs/aSvqHJsgjoxTaNBf2p/+Fwk5JmF4CY",
+    "sv_7m64aTyPZy4QgQCCHjpLgOn7Z6tMADqzNvsLmGDSLps",
+    "sv_93wYvfJPyuk6Xgeg6BjVADwbe2WgbDWI4eN4yUlH4Jk"
+   ]
+  },
+  {
+   "pid": 1121,
+   "count": 58,
+   "names": [
+    "sv_17n9o2HTC2aSHrtN94RTVw1o/TJBT8drpN8/3hlt0nk",
+    "sv_1w2A3aXtbZHaypcFpNndqW2s+7NMlPeiTbi7NAT/I5k",
+    "sv_3KT+9gW/8Z2pqREP4dP0GbT9a8pWfkaEUEAqs6PhXPc",
+    "sv_3V2sgqEYXkvsF5TIUk0ZoTHhLFHQ5XgCitvqqb2itIA",
+    "sv_4imBKdU9NOD8DUiV6qqbDNe0bVwKVzRkPq4gTtEYGqk",
+    "sv_4xO3amkdte13FSSiespk6FT5j/xyvfd0jF/xG6kHoG0",
+    "sv_5Lb+OKrnNUn+FBTQhmHJ/6/kASDAjws49D5dVW6Bo/s",
+    "sv_75U/iXOSrNGg8MrsmAka4gO7mtV4u/mVJHBMvK+Z7YY",
+    "sv_7iMsZEZHxh61L8RpE/XV5tHJ26jvXqR86Gx+zuWuJ7k",
+    "sv_7ku7eB6+k4cs/aSvqHJsgjoxTaNBf2p/+Fwk5JmF4CY",
+    "sv_8TsJTM8Z3PB+b8CS2UaOUzXTfLjwZ7adI9BJm7lsaow",
+    "sv_9mktZwDb9Kyvma+Aaqo6l7GJq03uSaoEF/LIO3dGRqM"
+   ]
+  }
+ ],
+ "statsIdleLastRun": {
+  "supavisor_db_handler_started_count": "3",
+  "supavisor_db_handler_db_connection_count": "3",
+  "supavisor_client_queries_count": "2477",
+  "supavisor_client_connection_duration_count": "41",
+  "supavisor_client_joins_ok": "41"
+ },
+ "statsBusyLastRun": {
+  "supavisor_db_handler_started_count": "3",
+  "supavisor_db_handler_db_connection_count": "3",
+  "supavisor_client_queries_count": "2179",
+  "supavisor_client_connection_duration_count": "41",
+  "supavisor_client_joins_ok": "41"
+ },
+ "server": {
+  "connections": 8,
+  "pids": [
+   1115,
+   1117,
+   1119,
+   1120,
+   1121,
+   1122
+  ],
+  "simpleQueries": {
+   "BEGIN": 10,
+   "COMMIT": 10
+  },
+  "parseNamesSample": [
+   "",
+   "sv_93wYvfJPyuk6Xgeg6BjVADwbe2WgbDWI4eN4yUlH4Jk",
+   "sv_De7Zg0B2ribj3b3mRzE2eOFTJas36K3hnYPTuI9//1w",
+   "sv_jAV2LnNHQ+QGmCF10gh2kO3HfZk5VlV1dgI9gxR+AzU",
+   "sv_ePykmDVIB4piCfs5kF1EC/7ioZMwZ/GOXT3/FlIfCp0",
+   "sv_rfOr/EEeyti40MtcKAsdUqol09fqoFGIup446XnKwwA",
+   "sv_8TsJTM8Z3PB+b8CS2UaOUzXTfLjwZ7adI9BJm7lsaow",
+   "sv_R+np2SNvVifM4JIHanRC1I3k1DJiw+Sr8+kdS1hq9qg",
+   "sv_1w2A3aXtbZHaypcFpNndqW2s+7NMlPeiTbi7NAT/I5k",
+   "sv_4xO3amkdte13FSSiespk6FT5j/xyvfd0jF/xG6kHoG0",
+   "sv_YBFSpOKGN3tPQvIIdpsaqmYdZ5vccTw5eCb9FNRd8FI",
+   "sv_SBH3G/Nwnt4JmDxdz79dsBa4ViJgWcKt7DFM0yKcU9I",
+   "sv_z4MKEWKG2PyHV/vdOLiOojG5C1vdAmS4+1ZvUQeN7Kc",
+   "sv_7iMsZEZHxh61L8RpE/XV5tHJ26jvXqR86Gx+zuWuJ7k",
+   "sv_i63aeIZBZa00xhUbnm5L8NEFEEYmZhHZSvRpiQDu1rU"
+  ],
+  "closeMessages": {
+   "S": 2
+  }
+ },
+ "connectErrors": [],
+ "refs": [
+  {
+   "kind": "pg",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 3,
+   "ms": 215
+  },
+  {
+   "kind": "pg-unnamed",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 3,
+   "ms": 176
+  },
+  {
+   "kind": "postgres",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 3,
+   "ms": 190
+  },
+  {
+   "kind": "postgres-unnamed",
+   "clients": 8,
+   "txnsPerClient": 20,
+   "ok": 160,
+   "total": 160,
+   "errors": {},
+   "distinctPids": 3,
+   "ms": 194
+  }
+ ]
+}

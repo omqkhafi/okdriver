@@ -1,0 +1,3 @@
+# FS-06 scratch: pooler source checkouts, saved doc pages, reference-client install, raw traces and raw per-run JSON, certificates, throwaway configs
+work/
+*.log
