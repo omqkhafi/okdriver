@@ -1,0 +1,1592 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "calibrationCells": [
+        "loop|m0-fast|standalone|on",
+        "d20|m0-fast|standalone|on",
+        "loop|m0-fast|standalone|off",
+        "d20|m0-fast|standalone|off"
+      ],
+      "nTargets": 36,
+      "theta": {
+        "sFast": 0.036413302975362404,
+        "wake": 0.004513945060182646,
+        "cIssue": 0.011059673713884777,
+        "cDec": 0.003992916779714356,
+        "cWrite": 0.007904770900915367,
+        "cRead": 0.005587522556753806,
+        "oneWay0": 0.03196706734040978,
+        "oneWay20": 7.9939503122743805,
+        "sigma": 0.07735601074530499
+      },
+      "rmsLogError": 0.1967,
+      "targets": [
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "control",
+          "n": 4,
+          "real": 27864,
+          "sim": 29783,
+          "ratio": 1.069
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 4,
+          "real": 29520,
+          "sim": 29783,
+          "ratio": 1.009
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 4,
+          "real": 23967,
+          "sim": 29783,
+          "ratio": 1.243
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 4,
+          "real": 31167,
+          "sim": 29783,
+          "ratio": 0.956
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 4,
+          "real": 31105,
+          "sim": 29783,
+          "ratio": 0.958
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 39761,
+          "sim": 29783,
+          "ratio": 0.749
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 4,
+          "real": 30978,
+          "sim": 29783,
+          "ratio": 0.961
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "control",
+          "n": 2048,
+          "real": 32227,
+          "sim": 35033,
+          "ratio": 1.087
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 2048,
+          "real": 46735,
+          "sim": 40685,
+          "ratio": 0.871
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 2048,
+          "real": 45550,
+          "sim": 42820,
+          "ratio": 0.94
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 2048,
+          "real": 48722,
+          "sim": 43377,
+          "ratio": 0.89
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 2048,
+          "real": 47158,
+          "sim": 46953,
+          "ratio": 0.996
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 46031,
+          "sim": 42820,
+          "ratio": 0.93
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 2048,
+          "real": 33425,
+          "sim": 39090,
+          "ratio": 1.169
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "control",
+          "n": 4,
+          "real": 207,
+          "sim": 220,
+          "ratio": 1.065
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 4,
+          "real": 207,
+          "sim": 220,
+          "ratio": 1.065
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 4,
+          "real": 207,
+          "sim": 220,
+          "ratio": 1.065
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 4,
+          "real": 207,
+          "sim": 220,
+          "ratio": 1.065
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 4,
+          "real": 205,
+          "sim": 220,
+          "ratio": 1.071
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 205,
+          "sim": 220,
+          "ratio": 1.071
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 4,
+          "real": 204,
+          "sim": 220,
+          "ratio": 1.078
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "control",
+          "n": 2048,
+          "real": 412,
+          "sim": 440,
+          "ratio": 1.068
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 2048,
+          "real": 1665,
+          "sim": 1760,
+          "ratio": 1.057
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 2048,
+          "real": 6633,
+          "sim": 7040,
+          "ratio": 1.061
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 2048,
+          "real": 25502,
+          "sim": 28562,
+          "ratio": 1.12
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 2048,
+          "real": 47762,
+          "sim": 48067,
+          "ratio": 1.006
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 6620,
+          "sim": 7040,
+          "ratio": 1.063
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 2048,
+          "real": 39018,
+          "sim": 13733,
+          "ratio": 0.352
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "control",
+          "n": 4,
+          "real": 30306,
+          "sim": 29783,
+          "ratio": 0.983
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 30187,
+          "sim": 29783,
+          "ratio": 0.987
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "control",
+          "n": 2048,
+          "real": 31642,
+          "sim": 35033,
+          "ratio": 1.107
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 35195,
+          "sim": 35033,
+          "ratio": 0.995
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "control",
+          "n": 4,
+          "real": 205,
+          "sim": 220,
+          "ratio": 1.071
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 206,
+          "sim": 220,
+          "ratio": 1.068
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "control",
+          "n": 2048,
+          "real": 411,
+          "sim": 440,
+          "ratio": 1.071
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 408,
+          "sim": 440,
+          "ratio": 1.078
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "calibrationCells": [
+        "loop|m0-fast|standalone|on",
+        "d20|m0-fast|standalone|on",
+        "loop|m0-fast|standalone|off",
+        "d20|m0-fast|standalone|off"
+      ],
+      "nTargets": 36,
+      "theta": {
+        "sFast": 0.03979712732243287,
+        "wake": 0.004171898613609757,
+        "cIssue": 0.010729934996093742,
+        "cDec": 0.003502280721834581,
+        "cWrite": 0.00615232061170711,
+        "cRead": 0.010334460795919117,
+        "oneWay0": 0.028249176653353816,
+        "oneWay20": 8.967910621239074,
+        "sigma": 0.08346858178087947
+      },
+      "rmsLogError": 0.07,
+      "targets": [
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "control",
+          "n": 4,
+          "real": 27864,
+          "sim": 30085,
+          "ratio": 1.08
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 4,
+          "real": 29520,
+          "sim": 30085,
+          "ratio": 1.019
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 4,
+          "real": 23967,
+          "sim": 30085,
+          "ratio": 1.255
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 4,
+          "real": 31167,
+          "sim": 30085,
+          "ratio": 0.965
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 4,
+          "real": 31105,
+          "sim": 30085,
+          "ratio": 0.967
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 39761,
+          "sim": 30085,
+          "ratio": 0.757
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 4,
+          "real": 30978,
+          "sim": 30099,
+          "ratio": 0.972
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "control",
+          "n": 2048,
+          "real": 32227,
+          "sim": 32553,
+          "ratio": 1.01
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 2048,
+          "real": 46735,
+          "sim": 42553,
+          "ratio": 0.911
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 2048,
+          "real": 45550,
+          "sim": 45432,
+          "ratio": 0.997
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 2048,
+          "real": 48722,
+          "sim": 45463,
+          "ratio": 0.933
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 2048,
+          "real": 47158,
+          "sim": 46818,
+          "ratio": 0.993
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 46031,
+          "sim": 45432,
+          "ratio": 0.987
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 2048,
+          "real": 33425,
+          "sim": 35890,
+          "ratio": 1.074
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "control",
+          "n": 4,
+          "real": 207,
+          "sim": 211,
+          "ratio": 1.019
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 4,
+          "real": 207,
+          "sim": 211,
+          "ratio": 1.019
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 4,
+          "real": 207,
+          "sim": 211,
+          "ratio": 1.019
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 4,
+          "real": 207,
+          "sim": 211,
+          "ratio": 1.019
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 4,
+          "real": 205,
+          "sim": 211,
+          "ratio": 1.026
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 205,
+          "sim": 211,
+          "ratio": 1.026
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 4,
+          "real": 204,
+          "sim": 211,
+          "ratio": 1.033
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "control",
+          "n": 2048,
+          "real": 412,
+          "sim": 421,
+          "ratio": 1.021
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 2048,
+          "real": 1665,
+          "sim": 1650,
+          "ratio": 0.991
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 2048,
+          "real": 6633,
+          "sim": 6450,
+          "ratio": 0.972
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 2048,
+          "real": 25502,
+          "sim": 25650,
+          "ratio": 1.006
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 2048,
+          "real": 47762,
+          "sim": 49048,
+          "ratio": 1.027
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 6620,
+          "sim": 6450,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 2048,
+          "real": 39018,
+          "sim": 40860,
+          "ratio": 1.047
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "control",
+          "n": 4,
+          "real": 30306,
+          "sim": 30085,
+          "ratio": 0.993
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 30187,
+          "sim": 30085,
+          "ratio": 0.997
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "control",
+          "n": 2048,
+          "real": 31642,
+          "sim": 32553,
+          "ratio": 1.029
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 35195,
+          "sim": 32553,
+          "ratio": 0.925
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "control",
+          "n": 4,
+          "real": 205,
+          "sim": 211,
+          "ratio": 1.026
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 206,
+          "sim": 211,
+          "ratio": 1.023
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "control",
+          "n": 2048,
+          "real": 411,
+          "sim": 421,
+          "ratio": 1.024
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 408,
+          "sim": 421,
+          "ratio": 1.031
+        }
+      ]
+    },
+    {
+      "attempt": 3,
+      "calibrationCells": [
+        "loop|m0-fast|standalone|on",
+        "d20|m0-fast|standalone|on",
+        "loop|m0-fast|standalone|off",
+        "d20|m0-fast|standalone|off"
+      ],
+      "nTargets": 36,
+      "theta": {
+        "sFast": 0.03060324079028235,
+        "wake": 0.004789432129124753,
+        "cIssue": 0.010629921290198664,
+        "cDec": 0.004092739733441844,
+        "cWrite": 0.006587022326464623,
+        "cRead": 0.009918824658375831,
+        "oneWay0": 0.026337398107798976,
+        "oneWay20": 9.557504844789596,
+        "sigma": 0.0966721232841993
+      },
+      "rmsLogError": 0.079,
+      "targets": [
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "control",
+          "n": 4,
+          "real": 27864,
+          "sim": 29953,
+          "ratio": 1.075
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 4,
+          "real": 29520,
+          "sim": 29953,
+          "ratio": 1.015
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 4,
+          "real": 23967,
+          "sim": 29953,
+          "ratio": 1.25
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 4,
+          "real": 31167,
+          "sim": 29953,
+          "ratio": 0.961
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 4,
+          "real": 31105,
+          "sim": 29953,
+          "ratio": 0.963
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 39761,
+          "sim": 28238,
+          "ratio": 0.71
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 4,
+          "real": 30978,
+          "sim": 30121,
+          "ratio": 0.972
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "control",
+          "n": 2048,
+          "real": 32227,
+          "sim": 32022,
+          "ratio": 0.994
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 2048,
+          "real": 46735,
+          "sim": 41317,
+          "ratio": 0.884
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 2048,
+          "real": 45550,
+          "sim": 45418,
+          "ratio": 0.997
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 2048,
+          "real": 48722,
+          "sim": 46550,
+          "ratio": 0.955
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 2048,
+          "real": 47158,
+          "sim": 50132,
+          "ratio": 1.063
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 46031,
+          "sim": 45418,
+          "ratio": 0.987
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 2048,
+          "real": 33425,
+          "sim": 35319,
+          "ratio": 1.057
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "control",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 4,
+          "real": 205,
+          "sim": 200,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 205,
+          "sim": 200,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 4,
+          "real": 204,
+          "sim": 200,
+          "ratio": 0.98
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "control",
+          "n": 2048,
+          "real": 412,
+          "sim": 400,
+          "ratio": 0.971
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 2048,
+          "real": 1665,
+          "sim": 1600,
+          "ratio": 0.961
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 2048,
+          "real": 6633,
+          "sim": 6393,
+          "ratio": 0.964
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 2048,
+          "real": 25502,
+          "sim": 25089,
+          "ratio": 0.984
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 2048,
+          "real": 47762,
+          "sim": 46464,
+          "ratio": 0.973
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 6620,
+          "sim": 6393,
+          "ratio": 0.966
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 2048,
+          "real": 39018,
+          "sim": 38813,
+          "ratio": 0.995
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "control",
+          "n": 4,
+          "real": 30306,
+          "sim": 29953,
+          "ratio": 0.988
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 30187,
+          "sim": 29953,
+          "ratio": 0.992
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "control",
+          "n": 2048,
+          "real": 31642,
+          "sim": 32022,
+          "ratio": 1.012
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 35195,
+          "sim": 32022,
+          "ratio": 0.91
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "control",
+          "n": 4,
+          "real": 205,
+          "sim": 200,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 206,
+          "sim": 200,
+          "ratio": 0.971
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "control",
+          "n": 2048,
+          "real": 411,
+          "sim": 400,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 408,
+          "sim": 400,
+          "ratio": 0.98
+        }
+      ]
+    },
+    {
+      "attempt": 4,
+      "calibrationCells": [
+        "loop|m0-fast|standalone|on",
+        "d20|m0-fast|standalone|on",
+        "loop|m0-fast|standalone|off",
+        "d20|m0-fast|standalone|off"
+      ],
+      "nTargets": 36,
+      "theta": {
+        "sFast": 0.030602878266204624,
+        "wake": 0.004789501279275671,
+        "cIssue": 0.010630104583163722,
+        "cDec": 0.004092736912589869,
+        "cWrite": 0.00658690401810097,
+        "cRead": 0.009918620660474543,
+        "oneWay0": 0.026338356702073545,
+        "oneWay20": 9.557609487459974,
+        "sigma": 0.0966725355301322
+      },
+      "rmsLogError": 0.0789,
+      "targets": [
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "control",
+          "n": 4,
+          "real": 27864,
+          "sim": 29953,
+          "ratio": 1.075
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 4,
+          "real": 29520,
+          "sim": 29953,
+          "ratio": 1.015
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 4,
+          "real": 23967,
+          "sim": 29953,
+          "ratio": 1.25
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 4,
+          "real": 31167,
+          "sim": 29953,
+          "ratio": 0.961
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 4,
+          "real": 31105,
+          "sim": 29953,
+          "ratio": 0.963
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 39761,
+          "sim": 28238,
+          "ratio": 0.71
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 4,
+          "real": 30978,
+          "sim": 30121,
+          "ratio": 0.972
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "control",
+          "n": 2048,
+          "real": 32227,
+          "sim": 32022,
+          "ratio": 0.994
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 2048,
+          "real": 46735,
+          "sim": 41317,
+          "ratio": 0.884
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 2048,
+          "real": 45550,
+          "sim": 45408,
+          "ratio": 0.997
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 2048,
+          "real": 48722,
+          "sim": 46545,
+          "ratio": 0.955
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 2048,
+          "real": 47158,
+          "sim": 50097,
+          "ratio": 1.062
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 46031,
+          "sim": 45408,
+          "ratio": 0.986
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 2048,
+          "real": 33425,
+          "sim": 35284,
+          "ratio": 1.056
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "control",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 4,
+          "real": 205,
+          "sim": 200,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 205,
+          "sim": 200,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 4,
+          "real": 204,
+          "sim": 200,
+          "ratio": 0.98
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "control",
+          "n": 2048,
+          "real": 412,
+          "sim": 400,
+          "ratio": 0.971
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 2048,
+          "real": 1665,
+          "sim": 1600,
+          "ratio": 0.961
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 2048,
+          "real": 6633,
+          "sim": 6394,
+          "ratio": 0.964
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 2048,
+          "real": 25502,
+          "sim": 25103,
+          "ratio": 0.984
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 2048,
+          "real": 47762,
+          "sim": 46485,
+          "ratio": 0.973
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 6620,
+          "sim": 6394,
+          "ratio": 0.966
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 2048,
+          "real": 39018,
+          "sim": 38811,
+          "ratio": 0.995
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "control",
+          "n": 4,
+          "real": 30306,
+          "sim": 29953,
+          "ratio": 0.988
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 30187,
+          "sim": 29953,
+          "ratio": 0.992
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "control",
+          "n": 2048,
+          "real": 31642,
+          "sim": 32022,
+          "ratio": 1.012
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 35195,
+          "sim": 32022,
+          "ratio": 0.91
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "control",
+          "n": 4,
+          "real": 205,
+          "sim": 200,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 206,
+          "sim": 200,
+          "ratio": 0.971
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "control",
+          "n": 2048,
+          "real": 411,
+          "sim": 400,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 408,
+          "sim": 400,
+          "ratio": 0.98
+        }
+      ]
+    },
+    {
+      "attempt": 5,
+      "calibrationCells": [
+        "loop|m0-fast|standalone|on",
+        "d20|m0-fast|standalone|on",
+        "loop|m0-fast|standalone|off",
+        "d20|m0-fast|standalone|off"
+      ],
+      "nTargets": 36,
+      "theta": {
+        "sFast": 0.02822712816602931,
+        "wake": 0.005141469456111845,
+        "cIssue": 0.010148816964334974,
+        "cDec": 0.004393552588078626,
+        "cWrite": 0.006450895382024526,
+        "cRead": 0.009881184213370803,
+        "oneWay0": 0.026602984392862277,
+        "oneWay20": 9.383212009919339,
+        "sigma": 0.10379730580523451
+      },
+      "rmsLogError": 0.0759,
+      "targets": [
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "control",
+          "n": 4,
+          "real": 27864,
+          "sim": 30427,
+          "ratio": 1.092
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 4,
+          "real": 29520,
+          "sim": 30427,
+          "ratio": 1.031
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 4,
+          "real": 23967,
+          "sim": 30427,
+          "ratio": 1.27
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 4,
+          "real": 31167,
+          "sim": 30427,
+          "ratio": 0.976
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 4,
+          "real": 31105,
+          "sim": 30427,
+          "ratio": 0.978
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 39761,
+          "sim": 29067,
+          "ratio": 0.731
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 4,
+          "real": 30978,
+          "sim": 30504,
+          "ratio": 0.985
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "control",
+          "n": 2048,
+          "real": 32227,
+          "sim": 32388,
+          "ratio": 1.005
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 2048,
+          "real": 46735,
+          "sim": 41963,
+          "ratio": 0.898
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 2048,
+          "real": 45550,
+          "sim": 46115,
+          "ratio": 1.012
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 2048,
+          "real": 48722,
+          "sim": 47253,
+          "ratio": 0.97
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 2048,
+          "real": 47158,
+          "sim": 50923,
+          "ratio": 1.08
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 46031,
+          "sim": 46115,
+          "ratio": 1.002
+        },
+        {
+          "cell": "loop|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 2048,
+          "real": 33425,
+          "sim": 34966,
+          "ratio": 1.046
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "control",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 4,
+          "real": 207,
+          "sim": 200,
+          "ratio": 0.968
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 4,
+          "real": 205,
+          "sim": 200,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 205,
+          "sim": 200,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 4,
+          "real": 204,
+          "sim": 200,
+          "ratio": 0.98
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "control",
+          "n": 2048,
+          "real": 412,
+          "sim": 400,
+          "ratio": 0.971
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:4",
+          "n": 2048,
+          "real": 1665,
+          "sim": 1600,
+          "ratio": 0.961
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:16",
+          "n": 2048,
+          "real": 6633,
+          "sim": 6400,
+          "ratio": 0.965
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "fixed:64",
+          "n": 2048,
+          "real": 25502,
+          "sim": 25454,
+          "ratio": 0.998
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "rtt-aware",
+          "n": 2048,
+          "real": 47762,
+          "sim": 46936,
+          "ratio": 0.983
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 6620,
+          "sim": 6400,
+          "ratio": 0.967
+        },
+        {
+          "cell": "d20|m0-fast|standalone|on",
+          "config": "aimd",
+          "n": 2048,
+          "real": 39018,
+          "sim": 39594,
+          "ratio": 1.015
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "control",
+          "n": 4,
+          "real": 30306,
+          "sim": 30427,
+          "ratio": 1.004
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 30187,
+          "sim": 30427,
+          "ratio": 1.008
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "control",
+          "n": 2048,
+          "real": 31642,
+          "sim": 32388,
+          "ratio": 1.024
+        },
+        {
+          "cell": "loop|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 35195,
+          "sim": 32388,
+          "ratio": 0.92
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "control",
+          "n": 4,
+          "real": 205,
+          "sim": 200,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 4,
+          "real": 206,
+          "sim": 200,
+          "ratio": 0.971
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "control",
+          "n": 2048,
+          "real": 411,
+          "sim": 400,
+          "ratio": 0.974
+        },
+        {
+          "cell": "d20|m0-fast|standalone|off",
+          "config": "latency-aware",
+          "n": 2048,
+          "real": 408,
+          "sim": 400,
+          "ratio": 0.98
+        }
+      ]
+    }
+  ],
+  "attempt": 5,
+  "params": {
+    "sFast": 0.02822712816602931,
+    "sigma": 0.10379730580523451,
+    "wake": 0.005141469456111845,
+    "cores": 2,
+    "hiccupP": 0.02,
+    "hiccupMs": 0.4,
+    "sleepExtra": 0.42794100000003255,
+    "cpuMs5": 5.448082999999372,
+    "cpuMs50": 50.911525999999924,
+    "cpuN5": 71052,
+    "cUnit": 0.0033829389881116583,
+    "cStmt": 0.006765877976223317,
+    "cDec": 0.004393552588078626,
+    "cWrite": 0.006450895382024526,
+    "cRead": 0.009881184213370803,
+    "oneWay0": 0.026602984392862277,
+    "arrTick": 1
+  },
+  "oneWay": {
+    "d20": 9.383212009919339,
+    "d4": 2.0182120099193384
+  },
+  "quantum": {
+    "d20": 1,
+    "d4": 1
+  }
+}

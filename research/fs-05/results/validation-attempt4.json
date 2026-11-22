@@ -1,0 +1,384 @@
+{
+ "criterion": {
+  "calibrateOn": "real loopback and one delayed (20 ms) fast-only cells",
+  "predictHeldOut": "every other real cell (mixed loads, pipelines, the 4 ms point, PgBouncer)",
+  "throughputTolerance": 0.15,
+  "criterion": "simulated median throughput within 15% of the real median, and the same policy ranking in every real cell where policies differ beyond noise",
+  "maxRecalibrations": 3,
+  "onFailure": "label the simulator exploratory and keep it out of the rule"
+ },
+ "heldOutCellsCompared": 7,
+ "configsCompared": 44,
+ "allWithin15pct": false,
+ "throughputInversions": 0,
+ "p999Inversions": 2,
+ "passes": false,
+ "cells": [
+  {
+   "cell": "loop|m0-fast|pipeline8|on",
+   "rows": [
+    {
+     "cfg": "control",
+     "real": 32812,
+     "sim": 35545,
+     "ratio": 1.083,
+     "within": true
+    },
+    {
+     "cfg": "fixed:4",
+     "real": 43572,
+     "sim": 47027,
+     "ratio": 1.079,
+     "within": true
+    },
+    {
+     "cfg": "fixed:16",
+     "real": 50349,
+     "sim": 52747,
+     "ratio": 1.048,
+     "within": true
+    },
+    {
+     "cfg": "fixed:64",
+     "real": 44238,
+     "sim": 54359,
+     "ratio": 1.229,
+     "within": false
+    },
+    {
+     "cfg": "rtt-aware",
+     "real": 49244,
+     "sim": 54663,
+     "ratio": 1.11,
+     "within": true
+    },
+    {
+     "cfg": "latency-aware",
+     "real": 48417,
+     "sim": 52747,
+     "ratio": 1.089,
+     "within": true
+    },
+    {
+     "cfg": "aimd",
+     "real": 31587,
+     "sim": 39033,
+     "ratio": 1.236,
+     "within": false
+    }
+   ],
+   "throughputInversions": [],
+   "p999Inversions": []
+  },
+  {
+   "cell": "d20|m0-fast|pipeline8|on",
+   "rows": [
+    {
+     "cfg": "control",
+     "real": 407,
+     "sim": 400,
+     "ratio": 0.982,
+     "within": true
+    },
+    {
+     "cfg": "fixed:4",
+     "real": 1666,
+     "sim": 1600,
+     "ratio": 0.961,
+     "within": true
+    },
+    {
+     "cfg": "fixed:16",
+     "real": 6608,
+     "sim": 6400,
+     "ratio": 0.968,
+     "within": true
+    },
+    {
+     "cfg": "fixed:64",
+     "real": 25481,
+     "sim": 25187,
+     "ratio": 0.988,
+     "within": true
+    },
+    {
+     "cfg": "rtt-aware",
+     "real": 47559,
+     "sim": 48376,
+     "ratio": 1.017,
+     "within": true
+    },
+    {
+     "cfg": "latency-aware",
+     "real": 6615,
+     "sim": 6400,
+     "ratio": 0.968,
+     "within": true
+    },
+    {
+     "cfg": "aimd",
+     "real": 38144,
+     "sim": 34462,
+     "ratio": 0.903,
+     "within": true
+    }
+   ],
+   "throughputInversions": [],
+   "p999Inversions": []
+  },
+  {
+   "cell": "loop|m0-fast|pipeline8|off",
+   "rows": [
+    {
+     "cfg": "control",
+     "real": 32150,
+     "sim": 35545,
+     "ratio": 1.106,
+     "within": true
+    },
+    {
+     "cfg": "fixed:4",
+     "real": 43535,
+     "sim": 51824,
+     "ratio": 1.19,
+     "within": false
+    },
+    {
+     "cfg": "fixed:16",
+     "real": 45343,
+     "sim": 63939,
+     "ratio": 1.41,
+     "within": false
+    },
+    {
+     "cfg": "fixed:64",
+     "real": 43588,
+     "sim": 63939,
+     "ratio": 1.467,
+     "within": false
+    },
+    {
+     "cfg": "rtt-aware",
+     "real": 43431,
+     "sim": 62420,
+     "ratio": 1.437,
+     "within": false
+    },
+    {
+     "cfg": "latency-aware",
+     "real": 42803,
+     "sim": 63939,
+     "ratio": 1.494,
+     "within": false
+    },
+    {
+     "cfg": "aimd",
+     "real": 33949,
+     "sim": 39182,
+     "ratio": 1.154,
+     "within": false
+    }
+   ],
+   "throughputInversions": [],
+   "p999Inversions": []
+  },
+  {
+   "cell": "d20|m0-fast|pipeline8|off",
+   "rows": [
+    {
+     "cfg": "control",
+     "real": 409,
+     "sim": 400,
+     "ratio": 0.978,
+     "within": true
+    },
+    {
+     "cfg": "fixed:4",
+     "real": 1625,
+     "sim": 1600,
+     "ratio": 0.984,
+     "within": true
+    },
+    {
+     "cfg": "fixed:16",
+     "real": 3229,
+     "sim": 3180,
+     "ratio": 0.985,
+     "within": true
+    },
+    {
+     "cfg": "fixed:64",
+     "real": 3237,
+     "sim": 3180,
+     "ratio": 0.982,
+     "within": true
+    },
+    {
+     "cfg": "rtt-aware",
+     "real": 3240,
+     "sim": 3184,
+     "ratio": 0.983,
+     "within": true
+    },
+    {
+     "cfg": "latency-aware",
+     "real": 3235,
+     "sim": 3180,
+     "ratio": 0.983,
+     "within": true
+    },
+    {
+     "cfg": "aimd",
+     "real": 3243,
+     "sim": 3172,
+     "ratio": 0.978,
+     "within": true
+    }
+   ],
+   "throughputInversions": [],
+   "p999Inversions": []
+  },
+  {
+   "cell": "loop|m2-sleep50-1|standalone|on",
+   "rows": [
+    {
+     "cfg": "control",
+     "real": 13490,
+     "sim": 12789,
+     "ratio": 0.948,
+     "within": true
+    },
+    {
+     "cfg": "fixed:4",
+     "real": 14333,
+     "sim": 14340,
+     "ratio": 1.001,
+     "within": true
+    },
+    {
+     "cfg": "fixed:16",
+     "real": 14576,
+     "sim": 14111,
+     "ratio": 0.968,
+     "within": true
+    },
+    {
+     "cfg": "fixed:64",
+     "real": 14510,
+     "sim": 14515,
+     "ratio": 1,
+     "within": true
+    },
+    {
+     "cfg": "rtt-aware",
+     "real": 14470,
+     "sim": 14327,
+     "ratio": 0.99,
+     "within": true
+    },
+    {
+     "cfg": "latency-aware",
+     "real": 14466,
+     "sim": 14111,
+     "ratio": 0.975,
+     "within": true
+    },
+    {
+     "cfg": "aimd",
+     "real": 13622,
+     "sim": 14452,
+     "ratio": 1.061,
+     "within": true
+    }
+   ],
+   "throughputInversions": [],
+   "p999Inversions": [
+    {
+     "a": "aimd",
+     "b": "fixed:4"
+    },
+    {
+     "a": "aimd",
+     "b": "rtt-aware"
+    }
+   ]
+  },
+  {
+   "cell": "d20|m2-sleep50-1|standalone|on",
+   "rows": [
+    {
+     "cfg": "control",
+     "real": 397,
+     "sim": 391,
+     "ratio": 0.985,
+     "within": true
+    },
+    {
+     "cfg": "fixed:4",
+     "real": 1456,
+     "sim": 1463,
+     "ratio": 1.005,
+     "within": true
+    },
+    {
+     "cfg": "fixed:16",
+     "real": 4540,
+     "sim": 4764,
+     "ratio": 1.049,
+     "within": true
+    },
+    {
+     "cfg": "fixed:64",
+     "real": 10358,
+     "sim": 10632,
+     "ratio": 1.026,
+     "within": true
+    },
+    {
+     "cfg": "rtt-aware",
+     "real": 13173,
+     "sim": 13504,
+     "ratio": 1.025,
+     "within": true
+    },
+    {
+     "cfg": "latency-aware",
+     "real": 4557,
+     "sim": 4764,
+     "ratio": 1.046,
+     "within": true
+    },
+    {
+     "cfg": "aimd",
+     "real": 3637,
+     "sim": 3960,
+     "ratio": 1.089,
+     "within": true
+    }
+   ],
+   "throughputInversions": [],
+   "p999Inversions": []
+  },
+  {
+   "cell": "loop|m2-sleep50-1|standalone|off",
+   "rows": [
+    {
+     "cfg": "control",
+     "real": 12777,
+     "sim": 12789,
+     "ratio": 1.001,
+     "within": true
+    },
+    {
+     "cfg": "latency-aware",
+     "real": 12977,
+     "sim": 12789,
+     "ratio": 0.986,
+     "within": true
+    }
+   ],
+   "throughputInversions": [],
+   "p999Inversions": []
+  }
+ ]
+}

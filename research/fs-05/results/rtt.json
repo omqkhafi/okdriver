@@ -1,0 +1,34 @@
+{
+  "note": "median / p10 / p90 of 300 sequential depth-1 point lookups (ms); one-way delay is the proxy setting in each direction",
+  "measured": {
+    "loop": {
+      "p10": 0.08626100000000747,
+      "median": 0.11380599999999674,
+      "p90": 0.276091000000001
+    },
+    "loopT": {
+      "p10": 0.1278500000000804,
+      "median": 0.15102899999999408,
+      "p90": 0.26999899999998433
+    },
+    "d4": {
+      "p10": 4.94189599999936,
+      "median": 5.082992999999988,
+      "p90": 5.357088000000658
+    },
+    "d20": {
+      "p10": 19.226368999999977,
+      "median": 19.396045999998023,
+      "p90": 19.75100900000325
+    }
+  },
+  "oneWay": {
+    "d4": 1.51,
+    "d20": 8.73
+  },
+  "loaded": {
+    "d4": 4.75,
+    "d20": 19.48
+  },
+  "loadedNote": "ms, 8 connections at depth 1 under load: 8000 / median throughput of 3 runs"
+}

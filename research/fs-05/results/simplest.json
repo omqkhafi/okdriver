@@ -1,0 +1,67 @@
+{
+  "rule": "fewer tunable constants, then fewer policy code lines (blank lines and comments excluded), then the order of the brief",
+  "order": [
+    {
+      "rank": 1,
+      "policy": "control",
+      "file": "scripts/policy/control.ts",
+      "constants": [],
+      "nConstants": 0,
+      "codeLines": 12,
+      "briefOrder": 0
+    },
+    {
+      "rank": 2,
+      "policy": "fixed",
+      "file": "scripts/policy/fixed.ts",
+      "constants": [
+        "D"
+      ],
+      "nConstants": 1,
+      "codeLines": 15,
+      "briefOrder": 1
+    },
+    {
+      "rank": 3,
+      "policy": "latency-aware",
+      "file": "scripts/policy/latency-aware.ts",
+      "constants": [
+        "CAP",
+        "ALPHA",
+        "HALF_LIFE"
+      ],
+      "nConstants": 3,
+      "codeLines": 27,
+      "briefOrder": 3
+    },
+    {
+      "rank": 4,
+      "policy": "rtt-aware",
+      "file": "scripts/policy/rtt-aware.ts",
+      "constants": [
+        "ALPHA",
+        "DMAX",
+        "INIT",
+        "WINDOW"
+      ],
+      "nConstants": 4,
+      "codeLines": 27,
+      "briefOrder": 2
+    },
+    {
+      "rank": 5,
+      "policy": "aimd",
+      "file": "scripts/policy/aimd.ts",
+      "constants": [
+        "INIT",
+        "MAX",
+        "ADD",
+        "MULT",
+        "THRESH"
+      ],
+      "nConstants": 5,
+      "codeLines": 22,
+      "briefOrder": 4
+    }
+  ]
+}

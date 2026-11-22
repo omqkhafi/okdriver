@@ -1,0 +1,3 @@
+# FS-05 scratch: raw per-run JSONL, traces, Postgres data, pgbench output, reference-client install, logs
+work/
+*.log

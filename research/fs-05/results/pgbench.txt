@@ -1,0 +1,6 @@
+mode=simple clients=8 tps = 38009.884880 (without initial connection time)
+mode=simple clients=32 tps = 33502.832351 (without initial connection time)
+mode=extended clients=8 tps = 33728.423884 (without initial connection time)
+mode=extended clients=32 tps = 29639.836839 (without initial connection time)
+mode=prepared clients=8 tps = 53910.811064 (without initial connection time)
+mode=prepared clients=32 tps = 49125.893886 (without initial connection time)
