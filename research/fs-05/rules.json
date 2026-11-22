@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "status": "frozen before any measurement; verdict.ts reads this file; no threshold moves after the data",
+  "terms": {
+    "unit": "one (instrument, cell, load point). cell = (rtt, mix, shape, sharing); load point = closed-loop at the highest caller count, or open-loop at a fraction of the cell's saturation throughput",
+    "config": "control | fixed:D for each D in fixedGrid | rtt-aware | latency-aware | aimd",
+    "candidates": "control, fixed:<D*>, rtt-aware, latency-aware, aimd. The per-cell best fixed D is an oracle bound and never a candidate."
+  },
+  "pool": { "connections": 8 },
+  "fixedGrid": { "simulator": [2, 4, 8, 16, 32, 64, 128], "real": [4, 16, 64] },
+  "loadPoints": {
+    "closedCallers": [4, 32, 256, 2048],
+    "closedForRule": 2048,
+    "openFractions": [0.5, 0.8, 0.95],
+    "saturation": "T* = largest median closed-loop throughput at closedForRule over every config in the same (instrument, cell); open-loop arrival rate = fraction x T* statements per second, Poisson arrivals, latency from the scheduled send time",
+    "openOverload": "an open-loop run is overloaded when fast statements are still incomplete 3000 ms after the last scheduled arrival; the incomplete ones count with their age at that moment (right-censored). Overloaded runs stay in the rule: a policy that cannot carry the rate loses on p99.9."
+  },
+  "runsPerPoint": 5,
+  "metrics": {
+    "throughput": { "better": "higher", "loadPoint": "closed", "unit": "statements per second, all kinds" },
+    "fastP999": { "better": "lower", "loadPoint": "open", "unit": "ms, fast statements, from scheduled send time" },
+    "slowP99": { "better": "lower", "loadPoint": "open", "unit": "ms, slow statements, defined when the mix has slow statements" },
+    "cpuPerStatement": { "better": "lower", "loadPoint": "closed and open", "unit": "microseconds of client CPU per completed statement (simulator: modelled from the fitted cost model)" }
+  },
+  "noise": {
+    "runs": "range of the 5 runs",
+    "withinNoiseOfBest": "candidate median is no worse than the best candidate's worst run, on every metric defined in the unit (best = best median per metric)"
+  },
+  "wins": {
+    "margin": 0.10,
+    "definition": "a policy wins somewhere when, in at least one valid unit, its worst run beats the best run of the simplest within-noise policy of that unit by margin or more on a metric"
+  },
+  "default": "the simplest candidate that is within noise of the best in every required unit; if none exists the verdict names the unit and the margin",
+  "fixedDSelection": {
+    "reference": "best median per metric over every config of the unit, the whole fixed grid included",
+    "d_star": "the fixed D that is within noise of that reference in the most required units; ties: lower geometric-mean regret (median / reference median, lower-better inverted), then smaller D"
+  },
+  "validity": {
+    "minFastCompleted": 100000,
+    "indicative": "fewer completed fast statements in any run of the unit: unit stays out of the rule",
+    "clientBoundUtilisation": 0.92,
+    "clientBound": "median client CPU utilisation (CPU seconds / wall seconds of the load generator process) at or above this value for any candidate config of the unit: unit stays out of the rule",
+    "proxyBoundUtilisation": 0.92,
+    "correctness": "a result delivered to the wrong caller (unique id mismatch), a reordered result inside a pipeline, or one statement's error failing another puts that config out of that unit, whatever its speed"
+  },
+  "requiredUnits": {
+    "real": "every valid real-direct unit",
+    "simulator": "units of the full simulated matrix; counted in the verdict only when the simulator passes validation (criterion below); otherwise labelled exploratory and excluded",
+    "sharing": "the rule is evaluated separately for sharing off and sharing on, and each is reported"
+  },
+  "simulatorValidation": {
+    "calibrateOn": "real loopback and one delayed (20 ms) fast-only cells",
+    "predictHeldOut": "every other real cell (mixed loads, pipelines, the 4 ms point, PgBouncer)",
+    "throughputTolerance": 0.15,
+    "criterion": "simulated median throughput within 15% of the real median, and the same policy ranking in every real cell where policies differ beyond noise",
+    "maxRecalibrations": 3,
+    "onFailure": "label the simulator exploratory and keep it out of the rule"
+  },
+  "simplicity": "results/simplest.json, produced by scripts/simplest.ts before any measurement: fewer tunable constants, then fewer policy code lines, then the order of the brief"
+}
