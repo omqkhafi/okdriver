@@ -1,0 +1,40 @@
+{
+  "id": "FS-03-rule-v1",
+  "written": "before any measurement; applied by scripts/rule.ts; exercised on invented numbers by scripts/rule-toy.ts",
+  "roadmap_rule": "Pick the faster one that passes the fragmentation suite on both builds.",
+  "candidates_in_rule": ["N", "B"],
+  "reported_only_candidates": ["N-data", "N-node24"],
+  "builds": { "release": { "required": true }, "canary": { "required": false, "if_not_obtainable": "Not verified here; the verdict covers release only" } },
+  "gate": {
+    "fragmentation": { "required_pass_share": 1.0, "also_requires": "every planned cut observed as a delivery boundary (scenario is effective)" },
+    "capabilities_required": ["tls_upgrade", "pause_resume_bounded", "write_backpressure", "terminal_once"],
+    "capability_definitions": {
+      "tls_upgrade": "after SSLRequest answered S on an open socket, a TLS handshake against a node:tls server succeeds, protocol bytes round-trip, and a hostname mismatch fails",
+      "pause_resume_bounded": "server pushes a 256 MiB stream; client pauses reads for 2000 ms; at most 1 MiB is delivered after a 100 ms settle, client RSS grows by at most 64 MiB during the window, and after resume every byte arrives with the right hash",
+      "write_backpressure": "one 64 MiB write against a server that stops reading for 1000 ms: the API signals backpressure (false return or partial write) and a drain signal arrives after the server resumes; all bytes arrive with the right hash",
+      "terminal_once": "after server RST, server FIN inside a message and local destroy, the adapter surfaces exactly one terminal event and no data event after it"
+    },
+    "capabilities_reported_only": ["direct_tls_alpn", "peer_certificate_bytes", "nodelay", "keepalive", "half_close", "connect_timeout"]
+  },
+  "suite_sanity": { "planted_faults": ["keep_view", "drop_byte_at_edge", "duplicate_chunk"], "each_must_fail_on": "N", "else": "suite is defective and no verdict is issued" },
+  "throughput": {
+    "cells": ["W1", "W2", "W3-8K", "W3-64K", "W3-1M", "W4"],
+    "metric": "operations or MB per second, higher is better, median of runs",
+    "min_runs_per_cell": 15,
+    "warmup_runs_dropped": 2,
+    "interleave": "A B A B",
+    "reported_only_cells": ["W5-S1", "W5-D100", "W5-100MB", "TLS-W1", "TLS-W3"]
+  },
+  "noise": { "floor_min": 0.05, "null_multiplier": 2, "null_spread": "relative gap |m1-m2| / mean(m1,m2) between the medians of two interleaved series of the same candidate; the larger of the two candidates' gaps per cell", "floor": "max(floor_min, null_multiplier * null_spread), per cell" },
+  "faster": { "win_cell": "median(X) > median(Y) * (1 + floor)", "lose_cell": "median(X) < median(Y) / (1 + floor)", "x_faster_than_y": "X wins at least one cell and loses none" },
+  "pick": {
+    "pool": "candidates in candidates_in_rule that pass the gate on every build run",
+    "one_in_pool": "that one",
+    "two_in_pool": "the faster on the release build; if neither is faster (mixed, or all within noise) take tie_order",
+    "empty_pool": "no pick",
+    "tie_order": ["N", "B"],
+    "tie_order_note": "planner's choice: the Node transport (P6-T01) must exist anyway"
+  },
+  "not_gating": ["CPU per statement", "CPU per MB", "peak RSS", "p50", "p99", "W5", "TLS throughput", "N-data", "Node 24 baseline"],
+  "failed_build_or_candidate": "reported as failed; no threshold is moved"
+}
