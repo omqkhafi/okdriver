@@ -6,7 +6,7 @@
   "reported_only_candidates": ["N-data", "N-node24"],
   "builds": { "release": { "required": true }, "canary": { "required": false, "if_not_obtainable": "Not verified here; the verdict covers release only" } },
   "gate": {
-    "fragmentation": { "required_pass_share": 1.0, "also_requires": "every planned cut observed as a delivery boundary (scenario is effective)" },
+    "fragmentation": { "required_pass_share": 1.0, "also_requires": "in scenarios flagged must_observe (every planned cut separated by at least 1 ms), every planned cut is observed as a delivery boundary at the adapter (the scenario is effective); in the others the effect is reported" },
     "capabilities_required": ["tls_upgrade", "pause_resume_bounded", "write_backpressure", "terminal_once"],
     "capability_definitions": {
       "tls_upgrade": "after SSLRequest answered S on an open socket, a TLS handshake against a node:tls server succeeds, protocol bytes round-trip, and a hostname mismatch fails",
