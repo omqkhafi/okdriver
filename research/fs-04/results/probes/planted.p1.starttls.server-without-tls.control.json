@@ -1,0 +1,58 @@
+{
+ "id": "planted.p1.starttls.server-without-tls",
+ "title": "planted: server without TLS (expects TLS)",
+ "group": "planted",
+ "mode": "control",
+ "target": "pg17-plain",
+ "params": {},
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "answerS",
+  "serverSsl"
+ ],
+ "expectFail": "answerS",
+ "caught": true,
+ "checks": {
+  "answerS": {
+   "pass": 0,
+   "of": 5
+  },
+  "noLeftoverAtSwitch": {
+   "pass": 5,
+   "of": 5
+  },
+  "upgradeCallOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 0,
+   "of": 5
+  },
+  "queryOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "proxyClientHello": {
+   "pass": 0,
+   "of": 5
+  },
+  "noStrayBytes": {
+   "pass": 0,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"rverwithouttlsc1xd4xv","wallMs":10,"pass":false,"checks":{"answerS":false,"noLeftoverAtSwitch":true,"upgradeCallOk":false,"loginOk":true,"serverSsl":false,"queryOk":true,"proxyClientHello":false,"noStrayBytes":false},"response":{"ok":true,"probe":"p1.tls-upgrade","runId":"rverwithouttlsc1xd4xv","ms":10,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"N","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"login":{"ok":true,"pid":92,"mechs":["SCRAM-SHA-256"],"authCodes":[10,11,12,0],"serverVersion":"17.12 (Debian 17.12-1.pgdg13+1)"},"pgStatSsl":["f",null,null],"query":{"ok":true,"rows":[["1","off"]]},"bytesWritten":393,"bytesReceived":864}},"extra":{"responseAt":1795653042314,"closeLagMs":1},"proxy":[{"id":1111,"route":"pg17-plain","kind":"ssl-request","label":"fs04-rverwithouttlsc1xd4xv","openedAt":1795653042305.6,"closedAt":1795653042315,"closedBy":"client","c2sBytes":398,"s2cBytes":864,"sslAnswer":"N","c2sTypes":{"SSLRequest":1,"Startup":1,"p":2,"Q":2,"X":1}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-rverwithouttlsc1xd4xv"]},
+  {"run":2,"runId":"rverwithouttlsc2xs384","wallMs":8,"pass":false,"checks":{"answerS":false,"noLeftoverAtSwitch":true,"upgradeCallOk":false,"loginOk":true,"serverSsl":false,"queryOk":true,"proxyClientHello":false,"noStrayBytes":false},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"rverwithouttlsc3xs347","wallMs":8,"pass":false,"checks":{"answerS":false,"noLeftoverAtSwitch":true,"upgradeCallOk":false,"loginOk":true,"serverSsl":false,"queryOk":true,"proxyClientHello":false,"noStrayBytes":false},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"rverwithouttlsc4xmalt","wallMs":9,"pass":false,"checks":{"answerS":false,"noLeftoverAtSwitch":true,"upgradeCallOk":false,"loginOk":true,"serverSsl":false,"queryOk":true,"proxyClientHello":false,"noStrayBytes":false},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"rverwithouttlsc5xd7yu","wallMs":8,"pass":false,"checks":{"answerS":false,"noLeftoverAtSwitch":true,"upgradeCallOk":false,"loginOk":true,"serverSsl":false,"queryOk":true,"proxyClientHello":false,"noStrayBytes":false},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

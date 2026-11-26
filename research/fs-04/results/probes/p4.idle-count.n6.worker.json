@@ -1,0 +1,52 @@
+{
+ "id": "p4.idle-count.n6",
+ "title": "6 idle logged-in sockets, then a 7th: do idle sockets count",
+ "group": "p4",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {
+  "n": 6,
+  "holdMs": 500,
+  "idleExtra": true
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "allLoggedIn",
+  "idleDoNotCount"
+ ],
+ "checks": {
+  "allLoggedIn": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverSawAllAtOnce": {
+   "pass": 5,
+   "of": 5
+  },
+  "allReachedProxy": {
+   "pass": 5,
+   "of": 5
+  },
+  "notQueued": {
+   "pass": 5,
+   "of": 5
+  },
+  "workerOpenedSpreadUnder1s": {
+   "pass": 5,
+   "of": 5
+  },
+  "idleDoNotCount": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"p4idlecountn6w1xnd79","wallMs":523,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":null,"idleDoNotCount":true},"response":{"ok":true,"probe":"p4.concurrent","runId":"p4idlecountn6w1xnd79","ms":522,"observations":{"n":6,"sockets":[{"k":0,"connectCalledAt":0,"openedAt":1,"loginAt":14,"pid":1674},{"k":1,"connectCalledAt":0,"openedAt":2,"loginAt":16,"pid":1675},{"k":2,"connectCalledAt":0,"openedAt":2,"loginAt":15,"pid":1676},{"k":3,"connectCalledAt":0,"openedAt":2,"loginAt":14,"pid":1677},{"k":4,"connectCalledAt":0,"openedAt":2,"loginAt":16,"pid":1673},{"k":5,"connectCalledAt":0,"openedAt":2,"loginAt":14,"pid":1678}],"allLoggedInAt":16,"openedOrder":[0,1,2,3,4,5],"extra":{"openedAfterMs":0}}},"extra":{"responseAt":1795653557044,"workerd":{"peakRssMiB":62,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":2126,"route":"pg17-tls","kind":"startup","label":"fs04-p4idlecountn6w1xnd79-0","openedAt":1795653556523.5,"closedAt":1795653557044.1,"closedBy":"client","c2sBytes":274,"s2cBytes":637,"c2sTypes":{"Startup":1,"p":2,"X":1}},{"id":2127,"route":"pg17-tls","kind":"startup","label":"fs04-p4idlecountn6w1xnd79-1","openedAt":1795653556523.8,"closedAt":1795653557044.1,"closedBy":"client","c2sBytes":274,"s2cBytes":637,"c2sTypes":{"Startup":1,"p":2,"X":1}},{"id":2128,"route":"pg17-tls","kind":"startup","label":"fs04-p4idlecountn6w1xnd79-2","openedAt":1795653556523.8,"closedAt":1795653557044.1,"closedBy":"client","c2sBytes":274,"s2cBytes":637,"c2sTypes":{"Startup":1,"p":2,"X":1}},{"id":2129,"route":"pg17-tls","kind":"startup","label":"fs04-p4idlecountn6w1xnd79-3","openedAt":1795653556523.9,"closedAt":1795653557044.1,"closedBy":"client","c2sBytes":274,"s2cBytes":637,"c2sTypes":{"Startup":1,"p":2,"X":1}},{"id":2130,"route":"pg17-tls","kind":"startup","label":"fs04-p4idlecountn6w1xnd79-4","openedAt":1795653556523.9,"closedAt":1795653557044.1,"closedBy":"client","c2sBytes":274,"s2cBytes":637,"c2sTypes":{"Startup":1,"p":2,"X":1}},{"id":2131,"route":"pg17-tls","kind":"startup","label":"fs04-p4idlecountn6w1xnd79-5","openedAt":1795653556523.9,"closedAt":1795653557044.1,"closedBy":"client","c2sBytes":274,"s2cBytes":637,"c2sTypes":{"Startup":1,"p":2,"X":1}},{"id":2132,"route":"pg17-tls","kind":"unknown","openedAt":1795653556538.6,"closedAt":1795653556539.3,"closedBy":"client","c2sBytes":0,"s2cBytes":0,"c2sTypes":{}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4idlecountn6w1xnd79-0","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4idlecountn6w1xnd79-3","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4idlecountn6w1xnd79-5","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4idlecountn6w1xnd79-2","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4idlecountn6w1xnd79-4","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4idlecountn6w1xnd79-1"],"activityPeak":6},
+  {"run":2,"runId":"p4idlecountn6w2xr21m","wallMs":520,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":null,"idleDoNotCount":true},"activityPeak":6,"extra":{"workerd":{"peakRssMiB":62,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"p4idlecountn6w3xze10","wallMs":526,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":null,"idleDoNotCount":true},"activityPeak":6,"extra":{"workerd":{"peakRssMiB":61,"cpuMsSinceStart":40,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"p4idlecountn6w4xq2ap","wallMs":525,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":null,"idleDoNotCount":true},"activityPeak":6,"extra":{"workerd":{"peakRssMiB":61,"cpuMsSinceStart":40,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"p4idlecountn6w5xf5t0","wallMs":524,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":null,"idleDoNotCount":true},"activityPeak":6,"extra":{"workerd":{"peakRssMiB":62,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true}
+ ]
+}

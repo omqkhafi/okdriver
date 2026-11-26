@@ -1,0 +1,36 @@
+{
+ "id": "p4.cross-request",
+ "title": "socket created in one request, used in the next",
+ "group": "p4",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {},
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "created",
+  "crossRequestUseWorks"
+ ],
+ "checks": {
+  "created": {
+   "pass": 5,
+   "of": 5
+  },
+  "crossRequestUseWorks": {
+   "pass": 0,
+   "of": 5
+  },
+  "refusedWithError": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"p4crossrequestw1x706y","wallMs":14,"pass":false,"checks":{"created":true,"crossRequestUseWorks":false,"refusedWithError":true},"response":{"ok":true,"probe":"p4.cross-request","runId":"p4crossrequestw1x706y","ms":8,"observations":{"created":true,"pid":1708}},"extra":{"createOk":true,"use":{"ok":true,"probe":"p4.cross-request","runId":"p4crossrequestw1x706y","ms":1,"observations":{"queryError":{"name":"Error","message":"Cannot perform I/O on behalf of a different request. I/O objects (such as streams, request/response bodies, and others) created in the context of one request handler cannot be accessed from a different request's handler. This is a limitation of Cloudflare Workers which allows us to improve overall performance. (I/O type: Writable)"},"writeError":{"name":"Error","message":"Cannot perform I/O on behalf of a different request. I/O objects (such as streams, request/response bodies, and others) created in the context of one request handler cannot be accessed from a different request's handler. This is a limitation of Cloudflare Workers which allows us to improve overall performance. (I/O type: Writable)"},"close":"ok"}},"responseAt":1795653560372,"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":-4},"proxy":[{"id":2161,"route":"pg17-tls","kind":"startup","label":"fs04-p4crossrequestw1x706y-x","openedAt":1795653560360.4,"closedAt":1795653560367.8,"closedBy":"client","c2sBytes":270,"s2cBytes":638,"c2sTypes":{"Startup":1,"p":2}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4crossrequestw1x706y-x"]},
+  {"run":2,"runId":"p4crossrequestw2x8mbt","wallMs":12,"pass":false,"checks":{"created":true,"crossRequestUseWorks":false,"refusedWithError":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":3,"runId":"p4crossrequestw3xmds8","wallMs":14,"pass":false,"checks":{"created":true,"crossRequestUseWorks":false,"refusedWithError":true},"extra":{"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":-2},"traceTrimmed":true},
+  {"run":4,"runId":"p4crossrequestw4x5f7j","wallMs":16,"pass":false,"checks":{"created":true,"crossRequestUseWorks":false,"refusedWithError":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":-4},"traceTrimmed":true},
+  {"run":5,"runId":"p4crossrequestw5xjnwo","wallMs":12,"pass":false,"checks":{"created":true,"crossRequestUseWorks":false,"refusedWithError":true},"extra":{"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":-2},"traceTrimmed":true}
+ ]
+}

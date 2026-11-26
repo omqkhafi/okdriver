@@ -1,0 +1,40 @@
+{
+ "id": "p2.clientcert.options",
+ "title": "client certificate and key offered as connect and startTls options: accepted only if the platform presents it",
+ "group": "p2",
+ "mode": "control",
+ "target": "pg17-clientcert",
+ "params": {
+  "startTlsOpts": {
+   "cert": "CLIENTCERT",
+   "key": "CLIENTKEY"
+  },
+  "connectOpts": {
+   "cert": "CLIENTCERT",
+   "key": "CLIENTKEY"
+  }
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "accepted"
+ ],
+ "checks": {
+  "accepted": {
+   "pass": 5,
+   "of": 5
+  },
+  "sniIsHostname": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"entcertoptionsc1xzdxk","wallMs":16,"pass":true,"checks":{"accepted":true,"sniIsHostname":true},"response":{"ok":true,"probe":"p2.options","runId":"entcertoptionsc1xzdxk","ms":16,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0.9700000000011642,"login":{"ok":true,"pid":76,"mechs":["SCRAM-SHA-256-PLUS","SCRAM-SHA-256"],"authCodes":[10,11,12,0],"serverVersion":"17.12 (Debian 17.12-1.pgdg13+1)"},"pgStatSsl":["t","TLSv1.3","TLS_AES_256_GCM_SHA384"],"query":{"ok":true,"rows":[["1","on"]]},"bytesWritten":393,"bytesReceived":911}},"extra":{"responseAt":1795652806744,"closeLagMs":1},"proxy":[{"id":166,"route":"pg17-clientcert","kind":"ssl-request","openedAt":1795652806729.3,"closedAt":1795652806744.5,"closedBy":"client","c2sBytes":3352,"s2cBytes":2513,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-entcertoptionsc1xzdxk SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256)"]},
+  {"run":2,"runId":"entcertoptionsc2xy526","wallMs":15,"pass":true,"checks":{"accepted":true,"sniIsHostname":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"entcertoptionsc3xjd4k","wallMs":12,"pass":true,"checks":{"accepted":true,"sniIsHostname":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"entcertoptionsc4x4u6r","wallMs":13,"pass":true,"checks":{"accepted":true,"sniIsHostname":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"entcertoptionsc5xjvq6","wallMs":13,"pass":true,"checks":{"accepted":true,"sniIsHostname":true},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

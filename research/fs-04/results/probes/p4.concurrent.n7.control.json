@@ -1,0 +1,55 @@
+{
+ "id": "p4.concurrent.n7",
+ "title": "7 sockets from one invocation, all logged in, held, then used at once",
+ "group": "p4",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "n": 7,
+  "holdMs": 1500,
+  "work": "sleep1"
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "allLoggedIn",
+  "serverSawAllAtOnce",
+  "allReachedProxy",
+  "notQueued",
+  "allUsableAtOnce"
+ ],
+ "checks": {
+  "allLoggedIn": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverSawAllAtOnce": {
+   "pass": 5,
+   "of": 5
+  },
+  "allReachedProxy": {
+   "pass": 5,
+   "of": 5
+  },
+  "notQueued": {
+   "pass": 5,
+   "of": 5
+  },
+  "workerOpenedSpreadUnder1s": {
+   "pass": 5,
+   "of": 5
+  },
+  "allUsableAtOnce": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"p4concurrentn7c1x5qc3","wallMs":2517,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":true,"idleDoNotCount":null},"response":{"ok":true,"probe":"p4.concurrent","runId":"p4concurrentn7c1x5qc3","ms":2517,"observations":{"n":7,"sockets":[{"k":0,"connectCalledAt":0.00999999999476131,"openedAt":1.2200000000011642,"loginAt":10.929999999993015,"pid":229},{"k":1,"connectCalledAt":0.27000000000407454,"openedAt":1.3099999999976717,"loginAt":13.819999999992433,"pid":230},{"k":2,"connectCalledAt":0.3000000000029104,"openedAt":1.3399999999965075,"loginAt":8.410000000003492,"pid":228},{"k":3,"connectCalledAt":0.3099999999976717,"openedAt":1.360000000000582,"loginAt":11.639999999999418,"pid":234},{"k":4,"connectCalledAt":0.319999999992433,"openedAt":1.3799999999901047,"loginAt":13.759999999994761,"pid":231},{"k":5,"connectCalledAt":0.33999999999650754,"openedAt":1.3999999999941792,"loginAt":9.509999999994761,"pid":233},{"k":6,"connectCalledAt":0.34999999999126885,"openedAt":1.4199999999982538,"loginAt":9.330000000001746,"pid":232}],"allLoggedInAt":13.819999999992433,"openedOrder":[0,1,2,3,4,5,6],"work":{"wallMs":1002.8500000000058,"ok":7,"of":7}}},"extra":{"responseAt":1795652852964,"closeLagMs":1},"proxy":[{"id":221,"route":"pg17-tls","kind":"startup","label":"fs04-p4concurrentn7c1x5qc3-0","openedAt":1795652850448.4,"closedAt":1795652852965.2,"closedBy":"client","c2sBytes":302,"s2cBytes":735,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":222,"route":"pg17-tls","kind":"startup","label":"fs04-p4concurrentn7c1x5qc3-1","openedAt":1795652850448.5,"closedAt":1795652852965.2,"closedBy":"client","c2sBytes":302,"s2cBytes":735,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":223,"route":"pg17-tls","kind":"startup","label":"fs04-p4concurrentn7c1x5qc3-2","openedAt":1795652850448.6,"closedAt":1795652852965.3,"closedBy":"client","c2sBytes":302,"s2cBytes":735,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":224,"route":"pg17-tls","kind":"startup","label":"fs04-p4concurrentn7c1x5qc3-3","openedAt":1795652850448.6,"closedAt":1795652852965.3,"closedBy":"client","c2sBytes":302,"s2cBytes":735,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":225,"route":"pg17-tls","kind":"startup","label":"fs04-p4concurrentn7c1x5qc3-4","openedAt":1795652850448.6,"closedAt":1795652852965.3,"closedBy":"client","c2sBytes":302,"s2cBytes":735,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":226,"route":"pg17-tls","kind":"startup","label":"fs04-p4concurrentn7c1x5qc3-5","openedAt":1795652850448.7,"closedAt":1795652852965.3,"closedBy":"client","c2sBytes":302,"s2cBytes":735,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":227,"route":"pg17-tls","kind":"startup","label":"fs04-p4concurrentn7c1x5qc3-6","openedAt":1795652850448.7,"closedAt":1795652852965.3,"closedBy":"client","c2sBytes":302,"s2cBytes":735,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn7c1x5qc3-2","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn7c1x5qc3-5","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn7c1x5qc3-6","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn7c1x5qc3-0","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn7c1x5qc3-3","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn7c1x5qc3-4","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn7c1x5qc3-1"],"activityPeak":7},
+  {"run":2,"runId":"p4concurrentn7c2xmsvw","wallMs":2518,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":true,"idleDoNotCount":null},"activityPeak":7,"extra":{"closeLagMs":3},"traceTrimmed":true},
+  {"run":3,"runId":"p4concurrentn7c3xhg8g","wallMs":2514,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":true,"idleDoNotCount":null},"activityPeak":7,"extra":{"closeLagMs":2},"traceTrimmed":true},
+  {"run":4,"runId":"p4concurrentn7c4xlt8y","wallMs":2514,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":true,"idleDoNotCount":null},"activityPeak":7,"extra":{"closeLagMs":4},"traceTrimmed":true},
+  {"run":5,"runId":"p4concurrentn7c5xiffv","wallMs":2516,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":true,"idleDoNotCount":null},"activityPeak":7,"extra":{"closeLagMs":3},"traceTrimmed":true}
+ ]
+}

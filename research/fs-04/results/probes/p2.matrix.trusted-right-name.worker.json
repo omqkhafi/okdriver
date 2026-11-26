@@ -1,0 +1,31 @@
+{
+ "id": "p2.matrix.trusted-right-name",
+ "title": "trusted CA, right name: expect accept",
+ "group": "p2",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "accepted"
+ ],
+ "checks": {
+  "accepted": {
+   "pass": 5,
+   "of": 5
+  },
+  "sniIsHostname": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"ustedrightnamew1xbw9p","wallMs":18,"pass":true,"checks":{"accepted":true,"sniIsHostname":true},"response":{"ok":true,"probe":"p2.options","runId":"ustedrightnamew1xbw9p","ms":16,"observations":{"steps":[],"opened":{"remoteAddress":"string","localAddress":"undefined"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0,"login":{"ok":true,"pid":1112,"mechs":["SCRAM-SHA-256-PLUS","SCRAM-SHA-256"],"authCodes":[10,11,12,0],"serverVersion":"17.12 (Debian 17.12-1.pgdg13+1)"},"pgStatSsl":["t","TLSv1.3","TLS_AES_256_GCM_SHA384"],"query":{"ok":true,"rows":[["1","on"]]},"bytesWritten":393,"bytesReceived":911}},"extra":{"responseAt":1795653433305,"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":1531,"route":"pg17-tls","kind":"ssl-request","openedAt":1795653433289.1,"closedAt":1795653433305.1,"closedBy":"client","c2sBytes":1125,"s2cBytes":2000,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-ustedrightnamew1xbw9p SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256)"]},
+  {"run":2,"runId":"ustedrightnamew2x0jpu","wallMs":20,"pass":true,"checks":{"accepted":true,"sniIsHostname":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"ustedrightnamew3xybxx","wallMs":17,"pass":true,"checks":{"accepted":true,"sniIsHostname":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"ustedrightnamew4xmdqq","wallMs":18,"pass":true,"checks":{"accepted":true,"sniIsHostname":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"ustedrightnamew5xwci5","wallMs":15,"pass":true,"checks":{"accepted":true,"sniIsHostname":true},"extra":{"workerd":{"peakRssMiB":58,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

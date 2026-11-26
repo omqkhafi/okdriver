@@ -1,0 +1,34 @@
+{
+ "id": "p2.matrix.trusted-wrong-name",
+ "title": "trusted CA, name does not match: expect reject",
+ "group": "p2",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "hostname": "wrong.fs04.test"
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "rejected",
+  "noAuthenticatedSession"
+ ],
+ "checks": {
+  "rejected": {
+   "pass": 5,
+   "of": 5
+  },
+  "noAuthenticatedSession": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"ustedwrongnamec1xvj0z","wallMs":7,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"response":{"ok":true,"probe":"p2.options","runId":"ustedwrongnamec1xvj0z","ms":7,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0.5600000000013097,"login":{"ok":false,"error":{"name":"Error","message":"Socket is closed"}},"bytesWritten":112,"bytesReceived":1}},"extra":{"responseAt":1795652790810,"closeLagMs":1},"proxy":[{"id":81,"route":"pg17-tls","kind":"ssl-request","openedAt":1795652790804.7,"closedAt":1795652790810.8,"closedBy":"client","c2sBytes":1787,"s2cBytes":957,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"wrong.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  could not accept SSL connection: EOF detected"]},
+  {"run":2,"runId":"ustedwrongnamec2xtzqb","wallMs":5,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"ustedwrongnamec3xy59f","wallMs":7,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"ustedwrongnamec4x4ndc","wallMs":6,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"ustedwrongnamec5xm9c6","wallMs":7,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "p3.backpressure.await-ready",
+ "title": "proxy stops reading for 4 s after 2 MiB; writer.ready awaited",
+ "group": "p3",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {
+  "size": 25165824,
+  "seed": 24301,
+  "chunk": 65536,
+  "awaitReady": true
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "proxyStalled",
+  "intact"
+ ],
+ "checks": {
+  "proxyStalled": {
+   "pass": 5,
+   "of": 5
+  },
+  "intact": {
+   "pass": 5,
+   "of": 5
+  },
+  "desiredSizeSignals": {
+   "pass": 0,
+   "of": 5
+  },
+  "readyPendsDuringStall": {
+   "pass": 0,
+   "of": 5
+  },
+  "writesPendDuringStall": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"sureawaitreadyw1xxvao","wallMs":4241,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":false,"readyPendsDuringStall":false,"writesPendDuringStall":true},"response":{"ok":true,"probe":"p3.backpressure","runId":"sureawaitreadyw1xxvao","ms":4239,"observations":{"size":25165824,"chunk":65536,"awaitReady":true,"timeline":[{"t":1,"queued":1,"resolved":0,"desiredSize":1},{"t":6,"queued":17,"resolved":0,"desiredSize":1},{"t":10,"queued":33,"resolved":0,"desiredSize":1},{"t":14,"queued":49,"resolved":0,"desiredSize":1},{"t":18,"queued":65,"resolved":0,"desiredSize":1},{"t":21,"queued":81,"resolved":0,"desiredSize":1},{"t":26,"queued":97,"resolved":0,"desiredSize":1},{"t":29,"queued":113,"resolved":0,"desiredSize":1},{"t":33,"queued":129,"resolved":0,"desiredSize":1},{"t":37,"queued":145,"resolved":0,"desiredSize":1},{"t":41,"queued":161,"resolved":0,"desiredSize":1},{"t":45,"queued":177,"resolved":0,"desiredSize":1},{"t":49,"queued":193,"resolved":0,"desiredSize":1},{"t":53,"queued":209,"resolved":0,"desiredSize":1},{"t":57,"queued":225,"resolved":0,"desiredSize":1},{"t":61,"queued":241,"resolved":0,"desiredSize":1},{"t":66,"queued":257,"resolved":0,"desiredSize":1},{"t":70,"queued":273,"resolved":0,"desiredSize":1},{"t":74,"queued":289,"resolved":0,"desiredSize":1},{"t":79,"queued":305,"resolved":0,"desiredSize":1},{"t":83,"queued":321,"resolved":0,"desiredSize":1},{"t":88,"queued":337,"resolved":0,"desiredSize":1},{"t":92,"queued":353,"resolved":0,"desiredSize":1},{"t":96,"queued":369,"resolved":0,"desiredSize":1}],"afterLoopMs":100,"afterLoop":{"queued":384,"resolved":0,"desiredSize":1},"midStall":{"at":1602,"queued":384,"resolved":131,"desiredSize":1,"acceptedBytes":8585216},"allWritesResolvedMs":4149,"pendingReady":0,"longestReadyMs":0,"pg":["d44c28dd21d6e72b9f1d0d94d2527597108dfc3d59e6e4f801b3502ceefab799","25165824"]}},"extra":{"responseAt":1795654038534,"workerd":{"peakRssMiB":116,"cpuMsSinceStart":140,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":2901,"route":"pg17-tls","kind":"startup","label":"fs04-sureawaitreadyw1xxvao","openedAt":1795654034295.2,"closedAt":1795654038534.2,"closedBy":"client","c2sBytes":25166201,"s2cBytes":753,"c2sTypes":{"Startup":1,"p":2,"P":1,"B":1,"E":1,"S":1,"X":1},"frames":[{"type":"B","bytes":25165843,"sha256":"fbdd77c6a92c529c741158a9f1058c9d90b6f272ce20022b49f52471c5ae1454"}],"stalled":{"at":1795654034410.6543,"atBytes":2454883,"resumedAt":1795654038412.3743}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-sureawaitreadyw1xxvao"]},
+  {"run":2,"runId":"sureawaitreadyw2xpe7i","wallMs":4232,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":false,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"workerd":{"peakRssMiB":115,"cpuMsSinceStart":140,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"sureawaitreadyw3xatoh","wallMs":4220,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":false,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"workerd":{"peakRssMiB":115,"cpuMsSinceStart":150,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"sureawaitreadyw4x1ib2","wallMs":4268,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":false,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"workerd":{"peakRssMiB":115,"cpuMsSinceStart":180,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"sureawaitreadyw5xx391","wallMs":4230,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":false,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"workerd":{"peakRssMiB":115,"cpuMsSinceStart":140,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

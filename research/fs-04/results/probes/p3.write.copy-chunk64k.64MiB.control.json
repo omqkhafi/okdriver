@@ -1,0 +1,55 @@
+{
+ "id": "p3.write.copy-chunk64k.64MiB",
+ "title": "copy chunk 64KiB, 64MiB",
+ "group": "p3",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "size": 67108864,
+  "seed": 1659699200,
+  "mode": "chunk",
+  "chunk": 65536,
+  "how": "copy",
+  "tls": false,
+  "awaitEach": true
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "writeCompleted",
+  "pgShaMatches",
+  "pgLengthMatches",
+  "proxyHashMatches",
+  "allBytesReachedProxy"
+ ],
+ "checks": {
+  "writeCompleted": {
+   "pass": 5,
+   "of": 5
+  },
+  "pgShaMatches": {
+   "pass": 5,
+   "of": 5
+  },
+  "pgLengthMatches": {
+   "pass": 5,
+   "of": 5
+  },
+  "proxyHashMatches": {
+   "pass": 5,
+   "of": 5
+  },
+  "allBytesReachedProxy": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"ychunk64k64MiBc1xs8y5","wallMs":578,"pass":true,"checks":{"writeCompleted":true,"pgShaMatches":true,"pgLengthMatches":true,"proxyHashMatches":true,"allBytesReachedProxy":true},"response":{"ok":true,"probe":"p3.write","runId":"ychunk64k64MiBc1xs8y5","ms":578,"observations":{"size":67108864,"mode":"chunk","how":"copy","chunk":65536,"tls":false,"pid":974,"write":{"writeMs":460.8526319999946,"writes":1027},"copy":{"rows":[],"tags":["COPY 1"],"ready":true},"pg":["9dae5ee7cdb3ce3f42b7fb49f98f3a1e201c003dd5cc480cff87ba4feb7a8f72","67108864"],"totalMs":571.890000000014,"bytesWritten":67114463}},"extra":{"responseAt":1795653279912,"closeLagMs":0},"proxy":[{"id":1371,"route":"pg17-tls","kind":"startup","label":"fs04-ychunk64k64MiBc1xs8y5","openedAt":1795653279335.1,"closedAt":1795653279912.5,"closedBy":"client","c2sBytes":67114468,"s2cBytes":852,"c2sTypes":{"Startup":1,"p":2,"Q":3,"d":1026,"c":1,"X":1},"copyBodySha256":"0969d9807abef823d2c549981bec1a63f27d33de280c4e8d3c7adb8c76bb4b0f","copyBodyBytes":67108891}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-ychunk64k64MiBc1xs8y5"]},
+  {"run":2,"runId":"ychunk64k64MiBc2xy2du","wallMs":562,"pass":true,"checks":{"writeCompleted":true,"pgShaMatches":true,"pgLengthMatches":true,"proxyHashMatches":true,"allBytesReachedProxy":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"ychunk64k64MiBc3xcc25","wallMs":581,"pass":true,"checks":{"writeCompleted":true,"pgShaMatches":true,"pgLengthMatches":true,"proxyHashMatches":true,"allBytesReachedProxy":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"ychunk64k64MiBc4xo5vo","wallMs":595,"pass":true,"checks":{"writeCompleted":true,"pgShaMatches":true,"pgLengthMatches":true,"proxyHashMatches":true,"allBytesReachedProxy":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"ychunk64k64MiBc5xnaos","wallMs":616,"pass":true,"checks":{"writeCompleted":true,"pgShaMatches":true,"pgLengthMatches":true,"proxyHashMatches":true,"allBytesReachedProxy":true},"extra":{"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

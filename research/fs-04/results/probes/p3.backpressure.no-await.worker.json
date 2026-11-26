@@ -1,0 +1,49 @@
+{
+ "id": "p3.backpressure.no-await",
+ "title": "proxy stops reading for 4 s after 2 MiB; writer.ready ignored",
+ "group": "p3",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {
+  "size": 25165824,
+  "seed": 24301,
+  "chunk": 65536,
+  "awaitReady": false
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "proxyStalled",
+  "intact"
+ ],
+ "checks": {
+  "proxyStalled": {
+   "pass": 5,
+   "of": 5
+  },
+  "intact": {
+   "pass": 5,
+   "of": 5
+  },
+  "desiredSizeSignals": {
+   "pass": 0,
+   "of": 5
+  },
+  "readyPendsDuringStall": {
+   "pass": 0,
+   "of": 5
+  },
+  "writesPendDuringStall": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"ressurenoawaitw1xn5v1","wallMs":4231,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":false,"readyPendsDuringStall":false,"writesPendDuringStall":true},"response":{"ok":true,"probe":"p3.backpressure","runId":"ressurenoawaitw1xn5v1","ms":4229,"observations":{"size":25165824,"chunk":65536,"awaitReady":false,"timeline":[{"t":2,"queued":1,"resolved":0,"desiredSize":1},{"t":9,"queued":17,"resolved":0,"desiredSize":1},{"t":13,"queued":33,"resolved":0,"desiredSize":1},{"t":17,"queued":49,"resolved":0,"desiredSize":1},{"t":22,"queued":65,"resolved":0,"desiredSize":1},{"t":26,"queued":81,"resolved":0,"desiredSize":1},{"t":29,"queued":97,"resolved":0,"desiredSize":1},{"t":33,"queued":113,"resolved":0,"desiredSize":1},{"t":37,"queued":129,"resolved":0,"desiredSize":1},{"t":41,"queued":145,"resolved":0,"desiredSize":1},{"t":45,"queued":161,"resolved":0,"desiredSize":1},{"t":50,"queued":177,"resolved":0,"desiredSize":1},{"t":57,"queued":193,"resolved":0,"desiredSize":1},{"t":61,"queued":209,"resolved":0,"desiredSize":1},{"t":65,"queued":225,"resolved":0,"desiredSize":1},{"t":69,"queued":241,"resolved":0,"desiredSize":1},{"t":73,"queued":257,"resolved":0,"desiredSize":1},{"t":77,"queued":273,"resolved":0,"desiredSize":1},{"t":80,"queued":289,"resolved":0,"desiredSize":1},{"t":84,"queued":305,"resolved":0,"desiredSize":1},{"t":88,"queued":321,"resolved":0,"desiredSize":1},{"t":92,"queued":337,"resolved":0,"desiredSize":1},{"t":95,"queued":353,"resolved":0,"desiredSize":1},{"t":99,"queued":369,"resolved":0,"desiredSize":1}],"afterLoopMs":103,"afterLoop":{"queued":384,"resolved":0,"desiredSize":1},"midStall":{"at":1604,"queued":384,"resolved":120,"desiredSize":1,"acceptedBytes":7864320},"allWritesResolvedMs":4140,"pendingReady":0,"longestReadyMs":0,"pg":["d44c28dd21d6e72b9f1d0d94d2527597108dfc3d59e6e4f801b3502ceefab799","25165824"]}},"extra":{"responseAt":1795654061079,"workerd":{"peakRssMiB":115,"cpuMsSinceStart":140,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":2906,"route":"pg17-tls","kind":"startup","label":"fs04-ressurenoawaitw1xn5v1","openedAt":1795654056850.9,"closedAt":1795654061079.1,"closedBy":"client","c2sBytes":25166201,"s2cBytes":753,"c2sTypes":{"Startup":1,"p":2,"P":1,"B":1,"E":1,"S":1,"X":1},"frames":[{"type":"B","bytes":25165843,"sha256":"fbdd77c6a92c529c741158a9f1058c9d90b6f272ce20022b49f52471c5ae1454"}],"stalled":{"at":1795654056966.9075,"atBytes":2377059,"resumedAt":1795654060968.8882}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-ressurenoawaitw1xn5v1"]},
+  {"run":2,"runId":"ressurenoawaitw2xnb4g","wallMs":4269,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":false,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"workerd":{"peakRssMiB":115,"cpuMsSinceStart":180,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":3,"runId":"ressurenoawaitw3x1q50","wallMs":4261,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":false,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"workerd":{"peakRssMiB":115,"cpuMsSinceStart":150,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"ressurenoawaitw4xdtz7","wallMs":4235,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":false,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"workerd":{"peakRssMiB":115,"cpuMsSinceStart":140,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"ressurenoawaitw5xk2j8","wallMs":4225,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":false,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"workerd":{"peakRssMiB":115,"cpuMsSinceStart":130,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

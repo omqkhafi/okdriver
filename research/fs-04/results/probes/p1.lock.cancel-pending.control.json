@@ -1,0 +1,39 @@
+{
+ "id": "p1.lock.cancel-pending",
+ "title": "startTls with lock situation cancel-pending",
+ "group": "p1",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "lockMode": "cancel-pending"
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "upgradeCallOk",
+  "loginOk",
+  "serverSsl"
+ ],
+ "checks": {
+  "upgradeCallOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 0,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"kcancelpendingc1xx6b6","wallMs":5,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"response":{"ok":true,"probe":"p1.tls-upgrade","runId":"kcancelpendingc1xx6b6","ms":4,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0.6000000000003638,"pendingReadSettled":{"resolved":{"value":"undefined","done":"boolean"}},"login":{"ok":false,"error":{"name":"Error","message":"Socket closed before the connection was established"}},"bytesWritten":112,"bytesReceived":1}},"extra":{"responseAt":1795652784396,"closeLagMs":0},"proxy":[{"id":56,"route":"pg17-tls","kind":"ssl-request","openedAt":1795652784392.8,"closedAt":1795652784396.5,"closedBy":"client","c2sBytes":8,"s2cBytes":1,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1}}],"log":["LOG:  could not accept SSL connection: EOF detected"]},
+  {"run":2,"runId":"kcancelpendingc2xinro","wallMs":3,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"kcancelpendingc3x6wpq","wallMs":4,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"kcancelpendingc4x9jou","wallMs":7,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"kcancelpendingc5xigbx","wallMs":4,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "id": "p2.surface",
+ "title": "Socket and SocketInfo surface; any peer-certificate member",
+ "group": "p2",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "listed",
+  "upgraded",
+  "noPeerCertificateApi"
+ ],
+ "checks": {
+  "listed": {
+   "pass": 5,
+   "of": 5
+  },
+  "upgraded": {
+   "pass": 5,
+   "of": 5
+  },
+  "noPeerCertificateApi": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"p2surfacec1xha9h","wallMs":305,"pass":true,"checks":{"listed":true,"upgraded":true,"noPeerCertificateApi":true},"response":{"ok":true,"probe":"p2.surface","runId":"p2surfacec1xha9h","ms":305,"observations":{"moduleExports":["connect"],"before":{"socket":["close","closed","connectOpts","constructor","ctrl","host","o","onData","opened","raw","readable","secure","startTls","writable"],"readable":["Symbol(Symbol.asyncIterator)","Symbol(Symbol.toStringTag)","Symbol(nodejs.stream.disturbed)","Symbol(nodejs.stream.errored)","Symbol(nodejs.stream.readable)","Symbol(nodejs.util.inspect.custom)","blob","bytes","cancel","constructor","getReader","json","locked","pipeThrough","pipeTo","tee","text","values"],"writable":["Symbol(Symbol.toStringTag)","Symbol(nodejs.util.inspect.custom)","abort","close","constructor","getWriter","locked"],"startTlsLength":1,"scalar":{"close":"function","connectOpts":{"secureTransport":"string","allowHalfOpen":"boolean"},"constructor":"function","ctrl":{},"host":"pg.fs04.test","o":{"ca":"string"},"onData":"function","raw":{"_events":"object","_readableState":"object","_writableState":"object","allowHalfOpen":"boolean","_maxListeners":"undefined","_parent":"object","_parentWrap":"object","bytesRead":"number","connecting":"boolean","_host":"string","_port":"number","timeout":"number","_pendingData":"undefined","_pendingEncoding":"undefined","_hadError":"boolean","isServer":"boolean","_handle":"object","server":"undefined","_server":"undefined","_peername":"object","_sockname":"object","_closeAfterHandlingError":"boolean","_eventsCount":"number","servername":"undefined","Symbol(shapeMode)":"boolean","Symbol(kCapture)":"boolean","Symbol(kupgraded)":"object","Symbol(kStandaloneWrap)":"boolean","Symbol(kOnUpgradedClose)":"undefined","Symbol(kOwesRawClose)":"boolean","Symbol(kSetNoDelay)":"boolean","Symbol(kSetKeepAlive)":"boolean","Symbol(kSetKeepAliveInitialDelay)":"number","Symbol(khandlers)":"object","Symbol(kDestroyOnRead)":"boolean","Symbol(kBytesWritten)":"undefined","Symbol(closed)":"boolean","Symbol(ended)":"boolean","Symbol(::buntlsconnectoptions::)":"object","Symbol(::buntimeout::)":"object","Symbol(writeCallback)":"undefined","Symbol(ksocket)":"undefined"},"secure":"starttls","startTls":"function"}},"openedInfoKeys":{"remoteAddress":"string"},"openedInfoTypes":{"remoteAddress":"string"},"upgraded":true,"oldSocket":{"readableLocked":false,"writableLocked":false,"closed":"pending"},"after":{"socket":["close","closed","constructor","ctrl","host","o","onData","opened","raw","readable","secure","startTls","writable"],"readable":["Symbol(Symbol.asyncIterator)","Symbol(Symbol.toStringTag)","Symbol(nodejs.stream.disturbed)","Symbol(nodejs.stream.errored)","Symbol(nodejs.stream.readable)","Symbol(nodejs.util.inspect.custom)","blob","bytes","cancel","constructor","getReader","json","locked","pipeThrough","pipeTo","tee","text","values"],"writable":["Symbol(Symbol.toStringTag)","Symbol(nodejs.util.inspect.custom)","abort","close","constructor","getWriter","locked"],"startTlsLength":1,"scalar":{"close":"function","constructor":"function","ctrl":{},"host":"pg.fs04.test","o":{"ca":"string"},"onData":"function","raw":{"ALPNProtocols":"undefined","alpnProtocol":"boolean","_secureEstablished":"boolean","_rejectUnauthorized":"boolean","_securePending":"boolean","_newSessionPending":"undefined","_controlReleased":"boolean","secureConnecting":"boolean","_SNICallback":"undefined","servername":"string","authorized":"boolean","authorizationError":"object","encrypted":"boolean","_events":"object","_readableState":"object","_writableState":"object","allowHalfOpen":"boolean","_maxListeners":"undefined","_parent":"object","_parentWrap":"object","bytesRead":"number","connecting":"boolean","_host":"undefined","_port":"undefined","timeout":"number","_pendingData":"undefined","_pendingEncoding":"undefined","_hadError":"boolean","isServer":"boolean","_handle":"object","server":"undefined","_server":"undefined","_peername":"object","_sockname":"object","_closeAfterHandlingError":"boolean","_eventsCount":"number","_requestCert":"boolean","ciphers":"string","Symbol(ksecureContext)":"object","Symbol(kcheckServerIdentity)":"function","Symbol(ksession)":"object","Symbol(kservername)":"undefined","Symbol(renegotiationDisabled)":"undefined","Symbol(shapeMode)":"boolean","Symbol(kCapture)":"boolean","Symbol(kupgraded)":"object","Symbol(kStandaloneWrap)":"boolean","Symbol(kOnUpgradedClose)":"function","Symbol(kOwesRawClose)":"boolean","Symbol(kSetNoDelay)":"boolean","Symbol(kSetKeepAlive)":"boolean","Symbol(kSetKeepAliveInitialDelay)":"number","Symbol(khandlers)":"object","Symbol(kDestroyOnRead)":"boolean","Symbol(kBytesWritten)":"undefined","Symbol(closed)":"boolean","Symbol(ended)":"boolean","Symbol(::buntlsconnectoptions::)":"object","Symbol(::buntimeout::)":"object","Symbol(writeCallback)":"undefined","Symbol(ksocket)":"object","Symbol(kPreHandshakeWrite)":"boolean","Symbol(kSessionAccepted)":"boolean","Symbol(connect-options)":"object","Symbol(kVerifyError)":"object"},"secure":"off","startTls":"function"}},"openedInfoAfter":{"remoteAddress":"string"},"candidateMembers":{"peerCertificate":"absent","getPeerCertificate":"absent","getCertificate":"absent","certificate":"absent","cert":"absent","tlsInfo":"absent","info":"absent","getProtocol":"absent","getCipher":"absent","tlsSocket":"absent","upgraded":"absent","secureTransport":"absent","remoteAddress":"absent","localAddress":"absent","alpnProtocol":"absent"}}},"extra":{"responseAt":1795652807989,"closeLagMs":1},"proxy":[{"id":171,"route":"pg17-tls","kind":"ssl-request","openedAt":1795652807686.5,"closedAt":1795652807990.1,"closedBy":"client","c2sBytes":1855,"s2cBytes":957,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  could not receive data from client: Connection reset by peer"]},
+  {"run":2,"runId":"p2surfacec2xbpeh","wallMs":304,"pass":true,"checks":{"listed":true,"upgraded":true,"noPeerCertificateApi":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"p2surfacec3xt1hm","wallMs":307,"pass":true,"checks":{"listed":true,"upgraded":true,"noPeerCertificateApi":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"p2surfacec4xdc5y","wallMs":304,"pass":true,"checks":{"listed":true,"upgraded":true,"noPeerCertificateApi":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"p2surfacec5xwpps","wallMs":305,"pass":true,"checks":{"listed":true,"upgraded":true,"noPeerCertificateApi":true},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "R-01",
+    "area": "Competing driver on Workers",
+    "kind": "roadmap",
+    "text": "[V] a competing driver documents that on Workers TLS options are ignored and `channel_binding=require` is unavailable; whether that is a platform limit is FS-04's question."
+  },
+  {
+    "id": "R-02",
+    "area": "Workers platform constraints",
+    "kind": "roadmap",
+    "text": "[V] Workers: no socket at global scope; connection-count limits apply; TLS options and channel binding are constrained."
+  },
+  {
+    "id": "D-01",
+    "area": "connect() address forms",
+    "kind": "cloudflare-doc",
+    "text": "connect() accepts either a SocketAddress object with hostname and port or a single string, plus an optional SocketOptions object, and returns a Socket."
+  },
+  {
+    "id": "D-02",
+    "area": "secureTransport modes",
+    "kind": "cloudflare-doc",
+    "text": "SocketOptions.secureTransport takes \"off\", \"on\" or \"starttls\" and defaults to \"off\"; \"on\" starts TLS when the socket is created."
+  },
+  {
+    "id": "D-03",
+    "area": "Documented socket options",
+    "kind": "cloudflare-doc",
+    "text": "The documented SocketOptions members are only secureTransport and allowHalfOpen; no certificate, CA, SNI or expected-hostname option is documented for connect() or startTls()."
+  },
+  {
+    "id": "D-04",
+    "area": "startTls precondition",
+    "kind": "cloudflare-doc",
+    "text": "startTls() can be called only on a socket created with secureTransport set to \"starttls\"."
+  },
+  {
+    "id": "D-05",
+    "area": "startTls result",
+    "kind": "cloudflare-doc",
+    "text": "startTls() returns a new Socket, the original socket can no longer be read or written, and startTls() should be called once per socket."
+  },
+  {
+    "id": "D-06",
+    "area": "allowHalfOpen behaviour",
+    "kind": "cloudflare-doc",
+    "text": "allowHalfOpen defaults to false, which closes the writable side automatically at end-of-file; true keeps the writable side open after EOF."
+  },
+  {
+    "id": "D-07",
+    "area": "opened and closed promises",
+    "kind": "cloudflare-doc",
+    "text": "socket.opened resolves with SocketInfo (remoteAddress and localAddress, each possibly undefined) once connected and rejects on error; socket.closed resolves when the socket closes and rejects on error."
+  },
+  {
+    "id": "D-08",
+    "area": "Writable accepts Uint8Array",
+    "kind": "cloudflare-doc",
+    "text": "The socket's WritableStream accepts only Uint8Array chunks or views of them."
+  },
+  {
+    "id": "D-09",
+    "area": "Cloudflare IPs blocked",
+    "kind": "cloudflare-doc",
+    "text": "Outbound connect() to Cloudflare IP ranges is refused."
+  },
+  {
+    "id": "D-10",
+    "area": "No global-scope sockets",
+    "kind": "cloudflare-doc",
+    "text": "A TCP socket cannot be created in global scope and shared across requests; connect() during global scope fails with a disallowed-operation error."
+  },
+  {
+    "id": "D-11",
+    "area": "Sockets count toward limit",
+    "kind": "cloudflare-doc",
+    "text": "Each open TCP socket counts toward the maximum number of simultaneously open connections."
+  },
+  {
+    "id": "D-12",
+    "area": "Port 25 blocked",
+    "kind": "cloudflare-doc",
+    "text": "Outbound connect() to port 25 is refused with the message \"Connections to port 25 are prohibited\"."
+  },
+  {
+    "id": "D-13",
+    "area": "Localhost and private ranges",
+    "kind": "cloudflare-doc",
+    "text": "connect() to localhost or private network IPs is refused with \"proxy request failed, cannot connect to the specified address\"."
+  },
+  {
+    "id": "D-14",
+    "area": "Six connection limit",
+    "kind": "cloudflare-doc",
+    "text": "At most six connections per invocation may be waiting for response headers at once, and a seventh attempted while six are waiting is queued rather than rejected."
+  },
+  {
+    "id": "D-15",
+    "area": "Cross-request I/O error",
+    "kind": "cloudflare-doc",
+    "text": "An I/O object such as a stream created in one request handler cannot be used from another request's handler and raises \"Cannot perform I/O on behalf of a different request\"."
+  },
+  {
+    "id": "D-16",
+    "area": "Server certificate always verified",
+    "kind": "competing-driver",
+    "text": "postgres.js documents that on Workers the server certificate is always verified whatever the ssl option is set to."
+  },
+  {
+    "id": "D-17",
+    "area": "Channel binding unavailable",
+    "kind": "competing-driver",
+    "text": "postgres.js documents that on Workers channel binding is unavailable because the sockets do not expose the server certificate, so channel_binding 'require' is rejected with CHANNEL_BINDING_REQUIRED."
+  },
+  {
+    "id": "D-18",
+    "area": "Direct TLS needs ALPN",
+    "kind": "competing-driver",
+    "text": "postgres.js documents that on Workers sslnegotiation 'direct' is refused because Workers sockets cannot send ALPN."
+  },
+  {
+    "id": "D-19",
+    "area": "TLS handshake failure mode",
+    "kind": "competing-driver",
+    "text": "postgres.js documents that a Workers TLS handshake fails, most often when the server certificate is not signed by a publicly trusted CA, and surfaces this as TLS_HANDSHAKE_FAILED."
+  }
+]

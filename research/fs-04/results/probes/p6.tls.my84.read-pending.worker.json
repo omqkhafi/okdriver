@@ -1,0 +1,65 @@
+{
+ "id": "p6.tls.my84.read-pending",
+ "title": "my84: same with a read pending when the locks are released",
+ "group": "p6",
+ "mode": "worker",
+ "target": "my84",
+ "params": {
+  "holdMs": 1200,
+  "lockMode": "read-pending"
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "greetingOffersSsl",
+  "noServerByteBeforeSwitch",
+  "startTlsOk",
+  "loginOk",
+  "serverSsl",
+  "queryOk",
+  "proxyClientHello",
+  "serverOracleSeesTls"
+ ],
+ "checks": {
+  "greetingOffersSsl": {
+   "pass": 5,
+   "of": 5
+  },
+  "noServerByteBeforeSwitch": {
+   "pass": 5,
+   "of": 5
+  },
+  "startTlsOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 0,
+   "of": 5
+  },
+  "queryOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "proxyClientHello": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverOracleSeesTls": {
+   "pass": 0,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"y84readpendingw1xfm03","wallMs":2007,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":false},"response":{"ok":true,"probe":"p6.tls-upgrade","runId":"y84readpendingw1xfm03","ms":2005,"observations":{"opened":{"remoteAddress":"string","localAddress":"undefined"},"greeting":{"serverVersion":"8.4.13","family":"mysql","authPlugin":"caching_sha2_password","serverOffersSsl":true},"leftoverAtSwitch":0,"sslRequestBytes":36,"readerRelease":{"name":"TypeError","message":"Cannot call releaseLock() on a reader with outstanding read promises."},"writerRelease":"ok","startTls":"ok","login":{"ok":false,"error":{"name":"TypeError","message":"The ReadableStream has been locked to a reader."}},"bytesWritten":143,"bytesReceived":78}},"extra":{"responseAt":1795653736950,"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":1},"proxy":[{"id":2596,"route":"my84","kind":"ssl-request","openedAt":1795653734945.2,"closedAt":1795653736950.6,"closedBy":"client","c2sBytes":36,"s2cBytes":78,"sslAnswer":"(none)","tlsAtC2s":36,"c2sTypes":{"packet":1}}],"log":[],"activityPeak":0},
+  {"run":2,"runId":"y84readpendingw2xnvpk","wallMs":2005,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":false},"activityPeak":0,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"y84readpendingw3xsfir","wallMs":2008,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":false},"activityPeak":0,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"y84readpendingw4x6r4f","wallMs":2008,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":false},"activityPeak":0,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"y84readpendingw5xwp5c","wallMs":2007,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":false},"activityPeak":0,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

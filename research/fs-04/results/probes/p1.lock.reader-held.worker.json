@@ -1,0 +1,39 @@
+{
+ "id": "p1.lock.reader-held",
+ "title": "startTls with lock situation reader-held",
+ "group": "p1",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {
+  "lockMode": "reader-held"
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "upgradeCallOk",
+  "loginOk",
+  "serverSsl"
+ ],
+ "checks": {
+  "upgradeCallOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 0,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"lockreaderheldw1xkw16","wallMs":2009,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"response":{"ok":true,"probe":"p1.tls-upgrade","runId":"lockreaderheldw1xkw16","ms":2007,"observations":{"steps":[],"opened":{"remoteAddress":"string","localAddress":"undefined"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0,"login":{"ok":false,"error":{"name":"TypeError","message":"The ReadableStream has been locked to a reader."}},"bytesWritten":112,"bytesReceived":1}},"extra":{"responseAt":1795653394052,"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":1},"proxy":[{"id":1491,"route":"pg17-tls","kind":"ssl-request","openedAt":1795653392046.2,"closedAt":1795653394052.6,"closedBy":"client","c2sBytes":8,"s2cBytes":1,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1}}],"log":["LOG:  could not accept SSL connection: EOF detected"]},
+  {"run":2,"runId":"lockreaderheldw2xu799","wallMs":2009,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"lockreaderheldw3xow0l","wallMs":2007,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":10,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"lockreaderheldw4xj8m9","wallMs":2009,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"lockreaderheldw5x50pu","wallMs":2008,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

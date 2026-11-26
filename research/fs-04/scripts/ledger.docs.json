@@ -1,0 +1,452 @@
+{
+  "R-01": [
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "The server certificate is always checked, whatever `ssl` is set to."
+    },
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "Channel binding isn't available, as Workers sockets don't expose the server certificate"
+    },
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "so `channel_binding: 'require'` is rejected with `CHANNEL_BINDING_REQUIRED`."
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "`secureTransport` \"off\" | \"on\" | \"starttls\" — Defaults to `off`"
+    }
+  ],
+  "R-02": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "TCP sockets cannot be created in global scope and shared across requests."
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "Each open TCP socket counts towards the maximum number of"
+    },
+    {
+      "source": "Cloudflare Workers docs, Limits",
+      "url": "https://developers.cloudflare.com/workers/platform/limits/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "654550ada073e814a41e14e2adb2ecf08a2d649611a6dba3f35cdd6358956187",
+      "read": "raw page text",
+      "quote": "Each Worker invocation can have up to six connections simultaneously waiting for response headers."
+    },
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "A connection belongs to the request that opened it"
+    },
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "Channel binding isn't available, as Workers sockets don't expose the server certificate"
+    },
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "The server certificate is always checked, whatever `ssl` is set to."
+    }
+  ],
+  "D-01": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "`connect(address: SocketAddress | string, options?: optional SocketOptions)` : `Socket`"
+    },
+    {
+      "source": "postgres.js 4.1.1 source src/cf.js, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/src/cf.js",
+      "fetched": "2026-11-25",
+      "sha256": "0cbb109b22266a154a1fb4a8d9c551fe957c0f1ad7b9c7467b9932d631fe956a",
+      "read": "raw page text",
+      "quote": "connect({ hostname: host, port }, { secureTransport: tls ? 'starttls' : 'off', allowHalfOpen: false })"
+    }
+  ],
+  "D-02": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "`secureTransport` \"off\" | \"on\" | \"starttls\" — Defaults to `off`"
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "`on` — Use TLS."
+    }
+  ],
+  "D-03": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "`secureTransport` \"off\" | \"on\" | \"starttls\" — Defaults to `off`"
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "`allowHalfOpen` boolean — Defaults to `false`"
+    },
+    {
+      "source": "pg-cloudflare source src/index.ts, node-postgres master",
+      "url": "https://raw.githubusercontent.com/brianc/node-postgres/master/packages/pg-cloudflare/src/index.ts",
+      "fetched": "2026-11-25",
+      "sha256": "50fe877a1f395ee129e1b97bcef3ef45a124e25586dc44c2799397604ea74c76",
+      "read": "raw page text",
+      "quote": "import { SocketOptions, Socket, TlsOptions } from 'cloudflare:sockets'"
+    }
+  ],
+  "D-04": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "`startTls()` can only be called if `secureTransport` is set to `starttls`"
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "you must set [`secureTransport`](https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/#socketoptions) to `starttls`"
+    }
+  ],
+  "D-05": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "Upgrades an insecure socket to a secure one that uses TLS, returning a new"
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "the initial socket is closed and can no longer be read from"
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "`startTls()` should only be called once on an existing socket."
+    }
+  ],
+  "D-06": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "`allowHalfOpen` boolean — Defaults to `false`"
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "the writable side of the TCP socket will remain open on EOF"
+    }
+  ],
+  "D-07": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "This promise is resolved when the socket connection is established"
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "This promise is resolved when the socket is closed"
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "The address of the local network endpoint for this socket. May not always be set."
+    }
+  ],
+  "D-08": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "The `WritableStream` returned only accepts chunks of `Uint8Array` or its views."
+    }
+  ],
+  "D-09": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "Outbound TCP sockets to [Cloudflare IP ranges ↗︎](https://www.cloudflare.com/ips/) are blocked."
+    },
+    {
+      "source": "Cloudflare Workers docs, connect() handler",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/handlers/connect/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "44ecd7d796bdac8ecccf1aa7150c8c6c8987ebb6466b4725e3ab48217c1c1b8f",
+      "read": "raw page text",
+      "quote": "Outbound TCP connections to Cloudflare IP addresses are blocked."
+    }
+  ],
+  "D-10": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "TCP sockets cannot be created in global scope and shared across requests."
+    },
+    {
+      "source": "Cloudflare Hyperdrive docs, Troubleshoot and debug",
+      "url": "https://developers.cloudflare.com/hyperdrive/observability/troubleshooting/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "40db0b72aabb02a339da28cbb8a2c7f27fad0e2479bf76064b1414ba0a7fac17",
+      "read": "raw page text",
+      "quote": "Disallowed operation called within global scope. Asynchronous I/O (ex: fetch() or connect())"
+    },
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "A connection belongs to the request that opened it"
+    }
+  ],
+  "D-11": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "Each open TCP socket counts towards the maximum number of"
+    }
+  ],
+  "D-12": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "By default, Workers cannot create outbound TCP connections on port `25`"
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "Connections to port 25 are prohibited"
+    }
+  ],
+  "D-13": [
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "proxy request failed, cannot connect to the specified address"
+    },
+    {
+      "source": "Cloudflare Workers docs, TCP sockets",
+      "url": "https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "cc0aac34dd1a2e4ded898d03c457fae67eedf97b352ea47677e6dfab38ae845a",
+      "read": "raw page text",
+      "quote": "Examples of a disallowed address include Cloudflare IPs, `localhost`, and private network IPs."
+    }
+  ],
+  "D-14": [
+    {
+      "source": "Cloudflare Workers docs, Limits",
+      "url": "https://developers.cloudflare.com/workers/platform/limits/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "654550ada073e814a41e14e2adb2ecf08a2d649611a6dba3f35cdd6358956187",
+      "read": "raw page text",
+      "quote": "Each Worker invocation can have up to six connections simultaneously waiting for response headers."
+    },
+    {
+      "source": "Cloudflare Workers docs, Limits",
+      "url": "https://developers.cloudflare.com/workers/platform/limits/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "654550ada073e814a41e14e2adb2ecf08a2d649611a6dba3f35cdd6358956187",
+      "read": "raw page text",
+      "quote": "while the initial connection is being established and the server has not yet responded"
+    },
+    {
+      "source": "Cloudflare Workers docs, Limits",
+      "url": "https://developers.cloudflare.com/workers/platform/limits/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "654550ada073e814a41e14e2adb2ecf08a2d649611a6dba3f35cdd6358956187",
+      "read": "raw page text",
+      "quote": "it is queued until one of the existing connections receives its response headers."
+    }
+  ],
+  "D-15": [
+    {
+      "source": "Cloudflare Workers docs, Errors and exceptions",
+      "url": "https://developers.cloudflare.com/workers/observability/errors/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "ed9f459462f7d5b9de50bc2dae052dfd3bc32bbf22a6393971c4c7de25fe8b10",
+      "read": "raw page text",
+      "quote": "Cannot perform I/O on behalf of a different request."
+    },
+    {
+      "source": "Cloudflare Workers docs, Errors and exceptions",
+      "url": "https://developers.cloudflare.com/workers/observability/errors/index.md",
+      "fetched": "2026-11-25",
+      "sha256": "ed9f459462f7d5b9de50bc2dae052dfd3bc32bbf22a6393971c4c7de25fe8b10",
+      "read": "raw page text",
+      "quote": "cannot be accessed from a different request's handler."
+    }
+  ],
+  "D-16": [
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "The server certificate is always checked, whatever `ssl` is set to."
+    },
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "Workers always verify the certificate; Hyperdrive connects to such servers for you."
+    }
+  ],
+  "D-17": [
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "Channel binding isn't available, as Workers sockets don't expose the server certificate"
+    },
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "so `channel_binding: 'require'` is rejected with `CHANNEL_BINDING_REQUIRED`."
+    },
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "Cloudflare Workers sockets don't expose the server certificate, so there `'prefer'` doesn't bind"
+    }
+  ],
+  "D-18": [
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "`sslnegotiation: 'direct'` is refused with `SSL_NEGOTIATION_NOT_SUPPORTED`, as Workers sockets cannot send ALPN."
+    },
+    {
+      "source": "postgres.js 4.1.1 source src/cf.js, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/src/cf.js",
+      "fetched": "2026-11-25",
+      "sha256": "0cbb109b22266a154a1fb4a8d9c551fe957c0f1ad7b9c7467b9932d631fe956a",
+      "read": "raw page text",
+      "quote": "sslnegotiation: direct needs ALPN, which Cloudflare Workers sockets do not offer"
+    }
+  ],
+  "D-19": [
+    {
+      "source": "postgres.js 4.1.1 README, tag v4.1.1",
+      "url": "https://raw.githubusercontent.com/porsager/postgres/v4.1.1/README.md",
+      "fetched": "2026-11-25",
+      "sha256": "477423bacaf7ff44ec9258a4246f9dae3f899d5640c87525ab00a99385ab3378",
+      "read": "raw page text",
+      "quote": "most often because the server's certificate is not signed by a publicly trusted CA."
+    }
+  ]
+}

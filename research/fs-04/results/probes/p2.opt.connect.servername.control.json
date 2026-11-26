@@ -1,0 +1,31 @@
+{
+ "id": "p2.opt.connect.servername",
+ "title": "servername on connect: honoured means the ClientHello SNI changes",
+ "group": "p2",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "connectOpts": {
+   "servername": "sni.fs04.test"
+  }
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "honoured"
+ ],
+ "checks": {
+  "honoured": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"nectservernamec1xok50","wallMs":6,"pass":true,"checks":{"honoured":true},"response":{"ok":true,"probe":"p2.options","runId":"nectservernamec1xok50","ms":6,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0.5400000000008731,"login":{"ok":false,"error":{"name":"Error","message":"Socket is closed"}},"bytesWritten":112,"bytesReceived":1}},"extra":{"responseAt":1795652802009,"closeLagMs":1},"proxy":[{"id":141,"route":"pg17-tls","kind":"ssl-request","openedAt":1795652802004.6,"closedAt":1795652802009.7,"closedBy":"client","c2sBytes":1783,"s2cBytes":957,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"sni.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  could not accept SSL connection: EOF detected"]},
+  {"run":2,"runId":"nectservernamec2xntkm","wallMs":7,"pass":true,"checks":{"honoured":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"nectservernamec3xboid","wallMs":5,"pass":true,"checks":{"honoured":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"nectservernamec4xwhcm","wallMs":5,"pass":true,"checks":{"honoured":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"nectservernamec5xgt3u","wallMs":6,"pass":true,"checks":{"honoured":true},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

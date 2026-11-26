@@ -1,0 +1,114 @@
+{
+ "baseCommit": "19a0d5fad8bd6e92ba1f33e0a0793684fcc3babf",
+ "workerd": "workerd 2026-11-18",
+ "workerdCompatibilityDate": "2026-11-01",
+ "bun": "1.4.4",
+ "kernel": "Linux 6.18.44-fc-v880",
+ "openssl": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+ "docker": "Docker version 29.9.3, build 5457199",
+ "registryNote": "Docker Hub answered 429 to unauthenticated pulls; the same official images were pulled from mirror.gcr.io/library (digests recorded here).",
+ "hostsFileNote": "pg.fs04.test, wrong.fs04.test, selfsigned.fs04.test and expired.fs04.test were added to /etc/hosts as 127.0.0.1 so that connect-by-name works.",
+ "embedder": {
+  "outboundService": "network, allow [\"public\",\"local\"], tlsOptions.trustedCertificates = [test root CA]",
+  "note": "a workerd embedder setting; Cloudflare production has no such file"
+ },
+ "servers": [
+  {
+   "id": "pg17-tls",
+   "engine": "postgres",
+   "image": "mirror.gcr.io/library/postgres:17",
+   "digest": "mirror.gcr.io/library/postgres@sha256:87c8b42f423b45d5247e6aa8fdb2e7762fec164c68a50fe3eb07e7bfcaf4dbcf",
+   "version": "PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+   "tls": true,
+   "cert": "pg",
+   "clientCertRequired": false,
+   "imageCreated": "2026-11-24T04:30:34.85602997Z"
+  },
+  {
+   "id": "pg17-plain",
+   "engine": "postgres",
+   "image": "mirror.gcr.io/library/postgres:17",
+   "digest": "mirror.gcr.io/library/postgres@sha256:87c8b42f423b45d5247e6aa8fdb2e7762fec164c68a50fe3eb07e7bfcaf4dbcf",
+   "version": "PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+   "tls": false,
+   "clientCertRequired": false,
+   "imageCreated": "2026-11-24T04:30:34.85602997Z"
+  },
+  {
+   "id": "pg17-selfsigned",
+   "engine": "postgres",
+   "image": "mirror.gcr.io/library/postgres:17",
+   "digest": "mirror.gcr.io/library/postgres@sha256:87c8b42f423b45d5247e6aa8fdb2e7762fec164c68a50fe3eb07e7bfcaf4dbcf",
+   "version": "PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+   "tls": true,
+   "cert": "selfsigned",
+   "clientCertRequired": false,
+   "imageCreated": "2026-11-24T04:30:34.85602997Z"
+  },
+  {
+   "id": "pg17-expired",
+   "engine": "postgres",
+   "image": "mirror.gcr.io/library/postgres:17",
+   "digest": "mirror.gcr.io/library/postgres@sha256:87c8b42f423b45d5247e6aa8fdb2e7762fec164c68a50fe3eb07e7bfcaf4dbcf",
+   "version": "PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+   "tls": true,
+   "cert": "expired",
+   "clientCertRequired": false,
+   "imageCreated": "2026-11-24T04:30:34.85602997Z"
+  },
+  {
+   "id": "pg17-clientcert",
+   "engine": "postgres",
+   "image": "mirror.gcr.io/library/postgres:17",
+   "digest": "mirror.gcr.io/library/postgres@sha256:87c8b42f423b45d5247e6aa8fdb2e7762fec164c68a50fe3eb07e7bfcaf4dbcf",
+   "version": "(client certificate required: version taken from the same image)",
+   "tls": true,
+   "cert": "pg",
+   "clientCertRequired": true,
+   "imageCreated": "2026-11-24T04:30:34.85602997Z"
+  },
+  {
+   "id": "pg19-tls",
+   "engine": "postgres",
+   "image": "mirror.gcr.io/library/postgres:19.0",
+   "digest": "mirror.gcr.io/library/postgres@sha256:aaa10f7ba7328b4a221a6c3184d83eef885bd16bf1f6de864757863156b0a4d1",
+   "version": "PostgreSQL 19.0 (Debian 19.0-2.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+   "tls": true,
+   "cert": "pg",
+   "clientCertRequired": false,
+   "imageCreated": "2026-11-24T04:29:15.13909244Z"
+  },
+  {
+   "id": "pg19-plain",
+   "engine": "postgres",
+   "image": "mirror.gcr.io/library/postgres:19.0",
+   "digest": "mirror.gcr.io/library/postgres@sha256:aaa10f7ba7328b4a221a6c3184d83eef885bd16bf1f6de864757863156b0a4d1",
+   "version": "PostgreSQL 19.0 (Debian 19.0-2.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+   "tls": false,
+   "clientCertRequired": false,
+   "imageCreated": "2026-11-24T04:29:15.13909244Z"
+  },
+  {
+   "id": "my84",
+   "engine": "mysql",
+   "image": "mirror.gcr.io/library/mysql:8.4",
+   "digest": "mirror.gcr.io/library/mysql@sha256:8c233bad33d520a7aae1c1e619c3a9775f4a1ba2d463d692fada04ec7f40be00",
+   "version": "8.4.13",
+   "tls": true,
+   "cert": "pg",
+   "clientCertRequired": false,
+   "imageCreated": "2026-11-23T23:44:26.422885712Z"
+  },
+  {
+   "id": "ma118",
+   "engine": "mariadb",
+   "image": "mirror.gcr.io/library/mariadb:11.8",
+   "digest": "mirror.gcr.io/library/mariadb@sha256:e1d5495f445654134f226f55a41ce0da227116f6f27f283101f405c794d841fc",
+   "version": "11.8.9-MariaDB-ubu2404",
+   "tls": true,
+   "cert": "pg",
+   "clientCertRequired": false,
+   "imageCreated": "2026-11-20T03:29:08.434626657Z"
+  }
+ ]
+}

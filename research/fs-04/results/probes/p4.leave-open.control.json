@@ -1,0 +1,46 @@
+{
+ "id": "p4.leave-open",
+ "title": "socket left open at the end of the request: what the server sees",
+ "group": "p4",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {},
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "responded",
+  "serverSawConnection",
+  "closedWithin1sOfResponse",
+  "serverNoneAtEnd"
+ ],
+ "checks": {
+  "responded": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverSawConnection": {
+   "pass": 5,
+   "of": 5
+  },
+  "closedByPlatformNotServer": {
+   "pass": 0,
+   "of": 5
+  },
+  "closedWithin1sOfResponse": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverNoneAtEnd": {
+   "pass": 0,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"p4leaveopenc1xrz4u","wallMs":5,"pass":false,"checks":{"responded":true,"serverSawConnection":true,"closedByPlatformNotServer":false,"closedWithin1sOfResponse":false,"serverNoneAtEnd":false},"response":{"ok":true,"probe":"p4.leave-open","runId":"p4leaveopenc1xrz4u","ms":6,"observations":{"pid":716,"returnedWithOpenSocket":true}},"extra":{"responseAt":1795652909130,"sampled":[{"at":300,"count":1},{"at":2000,"count":1},{"at":8000,"count":1}]},"proxy":[{"id":706,"route":"pg17-tls","kind":"startup","label":"fs04-p4leaveopenc1xrz4u-open","openedAt":1795652909126.4,"c2sBytes":270,"s2cBytes":638,"c2sTypes":{"Startup":1,"p":2}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4leaveopenc1xrz4u-open"],"activityPeak":1},
+  {"run":2,"runId":"p4leaveopenc2xh3mx","wallMs":7,"pass":false,"checks":{"responded":true,"serverSawConnection":true,"closedByPlatformNotServer":false,"closedWithin1sOfResponse":false,"serverNoneAtEnd":false},"activityPeak":1,"extra":{"sampled":[{"at":300,"count":1},{"at":2000,"count":1},{"at":8000,"count":1}]},"traceTrimmed":true},
+  {"run":3,"runId":"p4leaveopenc3xl8qn","wallMs":6,"pass":false,"checks":{"responded":true,"serverSawConnection":true,"closedByPlatformNotServer":false,"closedWithin1sOfResponse":false,"serverNoneAtEnd":false},"activityPeak":1,"extra":{"sampled":[{"at":300,"count":1},{"at":2000,"count":1},{"at":8000,"count":1}]},"traceTrimmed":true},
+  {"run":4,"runId":"p4leaveopenc4xqsrc","wallMs":6,"pass":false,"checks":{"responded":true,"serverSawConnection":true,"closedByPlatformNotServer":false,"closedWithin1sOfResponse":false,"serverNoneAtEnd":false},"activityPeak":1,"extra":{"sampled":[{"at":300,"count":1},{"at":2000,"count":1},{"at":8000,"count":1}]},"traceTrimmed":true},
+  {"run":5,"runId":"p4leaveopenc5xb8im","wallMs":6,"pass":false,"checks":{"responded":true,"serverSawConnection":true,"closedByPlatformNotServer":false,"closedWithin1sOfResponse":false,"serverNoneAtEnd":false},"activityPeak":1,"extra":{"sampled":[{"at":300,"count":1},{"at":2000,"count":1},{"at":8000,"count":1}]},"traceTrimmed":true}
+ ]
+}

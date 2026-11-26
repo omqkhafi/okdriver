@@ -1,0 +1,49 @@
+{
+ "id": "planted.p5.cancel.wrong-key",
+ "title": "planted: CancelRequest with a wrong secret key",
+ "group": "planted",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "wrongKey": true,
+  "waitMs": 3000
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "endedWithin2500msOfCancel",
+  "queryEnded57014"
+ ],
+ "expectFail": "endedWithin2500msOfCancel",
+ "caught": true,
+ "checks": {
+  "queryEnded57014": {
+   "pass": 5,
+   "of": 5
+  },
+  "endedWithin2500msOfCancel": {
+   "pass": 0,
+   "of": 5
+  },
+  "cancelSocketClosedByServer": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverLogged57014": {
+   "pass": 5,
+   "of": 5
+  },
+  "cancelSocketOpenedFast": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"cancelwrongkeyc1x794g","wallMs":4017,"pass":false,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":false,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"response":{"ok":true,"probe":"p5.cancel","runId":"cancelwrongkeyc1x794g","ms":4017,"observations":{"params":{"tlsMain":false,"cancelVia":"plain","busyOthers":0,"wrongKey":true},"pid":808,"socketsOpenBeforeCancel":1,"cancel":{"openedAfterMs":0.6799999999930151,"sentAt":270362.42,"drain":{"bytes":0,"ended":"eof"},"doneAfterMs":4.070000000006985},"endedWithoutRealCancel":false,"cleanupCancel":{"openedAfterMs":0.8500000000349246,"sentAt":273367.95,"drain":{"bytes":0,"ended":"eof"},"doneAfterMs":4.440000000002328},"queryMs":4009.469999999972,"endedAfterCancelSentMs":3007.5,"result":{"error":{"code":"57014","message":"canceling statement due to user request"},"rows":[]},"totalMs":4016.929999999993}},"extra":{"responseAt":1795653047242,"closeLagMs":1},"proxy":[{"id":1116,"route":"pg17-tls","kind":"startup","label":"fs04-cancelwrongkeyc1x794g-main","openedAt":1795653043225.9,"closedAt":1795653047242.7,"closedBy":"client","c2sBytes":303,"s2cBytes":786,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1},"s2cErrors":["57014"]},{"id":1117,"route":"pg17-tls","kind":"cancel","openedAt":1795653044233.1,"closedAt":1795653044236.4,"closedBy":"server","c2sBytes":16,"s2cBytes":0,"cancelPid":808,"c2sTypes":{"CancelRequest":1}},{"id":1118,"route":"pg17-tls","kind":"cancel","openedAt":1795653047238.6,"closedAt":1795653047242.2,"closedBy":"server","c2sBytes":16,"s2cBytes":0,"cancelPid":808,"c2sTypes":{"CancelRequest":1}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-cancelwrongkeyc1x794g-main","LOG:  wrong key in cancel request for process 808","ERROR:  canceling statement due to user request"]},
+  {"run":2,"runId":"cancelwrongkeyc2x6ydm","wallMs":4016,"pass":false,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":false,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"cancelwrongkeyc3xf31l","wallMs":4017,"pass":false,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":false,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"cancelwrongkeyc4xilmo","wallMs":4017,"pass":false,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":false,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"cancelwrongkeyc5x718a","wallMs":4018,"pass":false,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":false,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"closeLagMs":0},"traceTrimmed":true}
+ ]
+}
