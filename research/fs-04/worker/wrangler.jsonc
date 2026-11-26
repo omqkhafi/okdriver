@@ -1,0 +1,9 @@
+{
+  // FS-04 probe Worker. Deploy with the exact version named in results/production-runbook.md.
+  // No nodejs_compat on purpose: the Worker uses Web APIs only, and needing the flag would be a finding.
+  "name": "okdriver-fs04-probe",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "observability": { "enabled": false }
+}

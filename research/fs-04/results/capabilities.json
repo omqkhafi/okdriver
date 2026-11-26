@@ -1,0 +1,2290 @@
+{
+ "rule": "A capability is true only when every required cell passed in 5 of 5 fresh runs, end to end, with server-side truth (pg_stat_ssl and server log, PostgreSQL SHA-256, pg_stat_activity, SQLSTATE, server processlist). A cell is a variant (all its required checks) or one named check of a variant. 1 to 4 of 5 in any cell, and no cell at 0 of 5, is \"intermittent\": false, counts shown. Any cell at 0 of 5 is false. Documented-only and unobservable are false. A negated cell counts the runs in which the named check failed. The production column is true only from results/production/ files made against a deployed Worker; otherwise it reads \"Not verified here\" and the claimable value is false.",
+ "labels": {
+  "local-observed": "measured in this study on the pinned workerd 1.20261118.1 with embedder trust settings; not Cloudflare production",
+  "production-observed": "measured against a deployed Worker (none in this study)",
+  "documented-only": "stated by Cloudflare or a driver documentation page, not measured",
+  "not observable": "no API or instrument available; the value is false"
+ },
+ "workerd": "1.20261118.1",
+ "productionVerified": false,
+ "capabilities": [
+  {
+   "id": "pg.startTls",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "PostgreSQL: SSLRequest, S, startTls(), SCRAM, query; pg_stat_ssl and server log confirm TLS",
+   "transportCaps": "startTls",
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p1.starttls.pg17-tls",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": {
+    "status": "true",
+    "counts": "5/5"
+   },
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "pg.serverAnswersN",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "PostgreSQL: server answers N, the same starttls-mode socket continues in plaintext",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p1.server-n.pg17-plain",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": {
+    "status": "true",
+    "counts": "5/5"
+   },
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "pg.directTls",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "PostgreSQL: secureTransport \"on\" (direct TLS, needs ALPN postgresql on PG 17+)",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p1.direct-tls.pg17-tls",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": {
+    "status": "false",
+    "counts": "0/5"
+   },
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "pg.directTls.alpnOption",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "An alpn option on connect() puts ALPN postgresql into the ClientHello and direct TLS succeeds",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p1.direct-tls.alpn-option.pg17-tls",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "behaviour.startTlsWithOutstandingRead",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "startTls() works while a read() is outstanding (releaseLock throws in workerd)",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p1.lock.read-pending",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "behaviour.startTlsAfterReaderCancel",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "startTls() works after reader.cancel() settled the outstanding read and both locks were released",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p1.lock.cancel-pending",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": null,
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "behaviour.startTlsWithLocksHeld",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "startTls() usable while a reader and a writer lock are still held",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p1.lock.none-released",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "behaviour.secondStartTlsRefused",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "A second startTls() on the upgraded socket is refused and the connection stays usable",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p1.second-starttls",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "behaviour.startTlsOnlyOnStarttlsSockets",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "startTls() is refused on sockets created with secureTransport \"off\" and \"on\"",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5 5/5",
+    "cells": [
+     {
+      "variant": "p1.starttls-misuse.off",
+      "pass": 5,
+      "of": 5
+     },
+     {
+      "variant": "p1.starttls-misuse.on",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5 5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "cert.verification",
+   "area": "Certificates",
+   "kind": "capability",
+   "title": "Verification matrix: trusted+right name accepted; self-signed untrusted, trusted+wrong name and expired all rejected, no session reaches the server",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5 5/5 5/5 5/5",
+    "cells": [
+     {
+      "variant": "p2.matrix.trusted-right-name",
+      "pass": 5,
+      "of": 5
+     },
+     {
+      "variant": "p2.matrix.selfsigned-untrusted",
+      "pass": 5,
+      "of": 5
+     },
+     {
+      "variant": "p2.matrix.trusted-wrong-name",
+      "pass": 5,
+      "of": 5
+     },
+     {
+      "variant": "p2.matrix.expired",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": {
+    "status": "true",
+    "counts": "5/5 5/5"
+   },
+   "control": {
+    "counts": "5/5 5/5 5/5 5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false,
+   "note": "Trust anchors are an embedder setting locally (trustedCertificates); production trust is Cloudflare's store and was not tested."
+  },
+  {
+   "id": "cert.option.expectedServerHostname",
+   "area": "TLS options",
+   "kind": "capability",
+   "title": "startTls({expectedServerHostname}) is honoured: wrong name rejects, right name fixes a connect-by-IP, and it becomes the SNI value",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5 5/5 5/5",
+    "cells": [
+     {
+      "variant": "p2.opt.startTls.expectedServerHostname-wrong",
+      "pass": 5,
+      "of": 5
+     },
+     {
+      "variant": "p2.opt.startTls.expectedServerHostname-fixes-ip",
+      "pass": 5,
+      "of": 5
+     },
+     {
+      "variant": "p2.opt.startTls.expectedServerHostname-sni",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5 5/5 5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "– –"
+   },
+   "claimable": false
+  },
+  {
+   "id": "cert.option.rejectUnauthorized",
+   "area": "TLS options",
+   "kind": "capability",
+   "title": "rejectUnauthorized:false is honoured (connect and startTls)",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5 0/5",
+    "cells": [
+     {
+      "variant": "p2.opt.startTls.rejectUnauthorized-false",
+      "pass": 0,
+      "of": 5
+     },
+     {
+      "variant": "p2.opt.connect.rejectUnauthorized-false",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5 5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "cert.option.ca",
+   "area": "TLS options",
+   "kind": "capability",
+   "title": "A ca option is honoured (connect and startTls)",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5 0/5",
+    "cells": [
+     {
+      "variant": "p2.opt.startTls.ca",
+      "pass": 0,
+      "of": 5
+     },
+     {
+      "variant": "p2.opt.connect.ca",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5 5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "cert.option.servername",
+   "area": "TLS options",
+   "kind": "capability",
+   "title": "A servername option changes the SNI value (connect and startTls)",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5 0/5",
+    "cells": [
+     {
+      "variant": "p2.opt.startTls.servername",
+      "pass": 0,
+      "of": 5
+     },
+     {
+      "variant": "p2.opt.connect.servername",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5 5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "cert.option.alpn",
+   "area": "TLS options",
+   "kind": "capability",
+   "title": "An alpn / alpnProtocols option puts ALPN into the ClientHello",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5 0/5 0/5",
+    "cells": [
+     {
+      "variant": "p2.opt.startTls.alpn",
+      "pass": 0,
+      "of": 5
+     },
+     {
+      "variant": "p2.opt.connect.alpn",
+      "pass": 0,
+      "of": 5
+     },
+     {
+      "variant": "p2.opt.connect.alpnProtocols",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5 5/5 5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "cert.clientCertificate",
+   "area": "Certificates",
+   "kind": "capability",
+   "title": "A client certificate and key can be offered per connection (server demands one)",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p2.clientcert.options",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5 5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false,
+   "note": "The server-demands-a-certificate control must pass for the \"no\" to mean anything. An embedder-level keypair on the outbound service was not tried: it is not a Worker API."
+  },
+  {
+   "id": "cert.peerCertificate.api",
+   "area": "Certificates",
+   "kind": "capability",
+   "title": "Any API on Socket or SocketInfo exposes the peer certificate or its hash",
+   "transportCaps": "channelBinding",
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p2.surface",
+      "check": "noPeerCertificateApi",
+      "negate": true,
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": null,
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false,
+   "note": "Value is the existence of such an API: true only if p2.surface finds one in 5 of 5 runs (noPeerCertificateApi fails 5/5)."
+  },
+  {
+   "id": "cert.channelBinding.tlsServerEndPoint",
+   "area": "Certificates",
+   "kind": "capability",
+   "title": "SCRAM-SHA-256-PLUS with tls-server-end-point (needs the server certificate hash)",
+   "transportCaps": "channelBinding",
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "not observable",
+    "counts": "",
+    "cells": []
+   },
+   "pg19": null,
+   "control": null,
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false,
+   "note": "Not attempted: with no certificate API there is nothing to hash. Unobservable here, so false.",
+   "reason": "not observable: no API exposes the peer certificate (see cert.peerCertificate.api); computing the hash in userland would need a userland TLS stack on a secureTransport \"off\" socket, which this study did not try."
+  },
+  {
+   "id": "write.backpressure.desiredSize",
+   "area": "Large writes",
+   "kind": "behaviour",
+   "title": "writer.desiredSize drops to 0 or below while the server does not read",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p3.backpressure.await-ready",
+      "check": "desiredSizeSignals",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "write.backpressure.ready",
+   "area": "Large writes",
+   "kind": "behaviour",
+   "title": "writer.ready stays pending while the server does not read",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p3.backpressure.await-ready",
+      "check": "readyPendsDuringStall",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "write.backpressure.writePromise",
+   "area": "Large writes",
+   "kind": "behaviour",
+   "title": "Each write() promise stays pending while the server does not read (awaiting writes is the backpressure)",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p3.backpressure.await-ready",
+      "check": "writesPendDuringStall",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "write.chunked.64KiB.128MiB",
+   "area": "Large writes",
+   "kind": "capability",
+   "title": "Bind parameter of 128 MiB in 64 KiB chunks, each write awaited, intact in PostgreSQL and at the proxy",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p3.write.bind-chunk64k.128MiB",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "write.single.128MiB",
+   "area": "Large writes",
+   "kind": "capability",
+   "title": "Bind parameter of 128 MiB in one write() call, intact in PostgreSQL and at the proxy",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p3.write.bind-single.128MiB",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": {
+    "status": "true",
+    "counts": "5/5"
+   },
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false,
+   "note": "Local workerd has no 128 MB isolate memory limit; production does, and the single-write case was not tested there."
+  },
+  {
+   "id": "write.copy.128MiB",
+   "area": "Large writes",
+   "kind": "capability",
+   "title": "COPY (binary) of 128 MiB in 64 KiB CopyData messages, intact",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p3.write.copy-chunk64k.128MiB",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "write.tls.128MiB",
+   "area": "Large writes",
+   "kind": "capability",
+   "title": "128 MiB Bind parameter over the upgraded TLS connection, single write and 64 KiB chunks",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5 5/5",
+    "cells": [
+     {
+      "variant": "p3.write.tls-bind-single.128MiB",
+      "pass": 5,
+      "of": 5
+     },
+     {
+      "variant": "p3.write.tls-bind-chunk64k.128MiB",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5 5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "concurrency.n1",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "1 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p4.concurrent.n1",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "concurrency.n2",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "2 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p4.concurrent.n2",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "concurrency.n6",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "6 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p4.concurrent.n6",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "concurrency.n7",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "7 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p4.concurrent.n7",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "concurrency.n8",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "8 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p4.concurrent.n8",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": {
+    "status": "true",
+    "counts": "5/5"
+   },
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "concurrency.n24",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "24 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p4.concurrent.n24",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "concurrency.n50",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "50 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p4.concurrent.n50",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": {
+    "status": "true",
+    "counts": "5/5"
+   },
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "concurrency.idleSocketsDoNotCount",
+   "area": "Concurrent sockets",
+   "kind": "behaviour",
+   "title": "Six idle logged-in sockets do not stop a seventh from opening",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p4.idle-count.n6",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "socket.crossRequest",
+   "area": "Socket lifetime",
+   "kind": "capability",
+   "title": "A socket created in one request is usable in another request",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p4.cross-request",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false,
+   "note": "The control has no request boundary (one process), so its pass says only that the probe can detect success."
+  },
+  {
+   "id": "socket.globalScope",
+   "area": "Socket lifetime",
+   "kind": "capability",
+   "title": "connect() works at global scope (module evaluation)",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p4.global-scope",
+      "check": "socketAtGlobalScopeThrows",
+      "negate": true,
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": null,
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "socket.survivesRequestEnd",
+   "area": "Socket lifetime",
+   "kind": "capability",
+   "title": "A socket left open when the response is returned stays open on the server",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p4.leave-open",
+      "check": "closedWithin1sOfResponse",
+      "negate": true,
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": null,
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "cancel.secondSocket",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "CancelRequest on a second socket ends pg_sleep(30) with 57014 within 2.5 s",
+   "transportCaps": "secondConnectionForCancel",
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p5.cancel.plain",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": {
+    "status": "true",
+    "counts": "5/5"
+   },
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "cancel.whileSixBusy",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "The same while 6 other sockets are busy (cancel socket is the 8th open)",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p5.cancel.busy6",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "cancel.mainOnTls.plainCancel",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "Main connection on TLS, CancelRequest in plaintext",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p5.cancel.tls-main-plain-cancel",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "cancel.mainOnTls.tlsCancel",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "Main connection on TLS, CancelRequest after SSLRequest and startTls()",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p5.cancel.tls-main-tls-cancel",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": {
+    "status": "true",
+    "counts": "5/5"
+   },
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": "–"
+   },
+   "claimable": false
+  },
+  {
+   "id": "my84.startTls",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "MySQL 8.4: SSL request packet, startTls() with no read pending, authentication over TLS",
+   "transportCaps": "startTls",
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p6.tls.my84.upgrade",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "my84.startTlsWithOutstandingRead",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "MySQL 8.4: startTls() with a read pending",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p6.tls.my84.read-pending",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "my84.startTlsAfterReaderCancel",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "MySQL 8.4: startTls() after reader.cancel() of the pending read",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p6.tls.my84.cancel-pending",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": null,
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "my84.killQuery",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "MySQL 8.4: KILL QUERY on a second authenticated connection ends SELECT SLEEP(30)",
+   "transportCaps": "secondConnectionForCancel",
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p6.kill.my84",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "ma118.startTls",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "MariaDB 11.8: SSL request packet, startTls() with no read pending, authentication over TLS",
+   "transportCaps": "startTls",
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p6.tls.ma118.upgrade",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "ma118.startTlsWithOutstandingRead",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "MariaDB 11.8: startTls() with a read pending",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "local-observed",
+    "counts": "0/5",
+    "cells": [
+     {
+      "variant": "p6.tls.ma118.read-pending",
+      "pass": 0,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "ma118.startTlsAfterReaderCancel",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "MariaDB 11.8: startTls() after reader.cancel() of the pending read",
+   "transportCaps": null,
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p6.tls.ma118.cancel-pending",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": null,
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "ma118.killQuery",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "MariaDB 11.8: KILL QUERY on a second authenticated connection ends SELECT SLEEP(30)",
+   "transportCaps": "secondConnectionForCancel",
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5",
+    "cells": [
+     {
+      "variant": "p6.kill.ma118",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  },
+  {
+   "id": "cloudflare.sixConnectionLimit",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "Production enforces a limit of 6 simultaneous connections per invocation (documented)",
+   "transportCaps": null,
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "documented-only",
+    "counts": "",
+    "cells": []
+   },
+   "pg19": null,
+   "control": null,
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false,
+   "note": "Documented only (ledger D-14). Locally n7, n8, n24 and n50 were not queued.",
+   "reason": "documented-only: no production run; locally the limit does not exist"
+  },
+  {
+   "id": "transport.keepalive",
+   "area": "Not observed",
+   "kind": "capability",
+   "title": "TransportCaps.keepalive",
+   "transportCaps": "keepalive",
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "not observable",
+    "counts": "",
+    "cells": []
+   },
+   "pg19": null,
+   "control": null,
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false,
+   "reason": "not observable: FS-04 did not probe idle timeouts or TCP keepalive"
+  },
+  {
+   "id": "transport.halfOpenDetection",
+   "area": "Not observed",
+   "kind": "capability",
+   "title": "TransportCaps.halfOpenDetection",
+   "transportCaps": "halfOpenDetection",
+   "local": {
+    "value": false,
+    "status": "false",
+    "label": "not observable",
+    "counts": "",
+    "cells": []
+   },
+   "pg19": null,
+   "control": null,
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false,
+   "reason": "not observable: FS-04 did not probe a peer that stops answering"
+  },
+  {
+   "id": "transport.streaming",
+   "area": "Byte streams",
+   "kind": "capability",
+   "title": "Sockets give bidirectional byte streams (not a stateless request), shown by the TLS, write and cancel probes",
+   "transportCaps": "streaming",
+   "local": {
+    "value": true,
+    "status": "true",
+    "label": "local-observed",
+    "counts": "5/5 5/5 5/5",
+    "cells": [
+     {
+      "variant": "p1.starttls.pg17-tls",
+      "pass": 5,
+      "of": 5
+     },
+     {
+      "variant": "p3.write.bind-chunk64k.16MiB",
+      "pass": 5,
+      "of": 5
+     },
+     {
+      "variant": "p5.cancel.plain",
+      "pass": 5,
+      "of": 5
+     }
+    ]
+   },
+   "pg19": null,
+   "control": {
+    "counts": "5/5",
+    "ok": true
+   },
+   "instrumentSuspect": false,
+   "production": {
+    "value": "Not verified here",
+    "status": "Not verified here",
+    "label": "not observable",
+    "counts": ""
+   },
+   "claimable": false
+  }
+ ],
+ "limits": {
+  "ladders": [
+   {
+    "spec": "bind-single",
+    "ranTo": "128MiB",
+    "largestFiveOfFive": "128MiB",
+    "firstFailing": null,
+    "cells": [
+     {
+      "size": "64KiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 66,
+      "medianMs": 16
+     },
+     {
+      "size": "1MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 68,
+      "medianMs": 24
+     },
+     {
+      "size": "4MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 74,
+      "medianMs": 53
+     },
+     {
+      "size": "16MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 99,
+      "medianMs": 165
+     },
+     {
+      "size": "64MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 194,
+      "medianMs": 613
+     },
+     {
+      "size": "128MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 322,
+      "medianMs": 1173
+     }
+    ]
+   },
+   {
+    "spec": "bind-chunk64k",
+    "ranTo": "128MiB",
+    "largestFiveOfFive": "128MiB",
+    "firstFailing": null,
+    "cells": [
+     {
+      "size": "64KiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 66,
+      "medianMs": 16
+     },
+     {
+      "size": "1MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 67,
+      "medianMs": 25
+     },
+     {
+      "size": "4MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 70,
+      "medianMs": 55
+     },
+     {
+      "size": "16MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 83,
+      "medianMs": 168
+     },
+     {
+      "size": "64MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 108,
+      "medianMs": 593
+     },
+     {
+      "size": "128MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 116,
+      "medianMs": 1005
+     }
+    ]
+   },
+   {
+    "spec": "bind-chunk1m",
+    "ranTo": "128MiB",
+    "largestFiveOfFive": "128MiB",
+    "firstFailing": null,
+    "cells": [
+     {
+      "size": "64KiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 67,
+      "medianMs": 15
+     },
+     {
+      "size": "1MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 69,
+      "medianMs": 25
+     },
+     {
+      "size": "4MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 71,
+      "medianMs": 54
+     },
+     {
+      "size": "16MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 83,
+      "medianMs": 150
+     },
+     {
+      "size": "64MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 131,
+      "medianMs": 515
+     },
+     {
+      "size": "128MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 135,
+      "medianMs": 993
+     }
+    ]
+   },
+   {
+    "spec": "bind-chunk64k-nowait",
+    "ranTo": "128MiB",
+    "largestFiveOfFive": "128MiB",
+    "firstFailing": null,
+    "cells": [
+     {
+      "size": "64KiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 66,
+      "medianMs": 17
+     },
+     {
+      "size": "1MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 68,
+      "medianMs": 25
+     },
+     {
+      "size": "4MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 75,
+      "medianMs": 54
+     },
+     {
+      "size": "16MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 99,
+      "medianMs": 164
+     },
+     {
+      "size": "64MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 198,
+      "medianMs": 610
+     },
+     {
+      "size": "128MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 328,
+      "medianMs": 1267
+     }
+    ]
+   },
+   {
+    "spec": "copy-chunk64k",
+    "ranTo": "128MiB",
+    "largestFiveOfFive": "128MiB",
+    "firstFailing": null,
+    "cells": [
+     {
+      "size": "64KiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 67,
+      "medianMs": 22
+     },
+     {
+      "size": "1MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 68,
+      "medianMs": 34
+     },
+     {
+      "size": "4MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 75,
+      "medianMs": 65
+     },
+     {
+      "size": "16MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 101,
+      "medianMs": 182
+     },
+     {
+      "size": "64MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 125,
+      "medianMs": 692
+     },
+     {
+      "size": "128MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 138,
+      "medianMs": 1318
+     }
+    ]
+   },
+   {
+    "spec": "tls-bind-single",
+    "ranTo": "128MiB",
+    "largestFiveOfFive": "128MiB",
+    "firstFailing": null,
+    "cells": [
+     {
+      "size": "64KiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 67,
+      "medianMs": 19
+     },
+     {
+      "size": "1MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 69,
+      "medianMs": 27
+     },
+     {
+      "size": "4MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 75,
+      "medianMs": 60
+     },
+     {
+      "size": "16MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 99,
+      "medianMs": 169
+     },
+     {
+      "size": "64MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 194,
+      "medianMs": 608
+     },
+     {
+      "size": "128MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 323,
+      "medianMs": 1147
+     }
+    ]
+   },
+   {
+    "spec": "tls-bind-chunk64k",
+    "ranTo": "128MiB",
+    "largestFiveOfFive": "128MiB",
+    "firstFailing": null,
+    "cells": [
+     {
+      "size": "64KiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 67,
+      "medianMs": 19
+     },
+     {
+      "size": "1MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 68,
+      "medianMs": 29
+     },
+     {
+      "size": "4MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 71,
+      "medianMs": 51
+     },
+     {
+      "size": "16MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 84,
+      "medianMs": 147
+     },
+     {
+      "size": "64MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 108,
+      "medianMs": 582
+     },
+     {
+      "size": "128MiB",
+      "pass": 5,
+      "of": 5,
+      "rssMiB": 107,
+      "medianMs": 1018
+     }
+    ]
+   }
+  ],
+  "concurrency": [
+   {
+    "n": 1,
+    "pass": 5,
+    "of": 5
+   },
+   {
+    "n": 2,
+    "pass": 5,
+    "of": 5
+   },
+   {
+    "n": 6,
+    "pass": 5,
+    "of": 5
+   },
+   {
+    "n": 7,
+    "pass": 5,
+    "of": 5
+   },
+   {
+    "n": 8,
+    "pass": 5,
+    "of": 5
+   },
+   {
+    "n": 24,
+    "pass": 5,
+    "of": 5
+   },
+   {
+    "n": 50,
+    "pass": 5,
+    "of": 5
+   }
+  ],
+  "maxConcurrentFiveOfFive": 50
+ },
+ "plantedFaults": [
+  {
+   "id": "planted.p1.starttls.server-without-tls",
+   "mode": "worker",
+   "expectedCheck": "answerS",
+   "caught": true,
+   "failingChecks": [
+    "answerS 0/5",
+    "upgradeCallOk 0/5",
+    "serverSsl 0/5",
+    "proxyClientHello 0/5",
+    "noStrayBytes 0/5"
+   ]
+  },
+  {
+   "id": "planted.p6.kill.my84.wrong-id",
+   "mode": "worker",
+   "expectedCheck": "endedWithin2500msOfKill",
+   "caught": true,
+   "failingChecks": [
+    "killAccepted 0/5",
+    "endedWithin2500msOfKill 0/5"
+   ]
+  },
+  {
+   "id": "planted.p1.starttls.flip",
+   "mode": "control",
+   "expectedCheck": "loginOk",
+   "caught": true,
+   "failingChecks": [
+    "loginOk 0/5",
+    "serverSsl 0/5",
+    "queryOk 0/5"
+   ]
+  },
+  {
+   "id": "planted.p3.write.bind-single.1MiB",
+   "mode": "control",
+   "expectedCheck": "pgShaMatches",
+   "caught": true,
+   "failingChecks": [
+    "pgShaMatches 0/5"
+   ]
+  },
+  {
+   "id": "planted.p3.write.bind-single.1MiB",
+   "mode": "worker",
+   "expectedCheck": "pgShaMatches",
+   "caught": true,
+   "failingChecks": [
+    "pgShaMatches 0/5"
+   ]
+  },
+  {
+   "id": "planted.p6.kill.my84.wrong-id",
+   "mode": "control",
+   "expectedCheck": "endedWithin2500msOfKill",
+   "caught": true,
+   "failingChecks": [
+    "killAccepted 0/5",
+    "endedWithin2500msOfKill 0/5"
+   ]
+  },
+  {
+   "id": "planted.p1.starttls.flip",
+   "mode": "worker",
+   "expectedCheck": "loginOk",
+   "caught": true,
+   "failingChecks": [
+    "loginOk 0/5",
+    "serverSsl 0/5",
+    "queryOk 0/5"
+   ]
+  },
+  {
+   "id": "planted.p5.cancel.wrong-key",
+   "mode": "worker",
+   "expectedCheck": "endedWithin2500msOfCancel",
+   "caught": true,
+   "failingChecks": [
+    "endedWithin2500msOfCancel 0/5"
+   ]
+  },
+  {
+   "id": "planted.p5.cancel.wrong-key",
+   "mode": "control",
+   "expectedCheck": "endedWithin2500msOfCancel",
+   "caught": true,
+   "failingChecks": [
+    "endedWithin2500msOfCancel 0/5"
+   ]
+  },
+  {
+   "id": "planted.p1.starttls.server-without-tls",
+   "mode": "control",
+   "expectedCheck": "answerS",
+   "caught": true,
+   "failingChecks": [
+    "answerS 0/5",
+    "upgradeCallOk 0/5",
+    "serverSsl 0/5",
+    "proxyClientHello 0/5",
+    "noStrayBytes 0/5"
+   ]
+  }
+ ]
+}

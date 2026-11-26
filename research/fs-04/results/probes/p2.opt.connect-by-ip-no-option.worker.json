@@ -1,0 +1,27 @@
+{
+ "id": "p2.opt.connect-by-ip-no-option",
+ "title": "connect by IP without option (control: name mismatch expected to reject)",
+ "group": "p2",
+ "mode": "worker",
+ "target": "pg17-tls-ip",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "honoured"
+ ],
+ "checks": {
+  "honoured": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"ctbyipnooptionw1xcqca","wallMs":8,"pass":true,"checks":{"honoured":true},"response":{"ok":true,"probe":"p2.options","runId":"ctbyipnooptionw1xcqca","ms":6,"observations":{"steps":[],"opened":{"remoteAddress":"string","localAddress":"undefined"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0,"login":{"ok":false,"error":{"name":"Error","message":"internal error; reference = kjrogvlkbgm1iqpqm09l4smk"}},"bytesWritten":112,"bytesReceived":1}},"extra":{"responseAt":1795653441844,"workerd":{"peakRssMiB":57,"cpuMsSinceStart":10,"freshProcess":true},"closeLagMs":-1},"proxy":[{"id":1566,"route":"pg17-tls","kind":"ssl-request","openedAt":1795653441837.7,"closedAt":1795653441843,"closedBy":"client","c2sBytes":511,"s2cBytes":957,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":null,"alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  could not accept SSL connection: ssl/tls alert bad certificate"]},
+  {"run":2,"runId":"ctbyipnooptionw2xdady","wallMs":8,"pass":true,"checks":{"honoured":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":10,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"ctbyipnooptionw3xf6y4","wallMs":8,"pass":true,"checks":{"honoured":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":10,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":4,"runId":"ctbyipnooptionw4xfbqx","wallMs":7,"pass":true,"checks":{"honoured":true},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":5,"runId":"ctbyipnooptionw5xjq52","wallMs":7,"pass":true,"checks":{"honoured":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

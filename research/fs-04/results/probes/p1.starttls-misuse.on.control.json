@@ -1,0 +1,29 @@
+{
+ "id": "p1.starttls-misuse.on",
+ "title": "startTls() on a socket created with secureTransport \"on\"",
+ "group": "p1",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "mode": "on"
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "startTlsRefused"
+ ],
+ "checks": {
+  "startTlsRefused": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"arttlsmisuseonc1xbrcc","wallMs":1,"pass":true,"checks":{"startTlsRefused":true},"response":{"ok":true,"probe":"p1.starttls-misuse","runId":"arttlsmisuseonc1xbrcc","ms":1,"observations":{"mode":"on","startTls":{"threw":{"name":"TypeError","message":"startTls() can only be called on a socket created with secureTransport \"starttls\""}}}},"extra":{"responseAt":1795652787109},"proxy":[],"log":[]},
+  {"run":2,"runId":"arttlsmisuseonc2xow9g","wallMs":0,"pass":true,"checks":{"startTlsRefused":true},"extra":{},"traceTrimmed":true},
+  {"run":3,"runId":"arttlsmisuseonc3xkgjf","wallMs":1,"pass":true,"checks":{"startTlsRefused":true},"extra":{},"traceTrimmed":true},
+  {"run":4,"runId":"arttlsmisuseonc4xp7ar","wallMs":1,"pass":true,"checks":{"startTlsRefused":true},"extra":{},"traceTrimmed":true},
+  {"run":5,"runId":"arttlsmisuseonc5x46ht","wallMs":1,"pass":true,"checks":{"startTlsRefused":true},"extra":{},"traceTrimmed":true}
+ ]
+}

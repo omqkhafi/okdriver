@@ -1,0 +1,58 @@
+{
+ "id": "planted.p1.starttls.flip",
+ "title": "planted: proxy flips one byte of the TLS stream",
+ "group": "planted",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {},
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "loginOk",
+  "serverSsl"
+ ],
+ "expectFail": "loginOk",
+ "caught": true,
+ "checks": {
+  "answerS": {
+   "pass": 5,
+   "of": 5
+  },
+  "noLeftoverAtSwitch": {
+   "pass": 5,
+   "of": 5
+  },
+  "upgradeCallOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 0,
+   "of": 5
+  },
+  "queryOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "proxyClientHello": {
+   "pass": 5,
+   "of": 5
+  },
+  "noStrayBytes": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"p1starttlsflipc1xbgi4","wallMs":6,"pass":false,"checks":{"answerS":true,"noLeftoverAtSwitch":true,"upgradeCallOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":true,"noStrayBytes":true},"response":{"ok":true,"probe":"p1.tls-upgrade","runId":"p1starttlsflipc1xbgi4","ms":6,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0.5200000000186265,"login":{"ok":false,"error":{"name":"Error","message":"Socket is closed"}},"bytesWritten":112,"bytesReceived":1}},"extra":{"responseAt":1795653041361,"closeLagMs":1},"proxy":[{"id":1106,"route":"pg17-tls","kind":"ssl-request","openedAt":1795653041356.2,"closedAt":1795653041361.6,"closedBy":"client","c2sBytes":1805,"s2cBytes":958,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false},"flipped":{"atOffset":700}}],"log":["LOG:  could not accept SSL connection: decryption failed or bad record mac"]},
+  {"run":2,"runId":"p1starttlsflipc2x0z6k","wallMs":6,"pass":false,"checks":{"answerS":true,"noLeftoverAtSwitch":true,"upgradeCallOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":true,"noStrayBytes":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"p1starttlsflipc3xpa1x","wallMs":5,"pass":false,"checks":{"answerS":true,"noLeftoverAtSwitch":true,"upgradeCallOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":true,"noStrayBytes":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"p1starttlsflipc4xm84c","wallMs":5,"pass":false,"checks":{"answerS":true,"noLeftoverAtSwitch":true,"upgradeCallOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":true,"noStrayBytes":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"p1starttlsflipc5xkkih","wallMs":5,"pass":false,"checks":{"answerS":true,"noLeftoverAtSwitch":true,"upgradeCallOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":true,"noStrayBytes":true},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "id": "p1.second-starttls",
+ "title": "a second startTls() on the upgraded socket",
+ "group": "p1",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "second": true
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "loginOk",
+  "serverSsl",
+  "secondStartTlsRefused",
+  "connectionUsableAfter"
+ ],
+ "checks": {
+  "answerS": {
+   "pass": 5,
+   "of": 5
+  },
+  "noLeftoverAtSwitch": {
+   "pass": 5,
+   "of": 5
+  },
+  "upgradeCallOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 5,
+   "of": 5
+  },
+  "queryOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "proxyClientHello": {
+   "pass": 5,
+   "of": 5
+  },
+  "noStrayBytes": {
+   "pass": 5,
+   "of": 5
+  },
+  "secondStartTlsRefused": {
+   "pass": 5,
+   "of": 5
+  },
+  "connectionUsableAfter": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"secondstarttlsc1xf2f3","wallMs":13,"pass":true,"checks":{"answerS":true,"noLeftoverAtSwitch":true,"upgradeCallOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"noStrayBytes":true,"secondStartTlsRefused":true,"connectionUsableAfter":true},"response":{"ok":true,"probe":"p1.tls-upgrade","runId":"secondstarttlsc1xf2f3","ms":12,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0.6600000000016735,"login":{"ok":true,"pid":109,"mechs":["SCRAM-SHA-256-PLUS","SCRAM-SHA-256"],"authCodes":[10,11,12,0],"serverVersion":"17.12 (Debian 17.12-1.pgdg13+1)"},"pgStatSsl":["t","TLSv1.3","TLS_AES_256_GCM_SHA384"],"query":{"ok":true,"rows":[["1","on"]]},"secondStartTls":{"error":{"name":"TypeError","message":"startTls() can only be called on a socket created with secureTransport \"starttls\""}},"afterSecond":{"ok":true},"bytesWritten":407,"bytesReceived":977}},"extra":{"responseAt":1795652785300,"closeLagMs":0},"proxy":[{"id":61,"route":"pg17-tls","kind":"ssl-request","openedAt":1795652785288.3,"closedAt":1795652785300.4,"closedBy":"client","c2sBytes":2413,"s2cBytes":2066,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-secondstarttlsc1xf2f3 SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256)"]},
+  {"run":2,"runId":"secondstarttlsc2xrguf","wallMs":14,"pass":true,"checks":{"answerS":true,"noLeftoverAtSwitch":true,"upgradeCallOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"noStrayBytes":true,"secondStartTlsRefused":true,"connectionUsableAfter":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"secondstarttlsc3xklmg","wallMs":12,"pass":true,"checks":{"answerS":true,"noLeftoverAtSwitch":true,"upgradeCallOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"noStrayBytes":true,"secondStartTlsRefused":true,"connectionUsableAfter":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"secondstarttlsc4xwx2v","wallMs":13,"pass":true,"checks":{"answerS":true,"noLeftoverAtSwitch":true,"upgradeCallOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"noStrayBytes":true,"secondStartTlsRefused":true,"connectionUsableAfter":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"secondstarttlsc5x42q8","wallMs":13,"pass":true,"checks":{"answerS":true,"noLeftoverAtSwitch":true,"upgradeCallOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"noStrayBytes":true,"secondStartTlsRefused":true,"connectionUsableAfter":true},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

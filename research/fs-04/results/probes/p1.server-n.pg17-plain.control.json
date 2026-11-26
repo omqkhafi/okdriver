@@ -1,0 +1,47 @@
+{
+ "id": "p1.server-n.pg17-plain",
+ "title": "server answers N, plaintext continues on the same socket",
+ "group": "p1",
+ "mode": "control",
+ "target": "pg17-plain",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "answerN",
+  "loginOk",
+  "queryOk",
+  "serverNoSsl",
+  "proxySawN"
+ ],
+ "checks": {
+  "answerN": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "queryOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverNoSsl": {
+   "pass": 5,
+   "of": 5
+  },
+  "proxySawN": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"rvernpg17plainc1xdq2q","wallMs":15,"pass":true,"checks":{"answerN":true,"loginOk":true,"queryOk":true,"serverNoSsl":true,"proxySawN":true},"response":{"ok":true,"probe":"p1.tls-upgrade","runId":"rvernpg17plainc1xdq2q","ms":15,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"N","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"login":{"ok":true,"pid":69,"mechs":["SCRAM-SHA-256"],"authCodes":[10,11,12,0],"serverVersion":"17.12 (Debian 17.12-1.pgdg13+1)"},"pgStatSsl":["f",null,null],"query":{"ok":true,"rows":[["1","off"]]},"bytesWritten":393,"bytesReceived":864}},"extra":{"responseAt":1795652774904,"closeLagMs":1},"proxy":[{"id":6,"route":"pg17-plain","kind":"ssl-request","label":"fs04-rvernpg17plainc1xdq2q","openedAt":1795652774890.6,"closedAt":1795652774905.1,"closedBy":"client","c2sBytes":398,"s2cBytes":864,"sslAnswer":"N","c2sTypes":{"SSLRequest":1,"Startup":1,"p":2,"Q":2,"X":1}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-rvernpg17plainc1xdq2q"]},
+  {"run":2,"runId":"rvernpg17plainc2xaet8","wallMs":10,"pass":true,"checks":{"answerN":true,"loginOk":true,"queryOk":true,"serverNoSsl":true,"proxySawN":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"rvernpg17plainc3xit48","wallMs":10,"pass":true,"checks":{"answerN":true,"loginOk":true,"queryOk":true,"serverNoSsl":true,"proxySawN":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"rvernpg17plainc4xjqdq","wallMs":10,"pass":true,"checks":{"answerN":true,"loginOk":true,"queryOk":true,"serverNoSsl":true,"proxySawN":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"rvernpg17plainc5x0xs7","wallMs":11,"pass":true,"checks":{"answerN":true,"loginOk":true,"queryOk":true,"serverNoSsl":true,"proxySawN":true},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

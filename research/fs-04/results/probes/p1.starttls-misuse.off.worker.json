@@ -1,0 +1,29 @@
+{
+ "id": "p1.starttls-misuse.off",
+ "title": "startTls() on a socket created with secureTransport \"off\"",
+ "group": "p1",
+ "mode": "worker",
+ "target": "pg17-plain",
+ "params": {
+  "mode": "off"
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "startTlsRefused"
+ ],
+ "checks": {
+  "startTlsRefused": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"rttlsmisuseoffw1x3pjh","wallMs":3,"pass":true,"checks":{"startTlsRefused":true},"response":{"ok":true,"probe":"p1.starttls-misuse","runId":"rttlsmisuseoffw1x3pjh","ms":2,"observations":{"mode":"off","startTls":{"threw":{"name":"TypeError","message":"The `secureTransport` socket option must be set to 'starttls' for startTls to be used."}}}},"extra":{"responseAt":1795653429785,"workerd":{"peakRssMiB":55,"cpuMsSinceStart":10,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":1516,"route":"pg17-plain","kind":"unknown","openedAt":1795653429785,"closedAt":1795653429785.5,"closedBy":"client","c2sBytes":0,"s2cBytes":0,"c2sTypes":{}}],"log":[]},
+  {"run":2,"runId":"rttlsmisuseoffw2xx2q6","wallMs":3,"pass":true,"checks":{"startTlsRefused":true},"extra":{"workerd":{"peakRssMiB":55,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"rttlsmisuseoffw3xliqp","wallMs":3,"pass":true,"checks":{"startTlsRefused":true},"extra":{"workerd":{"peakRssMiB":55,"cpuMsSinceStart":10,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"rttlsmisuseoffw4xn2nw","wallMs":3,"pass":true,"checks":{"startTlsRefused":true},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"rttlsmisuseoffw5xmzc7","wallMs":3,"pass":true,"checks":{"startTlsRefused":true},"extra":{"workerd":{"peakRssMiB":55,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

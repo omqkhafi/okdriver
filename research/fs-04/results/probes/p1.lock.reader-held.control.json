@@ -1,0 +1,39 @@
+{
+ "id": "p1.lock.reader-held",
+ "title": "startTls with lock situation reader-held",
+ "group": "p1",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "lockMode": "reader-held"
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "upgradeCallOk",
+  "loginOk",
+  "serverSsl"
+ ],
+ "checks": {
+  "upgradeCallOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"lockreaderheldc1xq7ar","wallMs":15,"pass":true,"checks":{"upgradeCallOk":true,"loginOk":true,"serverSsl":true},"response":{"ok":true,"probe":"p1.tls-upgrade","runId":"lockreaderheldc1xq7ar","ms":14,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0.4499999999998181,"login":{"ok":true,"pid":89,"mechs":["SCRAM-SHA-256-PLUS","SCRAM-SHA-256"],"authCodes":[10,11,12,0],"serverVersion":"17.12 (Debian 17.12-1.pgdg13+1)"},"pgStatSsl":["t","TLSv1.3","TLS_AES_256_GCM_SHA384"],"query":{"ok":true,"rows":[["1","on"]]},"bytesWritten":393,"bytesReceived":911}},"extra":{"responseAt":1795652781541,"closeLagMs":1},"proxy":[{"id":41,"route":"pg17-tls","kind":"ssl-request","openedAt":1795652781527.8,"closedAt":1795652781541.5,"closedBy":"client","c2sBytes":2377,"s2cBytes":1978,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-lockreaderheldc1xq7ar SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256)"]},
+  {"run":2,"runId":"lockreaderheldc2xu0qk","wallMs":12,"pass":true,"checks":{"upgradeCallOk":true,"loginOk":true,"serverSsl":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"lockreaderheldc3x8z6f","wallMs":14,"pass":true,"checks":{"upgradeCallOk":true,"loginOk":true,"serverSsl":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"lockreaderheldc4xajfj","wallMs":15,"pass":true,"checks":{"upgradeCallOk":true,"loginOk":true,"serverSsl":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"lockreaderheldc5xjl3z","wallMs":13,"pass":true,"checks":{"upgradeCallOk":true,"loginOk":true,"serverSsl":true},"extra":{"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

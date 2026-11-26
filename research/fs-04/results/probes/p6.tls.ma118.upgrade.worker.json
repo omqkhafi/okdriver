@@ -1,0 +1,60 @@
+{
+ "id": "p6.tls.ma118.upgrade",
+ "title": "ma118: SSL request packet, startTls() with nothing pending, auth over TLS",
+ "group": "p6",
+ "mode": "worker",
+ "target": "ma118",
+ "params": {
+  "holdMs": 1200
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "greetingOffersSsl",
+  "noServerByteBeforeSwitch",
+  "startTlsOk",
+  "loginOk",
+  "serverSsl",
+  "queryOk",
+  "proxyClientHello",
+  "serverOracleSeesTls"
+ ],
+ "checks": {
+  "greetingOffersSsl": {
+   "pass": 5,
+   "of": 5
+  },
+  "noServerByteBeforeSwitch": {
+   "pass": 5,
+   "of": 5
+  },
+  "startTlsOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 5,
+   "of": 5
+  },
+  "queryOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "proxyClientHello": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"lsma118upgradew1x1ivl","wallMs":1213,"pass":true,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"serverOracleSeesTls":null},"response":{"ok":true,"probe":"p6.tls-upgrade","runId":"lsma118upgradew1x1ivl","ms":1211,"observations":{"opened":{"remoteAddress":"string","localAddress":"undefined"},"greeting":{"serverVersion":"11.8.9-MariaDB-ubu2404","family":"mariadb","authPlugin":"mysql_native_password","serverOffersSsl":true},"leftoverAtSwitch":0,"sslRequestBytes":36,"startTls":"ok","authPlugin":"mysql_native_password","login":{"ok":true},"sslStatus":{"Ssl_cipher":"TLS_AES_256_GCM_SHA384","Ssl_version":"TLSv1.3"},"query":{"ok":true,"connectionId":"158"},"bytesWritten":244,"bytesReceived":534}},"extra":{"responseAt":1795653789775,"workerd":{"peakRssMiB":56,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":2621,"route":"ma118","kind":"ssl-request","openedAt":1795653788565.1,"closedAt":1795653789775,"closedBy":"client","c2sBytes":661,"s2cBytes":2422,"sslAnswer":"(none)","tlsAtC2s":36,"c2sTypes":{"packet":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":[],"activityPeak":-1},
+  {"run":2,"runId":"lsma118upgradew2xaj7g","wallMs":1212,"pass":true,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"lsma118upgradew3xl2ga","wallMs":1211,"pass":true,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"lsma118upgradew4x82ou","wallMs":1212,"pass":true,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"lsma118upgradew5xo9c2","wallMs":1210,"pass":true,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

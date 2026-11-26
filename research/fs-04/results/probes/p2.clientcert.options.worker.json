@@ -1,0 +1,40 @@
+{
+ "id": "p2.clientcert.options",
+ "title": "client certificate and key offered as connect and startTls options: accepted only if the platform presents it",
+ "group": "p2",
+ "mode": "worker",
+ "target": "pg17-clientcert",
+ "params": {
+  "startTlsOpts": {
+   "cert": "CLIENTCERT",
+   "key": "CLIENTKEY"
+  },
+  "connectOpts": {
+   "cert": "CLIENTCERT",
+   "key": "CLIENTKEY"
+  }
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "accepted"
+ ],
+ "checks": {
+  "accepted": {
+   "pass": 0,
+   "of": 5
+  },
+  "sniIsHostname": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"entcertoptionsw1xh9qz","wallMs":11,"pass":false,"checks":{"accepted":false,"sniIsHostname":true},"response":{"ok":true,"probe":"p2.options","runId":"entcertoptionsw1xh9qz","ms":9,"observations":{"steps":[],"opened":{"remoteAddress":"string","localAddress":"undefined"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0,"login":{"ok":false,"error":{"name":"Error","message":"28000 connection requires a valid client certificate"},"code":"28000"},"bytesWritten":112,"bytesReceived":111}},"extra":{"responseAt":1795653456591,"workerd":{"peakRssMiB":56,"cpuMsSinceStart":10,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":1626,"route":"pg17-clientcert","kind":"ssl-request","openedAt":1795653456582.4,"closedAt":1795653456590.8,"closedBy":"client","c2sBytes":764,"s2cBytes":1648,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":["FATAL:  connection requires a valid client certificate"]},
+  {"run":2,"runId":"entcertoptionsw2xgrb8","wallMs":10,"pass":false,"checks":{"accepted":false,"sniIsHostname":true},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"entcertoptionsw3x5nac","wallMs":11,"pass":false,"checks":{"accepted":false,"sniIsHostname":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"entcertoptionsw4xef2d","wallMs":10,"pass":false,"checks":{"accepted":false,"sniIsHostname":true},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"entcertoptionsw5xkfx4","wallMs":12,"pass":false,"checks":{"accepted":false,"sniIsHostname":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":40,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}
