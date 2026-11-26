@@ -1,0 +1,47 @@
+{
+ "id": "p5.cancel.plain",
+ "title": "pg_sleep(30) on socket 1, CancelRequest on socket 2 after 1 s",
+ "group": "p5",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "queryEnded57014",
+  "endedWithin2500msOfCancel",
+  "cancelSocketClosedByServer",
+  "serverLogged57014",
+  "cancelSocketOpenedFast"
+ ],
+ "checks": {
+  "queryEnded57014": {
+   "pass": 5,
+   "of": 5
+  },
+  "endedWithin2500msOfCancel": {
+   "pass": 5,
+   "of": 5
+  },
+  "cancelSocketClosedByServer": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverLogged57014": {
+   "pass": 5,
+   "of": 5
+  },
+  "cancelSocketOpenedFast": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"p5cancelplainw1xgsto","wallMs":1017,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"response":{"ok":true,"probe":"p5.cancel","runId":"p5cancelplainw1xgsto","ms":1015,"observations":{"params":{"tlsMain":false,"cancelVia":"plain","busyOthers":0,"wrongKey":false},"pid":1721,"socketsOpenBeforeCancel":1,"cancel":{"openedAfterMs":1,"sentAt":1795653605202,"drain":{"bytes":0,"ended":"eof"},"doneAfterMs":5},"queryMs":1006,"endedAfterCancelSentMs":3,"result":{"error":{"code":"57014","message":"canceling statement due to user request"},"rows":[]},"totalMs":1015}},"extra":{"responseAt":1795653605208,"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":-1},"proxy":[{"id":2171,"route":"pg17-tls","kind":"startup","label":"fs04-p5cancelplainw1xgsto-main","openedAt":1795653604193.1,"closedAt":1795653605207.4,"closedBy":"client","c2sBytes":302,"s2cBytes":785,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1},"s2cErrors":["57014"]},{"id":2172,"route":"pg17-tls","kind":"cancel","openedAt":1795653605202.4,"closedAt":1795653605206.1,"closedBy":"server","c2sBytes":16,"s2cBytes":0,"cancelPid":1721,"c2sTypes":{"CancelRequest":1}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p5cancelplainw1xgsto-main","ERROR:  canceling statement due to user request"]},
+  {"run":2,"runId":"p5cancelplainw2xkhvp","wallMs":1018,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"p5cancelplainw3xiuuy","wallMs":1021,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"p5cancelplainw4xzjv1","wallMs":1019,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"p5cancelplainw5xwdxx","wallMs":1020,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "id": "planted.p6.kill.my84.wrong-id",
+ "title": "planted: KILL QUERY with a wrong connection id",
+ "group": "planted",
+ "mode": "worker",
+ "target": "my84",
+ "params": {
+  "wrongId": true
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "killAccepted",
+  "endedWithin2500msOfKill"
+ ],
+ "expectFail": "endedWithin2500msOfKill",
+ "caught": true,
+ "checks": {
+  "bothLoggedIn": {
+   "pass": 5,
+   "of": 5
+  },
+  "killAccepted": {
+   "pass": 0,
+   "of": 5
+  },
+  "endedWithin2500msOfKill": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverShowedSleepRunning": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverQueryGoneAtEnd": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"illmy84wrongidw1xg9qr","wallMs":5020,"pass":false,"checks":{"bothLoggedIn":true,"killAccepted":false,"endedWithin2500msOfKill":false,"serverShowedSleepRunning":true,"serverQueryGoneAtEnd":true},"response":{"ok":true,"probe":"p6.kill-query","runId":"illmy84wrongidw1xg9qr","ms":5019,"observations":{"connectionId":448,"kill":{"ok":false,"error":{"errno":1094,"message":"Unknown thread id: 100448"},"ms":2},"queryStillRunningAfterMs":4003,"finalAfterCleanup":{"rows":[["1"]]}}},"extra":{"responseAt":1795653859523,"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":2651,"route":"my84","kind":"ssl-request","openedAt":1795653854506,"closedAt":1795653859523.1,"closedBy":"server","c2sBytes":887,"s2cBytes":2256,"sslAnswer":"(none)","tlsAtC2s":36,"c2sTypes":{"packet":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}},{"id":2652,"route":"my84","kind":"ssl-request","openedAt":1795653854512.4,"closedAt":1795653859523.3,"closedBy":"client","c2sBytes":898,"s2cBytes":761,"sslAnswer":"(none)","tlsAtC2s":36,"c2sTypes":{"packet":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":[],"activityPeak":2},
+  {"run":2,"runId":"illmy84wrongidw2xpazs","wallMs":5023,"pass":false,"checks":{"bothLoggedIn":true,"killAccepted":false,"endedWithin2500msOfKill":false,"serverShowedSleepRunning":true,"serverQueryGoneAtEnd":true},"activityPeak":2,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"illmy84wrongidw3x7vj9","wallMs":5024,"pass":false,"checks":{"bothLoggedIn":true,"killAccepted":false,"endedWithin2500msOfKill":false,"serverShowedSleepRunning":true,"serverQueryGoneAtEnd":true},"activityPeak":2,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"illmy84wrongidw4x7alb","wallMs":5017,"pass":false,"checks":{"bothLoggedIn":true,"killAccepted":false,"endedWithin2500msOfKill":false,"serverShowedSleepRunning":true,"serverQueryGoneAtEnd":true},"activityPeak":2,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"illmy84wrongidw5xn6m1","wallMs":5020,"pass":false,"checks":{"bothLoggedIn":true,"killAccepted":false,"endedWithin2500msOfKill":false,"serverShowedSleepRunning":true,"serverQueryGoneAtEnd":true},"activityPeak":2,"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

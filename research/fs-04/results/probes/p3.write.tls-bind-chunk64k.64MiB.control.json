@@ -1,0 +1,47 @@
+{
+ "id": "p3.write.tls-bind-chunk64k.64MiB",
+ "title": "bind chunk 64KiB over TLS, 64MiB",
+ "group": "p3",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "size": 67108864,
+  "seed": 1659699200,
+  "mode": "chunk",
+  "chunk": 65536,
+  "how": "bind",
+  "tls": true,
+  "awaitEach": true
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "writeCompleted",
+  "pgShaMatches",
+  "pgLengthMatches",
+  "proxyHashMatches",
+  "allBytesReachedProxy"
+ ],
+ "checks": {
+  "writeCompleted": {
+   "pass": 5,
+   "of": 5
+  },
+  "pgShaMatches": {
+   "pass": 5,
+   "of": 5
+  },
+  "pgLengthMatches": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"dchunk64k64MiBc1xsdpg","wallMs":401,"pass":true,"checks":{"writeCompleted":true,"pgShaMatches":true,"pgLengthMatches":true,"proxyHashMatches":null,"allBytesReachedProxy":null},"response":{"ok":true,"probe":"p3.write","runId":"dchunk64k64MiBc1xsdpg","ms":401,"observations":{"size":67108864,"mode":"chunk","how":"bind","chunk":65536,"tls":true,"pid":1036,"write":{"writeMs":203.8462840000866,"writes":1026,"maxDesired":1,"minDesired":1},"pg":["9dae5ee7cdb3ce3f42b7fb49f98f3a1e201c003dd5cc480cff87ba4feb7a8f72","67108864"],"totalMs":391.78000000002794,"bytesWritten":67109244}},"extra":{"responseAt":1795653311859,"closeLagMs":1},"proxy":[{"id":1431,"route":"pg17-tls","kind":"ssl-request","openedAt":1795653311459.7,"closedAt":1795653311859.9,"closedBy":"client","c2sBytes":67201340,"s2cBytes":1818,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-dchunk64k64MiBc1xsdpg SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256)"]},
+  {"run":2,"runId":"dchunk64k64MiBc2xu0mv","wallMs":404,"pass":true,"checks":{"writeCompleted":true,"pgShaMatches":true,"pgLengthMatches":true,"proxyHashMatches":null,"allBytesReachedProxy":null},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"dchunk64k64MiBc3x0vzt","wallMs":412,"pass":true,"checks":{"writeCompleted":true,"pgShaMatches":true,"pgLengthMatches":true,"proxyHashMatches":null,"allBytesReachedProxy":null},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"dchunk64k64MiBc4xdt0k","wallMs":490,"pass":true,"checks":{"writeCompleted":true,"pgShaMatches":true,"pgLengthMatches":true,"proxyHashMatches":null,"allBytesReachedProxy":null},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"dchunk64k64MiBc5xpk6e","wallMs":409,"pass":true,"checks":{"writeCompleted":true,"pgShaMatches":true,"pgLengthMatches":true,"proxyHashMatches":null,"allBytesReachedProxy":null},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

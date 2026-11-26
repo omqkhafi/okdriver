@@ -1,0 +1,37 @@
+{
+ "id": "p2.surface",
+ "title": "Socket and SocketInfo surface; any peer-certificate member",
+ "group": "p2",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "listed",
+  "upgraded",
+  "noPeerCertificateApi"
+ ],
+ "checks": {
+  "listed": {
+   "pass": 5,
+   "of": 5
+  },
+  "upgraded": {
+   "pass": 5,
+   "of": 5
+  },
+  "noPeerCertificateApi": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"p2surfacew1xn1vz","wallMs":9,"pass":true,"checks":{"listed":true,"upgraded":true,"noPeerCertificateApi":true},"response":{"ok":true,"probe":"p2.surface","runId":"p2surfacew1xn1vz","ms":7,"observations":{"moduleExports":["connect","internalNewHttpClient"],"before":{"socket":["Symbol(Symbol.toStringTag)","Symbol(cloudflare:internal-class)","Symbol(kResourceTypeInspect)","close","closed","constructor","opened","readable","secureTransport","startTls","upgraded","writable"],"readable":["Symbol(Symbol.asyncIterator)","Symbol(Symbol.toStringTag)","Symbol(cloudflare:internal-class)","Symbol(kResourceTypeInspect)","Symbol(length)","Symbol(state)","Symbol(supportsBYOB)","cancel","constructor","getReader","locked","pipeThrough","pipeTo","tee","values"],"writable":["Symbol(Symbol.toStringTag)","Symbol(cloudflare:internal-class)","Symbol(expectsBytes)","Symbol(kResourceTypeInspect)","Symbol(state)","abort","close","constructor","getWriter","locked"],"startTlsLength":0,"scalar":{"close":"function","constructor":"function","secureTransport":"starttls","startTls":"function","upgraded":false}},"openedInfoKeys":{"remoteAddress":"string","localAddress":"undefined"},"openedInfoTypes":{"remoteAddress":"string","localAddress":"undefined"},"upgraded":true,"oldSocket":{"upgraded":false,"secureTransport":"starttls","readableLocked":false,"writableLocked":false,"closed":"resolved"},"after":{"socket":["Symbol(Symbol.toStringTag)","Symbol(cloudflare:internal-class)","Symbol(kResourceTypeInspect)","close","closed","constructor","opened","readable","secureTransport","startTls","upgraded","writable"],"readable":["Symbol(Symbol.asyncIterator)","Symbol(Symbol.toStringTag)","Symbol(cloudflare:internal-class)","Symbol(kResourceTypeInspect)","Symbol(length)","Symbol(state)","Symbol(supportsBYOB)","cancel","constructor","getReader","locked","pipeThrough","pipeTo","tee","values"],"writable":["Symbol(Symbol.toStringTag)","Symbol(cloudflare:internal-class)","Symbol(expectsBytes)","Symbol(kResourceTypeInspect)","Symbol(state)","abort","close","constructor","getWriter","locked"],"startTlsLength":0,"scalar":{"close":"function","constructor":"function","secureTransport":"on","startTls":"function","upgraded":false}},"openedInfoAfter":{"remoteAddress":"string","localAddress":"undefined"},"candidateMembers":{"peerCertificate":"absent","getPeerCertificate":"absent","getCertificate":"absent","certificate":"absent","cert":"absent","tlsInfo":"absent","info":"absent","getProtocol":"absent","getCipher":"absent","tlsSocket":"absent","upgraded":"boolean","secureTransport":"string","remoteAddress":"absent","localAddress":"absent","alpnProtocol":"absent"}}},"extra":{"responseAt":1795653457767,"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":1631,"route":"pg17-tls","kind":"ssl-request","openedAt":1795653457760.8,"closedAt":1795653457766.9,"closedBy":"client","c2sBytes":603,"s2cBytes":958,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  could not receive data from client: Connection reset by peer"]},
+  {"run":2,"runId":"p2surfacew2xlfgn","wallMs":8,"pass":true,"checks":{"listed":true,"upgraded":true,"noPeerCertificateApi":true},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"p2surfacew3xdlju","wallMs":9,"pass":true,"checks":{"listed":true,"upgraded":true,"noPeerCertificateApi":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"p2surfacew4xqfiw","wallMs":9,"pass":true,"checks":{"listed":true,"upgraded":true,"noPeerCertificateApi":true},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"p2surfacew5xnan1","wallMs":8,"pass":true,"checks":{"listed":true,"upgraded":true,"noPeerCertificateApi":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":10,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

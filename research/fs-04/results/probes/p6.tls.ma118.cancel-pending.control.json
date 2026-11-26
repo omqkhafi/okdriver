@@ -1,0 +1,61 @@
+{
+ "id": "p6.tls.ma118.cancel-pending",
+ "title": "ma118: a read is pending; cancel() it, release the locks, then startTls()",
+ "group": "p6",
+ "mode": "control",
+ "target": "ma118",
+ "params": {
+  "holdMs": 1200,
+  "lockMode": "cancel-pending"
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "greetingOffersSsl",
+  "noServerByteBeforeSwitch",
+  "startTlsOk",
+  "loginOk",
+  "serverSsl",
+  "queryOk",
+  "proxyClientHello",
+  "serverOracleSeesTls"
+ ],
+ "checks": {
+  "greetingOffersSsl": {
+   "pass": 5,
+   "of": 5
+  },
+  "noServerByteBeforeSwitch": {
+   "pass": 5,
+   "of": 5
+  },
+  "startTlsOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 0,
+   "of": 5
+  },
+  "queryOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "proxyClientHello": {
+   "pass": 0,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"8cancelpendingc1xi4nt","wallMs":3,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":null},"response":{"ok":true,"probe":"p6.tls-upgrade","runId":"8cancelpendingc1xi4nt","ms":3,"observations":{"opened":{"remoteAddress":"string"},"greeting":{"serverVersion":"11.8.9-MariaDB-ubu2404","family":"mariadb","authPlugin":"mysql_native_password","serverOffersSsl":true},"leftoverAtSwitch":0,"sslRequestBytes":36,"pendingReadSettled":"done","cancel":"ok","readerRelease":"ok","writerRelease":"ok","startTls":"ok","login":{"ok":false,"error":{"name":"Error","message":"Socket closed before the connection was established"}},"bytesWritten":131,"bytesReceived":94}},"extra":{"responseAt":1795653138556,"closeLagMs":1},"proxy":[{"id":1171,"route":"ma118","kind":"ssl-request","openedAt":1795653138554.8,"closedAt":1795653138557.2,"closedBy":"client","c2sBytes":36,"s2cBytes":94,"sslAnswer":"(none)","tlsAtC2s":36,"c2sTypes":{"packet":1}}],"log":[],"activityPeak":-1},
+  {"run":2,"runId":"8cancelpendingc2xxv23","wallMs":3,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"8cancelpendingc3xsnfv","wallMs":2,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"8cancelpendingc4xhpsj","wallMs":2,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"8cancelpendingc5xybzo","wallMs":2,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

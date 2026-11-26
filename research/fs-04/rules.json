@@ -1,0 +1,1018 @@
+{
+ "version": 1,
+ "rule": "A capability is true only when every required cell passed in 5 of 5 fresh runs, end to end, with server-side truth (pg_stat_ssl and server log, PostgreSQL SHA-256, pg_stat_activity, SQLSTATE, server processlist). A cell is a variant (all its required checks) or one named check of a variant. 1 to 4 of 5 in any cell, and no cell at 0 of 5, is \"intermittent\": false, counts shown. Any cell at 0 of 5 is false. Documented-only and unobservable are false. A negated cell counts the runs in which the named check failed. The production column is true only from results/production/ files made against a deployed Worker; otherwise it reads \"Not verified here\" and the claimable value is false.",
+ "minRuns": 5,
+ "passRuns": 5,
+ "labels": {
+  "local-observed": "measured in this study on the pinned workerd 1.20261118.1 with embedder trust settings; not Cloudflare production",
+  "production-observed": "measured against a deployed Worker (none in this study)",
+  "documented-only": "stated by Cloudflare or a driver documentation page, not measured",
+  "not observable": "no API or instrument available; the value is false"
+ },
+ "control": "A positive control is a variant that must pass 5 of 5 through the Bun adapter (same probe code, node:net/node:tls) before a \"false\" from the Worker means anything. A failed control marks the row instrument-suspect.",
+ "capabilities": [
+  {
+   "id": "pg.startTls",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "PostgreSQL: SSLRequest, S, startTls(), SCRAM, query; pg_stat_ssl and server log confirm TLS",
+   "transportCaps": "startTls",
+   "requires": [
+    {
+     "variant": "p1.starttls.pg17-tls"
+    }
+   ],
+   "requires19": [
+    {
+     "variant": "p1.starttls.pg19-tls"
+    }
+   ],
+   "positiveControls": [
+    "p1.starttls.pg17-tls"
+   ],
+   "production": [
+    {
+     "variant": "prod.p1.starttls"
+    }
+   ]
+  },
+  {
+   "id": "pg.serverAnswersN",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "PostgreSQL: server answers N, the same starttls-mode socket continues in plaintext",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p1.server-n.pg17-plain"
+    }
+   ],
+   "requires19": [
+    {
+     "variant": "p1.server-n.pg19-plain"
+    }
+   ],
+   "positiveControls": [
+    "p1.server-n.pg17-plain"
+   ]
+  },
+  {
+   "id": "pg.directTls",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "PostgreSQL: secureTransport \"on\" (direct TLS, needs ALPN postgresql on PG 17+)",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p1.direct-tls.pg17-tls"
+    }
+   ],
+   "requires19": [
+    {
+     "variant": "p1.direct-tls.pg19-tls"
+    }
+   ],
+   "positiveControls": [
+    "p1.direct-tls.alpn-option.pg17-tls"
+   ],
+   "production": [
+    {
+     "variant": "prod.p1.direct-tls"
+    }
+   ]
+  },
+  {
+   "id": "pg.directTls.alpnOption",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "An alpn option on connect() puts ALPN postgresql into the ClientHello and direct TLS succeeds",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p1.direct-tls.alpn-option.pg17-tls"
+    }
+   ],
+   "positiveControls": [
+    "p1.direct-tls.alpn-option.pg17-tls"
+   ]
+  },
+  {
+   "id": "behaviour.startTlsWithOutstandingRead",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "startTls() works while a read() is outstanding (releaseLock throws in workerd)",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p1.lock.read-pending"
+    }
+   ],
+   "positiveControls": [
+    "p1.lock.read-pending"
+   ],
+   "production": [
+    {
+     "variant": "prod.p1.lock.read-pending"
+    }
+   ]
+  },
+  {
+   "id": "behaviour.startTlsAfterReaderCancel",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "startTls() works after reader.cancel() settled the outstanding read and both locks were released",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p1.lock.cancel-pending"
+    }
+   ],
+   "production": [
+    {
+     "variant": "prod.p1.lock.cancel-pending"
+    }
+   ]
+  },
+  {
+   "id": "behaviour.startTlsWithLocksHeld",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "startTls() usable while a reader and a writer lock are still held",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p1.lock.none-released"
+    }
+   ],
+   "positiveControls": [
+    "p1.lock.none-released"
+   ]
+  },
+  {
+   "id": "behaviour.secondStartTlsRefused",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "A second startTls() on the upgraded socket is refused and the connection stays usable",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p1.second-starttls"
+    }
+   ],
+   "positiveControls": [
+    "p1.second-starttls"
+   ],
+   "production": [
+    {
+     "variant": "prod.p1.second-starttls"
+    }
+   ]
+  },
+  {
+   "id": "behaviour.startTlsOnlyOnStarttlsSockets",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "startTls() is refused on sockets created with secureTransport \"off\" and \"on\"",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p1.starttls-misuse.off"
+    },
+    {
+     "variant": "p1.starttls-misuse.on"
+    }
+   ],
+   "positiveControls": [
+    "p1.starttls-misuse.off",
+    "p1.starttls-misuse.on"
+   ]
+  },
+  {
+   "id": "cert.verification",
+   "area": "Certificates",
+   "kind": "capability",
+   "title": "Verification matrix: trusted+right name accepted; self-signed untrusted, trusted+wrong name and expired all rejected, no session reaches the server",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p2.matrix.trusted-right-name"
+    },
+    {
+     "variant": "p2.matrix.selfsigned-untrusted"
+    },
+    {
+     "variant": "p2.matrix.trusted-wrong-name"
+    },
+    {
+     "variant": "p2.matrix.expired"
+    }
+   ],
+   "requires19": [
+    {
+     "variant": "pg19.p2.matrix.trusted-right-name"
+    },
+    {
+     "variant": "pg19.p2.matrix.trusted-wrong-name"
+    }
+   ],
+   "positiveControls": [
+    "p2.matrix.trusted-right-name",
+    "p2.matrix.selfsigned-untrusted",
+    "p2.matrix.trusted-wrong-name",
+    "p2.matrix.expired"
+   ],
+   "production": [
+    {
+     "variant": "prod.p2.matrix.trusted-right-name"
+    }
+   ],
+   "note": "Trust anchors are an embedder setting locally (trustedCertificates); production trust is Cloudflare's store and was not tested."
+  },
+  {
+   "id": "cert.option.expectedServerHostname",
+   "area": "TLS options",
+   "kind": "capability",
+   "title": "startTls({expectedServerHostname}) is honoured: wrong name rejects, right name fixes a connect-by-IP, and it becomes the SNI value",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p2.opt.startTls.expectedServerHostname-wrong"
+    },
+    {
+     "variant": "p2.opt.startTls.expectedServerHostname-fixes-ip"
+    },
+    {
+     "variant": "p2.opt.startTls.expectedServerHostname-sni"
+    }
+   ],
+   "positiveControls": [
+    "p2.opt.startTls.expectedServerHostname-wrong",
+    "p2.opt.startTls.expectedServerHostname-fixes-ip",
+    "p2.opt.startTls.expectedServerHostname-sni"
+   ],
+   "production": [
+    {
+     "variant": "prod.p2.opt.expectedServerHostname-wrong"
+    },
+    {
+     "variant": "prod.p2.opt.expectedServerHostname-right"
+    }
+   ]
+  },
+  {
+   "id": "cert.option.rejectUnauthorized",
+   "area": "TLS options",
+   "kind": "capability",
+   "title": "rejectUnauthorized:false is honoured (connect and startTls)",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p2.opt.startTls.rejectUnauthorized-false"
+    },
+    {
+     "variant": "p2.opt.connect.rejectUnauthorized-false"
+    }
+   ],
+   "positiveControls": [
+    "p2.opt.startTls.rejectUnauthorized-false",
+    "p2.opt.connect.rejectUnauthorized-false"
+   ]
+  },
+  {
+   "id": "cert.option.ca",
+   "area": "TLS options",
+   "kind": "capability",
+   "title": "A ca option is honoured (connect and startTls)",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p2.opt.startTls.ca"
+    },
+    {
+     "variant": "p2.opt.connect.ca"
+    }
+   ],
+   "positiveControls": [
+    "p2.opt.startTls.ca",
+    "p2.opt.connect.ca"
+   ]
+  },
+  {
+   "id": "cert.option.servername",
+   "area": "TLS options",
+   "kind": "capability",
+   "title": "A servername option changes the SNI value (connect and startTls)",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p2.opt.startTls.servername"
+    },
+    {
+     "variant": "p2.opt.connect.servername"
+    }
+   ],
+   "positiveControls": [
+    "p2.opt.startTls.servername",
+    "p2.opt.connect.servername"
+   ]
+  },
+  {
+   "id": "cert.option.alpn",
+   "area": "TLS options",
+   "kind": "capability",
+   "title": "An alpn / alpnProtocols option puts ALPN into the ClientHello",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p2.opt.startTls.alpn"
+    },
+    {
+     "variant": "p2.opt.connect.alpn"
+    },
+    {
+     "variant": "p2.opt.connect.alpnProtocols"
+    }
+   ],
+   "positiveControls": [
+    "p2.opt.startTls.alpn",
+    "p2.opt.connect.alpn",
+    "p2.opt.connect.alpnProtocols"
+   ]
+  },
+  {
+   "id": "cert.clientCertificate",
+   "area": "Certificates",
+   "kind": "capability",
+   "title": "A client certificate and key can be offered per connection (server demands one)",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p2.clientcert.options"
+    }
+   ],
+   "positiveControls": [
+    "p2.clientcert.options",
+    "p2.clientcert.none"
+   ],
+   "note": "The server-demands-a-certificate control must pass for the \"no\" to mean anything. An embedder-level keypair on the outbound service was not tried: it is not a Worker API."
+  },
+  {
+   "id": "cert.peerCertificate.api",
+   "area": "Certificates",
+   "kind": "capability",
+   "title": "Any API on Socket or SocketInfo exposes the peer certificate or its hash",
+   "transportCaps": "channelBinding",
+   "requires": [
+    {
+     "variant": "p2.surface",
+     "check": "noPeerCertificateApi",
+     "negate": true
+    }
+   ],
+   "production": [
+    {
+     "variant": "prod.p2.surface"
+    }
+   ],
+   "note": "Value is the existence of such an API: true only if p2.surface finds one in 5 of 5 runs (noPeerCertificateApi fails 5/5)."
+  },
+  {
+   "id": "cert.channelBinding.tlsServerEndPoint",
+   "area": "Certificates",
+   "kind": "capability",
+   "title": "SCRAM-SHA-256-PLUS with tls-server-end-point (needs the server certificate hash)",
+   "transportCaps": "channelBinding",
+   "requires": [],
+   "note": "Not attempted: with no certificate API there is nothing to hash. Unobservable here, so false.",
+   "forcedFalse": {
+    "reason": "not observable: no API exposes the peer certificate (see cert.peerCertificate.api); computing the hash in userland would need a userland TLS stack on a secureTransport \"off\" socket, which this study did not try.",
+    "evidence": [
+     {
+      "variant": "p2.surface",
+      "check": "noPeerCertificateApi"
+     }
+    ]
+   }
+  },
+  {
+   "id": "write.backpressure.desiredSize",
+   "area": "Large writes",
+   "kind": "behaviour",
+   "title": "writer.desiredSize drops to 0 or below while the server does not read",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p3.backpressure.await-ready",
+     "check": "desiredSizeSignals"
+    }
+   ],
+   "positiveControls": [
+    "p3.backpressure.await-ready:desiredSizeSignals"
+   ]
+  },
+  {
+   "id": "write.backpressure.ready",
+   "area": "Large writes",
+   "kind": "behaviour",
+   "title": "writer.ready stays pending while the server does not read",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p3.backpressure.await-ready",
+     "check": "readyPendsDuringStall"
+    }
+   ],
+   "positiveControls": [
+    "p3.backpressure.await-ready:readyPendsDuringStall"
+   ]
+  },
+  {
+   "id": "write.backpressure.writePromise",
+   "area": "Large writes",
+   "kind": "behaviour",
+   "title": "Each write() promise stays pending while the server does not read (awaiting writes is the backpressure)",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p3.backpressure.await-ready",
+     "check": "writesPendDuringStall"
+    }
+   ],
+   "positiveControls": [
+    "p3.backpressure.no-await:writesPendDuringStall"
+   ]
+  },
+  {
+   "id": "write.chunked.64KiB.128MiB",
+   "area": "Large writes",
+   "kind": "capability",
+   "title": "Bind parameter of 128 MiB in 64 KiB chunks, each write awaited, intact in PostgreSQL and at the proxy",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p3.write.bind-chunk64k.128MiB"
+    }
+   ],
+   "positiveControls": [
+    "p3.write.bind-chunk64k.128MiB"
+   ],
+   "production": [
+    {
+     "variant": "prod.p3.write.bind-chunk64k.128MiB"
+    }
+   ]
+  },
+  {
+   "id": "write.single.128MiB",
+   "area": "Large writes",
+   "kind": "capability",
+   "title": "Bind parameter of 128 MiB in one write() call, intact in PostgreSQL and at the proxy",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p3.write.bind-single.128MiB"
+    }
+   ],
+   "requires19": [
+    {
+     "variant": "pg19.p3.write.bind-single.128MiB"
+    }
+   ],
+   "positiveControls": [
+    "p3.write.bind-single.128MiB"
+   ],
+   "production": [
+    {
+     "variant": "prod.p3.write.bind-single.128MiB"
+    }
+   ],
+   "note": "Local workerd has no 128 MB isolate memory limit; production does, and the single-write case was not tested there."
+  },
+  {
+   "id": "write.copy.128MiB",
+   "area": "Large writes",
+   "kind": "capability",
+   "title": "COPY (binary) of 128 MiB in 64 KiB CopyData messages, intact",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p3.write.copy-chunk64k.128MiB"
+    }
+   ],
+   "positiveControls": [
+    "p3.write.copy-chunk64k.128MiB"
+   ]
+  },
+  {
+   "id": "write.tls.128MiB",
+   "area": "Large writes",
+   "kind": "capability",
+   "title": "128 MiB Bind parameter over the upgraded TLS connection, single write and 64 KiB chunks",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p3.write.tls-bind-single.128MiB"
+    },
+    {
+     "variant": "p3.write.tls-bind-chunk64k.128MiB"
+    }
+   ],
+   "positiveControls": [
+    "p3.write.tls-bind-single.128MiB",
+    "p3.write.tls-bind-chunk64k.128MiB"
+   ]
+  },
+  {
+   "id": "concurrency.n1",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "1 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.concurrent.n1"
+    }
+   ],
+   "positiveControls": [
+    "p4.concurrent.n1"
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.concurrent.n1"
+    }
+   ]
+  },
+  {
+   "id": "concurrency.n2",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "2 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.concurrent.n2"
+    }
+   ],
+   "positiveControls": [
+    "p4.concurrent.n2"
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.concurrent.n2"
+    }
+   ]
+  },
+  {
+   "id": "concurrency.n6",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "6 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.concurrent.n6"
+    }
+   ],
+   "positiveControls": [
+    "p4.concurrent.n6"
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.concurrent.n6"
+    }
+   ]
+  },
+  {
+   "id": "concurrency.n7",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "7 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.concurrent.n7"
+    }
+   ],
+   "positiveControls": [
+    "p4.concurrent.n7"
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.concurrent.n7"
+    }
+   ]
+  },
+  {
+   "id": "concurrency.n8",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "8 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.concurrent.n8"
+    }
+   ],
+   "requires19": [
+    {
+     "variant": "pg19.p4.concurrent.n8"
+    }
+   ],
+   "positiveControls": [
+    "p4.concurrent.n8"
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.concurrent.n8"
+    }
+   ]
+  },
+  {
+   "id": "concurrency.n24",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "24 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.concurrent.n24"
+    }
+   ],
+   "positiveControls": [
+    "p4.concurrent.n24"
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.concurrent.n24"
+    }
+   ]
+  },
+  {
+   "id": "concurrency.n50",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "50 sockets from one invocation: all logged in and held, all usable at once, none queued",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.concurrent.n50"
+    }
+   ],
+   "requires19": [
+    {
+     "variant": "pg19.p4.concurrent.n50"
+    }
+   ],
+   "positiveControls": [
+    "p4.concurrent.n50"
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.concurrent.n50"
+    }
+   ]
+  },
+  {
+   "id": "concurrency.idleSocketsDoNotCount",
+   "area": "Concurrent sockets",
+   "kind": "behaviour",
+   "title": "Six idle logged-in sockets do not stop a seventh from opening",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.idle-count.n6"
+    }
+   ],
+   "positiveControls": [
+    "p4.idle-count.n6"
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.idle-count.n6"
+    }
+   ]
+  },
+  {
+   "id": "socket.crossRequest",
+   "area": "Socket lifetime",
+   "kind": "capability",
+   "title": "A socket created in one request is usable in another request",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.cross-request"
+    }
+   ],
+   "positiveControls": [
+    "p4.cross-request"
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.cross-request"
+    }
+   ],
+   "note": "The control has no request boundary (one process), so its pass says only that the probe can detect success."
+  },
+  {
+   "id": "socket.globalScope",
+   "area": "Socket lifetime",
+   "kind": "capability",
+   "title": "connect() works at global scope (module evaluation)",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.global-scope",
+     "check": "socketAtGlobalScopeThrows",
+     "negate": true
+    }
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.global-scope"
+    }
+   ]
+  },
+  {
+   "id": "socket.survivesRequestEnd",
+   "area": "Socket lifetime",
+   "kind": "capability",
+   "title": "A socket left open when the response is returned stays open on the server",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p4.leave-open",
+     "check": "closedWithin1sOfResponse",
+     "negate": true
+    }
+   ],
+   "production": [
+    {
+     "variant": "prod.p4.leave-open"
+    }
+   ]
+  },
+  {
+   "id": "cancel.secondSocket",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "CancelRequest on a second socket ends pg_sleep(30) with 57014 within 2.5 s",
+   "transportCaps": "secondConnectionForCancel",
+   "requires": [
+    {
+     "variant": "p5.cancel.plain"
+    }
+   ],
+   "requires19": [
+    {
+     "variant": "pg19.p5.cancel.plain"
+    }
+   ],
+   "positiveControls": [
+    "p5.cancel.plain"
+   ],
+   "production": [
+    {
+     "variant": "prod.p5.cancel.plain"
+    }
+   ]
+  },
+  {
+   "id": "cancel.whileSixBusy",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "The same while 6 other sockets are busy (cancel socket is the 8th open)",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p5.cancel.busy6"
+    }
+   ],
+   "positiveControls": [
+    "p5.cancel.busy6"
+   ],
+   "production": [
+    {
+     "variant": "prod.p5.cancel.busy6"
+    }
+   ]
+  },
+  {
+   "id": "cancel.mainOnTls.plainCancel",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "Main connection on TLS, CancelRequest in plaintext",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p5.cancel.tls-main-plain-cancel"
+    }
+   ],
+   "positiveControls": [
+    "p5.cancel.tls-main-plain-cancel"
+   ],
+   "production": [
+    {
+     "variant": "prod.p5.cancel.tls-main-plain-cancel"
+    }
+   ]
+  },
+  {
+   "id": "cancel.mainOnTls.tlsCancel",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "Main connection on TLS, CancelRequest after SSLRequest and startTls()",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p5.cancel.tls-main-tls-cancel"
+    }
+   ],
+   "requires19": [
+    {
+     "variant": "pg19.p5.cancel.tls-main-tls-cancel"
+    }
+   ],
+   "positiveControls": [
+    "p5.cancel.tls-main-tls-cancel"
+   ],
+   "production": [
+    {
+     "variant": "prod.p5.cancel.tls-main-tls-cancel"
+    }
+   ]
+  },
+  {
+   "id": "my84.startTls",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "MySQL 8.4: SSL request packet, startTls() with no read pending, authentication over TLS",
+   "transportCaps": "startTls",
+   "requires": [
+    {
+     "variant": "p6.tls.my84.upgrade"
+    }
+   ],
+   "positiveControls": [
+    "p6.tls.my84.upgrade"
+   ]
+  },
+  {
+   "id": "my84.startTlsWithOutstandingRead",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "MySQL 8.4: startTls() with a read pending",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p6.tls.my84.read-pending"
+    }
+   ],
+   "positiveControls": [
+    "p6.tls.my84.read-pending"
+   ]
+  },
+  {
+   "id": "my84.startTlsAfterReaderCancel",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "MySQL 8.4: startTls() after reader.cancel() of the pending read",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p6.tls.my84.cancel-pending"
+    }
+   ]
+  },
+  {
+   "id": "my84.killQuery",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "MySQL 8.4: KILL QUERY on a second authenticated connection ends SELECT SLEEP(30)",
+   "transportCaps": "secondConnectionForCancel",
+   "requires": [
+    {
+     "variant": "p6.kill.my84"
+    }
+   ],
+   "positiveControls": [
+    "p6.kill.my84"
+   ]
+  },
+  {
+   "id": "ma118.startTls",
+   "area": "TLS upgrade",
+   "kind": "capability",
+   "title": "MariaDB 11.8: SSL request packet, startTls() with no read pending, authentication over TLS",
+   "transportCaps": "startTls",
+   "requires": [
+    {
+     "variant": "p6.tls.ma118.upgrade"
+    }
+   ],
+   "positiveControls": [
+    "p6.tls.ma118.upgrade"
+   ]
+  },
+  {
+   "id": "ma118.startTlsWithOutstandingRead",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "MariaDB 11.8: startTls() with a read pending",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p6.tls.ma118.read-pending"
+    }
+   ],
+   "positiveControls": [
+    "p6.tls.ma118.read-pending"
+   ]
+  },
+  {
+   "id": "ma118.startTlsAfterReaderCancel",
+   "area": "TLS upgrade",
+   "kind": "behaviour",
+   "title": "MariaDB 11.8: startTls() after reader.cancel() of the pending read",
+   "transportCaps": null,
+   "requires": [
+    {
+     "variant": "p6.tls.ma118.cancel-pending"
+    }
+   ]
+  },
+  {
+   "id": "ma118.killQuery",
+   "area": "Cancel",
+   "kind": "capability",
+   "title": "MariaDB 11.8: KILL QUERY on a second authenticated connection ends SELECT SLEEP(30)",
+   "transportCaps": "secondConnectionForCancel",
+   "requires": [
+    {
+     "variant": "p6.kill.ma118"
+    }
+   ],
+   "positiveControls": [
+    "p6.kill.ma118"
+   ]
+  },
+  {
+   "id": "cloudflare.sixConnectionLimit",
+   "area": "Concurrent sockets",
+   "kind": "capability",
+   "title": "Production enforces a limit of 6 simultaneous connections per invocation (documented)",
+   "transportCaps": null,
+   "requires": [],
+   "note": "Documented only (ledger D-14). Locally n7, n8, n24 and n50 were not queued.",
+   "forcedFalse": {
+    "reason": "documented-only: no production run; locally the limit does not exist",
+    "evidence": []
+   },
+   "documentedOnly": "D-14"
+  },
+  {
+   "id": "transport.keepalive",
+   "area": "Not observed",
+   "kind": "capability",
+   "title": "TransportCaps.keepalive",
+   "transportCaps": "keepalive",
+   "requires": [],
+   "forcedFalse": {
+    "reason": "not observable: FS-04 did not probe idle timeouts or TCP keepalive",
+    "evidence": []
+   }
+  },
+  {
+   "id": "transport.halfOpenDetection",
+   "area": "Not observed",
+   "kind": "capability",
+   "title": "TransportCaps.halfOpenDetection",
+   "transportCaps": "halfOpenDetection",
+   "requires": [],
+   "forcedFalse": {
+    "reason": "not observable: FS-04 did not probe a peer that stops answering",
+    "evidence": []
+   }
+  },
+  {
+   "id": "transport.streaming",
+   "area": "Byte streams",
+   "kind": "capability",
+   "title": "Sockets give bidirectional byte streams (not a stateless request), shown by the TLS, write and cancel probes",
+   "transportCaps": "streaming",
+   "requires": [
+    {
+     "variant": "p1.starttls.pg17-tls"
+    },
+    {
+     "variant": "p3.write.bind-chunk64k.16MiB"
+    },
+    {
+     "variant": "p5.cancel.plain"
+    }
+   ],
+   "positiveControls": [
+    "p1.starttls.pg17-tls"
+   ]
+  }
+ ]
+}

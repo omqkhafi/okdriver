@@ -1,0 +1,47 @@
+{
+ "id": "p1.server-n.pg19-plain",
+ "title": "server answers N, plaintext continues on the same socket",
+ "group": "p1",
+ "mode": "control",
+ "target": "pg19-plain",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "answerN",
+  "loginOk",
+  "queryOk",
+  "serverNoSsl",
+  "proxySawN"
+ ],
+ "checks": {
+  "answerN": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "queryOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverNoSsl": {
+   "pass": 5,
+   "of": 5
+  },
+  "proxySawN": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"rvernpg19plainc1xecns","wallMs":16,"pass":true,"checks":{"answerN":true,"loginOk":true,"queryOk":true,"serverNoSsl":true,"proxySawN":true},"response":{"ok":true,"probe":"p1.tls-upgrade","runId":"rvernpg19plainc1xecns","ms":15,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"N","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"login":{"ok":true,"pid":78,"mechs":["SCRAM-SHA-256"],"authCodes":[10,11,12,0],"serverVersion":"19.0 (Debian 19.0-2.pgdg13+1)"},"pgStatSsl":["f",null,null],"query":{"ok":true,"rows":[["1","off"]]},"bytesWritten":393,"bytesReceived":895}},"extra":{"responseAt":1795652777762,"closeLagMs":0},"proxy":[{"id":21,"route":"pg19-plain","kind":"ssl-request","label":"fs04-rvernpg19plainc1xecns","openedAt":1795652777747.4,"closedAt":1795652777762.3,"closedBy":"client","c2sBytes":398,"s2cBytes":895,"sslAnswer":"N","c2sTypes":{"SSLRequest":1,"Startup":1,"p":2,"Q":2,"X":1}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-rvernpg19plainc1xecns"]},
+  {"run":2,"runId":"rvernpg19plainc2xecv3","wallMs":10,"pass":true,"checks":{"answerN":true,"loginOk":true,"queryOk":true,"serverNoSsl":true,"proxySawN":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"rvernpg19plainc3x2y86","wallMs":10,"pass":true,"checks":{"answerN":true,"loginOk":true,"queryOk":true,"serverNoSsl":true,"proxySawN":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"rvernpg19plainc4xi0nd","wallMs":9,"pass":true,"checks":{"answerN":true,"loginOk":true,"queryOk":true,"serverNoSsl":true,"proxySawN":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"rvernpg19plainc5xoj94","wallMs":8,"pass":true,"checks":{"answerN":true,"loginOk":true,"queryOk":true,"serverNoSsl":true,"proxySawN":true},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

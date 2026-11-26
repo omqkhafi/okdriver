@@ -1,0 +1,61 @@
+{
+ "id": "p6.tls.ma118.locks-held",
+ "title": "ma118: startTls() with both locks still held",
+ "group": "p6",
+ "mode": "worker",
+ "target": "ma118",
+ "params": {
+  "holdMs": 1200,
+  "lockMode": "none-released"
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "greetingOffersSsl",
+  "noServerByteBeforeSwitch",
+  "startTlsOk",
+  "loginOk",
+  "serverSsl",
+  "queryOk",
+  "proxyClientHello",
+  "serverOracleSeesTls"
+ ],
+ "checks": {
+  "greetingOffersSsl": {
+   "pass": 5,
+   "of": 5
+  },
+  "noServerByteBeforeSwitch": {
+   "pass": 5,
+   "of": 5
+  },
+  "startTlsOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 0,
+   "of": 5
+  },
+  "queryOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "proxyClientHello": {
+   "pass": 0,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"ma118locksheldw1xes8v","wallMs":2008,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":null},"response":{"ok":true,"probe":"p6.tls-upgrade","runId":"ma118locksheldw1xes8v","ms":2005,"observations":{"opened":{"remoteAddress":"string","localAddress":"undefined"},"greeting":{"serverVersion":"11.8.9-MariaDB-ubu2404","family":"mariadb","authPlugin":"mysql_native_password","serverOffersSsl":true},"leftoverAtSwitch":0,"sslRequestBytes":36,"startTls":"ok","login":{"ok":false,"error":{"name":"TypeError","message":"This WritableStream is currently locked to a writer."}},"bytesWritten":131,"bytesReceived":94}},"extra":{"responseAt":1795653830346,"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":2636,"route":"ma118","kind":"ssl-request","openedAt":1795653828340.5,"closedAt":1795653830346.1,"closedBy":"client","c2sBytes":36,"s2cBytes":94,"sslAnswer":"(none)","tlsAtC2s":36,"c2sTypes":{"packet":1}}],"log":[],"activityPeak":-1},
+  {"run":2,"runId":"ma118locksheldw2xcimp","wallMs":2008,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"ma118locksheldw3xunmt","wallMs":2008,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"ma118locksheldw4xr1rp","wallMs":2007,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"ma118locksheldw5x45qq","wallMs":2007,"pass":false,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":false,"serverSsl":false,"queryOk":false,"proxyClientHello":false,"serverOracleSeesTls":null},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

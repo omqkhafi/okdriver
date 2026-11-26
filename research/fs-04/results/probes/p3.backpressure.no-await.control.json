@@ -1,0 +1,49 @@
+{
+ "id": "p3.backpressure.no-await",
+ "title": "proxy stops reading for 4 s after 2 MiB; writer.ready ignored",
+ "group": "p3",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "size": 25165824,
+  "seed": 24301,
+  "chunk": 65536,
+  "awaitReady": false
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "proxyStalled",
+  "intact"
+ ],
+ "checks": {
+  "proxyStalled": {
+   "pass": 5,
+   "of": 5
+  },
+  "intact": {
+   "pass": 5,
+   "of": 5
+  },
+  "desiredSizeSignals": {
+   "pass": 5,
+   "of": 5
+  },
+  "readyPendsDuringStall": {
+   "pass": 0,
+   "of": 5
+  },
+  "writesPendDuringStall": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"ressurenoawaitc1xjcp7","wallMs":4191,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":true,"readyPendsDuringStall":false,"writesPendDuringStall":true},"response":{"ok":true,"probe":"p3.backpressure","runId":"ressurenoawaitc1xjcp7","ms":4191,"observations":{"size":25165824,"chunk":65536,"awaitReady":false,"timeline":[{"t":0.2099999999627471,"queued":1,"resolved":0,"desiredSize":0},{"t":1.5200000000186265,"queued":10,"resolved":0,"desiredSize":-9},{"t":2.85999999998603,"queued":20,"resolved":0,"desiredSize":-19},{"t":4.25,"queued":30,"resolved":0,"desiredSize":-29},{"t":5.619999999995343,"queued":40,"resolved":0,"desiredSize":-39},{"t":6.78000000002794,"queued":49,"resolved":0,"desiredSize":-48},{"t":7.9799999999813735,"queued":58,"resolved":0,"desiredSize":-57},{"t":9.35999999998603,"queued":68,"resolved":0,"desiredSize":-67},{"t":10.64000000001397,"queued":78,"resolved":0,"desiredSize":-77},{"t":11.949999999953434,"queued":88,"resolved":0,"desiredSize":-87},{"t":13.119999999995343,"queued":97,"resolved":0,"desiredSize":-96},{"t":16.14000000001397,"queued":106,"resolved":0,"desiredSize":-105},{"t":17.429999999934807,"queued":116,"resolved":0,"desiredSize":-115},{"t":18.729999999981374,"queued":126,"resolved":0,"desiredSize":-125},{"t":20.04999999993015,"queued":136,"resolved":0,"desiredSize":-135},{"t":21.239999999990687,"queued":145,"resolved":0,"desiredSize":-144},{"t":22.419999999925494,"queued":154,"resolved":0,"desiredSize":-153},{"t":23.739999999990687,"queued":164,"resolved":0,"desiredSize":-163},{"t":25.03000000002794,"queued":174,"resolved":0,"desiredSize":-173},{"t":26.32999999995809,"queued":184,"resolved":0,"desiredSize":-183},{"t":27.569999999948777,"queued":193,"resolved":0,"desiredSize":-192},{"t":29.21999999997206,"queued":202,"resolved":0,"desiredSize":-201},{"t":33.96999999997206,"queued":212,"resolved":0,"desiredSize":-211},{"t":35.21999999997206,"queued":222,"resolved":0,"desiredSize":-221},{"t":36.47999999998137,"queued":232,"resolved":0,"desiredSize":-231},{"t":37.660000000032596,"queued":241,"resolved":0,"desiredSize":-240},{"t":38.86999999999534,"queued":250,"resolved":0,"desiredSize":-249},{"t":40.26000000000931,"queued":260,"resolved":0,"desiredSize":-259},{"t":41.51000000000931,"queued":270,"resolved":0,"desiredSize":-269},{"t":42.660000000032596,"queued":280,"resolved":0,"desiredSize":-279},{"t":43.96999999997206,"queued":289,"resolved":0,"desiredSize":-288},{"t":45.199999999953434,"queued":298,"resolved":0,"desiredSize":-297},{"t":46.47999999998137,"queued":308,"resolved":0,"desiredSize":-307},{"t":47.84999999997672,"queued":318,"resolved":0,"desiredSize":-317},{"t":49.22999999998137,"queued":328,"resolved":0,"desiredSize":-327},{"t":50.75,"queued":337,"resolved":0,"desiredSize":-336},{"t":52.28999999992084,"queued":346,"resolved":0,"desiredSize":-345},{"t":53.60999999998603,"queued":356,"resolved":0,"desiredSize":-355},{"t":54.95999999996275,"queued":366,"resolved":0,"desiredSize":-365},{"t":56.38000000000466,"queued":376,"resolved":0,"desiredSize":-375}],"afterLoopMs":57.449999999953434,"afterLoop":{"queued":384,"resolved":0,"desiredSize":-383},"midStall":{"at":1561.4199999999255,"queued":384,"resolved":179,"desiredSize":-204,"acceptedBytes":11730944},"allWritesResolvedMs":4114.589999999967,"pendingReady":0,"longestReadyMs":0,"pg":["d44c28dd21d6e72b9f1d0d94d2527597108dfc3d59e6e4f801b3502ceefab799","25165824"]}},"extra":{"responseAt":1795653354404,"closeLagMs":1},"proxy":[{"id":1446,"route":"pg17-tls","kind":"startup","label":"fs04-ressurenoawaitc1xjcp7","openedAt":1795653350214.7,"closedAt":1795653354404.6,"closedBy":"client","c2sBytes":25166201,"s2cBytes":753,"c2sTypes":{"Startup":1,"p":2,"P":1,"B":1,"E":1,"S":1,"X":1},"frames":[{"type":"B","bytes":25165843,"sha256":"fbdd77c6a92c529c741158a9f1058c9d90b6f272ce20022b49f52471c5ae1454"}],"stalled":{"at":1795653350283.5808,"atBytes":2398563,"resumedAt":1795653354284.3506}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-ressurenoawaitc1xjcp7"]},
+  {"run":2,"runId":"ressurenoawaitc2xos38","wallMs":4190,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":true,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"ressurenoawaitc3xhalq","wallMs":4190,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":true,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"ressurenoawaitc4x1wve","wallMs":4205,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":true,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"ressurenoawaitc5xwo4k","wallMs":4215,"pass":true,"checks":{"proxyStalled":true,"intact":true,"desiredSizeSignals":true,"readyPendsDuringStall":false,"writesPendDuringStall":true},"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}

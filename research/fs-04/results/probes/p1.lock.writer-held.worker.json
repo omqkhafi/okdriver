@@ -1,0 +1,39 @@
+{
+ "id": "p1.lock.writer-held",
+ "title": "startTls with lock situation writer-held",
+ "group": "p1",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {
+  "lockMode": "writer-held"
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "upgradeCallOk",
+  "loginOk",
+  "serverSsl"
+ ],
+ "checks": {
+  "upgradeCallOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 0,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"lockwriterheldw1xpz38","wallMs":2008,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"response":{"ok":true,"probe":"p1.tls-upgrade","runId":"lockwriterheldw1xpz38","ms":2006,"observations":{"steps":[],"opened":{"remoteAddress":"string","localAddress":"undefined"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0,"login":{"ok":false,"error":{"name":"TypeError","message":"This WritableStream is currently locked to a writer."}},"bytesWritten":112,"bytesReceived":1}},"extra":{"responseAt":1795653405277,"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":1496,"route":"pg17-tls","kind":"ssl-request","openedAt":1795653403271.3,"closedAt":1795653405277.3,"closedBy":"client","c2sBytes":8,"s2cBytes":1,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1}}],"log":["LOG:  could not accept SSL connection: EOF detected"]},
+  {"run":2,"runId":"lockwriterheldw2xl2hz","wallMs":2008,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"lockwriterheldw3xiako","wallMs":2008,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"lockwriterheldw4x7j2p","wallMs":2008,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"lockwriterheldw5xjgym","wallMs":2008,"pass":false,"checks":{"upgradeCallOk":true,"loginOk":false,"serverSsl":false},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

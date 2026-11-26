@@ -1,0 +1,49 @@
+{
+ "id": "planted.p5.cancel.wrong-key",
+ "title": "planted: CancelRequest with a wrong secret key",
+ "group": "planted",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {
+  "wrongKey": true,
+  "waitMs": 3000
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "endedWithin2500msOfCancel",
+  "queryEnded57014"
+ ],
+ "expectFail": "endedWithin2500msOfCancel",
+ "caught": true,
+ "checks": {
+  "queryEnded57014": {
+   "pass": 5,
+   "of": 5
+  },
+  "endedWithin2500msOfCancel": {
+   "pass": 0,
+   "of": 5
+  },
+  "cancelSocketClosedByServer": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverLogged57014": {
+   "pass": 5,
+   "of": 5
+  },
+  "cancelSocketOpenedFast": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"cancelwrongkeyw1xhtv2","wallMs":4023,"pass":false,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":false,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"response":{"ok":true,"probe":"p5.cancel","runId":"cancelwrongkeyw1xhtv2","ms":4021,"observations":{"params":{"tlsMain":false,"cancelVia":"plain","busyOthers":0,"wrongKey":true},"pid":1806,"socketsOpenBeforeCancel":1,"cancel":{"openedAfterMs":0,"sentAt":1795653702642,"drain":{"bytes":0,"ended":"eof"},"doneAfterMs":4},"endedWithoutRealCancel":false,"cleanupCancel":{"openedAfterMs":1,"sentAt":1795653705648,"drain":{"bytes":0,"ended":"eof"},"doneAfterMs":5},"queryMs":4012,"endedAfterCancelSentMs":3010,"result":{"error":{"code":"57014","message":"canceling statement due to user request"},"rows":[]},"totalMs":4021}},"extra":{"responseAt":1795653705654,"workerd":{"peakRssMiB":57,"cpuMsSinceStart":40,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":2576,"route":"pg17-tls","kind":"startup","label":"fs04-cancelwrongkeyw1xhtv2-main","openedAt":1795653701633.2,"closedAt":1795653705654,"closedBy":"client","c2sBytes":303,"s2cBytes":786,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1},"s2cErrors":["57014"]},{"id":2577,"route":"pg17-tls","kind":"cancel","openedAt":1795653702642.9,"closedAt":1795653702646.7,"closedBy":"server","c2sBytes":16,"s2cBytes":0,"cancelPid":1806,"c2sTypes":{"CancelRequest":1}},{"id":2578,"route":"pg17-tls","kind":"cancel","openedAt":1795653705648.8,"closedAt":1795653705652.7,"closedBy":"server","c2sBytes":16,"s2cBytes":0,"cancelPid":1806,"c2sTypes":{"CancelRequest":1}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-cancelwrongkeyw1xhtv2-main","LOG:  wrong key in cancel request for process 1806","ERROR:  canceling statement due to user request"]},
+  {"run":2,"runId":"cancelwrongkeyw2x10u9","wallMs":4024,"pass":false,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":false,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":3,"runId":"cancelwrongkeyw3xjrb0","wallMs":4023,"pass":false,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":false,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"cancelwrongkeyw4xkh49","wallMs":4026,"pass":false,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":false,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"cancelwrongkeyw5x2ptx","wallMs":4024,"pass":false,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":false,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

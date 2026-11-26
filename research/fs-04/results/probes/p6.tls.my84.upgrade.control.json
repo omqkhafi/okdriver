@@ -1,0 +1,64 @@
+{
+ "id": "p6.tls.my84.upgrade",
+ "title": "my84: SSL request packet, startTls() with nothing pending, auth over TLS",
+ "group": "p6",
+ "mode": "control",
+ "target": "my84",
+ "params": {
+  "holdMs": 1200
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "greetingOffersSsl",
+  "noServerByteBeforeSwitch",
+  "startTlsOk",
+  "loginOk",
+  "serverSsl",
+  "queryOk",
+  "proxyClientHello",
+  "serverOracleSeesTls"
+ ],
+ "checks": {
+  "greetingOffersSsl": {
+   "pass": 5,
+   "of": 5
+  },
+  "noServerByteBeforeSwitch": {
+   "pass": 5,
+   "of": 5
+  },
+  "startTlsOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "loginOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 5,
+   "of": 5
+  },
+  "queryOk": {
+   "pass": 5,
+   "of": 5
+  },
+  "proxyClientHello": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverOracleSeesTls": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"tlsmy84upgradec1x8713","wallMs":1218,"pass":true,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"serverOracleSeesTls":true},"response":{"ok":true,"probe":"p6.tls-upgrade","runId":"tlsmy84upgradec1x8713","ms":1218,"observations":{"opened":{"remoteAddress":"string"},"greeting":{"serverVersion":"8.4.13","family":"mysql","authPlugin":"caching_sha2_password","serverOffersSsl":true},"leftoverAtSwitch":0,"sslRequestBytes":36,"startTls":"ok","authPlugin":"caching_sha2_password","login":{"ok":true},"sslStatus":{"Ssl_cipher":"TLS_AES_128_GCM_SHA256","Ssl_version":"TLSv1.3"},"query":{"ok":true,"connectionId":"8"},"bytesWritten":290,"bytesReceived":447}},"extra":{"responseAt":1795653065447,"closeLagMs":0},"proxy":[{"id":1131,"route":"my84","kind":"ssl-request","openedAt":1795653064230.4,"closedAt":1795653065447.3,"closedBy":"client","c2sBytes":2239,"s2cBytes":2439,"sslAnswer":"(none)","tlsAtC2s":36,"c2sTypes":{"packet":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}}],"log":[],"activityPeak":1},
+  {"run":2,"runId":"tlsmy84upgradec2xcp1z","wallMs":1209,"pass":true,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"serverOracleSeesTls":true},"activityPeak":1,"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"tlsmy84upgradec3xx1fb","wallMs":1209,"pass":true,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"serverOracleSeesTls":true},"activityPeak":1,"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"tlsmy84upgradec4xd555","wallMs":1208,"pass":true,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"serverOracleSeesTls":true},"activityPeak":1,"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":5,"runId":"tlsmy84upgradec5xi27t","wallMs":1208,"pass":true,"checks":{"greetingOffersSsl":true,"noServerByteBeforeSwitch":true,"startTlsOk":true,"loginOk":true,"serverSsl":true,"queryOk":true,"proxyClientHello":true,"serverOracleSeesTls":true},"activityPeak":1,"extra":{"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

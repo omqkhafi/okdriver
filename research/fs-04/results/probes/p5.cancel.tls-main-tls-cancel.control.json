@@ -1,0 +1,50 @@
+{
+ "id": "p5.cancel.tls-main-tls-cancel",
+ "title": "main connection on TLS, CancelRequest after SSLRequest and startTls",
+ "group": "p5",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {
+  "tlsMain": true,
+  "cancelVia": "tls"
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "queryEnded57014",
+  "endedWithin2500msOfCancel",
+  "cancelSocketClosedByServer",
+  "serverLogged57014",
+  "cancelSocketOpenedFast"
+ ],
+ "checks": {
+  "queryEnded57014": {
+   "pass": 5,
+   "of": 5
+  },
+  "endedWithin2500msOfCancel": {
+   "pass": 5,
+   "of": 5
+  },
+  "cancelSocketClosedByServer": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverLogged57014": {
+   "pass": 5,
+   "of": 5
+  },
+  "cancelSocketOpenedFast": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"smaintlscancelc1xcex6","wallMs":1020,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"response":{"ok":true,"probe":"p5.cancel","runId":"smaintlscancelc1xcex6","ms":1019,"observations":{"params":{"tlsMain":true,"cancelVia":"tls","busyOthers":0,"wrongKey":false},"mainSslAnswer":"S","pid":785,"socketsOpenBeforeCancel":1,"cancel":{"openedAfterMs":0.7600000000093132,"sslAnswer":"S","upgraded":true,"sentAt":220347.91,"drain":{"bytes":0,"ended":"eof"},"doneAfterMs":7.1600000000034925},"queryMs":1007.9199999999837,"endedAfterCancelSentMs":4.399999999994179,"result":{"error":{"code":"57014","message":"canceling statement due to user request"},"rows":[]},"totalMs":1019.070000000007}},"extra":{"responseAt":1795652994223,"closeLagMs":0},"proxy":[{"id":771,"route":"pg17-tls","kind":"ssl-request","openedAt":1795652993204.5,"closedAt":1795652994223.4,"closedBy":"client","c2sBytes":2268,"s2cBytes":1871,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}},{"id":772,"route":"pg17-tls","kind":"ssl-request","openedAt":1795652994216.3,"closedAt":1795652994222.9,"closedBy":"client","c2sBytes":1917,"s2cBytes":981,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-smaintlscancelc1xcex6-main SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256)","ERROR:  canceling statement due to user request"]},
+  {"run":2,"runId":"smaintlscancelc2xj13b","wallMs":1018,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"smaintlscancelc3xk29a","wallMs":1018,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"smaintlscancelc4xuwuc","wallMs":1018,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"smaintlscancelc5x27ak","wallMs":1020,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

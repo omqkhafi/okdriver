@@ -1,0 +1,47 @@
+{
+ "id": "p1.direct-tls.alpn-option.pg17-tls",
+ "title": "secureTransport \"on\" with an alpn option naming postgresql",
+ "group": "p1",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {
+  "connectOpts": {
+   "alpn": [
+    "postgresql"
+   ]
+  }
+ },
+ "runs": 5,
+ "passes": 0,
+ "required": [
+  "loginOk",
+  "serverSsl",
+  "alpnSent"
+ ],
+ "checks": {
+  "loginOk": {
+   "pass": 0,
+   "of": 5
+  },
+  "serverSsl": {
+   "pass": 0,
+   "of": 5
+  },
+  "alpnSent": {
+   "pass": 0,
+   "of": 5
+  },
+  "proxySawDirectTls": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"noptionpg17tlsw1xxy9u","wallMs":8,"pass":false,"checks":{"loginOk":false,"serverSsl":false,"alpnSent":false,"proxySawDirectTls":true},"response":{"ok":true,"probe":"p1.direct-tls","runId":"noptionpg17tlsw1xxy9u","ms":6,"observations":{"opened":{"remoteAddress":"string","localAddress":"undefined"},"login":{"ok":false,"error":{"name":"Error","message":"eof"}}}},"extra":{"responseAt":1795653379577,"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":1481,"route":"pg17-tls","kind":"direct-tls","openedAt":1795653379571.1,"closedAt":1795653379576.7,"closedBy":"client","c2sBytes":721,"s2cBytes":981,"tlsAtC2s":0,"c2sTypes":{},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  received direct SSL connection request without ALPN protocol negotiation extension"]},
+  {"run":2,"runId":"noptionpg17tlsw2xwghf","wallMs":10,"pass":false,"checks":{"loginOk":false,"serverSsl":false,"alpnSent":false,"proxySawDirectTls":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":3,"runId":"noptionpg17tlsw3xzzoe","wallMs":8,"pass":false,"checks":{"loginOk":false,"serverSsl":false,"alpnSent":false,"proxySawDirectTls":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"noptionpg17tlsw4xb204","wallMs":9,"pass":false,"checks":{"loginOk":false,"serverSsl":false,"alpnSent":false,"proxySawDirectTls":true},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":5,"runId":"noptionpg17tlsw5xilxf","wallMs":8,"pass":false,"checks":{"loginOk":false,"serverSsl":false,"alpnSent":false,"proxySawDirectTls":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "id": "p2.matrix.expired",
+ "title": "trusted CA, expired: expect reject",
+ "group": "p2",
+ "mode": "control",
+ "target": "pg17-expired",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "rejected",
+  "noAuthenticatedSession"
+ ],
+ "checks": {
+  "rejected": {
+   "pass": 5,
+   "of": 5
+  },
+  "noAuthenticatedSession": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"2matrixexpiredc1xtid1","wallMs":5,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"response":{"ok":true,"probe":"p2.options","runId":"2matrixexpiredc1xtid1","ms":5,"observations":{"steps":[],"opened":{"remoteAddress":"string"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0.5099999999983993,"login":{"ok":false,"error":{"name":"Error","message":"Socket is closed"}},"bytesWritten":112,"bytesReceived":1}},"extra":{"responseAt":1795652791722,"closeLagMs":1},"proxy":[{"id":86,"route":"pg17-expired","kind":"ssl-request","openedAt":1795652791717.9,"closedAt":1795652791722.8,"closedBy":"client","c2sBytes":1791,"s2cBytes":946,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"expired.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":18,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  could not accept SSL connection: EOF detected"]},
+  {"run":2,"runId":"2matrixexpiredc2xr0cd","wallMs":5,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"2matrixexpiredc3xen8b","wallMs":10,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"2matrixexpiredc4xacsa","wallMs":7,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"2matrixexpiredc5xunjk","wallMs":6,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

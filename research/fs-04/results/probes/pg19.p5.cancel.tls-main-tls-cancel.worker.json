@@ -1,0 +1,50 @@
+{
+ "id": "pg19.p5.cancel.tls-main-tls-cancel",
+ "title": "main connection on TLS, CancelRequest after SSLRequest and startTls (PostgreSQL 19.0)",
+ "group": "p5",
+ "mode": "worker",
+ "target": "pg19-tls",
+ "params": {
+  "tlsMain": true,
+  "cancelVia": "tls"
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "queryEnded57014",
+  "endedWithin2500msOfCancel",
+  "cancelSocketClosedByServer",
+  "serverLogged57014",
+  "cancelSocketOpenedFast"
+ ],
+ "checks": {
+  "queryEnded57014": {
+   "pass": 5,
+   "of": 5
+  },
+  "endedWithin2500msOfCancel": {
+   "pass": 5,
+   "of": 5
+  },
+  "cancelSocketClosedByServer": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverLogged57014": {
+   "pass": 5,
+   "of": 5
+  },
+  "cancelSocketOpenedFast": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"smaintlscancelw1xt4cl","wallMs":1023,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"response":{"ok":true,"probe":"p5.cancel","runId":"smaintlscancelw1xt4cl","ms":1022,"observations":{"params":{"tlsMain":true,"cancelVia":"tls","busyOthers":0,"wrongKey":false},"mainSslAnswer":"S","pid":795,"socketsOpenBeforeCancel":1,"cancel":{"openedAfterMs":1,"sslAnswer":"S","upgraded":true,"sentAt":1795653690111,"drain":{"bytes":0,"ended":"eof"},"doneAfterMs":6},"queryMs":1009,"endedAfterCancelSentMs":3,"result":{"error":{"code":"57014","message":"canceling statement due to user request"},"rows":[]},"totalMs":1020}},"extra":{"responseAt":1795653690115,"workerd":{"peakRssMiB":58,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":2541,"route":"pg19-tls","kind":"ssl-request","openedAt":1795653689094.7,"closedAt":1795653690115.1,"closedBy":"client","c2sBytes":742,"s2cBytes":1777,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}},{"id":2542,"route":"pg19-tls","kind":"ssl-request","openedAt":1795653690108.7,"closedAt":1795653690114.4,"closedBy":"client","c2sBytes":367,"s2cBytes":855,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-smaintlscancelw1xt4cl-main SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256)","ERROR:  canceling statement due to user request"]},
+  {"run":2,"runId":"smaintlscancelw2x4wa1","wallMs":1022,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":58,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"smaintlscancelw3xqytc","wallMs":1025,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"smaintlscancelw4xh7yf","wallMs":1023,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"smaintlscancelw5xhpvh","wallMs":1026,"pass":true,"checks":{"queryEnded57014":true,"endedWithin2500msOfCancel":true,"cancelSocketClosedByServer":true,"serverLogged57014":true,"cancelSocketOpenedFast":true},"extra":{"workerd":{"peakRssMiB":58,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

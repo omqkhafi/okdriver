@@ -1,0 +1,32 @@
+{
+ "id": "p2.clientcert.none",
+ "title": "server requires a client certificate; none offered: the server must refuse (control for the next row)",
+ "group": "p2",
+ "mode": "worker",
+ "target": "pg17-clientcert",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "serverRejectedNoClientCert",
+  "noAuthenticatedSession"
+ ],
+ "checks": {
+  "serverRejectedNoClientCert": {
+   "pass": 5,
+   "of": 5
+  },
+  "noAuthenticatedSession": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"clientcertnonew1xtxmb","wallMs":11,"pass":true,"checks":{"serverRejectedNoClientCert":true,"noAuthenticatedSession":true},"response":{"ok":true,"probe":"p2.options","runId":"clientcertnonew1xtxmb","ms":9,"observations":{"steps":[],"opened":{"remoteAddress":"string","localAddress":"undefined"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0,"login":{"ok":false,"error":{"name":"Error","message":"28000 connection requires a valid client certificate"},"code":"28000"},"bytesWritten":112,"bytesReceived":111}},"extra":{"responseAt":1795653455415,"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":1621,"route":"pg17-clientcert","kind":"ssl-request","openedAt":1795653455406.9,"closedAt":1795653455415,"closedBy":"client","c2sBytes":764,"s2cBytes":1647,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":["FATAL:  connection requires a valid client certificate"]},
+  {"run":2,"runId":"clientcertnonew2x0i8x","wallMs":10,"pass":true,"checks":{"serverRejectedNoClientCert":true,"noAuthenticatedSession":true},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"clientcertnonew3xtts0","wallMs":10,"pass":true,"checks":{"serverRejectedNoClientCert":true,"noAuthenticatedSession":true},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":1},"traceTrimmed":true},
+  {"run":4,"runId":"clientcertnonew4xymgx","wallMs":10,"pass":true,"checks":{"serverRejectedNoClientCert":true,"noAuthenticatedSession":true},"extra":{"workerd":{"peakRssMiB":56,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"clientcertnonew5x3hwb","wallMs":10,"pass":true,"checks":{"serverRejectedNoClientCert":true,"noAuthenticatedSession":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

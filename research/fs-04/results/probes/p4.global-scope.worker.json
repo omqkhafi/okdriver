@@ -1,0 +1,31 @@
+{
+ "id": "p4.global-scope",
+ "title": "connect() at global scope (module evaluation)",
+ "group": "p4",
+ "mode": "worker",
+ "target": "pg17-tls",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "socketAtGlobalScopeThrows"
+ ],
+ "checks": {
+  "socketAtGlobalScopeThrows": {
+   "pass": 5,
+   "of": 5
+  },
+  "errorMentionsGlobalScope": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"p4globalscopew1xf6kw","wallMs":1,"pass":true,"checks":{"socketAtGlobalScopeThrows":true,"errorMentionsGlobalScope":true},"response":null,"extra":{"state":{"globalScope":{"threw":true,"error":{"name":"Error","message":"Disallowed operation called within global scope. Asynchronous I/O (ex: fetch() or connect()), setting a timeout, and generating random values are not allowed within global scope. To fix this error, perform this operation within a handler. https://developers.cloudflare.com/workers/runtime-apis/handlers/"}},"moduleExports":["connect","internalNewHttpClient"],"cached":[]},"responseAt":1795653602951,"workerd":{"peakRssMiB":53,"cpuMsSinceStart":20,"freshProcess":true}},"proxy":[],"log":[]},
+  {"run":2,"runId":"p4globalscopew2xk7p1","wallMs":1,"pass":true,"checks":{"socketAtGlobalScopeThrows":true,"errorMentionsGlobalScope":true},"extra":{"workerd":{"peakRssMiB":53,"cpuMsSinceStart":20,"freshProcess":true}},"traceTrimmed":true},
+  {"run":3,"runId":"p4globalscopew3xx5tg","wallMs":1,"pass":true,"checks":{"socketAtGlobalScopeThrows":true,"errorMentionsGlobalScope":true},"extra":{"workerd":{"peakRssMiB":53,"cpuMsSinceStart":20,"freshProcess":true}},"traceTrimmed":true},
+  {"run":4,"runId":"p4globalscopew4xxf3d","wallMs":1,"pass":true,"checks":{"socketAtGlobalScopeThrows":true,"errorMentionsGlobalScope":true},"extra":{"workerd":{"peakRssMiB":53,"cpuMsSinceStart":20,"freshProcess":true}},"traceTrimmed":true},
+  {"run":5,"runId":"p4globalscopew5x1gen","wallMs":1,"pass":true,"checks":{"socketAtGlobalScopeThrows":true,"errorMentionsGlobalScope":true},"extra":{"workerd":{"peakRssMiB":53,"cpuMsSinceStart":20,"freshProcess":true}},"traceTrimmed":true}
+ ]
+}

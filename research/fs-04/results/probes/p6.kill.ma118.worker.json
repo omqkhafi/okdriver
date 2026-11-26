@@ -1,0 +1,47 @@
+{
+ "id": "p6.kill.ma118",
+ "title": "ma118: SELECT SLEEP(30), KILL QUERY on a second authenticated connection after 1 s",
+ "group": "p6",
+ "mode": "worker",
+ "target": "ma118",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "bothLoggedIn",
+  "killAccepted",
+  "endedWithin2500msOfKill",
+  "serverShowedSleepRunning",
+  "serverQueryGoneAtEnd"
+ ],
+ "checks": {
+  "bothLoggedIn": {
+   "pass": 5,
+   "of": 5
+  },
+  "killAccepted": {
+   "pass": 5,
+   "of": 5
+  },
+  "endedWithin2500msOfKill": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverShowedSleepRunning": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverQueryGoneAtEnd": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"p6killma118w1xnwjc","wallMs":1016,"pass":true,"checks":{"bothLoggedIn":true,"killAccepted":true,"endedWithin2500msOfKill":true,"serverShowedSleepRunning":true,"serverQueryGoneAtEnd":true},"response":{"ok":true,"probe":"p6.kill-query","runId":"p6killma118w1xnwjc","ms":1014,"observations":{"connectionId":318,"kill":{"ok":true,"ms":1},"endedAfterKillMs":2,"result":{"rows":[],"error":{"errno":1317,"message":"Query execution was interrupted"}},"queryMs":1004}},"extra":{"responseAt":1795653844939,"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"proxy":[{"id":2641,"route":"ma118","kind":"ssl-request","openedAt":1795653843925.9,"closedAt":1795653844938.8,"closedBy":"client","c2sBytes":601,"s2cBytes":2209,"sslAnswer":"(none)","tlsAtC2s":36,"c2sTypes":{"packet":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}},{"id":2642,"route":"ma118","kind":"ssl-request","openedAt":1795653843930.9,"closedAt":1795653844939,"closedBy":"client","c2sBytes":809,"s2cBytes":722,"sslAnswer":"(none)","tlsAtC2s":36,"c2sTypes":{"packet":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"pg.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":[],"activityPeak":-1},
+  {"run":2,"runId":"p6killma118w2xvt7i","wallMs":1015,"pass":true,"checks":{"bothLoggedIn":true,"killAccepted":true,"endedWithin2500msOfKill":true,"serverShowedSleepRunning":true,"serverQueryGoneAtEnd":true},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"p6killma118w3x460m","wallMs":1015,"pass":true,"checks":{"bothLoggedIn":true,"killAccepted":true,"endedWithin2500msOfKill":true,"serverShowedSleepRunning":true,"serverQueryGoneAtEnd":true},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":4,"runId":"p6killma118w4x42p9","wallMs":1016,"pass":true,"checks":{"bothLoggedIn":true,"killAccepted":true,"endedWithin2500msOfKill":true,"serverShowedSleepRunning":true,"serverQueryGoneAtEnd":true},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"p6killma118w5xo2rq","wallMs":1017,"pass":true,"checks":{"bothLoggedIn":true,"killAccepted":true,"endedWithin2500msOfKill":true,"serverShowedSleepRunning":true,"serverQueryGoneAtEnd":true},"activityPeak":-1,"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":30,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

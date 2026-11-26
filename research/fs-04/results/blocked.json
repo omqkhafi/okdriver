@@ -1,0 +1,129 @@
+{
+ "note": "workerd 1.20261118.1 network service, embedder-side rule; not Cloudflare production",
+ "configs": {
+  "public+local": [
+   {
+    "label": "string form connect(\"host:port\") with no options",
+    "opened": true,
+    "secureTransport": "off",
+    "infoKeys": [
+     "remoteAddress",
+     "localAddress"
+    ],
+    "ms": 2
+   },
+   {
+    "label": "loopback proxy port of a listening PostgreSQL",
+    "opened": true,
+    "secureTransport": "off",
+    "infoKeys": [
+     "remoteAddress",
+     "localAddress"
+    ],
+    "ms": 0
+   },
+   {
+    "label": "localhost name, same port",
+    "opened": true,
+    "secureTransport": "off",
+    "infoKeys": [
+     "remoteAddress",
+     "localAddress"
+    ],
+    "ms": 1
+   },
+   {
+    "label": "loopback port 25 (nothing listens)",
+    "error": {
+     "name": "Error",
+     "message": "proxy request failed, cannot connect to the specified address"
+    },
+    "ms": 0
+   },
+   {
+    "label": "private address 10.255.255.1 (unrouted)",
+    "error": {
+     "name": "Error",
+     "message": "proxy request failed, cannot connect to the specified address"
+    },
+    "ms": 1
+   },
+   {
+    "label": "Cloudflare resolver 1.1.1.1 port 53 over TCP",
+    "error": {
+     "name": "Error",
+     "message": "proxy request failed, cannot connect to the specified address"
+    },
+    "ms": 0
+   }
+  ],
+  "public": [
+   {
+    "label": "string form connect(\"host:port\") with no options",
+    "error": {
+     "name": "Error",
+     "message": "proxy request failed, cannot connect to the specified address"
+    },
+    "ms": 1
+   },
+   {
+    "label": "loopback proxy port of a listening PostgreSQL",
+    "error": {
+     "name": "Error",
+     "message": "proxy request failed, cannot connect to the specified address"
+    },
+    "ms": 0
+   },
+   {
+    "label": "localhost name, same port",
+    "error": {
+     "name": "Error",
+     "message": "proxy request failed, cannot connect to the specified address"
+    },
+    "ms": 1
+   },
+   {
+    "label": "loopback port 25 (nothing listens)",
+    "error": {
+     "name": "Error",
+     "message": "proxy request failed, cannot connect to the specified address"
+    },
+    "ms": 0
+   },
+   {
+    "label": "private address 10.255.255.1 (unrouted)",
+    "error": {
+     "name": "Error",
+     "message": "proxy request failed, cannot connect to the specified address"
+    },
+    "ms": 1
+   },
+   {
+    "label": "Cloudflare resolver 1.1.1.1 port 53 over TCP",
+    "error": {
+     "name": "Error",
+     "message": "proxy request failed, cannot connect to the specified address"
+    },
+    "ms": 0
+   }
+  ]
+ },
+ "writableTypes": {
+  "string": "accepted",
+  "arrayBuffer": "accepted",
+  "uint8Array": "accepted",
+  "uint8Subarray": "accepted",
+  "dataView": "accepted",
+  "uint16Array": "accepted",
+  "number": "rejected: This TransformStream is being used as a byte stream, but received an object of non-ArrayBuffer/ArrayBufferView type on its writable side."
+ },
+ "writableTypesBytesAtProxy": {
+  "string": 3,
+  "arrayBuffer": 8,
+  "uint8Array": 8,
+  "uint8Subarray": 8,
+  "dataView": 8,
+  "uint16Array": 8,
+  "number": 0
+ }
+}

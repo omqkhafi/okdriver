@@ -1,0 +1,32 @@
+{
+ "id": "p2.matrix.selfsigned-untrusted",
+ "title": "self-signed, not trusted: expect reject",
+ "group": "p2",
+ "mode": "worker",
+ "target": "pg17-selfsigned",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "rejected",
+  "noAuthenticatedSession"
+ ],
+ "checks": {
+  "rejected": {
+   "pass": 5,
+   "of": 5
+  },
+  "noAuthenticatedSession": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "local-observed",
+ "runsDetail": [
+  {"run":1,"runId":"igneduntrustedw1xa2be","wallMs":9,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"response":{"ok":true,"probe":"p2.options","runId":"igneduntrustedw1xa2be","ms":7,"observations":{"steps":[],"opened":{"remoteAddress":"string","localAddress":"undefined"},"answer":"S","leftoverAfterAnswer":0,"bytesWrittenBeforeSwitch":8,"bytesReadBeforeSwitch":1,"upgrade":{"ok":true,"syncThrow":false},"upgradeCallMs":0,"login":{"ok":false,"error":{"name":"Error","message":"internal error; reference = s2nalfl51ao8ni9ori6t5lb0"}},"bytesWritten":112,"bytesReceived":1}},"extra":{"responseAt":1795653434544,"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":-1},"proxy":[{"id":1536,"route":"pg17-selfsigned","kind":"ssl-request","openedAt":1795653434537.6,"closedAt":1795653434542.8,"closedBy":"client","c2sBytes":569,"s2cBytes":938,"sslAnswer":"S","tlsAtC2s":8,"tlsAtS2c":1,"c2sTypes":{"SSLRequest":1},"clientHello":{"recordVersion":"3.1","legacyVersion":"3.3","sni":"selfsigned.fs04.test","alpn":null,"supportedVersions":["3.4","3.3"],"cipherSuites":10,"hasChannelBindingRelevantExt":false}}],"log":["LOG:  could not accept SSL connection: ssl/tls alert certificate unknown"]},
+  {"run":2,"runId":"igneduntrustedw2xdmfl","wallMs":9,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":3,"runId":"igneduntrustedw3xnzsa","wallMs":10,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":4,"runId":"igneduntrustedw4xtsxj","wallMs":9,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":10,"freshProcess":true},"closeLagMs":-1},"traceTrimmed":true},
+  {"run":5,"runId":"igneduntrustedw5xkxl6","wallMs":8,"pass":true,"checks":{"rejected":true,"noAuthenticatedSession":true},"extra":{"workerd":{"peakRssMiB":57,"cpuMsSinceStart":20,"freshProcess":true},"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

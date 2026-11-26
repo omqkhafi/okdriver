@@ -1,0 +1,36 @@
+{
+ "id": "p4.cross-request",
+ "title": "socket created in one request, used in the next",
+ "group": "p4",
+ "mode": "control",
+ "target": "pg17-tls",
+ "params": {},
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "created",
+  "crossRequestUseWorks"
+ ],
+ "checks": {
+  "created": {
+   "pass": 5,
+   "of": 5
+  },
+  "crossRequestUseWorks": {
+   "pass": 5,
+   "of": 5
+  },
+  "refusedWithError": {
+   "pass": 0,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"p4crossrequestc1x5u6n","wallMs":6,"pass":true,"checks":{"created":true,"crossRequestUseWorks":true,"refusedWithError":false},"response":{"ok":true,"probe":"p4.cross-request","runId":"p4crossrequestc1x5u6n","ms":6,"observations":{"created":true,"pid":711}},"extra":{"createOk":true,"use":{"ok":true,"probe":"p4.cross-request","runId":"p4crossrequestc1x5u6n","ms":1,"observations":{"query":{"rows":[["1"]]},"writeAfter":"ok","close":"ok"}},"responseAt":1795652908201,"closeLagMs":1},"proxy":[{"id":701,"route":"pg17-tls","kind":"startup","label":"fs04-p4crossrequestc1x5u6n-x","openedAt":1795652908196.2,"closedAt":1795652908201.8,"closedBy":"client","c2sBytes":289,"s2cBytes":704,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4crossrequestc1x5u6n-x"]},
+  {"run":2,"runId":"p4crossrequestc2x1wbf","wallMs":7,"pass":true,"checks":{"created":true,"crossRequestUseWorks":true,"refusedWithError":false},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":3,"runId":"p4crossrequestc3x3454","wallMs":6,"pass":true,"checks":{"created":true,"crossRequestUseWorks":true,"refusedWithError":false},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":4,"runId":"p4crossrequestc4xonlg","wallMs":7,"pass":true,"checks":{"created":true,"crossRequestUseWorks":true,"refusedWithError":false},"extra":{"closeLagMs":0},"traceTrimmed":true},
+  {"run":5,"runId":"p4crossrequestc5xzegr","wallMs":7,"pass":true,"checks":{"created":true,"crossRequestUseWorks":true,"refusedWithError":false},"extra":{"closeLagMs":0},"traceTrimmed":true}
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "id": "pg19.p4.concurrent.n8",
+ "title": "8 sockets from one invocation, all logged in, held, then used at once (PostgreSQL 19.0)",
+ "group": "p4",
+ "mode": "control",
+ "target": "pg19-tls",
+ "params": {
+  "n": 8,
+  "holdMs": 1500,
+  "work": "sleep1"
+ },
+ "runs": 5,
+ "passes": 5,
+ "required": [
+  "allLoggedIn",
+  "serverSawAllAtOnce",
+  "allReachedProxy",
+  "notQueued",
+  "allUsableAtOnce"
+ ],
+ "checks": {
+  "allLoggedIn": {
+   "pass": 5,
+   "of": 5
+  },
+  "serverSawAllAtOnce": {
+   "pass": 5,
+   "of": 5
+  },
+  "allReachedProxy": {
+   "pass": 5,
+   "of": 5
+  },
+  "notQueued": {
+   "pass": 5,
+   "of": 5
+  },
+  "workerOpenedSpreadUnder1s": {
+   "pass": 5,
+   "of": 5
+  },
+  "allUsableAtOnce": {
+   "pass": 5,
+   "of": 5
+  }
+ },
+ "label": "control",
+ "runsDetail": [
+  {"run":1,"runId":"p4concurrentn8c1xsue8","wallMs":2518,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":true,"idleDoNotCount":null},"response":{"ok":true,"probe":"p4.concurrent","runId":"p4concurrentn8c1xsue8","ms":2517,"observations":{"n":8,"sockets":[{"k":0,"connectCalledAt":0.009999999980209395,"openedAt":0.8999999999941792,"loginAt":8.970000000001164,"pid":103},{"k":1,"connectCalledAt":0.1300000000046566,"openedAt":0.9700000000011642,"loginAt":10.570000000006985,"pid":101},{"k":2,"connectCalledAt":0.139999999984866,"openedAt":0.9899999999906868,"loginAt":10.119999999995343,"pid":100},{"k":3,"connectCalledAt":0.14999999999417923,"openedAt":1.0399999999790452,"loginAt":10.049999999988358,"pid":104},{"k":4,"connectCalledAt":0.16000000000349246,"openedAt":1.0599999999976717,"loginAt":10.479999999981374,"pid":105},{"k":5,"connectCalledAt":0.16000000000349246,"openedAt":1.0899999999965075,"loginAt":10.690000000002328,"pid":102},{"k":6,"connectCalledAt":0.16999999998370185,"openedAt":1.1099999999860302,"loginAt":11.729999999981374,"pid":107},{"k":7,"connectCalledAt":0.16999999998370185,"openedAt":1.1199999999953434,"loginAt":10.769999999989523,"pid":106}],"allLoggedInAt":11.729999999981374,"openedOrder":[0,1,2,3,4,5,6,7],"work":{"wallMs":1004.8500000000058,"ok":8,"of":8}}},"extra":{"responseAt":1795653001733,"closeLagMs":3},"proxy":[{"id":781,"route":"pg19-tls","kind":"startup","label":"fs04-p4concurrentn8c1xsue8-0","openedAt":1795652999216.4,"closedAt":1795653001736,"closedBy":"client","c2sBytes":302,"s2cBytes":766,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":782,"route":"pg19-tls","kind":"startup","label":"fs04-p4concurrentn8c1xsue8-1","openedAt":1795652999216.5,"closedAt":1795653001736,"closedBy":"client","c2sBytes":302,"s2cBytes":766,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":783,"route":"pg19-tls","kind":"startup","label":"fs04-p4concurrentn8c1xsue8-2","openedAt":1795652999216.6,"closedAt":1795653001736.1,"closedBy":"client","c2sBytes":302,"s2cBytes":766,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":784,"route":"pg19-tls","kind":"startup","label":"fs04-p4concurrentn8c1xsue8-3","openedAt":1795652999216.6,"closedAt":1795653001736.1,"closedBy":"client","c2sBytes":302,"s2cBytes":766,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":785,"route":"pg19-tls","kind":"startup","label":"fs04-p4concurrentn8c1xsue8-4","openedAt":1795652999216.6,"closedAt":1795653001736.1,"closedBy":"client","c2sBytes":302,"s2cBytes":766,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":786,"route":"pg19-tls","kind":"startup","label":"fs04-p4concurrentn8c1xsue8-5","openedAt":1795652999216.7,"closedAt":1795653001736.1,"closedBy":"client","c2sBytes":302,"s2cBytes":766,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":787,"route":"pg19-tls","kind":"startup","label":"fs04-p4concurrentn8c1xsue8-6","openedAt":1795652999216.7,"closedAt":1795653001736.1,"closedBy":"client","c2sBytes":302,"s2cBytes":766,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}},{"id":788,"route":"pg19-tls","kind":"startup","label":"fs04-p4concurrentn8c1xsue8-7","openedAt":1795652999216.7,"closedAt":1795653001736.1,"closedBy":"client","c2sBytes":302,"s2cBytes":766,"c2sTypes":{"Startup":1,"p":2,"Q":1,"X":1}}],"log":["LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn8c1xsue8-2","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn8c1xsue8-5","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn8c1xsue8-3","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn8c1xsue8-0","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn8c1xsue8-7","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn8c1xsue8-1","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn8c1xsue8-4","LOG:  connection authorized: user=fs04user database=fs04db application_name=fs04-p4concurrentn8c1xsue8-6"],"activityPeak":8},
+  {"run":2,"runId":"p4concurrentn8c2xl94d","wallMs":2516,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":true,"idleDoNotCount":null},"activityPeak":8,"extra":{"closeLagMs":1},"traceTrimmed":true},
+  {"run":3,"runId":"p4concurrentn8c3xjgkb","wallMs":2519,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":true,"idleDoNotCount":null},"activityPeak":8,"extra":{"closeLagMs":2},"traceTrimmed":true},
+  {"run":4,"runId":"p4concurrentn8c4xpwpj","wallMs":2522,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":true,"idleDoNotCount":null},"activityPeak":8,"extra":{"closeLagMs":4},"traceTrimmed":true},
+  {"run":5,"runId":"p4concurrentn8c5xqb52","wallMs":2520,"pass":true,"checks":{"allLoggedIn":true,"serverSawAllAtOnce":true,"allReachedProxy":true,"notQueued":true,"workerOpenedSpreadUnder1s":true,"allUsableAtOnce":true,"idleDoNotCount":null},"activityPeak":8,"extra":{"closeLagMs":1},"traceTrimmed":true}
+ ]
+}
