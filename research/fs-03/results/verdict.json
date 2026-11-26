@@ -1,0 +1,130 @@
+{
+  "canaryComparison": {
+    "fasterN": false,
+    "fasterB": true,
+    "wouldPick": "B",
+    "cells": [
+      {
+        "cell": "W1",
+        "mN": 15440.643733373072,
+        "mB": 16551.13307604217,
+        "floor": 0.05,
+        "winner": "B"
+      },
+      {
+        "cell": "W2",
+        "mN": 109945.93156785246,
+        "mB": 108450.02809406318,
+        "floor": 0.05,
+        "winner": "tie"
+      },
+      {
+        "cell": "W3-8K",
+        "mN": 463.9377378745387,
+        "mB": 455.5091766807958,
+        "floor": 0.053921488528686765,
+        "winner": "tie"
+      },
+      {
+        "cell": "W3-64K",
+        "mN": 471.8917557451967,
+        "mB": 457.81738797953835,
+        "floor": 0.05,
+        "winner": "tie"
+      },
+      {
+        "cell": "W3-1M",
+        "mN": 441.07361139182336,
+        "mB": 441.57115798135874,
+        "floor": 0.12755545197736834,
+        "winner": "tie"
+      },
+      {
+        "cell": "W4",
+        "mN": 500.1550518086044,
+        "mB": 499.91462161456076,
+        "floor": 0.05,
+        "winner": "tie"
+      }
+    ]
+  },
+  "ruleSha256": "992c0ab0c913aff2b951aa255ff2f0645e2e95c25cf54336e4455dfa70d46169",
+  "notes": [],
+  "valid": true,
+  "pool": [
+    "N",
+    "B"
+  ],
+  "gate": {
+    "release": {
+      "N": {
+        "pass": true,
+        "why": []
+      },
+      "B": {
+        "pass": true,
+        "why": []
+      }
+    },
+    "canary": {
+      "N": {
+        "pass": true,
+        "why": []
+      },
+      "B": {
+        "pass": true,
+        "why": []
+      }
+    }
+  },
+  "pick": "N",
+  "basis": "neither faster (mixed or within noise): tie order N before B",
+  "releaseCells": [
+    {
+      "cell": "W1",
+      "mN": 15463.156941704498,
+      "mB": 15976.853246276098,
+      "floor": 0.05,
+      "winner": "tie"
+    },
+    {
+      "cell": "W2",
+      "mN": 116978.32812701788,
+      "mB": 119393.34702955336,
+      "floor": 0.05,
+      "winner": "tie"
+    },
+    {
+      "cell": "W3-8K",
+      "mN": 443.04127049941957,
+      "mB": 451.3385375212227,
+      "floor": 0.053921488528686765,
+      "winner": "tie"
+    },
+    {
+      "cell": "W3-64K",
+      "mN": 448.59164556247885,
+      "mB": 447.94022380000894,
+      "floor": 0.05,
+      "winner": "tie"
+    },
+    {
+      "cell": "W3-1M",
+      "mN": 450.4345910016378,
+      "mB": 443.85146386775205,
+      "floor": 0.12755545197736834,
+      "winner": "tie"
+    },
+    {
+      "cell": "W4",
+      "mN": 499.704287294292,
+      "mB": 499.765430778126,
+      "floor": 0.05,
+      "winner": "tie"
+    }
+  ],
+  "pickIfOnly": {
+    "release": "N",
+    "canary": "N"
+  }
+}

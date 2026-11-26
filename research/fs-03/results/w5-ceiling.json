@@ -1,0 +1,6 @@
+{
+  "tool": "pgbench (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+  "S1 statements/s (pgbench -M extended, one connection)": 17029.72609,
+  "depth 100 statements/s (pgbench pipeline of 100)": 133456.5873,
+  "100 MB result MB/s (psql to a pipe, text, median of 3)": 267.22855889388535
+}

@@ -1,0 +1,121 @@
+{
+  "build": {
+    "id": "release",
+    "path": "/home/user/okdriver/research/fs-03/work/release/node_modules/.bin/bun",
+    "version": "1.4.5",
+    "revision": "1.4.5+a7733435c"
+  },
+  "pg": "PostgreSQL 19.0 (Debian 19.0-2.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+  "psqlClient": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+  "expectedPsqlOutput": [
+    {
+      "lines": 1,
+      "bytes": 35,
+      "sha256": "53c064570db9f6085d5fc336ae2c34ac9b0c9f0d85e5992b039c5ed5c8a2d451"
+    },
+    {
+      "lines": 50,
+      "bytes": 881,
+      "sha256": "d80ec1b1e85638058bdb82664867346f6ecb707ce7478c4cc0a1d13796450125"
+    },
+    {
+      "lines": 1,
+      "bytes": 100008,
+      "sha256": "6752730012c00efd912c45061e479690a43e82b2ebf559b841fc690a0e076707"
+    },
+    {
+      "lines": 1,
+      "bytes": 62,
+      "sha256": "451b8eb0a8afaa8d8267d4da1a6656cb2a99f3601101e2f613441340e1feb9fa"
+    },
+    {
+      "lines": 1,
+      "bytes": 53,
+      "sha256": "cff636878389374913d80dc4e83fa9ced180479cbba791316659fa4f07de81ff"
+    },
+    {
+      "lines": 1,
+      "bytes": 51,
+      "sha256": "2329b8b42fa540efc4f17605192b09742d27ba01faef5364589191f051d47341"
+    },
+    {
+      "lines": 3,
+      "bytes": 12,
+      "sha256": "e17bf6c8d169b072cf6246c5bb7a3301205b218932dbe962f5ad1befadd4621f"
+    },
+    {
+      "lines": 1,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "lines": 20000,
+      "bytes": 768893,
+      "sha256": "dc6aaa26638b2cf9e02f85a226334c3a9fa53f3d7d4ac1714deb0f05fc16ad36"
+    },
+    {
+      "lines": 1,
+      "bytes": 31,
+      "sha256": "018e8687da241b7a90526c7676f2ae71873925b65b0c3d552fc81ee9f8f35c0d"
+    }
+  ],
+  "adapters": {
+    "N": {
+      "pass": true,
+      "queries": 10,
+      "mismatches": [],
+      "errorMatches": true,
+      "runtime": "bun 1.4.5 a7733435cf40429e3b35c36072769df2052b80f1",
+      "tlsAgainstPostgres": {
+        "good": true,
+        "mismatchRefused": true,
+        "mismatchError": "Hostname/IP does not match certificate's altnames: Host: wrong.example. is not in the cert's altnames: DNS:localhost, IP"
+      }
+    },
+    "N+tls": {
+      "pass": true,
+      "queries": 10,
+      "mismatches": [],
+      "errorMatches": true,
+      "runtime": "bun 1.4.5 a7733435cf40429e3b35c36072769df2052b80f1"
+    },
+    "B": {
+      "pass": true,
+      "queries": 10,
+      "mismatches": [],
+      "errorMatches": true,
+      "runtime": "bun 1.4.5 a7733435cf40429e3b35c36072769df2052b80f1",
+      "tlsAgainstPostgres": {
+        "good": true,
+        "mismatchRefused": true,
+        "mismatchError": "Hostname/IP does not match certificate's altnames: Host: wrong.example. is not in the cert's altnames: DNS:localhost, IP"
+      }
+    },
+    "B+tls": {
+      "pass": true,
+      "queries": 10,
+      "mismatches": [],
+      "errorMatches": true,
+      "runtime": "bun 1.4.5 a7733435cf40429e3b35c36072769df2052b80f1"
+    },
+    "N-data": {
+      "pass": true,
+      "queries": 10,
+      "mismatches": [],
+      "errorMatches": true,
+      "runtime": "bun 1.4.5 a7733435cf40429e3b35c36072769df2052b80f1",
+      "tlsAgainstPostgres": {
+        "good": true,
+        "mismatchRefused": true,
+        "mismatchError": "Hostname/IP does not match certificate's altnames: Host: wrong.example. is not in the cert's altnames: DNS:localhost, IP"
+      }
+    },
+    "N-data+tls": {
+      "pass": true,
+      "queries": 10,
+      "mismatches": [],
+      "errorMatches": true,
+      "runtime": "bun 1.4.5 a7733435cf40429e3b35c36072769df2052b80f1"
+    }
+  }
+}

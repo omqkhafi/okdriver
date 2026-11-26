@@ -1,0 +1,19 @@
+ok   [tie order] base: everything passes, all cells within noise: expected N, got N
+ok   [faster (win)] B is 10% ahead in every cell: expected B, got B
+ok   [faster (lose no cell)] B 10% ahead in all cells but N 10% ahead in one (mixed): expected N, got N
+ok   [noise floor minimum] B 6% ahead in one cell, floor 5%: expected B, got B
+ok   [noise floor minimum] B 4% ahead in one cell, floor 5%: expected N, got N
+ok   [noise floor from null] B 8% ahead, null gap 6% so floor 12%: expected N, got N
+ok   [noise floor from null] B 8% ahead, null gap 0: expected B, got B
+ok   [gate: fragmentation] N fails fragmentation (99%) on release: expected B, got B
+ok   [gate: tls_upgrade] N lacks tls_upgrade on release: expected B, got B
+ok   [gate: pause_resume_bounded] N lacks pause_resume_bounded on release: expected B, got B
+ok   [gate: write_backpressure] N lacks write_backpressure on release: expected B, got B
+ok   [gate: terminal_once] N lacks terminal_once on release: expected B, got B
+ok   [gate on canary] N fails fragmentation on canary only: expected B, got B
+ok   [canary optional] N fails fragmentation on canary only, canary not obtainable: expected N, got N
+ok   [throughput of release only] B faster on canary, tie on release: expected N, got N
+ok   [empty pool] both fail on release: expected none, got none
+ok   [suite sanity] a planted fault passed the suite: expected invalid, got invalid
+clauses with one outcome among their own scenarios (paired with the base case): tie order; faster (win); faster (lose no cell); gate: fragmentation; gate: tls_upgrade; gate: pause_resume_bounded; gate: write_backpressure; gate: terminal_once; gate on canary; canary optional; throughput of release only; empty pool; suite sanity
+all toy cases behave as written

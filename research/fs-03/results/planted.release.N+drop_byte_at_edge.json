@@ -1,0 +1,382 @@
+{
+  "build": {
+    "id": "release",
+    "path": "/home/user/okdriver/research/fs-03/work/release/node_modules/.bin/bun",
+    "version": "1.4.5",
+    "revision": "1.4.5+a7733435c"
+  },
+  "adapter": "N+drop_byte_at_edge",
+  "results": [
+    {
+      "name": "plain-mix",
+      "status": "fail",
+      "reasons": [
+        "decoded sequence differs from the server script",
+        "decoded 127 messages, script has 2713",
+        "status hang",
+        "delivered bytes hash differs from the proxy hash",
+        "delivered 8804046 bytes, proxy sent 8804073",
+        "terminal events: 0"
+      ],
+      "messages": 127,
+      "deliveries": 136,
+      "cuts": 137,
+      "observedShare": {},
+      "rawBytes": 8804046,
+      "durationMs": 15271,
+      "raw": {
+        "dataCalls": 136,
+        "bytes": 8804073,
+        "errorEvents": 0,
+        "closeEvents": 0,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "bytes1-tiny",
+      "status": "pass",
+      "reasons": [],
+      "messages": 159,
+      "deliveries": 2937,
+      "cuts": 2939,
+      "observedShare": {
+        "single byte": "2937/2939"
+      },
+      "rawBytes": 2939,
+      "durationMs": 6877,
+      "raw": {
+        "dataCalls": 2937,
+        "bytes": 2939,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 1,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "header-offsets-small",
+      "status": "fail",
+      "reasons": [
+        "client: Error: timeout waiting for RESULT "
+      ],
+      "messages": 0,
+      "deliveries": 0,
+      "cuts": 34,
+      "observedShare": {},
+      "rawBytes": 0,
+      "durationMs": 35101,
+      "raw": null
+    },
+    {
+      "name": "payload-edges-mix",
+      "status": "fail",
+      "reasons": [
+        "client: Error: timeout waiting for RESULT "
+      ],
+      "messages": 0,
+      "deliveries": 0,
+      "cuts": 5,
+      "observedShare": {},
+      "rawBytes": 0,
+      "durationMs": 35103,
+      "raw": null
+    },
+    {
+      "name": "grouped-small",
+      "status": "fail",
+      "reasons": [
+        "decoded sequence differs from the server script",
+        "decoded 68 messages, script has 409",
+        "status terminal",
+        "delivered bytes hash differs from the proxy hash",
+        "delivered 12655 bytes, proxy sent 12658",
+        "terminal events: 0"
+      ],
+      "messages": 68,
+      "deliveries": 17,
+      "cuts": 17,
+      "observedShare": {},
+      "rawBytes": 12655,
+      "durationMs": 312,
+      "raw": {
+        "dataCalls": 17,
+        "bytes": 12658,
+        "errorEvents": 0,
+        "closeEvents": 0,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "grouped-mix",
+      "status": "fail",
+      "reasons": [
+        "decoded sequence differs from the server script",
+        "decoded 77 messages, script has 2713",
+        "status terminal",
+        "delivered bytes hash differs from the proxy hash",
+        "delivered 9308746 bytes, proxy sent 9308792",
+        "terminal events: 0"
+      ],
+      "messages": 77,
+      "deliveries": 230,
+      "cuts": 110,
+      "observedShare": {},
+      "rawBytes": 9308746,
+      "durationMs": 308,
+      "raw": {
+        "dataCalls": 230,
+        "bytes": 9308792,
+        "errorEvents": 0,
+        "closeEvents": 0,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "random-small-max16",
+      "status": "fail",
+      "reasons": [
+        "client: Error: timeout waiting for RESULT "
+      ],
+      "messages": 0,
+      "deliveries": 0,
+      "cuts": 15,
+      "observedShare": {},
+      "rawBytes": 0,
+      "durationMs": 35101,
+      "raw": null
+    },
+    {
+      "name": "random-small-max7",
+      "status": "fail",
+      "reasons": [
+        "client: Error: timeout waiting for RESULT "
+      ],
+      "messages": 0,
+      "deliveries": 0,
+      "cuts": 24,
+      "observedShare": {},
+      "rawBytes": 0,
+      "durationMs": 35103,
+      "raw": null
+    },
+    {
+      "name": "random-mix-max2048",
+      "status": "fail",
+      "reasons": [
+        "decoded sequence differs from the server script",
+        "decoded 33 messages, script has 2713",
+        "status hang",
+        "delivered bytes hash differs from the proxy hash",
+        "delivered 9031146 bytes, proxy sent 9032436",
+        "terminal events: 0"
+      ],
+      "messages": 33,
+      "deliveries": 6450,
+      "cuts": 8810,
+      "observedShare": {},
+      "rawBytes": 9031146,
+      "durationMs": 15292,
+      "raw": {
+        "dataCalls": 6450,
+        "bytes": 9032436,
+        "errorEvents": 0,
+        "closeEvents": 0,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "random-mix-max8192",
+      "status": "fail",
+      "reasons": [
+        "decoded sequence differs from the server script",
+        "decoded 13 messages, script has 2713",
+        "status hang",
+        "delivered bytes hash differs from the proxy hash",
+        "delivered 9006755 bytes, proxy sent 9007071",
+        "terminal events: 0"
+      ],
+      "messages": 13,
+      "deliveries": 1584,
+      "cuts": 2188,
+      "observedShare": {},
+      "rawBytes": 9006755,
+      "durationMs": 15301,
+      "raw": {
+        "dataCalls": 1584,
+        "bytes": 9007071,
+        "errorEvents": 0,
+        "closeEvents": 0,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "random-mix-max131072",
+      "status": "fail",
+      "reasons": [
+        "decoded sequence differs from the server script",
+        "decoded 153 messages, script has 2713",
+        "status terminal",
+        "delivered bytes hash differs from the proxy hash",
+        "delivered 7393574 bytes, proxy sent 7470596",
+        "terminal events: 0"
+      ],
+      "messages": 153,
+      "deliveries": 170,
+      "cuts": 121,
+      "observedShare": {},
+      "rawBytes": 7393574,
+      "durationMs": 318,
+      "raw": {
+        "dataCalls": 170,
+        "bytes": 7393608,
+        "errorEvents": 0,
+        "closeEvents": 0,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-fin-partial-header",
+      "status": "fail",
+      "reasons": [
+        "decoded sequence differs from the server script",
+        "decoded 70 complete messages, 107 were sent in full",
+        "delivered 306671 bytes, proxy sent 306672",
+        "delivered bytes hash differs from the proxy hash"
+      ],
+      "messages": 70,
+      "deliveries": 7,
+      "cuts": 5,
+      "observedShare": {},
+      "rawBytes": 306671,
+      "durationMs": 278,
+      "raw": {
+        "dataCalls": 7,
+        "bytes": 306672,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 1,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-fin-partial-payload",
+      "status": "pass",
+      "reasons": [],
+      "messages": 59,
+      "deliveries": 3,
+      "cuts": 3,
+      "observedShare": {},
+      "rawBytes": 71720,
+      "durationMs": 327,
+      "raw": {
+        "dataCalls": 3,
+        "bytes": 71720,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 1,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-fin-between-messages",
+      "status": "fail",
+      "reasons": [
+        "decoded sequence differs from the server script",
+        "decoded 105 complete messages, 208 were sent in full",
+        "delivered 397868 bytes, proxy sent 397869",
+        "delivered bytes hash differs from the proxy hash"
+      ],
+      "messages": 105,
+      "deliveries": 8,
+      "cuts": 5,
+      "observedShare": {},
+      "rawBytes": 397868,
+      "durationMs": 275,
+      "raw": {
+        "dataCalls": 8,
+        "bytes": 397869,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 1,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-rst-partial-header",
+      "status": "pass",
+      "reasons": [],
+      "messages": 107,
+      "deliveries": 4,
+      "cuts": 4,
+      "observedShare": {},
+      "rawBytes": 174794,
+      "durationMs": 311,
+      "raw": {
+        "dataCalls": 4,
+        "bytes": 174794,
+        "errorEvents": 1,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-rst-partial-payload",
+      "status": "pass",
+      "reasons": [],
+      "messages": 80,
+      "deliveries": 3,
+      "cuts": 3,
+      "observedShare": {},
+      "rawBytes": 114759,
+      "durationMs": 311,
+      "raw": {
+        "dataCalls": 3,
+        "bytes": 114759,
+        "errorEvents": 1,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-rst-between-messages",
+      "status": "pass",
+      "reasons": [],
+      "messages": 207,
+      "deliveries": 5,
+      "cuts": 4,
+      "observedShare": {},
+      "rawBytes": 219312,
+      "durationMs": 321,
+      "raw": {
+        "dataCalls": 5,
+        "bytes": 219313,
+        "errorEvents": 1,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    }
+  ],
+  "passShare": 0.29411764705882354
+}

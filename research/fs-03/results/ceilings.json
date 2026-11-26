@@ -1,0 +1,19 @@
+{
+  "loads": {
+    "w1": 36000,
+    "w2": 260000,
+    "w3Bytes": 268435456,
+    "w3Row": 100,
+    "w4Bytes": 268435456,
+    "w4RateMBps": 500,
+    "depth": 100
+  },
+  "note": "raw Node client on core 0, server on cores 1-2; median of 3",
+  "rates": {
+    "pipeline statements/s (depth 200)": 272389.73182141274,
+    "stream MB/s (burst 8K)": 1364.7211926775663,
+    "stream MB/s (burst 64K)": 1173.6671573891879,
+    "stream MB/s (burst 1M)": 1388.9196850158055,
+    "copy sink MB/s (unthrottled)": 3183.557932893794
+  }
+}
