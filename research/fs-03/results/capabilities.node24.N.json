@@ -1,0 +1,201 @@
+{
+  "build": {
+    "id": "node24",
+    "path": "/home/user/okdriver/research/fs-03/work/node24/node_modules/.bin/node",
+    "version": "v24.22.3"
+  },
+  "adapter": "N",
+  "params": {
+    "streamBytes": 268435456,
+    "settleMs": 100,
+    "windowMs": 2000,
+    "maxDeliveredAfterSettle": 1048576,
+    "maxRssGrowthKB": 65536,
+    "writeBytes": 67108864,
+    "stallMs": 1000,
+    "halfBytes": 100000
+  },
+  "tls_upgrade": {
+    "raw": {
+      "runtime": "node v24.22.3",
+      "good": {
+        "ok": true,
+        "rows": 1,
+        "certSha": "cf0b16e7311ef194cf3b4bd5845f046ef7f5536cc08aec01bebcd698d4af0329",
+        "certLen": 795
+      },
+      "mismatch": {
+        "ok": false,
+        "error": "Hostname/IP does not match certificate's altnames: Host: wrong.example. is not in the cert's altnames: DNS:localhost, IP"
+      }
+    },
+    "pass": true,
+    "peerCertMatchesServer": true
+  },
+  "pause_resume_bounded": {
+    "raw": {
+      "bytes": 268435456,
+      "sha": "dfc5c0bc82393fbc7fbad2433c263ca6e3d4af459e4cd65bae0e310a3e3455c0",
+      "deliveredWhilePaused": 0,
+      "atSettle": 1920000,
+      "rssGrowthKB": 16,
+      "runtime": "node v24.22.3",
+      "raw": {
+        "dataCalls": 4171,
+        "bytes": 268435456,
+        "errorEvents": 0,
+        "closeEvents": 0,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    "server": {
+      "bytes": 268435456,
+      "sha": "dfc5c0bc82393fbc7fbad2433c263ca6e3d4af459e4cd65bae0e310a3e3455c0"
+    },
+    "pass": true
+  },
+  "write_backpressure": {
+    "raw": {
+      "signal": true,
+      "writeReturnedMs": 1.3353100000000495,
+      "drainAfterMs": 606.7296080000001,
+      "drains": 1,
+      "sha": "c4d15eff211be7931981d5bdb98b8404200ec1c1336d23a7fbfad7f405711795",
+      "runtime": "node v24.22.3",
+      "drainsAtEnd": 1
+    },
+    "server": {
+      "bytes": 67108864,
+      "sha": "c4d15eff211be7931981d5bdb98b8404200ec1c1336d23a7fbfad7f405711795"
+    },
+    "pass": true
+  },
+  "terminal_once": {
+    "rst": {
+      "terminalCalls": 1,
+      "dataAfterTerminal": 0,
+      "error": "read ECONNRESET",
+      "raw": {
+        "dataCalls": 1,
+        "bytes": 2000,
+        "errorEvents": 1,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      },
+      "bytes": 2000,
+      "runtime": "node v24.22.3"
+    },
+    "fin": {
+      "terminalCalls": 1,
+      "dataAfterTerminal": 0,
+      "error": null,
+      "raw": {
+        "dataCalls": 1,
+        "bytes": 2500,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 1,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      },
+      "bytes": 2500,
+      "runtime": "node v24.22.3"
+    },
+    "localDestroy": {
+      "terminalCalls": 1,
+      "dataAfterTerminal": 0,
+      "error": null,
+      "raw": {
+        "dataCalls": 1,
+        "bytes": 2000,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      },
+      "bytes": 2000,
+      "runtime": "node v24.22.3"
+    },
+    "pass": true
+  },
+  "lifetime": {
+    "deliveries": 59,
+    "bytes": 125490,
+    "distinctLengths": 59,
+    "viewsChangedBeforeNextDelivery": 58,
+    "viewsChangedAfterMicrotask": 0,
+    "viewsChangedAtEnd": 58,
+    "consecutiveDeliveriesSharingArrayBuffer": 58,
+    "runtime": "node v24.22.3"
+  },
+  "direct_tls_alpn": {
+    "raw": {
+      "ok": true,
+      "rows": 1,
+      "alpn": "postgresql",
+      "certSha": "cf0b16e7311ef194cf3b4bd5845f046ef7f5536cc08aec01bebcd698d4af0329"
+    },
+    "alpnNegotiated": true,
+    "serverSawAlpn": "postgresql"
+  },
+  "peer_certificate_bytes": {
+    "upgrade": "cf0b16e7311ef194cf3b4bd5845f046ef7f5536cc08aec01bebcd698d4af0329",
+    "direct": "cf0b16e7311ef194cf3b4bd5845f046ef7f5536cc08aec01bebcd698d4af0329",
+    "server": "cf0b16e7311ef194cf3b4bd5845f046ef7f5536cc08aec01bebcd698d4af0329",
+    "matches": true
+  },
+  "half_close": {
+    "raw": {
+      "bytes": 100000,
+      "sha": "6055fb529ecf8bcf7884f8bf66191ff683ef306fa92b5e996bc3369339a623a3",
+      "terminalCalls": 1,
+      "endCalls": 1,
+      "runtime": "node v24.22.3",
+      "raw": {
+        "dataCalls": 2,
+        "bytes": 100000,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 1,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    "server": {
+      "bytes": 10,
+      "sha": "6055fb529ecf8bcf7884f8bf66191ff683ef306fa92b5e996bc3369339a623a3"
+    },
+    "pass": true
+  },
+  "keepalive": {
+    "raw": {
+      "threw": "",
+      "runtime": "node v24.22.3"
+    },
+    "procNetTcp": "local 0100007F:97EC remote 0100007F:9A85 timer 02:00000BB7",
+    "keepaliveTimer": true
+  },
+  "nodelay": {
+    "raw": {
+      "threw": "",
+      "runtime": "node v24.22.3"
+    },
+    "procNetTcp": "local 0100007F:97EE remote 0100007F:9A85 timer 00:00000000",
+    "keepaliveTimer": false
+  },
+  "connect_timeout": {
+    "raw": {
+      "stateAtTimeout": "pending",
+      "afterMs": 1503.167815,
+      "destroyResult": "ok",
+      "settledAfterDestroy": "pending",
+      "terminalCalls": 1,
+      "runtime": "node v24.22.3"
+    }
+  }
+}

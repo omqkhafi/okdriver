@@ -1,0 +1,854 @@
+{
+ "build": {
+  "id": "release",
+  "path": "/home/user/okdriver/research/fs-03/work/release/node_modules/.bin/bun",
+  "version": "1.4.5",
+  "revision": "1.4.5+a7733435c"
+ },
+ "target": "postgres-19.0-docker",
+ "tls": false,
+ "loads": {
+  "w1": 36000,
+  "w2": 260000,
+  "w3Bytes": 268435456,
+  "w3Row": 100,
+  "w4Bytes": 268435456,
+  "w4RateMBps": 500,
+  "depth": 100
+ },
+ "runsPerCell": 15,
+ "warmupDropped": 2,
+ "cells": {
+  "W5-S1": {
+   "unit": "statements/s",
+   "B": [
+    {
+     "value": 13775.132816396397,
+     "seconds": 2.613404929,
+     "cpuSeconds": 1.38,
+     "cpuPerUnit": 0.00003833333333333333,
+     "rssPeakKB": 66996,
+     "p50us": 60.41499999992084,
+     "p99us": 239.87899999997353
+    },
+    {
+     "value": 14370.279921640476,
+     "seconds": 2.505170407,
+     "cpuSeconds": 1.41,
+     "cpuPerUnit": 0.000039166666666666665,
+     "rssPeakKB": 67604,
+     "p50us": 62.17999999989843,
+     "p99us": 144.5529999999735
+    },
+    {
+     "value": 14473.166522922262,
+     "seconds": 2.4873616939999996,
+     "cpuSeconds": 1.31,
+     "cpuPerUnit": 0.00003638888888888889,
+     "rssPeakKB": 67184,
+     "p50us": 58.80300000001171,
+     "p99us": 151.65699999988647
+    },
+    {
+     "value": 14388.688441935405,
+     "seconds": 2.501965356,
+     "cpuSeconds": 1.43,
+     "cpuPerUnit": 0.00003972222222222222,
+     "rssPeakKB": 67296,
+     "p50us": 58.74900000003436,
+     "p99us": 166.13399999999956
+    },
+    {
+     "value": 15494.88793302934,
+     "seconds": 2.3233469099999997,
+     "cpuSeconds": 1.23,
+     "cpuPerUnit": 0.000034166666666666666,
+     "rssPeakKB": 67928,
+     "p50us": 56.240999999999985,
+     "p99us": 139.35400000002574
+    },
+    {
+     "value": 13952.538566550007,
+     "seconds": 2.580175631,
+     "cpuSeconds": 1.42,
+     "cpuPerUnit": 0.00003944444444444444,
+     "rssPeakKB": 67824,
+     "p50us": 59.2039999996814,
+     "p99us": 186.59399999978632
+    },
+    {
+     "value": 14360.676189112704,
+     "seconds": 2.506845745,
+     "cpuSeconds": 1.31,
+     "cpuPerUnit": 0.00003638888888888889,
+     "rssPeakKB": 67256,
+     "p50us": 58.32900000001473,
+     "p99us": 206.46499999998014
+    },
+    {
+     "value": 15246.867856688881,
+     "seconds": 2.361140684,
+     "cpuSeconds": 1.19,
+     "cpuPerUnit": 0.000033055555555555553,
+     "rssPeakKB": 66836,
+     "p50us": 56.39899999999898,
+     "p99us": 145.3480000000127
+    },
+    {
+     "value": 14800.789677878955,
+     "seconds": 2.4323026530000003,
+     "cpuSeconds": 1.32,
+     "cpuPerUnit": 0.000036666666666666666,
+     "rssPeakKB": 67248,
+     "p50us": 57.6370000001134,
+     "p99us": 148.6179999997148
+    },
+    {
+     "value": 15636.322434811964,
+     "seconds": 2.302331648,
+     "cpuSeconds": 1.22,
+     "cpuPerUnit": 0.00003388888888888889,
+     "rssPeakKB": 66960,
+     "p50us": 56.53200000006109,
+     "p99us": 130.66700000000253
+    },
+    {
+     "value": 14815.149393320333,
+     "seconds": 2.429945122,
+     "cpuSeconds": 1.35,
+     "cpuPerUnit": 0.000037500000000000003,
+     "rssPeakKB": 67144,
+     "p50us": 56.90399999997453,
+     "p99us": 160.87799999999675
+    },
+    {
+     "value": 13471.591866532848,
+     "seconds": 2.6722899829999998,
+     "cpuSeconds": 1.49,
+     "cpuPerUnit": 0.00004138888888888889,
+     "rssPeakKB": 67200,
+     "p50us": 60.22699999999759,
+     "p99us": 223.7800000000334
+    },
+    {
+     "value": 13558.385606505819,
+     "seconds": 2.655183371,
+     "cpuSeconds": 1.45,
+     "cpuPerUnit": 0.00004027777777777778,
+     "rssPeakKB": 67424,
+     "p50us": 61.554000000114684,
+     "p99us": 198.71200000011413
+    },
+    {
+     "value": 13938.214541648942,
+     "seconds": 2.582827226,
+     "cpuSeconds": 1.37,
+     "cpuPerUnit": 0.00003805555555555556,
+     "rssPeakKB": 66996,
+     "p50us": 60.69400000001224,
+     "p99us": 183.42299999994793
+    },
+    {
+     "value": 13026.006662196698,
+     "seconds": 2.763701949,
+     "cpuSeconds": 1.43,
+     "cpuPerUnit": 0.00003972222222222222,
+     "rssPeakKB": 68008,
+     "p50us": 65.24799999999686,
+     "p99us": 186.7550000000051
+    }
+   ],
+   "N": [
+    {
+     "value": 13535.680313869207,
+     "seconds": 2.659637282,
+     "cpuSeconds": 1.47,
+     "cpuPerUnit": 0.000040833333333333334,
+     "rssPeakKB": 67892,
+     "p50us": 61.96599999998398,
+     "p99us": 201.58300000002782
+    },
+    {
+     "value": 13797.806026041386,
+     "seconds": 2.609110458,
+     "cpuSeconds": 1.41,
+     "cpuPerUnit": 0.000039166666666666665,
+     "rssPeakKB": 68076,
+     "p50us": 59.70000000002074,
+     "p99us": 172.3479999999995
+    },
+    {
+     "value": 13025.66190210315,
+     "seconds": 2.763775098,
+     "cpuSeconds": 1.61,
+     "cpuPerUnit": 0.00004472222222222223,
+     "rssPeakKB": 67632,
+     "p50us": 64.01499999992666,
+     "p99us": 195.8190000000286
+    },
+    {
+     "value": 14235.091335281995,
+     "seconds": 2.528961645,
+     "cpuSeconds": 1.43,
+     "cpuPerUnit": 0.00003972222222222222,
+     "rssPeakKB": 68920,
+     "p50us": 58.47400000016023,
+     "p99us": 176.73599999989165
+    },
+    {
+     "value": 14602.269130887791,
+     "seconds": 2.465370257,
+     "cpuSeconds": 1.38,
+     "cpuPerUnit": 0.00003833333333333333,
+     "rssPeakKB": 68304,
+     "p50us": 58.67600000010498,
+     "p99us": 147.3630000000412
+    },
+    {
+     "value": 14472.55479001802,
+     "seconds": 2.4874668310000003,
+     "cpuSeconds": 1.42,
+     "cpuPerUnit": 0.00003944444444444444,
+     "rssPeakKB": 68116,
+     "p50us": 58.155000000056134,
+     "p99us": 160.0870000000043
+    },
+    {
+     "value": 14795.698358499632,
+     "seconds": 2.4331396279999997,
+     "cpuSeconds": 1.36,
+     "cpuPerUnit": 0.00003777777777777778,
+     "rssPeakKB": 67964,
+     "p50us": 56.417999999894164,
+     "p99us": 155.06700000014462
+    },
+    {
+     "value": 13334.671260166071,
+     "seconds": 2.699729097,
+     "cpuSeconds": 1.49,
+     "cpuPerUnit": 0.00004138888888888889,
+     "rssPeakKB": 68232,
+     "p50us": 61.59400000001369,
+     "p99us": 192.57100000004357
+    },
+    {
+     "value": 12232.038637473637,
+     "seconds": 2.943090769,
+     "cpuSeconds": 1.57,
+     "cpuPerUnit": 0.000043611111111111116,
+     "rssPeakKB": 67608,
+     "p50us": 65.62799999983326,
+     "p99us": 262.99899999958143
+    },
+    {
+     "value": 13831.62084509511,
+     "seconds": 2.6027318420000003,
+     "cpuSeconds": 1.42,
+     "cpuPerUnit": 0.00003944444444444444,
+     "rssPeakKB": 68416,
+     "p50us": 58.9429999999993,
+     "p99us": 199.56500000000688
+    },
+    {
+     "value": 13498.958656581837,
+     "seconds": 2.6668723799999996,
+     "cpuSeconds": 1.46,
+     "cpuPerUnit": 0.00004055555555555555,
+     "rssPeakKB": 68156,
+     "p50us": 59.82199999994009,
+     "p99us": 224.05999999999437
+    },
+    {
+     "value": 14766.784371966556,
+     "seconds": 2.437903818,
+     "cpuSeconds": 1.35,
+     "cpuPerUnit": 0.000037500000000000003,
+     "rssPeakKB": 68288,
+     "p50us": 55.8809999999994,
+     "p99us": 166.34900000008201
+    },
+    {
+     "value": 13181.38425747212,
+     "seconds": 2.7311243870000004,
+     "cpuSeconds": 1.59,
+     "cpuPerUnit": 0.00004416666666666667,
+     "rssPeakKB": 68584,
+     "p50us": 60.73000000014872,
+     "p99us": 219.97400000009293
+    },
+    {
+     "value": 13367.71634246868,
+     "seconds": 2.693055349,
+     "cpuSeconds": 1.5,
+     "cpuPerUnit": 0.000041666666666666665,
+     "rssPeakKB": 67780,
+     "p50us": 61.20499999997264,
+     "p99us": 230.02699999995002
+    },
+    {
+     "value": 12841.006857098375,
+     "seconds": 2.803518478,
+     "cpuSeconds": 1.66,
+     "cpuPerUnit": 0.00004611111111111111,
+     "rssPeakKB": 68564,
+     "p50us": 62.32199999999466,
+     "p99us": 227.99399999996695
+    }
+   ]
+  },
+  "W5-D100": {
+   "unit": "statements/s",
+   "B": [
+    {
+     "value": 80762.88562117478,
+     "seconds": 3.219300524,
+     "cpuSeconds": 2.89,
+     "cpuPerUnit": 0.000011115384615384617,
+     "rssPeakKB": 68252,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 65162.014205617845,
+     "seconds": 3.9900546839999995,
+     "cpuSeconds": 3.32,
+     "cpuPerUnit": 0.000012769230769230769,
+     "rssPeakKB": 69040,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 76412.05832912239,
+     "seconds": 3.402604323,
+     "cpuSeconds": 2.99,
+     "cpuPerUnit": 0.0000115,
+     "rssPeakKB": 69276,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 83629.18737134902,
+     "seconds": 3.108962411,
+     "cpuSeconds": 2.92,
+     "cpuPerUnit": 0.00001123076923076923,
+     "rssPeakKB": 69156,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 75569.96862038145,
+     "seconds": 3.440520153,
+     "cpuSeconds": 3.02,
+     "cpuPerUnit": 0.000011615384615384615,
+     "rssPeakKB": 67876,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 76009.45325711218,
+     "seconds": 3.4206271569999998,
+     "cpuSeconds": 3.01,
+     "cpuPerUnit": 0.000011576923076923076,
+     "rssPeakKB": 68376,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 87766.08796385129,
+     "seconds": 2.962419837,
+     "cpuSeconds": 2.81,
+     "cpuPerUnit": 0.000010807692307692307,
+     "rssPeakKB": 69260,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 81695.80658733468,
+     "seconds": 3.182537891,
+     "cpuSeconds": 2.91,
+     "cpuPerUnit": 0.000011192307692307692,
+     "rssPeakKB": 68628,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 79617.03025217148,
+     "seconds": 3.265632983,
+     "cpuSeconds": 2.92,
+     "cpuPerUnit": 0.00001123076923076923,
+     "rssPeakKB": 68036,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 76709.71622333597,
+     "seconds": 3.389401145,
+     "cpuSeconds": 2.86,
+     "cpuPerUnit": 0.000011,
+     "rssPeakKB": 67964,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 66871.38781354918,
+     "seconds": 3.888060477,
+     "cpuSeconds": 3.24,
+     "cpuPerUnit": 0.000012461538461538463,
+     "rssPeakKB": 68292,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 77778.17975801298,
+     "seconds": 3.342839866,
+     "cpuSeconds": 2.97,
+     "cpuPerUnit": 0.000011423076923076924,
+     "rssPeakKB": 68772,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 79669.30340949068,
+     "seconds": 3.263490314,
+     "cpuSeconds": 2.87,
+     "cpuPerUnit": 0.00001103846153846154,
+     "rssPeakKB": 68152,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 78791.28374126759,
+     "seconds": 3.299857391,
+     "cpuSeconds": 2.88,
+     "cpuPerUnit": 0.000011076923076923077,
+     "rssPeakKB": 68728,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 88646.28948227828,
+     "seconds": 2.933004884,
+     "cpuSeconds": 2.78,
+     "cpuPerUnit": 0.000010692307692307692,
+     "rssPeakKB": 68076,
+     "p50us": null,
+     "p99us": null
+    }
+   ],
+   "N": [
+    {
+     "value": 78187.5420692393,
+     "seconds": 3.325337939,
+     "cpuSeconds": 3.09,
+     "cpuPerUnit": 0.000011884615384615383,
+     "rssPeakKB": 69164,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 71920.68844286527,
+     "seconds": 3.615093315,
+     "cpuSeconds": 3.12,
+     "cpuPerUnit": 0.000012,
+     "rssPeakKB": 69724,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 77461.05887330952,
+     "seconds": 3.3565252500000002,
+     "cpuSeconds": 2.99,
+     "cpuPerUnit": 0.0000115,
+     "rssPeakKB": 70292,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 70967.15675932773,
+     "seconds": 3.663666573,
+     "cpuSeconds": 3.03,
+     "cpuPerUnit": 0.000011653846153846153,
+     "rssPeakKB": 68804,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 86960.51636788048,
+     "seconds": 2.9898626509999997,
+     "cpuSeconds": 2.78,
+     "cpuPerUnit": 0.000010692307692307692,
+     "rssPeakKB": 69464,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 75361.59788129332,
+     "seconds": 3.450033005,
+     "cpuSeconds": 3.04,
+     "cpuPerUnit": 0.000011692307692307693,
+     "rssPeakKB": 68504,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 85276.48530987381,
+     "seconds": 3.048906144,
+     "cpuSeconds": 2.78,
+     "cpuPerUnit": 0.000010692307692307692,
+     "rssPeakKB": 68796,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 84604.21206098207,
+     "seconds": 3.0731330470000002,
+     "cpuSeconds": 2.8,
+     "cpuPerUnit": 0.00001076923076923077,
+     "rssPeakKB": 68844,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 75995.87181889359,
+     "seconds": 3.4212384670000002,
+     "cpuSeconds": 3.03,
+     "cpuPerUnit": 0.000011653846153846153,
+     "rssPeakKB": 70048,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 72106.33994303392,
+     "seconds": 3.605785569,
+     "cpuSeconds": 3.24,
+     "cpuPerUnit": 0.000012461538461538463,
+     "rssPeakKB": 69264,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 75987.68939693755,
+     "seconds": 3.421606869,
+     "cpuSeconds": 3.05,
+     "cpuPerUnit": 0.00001173076923076923,
+     "rssPeakKB": 68816,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 75524.00922079833,
+     "seconds": 3.442613848,
+     "cpuSeconds": 3.08,
+     "cpuPerUnit": 0.000011846153846153846,
+     "rssPeakKB": 68700,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 85589.27001978832,
+     "seconds": 3.037763962,
+     "cpuSeconds": 2.85,
+     "cpuPerUnit": 0.000010961538461538462,
+     "rssPeakKB": 69300,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 85427.2684918724,
+     "seconds": 3.04352468,
+     "cpuSeconds": 2.85,
+     "cpuPerUnit": 0.000010961538461538462,
+     "rssPeakKB": 69216,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 78489.3742787717,
+     "seconds": 3.312550296,
+     "cpuSeconds": 2.91,
+     "cpuPerUnit": 0.000011192307692307692,
+     "rssPeakKB": 71224,
+     "p50us": null,
+     "p99us": null
+    }
+   ]
+  },
+  "W5-100MB": {
+   "unit": "MB/s",
+   "B": [
+    {
+     "value": 573.3146914235379,
+     "seconds": 0.176343878,
+     "cpuSeconds": 0.18,
+     "cpuPerUnit": 0.0017804059911215504,
+     "rssPeakKB": 65764,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 517.6248191746673,
+     "seconds": 0.19531624499999997,
+     "cpuSeconds": 0.17,
+     "cpuPerUnit": 0.0016814945471703533,
+     "rssPeakKB": 65252,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 847.4887457276652,
+     "seconds": 0.11929425199999999,
+     "cpuSeconds": 0.11,
+     "cpuPerUnit": 0.0010880258834631697,
+     "rssPeakKB": 65544,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 603.4542481112444,
+     "seconds": 0.16753637300000002,
+     "cpuSeconds": 0.15,
+     "cpuPerUnit": 0.0014836716592679586,
+     "rssPeakKB": 67404,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 620.5336414944755,
+     "seconds": 0.162925149,
+     "cpuSeconds": 0.14,
+     "cpuPerUnit": 0.0013847602153167617,
+     "rssPeakKB": 66436,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 631.1376389776754,
+     "seconds": 0.160187778,
+     "cpuSeconds": 0.16,
+     "cpuPerUnit": 0.001582583103219156,
+     "rssPeakKB": 66552,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 579.0881030565614,
+     "seconds": 0.174585759,
+     "cpuSeconds": 0.16,
+     "cpuPerUnit": 0.001582583103219156,
+     "rssPeakKB": 66000,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 725.1857579293281,
+     "seconds": 0.139413295,
+     "cpuSeconds": 0.14,
+     "cpuPerUnit": 0.0013847602153167617,
+     "rssPeakKB": 68792,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 640.2456848413722,
+     "seconds": 0.157908969,
+     "cpuSeconds": 0.15,
+     "cpuPerUnit": 0.0014836716592679586,
+     "rssPeakKB": 65684,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 613.6902248631009,
+     "seconds": 0.16474196900000002,
+     "cpuSeconds": 0.15,
+     "cpuPerUnit": 0.0014836716592679586,
+     "rssPeakKB": 66300,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 656.2795198448202,
+     "seconds": 0.15405103,
+     "cpuSeconds": 0.13,
+     "cpuPerUnit": 0.0012858487713655643,
+     "rssPeakKB": 65780,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 662.4162439379244,
+     "seconds": 0.152623878,
+     "cpuSeconds": 0.15,
+     "cpuPerUnit": 0.0014836716592679586,
+     "rssPeakKB": 65396,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 629.6733480633765,
+     "seconds": 0.160560291,
+     "cpuSeconds": 0.16,
+     "cpuPerUnit": 0.001582583103219156,
+     "rssPeakKB": 67312,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 637.6732937369121,
+     "seconds": 0.158545978,
+     "cpuSeconds": 0.16,
+     "cpuPerUnit": 0.001582583103219156,
+     "rssPeakKB": 66720,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 592.9341566531363,
+     "seconds": 0.17050887499999998,
+     "cpuSeconds": 0.15,
+     "cpuPerUnit": 0.0014836716592679586,
+     "rssPeakKB": 66232,
+     "p50us": null,
+     "p99us": null
+    }
+   ],
+   "N": [
+    {
+     "value": 592.8284752665561,
+     "seconds": 0.170539271,
+     "cpuSeconds": 0.16,
+     "cpuPerUnit": 0.001582583103219156,
+     "rssPeakKB": 66332,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 741.3197399722244,
+     "seconds": 0.136379123,
+     "cpuSeconds": 0.12,
+     "cpuPerUnit": 0.001186937327414367,
+     "rssPeakKB": 66588,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 701.1218590696085,
+     "seconds": 0.144198237,
+     "cpuSeconds": 0.13,
+     "cpuPerUnit": 0.0012858487713655643,
+     "rssPeakKB": 66032,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 582.6299847231885,
+     "seconds": 0.17352443,
+     "cpuSeconds": 0.16,
+     "cpuPerUnit": 0.001582583103219156,
+     "rssPeakKB": 66636,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 603.8030912404345,
+     "seconds": 0.16743957999999998,
+     "cpuSeconds": 0.16,
+     "cpuPerUnit": 0.001582583103219156,
+     "rssPeakKB": 67008,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 584.6359031227707,
+     "seconds": 0.172929058,
+     "cpuSeconds": 0.17,
+     "cpuPerUnit": 0.0016814945471703533,
+     "rssPeakKB": 66192,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 652.6920213942918,
+     "seconds": 0.154897766,
+     "cpuSeconds": 0.15,
+     "cpuPerUnit": 0.0014836716592679586,
+     "rssPeakKB": 68720,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 611.9690092304535,
+     "seconds": 0.16520532,
+     "cpuSeconds": 0.16,
+     "cpuPerUnit": 0.001582583103219156,
+     "rssPeakKB": 66160,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 609.2185277810371,
+     "seconds": 0.165951184,
+     "cpuSeconds": 0.17,
+     "cpuPerUnit": 0.0016814945471703533,
+     "rssPeakKB": 66336,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 615.2263565809204,
+     "seconds": 0.16433063199999998,
+     "cpuSeconds": 0.16,
+     "cpuPerUnit": 0.001582583103219156,
+     "rssPeakKB": 68572,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 612.4470769930883,
+     "seconds": 0.165076363,
+     "cpuSeconds": 0.17,
+     "cpuPerUnit": 0.0016814945471703533,
+     "rssPeakKB": 66372,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 605.5062082923127,
+     "seconds": 0.16696861999999998,
+     "cpuSeconds": 0.17,
+     "cpuPerUnit": 0.0016814945471703533,
+     "rssPeakKB": 69208,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 518.9701100467461,
+     "seconds": 0.19480994000000001,
+     "cpuSeconds": 0.19,
+     "cpuPerUnit": 0.0018793174350727477,
+     "rssPeakKB": 68808,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 620.8989359070798,
+     "seconds": 0.162829295,
+     "cpuSeconds": 0.15,
+     "cpuPerUnit": 0.0014836716592679586,
+     "rssPeakKB": 66204,
+     "p50us": null,
+     "p99us": null
+    },
+    {
+     "value": 586.8552515729191,
+     "seconds": 0.172275081,
+     "cpuSeconds": 0.17,
+     "cpuPerUnit": 0.0016814945471703533,
+     "rssPeakKB": 66408,
+     "p50us": null,
+     "p99us": null
+    }
+   ]
+  }
+ }
+}

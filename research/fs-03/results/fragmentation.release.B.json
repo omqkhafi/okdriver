@@ -1,0 +1,372 @@
+{
+  "build": {
+    "id": "release",
+    "path": "/home/user/okdriver/research/fs-03/work/release/node_modules/.bin/bun",
+    "version": "1.4.5",
+    "revision": "1.4.5+a7733435c"
+  },
+  "adapter": "B",
+  "results": [
+    {
+      "name": "plain-mix",
+      "status": "pass",
+      "reasons": [],
+      "messages": 2713,
+      "deliveries": 32,
+      "cuts": 137,
+      "observedShare": {},
+      "rawBytes": 8804073,
+      "durationMs": 332,
+      "raw": {
+        "dataCalls": 32,
+        "bytes": 8804073,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "bytes1-tiny",
+      "status": "pass",
+      "reasons": [],
+      "messages": 159,
+      "deliveries": 2939,
+      "cuts": 2939,
+      "observedShare": {
+        "single byte": "2939/2939"
+      },
+      "rawBytes": 2939,
+      "durationMs": 6785,
+      "raw": {
+        "dataCalls": 2939,
+        "bytes": 2939,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "header-offsets-small",
+      "status": "pass",
+      "reasons": [],
+      "messages": 409,
+      "deliveries": 2766,
+      "cuts": 2767,
+      "observedShare": {
+        "header +1": "409/409",
+        "header +2": "409/409",
+        "header +3": "409/409",
+        "header +4": "409/409",
+        "header +5": "409/409",
+        "payload end -1": "345/345",
+        "payload end": "376/377",
+        "payload end +1": "408/408"
+      },
+      "rawBytes": 12622,
+      "durationMs": 6350,
+      "raw": {
+        "dataCalls": 2766,
+        "bytes": 12622,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "payload-edges-mix",
+      "status": "pass",
+      "reasons": [],
+      "messages": 2713,
+      "deliveries": 3553,
+      "cuts": 3543,
+      "observedShare": {
+        "payload end": "2410/2411",
+        "header +5": "406/406",
+        "payload end +1": "206/206",
+        "header +1": "206/206",
+        "header +2": "104/104",
+        "header +3": "104/104",
+        "header +4": "104/104",
+        "payload end -1": "104/104"
+      },
+      "rawBytes": 9210851,
+      "durationMs": 8066,
+      "raw": {
+        "dataCalls": 3553,
+        "bytes": 9210851,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "grouped-small",
+      "status": "pass",
+      "reasons": [],
+      "messages": 409,
+      "deliveries": 17,
+      "cuts": 17,
+      "observedShare": {},
+      "rawBytes": 12658,
+      "durationMs": 395,
+      "raw": {
+        "dataCalls": 17,
+        "bytes": 12658,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "grouped-mix",
+      "status": "pass",
+      "reasons": [],
+      "messages": 2713,
+      "deliveries": 118,
+      "cuts": 110,
+      "observedShare": {},
+      "rawBytes": 9308792,
+      "durationMs": 505,
+      "raw": {
+        "dataCalls": 118,
+        "bytes": 9308792,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "random-small-max16",
+      "status": "pass",
+      "reasons": [],
+      "messages": 409,
+      "deliveries": 1163,
+      "cuts": 1539,
+      "observedShare": {},
+      "rawBytes": 13032,
+      "durationMs": 2035,
+      "raw": {
+        "dataCalls": 1163,
+        "bytes": 13032,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "random-small-max7",
+      "status": "pass",
+      "reasons": [],
+      "messages": 409,
+      "deliveries": 2434,
+      "cuts": 3247,
+      "observedShare": {},
+      "rawBytes": 12945,
+      "durationMs": 3966,
+      "raw": {
+        "dataCalls": 2434,
+        "bytes": 12945,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "random-mix-max2048",
+      "status": "pass",
+      "reasons": [],
+      "messages": 2713,
+      "deliveries": 6252,
+      "cuts": 8810,
+      "observedShare": {},
+      "rawBytes": 9032436,
+      "durationMs": 10099,
+      "raw": {
+        "dataCalls": 6252,
+        "bytes": 9032436,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "random-mix-max8192",
+      "status": "pass",
+      "reasons": [],
+      "messages": 2713,
+      "deliveries": 1641,
+      "cuts": 2188,
+      "observedShare": {},
+      "rawBytes": 9007071,
+      "durationMs": 2821,
+      "raw": {
+        "dataCalls": 1641,
+        "bytes": 9007071,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "random-mix-max131072",
+      "status": "pass",
+      "reasons": [],
+      "messages": 2713,
+      "deliveries": 124,
+      "cuts": 137,
+      "observedShare": {},
+      "rawBytes": 9091918,
+      "durationMs": 510,
+      "raw": {
+        "dataCalls": 124,
+        "bytes": 9091918,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-fin-partial-header",
+      "status": "pass",
+      "reasons": [],
+      "messages": 107,
+      "deliveries": 5,
+      "cuts": 5,
+      "observedShare": {},
+      "rawBytes": 306672,
+      "durationMs": 310,
+      "raw": {
+        "dataCalls": 5,
+        "bytes": 306672,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 1,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-fin-partial-payload",
+      "status": "pass",
+      "reasons": [],
+      "messages": 59,
+      "deliveries": 3,
+      "cuts": 3,
+      "observedShare": {},
+      "rawBytes": 71720,
+      "durationMs": 302,
+      "raw": {
+        "dataCalls": 3,
+        "bytes": 71720,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 1,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-fin-between-messages",
+      "status": "pass",
+      "reasons": [],
+      "messages": 208,
+      "deliveries": 6,
+      "cuts": 5,
+      "observedShare": {},
+      "rawBytes": 397869,
+      "durationMs": 308,
+      "raw": {
+        "dataCalls": 6,
+        "bytes": 397869,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 1,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-rst-partial-header",
+      "status": "pass",
+      "reasons": [],
+      "messages": 107,
+      "deliveries": 4,
+      "cuts": 4,
+      "observedShare": {},
+      "rawBytes": 174794,
+      "durationMs": 308,
+      "raw": {
+        "dataCalls": 4,
+        "bytes": 174794,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-rst-partial-payload",
+      "status": "pass",
+      "reasons": [],
+      "messages": 80,
+      "deliveries": 3,
+      "cuts": 3,
+      "observedShare": {},
+      "rawBytes": 114759,
+      "durationMs": 304,
+      "raw": {
+        "dataCalls": 3,
+        "bytes": 114759,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    },
+    {
+      "name": "close-rst-between-messages",
+      "status": "pass",
+      "reasons": [],
+      "messages": 208,
+      "deliveries": 4,
+      "cuts": 4,
+      "observedShare": {},
+      "rawBytes": 219313,
+      "durationMs": 316,
+      "raw": {
+        "dataCalls": 4,
+        "bytes": 219313,
+        "errorEvents": 0,
+        "closeEvents": 1,
+        "endEvents": 0,
+        "drainEvents": 0,
+        "dataAfterClose": 0
+      }
+    }
+  ],
+  "passShare": 1
+}
